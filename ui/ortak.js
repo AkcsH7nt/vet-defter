@@ -76,3 +76,15 @@ export function doldur(kap, ...cocuklar) {
 
 /** Sonuç ve Hakkında ekranlarında: sıralama ile uyum yüzdesinin farkı (K6 Ö-1). */
 export const SIRALAMA_ACIKLAMASI = 'Sıralama hastalığın sıklığını da hesaba katar; yüzde, o hastalıkta beklenen bulguların ne kadarının görüldüğüdür.';
+
+// Uygulama içi rota değişimi sayısı (app.js hashchange'te artırır).
+let icGecis = 0;
+export function icGecisEkle() { icGecis += 1; }
+
+/** "◂ Geri": uygulama içinde gelinmediyse (paylaşılan bağlantıyla doğrudan açıldıysa) Tanı ekranına gider (final-review M7). */
+export function geriDugmesi() {
+  return el('button', {
+    type: 'button', class: 'dugme', id: 'geri',
+    onclick: () => { if (icGecis > 0) history.back(); else location.hash = '#/tani'; },
+  }, '◂ Geri');
+}

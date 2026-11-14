@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { veriYukle } from '../lib/veri.js';
-import { icerikOzeti } from '../lib/onay.js';
+import { icerikOzeti, kubOzeti } from '../lib/onay.js';
 
 // --- Sözlükler (spec §8 + plan eklemeleri) ---
 const TURLER = ['sigir'];
@@ -34,15 +34,15 @@ const ALANLAR = {
   hastalikBelirtisi: [['id', 'agirlik', 'yoklugu_dusurur'], []],
   protokol: [['ilaclar', 'destekleyici', 'bakim', 'ihbarAdimlari'], []],
   ilac: [['etkenId', 'sinif', 'sira', 'yol', 'kaynak'], ['not']],
-  ilacKaynagi: [['tur', 'urun', 'bolum'], []],
+  ilacKaynagi: [['tur', 'urun', 'bolum'], ['urunId']],
   isi: [['min', 'max'], []],
   onay: [['durum'], ['kim', 'tarih', 'icerikOzeti']],
   bayrak: [['id', 'hastalikId', 'kosul', 'baslik', 'uyarilar', 'onay'], []],
   kosul: [[], ['hepsi', 'herhangi', 'baglam']], // hepsi / herhangi'den en az biri dolu (aşağıda denetlenir)
-  urun: [['ad', 'firma', 'form', 'etkenler', 'hedefTurler', 'kubUrl', 'cekilmeTarihi', 'kub', 'kubDogrulandi'], []],
+  urun: [['ad', 'firma', 'form', 'etkenler', 'hedefTurler', 'kubUrl', 'cekilmeTarihi', 'kub', 'kubDogrulandi'], ['urunId']],
   kub: [['tur', 'yol', 'doz', 'et_gun', 'sut'], []],
   doz: [['miktar', 'birim', 'aralik', 'sure'], []],
-  kubDogrulandi: [['kim', 'tarih'], []],
+  kubDogrulandi: [['kim', 'tarih', 'icerikOzeti'], []],
   meta: [['semaSurumu', 'icerikSurumu', 'urunListesiTarihi'], []],
   liste: [['kaynak', 'kaynakTarihi', 'ogeler'], ['not']],
   ihbarOgesi: [['id', 'ad', 'emin', 'dogrulandi'], ['not']],
@@ -283,6 +283,9 @@ export function dogrula(veri) {
           for (const a of ['urun', 'bolum']) {
             if (ilac.kaynak[a] !== null && !metinMi(ilac.kaynak[a])) hata(yer, `ilaç satırı ${i} kaynak.${a} metin ya da null olmalı`);
           }
+          if ('urunId' in ilac.kaynak && ilac.kaynak.urunId !== null && !metinMi(ilac.kaynak.urunId)) {
+            hata(yer, `ilaç satırı ${i} kaynak.urunId metin ya da null olmalı`);
+          }
         }
         alanlar(y, ilac, 'ilac');
 
@@ -383,12 +386,52 @@ export function dogrula(veri) {
       if (!sutGecerli) hata(yer, `kub[${j}].sut { saat } | 'kullanilmaz' | 'belirtilmemis' olmalı`);
     });
     if (u.kubDogrulandi !== null) {
-      if (!nesneMi(u.kubDogrulandi)) hata(yer, 'kubDogrulandi { kim, tarih } ya da null olmalı');
+      if (!nesneMi(u.kubDogrulandi)) hata(yer, 'kubDogrulandi { kim, tarih, icerikOzeti } ya da null olmalı');
       else if (alanlar(`${yer}.kubDogrulandi`, u.kubDogrulandi, 'kubDogrulandi')) {
         if (!metinMi(u.kubDogrulandi.kim) || !tarihMi(u.kubDogrulandi.tarih)) hata(yer, 'kubDogrulandi { kim, tarih } dolu olmalı');
+        if (u.kubDogrulandi.icerikOzeti !== kubOzeti(u)) {
+          hata(yer, `kubDogrulandi özeti tutmuyor (kub[] doğrulamadan sonra değişmiş; özet ${kubOzeti(u)}) → yeniden doğrulama gerekir`);
+        }
       }
     }
+    if ('urunId' in u && u.urunId !== null && !metinMi(u.urunId)) hata(yer, 'urunId metin ya da null olmalı');
   });
+  const urunKimlikleri = new Map();
+  for (const u of Array.isArray(veri.urunler) ? veri.urunler : []) {
+    if (!metinMi(u?.urunId)) continue;
+    if (urunKimlikleri.has(u.urunId)) hata(`urun[${u.ad}]`, `urunId tekrar ediyor: ${u.urunId}`);
+    urunKimlikleri.set(u.urunId, u);
+  }
+
+  // --- Protokol → ürün bağları (doz bu üründen okunur; final-review I3) ---
+  const urunler = (Array.isArray(veri.urunler) ? veri.urunler : []).filter(nesneMi);
+  const sigirUrunuMu = (u) => Array.isArray(u.hedefTurler) && u.hedefTurler.some((t) => t === 'sigir' || t === 'buzagi');
+  for (const [id, h] of hastaliklar) {
+    const ilaclar = Array.isArray(h?.protokol?.ilaclar) ? h.protokol.ilaclar : [];
+    const onayli = h?.onay?.durum === 'onayli';
+    const yer = `hastalik[${id}]`;
+    ilaclar.forEach((ilac, i) => {
+      const k = nesneMi(ilac?.kaynak) ? ilac.kaynak : null;
+      if (!k) return;
+      const urunId = metinMi(k.urunId) ? k.urunId : null;
+      const ad = metinMi(k.urun) ? k.urun : null;
+      if (!urunId && !ad) {
+        // Ruhsatlı sığır ürünü olan bir etkende onaylı protokol, dozun hangi KÜB'den geldiğini belirtmeli.
+        const urunuVar = urunler.some((u) => sigirUrunuMu(u) && (u.etkenler ?? []).includes(ilac.etkenId));
+        if (onayli && urunuVar) hata(yer, `onaylı hastalıkta ilaç satırı ${i} (${ilac.etkenId}) kaynak ürünü yok (kaynak.urunId ya da kaynak.urun)`);
+        return;
+      }
+      const adaylar = urunler.filter((u) => (urunId ? u.urunId === urunId : u.ad === ad));
+      if (adaylar.length === 0) { hata(yer, `ilaç satırı ${i} kaynak ürünü listede yok: ${urunId ?? ad}`); return; }
+      if (adaylar.length > 1) { hata(yer, `ilaç satırı ${i} kaynak ürün adı birden çok ürüne uyuyor: ${ad} — kaynak.urunId kullanın`); return; }
+      const u = adaylar[0];
+      if (!(u.etkenler ?? []).includes(ilac.etkenId)) hata(yer, `ilaç satırı ${i} kaynak ürünü ${u.ad} etken ${ilac.etkenId} içermiyor`);
+      if (!sigirUrunuMu(u)) hata(yer, `ilaç satırı ${i} kaynak ürünü ${u.ad} sığır / buzağı için ruhsatlı değil`);
+      if (onayli && !(u.kub ?? []).some((x) => sade(x?.tur ?? '') === 'sigir' && sade(x?.yol ?? '') === sade(ilac.yol ?? ''))) {
+        hata(yer, `onaylı hastalıkta ilaç satırı ${i}: ${u.ad} KÜB'ünde (sigir, ${ilac.yol}) satırı yok`);
+      }
+    });
+  }
 
   return hatalar;
 }

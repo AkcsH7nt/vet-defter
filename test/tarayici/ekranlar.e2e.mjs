@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { sunucuBaslat } from '../../scripts/sunucu.mjs';
+import { kubOzeti } from '../../lib/onay.js';
 
 const KOK = fileURLToPath(new URL('../..', import.meta.url));
 const ORNEK = join(KOK, 'test/ornek/veri');
@@ -245,7 +246,7 @@ test('taslak hastalikta mg/kg yok, taslak etiketi var', async () => {
 
 test('doz yalniz onayli hastalik ve dogrulanmis KUB ile gorunur', async () => {
   const dogrula = (yol, j) => (yol === 'urunler.json'
-    ? j.map((u) => ({ ...u, kubDogrulandi: { kim: 'test', tarih: '2026-11-14' } })) : undefined);
+    ? j.map((u) => ({ ...u, kubDogrulandi: { kim: 'test', tarih: '2026-11-14', icerikOzeti: kubOzeti(u) } })) : undefined);
   const s = await sayfaAc({ degistir: dogrula });
   await s.git('#/hastalik/ornek_solunum');
   assert.match(await metin(s), /10 mg\/kg/);
@@ -280,7 +281,7 @@ test('etken sayfasi: nasil calisir, AMEG, urun ve urunsuz etken', async () => {
   assert.match(t, /Nasıl çalışır/);
   assert.match(t, /Hedef: Örnek: bakteri ribozomu/);
   assert.match(t, /Spektrum/);
-  assert.match(t, /Etkileşim: Örnek etkileşim notu/);
+  assert.match(t, /Dikkat: Örnek etkileşim notu/);
   assert.match(t, /AMEG: C/);
   assert.match(t, /Örnek Ürün %10/);
   assert.match(t, /liste tarihi: 01\.11\.2026/);
@@ -311,6 +312,74 @@ test('sigir eslesmesi buyuk-kucuk harf ve aksan duyarsiz', async () => {
   const s2 = await sayfaAc({ degistir: koyun });
   await s2.git('#/etken/ornek_antibiyotik');
   assert.match(await metin(s2), /ruhsatlı ürün bulunamadı/);
+});
+
+test('yalniz buzagi urunu listelenir ve etiketlenir; kombine urunde diger etken ve AMEG uyarisi', async () => {
+  const degis = (yol, j) => {
+    if (yol === 'etkenler.json') return j.map((e) => (e.id === 'ornek_antibiyotik' ? { ...e, ameg: 'B' } : e));
+    if (yol === 'urunler.json') {
+      return [...j,
+        { ...j[0], ad: 'Buzağı Ürünü (test)', etkenler: ['ornek_nsaii'], hedefTurler: ['buzagi', 'kuzu'], kub: [] },
+        { ...j[0], ad: 'Kombine Ürün (test)', etkenler: ['ornek_nsaii', 'ornek_antibiyotik'], hedefTurler: ['sigir'], kub: [] }];
+    }
+    return undefined;
+  };
+  const s = await sayfaAc({ degistir: degis });
+  await s.git('#/etken/ornek_nsaii');
+  const t = await metin(s);
+  assert.match(t, /Buzağı Ürünü \(test\) \(yalnız buzağı\)/);
+  assert.match(t, /Kombine ürünler/);
+  const kombine = await s.locator('.kombine-liste .urun').innerText();
+  assert.match(kombine, /Kombine Ürün \(test\)/);
+  assert.match(kombine, /Birlikte: Örnek antibiyotik \(test\) \(AMEG B\)/);
+  assert.match(kombine, /AMEG B .*Antibiyogramsız ilk seçenek olmaz/);
+  assert.match(kombine, /Antibiyotik içerir/);
+  assert.match(t, /KÜB bağlantısı yok — Bakanlık ürün sorgusundan bakın/);
+  assert.doesNotMatch(t, /ruhsatlı ürün bulunamadı/);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('hastalik: protokol satirindan ruhsatli urunlere gecis; urunsuz etkende not', async () => {
+  const s = await sayfaAc();
+  await s.git('#/hastalik/ornek_solunum');
+  const t = await metin(s);
+  assert.match(t, /Ruhsatlı ürünler \(1\) ▸/);
+  assert.match(t, /Listede ruhsatlı sığır ürünü yok\./);
+  await s.click('a.dugme.ikincil');
+  await s.waitForSelector('main h1:has-text("Örnek antibiyotik")');
+  // Uygulama içinden gelindi: Geri hastalığa döner.
+  await s.click('#geri');
+  await s.waitForSelector('main h1:has-text("Örnek solunum")');
+});
+
+test('dogrudan acilan sayfada Geri Taniya gider', async () => {
+  const s = await sayfaAc();
+  await s.goto(adres + '#/hastalik/ornek_solunum');
+  await s.waitForSelector('main h1:has-text("Örnek solunum")');
+  await s.click('#geri');
+  await s.waitForSelector('main h1:text-is("Tanı")');
+});
+
+test('arayuz savunmasi: yasak kipte ilac ve AMEG A satiri gosterilmez', async () => {
+  const degis = (yol, j) => {
+    if (yol === 'etkenler.json') return j.map((e) => (e.id === 'ornek_antibiyotik' ? { ...e, ameg: 'A' } : e));
+    if (yol === 'hastaliklar/ihbar_zehir.json') {
+      return j.map((h) => (h.tedaviKipi === 'yasak'
+        ? { ...h, protokol: { ...h.protokol, ilaclar: [{ etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'IV', not: null, kaynak: { tur: 'KUB', urun: null, bolum: null } }] } }
+        : h));
+    }
+    return undefined;
+  };
+  const s = await sayfaAc({ degistir: degis });
+  const uyarilar = [];
+  s.on('console', (m) => { if (m.type() === 'warning') uyarilar.push(m.text()); });
+  await s.git('#/hastalik/ornek_sarbon');
+  assert.match(await metin(s), /Tedavi kipi: Tedavi yasak/);
+  assert.equal(await s.locator('.ilac').count(), 0);
+  await s.git('#/hastalik/ornek_solunum');
+  await s.waitForSelector('.ilac');
+  assert.doesNotMatch(await s.locator('.ilaclar').innerText(), /Örnek antibiyotik/);
+  assert.ok(uyarilar.some((u) => /AMEG A/.test(u)), JSON.stringify(uyarilar));
 });
 
 test('bilinmeyen kimlik ve bozuk hash bulunamadi gosterir', async () => {

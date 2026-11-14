@@ -254,6 +254,59 @@ test('gercekVerideHerIhbariHastaligiBayrakKorur', async () => {
   assert.deepEqual(eksik, []);
 });
 
+// --- Doz yolu (final-review I3): protokol → ürün bağı ve KÜB doğrulama özeti ---
+
+const ilac0 = (veri) => hastalik(veri, 'ornek_solunum').protokol.ilaclar[0];
+
+test('kubDogrulandiOzetiTutmazsaHata', async () => {
+  const veri = await ornek();
+  veri.urunler[0].kubDogrulandi = { kim: 'hekim', tarih: '2026-11-14', icerikOzeti: '00000000' };
+  hataIcerir(dogrula(veri), /Örnek Ürün.*kubDogrulandi özeti tutmuyor/);
+  veri.urunler[0].kubDogrulandi = { kim: 'hekim', tarih: '2026-11-14' };
+  hataIcerir(dogrula(veri), /Örnek Ürün.*eksik alan: icerikOzeti/);
+});
+
+test('kaynakUrunuEtkeniIcermezseHata', async () => {
+  const veri = await ornek();
+  veri.urunler[0].etkenler = ['ornek_nsaii'];
+  hataIcerir(dogrula(veri), /ornek_solunum.*Örnek Ürün %10 \(test\) etken ornek_antibiyotik içermiyor/);
+});
+
+test('kaynakUrunuYoksaYaDaAdiBirdenCokUrunuTutarsaHata', async () => {
+  const veri = await ornek();
+  ilac0(veri).kaynak.urun = 'Olmayan Ürün';
+  hataIcerir(dogrula(veri), /ornek_solunum.*kaynak ürünü listede yok: Olmayan Ürün/);
+  const veri2 = await ornek();
+  veri2.urunler.push({ ...structuredClone(veri2.urunler[0]), firma: 'Başka Firma' });
+  hataIcerir(dogrula(veri2), /ornek_solunum.*birden çok ürüne uyuyor/);
+  // urunId ile ayrılır
+  veri2.urunler[0].urunId = '101';
+  veri2.urunler[1].urunId = '102';
+  ilac0(veri2).kaynak.urunId = '101';
+  assert.ok(!dogrula(veri2).some((h) => /birden çok ürüne/.test(h)));
+});
+
+test('urunIdTekrarEdemez', async () => {
+  const veri = await ornek();
+  veri.urunler.push({ ...structuredClone(veri.urunler[0]), ad: 'İkinci' });
+  veri.urunler[0].urunId = '7';
+  veri.urunler[1].urunId = '7';
+  hataIcerir(dogrula(veri), /urunId tekrar ediyor: 7/);
+});
+
+test('onayliHastalikKaynakUrunuVeYolaUyanKubSatiriIster', async () => {
+  const veri = await ornek();
+  ilac0(veri).kaynak.urun = null;
+  hataIcerir(dogrula(veri), /ornek_solunum.*kaynak ürünü yok/);
+  const veri2 = await ornek();
+  veri2.urunler[0].kub[0].yol = 'IV';
+  hataIcerir(dogrula(veri2), /ornek_solunum.*KÜB'ünde \(sigir, IM\) satırı yok/);
+  // Taslak hastalıkta ürünsüz satır serbest (doz zaten gösterilmez).
+  const veri3 = await ornek();
+  assert.equal(hastalik(veri3, 'ornek_ishal').onay.durum, 'taslak');
+  assert.deepEqual(dogrula(veri3), []);
+});
+
 test('urunAlanlariDenetlenir', async () => {
   const veri = await ornek();
   veri.urunler[0].kub[0].sut = { gun: 7 };

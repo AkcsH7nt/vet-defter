@@ -79,10 +79,11 @@
                   "type": "object",
                   "additionalProperties": false,
                   "required": ["tur", "urun", "bolum"],
-                  "description": "Doz yalnız ürün KÜB'ünden gelir. Ürün belirlenmemişse urun ve bolum null (doz gösterilmez).",
+                  "description": "Doz yalnız ürün KÜB'ünden gelir. Ürün belirlenmemişse urun ve bolum null (doz gösterilmez). Ürün urunId (tercih) ya da tam adla bulunur; ürün etkenId'yi içermeli, ad birden çok ürüne uyuyorsa doz gösterilmez. Onaylı hastalıkta ürün zorunlu ve KÜB'ünde (sigir, yol) satırı olmalı.",
                   "properties": {
                     "tur": { "const": "KUB" },
                     "urun": { "type": ["string", "null"] },
+                    "urunId": { "type": ["string", "null"], "description": "İsteğe bağlı; urunler.json urunId." },
                     "bolum": { "type": ["string", "null"] }
                   }
                 }

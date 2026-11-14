@@ -1,7 +1,7 @@
 // İçerik özeti ve onay durumu: anahtar sırası özeti değiştirmez, içerik değişince özet tutmaz.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { icerikOzeti, onayliMi, fnv1a, siraliJson } from '../lib/onay.js';
+import { icerikOzeti, onayliMi, fnv1a, siraliJson, kubOzeti, kubDogruMu } from '../lib/onay.js';
 
 const kayit = () => ({
   id: 'x',
@@ -83,4 +83,39 @@ test('onaysizKayitOnayliDegil', () => {
   assert.equal(onayliMi({ id: 'x' }), false);
   assert.equal(onayliMi({ id: 'x', onay: null }), false);
   assert.equal(onayliMi(null), false);
+});
+
+// --- KÜB doğrulaması (final-review I3): doğrulamadan sonra kub[] değişirse doğrulama geçersiz ---
+
+const urun = () => ({
+  ad: 'Ü', kub: [{ tur: 'sigir', yol: 'IM', doz: { miktar: 10, birim: 'mg/kg', aralik: null, sure: null }, et_gun: 28, sut: { saat: 168 } }],
+  kubDogrulandi: null,
+});
+
+test('kubDogruMuOzetTutarsaTrue', () => {
+  const u = urun();
+  assert.equal(kubDogruMu(u), false);
+  u.kubDogrulandi = { kim: 'hekim', tarih: '2026-11-14', icerikOzeti: kubOzeti(u) };
+  assert.equal(kubDogruMu(u), true);
+});
+
+test('kubDogruMuKubDegisinceFalse', () => {
+  const u = urun();
+  u.kubDogrulandi = { kim: 'hekim', tarih: '2026-11-14', icerikOzeti: kubOzeti(u) };
+  u.kub[0].doz.miktar = 20;
+  assert.equal(kubDogruMu(u), false);
+});
+
+test('kubDogruMuOzetsizDogrulamaGecersiz', () => {
+  const u = urun();
+  u.kubDogrulandi = { kim: 'hekim', tarih: '2026-11-14' };
+  assert.equal(kubDogruMu(u), false);
+  assert.equal(kubDogruMu(null), false);
+});
+
+test('kubOzetiYalnizKubAlanindan', () => {
+  const a = urun();
+  const b = { ...urun(), ad: 'başka ad' };
+  assert.equal(kubOzeti(a), kubOzeti(b));
+  assert.equal(kubOzeti(a), fnv1a(siraliJson(a.kub)));
 });

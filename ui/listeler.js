@@ -7,7 +7,7 @@ export function render(kok, veri, durum, rota) {
   const hastalik = rota.ad === 'hastaliklar';
   const kayitlar = hastalik
     ? veri.hastaliklar.map((h) => ({ id: h.id, ad: h.ad, ek: h.agrivetAd, taslak: !onayliMi(h), href: `#/hastalik/${encodeURIComponent(h.id)}` }))
-    : veri.etkenler.map((e) => ({ id: e.id, ad: e.ad, ek: e.sinif, taslak: e.onay?.durum !== 'onayli', href: `#/etken/${encodeURIComponent(e.id)}` }));
+    : veri.etkenler.map((e) => ({ id: e.id, ad: e.ad, ek: e.sinif, taslak: !onayliMi(e), href: `#/etken/${encodeURIComponent(e.id)}` }));
   kayitlar.sort((a, b) => a.ad.localeCompare(b.ad, 'tr'));
 
   const liste = el('ul', { class: 'liste' });

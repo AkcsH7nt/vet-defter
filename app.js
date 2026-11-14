@@ -1,6 +1,6 @@
 // Hash yönlendirici. Ekran modülleri: export function render(kok, veri, durum).
 // Task 7: aşağıdaki EKRANLAR içindeki `modul` alanlarına './ui/tani.js' gibi yollar yazılır.
-import { el, bulunamadi, girdiNormalize } from './ui/ortak.js';
+import { el, bulunamadi, girdiNormalize, icGecisEkle } from './ui/ortak.js';
 import { veriYukle } from './lib/veri.js';
 import { isiOku } from './lib/puan.js';
 
@@ -98,7 +98,7 @@ function yerTutucu(ekran) {
 }
 
 document.body.append(el('p', { class: 'sabit-not' }, 'Hekim kararının yerine geçmez'));
-addEventListener('hashchange', ciz);
+addEventListener('hashchange', () => { icGecisEkle(); ciz(); });
 ciz();
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
