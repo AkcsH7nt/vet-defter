@@ -102,5 +102,14 @@ addEventListener('hashchange', () => { icGecisEkle(); ciz(); });
 ciz();
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // Yeni sürüm devralınca bir kez yenile: eski app.js / veri ile yeni ui/*.js aynı oturumda karışmasın
+  // (final-review M3). İlk kurulumda (önceden denetleyen SW yokken) yenilenmez.
+  const oncekiDenetleyici = navigator.serviceWorker.controller;
+  let yenilendi = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!oncekiDenetleyici || yenilendi) return;
+    yenilendi = true;
+    location.reload();
+  });
   navigator.serviceWorker.register('sw.js').catch(() => { /* çevrimdışı kabuk olmadan da çalışır */ });
 }

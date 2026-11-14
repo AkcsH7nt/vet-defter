@@ -60,7 +60,7 @@ test('bilinmeyenKimlikBulunamadiGosterir', async () => {
 });
 
 test('olasilikKelimesiGecmez', async () => {
-  assert.doesNotMatch((await sayfa.textContent('body')).toLowerCase(), /olasılık/);
+  assert.doesNotMatch((await sayfa.textContent('body')).toLocaleLowerCase('tr'), /olasılı|ihtimal/);
 });
 
 test('veriTarayicidaYuklenir', async () => {

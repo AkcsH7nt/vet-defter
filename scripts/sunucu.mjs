@@ -4,7 +4,8 @@ import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const kok = resolve(process.cwd());
+// Kök, çalışma dizininden bağımsız olarak depo kökü (final-review M5).
+const kok = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const port = Number(process.argv[2] ?? process.env.PORT ?? 5180);
 const turler = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
@@ -23,6 +24,8 @@ export function sunucuBaslat(p = port, taban = '') {
         if (yolu !== onek && !yolu.startsWith(`${onek}/`)) throw new Error('taban dışı');
         yolu = yolu.slice(onek.length) || '/';
       }
+      // Nokta ile başlayan bölümler (.git, .superpowers…) sunulmaz.
+      if (yolu.split('/').some((b) => b.startsWith('.'))) throw new Error('gizli');
       if (yolu.endsWith('/')) yolu += 'index.html';
       const dosya = normalize(join(kok, yolu));
       if (dosya !== kok && !dosya.startsWith(kok + sep)) throw new Error('yasak');

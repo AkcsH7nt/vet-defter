@@ -22,7 +22,7 @@ test('sulfonamidTekBasinaEslesmez', () => {
 test('sulfonamidTrimetoprimBirlikteEslesir', () => {
   assert.deepEqual(coz(['sülfadiazin', 'trimetoprim']).ids, ['sulfonamid_trimetoprim']);
 });
-test('tetrasiklinOksitetrasikline Eslesmez'.replace(' ', ''), () => {
+test('tetrasiklinOksitetrasiklineEslesmez', () => {
   // tetrasiklin ayrı etkendir: kendi kimliğine eşlenir, oksitetrasikline asla.
   assert.deepEqual(coz(['tetrasiklin HCl']).ids, ['tetrasiklin']);
   assert.deepEqual(coz(['oksitetrasiklin dihidrat']).ids, ['oksitetrasiklin']);

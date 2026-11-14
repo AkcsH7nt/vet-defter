@@ -1,6 +1,7 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
-// Dosyalardan biri değişince SURUM artırılmalı.
-const SURUM = 'vet-defter-v5';
+// Dosyalardan biri değişince `npm run surum` (içerik özetini yazar, SURUM artar); npm test eski özeti yakalar.
+// icerik: 8bdf670f55d2b9d4
+const SURUM = 'vet-defter-v6';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js',
   'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/listeler.js', 'ui/hakkinda.js',

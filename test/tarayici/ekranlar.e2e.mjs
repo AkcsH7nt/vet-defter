@@ -69,7 +69,7 @@ test('uc belirti secince sonuc ve uyum gorunur, olasilik yok', async () => {
   assert.doesNotMatch(t, /null|undefined/);
   assert.ok(await s.locator('.sonuc').count() >= 1);
   assert.match(t, /Örnek solunum/);
-  assert.doesNotMatch((await s.locator('body').innerText()).toLowerCase(), /olasılık/);
+  assert.doesNotMatch((await s.locator('body').innerText()).toLocaleLowerCase('tr'), /olasılı|ihtimal/);
   assert.match(await s.locator('.sabit-not').innerText(), /Hekim kararının yerine geçmez/);
   assert.deepEqual(s.hatalar, []);
 });
@@ -410,6 +410,17 @@ test('390 px genislikte yatay kaydirma yok, dokunma hedefleri 44 px', async () =
       assert.ok(kutu.height >= 44, `${sec} yükseklik ${kutu.height}`);
     }
   }
+  // K6 C-8: hastalık sayfasındaki ayırıcı tanı bağlantıları, ürün düğmesi ve Geri de 44 px.
+  await s.git('#/hastalik/ornek_ihbar');
+  await s.waitForSelector('.ayirici a');
+  for (const sec of ['.ayirici a', '#geri']) {
+    for (const kutu of await Promise.all((await s.locator(sec).all()).map((l) => l.boundingBox()))) {
+      assert.ok(kutu.height >= 44, `${sec} yükseklik ${kutu.height}`);
+    }
+  }
+  await s.git('#/hastalik/ornek_solunum');
+  await s.waitForSelector('a.dugme.ikincil');
+  assert.ok((await s.locator('a.dugme.ikincil').boundingBox()).height >= 44);
 });
 
 test('listeler: A-Z, arama, bos mesaji', async () => {

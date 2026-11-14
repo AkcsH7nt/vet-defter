@@ -1,0 +1,20 @@
+# Her push ve PR'da veri doğrulaması + birim testleri (yasak madde, AMEG A, tedavisi yasak hastalıkta ilaç,
+# bayraksız ihbari hastalık, eski sw.js sürümü…). Kırmızıysa main yayına alınmamalı (final-review I5).
+name: test
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run dogrula
+      - run: npm test

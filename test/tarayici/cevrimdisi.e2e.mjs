@@ -35,6 +35,7 @@ test('cevrimdisiTaniHastalikVeEtkenAcilir', async () => {
   const sayfa = await baglam.newPage();
   const hatalar = [];
   sayfa.on('pageerror', (e) => hatalar.push(String(e)));
+  sayfa.on('console', (m) => { if (m.type() === 'error') hatalar.push(m.text()); });
   const adres = `http://localhost:${kokSunucu.address().port}/`;
   await sayfa.goto(adres);
   await sayfa.waitForSelector('main h1');
@@ -84,6 +85,30 @@ test('altYoldaTaniAcilirVeServiceWorkerKaydolur', async () => {
   assert.equal(manifest.scope, './');
   await sayfa.goto(`${taban}#/hastalik/sigir_solunum_kompleksi`);
   await sayfa.waitForSelector('main h1:has-text("olunum")');
+
+  // İlk kurulumda (önceden denetleyen SW yokken) controllerchange sayfayı yenilemez (final-review M3).
+  await sayfa.evaluate(() => { window.__isaret = 1; navigator.serviceWorker.dispatchEvent(new Event('controllerchange')); });
+  await sayfa.waitForTimeout(300);
+  assert.equal(await sayfa.evaluate(() => window.__isaret), 1);
+
+  // Alt yolda da çevrimdışı yeniden açılış (final-review M4).
+  await baglam.setOffline(true);
+  await sayfa.goto(taban);
+  await sayfa.waitForSelector('main h1');
+  assert.equal(await sayfa.textContent('main h1'), 'Tanı');
+  await sayfa.goto(`${taban}#/etken/oksitetrasiklin`);
+  await sayfa.waitForSelector('main h1:has-text("ksitetrasiklin")');
+  assert.doesNotMatch(await sayfa.textContent('main'), /Bulunamadı/);
+
+  // SW denetimindeki sayfada yeni sürüm devralınca bir kez yenilenir (eski ve yeni dosyalar karışmasın).
+  assert.ok(await sayfa.evaluate(() => !!navigator.serviceWorker.controller));
+  await sayfa.evaluate(() => { window.__isaret = 2; });
+  await Promise.all([
+    sayfa.waitForEvent('load'),
+    sayfa.evaluate(() => navigator.serviceWorker.dispatchEvent(new Event('controllerchange'))),
+  ]);
+  await sayfa.waitForSelector('main h1');
+  assert.equal(await sayfa.evaluate(() => window.__isaret), undefined);
   assert.deepEqual(hatalar, []);
   await baglam.close();
 });
