@@ -114,6 +114,24 @@ test('bulgularElleSecilenAtesVeHipotermiyiYokSayar', () => {
   assert.deepEqual(bulgular(girdi({ yas: 'inek', isi: 37.0, belirtiler: ['ates'] })), ['hipotermi']);
 });
 
+test('bulgularAniOlumBaglamiAniOlumBulgusuSayilir', () => {
+  // "Ani ölüm" bağlam kutusu ile Genel > "Ani ölüm" belirtisi aynı olgudur: ikisi de ani_olum bulgusu verir.
+  const aniOlum = { dogumSonrasi: false, suru: false, aniOlum: true };
+  assert.deepEqual(bulgular(girdi({ baglam: aniOlum })), ['ani_olum']);
+  assert.deepEqual(bulgular(girdi({ baglam: aniOlum, belirtiler: ['ani_olum', 'diare'] })), ['ani_olum', 'diare']);
+  assert.deepEqual(bulgular(girdi({ belirtiler: ['diare'] })), ['diare']);
+});
+
+test('aniOlumBaglamiSarbonunKapsamasiniArtirir', async () => {
+  const veri = await veriYukle(dizindenOku(KOK));
+  const g = girdi({ yas: 'inek', isi: 41.0, belirtiler: ['halsizlik', 'solunum_guclugu'] });
+  const once = bul(puanla(g, veri, MEVSIM_DISI), 'sarbon');
+  const sonra = bul(puanla({ ...g, baglam: { ...g.baglam, aniOlum: true } }, veri, MEVSIM_DISI), 'sarbon');
+  assert.ok(!once.eslesen.includes('ani_olum'));
+  assert.ok(sonra.eslesen.includes('ani_olum'));
+  assert.ok(sonra.uyum > once.uyum, `${once.uyum} → ${sonra.uyum}`);
+});
+
 test('yetersizMiUcBulgununAltinda', () => {
   assert.equal(yetersizMi(girdi({ belirtiler: ['oksuruk', 'diare'] })), true);
   assert.equal(yetersizMi(girdi({ belirtiler: ['oksuruk'], isi: 40.5 })), true);

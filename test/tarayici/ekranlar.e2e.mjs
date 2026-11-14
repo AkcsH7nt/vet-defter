@@ -129,6 +129,20 @@ test('ayni hastalikta birden cok bayrak tek bant, uyarilar tekrarsiz', async () 
   assert.deepEqual(s.hatalar, []);
 });
 
+test('gercek veri: yalniz Ani olum kutusu sarbon bandini gosterir', async () => {
+  const s = await sayfaAc({ ornek: false });
+  await s.git('#/tani');
+  await s.click('[data-yas="dana"]');
+  await s.check('[data-baglam="aniOlum"]');
+  await s.click('#goster');
+  await s.waitForSelector('main h1:text-is("Sonuçlar")');
+  const bant = await s.locator('.bayraklar').innerText();
+  assert.match(bant, /ŞARBON|ANİ ÖLÜM/);
+  assert.match(bant, /[Nn]ekropsi/);
+  assert.match(await metin(s), /Yetersiz girdi/);
+  assert.deepEqual(s.hatalar, []);
+});
+
 test('belirti secmeden yetersiz girdi', async () => {
   const s = await sayfaAc();
   await s.git('#/tani');

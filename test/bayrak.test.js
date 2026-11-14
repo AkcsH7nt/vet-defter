@@ -71,6 +71,20 @@ test('sarbonAniOlumBaglamiVeDogalDeliklerdenKan', async () => {
   assert.deepEqual(bayraklar({ belirtiler: ['dogal_deliklerden_kan'] }, veri), []);
 });
 
+test('gercekVeriAniOlumKutusuTekBasinaSarbonBayragi', async () => {
+  // K-1 / I1: yalnız bağlam kutusu işaretli, belirti yok → şarbon "nekropsi yapmayın" bandı yine çıkar.
+  const veri = await veriYukle(dizindenOku(KOK));
+  const aniOlum = { dogumSonrasi: false, suru: false, aniOlum: true };
+  const sonuc = bayraklar(girdi({ yas: 'dana', baglam: aniOlum }), veri);
+  assert.ok(sonuc.some((b) => b.hastalikId === 'sarbon'), JSON.stringify(idler(sonuc)));
+  assert.ok(sonuc.some((b) => b.uyarilar.some((u) => /nekropsi/i.test(u))));
+  // İlgisiz belirtilerle birlikte de çıkar.
+  const ilgisiz = bayraklar(girdi({ baglam: aniOlum, belirtiler: ['timpani'] }), veri);
+  assert.ok(ilgisiz.some((b) => b.hastalikId === 'sarbon'));
+  // Kutu işaretsiz ve ani ölüm belirtisi yokken şarbon bayrağı yok.
+  assert.ok(!bayraklar(girdi({ belirtiler: ['timpani'] }), veri).some((b) => b.hastalikId === 'sarbon'));
+});
+
 test('kuduzSinirselBelirtiArtiSalya', async () => {
   const veri = await ornek();
   for (const sinirsel of ['saldirganlik', 'kas_titremesi']) {
