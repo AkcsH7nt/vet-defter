@@ -333,7 +333,7 @@ test('yalniz buzagi urunu listelenir ve etiketlenir; kombine urunde diger etken 
   assert.match(kombine, /Kombine Ürün \(test\)/);
   assert.match(kombine, /Birlikte: Örnek antibiyotik \(test\) \(AMEG B\)/);
   assert.match(kombine, /AMEG B .*Antibiyogramsız ilk seçenek olmaz/);
-  assert.match(kombine, /Antibiyotik içerir/);
+  assert.match(kombine, /Antibiyotik içerir — sağmal inekte seçmeden önce bileşimi ve süt koşulunu KÜB'den doğrulayın/);
   assert.match(t, /KÜB bağlantısı yok — Bakanlık ürün sorgusundan bakın/);
   assert.doesNotMatch(t, /ruhsatlı ürün bulunamadı/);
   assert.deepEqual(s.hatalar, []);

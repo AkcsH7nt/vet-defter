@@ -27,7 +27,7 @@ function kombineBilgisi(u, e, veri) {
     const olan = digerleri.filter((o) => o.ameg === sinif);
     if (olan.length) uyarilar.push(`⚠ AMEG ${sinif} (${olan.map((o) => o.ad).join(', ')}): ${AMEG[sinif]}`);
   }
-  if (e.sinif !== 'antimikrobiyal' && digerleri.some((o) => o.sinif === 'antimikrobiyal')) uyarilar.push('⚠ Antibiyotik içerir');
+  if (e.sinif !== 'antimikrobiyal' && digerleri.some((o) => o.sinif === 'antimikrobiyal')) uyarilar.push('⚠ Antibiyotik içerir — sağmal inekte seçmeden önce bileşimi ve süt koşulunu KÜB\'den doğrulayın');
   return el('p', { class: 'kombine' }, el('strong', {}, 'Birlikte: '), adlar, ...uyarilar.map((x) => [el('br'), x]));
 }
 
