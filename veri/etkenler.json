@@ -1,1 +1,1774 @@
-[]
+[
+  {
+    "id": "penisilin_g_prokain",
+    "ad": "Penisilin G prokain (prokain benzilpenisilin)",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CE09",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Dar: Gram pozitifler (Streptococcus, Trueperella pyogenes, Clostridium, Bacillus anthracis, Listeria, Erysipelothrix), Fusobacterium necrophorum ve bazı anaeroblar. Gram negatiflerin çoğuna etkisiz; Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı. Prokain tuzu kas içinden yavaş emilerek düzeyi uzatır.",
+      "direnc": "Beta-laktamaz (penisilinaz) üretimi, özellikle Staphylococcus aureus'ta yaygın; Gram negatiflerin dış zarı ilacı içeri almaz.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Prokain kısmı: yanlışlıkla damar içine giderse ani sinirsel reaksiyon (huzursuzluk, kasılma, yere yığılma) görülebilir; enjeksiyondan önce aspirasyon yapılır.",
+        "Prokain, PABA kaynağı olarak sülfonamidlerin etkisini azaltabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "penisilin_g_benzatin",
+    "ad": "Penisilin G benzatin (benzatin benzilpenisilin)",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CE08",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Penisilin G ile aynı: Gram pozitifler ve bazı anaeroblar. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı. Benzatin tuzu çok yavaş emilir; uzun süre düşük düzey sağlar, akut ağır enfeksiyonda tek başına yetersiz kalabilir (genellikle prokain penisilinle birlikte bulunur).",
+      "direnc": "Beta-laktamaz üretimi (özellikle Staphylococcus aureus).",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "penetamat",
+    "ad": "Penetamat hidroiyodür",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CE90",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Benzilpenisilinin ön ilacıdır (ester). Zayıf baz ve yağda çözünür olduğundan kandan süte geçip asidik süt ortamında birikir (iyon tuzağı), orada benzilpenisiline dönüşür. Sonuçta etki penisilin G ile aynıdır: Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Penisilin G ile aynı; mastitiste özellikle Streptococcus uberis, S. dysgalactiae, S. agalactiae ve penisiline duyarlı stafilokoklar. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "Beta-laktamaz üreten Staphylococcus aureus suşlarına etkisiz.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "amoksisilin",
+    "ad": "Amoksisilin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CA04",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Aminopenisilin: penisilin G'nin Gram pozitif etkisine ek olarak bazı Gram negatifler (Pasteurella multocida, Mannheimia haemolytica, E. coli ve Salmonella'nın duyarlı suşları). Beta-laktamaz üreten suşlara etkisiz; Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "Beta-laktamazlar (TEM tipi vb.), E. coli ve Salmonella'da yaygın; stafilokoklarda penisilinaz.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "amoksisilin_klavulanat",
+    "ad": "Amoksisilin + klavulanik asit",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CR02",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri); klavulanik asit: bakterinin beta-laktamaz enzimi",
+      "etki": "Klavulanik asit beta-laktamazı geri dönüşümsüz bağlayıp amoksisilini yıkımdan korur. Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Amoksisilin spektrumu + beta-laktamaz üreten stafilokoklar, E. coli ve bazı anaeroblar. AmpC tipi ve ESBL üreten bakterilere güvenilir değil; Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "AmpC sefalosporinazları, inhibitöre dirençli beta-laktamazlar, PBP değişimi (metisiline dirençli stafilokoklar).",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Klavulanik asit nemde hızla bozulur; açılmış ürünün saklama koşulları KÜB'e göre."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "ampisilin",
+    "ad": "Ampisilin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CA01",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Aminopenisilin; amoksisilinle hemen aynı spektrum (Gram pozitifler, duyarlı Pasteurella, Mannheimia, E. coli, Salmonella). Beta-laktamaz üretenlere etkisiz; Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı. Ağızdan emilimi amoksisilinden düşüktür.",
+      "direnc": "Beta-laktamazlar; E. coli ve Salmonella'da yaygın.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "kloksasilin",
+    "ad": "Kloksasilin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ51CF02",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Penisilinaza dayanıklı (izoksazolil) penisilin: penisilinaz üreten Staphylococcus aureus dahil stafilokoklar ve streptokoklar. Gram negatiflere etkisiz. Sığırda çoğunlukla meme içi (özellikle kuruya çıkışta) kullanılır.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "mecA geniyle PBP2a üretimi (metisiline dirençli S. aureus, MRSA): tüm beta-laktamlara çapraz direnç.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "sefaleksin",
+    "ad": "Sefaleksin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01DB01",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "1. kuşak sefalosporin: Gram pozitifler (penisilinaz üreten stafilokoklar dahil), streptokoklar, bazı E. coli ve Klebsiella. Sığırda meme içi ürünlerde (çoğunlukla kanamisinle) kullanılır. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "Sefalosporinazlar (AmpC, ESBL) ve MRSA tipi PBP değişimi.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "sefkinom",
+    "ad": "Sefkinom",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01DE90",
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "4. kuşak sefalosporin: geniş; Gram negatifler (E. coli, Pasteurella, Mannheimia, Histophilus, Fusobacterium) ve Gram pozitifler (stafilokoklar, streptokoklar). Birçok beta-laktamaza dayanıklı. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "ESBL ve AmpC üreten Enterobacteriaceae; bu genler insana geçebilir. İnsan hekimliği için kritik önemde sınıf.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun bir ilaç varsa o tercih edilir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "seftiofur",
+    "ad": "Seftiofur",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01DD90",
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "3. kuşak sefalosporin: Gram negatifler (Mannheimia haemolytica, Pasteurella multocida, Histophilus somni, E. coli, Salmonella), Fusobacterium necrophorum ve bazı anaeroblar; streptokoklar. Stafilokoklara daha zayıf. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı. Vücutta etkin metaboliti desfuroilseftiofura dönüşür.",
+      "direnc": "ESBL ve AmpC (ör. CMY-2) üreten E. coli ve Salmonella; insan hekimliği için kritik önemde sınıf.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: antibiyogramsız ilk seçenek olmaz. Farklı tuz/formülasyonların (sodyum, hidroklorür, kristal serbest asit) arınma süreleri farklıdır; yalnız KÜB'den alınır.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "sefoperazon",
+    "ad": "Sefoperazon",
+    "sinif": "antimikrobiyal",
+    "atcvet": null,
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "3. kuşak sefalosporin: Gram negatifler (E. coli, Klebsiella, Pseudomonas'a kısmi) ve Gram pozitifler. Sığırda meme içi mastitis ürünlerinde. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı.",
+      "direnc": "ESBL ve AmpC üreten bakteriler; insan hekimliği için kritik önemde sınıf.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: antibiyogramsız ilk seçenek olmaz. ATCvet kodu doğrulanmadı (null).",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "oksitetrasiklin",
+    "ad": "Oksitetrasiklin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01AA06",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "Aminoasil-tRNA'nın ribozoma bağlanmasını engeller; protein sentezi durur, bakteri çoğalamaz ve bağışıklık sistemi tarafından temizlenir.",
+      "tur": "bakteriyostatik",
+      "spektrum": "Geniş: Gram pozitif ve negatiflerin çoğu, Mycoplasma, Chlamydia, Rickettsia ve Anaplasma marginale; Treponema (dijital dermatitte topikal). Pseudomonas ve Proteus'a çoğunlukla etkisiz.",
+      "kinetik": "Zamana bağımlı / AUC:MİK oranına bağlı; uzun etkili (LA) formlar düzeyi uzun tutar.",
+      "direnc": "Yaygın: dışa atım pompaları (tet genleri) ve ribozom koruyucu proteinler; plazmit ve transpozonlarla yayılır. BRD etkenleri ve E. coli'de sık.",
+      "etkilesimler": [
+        "Kalsiyum, magnezyum, demir ve alüminyumla şelat yapar: ağızdan verilende süt, mineral ve antasitler emilimi düşürür; kalsiyum içeren çözeltilerle aynı şişede ya da sette verilmez.",
+        "Beta-laktamların bakterisit etkisini azaltabilir.",
+        "Hızlı damar içi uygulamada kollaps bildirilmiştir (kalsiyum bağlanması ve taşıyıcı çözücü); damar içi yalnız ürün izin veriyorsa ve yavaş.",
+        "Dehidrasyonlu hayvanda yüksek düzeyde böbrek hasarı riski artar."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "doksisiklin",
+    "ad": "Doksisiklin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01AA02",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "Aminoasil-tRNA'nın ribozoma bağlanmasını engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik",
+      "spektrum": "Oksitetrasiklinle benzer geniş spektrum (Gram pozitif ve negatifler, Mycoplasma); yağda daha çözünür, dokuya ve akciğere daha iyi geçer. Sığırda çoğunlukla buzağıda ağızdan.",
+      "kinetik": "Zamana bağımlı / AUC:MİK oranına bağlı.",
+      "direnc": "Tetrasiklin sınıfı ortak direnci (tet genleri); oksitetrasikline dirençli suşların bir kısmı duyarlı kalabilir.",
+      "etkilesimler": [
+        "Kalsiyum, magnezyum, demir ve alüminyumla şelat yapar: ağızdan verilende süt, mineral ve antasitler emilimi düşürür; kalsiyum içeren çözeltilerle aynı şişede ya da sette verilmez.",
+        "Beta-laktamların bakterisit etkisini azaltabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "Ruminant olmayan (sütle beslenen) buzağıda ağızdan kullanılır; işlevsel rumeni olan hayvanda ağızdan emilimi güvenilmez.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "florfenikol",
+    "ad": "Florfenikol",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01BA90",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi (peptidil transferaz merkezi)",
+      "etki": "Peptit bağı oluşumunu engeller; protein sentezi durur, bakteri çoğalamaz.",
+      "tur": "bakteriyostatik (bazı solunum etkenlerine karşı yüksek düzeyde bakterisit)",
+      "spektrum": "Geniş: BRD etkenleri (Mannheimia haemolytica, Pasteurella multocida, Histophilus somni), Fusobacterium necrophorum, Trueperella, birçok Gram pozitif ve negatif; Mycoplasma bovis'e değişken. Moraxella bovis.",
+      "kinetik": "Zamana bağımlı (T>MİK) / AUC:MİK.",
+      "direnc": "floR geni (dışa atım pompası), plazmitle yayılır. Kloramfenikolü yıkan asetiltransferaz (CAT) enzimlerine büyük ölçüde dayanıklıdır.",
+      "etkilesimler": [
+        "Makrolid ve linkozamidlerle ribozomda aynı bölgeye bağlanır; birlikte kullanım önerilmez (rekabet/antagonizma).",
+        "Beta-laktamlarla birlikte bakterisit etkiyi azaltabilir.",
+        "Doza bağlı, geri dönüşlü kemik iliği baskılanması ve iştah azalması, geçici ishal görülebilir; kloramfenikoldeki ölümcül aplastik anemi bildirilmemiştir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "Kloramfenikol değildir ve gıda hayvanında yasaklılar listesinde değildir. Süt veren inekte kullanım izni ürüne göre değişir — yalnız KÜB.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tilmikosin",
+    "ad": "Tilmikosin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01FA91",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi (23S rRNA, peptit çıkış tüneli)",
+      "etki": "Büyüyen peptit zincirinin ribozomdan ilerlemesini (translokasyon) engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik (yüksek doku düzeyinde bazı etkenlere bakterisit)",
+      "spektrum": "BRD etkenleri (Mannheimia haemolytica, Pasteurella multocida), Gram pozitifler, Mycoplasma (M. bovis'te direnç yaygın). Enterik Gram negatiflere etkisiz.",
+      "kinetik": "Zamana bağımlı / AUC:MİK; akciğer dokusunda ve akyuvarlarda çok yoğunlaşır, plazma düzeyi düşüktür.",
+      "direnc": "erm genleriyle ribozom metilasyonu (makrolid-linkozamid-streptogramin B çapraz direnci), dışa atım pompaları; Mycoplasma bovis'te 23S rRNA mutasyonlarıyla direnç yaygın.",
+      "etkilesimler": [
+        "Kalbe toksiktir: damar içi uygulama öldürücü olabilir; adrenalin (epinefrin) kalp toksisitesini artırır.",
+        "İnsanda kazara kendine enjeksiyon ölümcül olabilir: hemen hekime başvurulur, enjektör ve iğne dikkatle kullanılır.",
+        "Florfenikol ve linkozamidlerle ribozomda aynı bölgeye bağlanır; birlikte önerilmez."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "Kullanıcı güvenliği uyarısı ve süt veren inekte kullanım kısıtı ürüne göre — yalnız KÜB.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tulatromisin",
+    "ad": "Tulatromisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01FA94",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi (23S rRNA, peptit çıkış tüneli)",
+      "etki": "Büyüyen peptit zincirinin ribozomdan ilerlemesini (translokasyon) engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik (yüksek doku düzeyinde bazı etkenlere bakterisit)",
+      "spektrum": "BRD etkenleri (Mannheimia haemolytica, Pasteurella multocida, Histophilus somni) ve Mycoplasma bovis; Gram pozitifler. Enterik Gram negatiflere (E. coli, Salmonella) etkisiz. Moraxella bovis (enfeksiyöz keratokonjunktivit).",
+      "kinetik": "AUC:MİK'e bağlı; akciğer dokusunda yoğunlaşır, yarı ömrü çok uzundur (tek uygulamalık ürün).",
+      "direnc": "erm genleriyle ribozom metilasyonu (makrolid-linkozamid-streptogramin B çapraz direnci), dışa atım pompaları; Mycoplasma bovis'te 23S rRNA mutasyonlarıyla direnç yaygın.",
+      "etkilesimler": [
+        "Florfenikol ve linkozamidlerle ribozomda aynı bölgeye bağlanır; birlikte önerilmez."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "gamitromisin",
+    "ad": "Gamitromisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01FA95",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi (23S rRNA, peptit çıkış tüneli)",
+      "etki": "Büyüyen peptit zincirinin ribozomdan ilerlemesini (translokasyon) engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik (yüksek doku düzeyinde bazı etkenlere bakterisit)",
+      "spektrum": "BRD etkenleri (Mannheimia haemolytica, Pasteurella multocida, Histophilus somni) ve Mycoplasma bovis; Gram pozitifler. Enterik Gram negatiflere (E. coli, Salmonella) etkisiz.",
+      "kinetik": "AUC:MİK'e bağlı; akciğer dokusunda yoğunlaşır, uzun etkili (tek uygulamalık ürün).",
+      "direnc": "erm genleriyle ribozom metilasyonu (makrolid-linkozamid-streptogramin B çapraz direnci), dışa atım pompaları; Mycoplasma bovis'te 23S rRNA mutasyonlarıyla direnç yaygın.",
+      "etkilesimler": [
+        "Florfenikol ve linkozamidlerle ribozomda aynı bölgeye bağlanır; birlikte önerilmez."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tildipirosin",
+    "ad": "Tildipirosin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01FA96",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi (23S rRNA, peptit çıkış tüneli)",
+      "etki": "Büyüyen peptit zincirinin ribozomdan ilerlemesini (translokasyon) engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik (yüksek doku düzeyinde bazı etkenlere bakterisit)",
+      "spektrum": "BRD etkenleri (Mannheimia haemolytica, Pasteurella multocida, Histophilus somni); Mycoplasma bovis'e etkisi sınırlı. Enterik Gram negatiflere etkisiz.",
+      "kinetik": "AUC:MİK'e bağlı; akciğer dokusunda yoğunlaşır, uzun etkili (tek uygulamalık ürün).",
+      "direnc": "erm genleriyle ribozom metilasyonu (makrolid-linkozamid-streptogramin B çapraz direnci), dışa atım pompaları; Mycoplasma bovis'te 23S rRNA mutasyonlarıyla direnç yaygın.",
+      "etkilesimler": [
+        "Florfenikol ve linkozamidlerle ribozomda aynı bölgeye bağlanır; birlikte önerilmez."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tilozin",
+    "ad": "Tilozin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01FA90",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi (23S rRNA, peptit çıkış tüneli)",
+      "etki": "Büyüyen peptit zincirinin ribozomdan ilerlemesini (translokasyon) engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik (yüksek doku düzeyinde bazı etkenlere bakterisit)",
+      "spektrum": "Gram pozitifler (stafilokoklar, streptokoklar, Trueperella), Mycoplasma, bazı Pasteurella; Fusobacterium. Enterik Gram negatiflere etkisiz.",
+      "kinetik": "Zamana bağımlı / AUC:MİK; dokulara iyi dağılır.",
+      "direnc": "erm genleriyle ribozom metilasyonu (makrolid-linkozamid-streptogramin B çapraz direnci), dışa atım pompaları; Mycoplasma bovis'te 23S rRNA mutasyonlarıyla direnç yaygın.",
+      "etkilesimler": [
+        "Florfenikol ve linkozamidlerle ribozomda aynı bölgeye bağlanır; birlikte önerilmez.",
+        "Kas içi uygulamada enjeksiyon yerinde ağrı ve şişlik yapabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "linkomisin",
+    "ad": "Linkomisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01FF02",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 50S alt birimi",
+      "etki": "Peptit bağı oluşumunu ve zincir uzamasını engeller; protein sentezi durur.",
+      "tur": "bakteriyostatik",
+      "spektrum": "Gram pozitifler (stafilokoklar, streptokoklar), anaeroblar ve Mycoplasma. Gram negatiflerin çoğuna etkisiz. Sığır ürünlerinde çoğunlukla spektinomisinle birlikte.",
+      "kinetik": "Zamana bağımlı.",
+      "direnc": "erm genleriyle makrolid-linkozamid çapraz direnci; inaktive edici enzimler (lnu genleri).",
+      "etkilesimler": [
+        "Ruminantta ağızdan verilmez: rumen florasını bozup ağır ishal ve ölüme yol açabilir.",
+        "Makrolid ve florfenikolle aynı ribozom bölgesine bağlanır; birlikte önerilmez.",
+        "Nöromüsküler blok yapan ilaçların (anestezik, aminoglikozit) etkisini artırabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "Linkomisin + spektinomisin kombine ürünlerde iki etken ayrı kimliklerle listelenir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "spektinomisin",
+    "ad": "Spektinomisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01XX04",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "Ribozomda translokasyonu engeller; protein sentezi durur. Aminoglikozitlere benzer ama yanlış okuma yaptırmaz.",
+      "tur": "bakteriyostatik",
+      "spektrum": "Gram negatifler (E. coli, Salmonella'nın bir kısmı, Pasteurella) ve Mycoplasma; Gram pozitif etkisi zayıf. Linkomisinle birlikte spektrumu tamamlar.",
+      "kinetik": "Konsantrasyona bağımlı etki ileri sürülür; dokuya geçişi sınırlı.",
+      "direnc": "Ribozomal mutasyonlar ve inaktive edici enzimler (aadA).",
+      "etkilesimler": [
+        "Aminoglikozit benzeri böbrek ve nöromüsküler etkiler daha azdır; anestezide dikkat."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "gentamisin",
+    "ad": "Gentamisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01GB03",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "mRNA'nın yanlış okunmasına yol açar; hatalı proteinler hücre zarına yerleşip zarı bozar, bakteri ölür. Bakteri içine giriş oksijene bağımlı taşıma gerektirdiğinden anaeroblara etkisizdir.",
+      "tur": "bakterisit",
+      "spektrum": "Aerobik Gram negatifler (E. coli, Klebsiella, Salmonella, Pseudomonas) ve stafilokoklar; streptokoklara zayıf, anaeroblara ve Mycoplasma'ya güvenilmez.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK); belirgin antibiyotik sonrası etki.",
+      "direnc": "Aminoglikozit değiştirici enzimler (asetil-, fosfo-, adenil-transferazlar), plazmitle yayılır; ribozom metilasyonu.",
+      "etkilesimler": [
+        "Böbrek ve iç kulak toksisitesi: dehidrasyonlu hayvanda, NSAİİ ve diğer böbreğe zararlı ilaçlarla birlikte risk artar.",
+        "Beta-laktamlarla sinerjik; ancak aynı enjektörde karıştırılınca inaktive olur.",
+        "Nöromüsküler blok: anestezik ve kas gevşeticilerle, hipokalsemide solunum felci riski; kalsiyum verilmesi tersine çevirir.",
+        "İrinli, asidik ve oksijensiz ortamda etkinliği düşer."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "Böbrekte çok uzun süre kalıntı bırakır; sığırda kullanımı birçok ülkede kısıtlıdır. Arınma süresi yalnız KÜB'den.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "streptomisin",
+    "ad": "Streptomisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01GA01",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "mRNA'nın yanlış okunmasına yol açar; hatalı proteinler hücre zarına yerleşip zarı bozar, bakteri ölür. Bakteri içine giriş oksijene bağımlı taşıma gerektirdiğinden anaeroblara etkisizdir.",
+      "tur": "bakterisit",
+      "spektrum": "Aerobik Gram negatifler, Leptospira; Mycobacterium'a etkili ama tüberkülozlu sığır tedavi edilmez. Streptokok ve anaeroblara etkisiz.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK); belirgin antibiyotik sonrası etki.",
+      "direnc": "Tek basamaklı ribozom mutasyonuyla hızlı direnç gelişir; sahada direnç çok yaygın. Ayrıca değiştirici enzimler.",
+      "etkilesimler": [
+        "Böbrek ve iç kulak toksisitesi: dehidrasyonlu hayvanda, NSAİİ ve diğer böbreğe zararlı ilaçlarla birlikte risk artar.",
+        "Beta-laktamlarla sinerjik; ancak aynı enjektörde karıştırılınca inaktive olur.",
+        "Nöromüsküler blok: anestezik ve kas gevşeticilerle, hipokalsemide solunum felci riski; kalsiyum verilmesi tersine çevirir.",
+        "İrinli, asidik ve oksijensiz ortamda etkinliği düşer."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "dihidrostreptomisin",
+    "ad": "Dihidrostreptomisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01GA90",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "mRNA'nın yanlış okunmasına yol açar; hatalı proteinler hücre zarına yerleşip zarı bozar, bakteri ölür. Bakteri içine giriş oksijene bağımlı taşıma gerektirdiğinden anaeroblara etkisizdir.",
+      "tur": "bakterisit",
+      "spektrum": "Streptomisinle aynı: aerobik Gram negatifler, Leptospira (taşıyıcılığın giderilmesi). Sığırda çoğunlukla penisilinle kombine üründe.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK); belirgin antibiyotik sonrası etki.",
+      "direnc": "Streptomisinle tam çapraz direnç; tek basamak mutasyonla hızlı direnç, sahada yaygın.",
+      "etkilesimler": [
+        "Böbrek ve iç kulak toksisitesi: dehidrasyonlu hayvanda, NSAİİ ve diğer böbreğe zararlı ilaçlarla birlikte risk artar.",
+        "Beta-laktamlarla sinerjik; ancak aynı enjektörde karıştırılınca inaktive olur.",
+        "Nöromüsküler blok: anestezik ve kas gevşeticilerle, hipokalsemide solunum felci riski; kalsiyum verilmesi tersine çevirir.",
+        "İrinli, asidik ve oksijensiz ortamda etkinliği düşer."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "neomisin",
+    "ad": "Neomisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01GB05",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "mRNA'nın yanlış okunmasına yol açar; hatalı proteinler hücre zarına yerleşip zarı bozar, bakteri ölür. Bakteri içine giriş oksijene bağımlı taşıma gerektirdiğinden anaeroblara etkisizdir.",
+      "tur": "bakterisit",
+      "spektrum": "Aerobik Gram negatifler (E. coli, Salmonella) ve stafilokoklar. Ağızdan neredeyse hiç emilmez, bağırsakta etkilidir; meme içi ve topikal ürünlerde de bulunur.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK); belirgin antibiyotik sonrası etki.",
+      "direnc": "Aminoglikozit değiştirici enzimler (asetil-, fosfo-, adenil-transferazlar), plazmitle yayılır; ribozom metilasyonu.",
+      "etkilesimler": [
+        "Bağırsak mukozası hasarlı (ishalli) buzağıda emilebilir; böbrek ve iç kulak toksisitesi riski.",
+        "Ağızdan uzun kullanım bağırsak florasını bozar ve emilim bozukluğu yapabilir.",
+        "Beta-laktamlarla sinerjik; ancak aynı enjektörde karıştırılınca inaktive olur."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "kanamisin",
+    "ad": "Kanamisin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01GB04",
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "mRNA'nın yanlış okunmasına yol açar; hatalı proteinler hücre zarına yerleşip zarı bozar, bakteri ölür. Bakteri içine giriş oksijene bağımlı taşıma gerektirdiğinden anaeroblara etkisizdir.",
+      "tur": "bakterisit",
+      "spektrum": "Aerobik Gram negatifler ve stafilokoklar. Sığırda çoğunlukla sefaleksinle birlikte meme içi üründe.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK); belirgin antibiyotik sonrası etki.",
+      "direnc": "Aminoglikozit değiştirici enzimler (asetil-, fosfo-, adenil-transferazlar), plazmitle yayılır; ribozom metilasyonu.",
+      "etkilesimler": [
+        "Böbrek ve iç kulak toksisitesi: dehidrasyonlu hayvanda, NSAİİ ve diğer böbreğe zararlı ilaçlarla birlikte risk artar.",
+        "Beta-laktamlarla sinerjik; ancak aynı enjektörde karıştırılınca inaktive olur.",
+        "Nöromüsküler blok: anestezik ve kas gevşeticilerle, hipokalsemide solunum felci riski; kalsiyum verilmesi tersine çevirir.",
+        "İrinli, asidik ve oksijensiz ortamda etkinliği düşer."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "enrofloksasin",
+    "ad": "Enrofloksasin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01MA90",
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Bakteri DNA giraz (topoizomeraz II) ve topoizomeraz IV enzimleri",
+      "etki": "DNA'nın açılıp sarılmasını sağlayan enzimleri DNA üzerinde kilitler; DNA kırıkları birikir, bakteri ölür. Vücutta kısmen siprofloksasine dönüşür.",
+      "tur": "bakterisit",
+      "spektrum": "Gram negatifler (E. coli, Salmonella, Mannheimia, Pasteurella, Histophilus), stafilokoklar ve Mycoplasma; streptokoklara orta, anaeroblara zayıf etkili.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK, AUC/MİK): tek yüksek düzey önemlidir; düşük doz direnç seçer.",
+      "direnc": "gyrA/parC mutasyonları (basamaklı), dışa atım pompaları, plazmit aracılı qnr genleri. İnsan hekimliği için kritik önemde sınıf.",
+      "etkilesimler": [
+        "Kalsiyum, magnezyum, alüminyum ve demirle şelat yapar (ağızdan verilende emilim düşer).",
+        "Hızlı büyüyen yavrularda eklem kıkırdağı hasarı bildirilmiştir (özellikle köpek ve tayda); buzağıda KÜB koşullarına uyulmalı.",
+        "NSAİİ'lerle birlikte sinirsel uyarılma (nöbet eşiği düşmesi) bildirilmiştir; teofilin düzeyini artırabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun ilaç varsa o tercih edilir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "marbofloksasin",
+    "ad": "Marbofloksasin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01MA93",
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Bakteri DNA giraz (topoizomeraz II) ve topoizomeraz IV enzimleri",
+      "etki": "DNA'nın açılıp sarılmasını sağlayan enzimleri DNA üzerinde kilitler; DNA kırıkları birikir, bakteri ölür.",
+      "tur": "bakterisit",
+      "spektrum": "Gram negatifler (E. coli, Salmonella, Mannheimia, Pasteurella, Histophilus), stafilokoklar ve Mycoplasma; streptokoklara orta, anaeroblara zayıf etkili. Sığırda solunum enfeksiyonu ve akut E. coli mastitisinde kullanılır.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK, AUC/MİK): tek yüksek düzey önemlidir; düşük doz direnç seçer.",
+      "direnc": "gyrA/parC mutasyonları (basamaklı), dışa atım pompaları, plazmit aracılı qnr genleri. İnsan hekimliği için kritik önemde sınıf.",
+      "etkilesimler": [
+        "Kalsiyum, magnezyum, alüminyum ve demirle şelat yapar (ağızdan verilende emilim düşer).",
+        "Hızlı büyüyen yavrularda eklem kıkırdağı hasarı bildirilmiştir (özellikle köpek ve tayda); buzağıda KÜB koşullarına uyulmalı.",
+        "NSAİİ'lerle birlikte sinirsel uyarılma (nöbet eşiği düşmesi) bildirilmiştir; teofilin düzeyini artırabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun ilaç varsa o tercih edilir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "danofloksasin",
+    "ad": "Danofloksasin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01MA92",
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Bakteri DNA giraz (topoizomeraz II) ve topoizomeraz IV enzimleri",
+      "etki": "DNA'nın açılıp sarılmasını sağlayan enzimleri DNA üzerinde kilitler; DNA kırıkları birikir, bakteri ölür.",
+      "tur": "bakterisit",
+      "spektrum": "Gram negatifler (E. coli, Salmonella, Mannheimia, Pasteurella, Histophilus), stafilokoklar ve Mycoplasma; streptokoklara orta, anaeroblara zayıf etkili. Akciğer dokusuna iyi geçer.",
+      "kinetik": "Konsantrasyona bağımlı (Cmax/MİK, AUC/MİK): tek yüksek düzey önemlidir; düşük doz direnç seçer.",
+      "direnc": "gyrA/parC mutasyonları (basamaklı), dışa atım pompaları, plazmit aracılı qnr genleri. İnsan hekimliği için kritik önemde sınıf.",
+      "etkilesimler": [
+        "Kalsiyum, magnezyum, alüminyum ve demirle şelat yapar (ağızdan verilende emilim düşer).",
+        "Hızlı büyüyen yavrularda eklem kıkırdağı hasarı bildirilmiştir (özellikle köpek ve tayda); buzağıda KÜB koşullarına uyulmalı.",
+        "NSAİİ'lerle birlikte sinirsel uyarılma (nöbet eşiği düşmesi) bildirilmiştir; teofilin düzeyini artırabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun ilaç varsa o tercih edilir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "kolistin",
+    "ad": "Kolistin (polimiksin E)",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QA07AA10",
+    "ameg": "B",
+    "mekanizma": {
+      "hedef": "Gram negatif bakterinin dış zarındaki lipopolisakkarit (LPS) ve hücre zarı",
+      "etki": "Katyonik deterjan gibi dış ve iç zarı bozar; hücre içeriği sızar, bakteri ölür. Endotoksini de bağlar.",
+      "tur": "bakterisit",
+      "spektrum": "Yalnız Gram negatifler (E. coli, Salmonella, Pseudomonas, Klebsiella); Proteus, Gram pozitifler ve anaeroblara etkisiz. Ağızdan neredeyse hiç emilmez — bağırsak içinde etkili.",
+      "kinetik": "Konsantrasyona bağımlı.",
+      "direnc": "Plazmit aracılı mcr genleri (2015'ten beri tanımlı, hayvan kaynaklı yayılım), LPS yapısında değişiklik. İnsan hekimliğinde son çare ilacı.",
+      "etkilesimler": [
+        "Parenteral kullanımda böbrek ve sinir toksisitesi; aminoglikozitlerle birlikte toksisite toplanır.",
+        "Nöromüsküler blok yapan ilaçların etkisini artırır."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "AMEG B: polimiksinler insanda son çare ilacıdır; antibiyogramsız ilk seçenek olmaz. ATCvet kodu ağızdan kullanım (bağırsak) grubundandır.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "sulfonamid_trimetoprim",
+    "ad": "Sülfonamid + trimetoprim (potansiyelize sülfonamid)",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01EW",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakterinin folik asit yapım yolu: sülfonamid dihidropteroat sentazı, trimetoprim dihidrofolat redüktazı",
+      "etki": "Aynı yolun iki ardışık basamağını keser; DNA yapımı için gereken folat oluşmaz, bakteri çoğalamaz.",
+      "tur": "Her biri tek başına bakteriyostatik; kombinasyon birçok bakteriye bakterisit",
+      "spektrum": "Geniş: Gram pozitif ve negatifler (E. coli, Salmonella, Pasteurella, streptokoklar), bazı protozoonlar (Eimeria, Toxoplasma). Pseudomonas ve Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı.",
+      "direnc": "sul ve dfr genleri, plazmit ve integronlarla yayılır; yaygın.",
+      "etkilesimler": [
+        "İrin ve doku yıkıntısında (bol PABA ve timidin) etkinlik belirgin düşer; apsede ve irinli dokuda zayıf.",
+        "Prokain (PABA kaynağı) sülfonamidin etkisini azaltır.",
+        "Dehidrasyonlu hayvanda böbrekte kristal çökmesi riski; su alımı sağlanmalı.",
+        "Erişkin ruminantta trimetoprim rumende yıkılır; ağızdan kullanım sütle beslenen buzağıda anlamlıdır."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+    ],
+    "notlar": "Sülfonamid türü (sülfadoksin, sülfadiazin, sülfametoksazol vb.) ürüne göre değişir; ATCvet grubu (QJ01EW) verilmiştir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "buparvakuon",
+    "ad": "Buparvakuon",
+    "sinif": "antiparaziter",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Theileria parazitinin mitokondrisi: sitokrom bc1 kompleksi (ubikinon bağlanma yeri)",
+      "etki": "Mitokondriyal elektron taşınmasını keser; parazitin enerji üretimi ve pirimidin yapımı durur. Lenfositteki şizontları ve alyuvardaki piroplazmaları öldürür.",
+      "tur": "theilerisit (hidroksinaftokinon antiprotozoal)",
+      "spektrum": "Theileria annulata ve T. parva; Babesia ve Anaplasma'ya güvenilir etkisi yoktur.",
+      "direnc": "Sitokrom b genindeki mutasyonlar T. annulata'da buparvakuon direnciyle ilişkilendirilmiştir (Kuzey Afrika ve Orta Doğu'dan bildirimler).",
+      "etkilesimler": [
+        "Erken dönemde (lenf yumrusu büyümesi, ateş) verildiğinde başarı yüksektir; ileri anemi ve solunum yetmezliği gelişmişse destek tedavisi (kan nakli) gerekir."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "notlar": "Ön not: etki yeri ve direnç bilgisi literatürden doğrulanacak; kaynak sayfası eklenmeli.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "imidokarb",
+    "ad": "İmidokarb dipropiyonat",
+    "sinif": "antiparaziter",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Babesia ve Anaplasma parazitleri: nükleik asitler ve poliamin metabolizması (kesin mekanizma bilinmiyor)",
+      "etki": "Parazit DNA'sına bağlanıp çoğalmayı bozduğu ve enfekte alyuvara inositol girişini engellediği düşünülür; alyuvardaki parazit ölür.",
+      "tur": "babesiasit (karbanilid türevi antiprotozoal)",
+      "spektrum": "Babesia bigemina, B. bovis, B. divergens; Anaplasma marginale (taşıyıcılığı azaltabilir). Theileria'ya etkisi zayıf.",
+      "etkilesimler": [
+        "Kolinesteraz baskılayıcı etki: salya, ishal, kolik, titreme ve solunum güçlüğü görülebilir; atropin bu belirtileri giderir.",
+        "Organofosfat ve karbamatlı ilaçlarla (kene ve sinek ilaçları dahil) birlikte kullanılmaz — kolinerjik etkiler toplanır.",
+        "Karaciğer ve böbrekte çok uzun süre kalıntı bırakır; arınma süresi uzundur, yalnız KÜB'den.",
+        "Koruyucu etkisi birkaç hafta sürer; bu dönemde doğal bağışıklık (premunisyon) gelişimini engelleyebilir."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "diminazen",
+    "ad": "Diminazen aseturat",
+    "sinif": "antiparaziter",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Parazit DNA'sı (kinetoplast DNA'sının AT bakımından zengin bölgelerinde küçük oluk)",
+      "etki": "DNA'ya bağlanıp eşlenmeyi (replikasyonu) engeller; Babesia ve tripanozomlar ölür.",
+      "tur": "babesiasit / tripanosid (aromatik diamidin)",
+      "spektrum": "Babesia türleri ve Trypanosoma; Theileria ve Anaplasma'ya etkisiz.",
+      "etkilesimler": [
+        "Önerilen dozun üstünde ve tekrarlanan uygulamada sinirsel toksisite (ataksi, nöbet) bildirilmiştir.",
+        "İmidokarb ile birlikte ya da ardışık kullanımın güvenliği belirsiz; hekim değerlendirmeli."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "notlar": "Türkiye'de sığır için ruhsatlı ürünü olup olmadığı KÜB sorgusuyla doğrulanmalı.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "ivermektin",
+    "ad": "İvermektin",
+    "sinif": "antiparaziter",
+    "atcvet": "QP54AA01",
+    "mekanizma": {
+      "hedef": "Omurgasız parazitlerin sinir ve kas hücrelerindeki glutamat kapılı klor kanalları (ayrıca GABA reseptörleri)",
+      "etki": "Klor kanallarını açık tutar; hücre hiperpolarize olur, parazitte gevşek felç ve ölüm. Memelide bu kanallar yoktur ve kan-beyin bariyeri (P-glikoprotein) ilacı beyinden uzak tutar.",
+      "tur": "endektosit (makrosiklik lakton, avermektin)",
+      "spektrum": "Mide-bağırsak ve akciğer nematodları, Hypoderma larvaları, uyuz akarları ve emici bitler; kenelere kısmi etki. Trematod (Fasciola) ve sestodlara etkisiz.",
+      "direnc": "Mide-bağırsak nematodlarında (özellikle Cooperia, Ostertagia) direnç bildirilmiştir; sık ve düşük dozlu kullanım direnci hızlandırır.",
+      "etkilesimler": [
+        "Hypoderma larvaları göç dönemindeyken öldürülürse omurilik kanalında ya da yemek borusunda yangı ve felç görülebilir; uygulama zamanı önemlidir.",
+        "Dışkıyla atılan ilaç gübre böceklerine ve sudaki canlılara toksiktir.",
+        "Benzodiazepin gibi GABA etkili ilaçlarla birlikte sinir sistemi baskılanması artabilir.",
+        "Süt veren inekte ürünlerin çoğu kullanılmaz — yalnız KÜB."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "doramektin",
+    "ad": "Doramektin",
+    "sinif": "antiparaziter",
+    "atcvet": "QP54AA03",
+    "mekanizma": {
+      "hedef": "Omurgasız parazitlerin sinir ve kas hücrelerindeki glutamat kapılı klor kanalları (ayrıca GABA reseptörleri)",
+      "etki": "Klor kanallarını açık tutar; hücre hiperpolarize olur, parazitte gevşek felç ve ölüm. Memelide bu kanallar yoktur ve kan-beyin bariyeri (P-glikoprotein) ilacı beyinden uzak tutar.",
+      "tur": "endektosit (makrosiklik lakton, avermektin)",
+      "spektrum": "Mide-bağırsak ve akciğer nematodları, Hypoderma larvaları, uyuz akarları ve emici bitler; kenelere kısmi etki. Trematod (Fasciola) ve sestodlara etkisiz. Etki süresi ivermektinden uzundur.",
+      "direnc": "Mide-bağırsak nematodlarında (özellikle Cooperia, Ostertagia) direnç bildirilmiştir; sık ve düşük dozlu kullanım direnci hızlandırır.",
+      "etkilesimler": [
+        "Hypoderma larvaları göç dönemindeyken öldürülürse omurilik kanalında ya da yemek borusunda yangı ve felç görülebilir; uygulama zamanı önemlidir.",
+        "Dışkıyla atılan ilaç gübre böceklerine ve sudaki canlılara toksiktir.",
+        "Benzodiazepin gibi GABA etkili ilaçlarla birlikte sinir sistemi baskılanması artabilir.",
+        "Süt veren inekte kullanım kısıtı — yalnız KÜB."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "eprinomektin",
+    "ad": "Eprinomektin",
+    "sinif": "antiparaziter",
+    "atcvet": "QP54AA04",
+    "mekanizma": {
+      "hedef": "Omurgasız parazitlerin sinir ve kas hücrelerindeki glutamat kapılı klor kanalları (ayrıca GABA reseptörleri)",
+      "etki": "Klor kanallarını açık tutar; hücre hiperpolarize olur, parazitte gevşek felç ve ölüm. Memelide bu kanallar yoktur ve kan-beyin bariyeri (P-glikoprotein) ilacı beyinden uzak tutar.",
+      "tur": "endektosit (makrosiklik lakton, avermektin)",
+      "spektrum": "Mide-bağırsak ve akciğer nematodları, Hypoderma larvaları, uyuz akarları ve emici bitler; kenelere kısmi etki. Trematod (Fasciola) ve sestodlara etkisiz.",
+      "direnc": "Mide-bağırsak nematodlarında (özellikle Cooperia, Ostertagia) direnç bildirilmiştir; sık ve düşük dozlu kullanım direnci hızlandırır.",
+      "etkilesimler": [
+        "Hypoderma larvaları göç dönemindeyken öldürülürse omurilik kanalında ya da yemek borusunda yangı ve felç görülebilir; uygulama zamanı önemlidir.",
+        "Dışkıyla atılan ilaç gübre böceklerine ve sudaki canlılara toksiktir.",
+        "Benzodiazepin gibi GABA etkili ilaçlarla birlikte sinir sistemi baskılanması artabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "notlar": "Süte geçişi düşüktür; bazı ürünlerin süt veren inekte kullanım izni vardır — süt arınması yalnız KÜB'den.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "albendazol",
+    "ad": "Albendazol",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AC11",
+    "mekanizma": {
+      "hedef": "Parazit hücrelerindeki β-tubulin",
+      "etki": "Mikrotübül yapımını engeller; parazitin bağırsak hücrelerinde glukoz alımı ve hücre bölünmesi durur, enerji tükenir ve parazit yavaşça ölür.",
+      "tur": "antelmintik (benzimidazol)",
+      "spektrum": "Mide-bağırsak ve akciğer nematodları (bazı larva evreleri dahil), sestodlar (Moniezia) ve yetişkin Fasciola hepatica (genç evrelere zayıf).",
+      "kinetik": "Etkisi parazitle temas süresine bağlıdır; karaciğerde etkin sülfoksit metabolitine dönüşür.",
+      "direnc": "β-tubulin gen mutasyonları; koyun ve keçide yaygın, sığırda artmakta.",
+      "etkilesimler": [
+        "Gebeliğin erken döneminde teratojenik risk (ilk ~45 gün): KÜB uyarısına uyulmalı.",
+        "Ağızdan verilir; özofagus oluğu kapanıp ilaç rumeni atlarsa etkinlik düşebilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "fenbendazol",
+    "ad": "Fenbendazol",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AC13",
+    "mekanizma": {
+      "hedef": "Parazit hücrelerindeki β-tubulin",
+      "etki": "Mikrotübül yapımını engeller; parazitin bağırsak hücrelerinde glukoz alımı ve hücre bölünmesi durur, enerji tükenir ve parazit yavaşça ölür.",
+      "tur": "antelmintik (benzimidazol)",
+      "spektrum": "Mide-bağırsak ve akciğer nematodları (durgun Ostertagia larvaları dahil), Moniezia. Olağan kullanımda Fasciola'ya etkisiz.",
+      "kinetik": "Etkisi parazitle temas süresine bağlıdır; vücutta oksfendazole dönüşür.",
+      "direnc": "β-tubulin gen mutasyonları; koyun ve keçide yaygın, sığırda artmakta.",
+      "etkilesimler": [
+        "Güvenlik aralığı geniştir; gebelikte kullanım KÜB'e göre."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "triklabendazol",
+    "ad": "Triklabendazol",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AC01",
+    "mekanizma": {
+      "hedef": "Fasciola hücrelerindeki tubulin ve tegument (dış örtü) işlevleri",
+      "etki": "Mikrotübül işlevini ve parazitin dış örtüsünü bozar; protein yapımı ve hareket durur, kelebek ölür.",
+      "tur": "fasiolisit (benzimidazol)",
+      "spektrum": "Fasciola hepatica ve F. gigantica'nın erken genç evrelerinden yetişkine kadar tüm evreleri (akut fasiyolozda da etkili). Nematodlara etkisiz.",
+      "direnc": "Fasciola hepatica'da triklabendazol direnci birçok ülkede bildirilmiştir.",
+      "etkilesimler": [
+        "Süt veren inekte kullanım kısıtı — yalnız KÜB."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "oksiklozanid",
+    "ad": "Oksiklozanid",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AG06",
+    "mekanizma": {
+      "hedef": "Trematod mitokondrisi",
+      "etki": "Oksidatif fosforilasyonu ayrıştırır (ATP yapımı durur); kelebek enerji tükenmesiyle ölür.",
+      "tur": "fasiolisit (salisilanilid)",
+      "spektrum": "Yetişkin Fasciola hepatica (genç evrelere zayıf), yetişkin rumen kelebekleri (Paramphistomum); Moniezia'ya kısmi.",
+      "etkilesimler": [
+        "Yüksek dozda geçici ishal ve iştahsızlık görülebilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "toltrazuril",
+    "ad": "Toltrazuril",
+    "sinif": "antiparaziter",
+    "atcvet": "QP51AJ01",
+    "mekanizma": {
+      "hedef": "Eimeria'nın hücre içi tüm gelişme evreleri (şizont ve gamontlar): mitokondri ve çekirdek bölünmesi",
+      "etki": "Solunum zinciri enzimlerini ve parazit çekirdeğinin bölünmesini bozar; parazit gelişemez ve ölür.",
+      "tur": "antikoksidiyal (triazinon; koksidiyosit)",
+      "spektrum": "Eimeria bovis ve E. zuernii; Cryptosporidium'a etkisiz.",
+      "etkilesimler": [
+        "En iyi sonuç belirtiler başlamadan (metafilaksi) verildiğinde alınır; kanlı ishal başladığında bağırsak hasarı oluşmuştur, destek tedavisi gerekir.",
+        "Uzun arınma süresi; süt sığırında kullanım kısıtı — yalnız KÜB."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "diklazuril",
+    "ad": "Diklazuril",
+    "sinif": "antiparaziter",
+    "atcvet": "QP51AJ03",
+    "mekanizma": {
+      "hedef": "Eimeria'nın hücre içi gelişme evreleri (şizogoni ve gametogoni)",
+      "etki": "Parazitin hücre içindeki gelişimini durdurur; ookist atılımı azalır.",
+      "tur": "antikoksidiyal (benzenasetonitril)",
+      "spektrum": "Eimeria bovis ve E. zuernii; Cryptosporidium'a etkisiz.",
+      "etkilesimler": [
+        "Belirtiler başlamadan, risk döneminde verildiğinde etkilidir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "halofuginon",
+    "ad": "Halofuginon laktat",
+    "sinif": "antiparaziter",
+    "atcvet": "QP51AX08",
+    "mekanizma": {
+      "hedef": "Cryptosporidium parvum'un hücre içi evreleri (sporozoit ve merozoit)",
+      "etki": "Parazitin çoğalmasını baskılar (prolil-tRNA sentetaz baskılanması gösterilmiştir); dışkıyla ookist atılımını ve ishalin şiddetini azaltır.",
+      "tur": "kriptosporidiyostatik (öldürmez, baskılar)",
+      "spektrum": "Cryptosporidium parvum; bakteri, virüs ve Eimeria ishallerine etkisiz.",
+      "etkilesimler": [
+        "Güvenlik aralığı dardır: KÜB dozu aşılmaz, zayıf ve 24 saatten uzun süredir ishalli buzağıda kullanılmaz (KÜB uyarısı).",
+        "Aç karna değil, süt içirildikten sonra verilir."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "deltametrin",
+    "ad": "Deltametrin",
+    "sinif": "antiparaziter",
+    "atcvet": "QP53AC11",
+    "mekanizma": {
+      "hedef": "Eklembacaklıların sinir hücre zarındaki voltaj kapılı sodyum kanalları",
+      "etki": "Sodyum kanallarını açık tutar; sinirde tekrarlayan uyarı, felç ve ölüm (hızlı düşürme etkisi).",
+      "tur": "ektoparaziter (sentetik piretroit)",
+      "spektrum": "Keneler, sinekler, bitler; iç parazitlere etkisiz.",
+      "direnc": "Kenelerde ve sineklerde kdr (sodyum kanalı) mutasyonları ve metabolik direnç.",
+      "etkilesimler": [
+        "Balıklar ve arılar için çok toksiktir; su kaynaklarına bulaştırılmamalı.",
+        "Organofosfatlarla birlikte toksisite artabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "sipermetrin",
+    "ad": "Sipermetrin",
+    "sinif": "antiparaziter",
+    "atcvet": "QP53AC08",
+    "mekanizma": {
+      "hedef": "Eklembacaklıların sinir hücre zarındaki voltaj kapılı sodyum kanalları",
+      "etki": "Sodyum kanallarını açık tutar; sinirde tekrarlayan uyarı, felç ve ölüm (hızlı düşürme etkisi).",
+      "tur": "ektoparaziter (sentetik piretroit)",
+      "spektrum": "Keneler, sinekler, bitler; iç parazitlere etkisiz.",
+      "direnc": "Kenelerde ve sineklerde kdr mutasyonları ve metabolik direnç.",
+      "etkilesimler": [
+        "Balıklar ve arılar için çok toksiktir; su kaynaklarına bulaştırılmamalı.",
+        "Organofosfatlarla birlikte toksisite artabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "amitraz",
+    "ad": "Amitraz",
+    "sinif": "antiparaziter",
+    "atcvet": "QP53AD01",
+    "mekanizma": {
+      "hedef": "Eklembacaklıların oktopamin reseptörleri",
+      "etki": "Oktopamin reseptörlerini uyarır; kenelerde aşırı uyarılma, tutunamama, kopma ve ölüm.",
+      "tur": "ektoparaziter (formamidin)",
+      "spektrum": "Keneler, uyuz akarları, bitler.",
+      "direnc": "Rhipicephalus (Boophilus) kenelerinde direnç bildirilmiştir.",
+      "etkilesimler": [
+        "Memelide alfa-2 adrenerjik etki: sedasyon, bradikardi, rumen hareketlerinde azalma; ksilazin gibi alfa-2 agonistlerle birlikte kullanılmaz.",
+        "Atlarda toksiktir (kolik); sığır ürünü ata uygulanmaz."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "fluniksin_meglumin",
+    "ad": "Fluniksin meglumin",
+    "sinif": "nsaii",
+    "atcvet": "QM01AG90",
+    "mekanizma": {
+      "hedef": "Siklooksijenaz enzimleri (COX-1 ve COX-2)",
+      "etki": "Araşidonik asitten prostaglandin ve tromboksan yapımını engeller; ateş, ağrı ve yangı azalır, endotoksemide şok bulguları hafifler.",
+      "tur": "seçici olmayan COX inhibitörü (NSAİİ)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Diğer NSAİİ ve kortikosteroidlerle birlikte abomazum ülseri ve böbrek hasarı riski artar.",
+        "Dehidrasyonlu ve şoktaki hayvanda, aminoglikozitlerle birlikte böbrek hasarı riski artar.",
+        "Ateşi düşürdüğü için tedavi yanıtı ateşe bakarak değerlendirilirken yanıltabilir.",
+        "Kas içi uygulama doku hasarı ve uzun kalıntı yapar; uygulama yolu KÜB'e göre (çoğunlukla damar içi).",
+        "Doğum döneminde prostaglandinleri baskılayarak doğumu geciktirebilir ve son atmayı bozabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "meloksikam",
+    "ad": "Meloksikam",
+    "sinif": "nsaii",
+    "atcvet": "QM01AC06",
+    "mekanizma": {
+      "hedef": "Siklooksijenaz enzimleri, COX-2 tercihli",
+      "etki": "Araşidonik asitten prostaglandin ve tromboksan yapımını engeller; ateş, ağrı ve yangı azalır, endotoksemide şok bulguları hafifler. COX-2'yi görece seçici baskıladığı için mide-bağırsak yan etkisi daha azdır.",
+      "tur": "COX-2 tercihli inhibitör (NSAİİ, oksikam)",
+      "spektrum": null,
+      "kinetik": "Yarı ömrü uzundur; tek uygulama genellikle uzun süre etkili.",
+      "etkilesimler": [
+        "Diğer NSAİİ ve kortikosteroidlerle birlikte abomazum ülseri ve böbrek hasarı riski artar.",
+        "Dehidrasyonlu ve şoktaki hayvanda, aminoglikozitlerle birlikte böbrek hasarı riski artar.",
+        "Ateşi düşürdüğü için tedavi yanıtı ateşe bakarak değerlendirilirken yanıltabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "ketoprofen",
+    "ad": "Ketoprofen",
+    "sinif": "nsaii",
+    "atcvet": "QM01AE03",
+    "mekanizma": {
+      "hedef": "Siklooksijenaz enzimleri (COX-1 ve COX-2)",
+      "etki": "Araşidonik asitten prostaglandin ve tromboksan yapımını engeller; ateş, ağrı ve yangı azalır, endotoksemide şok bulguları hafifler. Lipoksijenaza da etkili olduğu ileri sürülmüştür (tartışmalı).",
+      "tur": "seçici olmayan COX inhibitörü (NSAİİ, propiyonik asit türevi)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Diğer NSAİİ ve kortikosteroidlerle birlikte abomazum ülseri ve böbrek hasarı riski artar.",
+        "Dehidrasyonlu ve şoktaki hayvanda, aminoglikozitlerle birlikte böbrek hasarı riski artar.",
+        "Ateşi düşürdüğü için tedavi yanıtı ateşe bakarak değerlendirilirken yanıltabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "karprofen",
+    "ad": "Karprofen",
+    "sinif": "nsaii",
+    "atcvet": "QM01AE91",
+    "mekanizma": {
+      "hedef": "Siklooksijenaz enzimleri, COX-2 tercihli",
+      "etki": "Araşidonik asitten prostaglandin ve tromboksan yapımını engeller; ateş, ağrı ve yangı azalır, endotoksemide şok bulguları hafifler.",
+      "tur": "COX-2 tercihli inhibitör (NSAİİ, propiyonik asit türevi)",
+      "spektrum": null,
+      "kinetik": "Sığırda yarı ömrü uzundur; tek uygulama uzun süre etkili.",
+      "etkilesimler": [
+        "Diğer NSAİİ ve kortikosteroidlerle birlikte abomazum ülseri ve böbrek hasarı riski artar.",
+        "Dehidrasyonlu ve şoktaki hayvanda, aminoglikozitlerle birlikte böbrek hasarı riski artar.",
+        "Ateşi düşürdüğü için tedavi yanıtı ateşe bakarak değerlendirilirken yanıltabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tolfenamik_asit",
+    "ad": "Tolfenamik asit",
+    "sinif": "nsaii",
+    "atcvet": "QM01AG02",
+    "mekanizma": {
+      "hedef": "Siklooksijenaz enzimleri (COX-1 ve COX-2)",
+      "etki": "Araşidonik asitten prostaglandin ve tromboksan yapımını engeller; ateş, ağrı ve yangı azalır, endotoksemide şok bulguları hafifler.",
+      "tur": "seçici olmayan COX inhibitörü (NSAİİ, fenamat)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Diğer NSAİİ ve kortikosteroidlerle birlikte abomazum ülseri ve böbrek hasarı riski artar.",
+        "Dehidrasyonlu ve şoktaki hayvanda, aminoglikozitlerle birlikte böbrek hasarı riski artar.",
+        "Ateşi düşürdüğü için tedavi yanıtı ateşe bakarak değerlendirilirken yanıltabilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "metamizol",
+    "ad": "Metamizol (dipiron)",
+    "sinif": "nsaii",
+    "atcvet": "QN02BB02",
+    "mekanizma": {
+      "hedef": "Esas olarak merkezi sinir sistemindeki prostaglandin yapımı (COX); etki yeri tam aydınlatılmamıştır",
+      "etki": "Güçlü ağrı kesici ve ateş düşürücü, düz kaslarda spazm çözücü (kolikte); yangı giderici etkisi zayıftır.",
+      "tur": "pirazolon türevi analjezik-antipiretik, spazmolitik",
+      "spektrum": null,
+      "etkilesimler": [
+        "Hızlı damar içi uygulamada tansiyon düşmesi ve şok; yavaş verilir.",
+        "Diğer NSAİİ'lerle birlikte mide-bağırsak ve böbrek yan etkileri toplanır."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "notlar": "Sınıf olarak klasik NSAİİ değildir (yangı giderici etkisi zayıf); şemada en yakın sınıf olarak nsaii işaretlendi.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "kalsiyum_boroglukonat",
+    "ad": "Kalsiyum boroglukonat",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Kandaki iyonize kalsiyum (Ca²⁺) düzeyi",
+      "etki": "Eksik kalsiyumu yerine koyar; sinir-kas kavşağında asetilkolin salınımı, iskelet kası, düz kas (rumen, uterus) ve kalp kası kasılması düzelir. Süt hummasında hayvan çoğunlukla uygulama sırasında ya da sonrasında titrer, geğirir, dışkılar ve kalkar.",
+      "tur": "mineral yerine koyma (kalsiyum tuzu)",
+      "spektrum": null,
+      "kinetik": "Damar içinde etki hemen başlar ve kısa sürer; deri altında emilim yavaştır ve dolaşım bozukluğunda güvenilmez.",
+      "etkilesimler": [
+        "Hızlı damar içi verilirse kalp ritim bozukluğu ve ani ölüm: yavaş verilir, uygulama sırasında kalp dinlenir, ritim bozulursa durdurulur.",
+        "Fosfat ve bikarbonat içeren çözeltilerle karışınca çöker; aynı şişe ya da setten verilmez.",
+        "Oksitetrasiklinle şelat yapar; birlikte karıştırılmaz.",
+        "Kalp glikozitlerinin (digoksin) toksisitesini artırır.",
+        "Endotoksemik (ör. koli mastitisli) inekte kalp toksisitesine duyarlılık artar."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "notlar": "Ürünler çoğunlukla magnezyum, fosfor ve glukoz içeren karışımlardır; içerik ürüne göre değişir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "oral_kalsiyum",
+    "ad": "Ağızdan kalsiyum (kalsiyum klorür / propiyonat / formiat jel, bolus)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Kandaki iyonize kalsiyum (Ca²⁺) düzeyi",
+      "etki": "Bağırsaktan emilerek kan kalsiyumunu birkaç saat içinde yükseltir; doğum sonrası korumada ve damar içi tedaviden sonra yeniden düşmeyi önlemede kullanılır.",
+      "tur": "mineral yerine koyma (ağızdan)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Kalsiyum klorür yakıcıdır: yutma refleksi zayıf ya da yatan hayvanda yanlış boğaza kaçma (aspirasyon) ve ağız-yemek borusu hasarı riski; bilinci bozuk hayvana ağızdan verilmez.",
+        "Fazla kalsiyum klorür metabolik asidoz yapabilir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "magnezyum",
+    "ad": "Magnezyum tuzları (sülfat, klorür, glukonat, hipofosfit)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Hücre dışı sıvıdaki ve beyin-omurilik sıvısındaki magnezyum (Mg²⁺)",
+      "etki": "Eksik magnezyumu yerine koyar; sinir-kas kavşağında aşırı asetilkolin salınımını ve sinir uyarılabilirliğini azaltır, tetaniyi giderir.",
+      "tur": "mineral yerine koyma (magnezyum tuzu)",
+      "spektrum": null,
+      "kinetik": "Beyin-omurilik sıvısı düzeyi yavaş düzelir; deri altı magnezyum sülfat birkaç saat süren destek sağlar.",
+      "etkilesimler": [
+        "Hızlı damar içi magnezyum kalp durması ve solunum baskılanması yapabilir; damar içi yavaş ve çoğunlukla kalsiyumlu karışım olarak verilir.",
+        "Tetanideki hayvanın uyarılması nöbeti tetikler; sakin ortamda uygulanır.",
+        "Magnezyum sülfat ağızdan verildiğinde müshil etkisi yapar."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "propilen_glikol",
+    "ad": "Propilen glikol",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Karaciğerde glukoz yapımı (glukoneogenez)",
+      "etki": "Rumenden emilip karaciğerde glukoz yapımına katılır; kan şekeri ve insülin yükselir, yağ yıkımı ve keton oluşumu azalır.",
+      "tur": "glukojenik öncül (ağızdan)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Fazlası ataksi, salya ve sinirsel baskılanma yapar.",
+        "Damar içine verilmez; ağızdan içirilir (yeme serpilince lezzeti nedeniyle reddedilebilir)."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "dekstroz",
+    "ad": "Glukoz / dekstroz (damar içi çözelti)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Kan glukozu",
+      "etki": "Kan şekerini hemen yükseltir, beyne ve kaslara enerji sağlar; insülin salınımını uyarır, keton yapımını kısa süre baskılar. Etkisi birkaç saat sürer; ağızdan glukojenik tedaviyle desteklenir.",
+      "tur": "enerji kaynağı (şeker çözeltisi)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Hipertonik çözelti damar dışına kaçarsa doku yangısı ve nekroz yapar.",
+        "Kan şekeri böbrek eşiğini aşarsa idrarla kaybolur ve idrar artışı yapar.",
+        "Kortikosteroidlerle birlikte kan şekeri daha uzun yüksek kalır.",
+        "Ağır ishalli buzağıda glukoz potasyumu hücre içine çeker; hipokalemi derinleşebilir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "sodyum_bikarbonat",
+    "ad": "Sodyum bikarbonat",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Kan ve hücre dışı sıvıdaki asit (H⁺) yükü",
+      "etki": "Bikarbonat asidi tamponlar; ishalli buzağıda ve rumen asidozunda metabolik asidozu düzeltir (buzağıda emme refleksi ve ayağa kalkma düzelir).",
+      "tur": "alkalileştirici (tampon)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Kalsiyum içeren çözeltilerle çöker; aynı şişe ya da setten verilmez.",
+        "Hızlı ve fazla verilirse metabolik alkaloz; solunumu yetersiz hayvanda CO₂ birikir, beyin-omurilik sıvısında paradoks asidoz gelişebilir.",
+        "Potasyumu hücre içine sokarak hipokalemiyi derinleştirebilir.",
+        "Bikarbonatlı ağız sıvıları abomazumda süt pıhtılaşmasını bozabilir; sütle karıştırılmaz, ayrı saatlerde verilir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "oral_elektrolit",
+    "ad": "Ağızdan sıvı-elektrolit (oral rehidrasyon) çözeltileri",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "İnce bağırsakta sağlam kalan hücrelerin sodyum-glukoz ortak taşıyıcısı (SGLT1)",
+      "etki": "Sodyum, glukoz (ve glisin gibi aminoasitler) ile birlikte emilir, su onu izler; ishalde kaybedilen su ve tuz yerine konur. Asetat, propiyonat ya da bikarbonat asidozu düzeltir.",
+      "tur": "ağızdan rehidrasyon çözeltisi",
+      "spektrum": null,
+      "etkilesimler": [
+        "Sütün yerine değil, süte ek olarak verilir; buzağının enerjisi sütten gelir.",
+        "Bikarbonat içeren ürünler sütle karıştırılmaz ve araya zaman konur; asetatlı ürünlerde bu sorun daha azdır.",
+        "Yatan, yutamayan ve emme refleksi kaybolmuş buzağıda yetersizdir — damar içi sıvı gerekir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "izotonik_sivi",
+    "ad": "İzotonik kristaloid sıvılar (%0,9 NaCl, Ringer laktat)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Damar içi ve hücre dışı sıvı hacmi",
+      "etki": "Dolaşım hacmini yerine koyar, böbrek kan akımını ve doku beslenmesini düzeltir; Ringer laktattaki laktat karaciğerde bikarbonata dönüşerek hafif alkalileştirir.",
+      "tur": "kristaloid sıvı (damar içi)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Ringer laktat kalsiyum içerir: bikarbonat ve sitratlı kanla aynı setten verilmez.",
+        "Kalp yetmezliği ve hipoproteinemide fazla sıvı ödem yapar.",
+        "Ağır asidozda %0,9 NaCl asidozu düzeltmez, hiperkloremik asidozu derinleştirebilir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "hipertonik_tuzlu_su",
+    "ad": "Hipertonik tuzlu su (%7,2 NaCl)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Hücre içi ve doku arası sıvı (ozmotik çekim)",
+      "etki": "Yüksek tuz yoğunluğu doku sıvısını hızla damar içine çeker; dolaşım hacmi ve kalp debisi kısa sürede artar. Ardından hayvan su içmeli ya da sonda ile su verilmelidir.",
+      "tur": "hipertonik kristaloid (hızlı hacim genişletici)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Ardından yeterli su alınmazsa hücre içi su kaybı derinleşir.",
+        "Hipernatremik ve ağır dehidrasyonlu buzağıda tehlikelidir.",
+        "Hızlı verilirse ritim bozukluğu ve tansiyon düşmesi."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tiamin",
+    "ad": "Tiamin (B1 vitamini)",
+    "sinif": "metabolik",
+    "atcvet": "QA11DA01",
+    "mekanizma": {
+      "hedef": "Beyin enerji metabolizmasındaki enzimler (piruvat dehidrojenaz, transketolaz) için kofaktör",
+      "etki": "Tiamin eksikliğinde bozulan beyin enerji üretimini düzeltir; polioensefalomalazide (rumen asidozu, tiaminaz, aşırı kükürt sonrası) erken verilirse körlük ve sinirsel belirtiler gerileyebilir.",
+      "tur": "vitamin (B1) yerine koyma",
+      "spektrum": null,
+      "etkilesimler": [
+        "Hızlı damar içi verilirse nadiren anafilaktik reaksiyon; kas içi ya da yavaş damar içi verilir.",
+        "Kükürt kaynaklı polioensefalomalazide yanıt sınırlı olabilir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "oksitosin",
+    "ad": "Oksitosin",
+    "sinif": "diger",
+    "atcvet": "QH01BB02",
+    "mekanizma": {
+      "hedef": "Uterus kasındaki ve meme alveollerini saran miyoepitel hücrelerindeki oksitosin reseptörleri",
+      "etki": "Uterus kasılmasını ve süt indirmeyi uyarır; doğum sonrası uterusun boşalmasına ve toplanmasına yardım eder.",
+      "tur": "uterotonik ve süt indirici hormon (nöropeptit)",
+      "spektrum": null,
+      "kinetik": "Yarı ömrü birkaç dakikadır; etki kısa sürer.",
+      "etkilesimler": [
+        "Uterusun oksitosine duyarlılığı doğumdan sonraki ilk 24–48 saatte yüksektir, sonra hızla azalır; sonraki günlerde son atma üzerine etkisi zayıftır.",
+        "Hipokalsemide uterus kasılması yetersiz kalır; önce kalsiyum düzeltilir.",
+        "Serviks açılmamışsa ya da yavru yanlış duruştaysa (distosi düzeltilmeden) uterus yırtılması riski.",
+        "Stres (adrenalin) oksitosinin süt indirici etkisini baskılar."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "kloprostenol",
+    "ad": "Kloprostenol",
+    "sinif": "diger",
+    "atcvet": "QG02AD90",
+    "mekanizma": {
+      "hedef": "Sarı cisimdeki (corpus luteum) PGF2α reseptörleri ve uterus düz kası",
+      "etki": "Sarı cismi geriletir (luteoliz), progesteron düşer; hayvan birkaç gün içinde kızgınlığa gelir, gebe ise yavru atar. Uterus kasılmasını ve serviks açılmasını artırır; piyometra ve kronik endometritte uterus içeriği boşalır.",
+      "tur": "luteolitik (sentetik PGF2α analoğu)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Gebe hayvanda abort yapar — gebelik dışlanmadan verilmez.",
+        "Gebe kadınlar, astımlı ve solunum hastalığı olan kişiler ürüne dokunmamalı; deriden emilir (eldiven kullanılır).",
+        "Sarı cisim döngünün erken döneminde (yaklaşık ilk 5 gün) yanıt vermez."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "dinoprost",
+    "ad": "Dinoprost (PGF2α trometamin)",
+    "sinif": "diger",
+    "atcvet": "QG02AD01",
+    "mekanizma": {
+      "hedef": "Sarı cisimdeki (corpus luteum) PGF2α reseptörleri ve uterus düz kası",
+      "etki": "Sarı cismi geriletir (luteoliz), progesteron düşer; hayvan birkaç gün içinde kızgınlığa gelir, gebe ise yavru atar. Uterus kasılmasını ve serviks açılmasını artırır; piyometra ve kronik endometritte uterus içeriği boşalır.",
+      "tur": "luteolitik (doğal PGF2α)",
+      "spektrum": null,
+      "kinetik": "Yarı ömrü çok kısadır (dakikalar); sentetik analoglardan daha kısa etkili.",
+      "etkilesimler": [
+        "Gebe hayvanda abort yapar — gebelik dışlanmadan verilmez.",
+        "Gebe kadınlar, astımlı ve solunum hastalığı olan kişiler ürüne dokunmamalı; deriden emilir (eldiven kullanılır).",
+        "Sarı cisim döngünün erken döneminde (yaklaşık ilk 5 gün) yanıt vermez."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "deksametazon",
+    "ad": "Deksametazon",
+    "sinif": "diger",
+    "atcvet": "QH02AB02",
+    "mekanizma": {
+      "hedef": "Hücre içi glukokortikoid reseptörleri",
+      "etki": "Gen ifadesini değiştirir: yangı aracılarının (prostaglandin, lökotrien, sitokin) yapımını baskılar, glukoz yapımını artırır (kan şekeri yükselir) ve bağışıklığı baskılar. Gebeliğin son döneminde doğumu başlatabilir.",
+      "tur": "glukokortikoid (uzun etkili)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Gebeliğin son döneminde abort ya da erken doğum ve son atamama yapabilir.",
+        "Bağışıklığı baskılar: bakteriyel enfeksiyonda tek başına kullanılmaz; gizli IBR (BHV-1) virüsünü yeniden etkinleştirebilir.",
+        "NSAİİ ile birlikte abomazum ülseri riski artar.",
+        "Uzun kullanımda böbreküstü bezi baskılanır; birden kesilmez."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "atropin",
+    "ad": "Atropin sülfat",
+    "sinif": "diger",
+    "atcvet": "QA03BA01",
+    "mekanizma": {
+      "hedef": "Muskarinik asetilkolin reseptörleri",
+      "etki": "Asetilkolinin muskarinik etkilerini (salya, gözyaşı, bronş salgısı ve daralması, ishal, bradikardi, miyozis) geri çevirir. Kas titremesi ve felç (nikotinik etkiler) üzerine etkisizdir.",
+      "tur": "antikolinerjik (muskarinik antagonist); organofosfat/karbamat zehirlenmesinde panzehir",
+      "spektrum": null,
+      "etkilesimler": [
+        "Rumen ve bağırsak hareketlerini durdurur: timpani ve kabızlık gelişebilir.",
+        "Fazlası taşikardi, midriyazis, huzursuzluk ve ateş yapar; etkiye göre (salya ve solunum salgısı kesilene kadar) tekrarlanır.",
+        "Kolinesterazı yeniden etkinleştirmez; dekontaminasyon (yıkama, aktif kömür) ayrıca gerekir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "metilen_mavisi",
+    "ad": "Metilen mavisi",
+    "sinif": "diger",
+    "atcvet": "QV03AB17",
+    "mekanizma": {
+      "hedef": "Alyuvardaki methemoglobin",
+      "etki": "Alyuvarda NADPH-methemoglobin redüktaz ile lökometilen mavisine indirgenir; bu da methemoglobini (Fe³⁺) yeniden oksijen taşıyabilen hemoglobine (Fe²⁺) çevirir. Nitrat/nitrit zehirlenmesinde kanın çikolata rengi kaybolur, soluma düzelir.",
+      "tur": "panzehir (methemoglobin indirgeyici)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Yüksek dozda kendisi oksitleyici etki gösterir: methemoglobinemi ve Heinz cisimcikli hemolitik anemi yapabilir.",
+        "Damar dışına kaçarsa doku hasarı yapar."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "notlar": "Gıda hayvanında yasal durumu (kalıntı limiti, Türkiye ruhsatı, arınma) doğrulanmalı: AB'de gıda hayvanları için izinli maddeler tablosunda yer almadığı bilinmektedir. Hekim ve mevzuat kontrolü olmadan protokole konmamalı.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "dimetikon",
+    "ad": "Dimetikon / simetikon",
+    "sinif": "diger",
+    "atcvet": "QA03AX13",
+    "mekanizma": {
+      "hedef": "Rumendeki kararlı köpük (köpüklü timpani)",
+      "etki": "Yüzey gerilimini düşürür; köpükteki küçük gaz kabarcıkları birleşir, serbest kalan gaz geğirmeyle ya da sonda ile çıkar.",
+      "tur": "köpük kırıcı (silikon; emilmez)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Serbest gazlı (köpüksüz) timpanide etkisizdir; gaz sonda ile boşaltılır.",
+        "Emilmediği için sistemik etkisi yoktur."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "parafin_yagi",
+    "ad": "Parafin yağı (sıvı vazelin)",
+    "sinif": "diger",
+    "atcvet": "QA06AA01",
+    "mekanizma": {
+      "hedef": "Sindirim kanalı içeriği",
+      "etki": "Emilmez; bağırsak içeriğini kayganlaştırır ve yumuşatır, köpüklü timpanide köpüğü kısmen kırar, yağda çözünen bazı zehirlerin emilimini azaltabilir.",
+      "tur": "kayganlaştırıcı laksatif",
+      "spektrum": null,
+      "etkilesimler": [
+        "Sonda ile verilmeli; zorla içirmede soluk borusuna kaçarsa ağır yağ pnömonisi yapar.",
+        "Yağda çözünen vitaminlerin emilimini azaltır."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "aktif_komur",
+    "ad": "Aktif kömür",
+    "sinif": "diger",
+    "atcvet": "QA07BA01",
+    "mekanizma": {
+      "hedef": "Sindirim kanalındaki zehirler (yüzeye bağlama, adsorpsiyon)",
+      "etki": "Geniş yüzeyiyle birçok organik zehri bağlar, emilimini önler ve karaciğer-bağırsak döngüsünü keser. Erken verildiğinde etkilidir.",
+      "tur": "adsorban (emilmez)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Ağızdan verilen diğer ilaçları da bağlar; aynı anda verilmez.",
+        "Nitrat, üre, ağır metaller (kurşun) ve tuzlar gibi küçük iyonik maddeleri iyi bağlamaz.",
+        "Kabızlık yapabilir; çoğunlukla tuzlu bir müshille birlikte kullanılır."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "povidon_iyot",
+    "ad": "Povidon iyot",
+    "sinif": "diger",
+    "atcvet": "QD08AG02",
+    "mekanizma": {
+      "hedef": "Bakteri, mantar ve virüslerin proteinleri ve zar yapıları",
+      "etki": "Serbest kalan iyot hücre proteinlerini ve enzimleri oksitler; mikroorganizmalar hızla ölür. Yara, göbek, meme başı daldırma ve deri antisepsisinde kullanılır.",
+      "tur": "antiseptik (geniş etkili)",
+      "spektrum": "Bakteriler, mantarlar, virüsler; bazı sporlara yavaş etkili.",
+      "etkilesimler": [
+        "İrin, kan ve organik madde etkinliği azaltır; önce temizlik yapılır.",
+        "Uterus içine yoğun iyot endometriumu tahriş eder; uterus içi kullanımı tartışmalıdır.",
+        "Geniş alanda uzun süre kullanımda iyot emilimi ve sütte iyot artışı olabilir."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "bakir_sulfat",
+    "ad": "Bakır sülfat (ayak banyosu)",
+    "sinif": "diger",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Ayak derisindeki bakterilerin (dijital dermatit, tırnak arası nekrozu etkenleri) protein ve enzimleri",
+      "etki": "Bakır iyonları protein ve enzimleri çöktürür; ayak banyosunda bakteri yükünü azaltır ve deriyi sertleştirir (büzücü).",
+      "tur": "antiseptik / büzücü",
+      "spektrum": null,
+      "etkilesimler": [
+        "Gübre ve organik madde etkinliği hızla düşürür; banyo sık yenilenir.",
+        "Toprağa ve suya karışınca bakır birikimi yapar, çevre için zehirlidir; atık yönetilmeli.",
+        "Hayvanların banyo suyunu içmesi önlenmeli (bakır zehirlenmesi)."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "enilkonazol",
+    "ad": "Enilkonazol",
+    "sinif": "diger",
+    "atcvet": "QD01AC90",
+    "mekanizma": {
+      "hedef": "Mantar hücre zarındaki ergosterol yapımı (lanosterol 14α-demetilaz)",
+      "etki": "Ergosterol yapımını keser; mantar hücre zarı bozulur. Trichophyton verrucosum lezyonlarında yıkama/sürme olarak kullanılır.",
+      "tur": "antifungal (imidazol; fungistatik, yüksek yoğunlukta fungisit)",
+      "spektrum": "Dermatofitler (Trichophyton, Microsporum); bakterilere etkisiz.",
+      "etkilesimler": [
+        "Lezyondaki kabuklar fırçayla temizlenmeden etkinlik düşer.",
+        "Dermatofitoz insana bulaşır (zoonoz): uygulayıcı eldiven kullanmalı."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "notlar": "Şemada antifungal sınıfı yok; \"diger\" olarak işaretlendi. AMEG yalnız antibakteriyelleri sınıflar.",
+    "onay": {
+      "durum": "taslak"
+    }
+  }
+]
