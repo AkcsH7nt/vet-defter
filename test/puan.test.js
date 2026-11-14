@@ -365,6 +365,35 @@ test('listedeOlmayanBelirtiHicbirHastaligiYukseltmez', async () => {
   }
 });
 
+test('yoklukTerimiCokSikBelirtideBonusOlmaz', async () => {
+  const veri = await ornek();
+  // ornek_solunum: oksuruk kardinal + yoklugu_dusurur. gs 0,95 → ln(0,1/0,05) > 0 olurdu.
+  veri.belirtiler.find((b) => b.id === 'oksuruk').genelSiklik = 0.95;
+  veri.hastaliklar = [kopya(veri.hastaliklar.find((h) => h.id === 'ornek_solunum'))];
+  const g = girdi({ belirtiler: ['burun_akintisi', 'solunum_guclugu'] });
+  const yok = puanla(g, veri, MEVSIM_DISI)[0];
+  const var_ = puanla({ ...g, belirtiler: [...g.belirtiler, 'oksuruk'] }, veri, MEVSIM_DISI)[0];
+  assert.ok(var_.skor >= yok.skor - 1e-12, `beklenen belirti eklenince skor düştü: ${yok.skor} → ${var_.skor}`);
+  // Yokluk terimi en fazla 0: yokluğu düşüren işareti kaldırmak skoru düşürmez.
+  const isaretsiz = kopya(veri);
+  isaretsiz.hastaliklar[0].belirtiler.find((b) => b.id === 'oksuruk').yoklugu_dusurur = false;
+  assert.ok(yok.skor <= puanla(g, isaretsiz, MEVSIM_DISI)[0].skor + 1e-12);
+});
+
+test('isiBilinmezkenAtesVeHipotermiEksikSayilmaz', async () => {
+  const veri = await ornek();
+  const solunum = (isi) => bul(puanla(girdi({ isi, belirtiler: ['oksuruk'] }), veri, MEVSIM_DISI), 'ornek_solunum');
+  assert.ok(!solunum(null).eksik.includes('ates'));
+  assert.ok(solunum(38.6).eksik.includes('ates')); // ölçüldü, ateş yok → eksik
+  const baglam = { dogumSonrasi: true, suru: false, aniOlum: false };
+  const metabolik = (isi) => bul(puanla(girdi({ yas: 'inek', baglam, isi, belirtiler: ['yatma'] }), veri, MEVSIM_DISI),
+    'ornek_metabolik');
+  assert.ok(!metabolik(null).eksik.includes('hipotermi'));
+  assert.ok(metabolik(38.6).eksik.includes('hipotermi'));
+  // uyum paydası değişmez: ısı bilinmese de beklenen ağırlıklar sayılır.
+  assert.equal(solunum(null).uyum, solunum(38.6).uyum);
+});
+
 test('esitSkordaAdaGoreKararli', async () => {
   const veri = await ornek();
   const sablon = kopya(veri.hastaliklar.find((h) => h.id === 'ornek_ishal'));
@@ -466,8 +495,16 @@ test('degismez1IsiylaGelenBeklenenBulguIcinDe', async () => {
 
 test('degismez1ZorBelirtiSiklikleriyle', async () => {
   // Beklenen belirtinin genelSiklik'i duyarlılığından büyük olsa da (ln < 0) eklemek düşürmez.
+  // Belirtiler yokluğu düşüren de yapılır: gs > 0,9'da yokluk terimi bonusa dönmemeli.
   const veri = await ornek();
   for (const b of veri.belirtiler) if (b.id === 'istahsizlik' || b.id === 'dehidrasyon') b.genelSiklik = 0.95;
+  let yokluk = 0;
+  for (const h of veri.hastaliklar) {
+    for (const b of h.belirtiler) {
+      if (b.id === 'istahsizlik' || b.id === 'dehidrasyon') { b.yoklugu_dusurur = true; yokluk++; }
+    }
+  }
+  assert.ok(yokluk >= 3, 'yokluk yolu kurulamadı');
   for (const g of rastgeleGirdiler(veri, 100, 11)) {
     const once = puanla(g, veri, MEVSIM_DISI);
     for (const s of once) {
