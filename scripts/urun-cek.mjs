@@ -28,59 +28,68 @@ const TUZ_KELIMELERI = new Set([
 ]);
 
 // Açık takma ad tablosu (normalize edilmiş anahtar → etken kimliği). Tahmin yok: yalnız açık durumlar.
-const TAKMA = {
-  'prokain benzilpenisilin': 'penisilin_g_prokain', 'penisilin g prokain': 'penisilin_g_prokain',
-  'benzilpenisilin prokain': 'penisilin_g_prokain', 'procaine benzylpenicillin': 'penisilin_g_prokain',
-  'prokain penisilin g': 'penisilin_g_prokain', 'benzil penisilin prokain': 'penisilin_g_prokain',
-  'benzatin benzilpenisilin': 'penisilin_g_benzatin', 'penisilin g benzatin': 'penisilin_g_benzatin',
-  'benzilpenisilin benzatin': 'penisilin_g_benzatin', 'benzatin penisilin g': 'penisilin_g_benzatin',
-  'benzil penisilin benzatin': 'penisilin_g_benzatin',
-  'penetamat hidroiyodur': 'penetamat', 'penetamat hidroiyodid': 'penetamat',
-  'klavulanik asit': 'amoksisilin_klavulanat', 'klavulanat': 'amoksisilin_klavulanat',
-  'amoksisilin trihidrat': 'amoksisilin', 'amoksisilin sodyum': 'amoksisilin',
-  'ampisilin trihidrat': 'ampisilin', 'ampisilin sodyum': 'ampisilin',
-  'kloksasilin benzatin': 'kloksasilin', 'kloksasilin sodyum': 'kloksasilin', 'kloksasilin benzatin': 'kloksasilin',
-  'sefaleksin monohidrat': 'sefaleksin', 'sefkinom sulfat': 'sefkinom',
-  'seftiofur hcl': 'seftiofur', 'seftiofur hidroklorur': 'seftiofur', 'seftiofur sodyum': 'seftiofur',
-  'sefoperazon sodyum': 'sefoperazon',
-  'oksitetrasiklin dihidrat': 'oksitetrasiklin', 'oksitetrasiklin hcl': 'oksitetrasiklin', 'oksitetrasiklin hidroklorur': 'oksitetrasiklin',
-  'doksisiklin hiklat': 'doksisiklin', 'doksisiklin hidroklorur': 'doksisiklin', 'doksisiklin hcl': 'doksisiklin',
-  'tilmikosin fosfat': 'tilmikosin', 'tilozin tartarat': 'tilozin', 'tilozin fosfat': 'tilozin', 'tilosin': 'tilozin', 'tilosin tartarat': 'tilozin',
-  'sefkuinom': 'sefkinom', 'penethamat hidriodid': 'penetamat', 'penetamat hidriodid': 'penetamat', 'd kloprostenol': 'kloprostenol', 'd kloprostenol sodyum': 'kloprostenol', 'magnezyum klorit': 'magnezyum', 'magnezyum klorur 6h20': 'magnezyum', 'seftiofur kristalin serbest asit': 'seftiofur', 'sefaleksin benzatin': 'sefaleksin', 'sefkuinom sulfat': 'sefkinom',
-  'linkomisin hidroklorur': 'linkomisin', 'linkomisin hcl': 'linkomisin',
-  'spektinomisin sulfat': 'spektinomisin', 'spektinomisin hidroklorur': 'spektinomisin', 'spektinomisin hcl': 'spektinomisin',
-  'gentamisin sulfat': 'gentamisin', 'streptomisin sulfat': 'streptomisin', 'dihidrostreptomisin sulfat': 'dihidrostreptomisin',
-  'neomisin sulfat': 'neomisin', 'kanamisin sulfat': 'kanamisin', 'kanamisin monosulfat': 'kanamisin',
-  'enrofloksasin hidroklorur': 'enrofloksasin', 'danofloksasin mesilat': 'danofloksasin',
-  'kolistin sulfat': 'kolistin', 'polimiksin e': 'kolistin', 'kolistin sulfat': 'kolistin',
-  'sulfadiazin': 'sulfonamid_trimetoprim', 'trimetoprim': 'sulfonamid_trimetoprim',
-  'sulfadoksin': 'sulfonamid_trimetoprim', 'sulfametoksazol': 'sulfonamid_trimetoprim',
-  'sulfadimidin': 'sulfonamid_trimetoprim', 'sulfametazin': 'sulfonamid_trimetoprim',
-  'imidokarb dipropiyonat': 'imidokarb', 'diminazen aseturat': 'diminazen', 'diminazen diaseturat': 'diminazen',
-  'halofuginon laktat': 'halofuginon', 'halofuginon hidrobromur': 'halofuginon',
-  'fluniksin meglumin': 'fluniksin_meglumin', 'fluniksin': 'fluniksin_meglumin',
-  'tolfenamik asit': 'tolfenamik_asit', 'dipiron': 'metamizol', 'metamizol sodyum': 'metamizol', 'dipiron sodyum': 'metamizol',
-  'kalsiyum boroglukonat': 'kalsiyum_boroglukonat', 'kalsiyum borogluconat': 'kalsiyum_boroglukonat',
-  'kalsiyum glukonat boroglukonat': 'kalsiyum_boroglukonat',
-  'kalsiyum klorur': 'oral_kalsiyum', 'kalsiyum propiyonat': 'oral_kalsiyum', 'kalsiyum formiat': 'oral_kalsiyum',
-  'magnezyum sulfat': 'magnezyum', 'magnezyum klorur': 'magnezyum', 'magnezyum glukonat': 'magnezyum',
-  'magnezyum hipofosfit': 'magnezyum', 'magnezyum boroglukonat': 'magnezyum',
-  'glukoz': 'dekstroz', 'dekstroz monohidrat': 'dekstroz', 'glukoz monohidrat': 'dekstroz', 'susuz glukoz': 'dekstroz',
-  'sodyum bikarbonat': 'sodyum_bikarbonat', 'sodyum hidrojen karbonat': 'sodyum_bikarbonat',
-  'tiamin hidroklorur': 'tiamin', 'tiamin hcl': 'tiamin', 'vitamin b1': 'tiamin', 'b1 vitamini': 'tiamin',
-  'dinoprost trometamin': 'dinoprost', 'dinoprost trometamol': 'dinoprost', 'dinoprost tromethamine': 'dinoprost',
-  'kloprostenol sodyum': 'kloprostenol', 'deksametazon sodyum fosfat': 'deksametazon', 'deksametazon fosfat': 'deksametazon',
-  'deksametazon sodyum': 'deksametazon', 'atropin sulfat': 'atropin', 'simetikon': 'dimetikon',
-  'povidon iyot': 'povidon_iyot', 'povidon iyodur': 'povidon_iyot', 'povidone iodine': 'povidon_iyot', 'polividon iyot': 'povidon_iyot',
-  'bakir sulfat': 'bakir_sulfat', 'bakir ii sulfat': 'bakir_sulfat', 'bakir sulfat pentahidrat': 'bakir_sulfat',
-  'sipermetrin': 'sipermetrin', 'alfa sipermetrin': 'sipermetrin', 'beta sipermetrin': 'sipermetrin', 'zeta sipermetrin': 'sipermetrin',
-  'parafin sivi': 'parafin_yagi', 'sivi parafin': 'parafin_yagi', 'sivi vazelin': 'parafin_yagi', 'parafin': 'parafin_yagi',
-  'aktif komur': 'aktif_komur', 'karbo medicinalis': 'aktif_komur', 'metilen mavisi': 'metilen_mavisi', 'metiltionin klorur': 'metilen_mavisi',
-  'propilen glikol': 'propilen_glikol', 'enilkonazol sulfat': 'enilkonazol', 'enilkonazol': 'enilkonazol',
-  'ivermektin': 'ivermektin', 'doramektin': 'doramektin', 'eprinomektin': 'eprinomektin',
+const TAKMA_ID = {
+  penisilin_g_prokain: ['prokain benzilpenisilin', 'penisilin g prokain', 'benzilpenisilin prokain', 'procaine benzylpenicillin',
+    'prokain penisilin g', 'benzil penisilin prokain'],
+  penisilin_g_benzatin: ['benzatin benzilpenisilin', 'penisilin g benzatin', 'benzilpenisilin benzatin', 'benzatin penisilin g',
+    'benzil penisilin benzatin'],
+  penetamat: ['penetamat hidroiyodur', 'penetamat hidroiyodid', 'penethamat hidriodid', 'penetamat hidriodid'],
+  amoksisilin_klavulanat: ['klavulanik asit', 'klavulanat'],
+  amoksisilin: ['amoksisilin trihidrat', 'amoksisilin sodyum'],
+  ampisilin: ['ampisilin trihidrat', 'ampisilin sodyum'],
+  kloksasilin: ['kloksasilin benzatin', 'kloksasilin sodyum'],
+  sefaleksin: ['sefaleksin monohidrat', 'sefaleksin benzatin'],
+  sefkinom: ['sefkinom sulfat', 'sefkuinom', 'sefkuinom sulfat'],
+  seftiofur: ['seftiofur hcl', 'seftiofur hidroklorur', 'seftiofur sodyum', 'seftiofur kristalin serbest asit'],
+  sefoperazon: ['sefoperazon sodyum'],
+  oksitetrasiklin: ['oksitetrasiklin dihidrat', 'oksitetrasiklin hcl', 'oksitetrasiklin hidroklorur'],
+  doksisiklin: ['doksisiklin hiklat', 'doksisiklin hidroklorur', 'doksisiklin hcl'],
+  tilmikosin: ['tilmikosin fosfat'],
+  tilozin: ['tilozin tartarat', 'tilozin fosfat', 'tilosin', 'tilosin tartarat'],
+  linkomisin: ['linkomisin hidroklorur', 'linkomisin hcl'],
+  spektinomisin: ['spektinomisin sulfat', 'spektinomisin hidroklorur', 'spektinomisin hcl'],
+  gentamisin: ['gentamisin sulfat'],
+  streptomisin: ['streptomisin sulfat'],
+  dihidrostreptomisin: ['dihidrostreptomisin sulfat'],
+  neomisin: ['neomisin sulfat'],
+  kanamisin: ['kanamisin sulfat', 'kanamisin monosulfat'],
+  enrofloksasin: ['enrofloksasin hidroklorur'],
+  danofloksasin: ['danofloksasin mesilat'],
+  kolistin: ['kolistin sulfat', 'polimiksin e'],
+  imidokarb: ['imidokarb dipropiyonat'],
+  diminazen: ['diminazen aseturat', 'diminazen diaseturat'],
+  halofuginon: ['halofuginon laktat', 'halofuginon hidrobromur'],
+  fluniksin_meglumin: ['fluniksin meglumin', 'fluniksin'],
+  tolfenamik_asit: ['tolfenamik asit'],
+  metamizol: ['dipiron', 'metamizol sodyum', 'dipiron sodyum'],
+  kalsiyum_boroglukonat: ['kalsiyum boroglukonat', 'kalsiyum borogluconat', 'kalsiyum glukonat boroglukonat'],
+  magnezyum: ['magnezyum sulfat', 'magnezyum klorur', 'magnezyum klorit', 'magnezyum klorur 6h20', 'magnezyum glukonat',
+    'magnezyum hipofosfit', 'magnezyum boroglukonat'],
+  dekstroz: ['glukoz', 'dekstroz monohidrat', 'glukoz monohidrat', 'susuz glukoz'],
+  sodyum_bikarbonat: ['sodyum bikarbonat', 'sodyum hidrojen karbonat'],
+  tiamin: ['tiamin hidroklorur', 'tiamin hcl', 'vitamin b1', 'b1 vitamini'],
+  dinoprost: ['dinoprost trometamin', 'dinoprost trometamol', 'dinoprost tromethamine'],
+  kloprostenol: ['kloprostenol sodyum', 'd kloprostenol', 'd kloprostenol sodyum'],
+  deksametazon: ['deksametazon sodyum fosfat', 'deksametazon fosfat', 'deksametazon sodyum'],
+  atropin: ['atropin sulfat'],
+  dimetikon: ['simetikon'],
+  povidon_iyot: ['povidon iyot', 'povidon iyodur', 'povidone iodine', 'polividon iyot'],
+  bakir_sulfat: ['bakir sulfat', 'bakir ii sulfat', 'bakir sulfat pentahidrat'],
+  sipermetrin: ['alfa sipermetrin', 'beta sipermetrin', 'zeta sipermetrin'],
+  parafin_yagi: ['parafin sivi', 'sivi parafin', 'sivi vazelin', 'parafin'],
+  aktif_komur: ['aktif komur', 'karbo medicinalis'],
+  metilen_mavisi: ['metilen mavisi', 'metiltionin klorur'],
+  propilen_glikol: ['propilen glikol'],
+  enilkonazol: ['enilkonazol sulfat'],
 };
-// Not: sulfonamid_trimetoprim, kombinasyonun herhangi bir bileşeniyle işaretlenir; tek bileşen listelense de ürün
-// kombinasyon sayılır ve sonuçta tek kimlik (tekrarsız) yazılır. Üretici bilgisi yeterli değilse yine de sadece o kimlik.
+const TAKMA = {};
+for (const [id, adlar] of Object.entries(TAKMA_ID)) for (const ad of adlar) TAKMA[normalize(ad)] = id;
+
+// Sülfonamid + trimetoprim: yalnız ikisi BİRLİKTE varsa eşlenir; tek başına olanlar eşleşmemiş kalır.
+const SULFONAMIDLER = new Set(['sulfadiazin', 'sulfadoksin', 'sulfametoksazol', 'sulfadimidin', 'sulfametazin']);
+const TRIMETOPRIM = 'trimetoprim';
+// Kalsiyum tuzları: yalnız ağızdan (oral) ürünlerde oral_kalsiyum; enjeksiyon/perfüzyon kalsiyumu eşleşmez.
+const ORAL_KALSIYUM_TUZLARI = new Set(['kalsiyum klorur', 'kalsiyum propiyonat', 'kalsiyum formiat']);
 
 /** Etken adı aday biçimleri: tam hâl, ardından baştan/sondan tuz kelimeleri atılmış hâller. */
 function adaylar(ham) {
@@ -94,28 +103,38 @@ function adaylar(ham) {
   return [...sonuc];
 }
 
-function etkenIndeksi(etkenler) {
+// Yalnız tam normalize etken adı + açık takma ad tablosu; parantez içi parçalar ASLA ayrı anahtar olmaz.
+export function etkenIndeksi(etkenler) {
   const idx = new Map();
   for (const e of etkenler) {
-    // Ad ve parantez içi / "(…)" ayrıntıları ayrı adaylar; "+" ve "/" ile ayrılmış alt adlar da.
-    const adlar = new Set([e.ad, e.ad.replace(/\([^)]*\)/g, ' ')]);
-    for (const m of e.ad.matchAll(/\(([^)]*)\)/g)) adlar.add(m[1]);
-    for (const a of [...adlar]) for (const p of a.split(/\s*[+/,]\s*/)) adlar.add(p);
-    for (const a of adlar) { const n = normalize(a); if (n && !idx.has(n)) idx.set(n, e.id); }
+    idx.set(normalize(e.ad), e.id);
+    idx.set(normalize(e.ad.replace(/\([^)]*\)/g, ' ')), e.id);
     idx.set(normalize(e.id.replace(/_/g, ' ')), e.id);
   }
-  for (const [a, id] of Object.entries(TAKMA)) if (etkenler.some((e) => e.id === id)) idx.set(normalize(a), id);
+  for (const [a, id] of Object.entries(TAKMA)) if (etkenler.some((e) => e.id === id)) idx.set(a, id);
   return idx;
+}
+
+/** Bir ürünün madde listesi + uygulama şekli → { ids, eslesmeyen }. */
+export function urunEtkenleri(maddeler, yol, idx) {
+  const ids = [], eslesmeyen = [];
+  const oral = /\b(oral|agizdan)\b/.test(normalize(yol ?? ''));
+  const aday = maddeler.map((m) => ({ m, a: adaylar(m) }));
+  const var1 = (kume) => aday.some((x) => x.a.some((c) => kume.has(c)));
+  const kombo = var1(SULFONAMIDLER) && var1(new Set([TRIMETOPRIM]));
+  for (const { m, a } of aday) {
+    let id = null;
+    if (a.some((c) => SULFONAMIDLER.has(c) || c === TRIMETOPRIM)) id = kombo ? 'sulfonamid_trimetoprim' : null;
+    else if (a.some((c) => ORAL_KALSIYUM_TUZLARI.has(c))) id = oral ? 'oral_kalsiyum' : null;
+    else for (const c of a) if (idx.has(c)) { id = idx.get(c); break; }
+    if (id) { if (!ids.includes(id)) ids.push(id); } else eslesmeyen.push(m);
+  }
+  return { ids, eslesmeyen };
 }
 
 /** "Etkin Maddeler" hücresini ayrı maddelere böler. */
 function maddeleriAyir(hucre) {
   return hucre.split(/\s*(?:[,;+]|\bve\b|\n)\s*/i).map((s) => s.trim()).filter(Boolean);
-}
-
-function etkenCoz(madde, idx) {
-  for (const a of adaylar(madde)) if (idx.has(a)) return idx.get(a);
-  return null;
 }
 
 // ---- HTML ayrıştırma ------------------------------------------------------------------------------------------
@@ -213,12 +232,8 @@ function uret(dosyalar, etkenler, tarih) {
     for (const s of satirlar) {
       const anahtar = s.kubUrl ? (new URL(s.kubUrl).searchParams.get('urunId') ?? s.kubUrl) : `${normalize(s.ad)}|${normalize(s.firma)}`;
       const maddeler = maddeleriAyir(s.etkin);
-      const ids = [];
-      for (const m of maddeler) {
-        const id = etkenCoz(m, idx);
-        if (id) { if (!ids.includes(id)) ids.push(id); }
-        else eslesmeyen.set(m, (eslesmeyen.get(m) ?? 0) + 1);
-      }
+      const { ids, eslesmeyen: es } = urunEtkenleri(maddeler, s.yol, idx);
+      for (const m of es) eslesmeyen.set(m, (eslesmeyen.get(m) ?? 0) + 1);
       const onceki = urunler.get(anahtar);
       if (onceki) { // başka sorgudan gelen aynı ürün: hedef türleri birleştir
         for (const t of liste(s.hedef).map(turKimligi)) if (!onceki.hedefTurler.includes(t)) onceki.hedefTurler.push(t);
@@ -269,7 +284,13 @@ async function main() {
       .map((f) => ({ ad: f, html: readFileSync(join(klasor, f), 'utf8') }));
   }
   const r = uret(dosyalar, etkenler, tarih);
-  writeFileSync(join(KOK, 'veri/urunler.json'), JSON.stringify(r.cikti, null, 2) + '\n');
+  const urunYol = join(KOK, 'veri/urunler.json');
+  let onceki = 0;
+  try { onceki = JSON.parse(readFileSync(urunYol, 'utf8')).length; } catch { /* yok */ }
+  if (r.cikti.length === 0 || r.cikti.length < onceki * 0.5) {
+    throw new Error(`Koruma: ${r.cikti.length} ürün üretildi, önceki ${onceki}; urunler.json ve meta.json DEĞİŞTİRİLMEDİ.`);
+  }
+  writeFileSync(urunYol, JSON.stringify(r.cikti, null, 2) + '\n');
   const metaYol = join(KOK, 'veri/meta.json');
   const meta = JSON.parse(readFileSync(metaYol, 'utf8'));
   meta.urunListesiTarihi = tarih;

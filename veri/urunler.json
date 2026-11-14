@@ -1124,7 +1124,6 @@
     "form": "çözelti",
     "etkenler": [
       "dekstroz",
-      "oral_kalsiyum",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2289,44 +2288,6 @@
     "kubDogrulandi": null
   },
   {
-    "ad": "Bioksal",
-    "firma": "ALKE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
-    "form": "çözelti",
-    "etkenler": [
-      "sulfonamid_trimetoprim"
-    ],
-    "hedefTurler": [
-      "buzagi",
-      "hindi",
-      "kuzu",
-      "oglak",
-      "tavuk"
-    ],
-    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=147f31f0-5717-4152-916e-f376bcf5976f&dosyaAdi=%20Bioksal.pdf",
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
-    "ad": "Bioksal %24",
-    "firma": "ALKE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
-    "form": "çözelti",
-    "etkenler": [
-      "sulfonamid_trimetoprim"
-    ],
-    "hedefTurler": [
-      "buzagi",
-      "hindi",
-      "kuzu",
-      "oglak",
-      "tavuk"
-    ],
-    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=591235a4-22f1-4a97-9698-8f019d4ede42&dosyaAdi=%20Bioksal%2024.pdf",
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
     "ad": "Biomicosin %30",
     "firma": "HUVEPHARMA TURKEY HAYVAN BESLENMESİ VE SAĞLIĞI HİZMETLERİ ANONİM ŞİRKETİ",
     "form": "çözelti",
@@ -3278,23 +3239,6 @@
     "kubDogrulandi": null
   },
   {
-    "ad": "Ceva Sulphamezathine",
-    "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
-    "form": "çözelti",
-    "etkenler": [
-      "sulfonamid_trimetoprim"
-    ],
-    "hedefTurler": [
-      "buzagi",
-      "hindi",
-      "tavuk"
-    ],
-    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=7df0c46d-6a46-4f73-9a62-25df991fa2d8&dosyaAdi=%20Ceva%20Sulphamezathine.pdf",
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
     "ad": "Cevaxel RTU",
     "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
     "form": "süspansiyon",
@@ -4100,8 +4044,7 @@
     "firma": "POLİFARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
-      "dekstroz",
-      "magnezyum"
+      "dekstroz"
     ],
     "hedefTurler": [
       "at",
@@ -5426,7 +5369,6 @@
     "firma": "POLİFARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
-      "oral_kalsiyum",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -5677,8 +5619,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "çözelti tozu",
     "etkenler": [
-      "oksitetrasiklin",
-      "sulfonamid_trimetoprim"
+      "oksitetrasiklin"
     ],
     "hedefTurler": [
       "buzagi",
@@ -7291,7 +7232,6 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "çözelti",
     "etkenler": [
-      "oral_kalsiyum",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -7644,26 +7584,6 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=19af1fe5-a2a7-4ee3-abf9-7b0c91a57c14&dosyaAdi=%20%C4%B0versin%20Enjeksiyonluk%20%C3%87%C3%B6zelti.pdf",
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
-    "ad": "İzo VİP",
-    "firma": "POLİFARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
-    "form": "çözelti",
-    "etkenler": [
-      "magnezyum"
-    ],
-    "hedefTurler": [
-      "at",
-      "keci",
-      "koyun",
-      "kopek",
-      "manda",
-      "sigir"
-    ],
-    "kubUrl": null,
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -9511,25 +9431,6 @@
     "kubDogrulandi": null
   },
   {
-    "ad": "Medsuti",
-    "firma": "MEDICAVET TARIM HAYVANCILIK İLAÇ VE KİMYA SANAYİ TİCARET ANONİM ŞİRKETİ",
-    "form": "çözelti",
-    "etkenler": [
-      "sulfonamid_trimetoprim"
-    ],
-    "hedefTurler": [
-      "buzagi",
-      "hindi",
-      "kuzu",
-      "oglak",
-      "tavuk"
-    ],
-    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=9809d272-fad6-4d03-9ae7-c2c205b834f6&dosyaAdi=%20Medsuti.pdf",
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
     "ad": "Megajin",
     "firma": "NEVA İLAÇ VETERİNER ECZA DEPOSU GIDA TARIM SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "çözelti",
@@ -10369,33 +10270,10 @@
     "firma": "TURKTIPSAN SAĞLIK TURİZM EĞİTİM VE TİCARET A.Ş.",
     "form": "çözelti",
     "etkenler": [
-      "oral_kalsiyum",
       "magnezyum"
     ],
     "hedefTurler": [
       "at",
-      "keci",
-      "kedi",
-      "koyun",
-      "kopek",
-      "manda",
-      "sigir"
-    ],
-    "kubUrl": null,
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
-    "ad": "Neofleks İzo-Vet",
-    "firma": "TURKTIPSAN SAĞLIK TURİZM EĞİTİM VE TİCARET A.Ş.",
-    "form": "çözelti",
-    "etkenler": [
-      "magnezyum"
-    ],
-    "hedefTurler": [
-      "at",
-      "domuz",
       "keci",
       "kedi",
       "koyun",
@@ -10413,8 +10291,7 @@
     "firma": "TURKTIPSAN SAĞLIK TURİZM EĞİTİM VE TİCARET A.Ş.",
     "form": "çözelti",
     "etkenler": [
-      "dekstroz",
-      "magnezyum"
+      "dekstroz"
     ],
     "hedefTurler": [
       "at",
@@ -10441,28 +10318,6 @@
       "keci",
       "koyun",
       "kopek",
-      "sigir"
-    ],
-    "kubUrl": null,
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
-    "ad": "Neofleks Ringer-Vet",
-    "firma": "TURKTIPSAN SAĞLIK TURİZM EĞİTİM VE TİCARET A.Ş.",
-    "form": "çözelti",
-    "etkenler": [
-      "oral_kalsiyum",
-      "magnezyum"
-    ],
-    "hedefTurler": [
-      "at",
-      "keci",
-      "kedi",
-      "koyun",
-      "kopek",
-      "manda",
       "sigir"
     ],
     "kubUrl": null,
@@ -10647,7 +10502,6 @@
     "firma": "GÜNEŞLİ AŞI İLAÇ İTH.İHR.GIDA ÜRT.SAN.VE TİC. A.Ş.",
     "form": "çözelti",
     "etkenler": [
-      "oral_kalsiyum",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -13011,28 +12865,6 @@
     "kubDogrulandi": null
   },
   {
-    "ad": "Ringer VİP",
-    "firma": "POLİFARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
-    "form": "çözelti",
-    "etkenler": [
-      "oral_kalsiyum",
-      "magnezyum"
-    ],
-    "hedefTurler": [
-      "at",
-      "keci",
-      "kedi",
-      "koyun",
-      "kopek",
-      "manda",
-      "sigir"
-    ],
-    "kubUrl": null,
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
     "ad": "Romgetal",
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "çözelti",
@@ -13656,8 +13488,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "çözelti tozu",
     "etkenler": [
-      "oksitetrasiklin",
-      "sulfonamid_trimetoprim"
+      "oksitetrasiklin"
     ],
     "hedefTurler": [
       "buzagi",
@@ -14321,23 +14152,6 @@
     "kubDogrulandi": null
   },
   {
-    "ad": "Teknomezathine %16",
-    "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
-    "form": "çözelti",
-    "etkenler": [
-      "sulfonamid_trimetoprim"
-    ],
-    "hedefTurler": [
-      "buzagi",
-      "hindi",
-      "tavuk"
-    ],
-    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=c90a73f4-84f4-4b9d-bdd7-2939c7a9f128&dosyaAdi=%20Teknomezathine%20%2516.pdf",
-    "cekilmeTarihi": "2026-11-14",
-    "kub": [],
-    "kubDogrulandi": null
-  },
-  {
     "ad": "Teknomycin 100",
     "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
     "form": "çözelti",
@@ -14659,8 +14473,7 @@
     "firma": "MAMVET İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "çözelti tozu",
     "etkenler": [
-      "oksitetrasiklin",
-      "sulfonamid_trimetoprim"
+      "oksitetrasiklin"
     ],
     "hedefTurler": [
       "buzagi",
@@ -14695,8 +14508,7 @@
     "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
     "form": "çözelti tozu",
     "etkenler": [
-      "oksitetrasiklin",
-      "sulfonamid_trimetoprim"
+      "oksitetrasiklin"
     ],
     "hedefTurler": [
       "buzagi",
