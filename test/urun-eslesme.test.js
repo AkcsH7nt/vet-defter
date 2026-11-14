@@ -31,3 +31,19 @@ test('kalsiyumKlorurYalnizOralde', () => {
   assert.deepEqual(coz(['kalsiyum klorür'], 'perfüzyon').ids, []);
   assert.deepEqual(coz(['kalsiyum klorür'], 'oral').ids, ['oral_kalsiyum']);
 });
+test('kalsiyumGlukonatBoroglukonattanAyri', () => {
+  assert.deepEqual(coz(['kalsiyum glukonat', 'magnezyum klorür hekzahidrat']).ids, ['kalsiyum_glukonat', 'magnezyum']);
+  assert.deepEqual(coz(['kalsiyum boroglukonat']).ids, ['kalsiyum_boroglukonat']);
+  // glukoheptonat / sakkarat tahminle kalsiyum_glukonat'a eşlenmez
+  assert.deepEqual(coz(['kalsiyum glukoheptonat']).ids, []);
+});
+test('kristalizePenisilinProkaindenAyri', () => {
+  assert.deepEqual(coz(['benzilpenisilin potasyum', 'prokain benzilpenisilin', 'streptomisin sülfat']).ids,
+    ['penisilin_g_kristalize', 'penisilin_g_prokain', 'streptomisin']);
+  assert.deepEqual(coz(['prokain benzilpenisilin']).ids, ['penisilin_g_prokain']);
+});
+test('selenyumYalnizEVitaminiyleBirlikte', () => {
+  assert.deepEqual(coz(['sodyum selenit', 'Vitamin E asetat']).ids, ['selenyum_e_vitamini']);
+  assert.deepEqual(coz(['bakır glukonat', 'çinko glukonat', 'sodyum selenit']).ids, []);
+  assert.deepEqual(coz(['Vitamin E asetat', 'Vitamin D3']).ids, []);
+});

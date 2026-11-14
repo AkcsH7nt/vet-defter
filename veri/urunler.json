@@ -67,6 +67,7 @@
     "firma": "ALKE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "süspansiyon tozu ve çözücüsü",
     "etkenler": [
+      "penisilin_g_kristalize",
       "penisilin_g_prokain",
       "streptomisin"
     ],
@@ -857,6 +858,26 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Anasel-E",
+    "firma": "ANADOLU İLAÇ VE KİMYA SAN.A.Ş.",
+    "form": "emülsiyon",
+    "etkenler": [
+      "selenyum_e_vitamini"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=05a8b16d-76d4-428f-bb40-8160cd205e90&dosyaAdi=%20Anasel-E.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Anaverm 1500",
     "firma": "FMD AŞI İLAÇ SAN.VETİC.LTD.ŞTİ.",
     "form": "tablet",
@@ -893,6 +914,7 @@
     "firma": "MAMVET İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -1105,6 +1127,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -1124,6 +1147,7 @@
     "form": "çözelti",
     "etkenler": [
       "dekstroz",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -1142,6 +1166,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -1161,6 +1186,7 @@
     "form": "çözelti",
     "etkenler": [
       "dekstroz",
+      "kalsiyum_glukonat",
       "magnezyum",
       "metamizol"
     ],
@@ -1214,6 +1240,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "süspansiyon tozu ve çözücüsü",
     "etkenler": [
+      "penisilin_g_kristalize",
       "penisilin_g_prokain",
       "streptomisin"
     ],
@@ -1273,6 +1300,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "emülsiyon",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -1293,6 +1321,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -1309,6 +1338,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -1863,6 +1893,7 @@
     "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
     "form": "Enjeksiyonluk Çözelti",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -1931,6 +1962,7 @@
     "firma": "DMR BESİN MADDELERİ YEM KATKI ÜRÜNLERİ GIDA KİMYA PAZARLAMA İTHALAT İHRACAT SANAYİ TİCARET LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -2063,10 +2095,29 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Befosfan",
+    "firma": "ALBAFARMA HAYVAN SAĞLIĞI ÜRÜNLERİ ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "kedi",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=26e70e1b-d318-4ffd-be0c-04b34affbdba&dosyaAdi=%20Befosfan%20.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Benzoral",
     "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -2563,6 +2614,82 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Butacom-B12",
+    "firma": "ALLVET HAYVAN SAĞLIĞI VE BESLEME ÜRÜNLERİ ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=0276b8c6-dc90-492b-9fe3-2bfefdd18041&dosyaAdi=%20Butacom%20B12.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Butafan",
+    "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=5c265c70-1c2f-465f-a07d-4805af5eda55&dosyaAdi=%20Butafan.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Butafos-B12",
+    "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "kedi",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=0299db29-f605-4f77-9d95-f2ee5880d3ad&dosyaAdi=%20Butafos-B12%20Enjeksiyonluk%20%C3%87%C3%B6zelti.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Butafosal",
+    "firma": "PROVET VETERİNER ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "kedi",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=ebd7219c-a027-4ef6-8019-e3b1ba25d782&dosyaAdi=%20Butafosal.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Butalex",
     "firma": "INTERVET VETERİNER İLAÇLARI PAZARLAMA VE TİCARET LİMİTED ŞİRKETİ",
     "form": "çözelti",
@@ -2578,10 +2705,31 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Butasol",
+    "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=9fc10872-8f4c-4888-bba3-90efc6934f4e&dosyaAdi=%20Butasol.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Cafecal",
     "firma": "PROVET VETERİNER ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2597,6 +2745,8 @@
     "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2616,6 +2766,7 @@
     "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2635,6 +2786,7 @@
     "firma": "ETKİN İLAÇ SANAYİ VETİC LTD.ŞTİ.",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2652,6 +2804,7 @@
     "firma": "GÜNEŞLİ AŞI İLAÇ İTH.İHR.GIDA ÜRT.SAN.VE TİC. A.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2673,6 +2826,8 @@
     "firma": "HASAT VETERİNER ECZA DEPOSU VE YEM KATKILARI SANAYİ VE TİCARET LTD.ŞTİ.",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2692,6 +2847,8 @@
     "firma": "ALBAFARMA HAYVAN SAĞLIĞI ÜRÜNLERİ ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2711,6 +2868,8 @@
     "firma": "FMD AŞI İLAÇ SAN.VETİC.LTD.ŞTİ.",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2731,6 +2890,7 @@
     "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2766,6 +2926,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2805,6 +2966,8 @@
     "firma": "PHARMA SEM İLAÇ SAN.VE TİC.LTD.ŞTİ.",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -2867,6 +3030,24 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=2389a205-4e9d-452a-b91f-61786548f309&dosyaAdi=%20Castil%20300%20.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Catosal % 10",
+    "firma": "ELANCO HAYVAN SAĞLIĞI LİMİTED ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "kedi",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=9f4919cc-2da4-41fc-b882-06933db67bcc&dosyaAdi=%20Catosal%20%25%2010.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -3874,6 +4055,26 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=a01ec10f-cad2-49d5-b1fe-e9e5241154da&dosyaAdi=%20Curemast%20DC.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Cyanofos",
+    "firma": "EKOMED İLAÇ LOJİSTİK VE TURİZM SANAYİ TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=6c9095f1-afe1-429d-947d-d7c24b9b2fe7&dosyaAdi=%20Cyanofos.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -4945,6 +5146,7 @@
     "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
     "form": "emülsiyon",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -5045,6 +5247,8 @@
     "firma": "EKOMED İLAÇ LOJİSTİK VE TURİZM SANAYİ TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -5320,6 +5524,7 @@
     "firma": "EKOMED İLAÇ LOJİSTİK VE TURİZM SANAYİ TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -5336,6 +5541,7 @@
     "firma": "EKOMED İLAÇ LOJİSTİK VE TURİZM SANAYİ TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -5801,6 +6007,7 @@
     "firma": "ANİ MED GRUP ECZA İLAÇ İML İTH İHR S.VE TİC LTD ŞTİ",
     "form": "çözelti",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -5931,6 +6138,7 @@
     "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -5947,6 +6155,7 @@
     "firma": "NETFARMA İLAÇ VE PREMİKS SANAYİ LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -5963,6 +6172,7 @@
     "firma": "ANADOLU İLAÇ VE KİMYA SAN.A.Ş.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -6084,6 +6294,7 @@
     "firma": "ANADOLU İLAÇ VE KİMYA SAN.A.Ş.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -6465,6 +6676,7 @@
     "firma": "MAMVET İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -6472,6 +6684,24 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=0308dcc7-8ea2-40c3-b5fd-4659f5e62f05&dosyaAdi=%20Fortezol.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Fosbayvit-B12",
+    "firma": "MBV İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "kedi",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=a4b5fd46-8b4c-42e3-8653-e7c5aa97fca3&dosyaAdi=%20Fosbayvit-B12%20.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -7025,6 +7255,7 @@
     "firma": "ICB ÇUKUROVA İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -7109,6 +7340,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -7125,11 +7357,30 @@
     "firma": "ALKE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
       "koyun",
       "sigir"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Helmizol",
+    "firma": "AGROVET İLAÇ SANAYİVE TİCARET LİMİTED ŞİRKETİ",
+    "form": "çözelti tozu",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "ordek",
+      "sigir",
+      "tavuk"
     ],
     "kubUrl": null,
     "cekilmeTarihi": "2026-11-14",
@@ -7157,6 +7408,7 @@
     "firma": "ALKE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -7345,6 +7597,7 @@
     "firma": "FMD AŞI İLAÇ SAN.VETİC.LTD.ŞTİ.",
     "form": "süspansiyon tozu ve çözücüsü",
     "etkenler": [
+      "penisilin_g_kristalize",
       "penisilin_g_prokain",
       "streptomisin"
     ],
@@ -7423,6 +7676,22 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=1498c408-a0d3-414f-afc7-a7ec5f37c455&dosyaAdi=%20%C4%B0mozan.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "İstemizol",
+    "firma": "ALBAFARMA HAYVAN SAĞLIĞI ÜRÜNLERİ ANONİM ŞİRKETİ",
+    "form": "tablet",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": null,
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -7608,6 +7877,7 @@
     "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -7625,6 +7895,8 @@
     "firma": "POLİFARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -7645,6 +7917,8 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -7664,6 +7938,7 @@
     "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -7747,6 +8022,26 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=c8f74dc7-16d8-46cb-95ed-d508a3d0abb5&dosyaAdi=%20Karbomin.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Katovil",
+    "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": null,
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -8020,10 +8315,31 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Klifos B12",
+    "firma": "Pİ FARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=ea9533bf-853d-4880-8fba-7f8347b8120c&dosyaAdi=%20Klifos%20B12.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Klozak",
     "firma": "VERANO İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8040,6 +8356,7 @@
     "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8258,10 +8575,45 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Levamin",
+    "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
+    "form": "toz",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "hindi",
+      "koyun",
+      "sigir",
+      "tavuk"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Levapar",
+    "firma": "FMD AŞI İLAÇ SAN.VETİC.LTD.ŞTİ.",
+    "form": "tablet",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=4e49f91d-f525-4847-9b80-489fb5032ce0&dosyaAdi=%20Levapar.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Levasym",
     "firma": "IPM İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "süspansiyon",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8274,10 +8626,59 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Levatab",
+    "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
+    "form": "tablet",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Levatab 300",
+    "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
+    "form": "tablet",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Levatek %10",
+    "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
+    "form": "çözelti",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=7d288054-e3e2-4b2c-b327-fa2ee3ed9138&dosyaAdi=%20Levatek%20%2510.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Levatrizol",
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -8293,6 +8694,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "süspansiyon",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -8308,6 +8710,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "süspansiyon",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8324,6 +8727,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8340,6 +8744,7 @@
     "firma": "GENERAL VETERİNER İLAÇLARI ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8356,6 +8761,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8467,6 +8873,7 @@
     "firma": "Pİ FARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -8678,6 +9085,7 @@
     "firma": "MAMVET İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -8997,7 +9405,8 @@
     "firma": "INTERVET VETERİNER İLAÇLARI PAZARLAMA VE TİCARET LİMİTED ŞİRKETİ",
     "form": "süspansiyon",
     "etkenler": [
-      "neomisin"
+      "neomisin",
+      "tetrasiklin"
     ],
     "hedefTurler": [
       "sigir"
@@ -9018,6 +9427,21 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=99ad1721-5b07-47aa-a14f-d178e730e363&dosyaAdi=%20Mastiofur.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Mastiplan LC",
+    "firma": "INTERVET VETERİNER İLAÇLARI PAZARLAMA VE TİCARET LİMİTED ŞİRKETİ",
+    "form": "süspansiyon",
+    "etkenler": [
+      "sefapirin"
+    ],
+    "hedefTurler": [
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=848fa205-43f3-4aec-a1b2-87308d29af15&dosyaAdi=%20Mastiplan%20LC.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -9365,6 +9789,7 @@
     "firma": "IPM İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -9468,6 +9893,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -9484,6 +9910,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -9798,6 +10225,26 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Metasol %10",
+    "firma": "ANİ MED GRUP ECZA İLAÇ İML İTH İHR S.VE TİC LTD ŞTİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=42d37ecd-ae40-45bb-80c0-b996e0ddafb7&dosyaAdi=%20Metasol-10.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Metazin",
     "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
     "form": "çözelti",
@@ -9810,6 +10257,21 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=a53f6ee5-1ac1-418c-9128-9fdc02fb9331&dosyaAdi=%20Metazin%20Enjeksiyonluk%20%C3%87%C3%B6zelti%20.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Metricure",
+    "firma": "INTERVET VETERİNER İLAÇLARI PAZARLAMA VE TİCARET LİMİTED ŞİRKETİ",
+    "form": "süspansiyon",
+    "etkenler": [
+      "sefapirin"
+    ],
+    "hedefTurler": [
+      "sigir"
+    ],
+    "kubUrl": null,
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -9843,6 +10305,21 @@
       "kopek",
       "kuzu",
       "oglak",
+      "sigir"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Metrinew",
+    "firma": "ALKE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "süspansiyon",
+    "etkenler": [
+      "sefapirin"
+    ],
+    "hedefTurler": [
       "sigir"
     ],
     "kubUrl": null,
@@ -9949,6 +10426,23 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Mintiverm",
+    "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
+    "form": "toz",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir",
+      "tavuk"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Mirazol",
     "firma": "MAMVET İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
@@ -9964,10 +10458,31 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Missevit",
+    "firma": "MİSTAV İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "emülsiyon",
+    "etkenler": [
+      "selenyum_e_vitamini"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Mizolanid",
     "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
     "form": "süspansiyon",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -10151,6 +10666,42 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Nemason",
+    "firma": "MEDICAVET TARIM HAYVANCILIK İLAÇ VE KİMYA SANAYİ TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti tozu",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "hindi",
+      "koyun",
+      "sigir",
+      "tavuk"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=be7bd05e-563b-47b9-af32-e4e931cd6378&dosyaAdi=%20Nemason.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Nemizol 30",
+    "firma": "NETFARMA İLAÇ VE PREMİKS SANAYİ LİMİTED ŞİRKETİ",
+    "form": "çözelti tozu",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "hindi",
+      "koyun",
+      "sigir",
+      "tavuk"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=161cc3e3-9c40-4204-a454-0a4226b3bf9a&dosyaAdi=%20Nemizol%2030.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Neo-Caf",
     "firma": "INTERVET VETERİNER İLAÇLARI PAZARLAMA VE TİCARET LİMİTED ŞİRKETİ",
     "form": "sprey",
@@ -10311,6 +10862,7 @@
     "firma": "TURKTIPSAN SAĞLIK TURİZM EĞİTİM VE TİCARET A.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -10351,6 +10903,8 @@
     "firma": "TURKTIPSAN SAĞLIK TURİZM EĞİTİM VE TİCARET A.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -10409,6 +10963,7 @@
     "firma": "INTERVET VETERİNER İLAÇLARI PAZARLAMA VE TİCARET LİMİTED ŞİRKETİ",
     "form": "merhem",
     "etkenler": [
+      "penisilin_g_kristalize",
       "neomisin",
       "penisilin_g_prokain"
     ],
@@ -10616,6 +11171,7 @@
     "firma": "NETFARMA İLAÇ VE PREMİKS SANAYİ LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -10697,10 +11253,47 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Nilax",
+    "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
+    "form": "çözelti tozu",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "hindi",
+      "koyun",
+      "sigir",
+      "tavuk"
+    ],
+    "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Nilverm",
+    "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
+    "form": "çözelti tozu",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "hindi",
+      "koyun",
+      "sigir",
+      "tavuk"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=8c0422f0-7102-49da-877b-16fa120d7d15&dosyaAdi=%20Nilverm.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Nilzan",
     "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -10733,6 +11326,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -10784,6 +11378,7 @@
     "form": "çözelti",
     "etkenler": [
       "dekstroz",
+      "kalsiyum_glukonat",
       "magnezyum",
       "metamizol"
     ],
@@ -10973,6 +11568,7 @@
     "firma": "ANİ MED GRUP ECZA İLAÇ İML İTH İHR S.VE TİC LTD ŞTİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -10989,6 +11585,7 @@
     "firma": "ETKİN İLAÇ SANAYİ VETİC LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11005,6 +11602,7 @@
     "firma": "ICB ÇUKUROVA İLAÇ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11021,6 +11619,7 @@
     "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11037,6 +11636,7 @@
     "firma": "VİLSAN VETERİNER İLAÇLARI TİCARET VE SANAYİ ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11053,6 +11653,7 @@
     "firma": "ALBAFARMA HAYVAN SAĞLIĞI ÜRÜNLERİ ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11140,6 +11741,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11192,6 +11794,7 @@
     "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11275,6 +11878,7 @@
     "firma": "ORGALABS BİYOLOJİK ÜRÜNLER SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -11397,6 +12001,7 @@
     "firma": "TOPKİM-TOPKAPI İLAÇ PREMİKS SANAYİİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11413,6 +12018,7 @@
     "firma": "ALBAFARMA HAYVAN SAĞLIĞI ÜRÜNLERİ ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11429,6 +12035,7 @@
     "firma": "TOPKİM-TOPKAPI İLAÇ PREMİKS SANAYİİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11445,6 +12052,7 @@
     "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11501,6 +12109,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11517,6 +12126,7 @@
     "firma": "ZOLEANT İLAÇ ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11619,6 +12229,7 @@
     "firma": "NETFARMA İLAÇ VE PREMİKS SANAYİ LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11635,6 +12246,7 @@
     "firma": "VMD FARMA SAĞLIK VE VETERİNER ÜRÜNLERİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -11699,6 +12311,7 @@
     "firma": "ARMA İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -12612,6 +13225,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "oksfendazol",
       "oksiklozanid"
     ],
     "hedefTurler": [
@@ -12999,6 +13613,7 @@
     "firma": "EKOMED İLAÇ LOJİSTİK VE TURİZM SANAYİ TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -13231,10 +13846,29 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Selephos",
+    "firma": "TOPKİM-TOPKAPI İLAÇ PREMİKS SANAYİİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "selenyum_e_vitamini"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=90c8be9d-70c4-4bfd-b4cf-bdab2b5ecba4&dosyaAdi=%20Selephos.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Selesym",
     "firma": "IPM İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "Enjeksiyonluk Çözelti",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -13609,6 +14243,7 @@
     "firma": "TOPKİM-TOPKAPI İLAÇ PREMİKS SANAYİİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -13701,6 +14336,8 @@
     "firma": "IPM İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -13742,6 +14379,26 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=22b23439-b994-46bc-ac33-38baf4015129&dosyaAdi=%20Symec%20Fascio.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Symfos",
+    "firma": "IPM İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=9fc1a270-52ba-4b65-8d4c-30b17a463b4b&dosyaAdi=%20Symfos.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -14239,6 +14896,26 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Teknosol-B12",
+    "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=ca959ca1-3d4a-414f-9985-5909ee8061bc&dosyaAdi=%20Teknosol-B12.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Teknosül",
     "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
     "form": "tablet",
@@ -14504,6 +15181,23 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Tetramed",
+    "firma": "MEDICAVET TARIM HAYVANCILIK İLAÇ VE KİMYA SANAYİ TİCARET ANONİM ŞİRKETİ",
+    "form": "çözelti tozu",
+    "etkenler": [
+      "tetrasiklin"
+    ],
+    "hedefTurler": [
+      "buzagi",
+      "hindi",
+      "tavuk"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=a23960a8-157b-44dd-b288-5581cf5b2a16&dosyaAdi=%20Tetramed.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Tetramezatin ST",
     "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
     "form": "çözelti tozu",
@@ -14568,6 +15262,22 @@
       "tavuk"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=a3e2d151-b4be-4953-94ab-a231a4e44b32&dosyaAdi=%20Tetrasym%20%2580.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Tetratab",
+    "firma": "ANİ MED GRUP ECZA İLAÇ İML İTH İHR S.VE TİC LTD ŞTİ",
+    "form": "tablet",
+    "etkenler": [
+      "levamizol"
+    ],
+    "hedefTurler": [
+      "koyun",
+      "sigir"
+    ],
+    "kubUrl": null,
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -15084,6 +15794,7 @@
     "firma": "AKSU ECZACILIK VE İLAÇ SAN.İTH.İHR.TİC.LTD.ŞTİ.",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "triklabendazol"
     ],
     "hedefTurler": [
@@ -15876,6 +16587,26 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Vetfos B12",
+    "firma": "DEVA HOLDİNGA.Ş.",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=d365bd44-646b-43cc-81a7-2e77297a1014&dosyaAdi=%20Vetfos%20B12.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Vetiflor 300",
     "firma": "BAVET İLAÇ SANAYİ VETİC.A.Ş.",
     "form": "çözelti",
@@ -15895,6 +16626,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "süspansiyon tozu ve çözücüsü",
     "etkenler": [
+      "penisilin_g_kristalize",
       "penisilin_g_prokain",
       "streptomisin"
     ],
@@ -15950,6 +16682,7 @@
     "firma": "DEVA HOLDİNGA.Ş.",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -16225,6 +16958,7 @@
     "firma": "PROVET VETERİNER ÜRÜNLERİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -16265,6 +16999,25 @@
       "sigir"
     ],
     "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=0a864a8b-5be2-45de-8e84-656e7768a8d5&dosyaAdi=%20Viramast.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Vita E Selen",
+    "firma": "İNTERMED ECZA DEPOSUİTH.İHR.TİC.TAAHLTD.ŞTİ.",
+    "form": "çözelti",
+    "etkenler": [
+      "selenyum_e_vitamini"
+    ],
+    "hedefTurler": [
+      "buzagi",
+      "koyun",
+      "kuzu",
+      "oglak",
+      "tay"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=482b46af-8f58-401b-891e-7d9f790e05d2&dosyaAdi=%20Vita%20E%20Selen%20Enjeksiyonluk%20%C3%87%C3%B6zelti.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -16430,6 +17183,8 @@
     "firma": "INNOVA İLAÇ PAZARLAMA TİCARET LİMİTED ŞİRKETİ",
     "form": "çözelti",
     "etkenler": [
+      "butafosfan",
+      "kalsiyum_glukonat",
       "magnezyum"
     ],
     "hedefTurler": [
@@ -16440,6 +17195,24 @@
       "sigir"
     ],
     "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "VPL Fullfos",
+    "firma": "INNOVA İLAÇ PAZARLAMA TİCARET LİMİTED ŞİRKETİ",
+    "form": "çözelti",
+    "etkenler": [
+      "butafosfan"
+    ],
+    "hedefTurler": [
+      "at",
+      "kedi",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=4514ead2-d95e-4ba9-a0c1-0b518cf18eb3&dosyaAdi=%20VPL%20FULLFOS%20Enjeksiyonluk%20%C3%87%C3%B6zelti.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -16479,10 +17252,29 @@
     "kubDogrulandi": null
   },
   {
+    "ad": "Yeldif SE",
+    "firma": "CEVA HAYVAN SAĞLIĞI ANONİM ŞİRKETİ",
+    "form": "süspansiyon",
+    "etkenler": [
+      "selenyum_e_vitamini"
+    ],
+    "hedefTurler": [
+      "buzagi",
+      "koyun",
+      "kuzu",
+      "tay"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=044bab07-ea99-4aaa-ac67-a6760365000d&dosyaAdi=%20Yeldif%20SE.pdf",
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
     "ad": "Yelkin",
     "firma": "ETKİN İLAÇ SANAYİ VETİC LTD.ŞTİ.",
     "form": "emülsiyon",
     "etkenler": [
+      "selenyum_e_vitamini",
       "tiamin"
     ],
     "hedefTurler": [
@@ -16497,6 +17289,26 @@
       "tay"
     ],
     "kubUrl": null,
+    "cekilmeTarihi": "2026-11-14",
+    "kub": [],
+    "kubDogrulandi": null
+  },
+  {
+    "ad": "Yelvit",
+    "firma": "TEKNOVET İLAÇ SANAYİ VE TİCARET A.Ş.",
+    "form": "emülsiyon",
+    "etkenler": [
+      "selenyum_e_vitamini"
+    ],
+    "hedefTurler": [
+      "at",
+      "keci",
+      "kedi",
+      "koyun",
+      "kopek",
+      "sigir"
+    ],
+    "kubUrl": "https://hbs.tarbil.gov.tr/Receipt/DownloadPdfFromDatabase?urunId=2b911948-75dc-4387-ad6c-a0054a9226f9&dosyaAdi=%20Yelvit.pdf",
     "cekilmeTarihi": "2026-11-14",
     "kub": [],
     "kubDogrulandi": null
@@ -16521,6 +17333,7 @@
     "firma": "VERANO İLAÇ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
     "form": "tablet",
     "etkenler": [
+      "levamizol",
       "oksiklozanid"
     ],
     "hedefTurler": [

@@ -33,17 +33,22 @@ const TAKMA_ID = {
     'prokain penisilin g', 'benzil penisilin prokain'],
   penisilin_g_benzatin: ['benzatin benzilpenisilin', 'penisilin g benzatin', 'benzilpenisilin benzatin', 'benzatin penisilin g',
     'benzil penisilin benzatin'],
+  // Kristalize (suda çözünen) benzilpenisilin: prokain / benzatin tuzlarından ayrı etken. Yalın "benzilpenisilin" bilinçli olarak yok.
+  penisilin_g_kristalize: ['benzilpenisilin potasyum', 'benzilpenisilin sodyum', 'potasyum benzilpenisilin', 'sodyum benzilpenisilin',
+    'penisilin g potasyum', 'penisilin g sodyum', 'kristalize penisilin', 'kristalize penisilin g'],
   penetamat: ['penetamat hidroiyodur', 'penetamat hidroiyodid', 'penethamat hidriodid', 'penetamat hidriodid'],
   amoksisilin_klavulanat: ['klavulanik asit', 'klavulanat'],
   amoksisilin: ['amoksisilin trihidrat', 'amoksisilin sodyum'],
   ampisilin: ['ampisilin trihidrat', 'ampisilin sodyum'],
   kloksasilin: ['kloksasilin benzatin', 'kloksasilin sodyum'],
   sefaleksin: ['sefaleksin monohidrat', 'sefaleksin benzatin'],
+  sefapirin: ['sefapirin benzatin', 'sefapirin sodyum'],
   sefkinom: ['sefkinom sulfat', 'sefkuinom', 'sefkuinom sulfat'],
   seftiofur: ['seftiofur hcl', 'seftiofur hidroklorur', 'seftiofur sodyum', 'seftiofur kristalin serbest asit'],
   sefoperazon: ['sefoperazon sodyum'],
   oksitetrasiklin: ['oksitetrasiklin dihidrat', 'oksitetrasiklin hcl', 'oksitetrasiklin hidroklorur'],
   doksisiklin: ['doksisiklin hiklat', 'doksisiklin hidroklorur', 'doksisiklin hcl'],
+  tetrasiklin: ['tetrasiklin hcl', 'tetrasiklin hidroklorur'],
   tilmikosin: ['tilmikosin fosfat'],
   tilozin: ['tilozin tartarat', 'tilozin fosfat', 'tilosin', 'tilosin tartarat'],
   linkomisin: ['linkomisin hidroklorur', 'linkomisin hcl'],
@@ -58,11 +63,16 @@ const TAKMA_ID = {
   kolistin: ['kolistin sulfat', 'polimiksin e'],
   imidokarb: ['imidokarb dipropiyonat'],
   diminazen: ['diminazen aseturat', 'diminazen diaseturat'],
+  levamizol: ['levamizol hcl', 'levamizol hidroklorur'],
+  oksfendazol: ['oksfendazol'],
   halofuginon: ['halofuginon laktat', 'halofuginon hidrobromur'],
   fluniksin_meglumin: ['fluniksin meglumin', 'fluniksin'],
   tolfenamik_asit: ['tolfenamik asit'],
   metamizol: ['dipiron', 'metamizol sodyum', 'dipiron sodyum'],
   kalsiyum_boroglukonat: ['kalsiyum boroglukonat', 'kalsiyum borogluconat', 'kalsiyum glukonat boroglukonat'],
+  // Kalsiyum glukonat boroglukonatla AYNI etken değildir: ayrı kimlik. Glukoheptonat / sakkarat eşlenmez.
+  kalsiyum_glukonat: ['kalsiyum glukonat', 'kalsiyum glukonat monohidrat'],
+  butafosfan: ['butafosfan'],
   magnezyum: ['magnezyum sulfat', 'magnezyum klorur', 'magnezyum klorit', 'magnezyum klorur 6h20', 'magnezyum glukonat',
     'magnezyum hipofosfit', 'magnezyum boroglukonat'],
   dekstroz: ['glukoz', 'dekstroz monohidrat', 'glukoz monohidrat', 'susuz glukoz'],
@@ -78,7 +88,6 @@ const TAKMA_ID = {
   sipermetrin: ['alfa sipermetrin', 'beta sipermetrin', 'zeta sipermetrin'],
   parafin_yagi: ['parafin sivi', 'sivi parafin', 'sivi vazelin', 'parafin'],
   aktif_komur: ['aktif komur', 'karbo medicinalis'],
-  metilen_mavisi: ['metilen mavisi', 'metiltionin klorur'],
   propilen_glikol: ['propilen glikol'],
   enilkonazol: ['enilkonazol sulfat'],
 };
@@ -90,6 +99,10 @@ const SULFONAMIDLER = new Set(['sulfadiazin', 'sulfadoksin', 'sulfametoksazol', 
 const TRIMETOPRIM = 'trimetoprim';
 // Kalsiyum tuzları: yalnız ağızdan (oral) ürünlerde oral_kalsiyum; enjeksiyon/perfüzyon kalsiyumu eşleşmez.
 const ORAL_KALSIYUM_TUZLARI = new Set(['kalsiyum klorur', 'kalsiyum propiyonat', 'kalsiyum formiat']);
+// Selenyum + E vitamini: yalnız ikisi BİRLİKTE varsa selenyum_e_vitamini; selenyumlu iz element karışımları ve
+// E vitaminli multivitaminler tek başına eşleşmez.
+const SELENYUM = new Set(['sodyum selenit', 'selenit', 'selenyum']);
+const E_VITAMINI = new Set(['vitamin e', 'e vitamini', 'tokoferol', 'dl alfa tokoferol', 'alfa tokoferol']);
 
 /** Etken adı aday biçimleri: tam hâl, ardından baştan/sondan tuz kelimeleri atılmış hâller. */
 function adaylar(ham) {
@@ -122,9 +135,11 @@ export function urunEtkenleri(maddeler, yol, idx) {
   const aday = maddeler.map((m) => ({ m, a: adaylar(m) }));
   const var1 = (kume) => aday.some((x) => x.a.some((c) => kume.has(c)));
   const kombo = var1(SULFONAMIDLER) && var1(new Set([TRIMETOPRIM]));
+  const seKombo = var1(SELENYUM) && var1(E_VITAMINI) && idx.get('selenyum e vitamini') === 'selenyum_e_vitamini';
   for (const { m, a } of aday) {
     let id = null;
     if (a.some((c) => SULFONAMIDLER.has(c) || c === TRIMETOPRIM)) id = kombo ? 'sulfonamid_trimetoprim' : null;
+    else if (a.some((c) => SELENYUM.has(c) || E_VITAMINI.has(c))) id = seKombo ? 'selenyum_e_vitamini' : null;
     else if (a.some((c) => ORAL_KALSIYUM_TUZLARI.has(c))) id = oral ? 'oral_kalsiyum' : null;
     else for (const c of a) if (idx.has(c)) { id = idx.get(c); break; }
     if (id) { if (!ids.includes(id)) ids.push(id); } else eslesmeyen.push(m);
