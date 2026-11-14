@@ -1,0 +1,57 @@
+:root {
+  --zemin: #f4faf8;
+  --yuzey: #ffffff;
+  --yazi: #12302c;
+  --soluk: #43605b;
+  --cizgi: #c6ddd8;
+  --vurgu: #0b6b5e;
+  --vurgu-yazi: #ffffff;
+  --uyari-zemin: #fff4d6;
+  --uyari-yazi: #5a3b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zemin: #0e1917;
+    --yuzey: #162724;
+    --yazi: #e4f2ef;
+    --soluk: #a7c3bd;
+    --cizgi: #2c4642;
+    --vurgu: #5fd1bf;
+    --vurgu-yazi: #062a25;
+    --uyari-zemin: #3a2f0f;
+    --uyari-yazi: #ffe9a8;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--zemin); color: var(--yazi);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh; min-height: 100dvh;
+  padding-bottom: calc(60px + env(safe-area-inset-bottom));
+}
+.ust {
+  position: sticky; top: 0; z-index: 5; padding: 12px 16px;
+  background: var(--vurgu); color: var(--vurgu-yazi); font-size: 18px;
+}
+main { padding: 16px; max-width: 640px; margin: 0 auto; outline: none; }
+h1 { font-size: 22px; margin: 0 0 12px; }
+p { margin: 0 0 12px; }
+a { color: var(--vurgu); }
+.yer-tutucu { color: var(--soluk); }
+.sorumluluk {
+  margin: 16px 0 0; padding: 10px 12px; border: 1px solid var(--cizgi); border-radius: 8px;
+  background: var(--yuzey); color: var(--soluk); font-size: 14px;
+}
+.bulunamadi { padding: 16px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); }
+.alt-gezinme {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex;
+  background: var(--yuzey); border-top: 1px solid var(--cizgi);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.alt-gezinme a {
+  flex: 1; min-height: 56px; display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: var(--soluk); font-size: 14px; font-weight: 600; padding: 0 4px;
+}
+.alt-gezinme a[aria-current="page"] { color: var(--vurgu); box-shadow: inset 0 3px 0 var(--vurgu); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--vurgu); outline-offset: -3px; }

@@ -1,0 +1,15 @@
+{
+  "name": "vet-defter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:tarayici": "node --test \"test/tarayici/*.e2e.mjs\"",
+    "dogrula": "node scripts/dogrula.mjs",
+    "sunucu": "node scripts/sunucu.mjs",
+    "urun-cek": "node scripts/urun-cek.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}
