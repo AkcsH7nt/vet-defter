@@ -1,0 +1,2719 @@
+[
+  {
+    "ad": "Pazardan yeni gelen besi danaları, nakilden 1 hafta sonra öksürük ve ateş",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.8,
+      "belirtiler": [
+        "oksuruk",
+        "burun_akintisi",
+        "hizli_solunum",
+        "istahsizlik",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "sigir_solunum_kompleksi"
+  },
+  {
+    "ad": "Besi danası, ağır pnömoni: kulak düşük, güç soluyor, akciğerde ral",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41.2,
+      "belirtiler": [
+        "solunum_guclugu",
+        "anormal_akciger_sesi",
+        "kulak_dusuklugu",
+        "goz_akintisi",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "sigir_solunum_kompleksi"
+  },
+  {
+    "ad": "Düve, eksik tablo: öksürük, irinli burun akıntısı, yemiyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "duve",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.1,
+      "belirtiler": [
+        "oksuruk",
+        "irinli_burun_akintisi",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "sigir_solunum_kompleksi"
+  },
+  {
+    "ad": "6 haftalık buzağı, kalabalık bölmede birkaç buzağı öksürüyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.5,
+      "belirtiler": [
+        "oksuruk",
+        "burun_akintisi",
+        "hizli_solunum",
+        "kulak_dusuklugu",
+        "emmeme"
+      ]
+    },
+    "beklenenIlk3": "buzagi_pnomonisi"
+  },
+  {
+    "ad": "Kronikleşmiş buzağı pnömonisi: gelişmemiş, tüyü mat, uzun süredir öksürüyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.9,
+      "belirtiler": [
+        "kronik_oksuruk",
+        "buyume_geriligi",
+        "mat_tuy",
+        "irinli_burun_akintisi",
+        "anormal_akciger_sesi"
+      ]
+    },
+    "beklenenIlk3": "buzagi_pnomonisi"
+  },
+  {
+    "ad": "Buzağı, akut ağır tablo: ağzı açık soluyor, halsiz",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41,
+      "belirtiler": [
+        "solunum_guclugu",
+        "agizdan_solunum",
+        "halsizlik",
+        "istahsizlik",
+        "goz_akintisi"
+      ]
+    },
+    "beklenenIlk3": "buzagi_pnomonisi"
+  },
+  {
+    "ad": "Buzağı, hırıltılı soluk, ağzı kokuyor, salya akıtıyor, yutamıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.3,
+      "belirtiler": [
+        "stridor",
+        "solunum_guclugu",
+        "kotu_agiz_kokusu",
+        "salya",
+        "yutma_guclugu"
+      ]
+    },
+    "beklenenIlk3": "buzagi_difterisi"
+  },
+  {
+    "ad": "Buzağı, ağız formu: yanakta şişlik, kötü koku, salya",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.6,
+      "belirtiler": [
+        "kotu_agiz_kokusu",
+        "salya",
+        "deri_alti_sislik",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "buzagi_difterisi"
+  },
+  {
+    "ad": "Dana, larenks formu: boynunu uzatmış, ıslık gibi soluyor, ağrılı öksürük",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.6,
+      "belirtiler": [
+        "stridor",
+        "boyun_uzatma",
+        "oksuruk",
+        "agizdan_solunum"
+      ]
+    },
+    "beklenenIlk3": "buzagi_difterisi"
+  },
+  {
+    "ad": "Süt ineği sürüsü: kırmızı burun, göz yaşı, öksürük, süt düştü",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 41.3,
+      "belirtiler": [
+        "burun_mukozasi_lezyonu",
+        "burun_akintisi",
+        "konjunktivit",
+        "goz_akintisi",
+        "oksuruk",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "ibr"
+  },
+  {
+    "ad": "Besi danaları: irinli burun akıntısı, burun içinde plaklar, salya",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.9,
+      "belirtiler": [
+        "irinli_burun_akintisi",
+        "burun_mukozasi_lezyonu",
+        "salya",
+        "oksuruk",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "ibr"
+  },
+  {
+    "ad": "Sürüde konjunktivit ve burun akıntısının ardından atıklar",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.5,
+      "belirtiler": [
+        "konjunktivit",
+        "goz_akintisi",
+        "abort",
+        "burun_akintisi"
+      ]
+    },
+    "beklenenIlk3": "ibr"
+  },
+  {
+    "ad": "İnek, şişeyle ilaç içirildikten 2 gün sonra: çürük kokulu nefes, güç soluk",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.4,
+      "belirtiler": [
+        "solunum_guclugu",
+        "oksuruk",
+        "kotu_agiz_kokusu",
+        "anormal_akciger_sesi",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "aspirasyon_pnomonisi"
+  },
+  {
+    "ad": "Emmeyen buzağıya zorla süt içirilmiş; hızlı soluk, ral",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.2,
+      "belirtiler": [
+        "hizli_solunum",
+        "oksuruk",
+        "anormal_akciger_sesi",
+        "emmeme"
+      ]
+    },
+    "beklenenIlk3": "aspirasyon_pnomonisi"
+  },
+  {
+    "ad": "Süt hummasından kalkan inek, yatarken rumen içeriği kaçmış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.9,
+      "belirtiler": [
+        "solunum_guclugu",
+        "irinli_burun_akintisi",
+        "kotu_agiz_kokusu",
+        "istahsizlik",
+        "agri_inleme"
+      ]
+    },
+    "beklenenIlk3": "aspirasyon_pnomonisi"
+  },
+  {
+    "ad": "5 günlük buzağı, su gibi ishal, emmiyor, gözler çökük",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38,
+      "belirtiler": [
+        "sulu_diare",
+        "dehidrasyon",
+        "emmeme",
+        "halsizlik",
+        "soguk_ekstremite"
+      ]
+    },
+    "beklenenIlk3": "neonatal_buzagi_ishali"
+  },
+  {
+    "ad": "10 günlük buzağılar, sarı-beyaz ishal, birkaç buzağıda",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 39.2,
+      "belirtiler": [
+        "sari_beyaz_diare",
+        "dehidrasyon",
+        "emmeme"
+      ]
+    },
+    "beklenenIlk3": "neonatal_buzagi_ishali"
+  },
+  {
+    "ad": "Yatan, soğumuş ishalli yenidoğan (asidoz/şok)",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 36.9,
+      "belirtiler": [
+        "sulu_diare",
+        "yatma_kalkamama",
+        "dehidrasyon",
+        "soguk_ekstremite"
+      ]
+    },
+    "beklenenIlk3": "neonatal_buzagi_ishali"
+  },
+  {
+    "ad": "2 aylık buzağılar, kanlı-sümüklü ishal ve ıkınma",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "kanli_diare",
+        "tenezmus",
+        "mukuslu_diski",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "buzagi_koksidiyozu"
+  },
+  {
+    "ad": "4 aylık dana, kanlı ishal, sürekli ıkınma, rektum dışarıda",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "kanli_diare",
+        "tenezmus",
+        "rektum_prolapsusu",
+        "dehidrasyon"
+      ]
+    },
+    "beklenenIlk3": "buzagi_koksidiyozu"
+  },
+  {
+    "ad": "Buzağı, subakut: ishal, gelişme geriliği, mat tüy, ıkınma",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 39.3,
+      "belirtiler": [
+        "diare",
+        "mat_tuy",
+        "buyume_geriligi",
+        "tenezmus"
+      ]
+    },
+    "beklenenIlk3": "buzagi_koksidiyozu"
+  },
+  {
+    "ad": "3 haftalık buzağılar, yüksek ateş, kanlı fibrinli pis kokulu ishal",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 41,
+      "belirtiler": [
+        "kanli_diare",
+        "mukuslu_diski",
+        "kotu_kokulu_diski",
+        "dehidrasyon",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "salmonelloz"
+  },
+  {
+    "ad": "Süt ineği, ateşli pis kokulu kanlı ishal, süt kesildi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41.2,
+      "belirtiler": [
+        "kanli_diare",
+        "kotu_kokulu_diski",
+        "istahsizlik",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "salmonelloz"
+  },
+  {
+    "ad": "Buzağı, septisemik seyir: yatıyor, ishal, eklemler şiş, hızlı soluk",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.8,
+      "belirtiler": [
+        "halsizlik",
+        "yatma_kalkamama",
+        "diare",
+        "eklem_sisligi",
+        "hizli_solunum"
+      ]
+    },
+    "beklenenIlk3": "salmonelloz"
+  },
+  {
+    "ad": "Arpa ambarına girmiş dana: rumen durmuş, karın gergin, taneli gri ishal, sendeliyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "rumen_atonisi",
+        "karin_genislemesi",
+        "diskida_tane",
+        "dehidrasyon",
+        "ataksi"
+      ]
+    },
+    "beklenenIlk3": "rumen_asidozu"
+  },
+  {
+    "ad": "Rasyon değişimi sonrası inek: rumen pH düşük, ishal, yemiyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "rumen_ph_dusuk",
+        "diare",
+        "istahsizlik",
+        "rumen_atonisi",
+        "tasikardi"
+      ]
+    },
+    "beklenenIlk3": "rumen_asidozu"
+  },
+  {
+    "ad": "Besi boğası, ağır tahıl yüklenmesi: yatıyor, soğuk, sulu ishal",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "boga",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 37.6,
+      "belirtiler": [
+        "yatma_kalkamama",
+        "dehidrasyon",
+        "sulu_diare",
+        "rumen_atonisi"
+      ]
+    },
+    "beklenenIlk3": "rumen_asidozu"
+  },
+  {
+    "ad": "Yaş yoncada otlayan inek, sol açlık çukuru davul gibi, güç soluyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "timpani",
+        "solunum_guclugu",
+        "karin_genislemesi",
+        "agizdan_solunum"
+      ]
+    },
+    "beklenenIlk3": "timpani"
+  },
+  {
+    "ad": "Besi danası, tekrarlayan hafif şişkinlik, geviş yok",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "timpani",
+        "gevis_getirmeme",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "timpani"
+  },
+  {
+    "ad": "Merada birkaç inek birden şişmiş; sancı, salya",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "timpani",
+        "kolik",
+        "salya",
+        "solunum_guclugu"
+      ]
+    },
+    "beklenenIlk3": "timpani"
+  },
+  {
+    "ad": "Doğumdan 10 gün sonra: sol ping, süt düştü, kesif yemi yemiyor, keton +",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "sol_ping",
+        "sut_verimi_dususu",
+        "kesif_yem_reddi",
+        "keton_pozitif"
+      ]
+    },
+    "beklenenIlk3": "abomazum_deplasmani_sol"
+  },
+  {
+    "ad": "Yeni doğurmuş inek: iştahsız, az macunsu dışkı, sol ping",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.9,
+      "belirtiler": [
+        "istahsizlik",
+        "sut_verimi_dususu",
+        "kabizlik",
+        "sol_ping",
+        "rumen_atonisi"
+      ]
+    },
+    "beklenenIlk3": "abomazum_deplasmani_sol"
+  },
+  {
+    "ad": "Doğumdan 6 hafta sonra (30 gün geçmiş): sol ping, yem seçiyor, süt az",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "sol_ping",
+        "kesif_yem_reddi",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "abomazum_deplasmani_sol"
+  },
+  {
+    "ad": "İnek, aniden süt kesildi; sırt kambur, inliyor, sopa testi pozitif",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.8,
+      "belirtiler": [
+        "sirt_kamburlasmasi",
+        "agri_inleme",
+        "on_karin_agri_testi",
+        "rumen_atonisi",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "travmatik_retikuloperitonit"
+  },
+  {
+    "ad": "İnek, eksik tablo: kıpırdamak istemiyor, kambur, hafif tekrarlayan şişkinlik",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.5,
+      "belirtiler": [
+        "hareket_istememe",
+        "istahsizlik",
+        "sut_verimi_dususu",
+        "sirt_kamburlasmasi",
+        "timpani"
+      ]
+    },
+    "beklenenIlk3": "travmatik_retikuloperitonit"
+  },
+  {
+    "ad": "İnek, travmatik perikardit: boğuk kalp sesi, juguler dolgun, gerdan ödemi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40,
+      "belirtiler": [
+        "kalp_sesi_bogukluk",
+        "juguler_dolgunluk",
+        "gerdan_odemi",
+        "tasikardi",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "travmatik_retikuloperitonit"
+  },
+  {
+    "ad": "10 aylık dana, mukozal hastalık: ağız erozyonu, ishal, salya, zayıflama",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.5,
+      "belirtiler": [
+        "agiz_erozyonu",
+        "diare",
+        "salya",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "bvd_md"
+  },
+  {
+    "ad": "Düve, sulu ishal, ağız erozyonları, burun ve göz akıntısı",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "duve",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.2,
+      "belirtiler": [
+        "sulu_diare",
+        "agiz_erozyonu",
+        "dehidrasyon",
+        "burun_akintisi",
+        "goz_akintisi"
+      ]
+    },
+    "beklenenIlk3": "bvd_md"
+  },
+  {
+    "ad": "Sürüde akut BVD: ishal, iştahsızlık, ağızda erozyon, atık",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.6,
+      "belirtiler": [
+        "diare",
+        "istahsizlik",
+        "agiz_erozyonu",
+        "abort"
+      ]
+    },
+    "beklenenIlk3": "bvd_md"
+  },
+  {
+    "ad": "Bir meme lobu şiş, sıcak, ağrılı; sütte pıhtı",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.8,
+      "belirtiler": [
+        "meme_sisligi",
+        "meme_sicaklik_agri",
+        "sutte_pihti",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "klinik_mastitis_akut"
+  },
+  {
+    "ad": "Hafif klinik mastitis: sütte pıhtı, lob sertçe, genel durum iyi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.9,
+      "belirtiler": [
+        "sutte_pihti",
+        "meme_sertligi",
+        "cmt_pozitif"
+      ]
+    },
+    "beklenenIlk3": "klinik_mastitis_akut"
+  },
+  {
+    "ad": "Ateşli akut mastitis: şiş ağrılı meme, sulu süt, iştah azalmış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.3,
+      "belirtiler": [
+        "meme_sisligi",
+        "meme_sicaklik_agri",
+        "sulu_renkli_sut",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "klinik_mastitis_akut"
+  },
+  {
+    "ad": "Doğumdan 3 gün sonra: yatıyor, serum gibi süt, şiş meme, dehidre",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.8,
+      "belirtiler": [
+        "sulu_renkli_sut",
+        "meme_sisligi",
+        "yatma_kalkamama",
+        "dehidrasyon",
+        "tasikardi",
+        "rumen_atonisi"
+      ]
+    },
+    "beklenenIlk3": "perakut_koliform_mastitis"
+  },
+  {
+    "ad": "Toksemik, soğumuş yatan inek; sulu süt, ishal (süt hummasıyla karışır)",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 37.4,
+      "belirtiler": [
+        "yatma_kalkamama",
+        "sulu_renkli_sut",
+        "soguk_ekstremite",
+        "diare",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "perakut_koliform_mastitis"
+  },
+  {
+    "ad": "Laktasyon ortası, aniden çok hasta: 41,2, sulu süt, ağrılı meme, taşikardi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41.2,
+      "belirtiler": [
+        "sulu_renkli_sut",
+        "meme_sicaklik_agri",
+        "istahsizlik",
+        "sut_verimi_dususu",
+        "tasikardi",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "perakut_koliform_mastitis"
+  },
+  {
+    "ad": "Memede sert bölgeler, CMT pozitif, süt azalmış, genel durum normal",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "meme_sertligi",
+        "cmt_pozitif",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "kronik_mastitis"
+  },
+  {
+    "ad": "Aralıklı pıhtı atan, sertleşmiş lob",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "sutte_pihti",
+        "meme_sertligi",
+        "sut_verimi_dususu",
+        "cmt_pozitif"
+      ]
+    },
+    "beklenenIlk3": "kronik_mastitis"
+  },
+  {
+    "ad": "Subklinik-kronik: CMT pozitif, verim düşük, ara sıra pıhtı",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.5,
+      "belirtiler": [
+        "cmt_pozitif",
+        "sut_verimi_dususu",
+        "sutte_pihti"
+      ]
+    },
+    "beklenenIlk3": "kronik_mastitis"
+  },
+  {
+    "ad": "Doğumdan 5 gün sonra: kırmızı-kahve pis kokulu akıntı, ateş, yemiyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.6,
+      "belirtiler": [
+        "uterus_akintisi_kotu_koku",
+        "istahsizlik",
+        "sut_verimi_dususu",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "puerperal_metritis"
+  },
+  {
+    "ad": "Sonunu atamamış inek, 4. gün toksik metritis",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.2,
+      "belirtiler": [
+        "retensiyo_sekundinarum",
+        "uterus_akintisi_kotu_koku",
+        "dehidrasyon",
+        "rumen_atonisi"
+      ]
+    },
+    "beklenenIlk3": "puerperal_metritis"
+  },
+  {
+    "ad": "Güç doğum sonrası kokulu akıntı, ıkınma, süt düşük; ateş sınırda",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.9,
+      "belirtiler": [
+        "dogum_guclugu",
+        "uterus_akintisi_kotu_koku",
+        "tenezmus",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "puerperal_metritis"
+  },
+  {
+    "ad": "Doğumdan 24 saat sonra zarlar sarkıyor; genel durum iyi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "retensiyo_sekundinarum",
+        "tenezmus",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "retensiyo_sekundinarum"
+  },
+  {
+    "ad": "Atık sonrası sonunu atamamış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "retensiyo_sekundinarum",
+        "abort",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "retensiyo_sekundinarum"
+  },
+  {
+    "ad": "Güç doğum, 3. gün zarlar duruyor, hafif koku, ateş yok",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.2,
+      "belirtiler": [
+        "retensiyo_sekundinarum",
+        "dogum_guclugu",
+        "uterus_akintisi_kotu_koku"
+      ]
+    },
+    "beklenenIlk3": "retensiyo_sekundinarum"
+  },
+  {
+    "ad": "Doğumdan 45 gün sonra irinli vajinal akıntı, kızgınlık yok, gebe kalmıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "irinli_vajinal_akinti",
+        "dol_tutmama",
+        "kizginlik_gostermeme"
+      ]
+    },
+    "beklenenIlk3": "endometritis"
+  },
+  {
+    "ad": "Doğum sonrası 25. gün kontrolünde irinli akıntı; ateş yok",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "irinli_vajinal_akinti",
+        "kizginlik_gostermeme",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "endometritis"
+  },
+  {
+    "ad": "Repeat breeder: üç tohumlamada tutmadı, çara akıntısı bulanık-irinli (iki bulgulu eksik tablo)",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "dol_tutmama",
+        "irinli_vajinal_akinti"
+      ]
+    },
+    "beklenenIlk3": "endometritis"
+  },
+  {
+    "ad": "Doğumdan 1 gün sonra yatıyor, baş böğürde, kulaklar soğuk, rumen durmuş",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 37.2,
+      "belirtiler": [
+        "yatma_kalkamama",
+        "s_durusu",
+        "soguk_ekstremite",
+        "rumen_atonisi"
+      ]
+    },
+    "beklenenIlk3": "sut_hummasi"
+  },
+  {
+    "ad": "Erken evre: titreme, sendeleme, iştahsız, burun kuru; henüz ayakta",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.4,
+      "belirtiler": [
+        "kas_titremesi",
+        "ataksi",
+        "istahsizlik",
+        "burun_aynasi_kurulugu"
+      ]
+    },
+    "beklenenIlk3": "sut_hummasi"
+  },
+  {
+    "ad": "Doğum sırasında yatmış (kutu işaretlenmemiş): ıkınmıyor, soğuk, pupilla geniş, hafif şiş",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 37.5,
+      "belirtiler": [
+        "yatma_kalkamama",
+        "dogum_guclugu",
+        "soguk_ekstremite",
+        "timpani",
+        "midriyazis"
+      ]
+    },
+    "beklenenIlk3": "sut_hummasi"
+  },
+  {
+    "ad": "Doğumdan 3 hafta sonra: kesif yemi bıraktı, nefes aseton kokuyor, süt düştü, zayıflıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "kesif_yem_reddi",
+        "aseton_kokusu",
+        "sut_verimi_dususu",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "ketozis"
+  },
+  {
+    "ad": "Doğumdan 5 hafta sonra (30 gün geçmiş): keton +, süt düşük, iştahsız, dışkı kuru",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.5,
+      "belirtiler": [
+        "keton_pozitif",
+        "sut_verimi_dususu",
+        "istahsizlik",
+        "kabizlik"
+      ]
+    },
+    "beklenenIlk3": "ketozis"
+  },
+  {
+    "ad": "Sinirsel ketozis: sürekli yalıyor, sendeliyor, keton +",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "anormal_yalama",
+        "keton_pozitif",
+        "sinirsel_belirti",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "ketozis"
+  },
+  {
+    "ad": "İlkbaharda taze merada inek: titreme, aşırı duyarlı, nöbet geçirip yatmış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.2,
+      "belirtiler": [
+        "kas_titremesi",
+        "hiperestezi",
+        "kasilma_nobeti",
+        "yatma_kalkamama"
+      ]
+    },
+    "beklenenIlk3": "hipomagnezemi"
+  },
+  {
+    "ad": "Mera ineği, erken evre: gergin, sendeliyor, titriyor, saldırgan, sık işiyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "ataksi",
+        "hiperestezi",
+        "kas_titremesi",
+        "saldirganlik",
+        "sik_idrar"
+      ]
+    },
+    "beklenenIlk3": "hipomagnezemi"
+  },
+  {
+    "ad": "Nöbet halinde yatan inek: opistotonus, köpüklü salya, çene şakırdatma; kas aktivitesiyle ısı yüksek",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40,
+      "belirtiler": [
+        "kasilma_nobeti",
+        "opistotonus",
+        "yatma_kalkamama",
+        "salya",
+        "cene_sakirdatma"
+      ]
+    },
+    "beklenenIlk3": "hipomagnezemi"
+  },
+  {
+    "ad": "Aşırı kondisyonlu doğurmuş inek: hiç yemiyor, hızla zayıflıyor, keton +, durgun",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.5,
+      "belirtiler": [
+        "istahsizlik",
+        "keton_pozitif",
+        "zayiflama",
+        "sut_verimi_dususu",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "yag_karaciger"
+  },
+  {
+    "ad": "Doğum sonrası yatan, sarılıklı, tam iştahsız, keton + inek",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.3,
+      "belirtiler": [
+        "istahsizlik",
+        "yatma_kalkamama",
+        "keton_pozitif",
+        "sarilik",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "yag_karaciger"
+  },
+  {
+    "ad": "Tedaviye yanıtsız ketozis: aseton kokusu, sarılık, zayıflama",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": true,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "istahsizlik",
+        "aseton_kokusu",
+        "sarilik",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "yag_karaciger"
+  },
+  {
+    "ad": "3 haftalık buzağı kalkamıyor, kaslar titriyor, emme isteği var",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.9,
+      "belirtiler": [
+        "yatma_kalkamama",
+        "kas_titremesi",
+        "hareket_istememe"
+      ]
+    },
+    "beklenenIlk3": "buzagi_beyaz_kas_hastaligi"
+  },
+  {
+    "ad": "Kalp formu: sürüde ani buzağı ölümleri; kalanlarda güç soluk, taşikardi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": true
+      },
+      "isi": 39.2,
+      "belirtiler": [
+        "solunum_guclugu",
+        "tasikardi",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "buzagi_beyaz_kas_hastaligi"
+  },
+  {
+    "ad": "6 haftalık buzağı çayıra çıkınca: sert yürüyüş, yürümek istemiyor, sonra yattı, yutamıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "hareket_istememe",
+        "ataksi",
+        "yatma_kalkamama",
+        "yutma_guclugu"
+      ]
+    },
+    "beklenenIlk3": "buzagi_beyaz_kas_hastaligi"
+  },
+  {
+    "ad": "Kışın danalarda göz çevresi ve boyunda yuvarlak gri kabuklu kılsız alanlar",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": null,
+      "belirtiler": [
+        "halka_kil_dokulmesi",
+        "deri_kabuklanma",
+        "kil_dokulmesi"
+      ]
+    },
+    "beklenenIlk3": "dermatofitoz"
+  },
+  {
+    "ad": "Buzağı, yuvarlak kabuklu lezyonlar, hafif kaşıntı",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "halka_kil_dokulmesi",
+        "deri_kabuklanma",
+        "kasinti"
+      ]
+    },
+    "beklenenIlk3": "dermatofitoz"
+  },
+  {
+    "ad": "Düve, yuvarlak kıl dökülmeleri, tüy mat",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "duve",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": null,
+      "belirtiler": [
+        "halka_kil_dokulmesi",
+        "kil_dokulmesi",
+        "mat_tuy"
+      ]
+    },
+    "beklenenIlk3": "dermatofitoz"
+  },
+  {
+    "ad": "Aniden şiddetli topallık, bilek altı simetrik şiş, tırnak arası yarık ve nekroz",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.8,
+      "belirtiler": [
+        "topallik",
+        "ayak_sisligi",
+        "tirnak_arasi_nekroz"
+      ]
+    },
+    "beklenenIlk3": "interdigital_flegmon"
+  },
+  {
+    "ad": "Ayağı şiş topal inek, ateşli, süt ve iştah düşmüş",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.1,
+      "belirtiler": [
+        "topallik",
+        "ayak_sisligi",
+        "sut_verimi_dususu",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "interdigital_flegmon"
+  },
+  {
+    "ad": "Besi boğası, basamıyor; tırnak arası nekrotik",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "boga",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.5,
+      "belirtiler": [
+        "topallik",
+        "tirnak_arasi_nekroz",
+        "ayak_sisligi",
+        "hareket_istememe"
+      ]
+    },
+    "beklenenIlk3": "interdigital_flegmon"
+  },
+  {
+    "ad": "Süt sürüsünde topallık; ökçe üstünde çilek görünümlü ağrılı lezyon",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "topallik",
+        "dijital_dermatit_lezyonu",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "dijital_dermatit"
+  },
+  {
+    "ad": "Düvelerde ökçe lezyonu, ayak ucuna basıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "duve",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": null,
+      "belirtiler": [
+        "dijital_dermatit_lezyonu",
+        "topallik",
+        "hareket_istememe"
+      ]
+    },
+    "beklenenIlk3": "dijital_dermatit"
+  },
+  {
+    "ad": "Kronik siğilimsi ökçe lezyonu, topal, zayıflamış inek",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "dijital_dermatit_lezyonu",
+        "topallik",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "dijital_dermatit"
+  },
+  {
+    "ad": "Kışın danalarda şiddetli kaşıntı, kabuklanma, kıl dökülmesi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": null,
+      "belirtiler": [
+        "kasinti",
+        "deri_kabuklanma",
+        "kil_dokulmesi"
+      ]
+    },
+    "beklenenIlk3": "uyuz"
+  },
+  {
+    "ad": "İnek, kuyruk sokumunda kabuklu kaşıntılı lezyon, süt düşmüş",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "kasinti",
+        "deri_kabuklanma",
+        "kil_dokulmesi",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "uyuz"
+  },
+  {
+    "ad": "Boğa, yaygın kaşıntı, kalınlaşmış kabuklu deri, zayıflama",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "boga",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.5,
+      "belirtiler": [
+        "kasinti",
+        "kil_dokulmesi",
+        "deri_kabuklanma",
+        "zayiflama",
+        "mat_tuy"
+      ]
+    },
+    "beklenenIlk3": "uyuz"
+  },
+  {
+    "ad": "Yazın kültür ırkı inek: 41,2, ön kürek lenf yumrusu büyük, mukoza soluk, kene var",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41.2,
+      "belirtiler": [
+        "lenf_yumrusu_buyumesi",
+        "anemi",
+        "kene_varligi",
+        "istahsizlik",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "tropikal_teileriyoz"
+  },
+  {
+    "ad": "Düve: yüksek ateş, lenf yumruları büyük, göz yaşı, hızlı soluk, sarılık başlamış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "duve",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41.5,
+      "belirtiler": [
+        "lenf_yumrusu_buyumesi",
+        "goz_akintisi",
+        "hizli_solunum",
+        "sarilik"
+      ]
+    },
+    "beklenenIlk3": "tropikal_teileriyoz"
+  },
+  {
+    "ad": "Dana: anemi, lenf yumrusu büyük, mukozada peteşi, halsiz",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.9,
+      "belirtiler": [
+        "anemi",
+        "lenf_yumrusu_buyumesi",
+        "kanama_egilimi",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "tropikal_teileriyoz"
+  },
+  {
+    "ad": "Meradaki inek: kahve-kırmızı idrar, ateş, soluk mukoza, kene",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41,
+      "belirtiler": [
+        "hemoglobinuri",
+        "anemi",
+        "kene_varligi",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "babesiyoz"
+  },
+  {
+    "ad": "İnek: kırmızı idrar, sarılık, taşikardi, süt kesildi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.8,
+      "belirtiler": [
+        "hemoglobinuri",
+        "sarilik",
+        "tasikardi",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "babesiyoz"
+  },
+  {
+    "ad": "Düve: kırmızı idrar, anemi, sendeleme (serebral), rumen durmuş",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "duve",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 41.3,
+      "belirtiler": [
+        "hemoglobinuri",
+        "anemi",
+        "ataksi",
+        "rumen_atonisi"
+      ]
+    },
+    "beklenenIlk3": "babesiyoz"
+  },
+  {
+    "ad": "Erişkin inek: belirgin anemi ve sarılık, idrar normal, kabız, süt düşük",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.5,
+      "belirtiler": [
+        "anemi",
+        "sarilik",
+        "kabizlik",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "anaplazmoz"
+  },
+  {
+    "ad": "İnek: ilerleyici anemi, zayıflama, sarılık, kene var; ateş hafif",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.8,
+      "belirtiler": [
+        "anemi",
+        "zayiflama",
+        "sarilik",
+        "kene_varligi",
+        "halsizlik"
+      ]
+    },
+    "beklenenIlk3": "anaplazmoz"
+  },
+  {
+    "ad": "Boğa: anemi, sarılık, taşikardi, hızlı soluk, kabızlık",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "boga",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.2,
+      "belirtiler": [
+        "anemi",
+        "sarilik",
+        "tasikardi",
+        "hizli_solunum",
+        "kabizlik"
+      ]
+    },
+    "beklenenIlk3": "anaplazmoz"
+  },
+  {
+    "ad": "Sürüde salya, dilde veziküller, topallık, süt düşüşü",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.6,
+      "belirtiler": [
+        "salya",
+        "vezikul_agiz",
+        "topallik",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "sap"
+  },
+  {
+    "ad": "Danalarda salya, ağızda yırtılmış vezikül/erozyon, tırnak arası vezikül, ağız şapırdatma",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.2,
+      "belirtiler": [
+        "salya",
+        "agiz_erozyonu",
+        "topallik",
+        "ayakta_vezikul",
+        "cene_sakirdatma"
+      ]
+    },
+    "beklenenIlk3": "sap"
+  },
+  {
+    "ad": "Geç başvuru: meme başında lezyon, topallık, salya; vezikül görülmedi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 39.9,
+      "belirtiler": [
+        "meme_basi_lezyonu",
+        "topallik",
+        "salya",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "sap"
+  },
+  {
+    "ad": "Merada aniden ölmüş inek, burun ve anüsten koyu kan, leş katılaşmamış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": true
+      },
+      "isi": null,
+      "belirtiler": [
+        "ani_olum",
+        "dogal_deliklerden_kan",
+        "oluda_katilik_yok"
+      ]
+    },
+    "beklenenIlk3": "sarbon"
+  },
+  {
+    "ad": "Ani ölmüş dana, katılık yok, hızla şişmiş; kan görülmedi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": true
+      },
+      "isi": null,
+      "belirtiler": [
+        "ani_olum",
+        "oluda_katilik_yok",
+        "timpani"
+      ]
+    },
+    "beklenenIlk3": "sarbon"
+  },
+  {
+    "ad": "Canlı yakalanan olgu: 41,8, güç soluk, kanlı ishal, sütte kan; sürüde ani ölüm var",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": true
+      },
+      "isi": 41.8,
+      "belirtiler": [
+        "halsizlik",
+        "solunum_guclugu",
+        "kanli_diare",
+        "sutte_kan"
+      ]
+    },
+    "beklenenIlk3": "sarbon"
+  },
+  {
+    "ad": "İnek: boğuk sürekli böğürme, salya, yutamıyor, ıkınıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "bogurme",
+        "salya",
+        "yutma_guclugu",
+        "tenezmus"
+      ]
+    },
+    "beklenenIlk3": "kuduz"
+  },
+  {
+    "ad": "Dana: saldırgan, böğürüyor, aşırı duyarlı, salya",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.4,
+      "belirtiler": [
+        "saldirganlik",
+        "bogurme",
+        "hiperestezi",
+        "salya"
+      ]
+    },
+    "beklenenIlk3": "kuduz"
+  },
+  {
+    "ad": "Paralitik form: arka sendeleme ve felç, ıkınma, yutamama; salya belirgin değil",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "ataksi",
+        "felc",
+        "tenezmus",
+        "yutma_guclugu"
+      ]
+    },
+    "beklenenIlk3": "kuduz"
+  },
+  {
+    "ad": "Sürüde gebeliğin son üçte birinde atıklar, sonunu atamama",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 38.9,
+      "belirtiler": [
+        "abort",
+        "retensiyo_sekundinarum"
+      ]
+    },
+    "beklenenIlk3": "bruselloz"
+  },
+  {
+    "ad": "Boğa: tek taraflı orşit, eklem şişliği, topallık",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "boga",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.6,
+      "belirtiler": [
+        "orsit",
+        "eklem_sisligi",
+        "topallik"
+      ]
+    },
+    "beklenenIlk3": "bruselloz"
+  },
+  {
+    "ad": "Atık, zayıf buzağı doğumları, döl tutmama, dizde higroma",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "abort",
+        "zayif_buzagi_dogumu",
+        "dol_tutmama",
+        "eklem_sisligi"
+      ]
+    },
+    "beklenenIlk3": "bruselloz"
+  },
+  {
+    "ad": "Yaşlı inek: aylardır öksürük, zayıflama, lenf yumruları büyük",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "kronik_oksuruk",
+        "zayiflama",
+        "lenf_yumrusu_buyumesi"
+      ]
+    },
+    "beklenenIlk3": "tuberkuloz"
+  },
+  {
+    "ad": "İyi yediği halde zayıflayan, kronik öksüren, tüyü mat, eforla sık soluyan inek",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "zayiflama",
+        "kronik_oksuruk",
+        "sut_verimi_dususu",
+        "mat_tuy",
+        "hizli_solunum"
+      ]
+    },
+    "beklenenIlk3": "tuberkuloz"
+  },
+  {
+    "ad": "Zayıflama, büyük lenf yumruları, memede ağrısız sertlik, solunum güçlüğü",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.4,
+      "belirtiler": [
+        "zayiflama",
+        "lenf_yumrusu_buyumesi",
+        "meme_sertligi",
+        "solunum_guclugu"
+      ]
+    },
+    "beklenenIlk3": "tuberkuloz"
+  },
+  {
+    "ad": "Yaz sonu: ateş, tüm vücutta sert deri nodülleri, lenf yumruları büyük, süt düştü",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 41,
+      "belirtiler": [
+        "deri_nodulu",
+        "lenf_yumrusu_buyumesi",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "noduler_ekzantem"
+  },
+  {
+    "ad": "Dana: deri nodülleri, bacak ödemi, göz ve burun akıntısı",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.5,
+      "belirtiler": [
+        "deri_nodulu",
+        "ekstremite_odemi",
+        "goz_akintisi",
+        "burun_akintisi"
+      ]
+    },
+    "beklenenIlk3": "noduler_ekzantem"
+  },
+  {
+    "ad": "İnek: nodüller, gerdan ödemi, salya, topallık, iştahsız",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.8,
+      "belirtiler": [
+        "deri_nodulu",
+        "gerdan_odemi",
+        "salya",
+        "topallik",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "noduler_ekzantem"
+  },
+  {
+    "ad": "Sürüde yüksek ateş, ağız erozyonu, kötü koku, irinli akıntılar, şiddetli kanlı ishal, ölümler",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": true
+      },
+      "isi": 41.2,
+      "belirtiler": [
+        "agiz_erozyonu",
+        "sulu_diare",
+        "kanli_diare",
+        "goz_akintisi",
+        "irinli_burun_akintisi",
+        "kotu_agiz_kokusu",
+        "dehidrasyon"
+      ]
+    },
+    "beklenenIlk3": "sigir_vebasi"
+  },
+  {
+    "ad": "Sürüde: ağrılı öksürük, inleyerek soluma, boyun uzatılmış, kıpırdamak istemiyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.6,
+      "belirtiler": [
+        "oksuruk",
+        "solunum_guclugu",
+        "agri_inleme",
+        "boyun_uzatma",
+        "hareket_istememe"
+      ]
+    },
+    "beklenenIlk3": "sigir_pleuropnomonisi"
+  },
+  {
+    "ad": "Dana: ağzı açık soluyor, inliyor, akciğerde anormal ses, boyun uzatmış",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 41,
+      "belirtiler": [
+        "solunum_guclugu",
+        "agizdan_solunum",
+        "agri_inleme",
+        "anormal_akciger_sesi",
+        "boyun_uzatma"
+      ]
+    },
+    "beklenenIlk3": "sigir_pleuropnomonisi"
+  },
+  {
+    "ad": "Yaz sonu inek: ateş, ağız erozyonu, salya, burun aynasında lezyon, taç bandı şiş ve topal",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.8,
+      "belirtiler": [
+        "agiz_erozyonu",
+        "salya",
+        "burun_mukozasi_lezyonu",
+        "topallik",
+        "ayak_sisligi"
+      ]
+    },
+    "beklenenIlk3": "mavi_dil"
+  },
+  {
+    "ad": "İnek: ağız erozyonu, burun akıntısı, topallık, meme başı lezyonu",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.4,
+      "belirtiler": [
+        "agiz_erozyonu",
+        "burun_akintisi",
+        "topallik",
+        "meme_basi_lezyonu"
+      ]
+    },
+    "beklenenIlk3": "mavi_dil"
+  },
+  {
+    "ad": "5 yaşında inek: haftalardır ürkek, dokununca tekme atıyor, arka sendeleme, zayıflıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "hiperestezi",
+        "ataksi",
+        "saldirganlik",
+        "zayiflama",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "bse"
+  },
+  {
+    "ad": "Yaşlı inek: ateşsiz ilerleyici sinirsel tablo, sendeleme, zayıflama, aşırı duyarlılık",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.5,
+      "belirtiler": [
+        "sinirsel_belirti",
+        "ataksi",
+        "zayiflama",
+        "hiperestezi"
+      ]
+    },
+    "beklenenIlk3": "bse"
+  },
+  {
+    "ad": "Yağışlı dönem sonrası atık fırtınası; ateş, kanlı ishal, sarılık, burun akıntısı",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 41,
+      "belirtiler": [
+        "abort",
+        "kanli_diare",
+        "sarilik",
+        "burun_akintisi",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "rift_vadisi_atesi"
+  },
+  {
+    "ad": "Genç buzağılarda ateş ve hızlı ölümler; kanlı ishal, sarılık",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": true
+      },
+      "isi": 41.5,
+      "belirtiler": [
+        "halsizlik",
+        "kanli_diare",
+        "sarilik"
+      ]
+    },
+    "beklenenIlk3": "rift_vadisi_atesi"
+  },
+  {
+    "ad": "Ağızda ve meme başında vezikül, salya; topallık yok",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40,
+      "belirtiler": [
+        "vezikul_agiz",
+        "salya",
+        "meme_basi_lezyonu",
+        "istahsizlik"
+      ]
+    },
+    "beklenenIlk3": "vezikuler_stomatit"
+  },
+  {
+    "ad": "6 yaşında inek: yüzeysel lenf yumruları belirgin büyük, zayıflama, süt düşük, ateşsiz",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.7,
+      "belirtiler": [
+        "lenf_yumrusu_buyumesi",
+        "zayiflama",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "enzootik_sigir_lokozu"
+  },
+  {
+    "ad": "Yaşlı inek: büyük lenf yumruları, arka bacak felci, zayıflama",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.9,
+      "belirtiler": [
+        "lenf_yumrusu_buyumesi",
+        "felc",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "enzootik_sigir_lokozu"
+  },
+  {
+    "ad": "Abomazum/kalp tutulumu: melena, juguler dolgunluk, lenf yumrusu büyük, zayıf",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.6,
+      "belirtiler": [
+        "melena",
+        "juguler_dolgunluk",
+        "lenf_yumrusu_buyumesi",
+        "zayiflama"
+      ]
+    },
+    "beklenenIlk3": "enzootik_sigir_lokozu"
+  },
+  {
+    "ad": "Sonbahar: ateş, ağız erozyonu, salya, yutma güçlüğü, topallık, süt düşüşü",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 40.7,
+      "belirtiler": [
+        "agiz_erozyonu",
+        "salya",
+        "yutma_guclugu",
+        "topallik",
+        "sut_verimi_dususu"
+      ]
+    },
+    "beklenenIlk3": "epizootik_hemorajik_hastalik"
+  },
+  {
+    "ad": "İnek: yutamıyor, salya, burun aynası lezyonu, ağız erozyonu",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 40.5,
+      "belirtiler": [
+        "yutma_guclugu",
+        "salya",
+        "burun_mukozasi_lezyonu",
+        "agiz_erozyonu"
+      ]
+    },
+    "beklenenIlk3": "epizootik_hemorajik_hastalik"
+  },
+  {
+    "ad": "Gübrelenmiş hasıl yiyen sürü: çikolata renkli mukoza, güç soluk, sendeleme, titreme; ölenler var",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": true
+      },
+      "isi": 38.3,
+      "belirtiler": [
+        "kahverengi_kan",
+        "solunum_guclugu",
+        "ataksi",
+        "kas_titremesi"
+      ]
+    },
+    "beklenenIlk3": "nitrat_zehirlenmesi"
+  },
+  {
+    "ad": "Danalar: siyanoz, hızlı soluk, taşikardi, kahverengi kan, sık işeme",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 38,
+      "belirtiler": [
+        "siyanoz",
+        "hizli_solunum",
+        "tasikardi",
+        "kahverengi_kan",
+        "sik_idrar"
+      ]
+    },
+    "beklenenIlk3": "nitrat_zehirlenmesi"
+  },
+  {
+    "ad": "Kan rengi bakılmamış: sürüde ani ölüm, kalanlarda siyanoz, güç soluk, yatıyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": true
+      },
+      "isi": 37.9,
+      "belirtiler": [
+        "solunum_guclugu",
+        "siyanoz",
+        "yatma_kalkamama",
+        "ani_olum"
+      ]
+    },
+    "beklenenIlk3": "nitrat_zehirlenmesi"
+  },
+  {
+    "ad": "Kene ilaçlaması sonrası danalar: salya, pupilla iğne ucu, kas seğirmesi, ishal",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": true,
+        "aniOlum": false
+      },
+      "isi": 38.9,
+      "belirtiler": [
+        "salya",
+        "miyozis",
+        "kas_titremesi",
+        "diare"
+      ]
+    },
+    "beklenenIlk3": "organofosfat_zehirlenmesi"
+  },
+  {
+    "ad": "İnek: salya, güç soluk, ishal, sık işeme, miyozis",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.2,
+      "belirtiler": [
+        "salya",
+        "solunum_guclugu",
+        "diare",
+        "sik_idrar",
+        "miyozis"
+      ]
+    },
+    "beklenenIlk3": "organofosfat_zehirlenmesi"
+  },
+  {
+    "ad": "Buzağı: titreme, sendeleme, salya, sancı, nöbet",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.5,
+      "belirtiler": [
+        "kas_titremesi",
+        "ataksi",
+        "salya",
+        "kolik",
+        "kasilma_nobeti"
+      ]
+    },
+    "beklenenIlk3": "organofosfat_zehirlenmesi"
+  },
+  {
+    "ad": "Akü yalamış dana: kör, başını duvara dayıyor, çene şakırdatıyor, kas seğirmesi",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "dana",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39,
+      "belirtiler": [
+        "korluk",
+        "bas_bastirma",
+        "cene_sakirdatma",
+        "kas_titremesi"
+      ]
+    },
+    "beklenenIlk3": "kursun_zehirlenmesi"
+  },
+  {
+    "ad": "Buzağı: nöbet, körlük, köpüklü salya, diş gıcırdatma",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "buzagi",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 39.3,
+      "belirtiler": [
+        "kasilma_nobeti",
+        "korluk",
+        "salya",
+        "dis_gicirdatma"
+      ]
+    },
+    "beklenenIlk3": "kursun_zehirlenmesi"
+  },
+  {
+    "ad": "İnek, subakut: körlük, sendeleme, rumen durmuş, kabız, daire çiziyor",
+    "girdi": {
+      "tur": "sigir",
+      "yas": "inek",
+      "baglam": {
+        "dogumSonrasi": false,
+        "suru": false,
+        "aniOlum": false
+      },
+      "isi": 38.8,
+      "belirtiler": [
+        "korluk",
+        "ataksi",
+        "rumen_atonisi",
+        "kabizlik",
+        "dairesel_yurume"
+      ]
+    },
+    "beklenenIlk3": "kursun_zehirlenmesi"
+  }
+]
