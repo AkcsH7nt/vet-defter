@@ -1,8 +1,9 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince SURUM artırılmalı.
-const SURUM = 'vet-defter-v3';
+const SURUM = 'vet-defter-v4';
 const DOSYALAR = [
-  './', 'index.html', 'style.css', 'app.js', 'ui/ortak.js',
+  './', 'index.html', 'style.css', 'app.js',
+  'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/listeler.js', 'ui/hakkinda.js',
   'manifest.webmanifest', 'ikon.svg', 'ikon-192.png', 'ikon-512.png', 'apple-touch-icon.png',
   'lib/veri.js', 'lib/onay.js', 'lib/arama.js', 'lib/puan.js', 'lib/bayrak.js',
   'veri/meta.json', 'veri/belirtiler.json', 'veri/etkenler.json', 'veri/bayraklar.json',

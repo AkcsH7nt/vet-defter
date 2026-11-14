@@ -5,12 +5,24 @@ import { bayraklar } from '../lib/bayrak.js';
 
 const BANT = { guclu: 'Güçlü', orta: 'Orta', zayif: 'Zayıf' };
 
+/** Aynı hastalığın birden çok kuralı tutarsa tek bant: ilk kuralın başlığı, uyarılar sırayla ve tekrarsız. */
+export function bayraklariBirlestir(liste) {
+  const gruplar = new Map();
+  for (const b of liste) {
+    const anahtar = b.hastalikId ?? b.id;
+    const g = gruplar.get(anahtar);
+    if (!g) { gruplar.set(anahtar, { ...b, uyarilar: [...new Set(b.uyarilar ?? [])] }); continue; }
+    for (const u of b.uyarilar ?? []) if (!g.uyarilar.includes(u)) g.uyarilar.push(u);
+  }
+  return [...gruplar.values()];
+}
+
 export function render(kok, veri, durum) {
   const girdi = bilinenGirdi(durum.girdi, veri);
   const varMi = (id) => veri.hastaliklar.some((h) => h.id === id);
   const adlar = (ids) => ids.map((id) => belirtiAdi(veri, id)).join(', ');
 
-  const bayrakBolumu = bayraklar(girdi, veri).map((b) => {
+  const bayrakBolumu = bayraklariBirlestir(bayraklar(girdi, veri)).map((b) => {
     const icerik = [
       el('strong', { class: 'bayrak-baslik' }, `⛔ ${b.baslik}`),
       el('ul', {}, (b.uyarilar ?? []).map((u) => el('li', {}, u))),

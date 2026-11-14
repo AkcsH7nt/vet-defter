@@ -102,6 +102,33 @@ test('sap belirtileri ustte kirmizi bayrak gosterir', async () => {
   assert.match(await metin(s), /İhbarı mecburi — bildirin/);
 });
 
+test('ayni hastalikta birden cok bayrak tek bant, uyarilar tekrarsiz', async () => {
+  const ikinci = (yol, json) => (yol === 'bayraklar.json' ? [...json, {
+    id: 'ornek_ihbar_bayragi_2',
+    hastalikId: 'ornek_ihbar',
+    kosul: { herhangi: ['vezikul_agiz'] },
+    baslik: 'ÖRNEK VEZİKÜLER HASTALIK ŞÜPHESİ',
+    uyarilar: ['Örnek uyarı: hayvanı ayırın', 'Örnek uyarı: veziküller her zaman ihbar şüphesidir'],
+    onay: { durum: 'taslak' },
+  }] : undefined);
+  const s = await sayfaAc({ degistir: ikinci });
+  await s.git('#/tani');
+  await belirtiSec(s, 'kabarcık', 'vezikul_agiz');
+  await belirtiSec(s, 'salya', 'salya');
+  await belirtiSec(s, 'topallık', 'topallik');
+  await s.click('#goster');
+  await s.waitForSelector('main h1:text-is("Sonuçlar")');
+  assert.equal(await s.locator('.bayrak').count(), 1);
+  const bant = await s.locator('.bayrak').innerText();
+  assert.match(bant, /ÖRNEK ŞAP ŞÜPHESİ — İHBAR EDİN/);
+  assert.doesNotMatch(bant, /VEZİKÜLER HASTALIK ŞÜPHESİ/);
+  assert.equal(bant.split('Örnek uyarı: hayvanı ayırın').length - 1, 1);
+  assert.match(bant, /hayvan hareketini durdurun/);
+  assert.match(bant, /veziküller her zaman ihbar şüphesidir/);
+  assert.equal(await s.locator('.bayrak li').count(), 3);
+  assert.deepEqual(s.hatalar, []);
+});
+
 test('belirti secmeden yetersiz girdi', async () => {
   const s = await sayfaAc();
   await s.git('#/tani');
