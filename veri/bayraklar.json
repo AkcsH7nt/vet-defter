@@ -21,7 +21,7 @@
       "Ağızda ya da ayakta vezikül her zaman ihbar şüphesidir.",
       "Hayvanı ayırın; hayvan, süt ve araç çıkışını durdurun.",
       "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin.",
-      "Çizme, kıyafet ve aleti dezenfekte etmeden işletmeden ayrılmayın."
+      "Çizme, kıyafet ve aleti dezenfekte etmeden işletmeden ayrılmayın; aynı gün başka işletmeye girmeyin."
     ],
     "onay": { "durum": "taslak" }
   },
@@ -108,7 +108,7 @@
     "hastalikId": "kuduz",
     "kosul": {
       "hepsi": ["salya"],
-      "herhangi": ["sinirsel_belirti", "saldirganlik", "bogurme", "ataksi", "felc", "cene_dusuklugu", "hiperestezi", "kasilma_nobeti", "yutma_guclugu", "anormal_yalama", "bas_bastirma", "dairesel_yurume"]
+      "herhangi": ["sinirsel_belirti", "saldirganlik", "bogurme", "ataksi", "felc", "cene_dusuklugu", "hiperestezi", "kasilma_nobeti", "anormal_yalama", "bas_bastirma", "dairesel_yurume"]
     },
     "baslik": "KUDUZ ŞÜPHESİ — AĞZI ÇIPLAK ELLE MUAYENE ETMEYİN",
     "uyarilar": [
@@ -158,6 +158,18 @@
       "Ağzı çıplak elle muayene etmeyin; eldiven ve gözlük kullanın.",
       "Salyayla yara ya da mukoza teması olan kişiler aynı gün sağlık kuruluşuna.",
       "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "kuduz_5",
+    "hastalikId": "kuduz",
+    "kosul": { "hepsi": ["salya", "yutma_guclugu"] },
+    "baslik": "KUDUZU DIŞLAYIN — AĞZI ÇIPLAK ELLE MUAYENE ETMEYİN",
+    "uyarilar": [
+      "Salya + yutma güçlüğü çoğu kez yabancı cisim, difteri ya da yemek borusu tıkanmasıdır; yine de kuduz dışlanmadan ağza çıplak elle girmeyin.",
+      "Eldiven ve gözlük kullanın; salyayla yara ya da mukoza teması olan kişiler aynı gün sağlık kuruluşuna.",
+      "Böğürme, ıkınma, saldırganlık ya da felç eklenirse kuduz şüphesidir: il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
     ],
     "onay": { "durum": "taslak" }
   },
@@ -271,6 +283,131 @@
       "Ateş, ağız erozyonu ve topallık mavidil ya da EHD düşündürür; vezikül varsa şapı düşünün.",
       "BVD-MD de benzer tablo yapar; ayrım laboratuvarla yapılır.",
       "Hayvan hareketini durdurun ve il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "vezikuler_stomatit_1",
+    "hastalikId": "vezikuler_stomatit",
+    "kosul": { "hepsi": ["vezikul_agiz"], "herhangi": ["salya", "meme_basi_lezyonu"] },
+    "baslik": "VEZİKÜLER HASTALIK — İNSANA BULAŞABİLİR (VEZİKÜLER STOMATİT)",
+    "uyarilar": [
+      "Veziküler stomatit şaptan klinik olarak ayrılamaz; şap önlemlerini uygulayın, ayrım laboratuvarla yapılır.",
+      "Zoonoz: veziküllere, salyaya ve meme başı lezyonlarına eldivensiz dokunmayın.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "sigir_vebasi_1",
+    "hastalikId": "sigir_vebasi",
+    "kosul": { "hepsi": ["ates", "agiz_erozyonu"], "herhangi": ["kotu_agiz_kokusu", "irinli_burun_akintisi", "goz_akintisi"], "baglam": { "suru": true } },
+    "baslik": "SÜRÜDE ATEŞ + AĞIZ EROZYONU — SIĞIR VEBASINI DIŞLAYIN, İHBAR EDİN",
+    "uyarilar": [
+      "Sığır vebası 2011'de eradike ilan edildi; sürüde ateş, ağız erozyonu, akıntı ve ishal yine de ihbar edilir (BVD-MD ile ayrım laboratuvarla).",
+      "Hayvanı ayırın; hayvan, süt ve araç çıkışını durdurun.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "sigir_pleuropnomonisi_1",
+    "hastalikId": "sigir_pleuropnomonisi",
+    "kosul": {
+      "hepsi": ["solunum_guclugu", "agri_inleme"],
+      "herhangi": ["boyun_uzatma", "hareket_istememe", "anormal_akciger_sesi"],
+      "baglam": { "suru": true }
+    },
+    "baslik": "SÜRÜDE AĞRILI PLÖROPNÖMONİ — CBPP'Yİ DIŞLAYIN, İHBAR EDİN",
+    "uyarilar": [
+      "Sürüde inleyerek, boyun uzatıp güç soluma bulaşıcı sığır plöropnömonisini (CBPP) düşündürür; Türkiye'de görülmez, ihbarı mecburidir.",
+      "Antibiyotik uygulamadan önce resmî veteriner hekime danışın (tedavi yasak).",
+      "Hayvanı ayırın; hayvan, süt ve araç çıkışını durdurun.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "rift_vadisi_atesi_1",
+    "hastalikId": "rift_vadisi_atesi",
+    "kosul": { "hepsi": ["abort", "kanli_diare"], "herhangi": ["sarilik", "kanama_egilimi"], "baglam": { "suru": true } },
+    "baslik": "ATIK FIRTINASI + KANAMA / SARILIK — RİFT VADİSİ HUMMASINI DIŞLAYIN",
+    "uyarilar": [
+      "Zoonoz: atık yavru, kan ve dokulara eldiven, maske ve gözlük olmadan dokunmayın.",
+      "Türkiye'de görülmez; brusellozu ve leptospirozu da düşünün, ayrım laboratuvarla yapılır.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "rift_vadisi_atesi_2",
+    "hastalikId": "rift_vadisi_atesi",
+    "kosul": { "hepsi": ["ani_olum", "sarilik", "kanli_diare"], "baglam": { "suru": true } },
+    "baslik": "ATIK FIRTINASI + KANAMA / SARILIK — RİFT VADİSİ HUMMASINI DIŞLAYIN",
+    "uyarilar": [
+      "Zoonoz: atık yavru, kan ve dokulara eldiven, maske ve gözlük olmadan dokunmayın.",
+      "Sürüde ani ölüm + sarılık + kanlı ishal: nekropsiden önce şarbonu da dışlayın.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "bse_1",
+    "hastalikId": "bse",
+    "kosul": { "hepsi": ["hiperestezi", "ataksi"], "herhangi": ["zayiflama", "kronik_seyir"] },
+    "baslik": "İLERLEYİCİ SİNİRSEL TABLO — BSE ŞÜPHESİ, KESİME GÖNDERMEYİN",
+    "uyarilar": [
+      "Haftalarca süren aşırı duyarlılık, sendeleme ve zayıflama BSE düşündürür; kuduzu da dışlayın.",
+      "Hayvanı kesime göndermeyin; beyin ve omuriliğe korunmasız temas etmeyin (zoonoz).",
+      "Tanı yalnız resmî beyin örneklemesiyle konur; il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "bse_2",
+    "hastalikId": "bse",
+    "kosul": { "hepsi": ["kronik_seyir"], "herhangi": ["hiperestezi", "saldirganlik", "sinirsel_belirti"] },
+    "baslik": "İLERLEYİCİ SİNİRSEL TABLO — BSE ŞÜPHESİ, KESİME GÖNDERMEYİN",
+    "uyarilar": [
+      "Haftalarca süren aşırı duyarlılık, sendeleme ve zayıflama BSE düşündürür; kuduzu da dışlayın.",
+      "Hayvanı kesime göndermeyin; beyin ve omuriliğe korunmasız temas etmeyin (zoonoz).",
+      "Tanı yalnız resmî beyin örneklemesiyle konur; il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "enzootik_sigir_lokozu_1",
+    "hastalikId": "enzootik_sigir_lokozu",
+    "kosul": { "hepsi": ["lenf_yumrusu_buyumesi"], "herhangi": ["felc", "juguler_dolgunluk", "melena", "tasikardi"] },
+    "baslik": "ENZOOTİK LÖYKOZ ŞÜPHESİ — SEROLOJİ VE İHBAR",
+    "uyarilar": [
+      "Lenf yumrusu büyümesi ile felç, juguler dolgunluk ya da melena löykoz tümörlerini düşündürür; tüberküloz ve teileriyozdan ayırın.",
+      "Kan yoluyla bulaşır: ortak iğne, rektal eldiven ve alet kullanmayın.",
+      "Hayvanı satmadan ya da kesime göndermeden il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "enzootik_sigir_lokozu_2",
+    "hastalikId": "enzootik_sigir_lokozu",
+    "kosul": { "hepsi": ["lenf_yumrusu_buyumesi", "zayiflama"], "herhangi": ["sut_verimi_dususu", "kronik_seyir"] },
+    "baslik": "ENZOOTİK LÖYKOZ ŞÜPHESİ — SEROLOJİ VE İHBAR",
+    "uyarilar": [
+      "Ateşsiz lenf yumrusu büyümesi ve zayıflama löykoz ya da tüberküloz düşündürür; seroloji ve tüberkülin testi ayırır.",
+      "Kan yoluyla bulaşır: ortak iğne, rektal eldiven ve alet kullanmayın.",
+      "Hayvanı satmadan ya da kesime göndermeden il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "epizootik_hemorajik_hastalik_1",
+    "hastalikId": "epizootik_hemorajik_hastalik",
+    "kosul": { "hepsi": ["ates", "yutma_guclugu"], "herhangi": ["agiz_erozyonu", "burun_mukozasi_lezyonu"] },
+    "baslik": "EHD ŞÜPHESİ — ŞAP VE MAVİDİLDEN AYIRIN, İHBAR EDİN",
+    "uyarilar": [
+      "Ateş, yutma güçlüğü ve ağız / burun aynası lezyonu EHD düşündürür; mavidil ve şaptan ayrım laboratuvarla yapılır.",
+      "Ağzı çıplak elle muayene etmeyin; yutamayan hayvanda kuduzu da dışlayın.",
+      "Hayvan hareketini durdurun; sinek ve Culicoides mücadelesi yapın. İl / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
     ],
     "onay": { "durum": "taslak" }
   }

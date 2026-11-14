@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { dizindenOku } from '../scripts/dogrula.mjs';
 import { veriYukle } from '../lib/veri.js';
 import { puanla } from '../lib/puan.js';
+import { bayraklar } from '../lib/bayrak.js';
 
 const KOK = fileURLToPath(new URL('..', import.meta.url));
 const vakalar = JSON.parse(readFileSync(new URL('./vinyetler.json', import.meta.url), 'utf8'));
@@ -26,6 +27,40 @@ test('vinyetlerGecerliVeHerHastalikKapsanir', async () => {
     for (const b of v.girdi.belirtiler) assert.ok(belirtiler.has(b), `bilinmeyen belirti: ${b} (${v.ad})`);
   }
   for (const id of hastaliklar) assert.ok(vakalar.some((v) => v.beklenenIlk3 === id), `vinyeti olmayan hastalık: ${id}`);
+});
+
+test('herIhbariHastalikVinyetlerininEnAzBirindeKendiBayraginiVerir', async () => {
+  const veri = await veriYukle(dizindenOku(KOK));
+  const eksik = [];
+  for (const h of veri.hastaliklar.filter((x) => x.ihbari)) {
+    const kendi = vakalar.filter((v) => v.beklenenIlk3 === h.id);
+    if (!kendi.some((v) => bayraklar(v.girdi, veri).some((b) => b.hastalikId === h.id))) eksik.push(h.id);
+  }
+  assert.deepEqual(eksik, []);
+});
+
+// İhbari olmayan vinyetlerde çıkan ihbar bayrakları: her biri klinik olarak gerekçeli (fix dalgası raporu).
+// Yeni bir çift çıkarsa kural fazla geniş olabilir: önce klinik gerekçeyi yazın, sonra buraya ekleyin.
+const GEREKCELI_IHBAR_BAYRAKLARI = new Set([
+  'buzagi_difterisi > kuduz', // salya + yutamama: "KUDUZU DIŞLAYIN — ağza çıplak elle girmeyin"
+  'ibr > bruselloz', 'bvd_md > bruselloz', 'retensiyo_sekundinarum > bruselloz', // her atık brusella şüphesidir
+  'hipomagnezemi > kuduz', 'organofosfat_zehirlenmesi > kuduz', 'kursun_zehirlenmesi > kuduz', // salya + sinirsel bulgu
+  'buzagi_beyaz_kas_hastaligi > sarbon', 'nitrat_zehirlenmesi > sarbon', // ani ölüm: nekropsiden önce şarbonu dışla
+  'buzagi_beyaz_kas_hastaligi > kuduz', // yutamama + sinirsel bulgu
+]);
+
+test('ihbariOlmayanVinyetlerdeYalnizGerekceliIhbarBayraklari', async () => {
+  const veri = await veriYukle(dizindenOku(KOK));
+  const ihbari = new Set(veri.hastaliklar.filter((h) => h.ihbari).map((h) => h.id));
+  const yeni = new Set();
+  for (const v of vakalar) {
+    if (ihbari.has(v.beklenenIlk3)) continue;
+    for (const b of bayraklar(v.girdi, veri)) {
+      const cift = `${v.beklenenIlk3} > ${b.hastalikId}`;
+      if (ihbari.has(b.hastalikId) && !GEREKCELI_IHBAR_BAYRAKLARI.has(cift)) yeni.add(`${cift} (${b.id}, "${v.ad}")`);
+    }
+  }
+  assert.deepEqual([...yeni], []);
 });
 
 for (const [etiket, tarih] of TARIHLER) {

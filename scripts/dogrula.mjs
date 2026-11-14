@@ -344,6 +344,13 @@ export function dogrula(veri) {
     }
     onayDenetle(yer, b);
   }
+  // İhbar şüphesi sıralamaya bırakılmaz (spec §4): her ihbari hastalığın en az bir kırmızı bayrak kuralı olmalı.
+  const bayrakliHastaliklar = new Set([...bayraklar.values()].map((b) => b?.hastalikId));
+  for (const [id, h] of hastaliklar) {
+    if (h?.ihbari === true && !bayrakliHastaliklar.has(id)) {
+      hata(`hastalik[${id}]`, 'ihbari: true ama kırmızı bayrak kuralı yok (veri/bayraklar.json) — ihbar şüphesi sıralamada kaybolabilir');
+    }
+  }
 
   // --- Ürünler ---
   (Array.isArray(veri.urunler) ? veri.urunler : []).forEach((u, i) => {

@@ -232,6 +232,20 @@ test('ihbarListesiIleTutarlilik', async () => {
   hataIcerir(dogrula(veri2), /ornek_solunum.*ihbar listesinde yok/);
 });
 
+test('ihbariHastalikBayraksizsaHata', async () => {
+  // final-review C1: ihbar şüphesi yalnız sıralamaya bırakılmaz.
+  const veri = await ornek();
+  veri.bayraklar = veri.bayraklar.filter((b) => b.hastalikId !== 'ornek_ihbar');
+  hataIcerir(dogrula(veri), /ornek_ihbar.*kırmızı bayrak kuralı yok/);
+});
+
+test('gercekVerideHerIhbariHastaligiBayrakKorur', async () => {
+  const veri = await veriYukle(dizindenOku(KOK));
+  const bayrakli = new Set(veri.bayraklar.map((b) => b.hastalikId));
+  const eksik = veri.hastaliklar.filter((h) => h.ihbari && !bayrakli.has(h.id)).map((h) => h.id);
+  assert.deepEqual(eksik, []);
+});
+
 test('urunAlanlariDenetlenir', async () => {
   const veri = await ornek();
   veri.urunler[0].kub[0].sut = { gun: 7 };
