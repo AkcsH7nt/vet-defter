@@ -102,3 +102,16 @@ test('gucluUyanKayitYoksaIsaretlenir', async () => {
   const solunum = sonucListeleri(girdi({ yas: 'dana', isi: 40.8, belirtiler: ['oksuruk', 'burun_akintisi', 'hizli_solunum', 'istahsizlik'] }), veri, KASIM);
   assert.equal(solunum.uyanKayitYok, false);
 });
+
+test('tekHayvandaCbppTablosuAyriBolumdeGorunur', async () => {
+  // Re-review C1 kararı: egzotik hastalıklar sürü işareti olmadan da puanlanır, ayrı bölüme düşer.
+  const veri = await gercek();
+  const tek = girdi({ isi: 40.6, belirtiler: ['oksuruk', 'solunum_guclugu', 'agri_inleme', 'boyun_uzatma', 'hareket_istememe'] });
+  const s = sonucListeleri(tek, veri, KASIM);
+  assert.ok(!s.bayraklar.some((b) => b.hastalikId === CBPP)); // bayrak kuralı sürü ister (değişmedi)
+  assert.ok(!s.ana.some((x) => x.id === CBPP));
+  assert.ok(s.egzotik.some((x) => x.id === CBPP), JSON.stringify(s.egzotik.map((x) => x.id)));
+  for (const h of veri.hastaliklar.filter((x) => x.turkiyedeGorulmez)) {
+    assert.ok(!Object.values(h.baglam).includes('zorunlu'), `${h.id}: egzotik hastalıkta zorunlu bağlam`);
+  }
+});

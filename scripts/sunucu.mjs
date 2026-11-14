@@ -15,7 +15,8 @@ const turler = {
 };
 
 // taban: uygulamayı alt yola bağlar (ör. '/vet-defter/' → GitHub Pages benzeri); boşsa kökte sunulur.
-export function sunucuBaslat(p = port, taban = '') {
+// kokDizin: test için başka bir dizinden sunmak (varsayılan depo kökü).
+export function sunucuBaslat(p = port, taban = '', kokDizin = kok) {
   const onek = taban ? `/${taban.replace(/^\/+|\/+$/g, '')}` : '';
   const s = createServer(async (istek, yanit) => {
     try {
@@ -27,8 +28,9 @@ export function sunucuBaslat(p = port, taban = '') {
       // Nokta ile başlayan bölümler (.git, .superpowers…) sunulmaz.
       if (yolu.split('/').some((b) => b.startsWith('.'))) throw new Error('gizli');
       if (yolu.endsWith('/')) yolu += 'index.html';
-      const dosya = normalize(join(kok, yolu));
-      if (dosya !== kok && !dosya.startsWith(kok + sep)) throw new Error('yasak');
+      const k = resolve(kokDizin);
+      const dosya = normalize(join(k, yolu));
+      if (dosya !== k && !dosya.startsWith(k + sep)) throw new Error('yasak');
       if (!(await stat(dosya)).isFile()) throw new Error('yok');
       yanit.writeHead(200, { 'Content-Type': turler[extname(dosya)] ?? 'application/octet-stream', 'Cache-Control': 'no-cache' });
       yanit.end(await readFile(dosya));

@@ -1,7 +1,7 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince `npm run surum` (içerik özetini yazar, SURUM artar); npm test eski özeti yakalar.
-// icerik: f524e42110d31cd2
-const SURUM = 'vet-defter-v6';
+// icerik: 103adfc4c9014dee
+const SURUM = 'vet-defter-v7';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js',
   'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/listeler.js', 'ui/hakkinda.js',
@@ -23,8 +23,18 @@ self.addEventListener('install', (o) => {
 
 self.addEventListener('activate', (o) => {
   o.waitUntil((async () => {
-    for (const ad of await caches.keys()) if (ad !== SURUM) await caches.delete(ad);
+    const eskiler = (await caches.keys()).filter((ad) => ad !== SURUM);
+    for (const ad of eskiler) await caches.delete(ad);
     await self.clients.claim();
+    // Güncellemede (eski sürüm önbelleği vardıysa) açık pencereleri kendi adreslerine yeniden yükle: yeni ui/*.js
+    // modülleri sayfada yüklü kalan eski ortak.js ile bağlanıp "Bu ekran yüklenemedi" vermesin. Girdi sessionStorage'da
+    // kalır. activate her sürümde bir kez çalışır ve ilk kurulumda eski önbellek yoktur: döngü olmaz.
+    // navigate() beklenmez: yeni sayfanın isteği ancak etkinleşme bitince karşılanır (beklemek kilitlenir).
+    if (eskiler.some((ad) => ad.startsWith('vet-defter-'))) {
+      for (const c of await self.clients.matchAll({ type: 'window' })) {
+        c.navigate(c.url).catch(() => { /* denetlenmeyen ya da kapanmış pencere */ });
+      }
+    }
   })());
 });
 

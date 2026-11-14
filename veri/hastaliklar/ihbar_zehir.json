@@ -942,7 +942,7 @@
       "sigir"
     ],
     "baglam": {
-      "suru": "zorunlu"
+      "suru": "destekler"
     },
     "ihbari": true,
     "zoonoz": false,
@@ -1077,7 +1077,7 @@
       "sigir"
     ],
     "baglam": {
-      "suru": "zorunlu"
+      "suru": "destekler"
     },
     "ihbari": true,
     "zoonoz": false,
@@ -1524,7 +1524,7 @@
       "sigir"
     ],
     "baglam": {
-      "suru": "zorunlu"
+      "suru": "destekler"
     },
     "ihbari": true,
     "zoonoz": true,
