@@ -1,6 +1,6 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince SURUM artırılmalı.
-const SURUM = 'vet-defter-v4';
+const SURUM = 'vet-defter-v5';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js',
   'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/listeler.js', 'ui/hakkinda.js',
@@ -33,6 +33,16 @@ self.addEventListener('fetch', (o) => {
     const onbellek = await caches.open(SURUM);
     const istek = o.request.mode === 'navigate' ? './' : o.request;
     const kayitli = await onbellek.match(istek, { ignoreSearch: true, ignoreVary: true });
-    return kayitli ?? fetch(o.request);
+    if (kayitli) return kayitli;
+    try {
+      return await fetch(o.request);
+    } catch {
+      // Önbellekte yok ve ağ yok: yakalanmamış hata yerine düzgün yanıt.
+      if (o.request.mode === 'navigate') {
+        const kabuk = await onbellek.match('./', { ignoreSearch: true, ignoreVary: true });
+        if (kabuk) return kabuk;
+      }
+      return new Response('Çevrimdışı', { status: 504, statusText: 'Gateway Timeout' });
+    }
   })());
 });

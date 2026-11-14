@@ -1,7 +1,8 @@
 // Geliştirme ve test için basit statik sunucu. Kullanım: node scripts/sunucu.mjs [port]
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
-import { extname, join, normalize, resolve } from 'node:path';
+import { extname, join, normalize, resolve, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const kok = resolve(process.cwd());
 const port = Number(process.argv[2] ?? process.env.PORT ?? 5180);
@@ -12,13 +13,19 @@ const turler = {
   '.webp': 'image/webp', '.jpg': 'image/jpeg',
 };
 
-export function sunucuBaslat(p = port) {
+// taban: uygulamayı alt yola bağlar (ör. '/vet-defter/' → GitHub Pages benzeri); boşsa kökte sunulur.
+export function sunucuBaslat(p = port, taban = '') {
+  const onek = taban ? `/${taban.replace(/^\/+|\/+$/g, '')}` : '';
   const s = createServer(async (istek, yanit) => {
     try {
       let yolu = decodeURIComponent(new URL(istek.url, 'http://x').pathname);
+      if (onek) {
+        if (yolu !== onek && !yolu.startsWith(`${onek}/`)) throw new Error('taban dışı');
+        yolu = yolu.slice(onek.length) || '/';
+      }
       if (yolu.endsWith('/')) yolu += 'index.html';
       const dosya = normalize(join(kok, yolu));
-      if (!dosya.startsWith(kok)) throw new Error('yasak');
+      if (dosya !== kok && !dosya.startsWith(kok + sep)) throw new Error('yasak');
       if (!(await stat(dosya)).isFile()) throw new Error('yok');
       yanit.writeHead(200, { 'Content-Type': turler[extname(dosya)] ?? 'application/octet-stream', 'Cache-Control': 'no-cache' });
       yanit.end(await readFile(dosya));
@@ -29,6 +36,6 @@ export function sunucuBaslat(p = port) {
   return new Promise((r) => s.listen(p, () => r(s)));
 }
 
-if (import.meta.url === `file:///${process.argv[1].replace(/\\/g, '/')}` || process.argv[1]?.endsWith('sunucu.mjs')) {
+if (fileURLToPath(import.meta.url) === resolve(process.argv[1] ?? '')) {
   sunucuBaslat().then(() => console.log(`http://localhost:${port}`));
 }

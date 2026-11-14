@@ -5,13 +5,12 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 import { sunucuBaslat } from '../../scripts/sunucu.mjs';
 
-const PORT = 5192;
-const ADRES = `http://localhost:${PORT}/`;
-let sunucu, tarayici, sayfa;
+let sunucu, tarayici, sayfa, ADRES;
 const hatalar = [];
 
 before(async () => {
-  sunucu = await sunucuBaslat(PORT);
+  sunucu = await sunucuBaslat(0);
+  ADRES = `http://localhost:${sunucu.address().port}/`;
   tarayici = await chromium.launch({ channel: 'chrome' });
   const baglam = await tarayici.newContext({ viewport: { width: 390, height: 844 } });
   sayfa = await baglam.newPage();
