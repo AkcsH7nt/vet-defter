@@ -103,6 +103,10 @@ const ORAL_KALSIYUM_TUZLARI = new Set(['kalsiyum klorur', 'kalsiyum propiyonat',
 // E vitaminli multivitaminler tek başına eşleşmez.
 const SELENYUM = new Set(['sodyum selenit', 'selenit', 'selenyum']);
 const E_VITAMINI = new Set(['vitamin e', 'e vitamini', 'tokoferol', 'dl alfa tokoferol', 'alfa tokoferol']);
+// Kalsiyum glukonat + borik asit birlikteyse çözelti kalsiyum boroglukonattır (ör. Calciject); yalnız ikisi BİRLİKTE
+// varsa ikisi de kalsiyum_boroglukonat'a eşlenir. Tek başına borik asit eşleşmez.
+const KALSIYUM_GLUKONAT = new Set(['kalsiyum glukonat', 'kalsiyum glukonat monohidrat']);
+const BORIK_ASIT = new Set(['borik asit', 'asit borik']);
 
 /** Etken adı aday biçimleri: tam hâl, ardından baştan/sondan tuz kelimeleri atılmış hâller. */
 function adaylar(ham) {
@@ -136,10 +140,13 @@ export function urunEtkenleri(maddeler, yol, idx) {
   const var1 = (kume) => aday.some((x) => x.a.some((c) => kume.has(c)));
   const kombo = var1(SULFONAMIDLER) && var1(new Set([TRIMETOPRIM]));
   const seKombo = var1(SELENYUM) && var1(E_VITAMINI) && idx.get('selenyum e vitamini') === 'selenyum_e_vitamini';
+  const boroKombo = var1(KALSIYUM_GLUKONAT) && var1(BORIK_ASIT) && idx.get('kalsiyum boroglukonat') === 'kalsiyum_boroglukonat';
   for (const { m, a } of aday) {
     let id = null;
     if (a.some((c) => SULFONAMIDLER.has(c) || c === TRIMETOPRIM)) id = kombo ? 'sulfonamid_trimetoprim' : null;
     else if (a.some((c) => SELENYUM.has(c) || E_VITAMINI.has(c))) id = seKombo ? 'selenyum_e_vitamini' : null;
+    else if (boroKombo && a.some((c) => KALSIYUM_GLUKONAT.has(c) || BORIK_ASIT.has(c))) id = 'kalsiyum_boroglukonat';
+    else if (a.some((c) => BORIK_ASIT.has(c))) id = null;
     else if (a.some((c) => ORAL_KALSIYUM_TUZLARI.has(c))) id = oral ? 'oral_kalsiyum' : null;
     else for (const c of a) if (idx.has(c)) { id = idx.get(c); break; }
     if (id) { if (!ids.includes(id)) ids.push(id); } else eslesmeyen.push(m);
@@ -189,6 +196,28 @@ export function tabloAyristir(html) {
     });
   }
   return satirlar;
+}
+
+/** KÜB bağlantısındaki Bakanlık ürün kimliği (urunId) ya da null. */
+function urunIdAl(kubUrl) {
+  if (!kubUrl) return null;
+  try { return new URL(kubUrl).searchParams.get('urunId') || null; } catch { return null; }
+}
+
+/**
+ * Liste yenilenirken hekimin KÜB çalışmasını korur: önceki kayıttaki kub[] ve kubDogrulandi, aynı ürüne
+ * (urunId; yoksa KÜB bağlantısındaki urunId; o da yoksa ad|firma) taşınır. Yeni ürünlerde boş kalır.
+ */
+export function oncekiKubuKoru(yeni, onceki) {
+  const adFirma = (u) => `${normalize(u.ad)}|${normalize(u.firma)}`;
+  const anahtar = (u) => u.urunId ?? urunIdAl(u.kubUrl) ?? adFirma(u);
+  const harita = new Map();
+  for (const u of onceki ?? []) { harita.set(anahtar(u), u); if (!harita.has(adFirma(u))) harita.set(adFirma(u), u); }
+  return yeni.map((u) => {
+    const o = harita.get(anahtar(u)) ?? (u.urunId ? undefined : harita.get(adFirma(u)));
+    if (!o || (!(o.kub ?? []).length && !o.kubDogrulandi)) return u;
+    return { ...u, kub: o.kub ?? [], kubDogrulandi: o.kubDogrulandi ?? null };
+  });
 }
 
 function turKimligi(ad) { return normalize(ad).replace(/ /g, '_'); }
@@ -245,7 +274,7 @@ function uret(dosyalar, etkenler, tarih) {
     istat.push({ dosya: dosyaAdi, satir: satirlar.length });
     toplamSatir += satirlar.length;
     for (const s of satirlar) {
-      const anahtar = s.kubUrl ? (new URL(s.kubUrl).searchParams.get('urunId') ?? s.kubUrl) : `${normalize(s.ad)}|${normalize(s.firma)}`;
+      const anahtar = urunIdAl(s.kubUrl) ?? s.kubUrl ?? `${normalize(s.ad)}|${normalize(s.firma)}`;
       const maddeler = maddeleriAyir(s.etkin);
       const { ids, eslesmeyen: es } = urunEtkenleri(maddeler, s.yol, idx);
       for (const m of es) eslesmeyen.set(m, (eslesmeyen.get(m) ?? 0) + 1);
@@ -255,7 +284,7 @@ function uret(dosyalar, etkenler, tarih) {
         for (const id of ids) if (!onceki.etkenler.includes(id)) onceki.etkenler.push(id);
         continue;
       }
-      urunler.set(anahtar, { s, ids, hedefTurler: liste(s.hedef).map(turKimligi), etkenler: ids });
+      urunler.set(anahtar, { s, ids, hedefTurler: liste(s.hedef).map(turKimligi), etkenler: ids, urunId: urunIdAl(s.kubUrl) });
     }
   }
   const cikti = [];
@@ -263,7 +292,7 @@ function uret(dosyalar, etkenler, tarih) {
     if (u.etkenler.length === 0) { atilan += 1; continue; }
     const { s } = u;
     cikti.push({
-      ad: s.ad, firma: s.firma, form: s.form, etkenler: u.etkenler, hedefTurler: u.hedefTurler,
+      urunId: u.urunId, ad: s.ad, firma: s.firma, form: s.form, etkenler: u.etkenler, hedefTurler: u.hedefTurler,
       kubUrl: s.kubUrl, cekilmeTarihi: tarih, kub: [], kubDogrulandi: null,
     });
   }
@@ -300,12 +329,14 @@ async function main() {
   }
   const r = uret(dosyalar, etkenler, tarih);
   const urunYol = join(KOK, 'veri/urunler.json');
-  let onceki = 0;
-  try { onceki = JSON.parse(readFileSync(urunYol, 'utf8')).length; } catch { /* yok */ }
+  let oncekiListe = [];
+  try { oncekiListe = JSON.parse(readFileSync(urunYol, 'utf8')); } catch { /* yok */ }
+  const onceki = Array.isArray(oncekiListe) ? oncekiListe.length : 0;
   if (r.cikti.length === 0 || r.cikti.length < onceki * 0.5) {
     throw new Error(`Koruma: ${r.cikti.length} ürün üretildi, önceki ${onceki}; urunler.json ve meta.json DEĞİŞTİRİLMEDİ.`);
   }
-  writeFileSync(urunYol, JSON.stringify(r.cikti, null, 2) + '\n');
+  // Hekimin KÜB doğrulama çalışması yenilemede silinmez (final-review I3).
+  writeFileSync(urunYol, JSON.stringify(oncekiKubuKoru(r.cikti, Array.isArray(oncekiListe) ? oncekiListe : []), null, 2) + '\n');
   const metaYol = join(KOK, 'veri/meta.json');
   const meta = JSON.parse(readFileSync(metaYol, 'utf8'));
   meta.urunListesiTarihi = tarih;

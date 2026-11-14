@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { etkenIndeksi, urunEtkenleri } from '../scripts/urun-cek.mjs';
+import { etkenIndeksi, urunEtkenleri, oncekiKubuKoru } from '../scripts/urun-cek.mjs';
 
 const etkenler = JSON.parse(readFileSync(new URL('../veri/etkenler.json', import.meta.url), 'utf8'));
 const idx = etkenIndeksi(etkenler);
@@ -46,4 +46,34 @@ test('selenyumYalnizEVitaminiyleBirlikte', () => {
   assert.deepEqual(coz(['sodyum selenit', 'Vitamin E asetat']).ids, ['selenyum_e_vitamini']);
   assert.deepEqual(coz(['bakır glukonat', 'çinko glukonat', 'sodyum selenit']).ids, []);
   assert.deepEqual(coz(['Vitamin E asetat', 'Vitamin D3']).ids, []);
+});
+test('kalsiyumGlukonatBorikAsitleBirlikteBoroglukonattir', () => {
+  // K6 Ö-5: Calciject vb. (kalsiyum glukonat + borik asit) = kalsiyum boroglukonat çözeltisi.
+  assert.deepEqual(coz(['kalsiyum glukonat', 'borik asit']), { ids: ['kalsiyum_boroglukonat'], eslesmeyen: [] });
+  assert.deepEqual(coz(['Borik asit', 'Kalsiyum glukonat monohidrat', 'magnezyum klorür hekzahidrat']).ids,
+    ['kalsiyum_boroglukonat', 'magnezyum']);
+  // Borik asitsiz kalsiyum glukonat kendi kimliğinde kalır; tek başına borik asit hiçbir etkene eşlenmez.
+  assert.deepEqual(coz(['kalsiyum glukonat']).ids, ['kalsiyum_glukonat']);
+  assert.deepEqual(coz(['borik asit']).ids, []);
+});
+test('urunListesiYenilenirkenKubDogrulamasiKorunur', () => {
+  // final-review I3: liste yenilemesi hekim doğrulamasını sessizce silmesin (urunId, yoksa ad|firma ile).
+  const kub = [{ tur: 'sigir', yol: 'IM', doz: null, et_gun: 28, sut: 'belirtilmemis' }];
+  const dogru = { kim: 'hekim', tarih: '2026-11-14', icerikOzeti: 'abcd1234' };
+  const onceki = [
+    { urunId: '5', ad: 'A', firma: 'F', kub, kubDogrulandi: dogru },
+    { ad: 'B', firma: 'G', kubUrl: 'https://hbs.tarbil.gov.tr/x?urunId=9', kub, kubDogrulandi: dogru },
+    { ad: 'C', firma: 'H', kub, kubDogrulandi: null },
+  ];
+  const yeni = [
+    { urunId: '5', ad: 'A yeni ad', firma: 'F', kub: [], kubDogrulandi: null },
+    { urunId: '9', ad: 'B', firma: 'G', kub: [], kubDogrulandi: null },
+    { urunId: null, ad: 'C', firma: 'H', kub: [], kubDogrulandi: null },
+    { urunId: '77', ad: 'D', firma: 'I', kub: [], kubDogrulandi: null },
+  ];
+  const sonuc = oncekiKubuKoru(yeni, onceki);
+  assert.deepEqual(sonuc.map((u) => u.kubDogrulandi), [dogru, dogru, null, null]);
+  assert.deepEqual(sonuc[0].kub, kub);
+  assert.deepEqual(sonuc[2].kub, kub);
+  assert.deepEqual(sonuc[3].kub, []);
 });
