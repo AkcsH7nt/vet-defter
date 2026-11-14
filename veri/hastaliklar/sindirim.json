@@ -510,7 +510,7 @@
       { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "kalp_sesi_bogukluk", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "juguler_dolgunluk", "agirlik": "olasi", "yoklugu_dusurur": false },
-      { "id": "gerdan_odemi", "agirlik": "olasi", "yoklugu_dusurur": false }
+      { "id": "ventral_odem", "agirlik": "olasi", "yoklugu_dusurur": false }
     ],
     "dislayicilar": [],
     "ayiriciTani": ["abomazum_deplasmani_sol", "ketozis", "timpani", "rumen_asidozu", "sigir_solunum_kompleksi"],

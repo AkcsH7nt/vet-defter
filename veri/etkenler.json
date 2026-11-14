@@ -9,19 +9,20 @@
       "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
       "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
       "tur": "bakterisit",
-      "spektrum": "Dar: Gram pozitifler (Streptococcus, Trueperella pyogenes, Clostridium, Bacillus anthracis, Listeria, Erysipelothrix), Fusobacterium necrophorum ve bazı anaeroblar. Gram negatiflerin çoğuna etkisiz; Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "spektrum": "Dar: Gram pozitifler (Streptococcus, Trueperella pyogenes, Clostridium, Bacillus anthracis, Listeria, Erysipelothrix, Actinomyces bovis), Fusobacterium necrophorum ve bazı anaeroblar; Gram negatiflerden yalnız duyarlı Pasteurella multocida, Mannheimia haemolytica ve Histophilus somni suşları (direnç değişken, duyarlılık testi yol gösterir). Enterik Gram negatiflere (E. coli, Salmonella) etkisiz; hücre duvarı olmayan Mycoplasma'ya etkisiz.",
       "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı. Prokain tuzu kas içinden yavaş emilerek düzeyi uzatır.",
       "direnc": "Beta-laktamaz (penisilinaz) üretimi, özellikle Staphylococcus aureus'ta yaygın; Gram negatiflerin dış zarı ilacı içeri almaz.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
         "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
         "Prokain kısmı: yanlışlıkla damar içine giderse ani sinirsel reaksiyon (huzursuzluk, kasılma, yere yığılma) görülebilir; enjeksiyondan önce aspirasyon yapılır.",
-        "Prokain, PABA kaynağı olarak sülfonamidlerin etkisini azaltabilir."
+        "Prokain, PABA kaynağı olarak sülfonamidlerin etkisini azaltabilir.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -42,12 +43,13 @@
       "direnc": "Beta-laktamaz üretimi (özellikle Staphylococcus aureus).",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -68,12 +70,13 @@
       "direnc": "Beta-laktamaz üreten Staphylococcus aureus suşlarına etkisiz.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -94,12 +97,13 @@
       "direnc": "Beta-laktamazlar (TEM tipi vb.), E. coli ve Salmonella'da yaygın; stafilokoklarda penisilinaz.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -121,12 +125,13 @@
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
         "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
-        "Klavulanik asit nemde hızla bozulur; açılmış ürünün saklama koşulları KÜB'e göre."
+        "Klavulanik asit nemde hızla bozulur; açılmış ürünün saklama koşulları KÜB'e göre.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -147,12 +152,13 @@
       "direnc": "Beta-laktamazlar; E. coli ve Salmonella'da yaygın.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -173,12 +179,13 @@
       "direnc": "mecA geniyle PBP2a üretimi (metisiline dirençli S. aureus, MRSA): tüm beta-laktamlara çapraz direnç.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -188,7 +195,7 @@
     "id": "sefaleksin",
     "ad": "Sefaleksin",
     "sinif": "antimikrobiyal",
-    "atcvet": "QJ01DB01",
+    "atcvet": "QJ51DB01",
     "ameg": "C",
     "mekanizma": {
       "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
@@ -199,16 +206,18 @@
       "direnc": "Sefalosporinazlar (AmpC, ESBL) ve MRSA tipi PBP değişimi.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
-    }
+    },
+    "notlar": "ATCvet kodu sığırdaki meme içi kullanıma göre seçildi (Fable K1 önerisi); WHOCC ATCvet dizininden doğrulanmalı."
   },
   {
     "id": "sefkinom",
@@ -225,12 +234,13 @@
       "direnc": "ESBL ve AmpC üreten Enterobacteriaceae; bu genler insana geçebilir. İnsan hekimliği için kritik önemde sınıf.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun bir ilaç varsa o tercih edilir.",
     "onay": {
@@ -252,12 +262,13 @@
       "direnc": "ESBL ve AmpC (ör. CMY-2) üreten E. coli ve Salmonella; insan hekimliği için kritik önemde sınıf.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "AMEG B: antibiyogramsız ilk seçenek olmaz. Farklı tuz/formülasyonların (sodyum, hidroklorür, kristal serbest asit) arınma süreleri farklıdır; yalnız KÜB'den alınır.",
     "onay": {
@@ -268,7 +279,7 @@
     "id": "sefoperazon",
     "ad": "Sefoperazon",
     "sinif": "antimikrobiyal",
-    "atcvet": null,
+    "atcvet": "QJ51DD12",
     "ameg": "B",
     "mekanizma": {
       "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
@@ -279,14 +290,15 @@
       "direnc": "ESBL ve AmpC üreten bakteriler; insan hekimliği için kritik önemde sınıf.",
       "etkilesimler": [
         "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
-        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı."
+        "Aminoglikozitlerle (ör. dihidrostreptomisin, gentamisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
       ],
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
-    "notlar": "AMEG B: antibiyogramsız ilk seçenek olmaz. ATCvet kodu doğrulanmadı (null).",
+    "notlar": "AMEG B: antibiyogramsız ilk seçenek olmaz. ATCvet kodu meme içi kullanıma göredir (Fable K1 önerisi); WHOCC ATCvet dizininden doğrulanmalı.",
     "onay": {
       "durum": "taslak"
     }
@@ -313,7 +325,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -339,9 +351,9 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
-    "notlar": "Ruminant olmayan (sütle beslenen) buzağıda ağızdan kullanılır; işlevsel rumeni olan hayvanda ağızdan emilimi güvenilmez.",
+    "notlar": "Ruminant olmayan (sütle beslenen) buzağıda ağızdan kullanılır; işlevsel rumeni olan hayvanda ağızdan emilimi güvenilmez. Sütü insan tüketimine sunulan hayvanda kullanım kısıtı — yalnız KÜB.",
     "onay": {
       "durum": "taslak"
     }
@@ -367,7 +379,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "Kloramfenikol değildir ve gıda hayvanında yasaklılar listesinde değildir. Süt veren inekte kullanım izni ürüne göre değişir — yalnız KÜB.",
     "onay": {
@@ -395,7 +407,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "Kullanıcı güvenliği uyarısı ve süt veren inekte kullanım kısıtı ürüne göre — yalnız KÜB.",
     "onay": {
@@ -421,7 +433,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -446,7 +458,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -471,7 +483,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -497,7 +509,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -524,7 +536,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "Linkomisin + spektinomisin kombine ürünlerde iki etken ayrı kimliklerle listelenir.",
     "onay": {
@@ -542,7 +554,7 @@
       "etki": "Ribozomda translokasyonu engeller; protein sentezi durur. Aminoglikozitlere benzer ama yanlış okuma yaptırmaz.",
       "tur": "bakteriyostatik",
       "spektrum": "Gram negatifler (E. coli, Salmonella'nın bir kısmı, Pasteurella) ve Mycoplasma; Gram pozitif etkisi zayıf. Linkomisinle birlikte spektrumu tamamlar.",
-      "kinetik": "Konsantrasyona bağımlı etki ileri sürülür; dokuya geçişi sınırlı.",
+      "kinetik": "Kinetik-dinamik ilişkisi iyi tanımlanmamıştır; bakteriyostatik olduğundan düzeyin MİK üzerinde kalma süresi önemli kabul edilir. Dokuya geçişi sınırlı.",
       "direnc": "Ribozomal mutasyonlar ve inaktive edici enzimler (aadA).",
       "etkilesimler": [
         "Aminoglikozit benzeri böbrek ve nöromüsküler etkiler daha azdır; anestezide dikkat."
@@ -550,7 +562,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -578,7 +590,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "Böbrekte çok uzun süre kalıntı bırakır; sığırda kullanımı birçok ülkede kısıtlıdır. Arınma süresi yalnız KÜB'den.",
     "onay": {
@@ -607,7 +619,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -635,7 +647,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -662,7 +674,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -690,7 +702,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "onay": {
       "durum": "taslak"
@@ -717,7 +729,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun ilaç varsa o tercih edilir.",
     "onay": {
@@ -745,7 +757,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun ilaç varsa o tercih edilir.",
     "onay": {
@@ -773,7 +785,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "AMEG B: antibiyogram ya da duyarlılık bilgisi olmadan ilk seçenek olarak kullanılmaz; C/D sınıfı uygun ilaç varsa o tercih edilir.",
     "onay": {
@@ -800,7 +812,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "AMEG B: polimiksinler insanda son çare ilacıdır; antibiyogramsız ilk seçenek olmaz. ATCvet kodu ağızdan kullanım (bağırsak) grubundandır.",
     "onay": {
@@ -829,7 +841,7 @@
       "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
     "kaynaklar": [
-      "EMA, Categorisation of antibiotics in the European Union (AMEG kategorizasyonu), Aralık 2019."
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "Sülfonamid türü (sülfadoksin, sülfadiazin, sülfametoksazol vb.) ürüne göre değişir; ATCvet grubu (QJ01EW) verilmiştir.",
     "onay": {
@@ -843,7 +855,7 @@
     "atcvet": null,
     "mekanizma": {
       "hedef": "Theileria parazitinin mitokondrisi: sitokrom bc1 kompleksi (ubikinon bağlanma yeri)",
-      "etki": "Mitokondriyal elektron taşınmasını keser; parazitin enerji üretimi ve pirimidin yapımı durur. Lenfositteki şizontları ve alyuvardaki piroplazmaları öldürür.",
+      "etki": "Mitokondriyal elektron taşınmasını keser; parazitin enerji üretimi ve pirimidin yapımı durur. Akyuvarlardaki (makrofaj/monosit ve lenfosit) şizontları ve alyuvardaki piroplazmaları öldürür.",
       "tur": "theilerisit (hidroksinaftokinon antiprotozoal)",
       "spektrum": "Theileria annulata ve T. parva; Babesia ve Anaplasma'ya güvenilir etkisi yoktur.",
       "direnc": "Sitokrom b genindeki mutasyonlar T. annulata'da buparvakuon direnciyle ilişkilendirilmiştir (Kuzey Afrika ve Orta Doğu'dan bildirimler).",
@@ -852,7 +864,7 @@
       ],
       "kaynak": "kaynak eklenecek"
     },
-    "notlar": "Ön not: etki yeri ve direnç bilgisi literatürden doğrulanacak; kaynak sayfası eklenmeli.",
+    "notlar": "Ön not: etki yeri ve direnç bilgisi literatürden doğrulanacak; kaynak sayfası eklenmeli. AB'de ruhsatlı değildir; arınma süreleri yalnız Türkiye KÜB'ünden alınır.",
     "onay": {
       "durum": "taslak"
     }
@@ -861,7 +873,7 @@
     "id": "imidokarb",
     "ad": "İmidokarb dipropiyonat",
     "sinif": "antiparaziter",
-    "atcvet": null,
+    "atcvet": "QP51AE01",
     "mekanizma": {
       "hedef": "Babesia ve Anaplasma parazitleri: nükleik asitler ve poliamin metabolizması (kesin mekanizma bilinmiyor)",
       "etki": "Parazit DNA'sına bağlanıp çoğalmayı bozduğu ve enfekte alyuvara inositol girişini engellediği düşünülür; alyuvardaki parazit ölür.",
@@ -871,19 +883,21 @@
         "Kolinesteraz baskılayıcı etki: salya, ishal, kolik, titreme ve solunum güçlüğü görülebilir; atropin bu belirtileri giderir.",
         "Organofosfat ve karbamatlı ilaçlarla (kene ve sinek ilaçları dahil) birlikte kullanılmaz — kolinerjik etkiler toplanır.",
         "Karaciğer ve böbrekte çok uzun süre kalıntı bırakır; arınma süresi uzundur, yalnız KÜB'den.",
-        "Koruyucu etkisi birkaç hafta sürer; bu dönemde doğal bağışıklık (premunisyon) gelişimini engelleyebilir."
+        "Koruyucu etkisi birkaç hafta sürer; bu dönemde doğal bağışıklık (premunisyon) gelişimini engelleyebilir.",
+        "Damar içine verilmez: ağır kolinerjik kriz ve ölüm riski. Uygulama yolu yalnız KÜB'e göre."
       ],
       "kaynak": "kaynak eklenecek"
     },
     "onay": {
       "durum": "taslak"
-    }
+    },
+    "notlar": "ATCvet kodu Fable K1 önerisidir; WHOCC ATCvet dizininden doğrulanmalı."
   },
   {
     "id": "diminazen",
     "ad": "Diminazen aseturat",
     "sinif": "antiparaziter",
-    "atcvet": null,
+    "atcvet": "QP51AF01",
     "mekanizma": {
       "hedef": "Parazit DNA'sı (kinetoplast DNA'sının AT bakımından zengin bölgelerinde küçük oluk)",
       "etki": "DNA'ya bağlanıp eşlenmeyi (replikasyonu) engeller; Babesia ve tripanozomlar ölür.",
@@ -895,7 +909,7 @@
       ],
       "kaynak": "kaynak eklenecek"
     },
-    "notlar": "Türkiye'de sığır için ruhsatlı ürünü olup olmadığı KÜB sorgusuyla doğrulanmalı.",
+    "notlar": "Türkiye'de sığır için ruhsatlı ürünü olup olmadığı KÜB sorgusuyla doğrulanmalı. ATCvet kodu Fable K1 önerisidir; WHOCC ATCvet dizininden doğrulanmalı.",
     "onay": {
       "durum": "taslak"
     }
@@ -1059,7 +1073,7 @@
     "mekanizma": {
       "hedef": "Eimeria'nın hücre içi tüm gelişme evreleri (şizont ve gamontlar): mitokondri ve çekirdek bölünmesi",
       "etki": "Solunum zinciri enzimlerini ve parazit çekirdeğinin bölünmesini bozar; parazit gelişemez ve ölür.",
-      "tur": "antikoksidiyal (triazinon; koksidiyosit)",
+      "tur": "antikoksidiyal (triazintrion; koksidiyosit)",
       "spektrum": "Eimeria bovis ve E. zuernii; Cryptosporidium'a etkisiz.",
       "etkilesimler": [
         "En iyi sonuç belirtiler başlamadan (metafilaksi) verildiğinde alınır; kanlı ishal başladığında bağırsak hasarı oluşmuştur, destek tedavisi gerekir.",
@@ -1319,7 +1333,8 @@
         "Fosfat ve bikarbonat içeren çözeltilerle karışınca çöker; aynı şişe ya da setten verilmez.",
         "Oksitetrasiklinle şelat yapar; birlikte karıştırılmaz.",
         "Kalp glikozitlerinin (digoksin) toksisitesini artırır.",
-        "Endotoksemik (ör. koli mastitisli) inekte kalp toksisitesine duyarlılık artar."
+        "Endotoksemik (ör. koli mastitisli) inekte kalp toksisitesine duyarlılık artar.",
+        "Glukoz/dekstroz içeren karışımlar deri altına verilirse doku hasarı ve apse yapabilir; deri altı uygulama birkaç noktaya bölünür, yolu KÜB'e göre."
       ],
       "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
     },
@@ -1622,27 +1637,6 @@
       ],
       "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
-    "onay": {
-      "durum": "taslak"
-    }
-  },
-  {
-    "id": "metilen_mavisi",
-    "ad": "Metilen mavisi",
-    "sinif": "diger",
-    "atcvet": "QV03AB17",
-    "mekanizma": {
-      "hedef": "Alyuvardaki methemoglobin",
-      "etki": "Alyuvarda NADPH-methemoglobin redüktaz ile lökometilen mavisine indirgenir; bu da methemoglobini (Fe³⁺) yeniden oksijen taşıyabilen hemoglobine (Fe²⁺) çevirir. Nitrat/nitrit zehirlenmesinde kanın çikolata rengi kaybolur, soluma düzelir.",
-      "tur": "panzehir (methemoglobin indirgeyici)",
-      "spektrum": null,
-      "etkilesimler": [
-        "Yüksek dozda kendisi oksitleyici etki gösterir: methemoglobinemi ve Heinz cisimcikli hemolitik anemi yapabilir.",
-        "Damar dışına kaçarsa doku hasarı yapar."
-      ],
-      "kaynak": "kaynak eklenecek"
-    },
-    "notlar": "Gıda hayvanında yasal durumu (kalıntı limiti, Türkiye ruhsatı, arınma) doğrulanmalı: AB'de gıda hayvanları için izinli maddeler tablosunda yer almadığı bilinmektedir. Hekim ve mevzuat kontrolü olmadan protokole konmamalı.",
     "onay": {
       "durum": "taslak"
     }

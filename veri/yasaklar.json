@@ -1,5 +1,5 @@
 {
-  "kaynak": "Hayvansal gıdalarda farmakolojik olarak aktif maddelerin sınıflandırılması ve maksimum kalıntı limitleri hakkındaki yönetmelik (AB 37/2010 Ek, Tablo 2 'yasaklı maddeler' karşılığı) ile çiftlik hayvanlarında hormonal veya tireostatik etkili maddeler ve beta-agonistlerin kullanımının yasaklanmasına dair yönetmelik (AB 96/22/EC karşılığı). Yönetmelik adları yaklaşık yazılmıştır; tam ad, Resmî Gazete tarih ve sayısı doğrulanmalı.",
+  "kaynak": "Türk Gıda Kodeksi Hayvansal Gıdalarda Bulunabilecek Farmakolojik Aktif Maddelerin Sınıflandırılması ve Maksimum Kalıntı Limitleri Yönetmeliği (Resmî Gazete 07.03.2017, sayı 30000; sonraki değişikliklerle), Ek-1 Bölüm-2 'yasaklı maddeler' (AB 37/2010 Tablo 2 karşılığı). Stilbenler, tireostatikler, anabolizan steroidler ve beta-agonistler için: Gıda Değeri Olan Hayvanlara Uygulanması Yasaklanan ve Belli Şartlara Bağlanan Hormon ve Benzeri Maddeler Hakkında Tebliğ (No: 2003/18, Resmî Gazete 19.06.2003, sayı 25143) — yürürlükte olup olmadığı ve güncel karşılığı doğrulanmalı.",
   "kaynakTarihi": null,
   "not": "Model bilgisinden derlenmiştir; yürürlükteki Resmî Gazete metniyle karşılaştırılmadı, hekim doğrulaması zorunludur. Doğrulayıcı (scripts/dogrula.mjs) bu listedeki kimlik ya da adla eşleşen bir etkenin herhangi bir protokolde geçmesini hata sayar. Beta-agonistler (ör. klenbuterol) büyütme amacıyla yasaktır, ancak bazı tedavi amaçlı kullanımlar (ör. doğumda uterus gevşetme) için istisna olabileceğinden otomatik yasak listesine alınmadı; 17β-östradiol ve esterleri gibi hormonların durumu da ayrıca doğrulanmalı.",
   "ogeler": [
@@ -21,6 +21,7 @@
     { "id": "stilbenler", "ad": "Stilbenler", "aciklama": "Stilbenler, türevleri, tuzları ve esterleri (ör. dietilstilbestrol, heksestrol, dienestrol); çiftlik hayvanında amaç fark etmeksizin yasak.", "dogrulandi": false },
     { "id": "dietilstilbestrol", "ad": "Dietilstilbestrol", "aciklama": "Stilben grubu; çiftlik hayvanında yasak.", "dogrulandi": false },
     { "id": "tireostatikler", "ad": "Tireostatik maddeler", "aciklama": "Tiyourasil, metiltiyourasil, propiltiyourasil, metimazol (tiamazol) gibi tiroit baskılayıcılar; çiftlik hayvanında yasak.", "dogrulandi": false },
-    { "id": "fenilbutazon", "ad": "Fenilbutazon", "aciklama": "Yasaklı maddeler tablosunda değil, ancak gıda hayvanları için kalıntı limiti (MRL) belirlenmemiştir; bu yüzden süt ve et sığırında kullanılamaz. Türkiye'de sığır için ruhsatlı ürün bulunup bulunmadığı doğrulanmalı.", "dogrulandi": false }
+    { "id": "fenilbutazon", "ad": "Fenilbutazon", "aciklama": "Yasaklı maddeler tablosunda değil, ancak gıda hayvanları için kalıntı limiti (MRL) belirlenmemiştir; bu yüzden süt ve et sığırında kullanılamaz. Türkiye'de sığır için ruhsatlı ürün bulunup bulunmadığı doğrulanmalı.", "dogrulandi": false },
+    { "id": "metilen_mavisi", "ad": "Metilen mavisi", "aciklama": "Yasaklı maddeler bölümünde değil, ancak gıda hayvanları için kalıntı limiti (MRL) statüsü yoktur; bu yüzden et ve süt sığırında kullanılamaz. Uygulanan hayvan gıda zincirine giremez. Türkiye'deki durum doğrulanmalı.", "dogrulandi": false }
   ]
 }

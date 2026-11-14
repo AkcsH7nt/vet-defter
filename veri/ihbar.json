@@ -1,21 +1,21 @@
 {
-  "kaynak": "Hayvan Sağlığı ve Zabıtası Yönetmeliği, ihbarı mecburi hastalıklar listesi (ek) — 3285 sayılı Hayvan Sağlığı ve Zabıtası Kanunu dayanağıyla. Yönetmeliğin güncel ek listesi, Resmî Gazete tarih ve sayısı doğrulanmalı.",
+  "kaynak": "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (Resmî Gazete 22.01.2011, sayı 27823), Ek-1 — dayanak: 5996 sayılı Veteriner Hizmetleri, Bitki Sağlığı, Gıda ve Yem Kanunu. Sonraki değişikliklerle eklenen maddeler (ör. sığırların nodüler ekzantemi) dahil güncel konsolide ek, mevzuat.gov.tr üzerinden kelimesi kelimesine doğrulanmalı.",
   "kaynakTarihi": null,
-  "not": "Bu liste yürürlükteki yönetmelik ekinden kelimesi kelimesine alınmadı; model bilgisinden derlenmiştir ve yalnız sığırı ilgilendiren hastalıkları içerir. Her öge Resmî Gazete'deki güncel metinle karşılaştırılmalı; ekte geçen resmî adlar kullanılmalı. emin: false olan ögelerin listede olup olmadığı belirsizdir. Yanıkara bilinçli olarak eklenmedi (listeden çıkarıldığı bildirildi). Theileriosis, paratüberküloz, IBR, BVD, Q humması, leptospiroz ve hemorajik septiseminin listede olup olmadığından emin olunamadığı için eklenmedi; doğrulanmalı. KKKA burada yer almaz; uygulamada yalnız kene / hekim güvenliği uyarısıdır.",
+  "not": "Bu liste yürürlükteki yönetmelik ekinden kelimesi kelimesine alınmadı; model bilgisinden derlenmiştir ve yalnız sığırı ilgilendiren hastalıkları içerir. Her öge Resmî Gazete'deki güncel metinle karşılaştırılmalı; ekte geçen resmî adlar kullanılmalı. Bütün ögeler ikincil bir kaynaktaki 34 maddelik kara hayvanları listesinde görüldü (Fable K1, O-2); resmî ekle karşılaştırılana kadar dogrulandi: false. Yanıkara, theileriosis, paratüberküloz, IBR, BVD, Q humması, leptospiroz ve sığırların hemorajik septisemisi ikincil kaynaktaki listede yer almıyor; güncel ekle doğrulanmalı. KKKA burada yer almaz; uygulamada yalnız kene / hekim güvenliği uyarısıdır.",
   "ogeler": [
     { "id": "sap", "ad": "Şap", "emin": true, "dogrulandi": false },
     { "id": "sarbon", "ad": "Şarbon", "emin": true, "dogrulandi": false },
     { "id": "kuduz", "ad": "Kuduz", "emin": true, "dogrulandi": false },
-    { "id": "bruselloz", "ad": "Bruselloz (sığır brusellozu)", "emin": true, "dogrulandi": false },
-    { "id": "tuberkuloz", "ad": "Tüberküloz (sığır tüberkülozu)", "emin": true, "dogrulandi": false },
+    { "id": "bruselloz", "ad": "Sığır brusellozu", "emin": true, "dogrulandi": false },
+    { "id": "tuberkuloz", "ad": "Sığır tüberkülozu", "emin": true, "dogrulandi": false },
     { "id": "noduler_ekzantem", "ad": "Sığırların nodüler ekzantemi (Lumpy skin disease, LSD)", "emin": true, "dogrulandi": false },
-    { "id": "sigir_vebasi", "ad": "Sığır vebası", "emin": false, "dogrulandi": false, "not": "Dünyada 2011'de eradike ilan edildi; listede kalıp kalmadığı doğrulanmalı (spec: gözden geçirilecek)." },
-    { "id": "sigir_pleuropnomonisi", "ad": "Sığırların bulaşıcı plöropnömonisi (CBPP)", "emin": false, "dogrulandi": false, "not": "Spec: gözden geçirilecek." },
-    { "id": "mavi_dil", "ad": "Mavi dil", "emin": false, "dogrulandi": false, "not": "Spec: gözden geçirilecek." },
-    { "id": "bse", "ad": "Sığırların süngerimsi ensefalopatisi (BSE)", "emin": false, "dogrulandi": false, "not": "Spec: gözden geçirilecek; TSE mevzuatıyla birlikte doğrulanmalı." },
-    { "id": "rift_vadisi_atesi", "ad": "Rift vadisi ateşi", "emin": false, "dogrulandi": false },
-    { "id": "vezikuler_stomatit", "ad": "Veziküler stomatit", "emin": false, "dogrulandi": false },
-    { "id": "enzootik_sigir_lokozu", "ad": "Enzootik sığır lökozu", "emin": false, "dogrulandi": false },
-    { "id": "epizootik_hemorajik_hastalik", "ad": "Epizootik hemorajik hastalık (EHD)", "emin": false, "dogrulandi": false }
+    { "id": "sigir_vebasi", "ad": "Sığır vebası", "emin": true, "dogrulandi": false, "not": "Dünyada 2011'de eradike ilan edildi; listede duruyor görünüyor, güncel ekle doğrulanmalı." },
+    { "id": "sigir_pleuropnomonisi", "ad": "Bulaşıcı sığır plöropnömonisi (CBPP)", "emin": true, "dogrulandi": false, "not": "Spec: gözden geçirilecek." },
+    { "id": "mavi_dil", "ad": "Mavidil", "emin": true, "dogrulandi": false, "not": "Spec: gözden geçirilecek." },
+    { "id": "bse", "ad": "Sığır süngerimsi beyin hastalığı (BSE)", "emin": true, "dogrulandi": false, "not": "Spec: gözden geçirilecek; TSE mevzuatıyla birlikte doğrulanmalı." },
+    { "id": "rift_vadisi_atesi", "ad": "Rift Vadisi humması", "emin": true, "dogrulandi": false },
+    { "id": "vezikuler_stomatit", "ad": "Veziküler stomatit", "emin": true, "dogrulandi": false },
+    { "id": "enzootik_sigir_lokozu", "ad": "Enzootik sığır löykozu", "emin": true, "dogrulandi": false },
+    { "id": "epizootik_hemorajik_hastalik", "ad": "Geyiklerin epizootik hemorajik hastalığı (EHD)", "emin": true, "dogrulandi": false }
   ]
 }
