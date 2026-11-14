@@ -946,6 +946,7 @@
     },
     "ihbari": true,
     "zoonoz": false,
+    "turkiyedeGorulmez": true,
     "isi": {
       "min": 40,
       "max": 41.5
@@ -1080,6 +1081,7 @@
     },
     "ihbari": true,
     "zoonoz": false,
+    "turkiyedeGorulmez": true,
     "isi": {
       "min": 40,
       "max": 41.5
@@ -1526,6 +1528,7 @@
     },
     "ihbari": true,
     "zoonoz": true,
+    "turkiyedeGorulmez": true,
     "isi": {
       "min": 40,
       "max": 41.5
@@ -1646,6 +1649,7 @@
     },
     "ihbari": true,
     "zoonoz": true,
+    "turkiyedeGorulmez": true,
     "isi": {
       "min": 39.5,
       "max": 41

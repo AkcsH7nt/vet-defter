@@ -73,3 +73,6 @@ export const belirtiAdi = (veri, id) => veri.belirtiler.find((b) => b.id === id)
 export function doldur(kap, ...cocuklar) {
   kap.replaceChildren(...cocuklar.flat().filter((c) => c != null && c !== false));
 }
+
+/** Sonuç ve Hakkında ekranlarında: sıralama ile uyum yüzdesinin farkı (K6 Ö-1). */
+export const SIRALAMA_ACIKLAMASI = 'Sıralama hastalığın sıklığını da hesaba katar; yüzde, o hastalıkta beklenen bulguların ne kadarının görüldüğüdür.';

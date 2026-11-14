@@ -63,6 +63,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--vurgu); outline
 h2 { font-size: 16px; margin: 20px 0 8px; }
 .soluk { color: var(--soluk); }
 .sabit-not {
+  min-height: 28px;
   position: fixed; left: 0; right: 0; bottom: calc(56px + env(safe-area-inset-bottom)); z-index: 9; margin: 0;
   padding: 4px 12px; text-align: center; font-size: 13px; line-height: 1.3;
   background: var(--zemin); color: var(--soluk); border-top: 1px solid var(--cizgi);
@@ -145,3 +146,17 @@ main { overflow-wrap: anywhere; }
   border-bottom: 1px solid var(--cizgi); color: var(--yazi); text-decoration: none;
 }
 .liste { margin-top: 12px; }
+/* Tanı: "Sonuçları göster" alt gezinme + sabit notun üstünde yapışık (kaydırmadan erişilir). */
+.alt-cubuk {
+  position: sticky; bottom: calc(84px + env(safe-area-inset-bottom)); z-index: 8;
+  margin: 12px -16px 0; padding: 8px 16px; background: var(--zemin); border-top: 1px solid var(--cizgi);
+}
+.alt-cubuk .dugme { margin: 0; }
+.belirti-liste.iki-sutun { display: grid; grid-template-columns: 1fr 1fr; }
+.belirti-liste.iki-sutun > .ipucu { grid-column: 1 / -1; }
+.aciklama { font-size: 14px; }
+.egzotik summary { color: var(--soluk); }
+.ayirici a, .bolum .madde a { display: inline-flex; align-items: center; min-height: 44px; }
+.urun-etiket { font-size: 13px; font-weight: 700; }
+.kombine { margin: 4px 0 0; padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); font-size: 14px; }
+.dugme.ikincil { min-height: 44px; margin: 6px 0 0; width: auto; display: inline-flex; font-size: 14px; }

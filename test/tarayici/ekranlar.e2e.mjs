@@ -94,8 +94,10 @@ test('sap belirtileri ustte kirmizi bayrak gosterir', async () => {
   await belirtiSec(s, 'topallık', 'topallik');
   await s.click('#goster');
   await s.waitForSelector('main h1:text-is("Sonuçlar")');
-  const ilk = s.locator('main > :nth-child(2)');
-  assert.match(await ilk.innerText(), /ŞAP ŞÜPHESİ — İHBAR EDİN/);
+  // Başlık ve tek satırlık sıralama açıklamasından hemen sonra bayrak bölümü gelir; sonuç listesinden önce.
+  const sira = await s.evaluate(() => [...document.querySelectorAll('main > *')].map((e) => e.className || e.tagName));
+  assert.deepEqual(sira.slice(0, 3), ['H1', 'aciklama soluk', 'bayraklar']);
+  assert.match(await s.locator('.bayraklar').innerText(), /ŞAP ŞÜPHESİ — İHBAR EDİN/);
   assert.ok(await s.locator('.bayrak').count() >= 1);
   await s.click('.bayrak >> nth=0');
   await s.waitForSelector('main h1:has-text("ihbarlı")');
@@ -140,6 +142,82 @@ test('gercek veri: yalniz Ani olum kutusu sarbon bandini gosterir', async () => 
   assert.match(bant, /ŞARBON|ANİ ÖLÜM/);
   assert.match(bant, /[Nn]ekropsi/);
   assert.match(await metin(s), /Yetersiz girdi/);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('sonuc: siralama aciklamasi ve Yeni vaka girdiyi temizleyip Taniya doner', async () => {
+  const s = await sayfaAc();
+  await s.git('#/tani');
+  await s.click('[data-yas="buzagi"]');
+  await s.check('[data-baglam="suru"]');
+  await s.fill('#isi', '40,6');
+  await belirtiSec(s, 'öksürük', 'oksuruk');
+  await belirtiSec(s, 'burun', 'burun_akintisi');
+  await s.click('#goster');
+  await s.waitForSelector('main h1:text-is("Sonuçlar")');
+  assert.match(await metin(s), /Sıralama hastalığın sıklığını da hesaba katar; yüzde, o hastalıkta beklenen bulguların ne kadarının görüldüğüdür\./);
+  await s.click('#yeni-vaka');
+  await s.waitForSelector('main h1:text-is("Tanı")');
+  assert.equal(await s.locator('.cip-secili').count(), 0);
+  assert.equal(await s.inputValue('#isi'), '');
+  assert.equal(await s.isChecked('[data-baglam="suru"]'), false);
+  assert.equal(await s.locator('.secenek[data-yas="inek"][aria-pressed="true"]').count(), 1);
+  // Yenilemeden sonra da boş (sessionStorage temizlendi).
+  await s.reload();
+  await s.waitForSelector('main h1:text-is("Tanı")');
+  assert.equal(await s.locator('.cip-secili').count(), 0);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('gercek veri: Sonuclari goster kaydirmadan gorunur, sistem listesi acikken de', async () => {
+  const s = await sayfaAc({ ornek: false });
+  await s.git('#/tani');
+  const gorunurMu = async () => s.evaluate(() => {
+    const k = document.querySelector('#goster').getBoundingClientRect();
+    const not = document.querySelector('.sabit-not').getBoundingClientRect();
+    return k.top >= 0 && k.bottom <= not.top + 0.5 && k.height >= 44;
+  });
+  assert.ok(await gorunurMu(), 'boş formda görünmüyor');
+  await s.click('.cipler .secenek:text-is("Genel")');
+  assert.ok(await s.locator('.belirti-liste.iki-sutun .belirti-dugme').count() > 10);
+  assert.ok(await gorunurMu(), 'Genel listesi açıkken görünmüyor');
+  await s.mouse.wheel(0, 600);
+  assert.ok(await gorunurMu(), 'kaydırınca görünmüyor');
+  // Seçili bulgu sayısı düğmede yazar; aramadan seçince kutu temizlenir.
+  await s.fill('#ara', 'öksürük');
+  await s.click('.belirti-dugme[data-belirti="oksuruk"]');
+  assert.equal(await s.inputValue('#ara'), '');
+  assert.match(await s.locator('#goster').innerText(), /Sonuçları göster \(1 bulgu\)/);
+  const [sw, iw] = await s.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
+  assert.ok(sw <= iw, `scrollWidth ${sw} > ${iw}`);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('ates aranirsa isidan hesaplandigi soylenir; gecersiz isi metni geri donunce kalir', async () => {
+  const s = await sayfaAc();
+  await s.git('#/tani');
+  await s.fill('#ara', 'ateş');
+  assert.match(await s.locator('#isi-notu').innerText(), /vücut ısısından hesaplanır/);
+  await s.fill('#ara', '');
+  await s.fill('#isi', '406');
+  await s.click('#goster');
+  await s.waitForSelector('main h1:text-is("Sonuçlar")');
+  await s.click('text=◂ Girdiyi düzenle');
+  await s.waitForSelector('main h1:text-is("Tanı")');
+  assert.equal(await s.inputValue('#isi'), '406');
+  assert.match(await s.locator('.ipucu').first().innerText(), /30–45/);
+});
+
+test('gercek veri: Rift bulgulari surusuz de ihbar bandi gosterir', async () => {
+  // final-review C1: "Birden çok hayvan" işaretsizken Rift sıralamadan düşer; ihbar şüphesi yine bantta.
+  const s = await sayfaAc({ ornek: false });
+  await s.git('#/tani');
+  await s.fill('#isi', '41');
+  for (const [q, id] of [['yavru', 'abort'], ['kanlı ishal', 'kanli_diare'], ['sarılık', 'sarilik']]) await belirtiSec(s, q, id);
+  await s.click('#goster');
+  await s.waitForSelector('main h1:text-is("Sonuçlar")');
+  assert.ok(await s.locator('.bayrak').count() >= 1);
+  assert.match(await s.locator('.bayraklar').innerText(), /İHBAR|BİLDİR|bildirin/);
   assert.deepEqual(s.hatalar, []);
 });
 
@@ -279,8 +357,10 @@ test('listeler: A-Z, arama, bos mesaji', async () => {
   await s.git('#/ilaclar');
   assert.equal(await s.locator('.liste-satir').count(), 3);
   await s.git('#/hakkinda');
+  await s.waitForSelector('main h1:text-is("Hakkında")');
   const t = await metin(s);
   assert.match(t, /uzman tahmini/);
+  assert.match(t, /Sıralama hastalığın sıklığını da hesaba katar/);
   assert.match(t, /Hekim kararının yerine geçmez/);
 });
 

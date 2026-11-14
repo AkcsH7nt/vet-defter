@@ -30,7 +30,7 @@ const ALANLAR = {
   mekanizma: [['hedef', 'etki', 'tur', 'spektrum', 'etkilesimler', 'kaynak'], ['kinetik', 'direnc']],
   hastalik: [['id', 'ad', 'grup', 'tur', 'yasGruplari', 'baglam', 'yayginlik', 'ihbari', 'zoonoz', 'tedaviKipi',
     'isi', 'belirtiler', 'dislayicilar', 'ayiriciTani', 'sahadaDogrula', 'uyarilar', 'protokol',
-    'antibiyotikEndikeDegil', 'agrivetAd', 'onay'], ['mevsim', 'kaynaklar', 'notlar']],
+    'antibiyotikEndikeDegil', 'agrivetAd', 'onay'], ['mevsim', 'kaynaklar', 'notlar', 'turkiyedeGorulmez']],
   hastalikBelirtisi: [['id', 'agirlik', 'yoklugu_dusurur'], []],
   protokol: [['ilaclar', 'destekleyici', 'bakim', 'ihbarAdimlari'], []],
   ilac: [['etkenId', 'sinif', 'sira', 'yol', 'kaynak'], ['not']],
@@ -215,6 +215,7 @@ export function dogrula(veri) {
     for (const a of ['ihbari', 'zoonoz', 'antibiyotikEndikeDegil']) {
       if (typeof h[a] !== 'boolean') hata(yer, `${a} true/false olmalı`);
     }
+    if ('turkiyedeGorulmez' in h && typeof h.turkiyedeGorulmez !== 'boolean') hata(yer, 'turkiyedeGorulmez true/false olmalı');
     enumDenetle(yer, 'tedaviKipi', h.tedaviKipi, TEDAVI_KIPI);
     if (h.isi !== null && alanlar(`${yer}.isi`, h.isi, 'isi')) {
       const { min, max } = h.isi;

@@ -11,6 +11,7 @@ import { dizindenOku } from '../scripts/dogrula.mjs';
 import { veriYukle } from '../lib/veri.js';
 import { puanla } from '../lib/puan.js';
 import { bayraklar } from '../lib/bayrak.js';
+import { sonucListeleri } from '../ui/sonuc.js';
 
 const KOK = fileURLToPath(new URL('..', import.meta.url));
 const vakalar = JSON.parse(readFileSync(new URL('./vinyetler.json', import.meta.url), 'utf8'));
@@ -61,6 +62,27 @@ test('ihbariOlmayanVinyetlerdeYalnizGerekceliIhbarBayraklari', async () => {
     }
   }
   assert.deepEqual([...yeni], []);
+});
+
+// Ekrandaki gerçek liste: Türkiye'de görülmeyen hastalıklar bayrakları tutmadıkça ilk 5'te değil ayrı bölümde.
+// Beklenen hastalık egzotikse ilk 3'te (bayrağı tuttuysa) ya da ayrı bölümde olmalı.
+test('ekranListesiVinyetlerin%80iIlk3teEgzotiklerAyriBolumde', async () => {
+  const veri = await veriYukle(dizindenOku(KOK));
+  const egzotik = new Set(veri.hastaliklar.filter((h) => h.turkiyedeGorulmez).map((h) => h.id));
+  for (const [etiket, tarih] of TARIHLER) {
+    const basarisiz = [];
+    for (const v of vakalar) {
+      const s = sonucListeleri(v.girdi, veri, tarih);
+      const ilk3 = s.ana.slice(0, 3).some((x) => x.id === v.beklenenIlk3);
+      const ayrida = egzotik.has(v.beklenenIlk3) && s.egzotik.some((x) => x.id === v.beklenenIlk3);
+      if (!ilk3 && !ayrida) basarisiz.push(`${v.beklenenIlk3} — "${v.ad}"`);
+      for (const x of s.ana) {
+        if (egzotik.has(x.id)) assert.ok(s.bayraklar.some((b) => b.hastalikId === x.id), `${x.id} bayraksız ilk 5'te (${v.ad})`);
+      }
+    }
+    const oran = (vakalar.length - basarisiz.length) / vakalar.length;
+    assert.ok(oran >= ESIK, `${etiket}: ${basarisiz.join('\n')}`);
+  }
 });
 
 for (const [etiket, tarih] of TARIHLER) {

@@ -1,7 +1,7 @@
 // Ekran 1: Tanı girişi. Durum (girdi) değiştikçe sessionStorage'a yazılır.
 import { el, doldur, YASLAR, SISTEMLER, bilinenGirdi } from './ortak.js';
-import { isiOku, isiBulgusu } from '../lib/puan.js';
-import { belirtiAra } from '../lib/arama.js';
+import { isiOku, isiBulgusu, bulgular } from '../lib/puan.js';
+import { belirtiAra, normalize } from '../lib/arama.js';
 
 const BAGLAMLAR = [
   ['dogumSonrasi', 'Son 30 gün doğum'],
@@ -9,12 +9,15 @@ const BAGLAMLAR = [
   ['aniOlum', 'Ani ölüm'],
 ];
 
+/** Sorgu ateş / ısı ile ilgili mi? (ateş elle seçilmez, ısıdan hesaplanır) */
+const isiSorgusuMu = (sorgu) => /^(ates|hipoterm|vucut isi|isi$|isi |sicaklik)/.test(normalize(sorgu));
+
 export function render(kok, veri, durum) {
   const girdi = durum.girdi;
   const secilebilir = veri.belirtiler.filter((b) => b.secilebilir !== false && (b.tur ?? ['sigir']).includes('sigir'));
   const bilinen = new Set(secilebilir.map((b) => b.id));
   girdi.belirtiler = girdi.belirtiler.filter((id) => bilinen.has(id));
-  const kaydet = () => durum.kaydet?.();
+  const kaydet = () => { durum.kaydet?.(); gosterCiz(); };
 
   const yasKutusu = el('div', { class: 'secenekler', role: 'group', 'aria-label': 'Yaş grubu' });
   const yasCiz = () => {
@@ -31,11 +34,12 @@ export function render(kok, veri, durum) {
     }),
     el('span', {}, ad))));
 
+  // Geçersiz ısı metni (ör. "406") silinmesin: Sonuçlar'dan dönünce aynı metin ve uyarı görünsün.
   const isiIpucu = el('p', { class: 'ipucu', 'aria-live': 'polite' });
   const isiGirdisi = el('input', {
     id: 'isi', type: 'text', inputmode: 'decimal', autocomplete: 'off', placeholder: 'örn. 40,6', class: 'alan',
-    value: girdi.isi == null ? '' : String(girdi.isi).replace('.', ','),
-    oninput: (e) => { girdi.isi = isiOku(e.target.value); kaydet(); isiIpucuCiz(); },
+    value: durum.isiMetni ?? (girdi.isi == null ? '' : String(girdi.isi).replace('.', ',')),
+    oninput: (e) => { durum.isiMetni = e.target.value; girdi.isi = isiOku(e.target.value); kaydet(); isiIpucuCiz(); },
   });
   function isiIpucuCiz() {
     const ham = isiGirdisi.value.trim();
@@ -62,11 +66,15 @@ export function render(kok, veri, durum) {
   };
   const belirtiDugmesi = (b) => el('button', {
     type: 'button', class: 'belirti-dugme', 'data-belirti': b.id,
-    'aria-pressed': String(girdi.belirtiler.includes(b.id)), onclick: () => degistir(b.id),
+    'aria-pressed': String(girdi.belirtiler.includes(b.id)),
+    onclick: () => {
+      // Aramadan seçince kutu temizlenir, odak kalır: sıradaki belirti hemen yazılabilir.
+      if (aramaKutusu.value.trim()) { aramaKutusu.value = ''; degistir(b.id); aramaKutusu.focus(); } else degistir(b.id);
+    },
   }, b.ad);
 
   function bolumCiz() {
-    doldur(secili, 
+    doldur(secili,
       girdi.belirtiler.length ? el('p', { class: 'etiket-baslik' }, 'Seçili belirtiler') : null,
       ...girdi.belirtiler.map((id) => el('button', {
         type: 'button', class: 'cip-secili', 'data-secili': id, 'aria-label': `Kaldır: ${ad(id)}`, onclick: () => degistir(id),
@@ -81,7 +89,10 @@ export function render(kok, veri, durum) {
     } else if (acikSistem) {
       liste = secilebilir.filter((b) => b.sistem === acikSistem);
     }
-    doldur(sonuclar, ...liste.map(belirtiDugmesi), bos ? el('p', { class: 'ipucu' }, bos) : null);
+    sonuclar.classList.toggle('iki-sutun', !sorgu && !!acikSistem);
+    const isiNotu = sorgu && isiSorgusuMu(sorgu)
+      ? el('p', { class: 'ipucu', id: 'isi-notu' }, 'Ateş ve düşük ısı vücut ısısından hesaplanır — yukarıdaki kutuya ısıyı girin.') : null;
+    doldur(sonuclar, isiNotu, ...liste.map(belirtiDugmesi), bos && !isiNotu ? el('p', { class: 'ipucu' }, bos) : null);
     const sistemler = [...new Set(secilebilir.map((b) => b.sistem))];
     doldur(cipler, ...sistemler.map((s) => el('button', {
       type: 'button', class: 'secenek', 'aria-pressed': String(acikSistem === s),
@@ -89,18 +100,25 @@ export function render(kok, veri, durum) {
     }, SISTEMLER[s] ?? s)));
   }
 
-  yasCiz(); isiIpucuCiz(); bolumCiz();
+  // Alt çubuk: "Sonuçları göster" kaydırmadan erişilir (alt gezinme ve sabit notun üstünde yapışık).
+  const goster = el('button', {
+    type: 'button', class: 'dugme ana', id: 'goster',
+    onclick: () => { Object.assign(girdi, bilinenGirdi(girdi, veri)); durum.kaydet?.(); location.hash = '#/sonuc'; },
+  });
+  function gosterCiz() {
+    const n = bulgular(bilinenGirdi(girdi, veri)).length;
+    goster.textContent = n ? `Sonuçları göster (${n} bulgu)` : 'Sonuçları göster';
+  }
 
-  doldur(kok, 
+  yasCiz(); isiIpucuCiz(); bolumCiz(); gosterCiz();
+
+  doldur(kok,
     el('h1', {}, 'Tanı'),
     el('p', { class: 'soluk' }, 'Tür: Sığır'),
     el('h2', {}, 'Yaş'), yasKutusu,
     el('h2', {}, 'Bağlam'), baglamKutusu,
     el('h2', {}, el('label', { for: 'isi' }, 'Vücut ısısı (°C)')), isiGirdisi, isiIpucu,
     el('h2', {}, el('label', { for: 'ara' }, 'Belirtiler')), aramaKutusu, cipler, sonuclar, secili,
-    el('button', {
-      type: 'button', class: 'dugme ana', id: 'goster',
-      onclick: () => { Object.assign(girdi, bilinenGirdi(girdi, veri)); kaydet(); location.hash = '#/sonuc'; },
-    }, 'Sonuçları göster'),
+    el('div', { class: 'alt-cubuk' }, goster),
   );
 }

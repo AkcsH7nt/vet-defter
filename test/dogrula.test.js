@@ -232,6 +232,14 @@ test('ihbarListesiIleTutarlilik', async () => {
   hataIcerir(dogrula(veri2), /ornek_solunum.*ihbar listesinde yok/);
 });
 
+test('turkiyedeGorulmezIstegeBagliBoolean', async () => {
+  const veri = await ornek();
+  hastalik(veri, 'ornek_ihbar').turkiyedeGorulmez = true;
+  assert.deepEqual(dogrula(veri), []);
+  hastalik(veri, 'ornek_ihbar').turkiyedeGorulmez = 'evet';
+  hataIcerir(dogrula(veri), /ornek_ihbar.*turkiyedeGorulmez true\/false/);
+});
+
 test('ihbariHastalikBayraksizsaHata', async () => {
   // final-review C1: ihbar şüphesi yalnız sıralamaya bırakılmaz.
   const veri = await ornek();
