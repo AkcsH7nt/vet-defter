@@ -232,10 +232,10 @@
     "protokol": {
       "ilaclar": [
         { "etkenId": "ivermektin", "sinif": "antiparaziter", "sira": 1, "yol": "SC",
-          "not": "Sarcoptes ve Psoroptes'e etkili; Chorioptes'e enjeksiyonla etkisi zayıf olabilir.",
+          "not": "Sarcoptes ve Psoroptes'e etkili; Chorioptes'e enjeksiyonla etkisi zayıf olabilir. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "doramektin", "sinif": "antiparaziter", "sira": 1, "yol": "SC / IM",
-          "not": "Sarcoptes ve Psoroptes'e etkili, uzun etkili makrosiklik lakton.",
+          "not": "Sarcoptes ve Psoroptes'e etkili, uzun etkili makrosiklik lakton. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "eprinomektin", "sinif": "antiparaziter", "sira": 1, "yol": "Sırta dökme (pour-on)",
           "not": "Sağmal ineklerde ürünün süt koşuluna göre tercih edilebilir.",

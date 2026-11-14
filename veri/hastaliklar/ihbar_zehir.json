@@ -29,7 +29,7 @@
       {
         "id": "vezikul_agiz",
         "agirlik": "kardinal",
-        "yoklugu_dusurur": true
+        "yoklugu_dusurur": false
       },
       {
         "id": "salya",
@@ -327,7 +327,7 @@
         "Halk sağlığı birimine bilgi verilmesi için resmî veteriner hekimi uyarın (zoonoz)."
       ]
     },
-    "antibiyotikEndikeDegil": true,
+    "antibiyotikEndikeDegil": false,
     "agrivetAd": "Şarbon",
     "kaynaklar": [
       "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
@@ -372,7 +372,7 @@
       {
         "id": "sinirsel_belirti",
         "agirlik": "kardinal",
-        "yoklugu_dusurur": true
+        "yoklugu_dusurur": false
       },
       {
         "id": "bogurme",
@@ -942,7 +942,7 @@
       "sigir"
     ],
     "baglam": {
-      "suru": "destekler"
+      "suru": "zorunlu"
     },
     "ihbari": true,
     "zoonoz": false,
@@ -1076,7 +1076,7 @@
       "sigir"
     ],
     "baglam": {
-      "suru": "destekler"
+      "suru": "zorunlu"
     },
     "ihbari": true,
     "zoonoz": false,
@@ -1418,7 +1418,7 @@
       {
         "id": "sinirsel_belirti",
         "agirlik": "kardinal",
-        "yoklugu_dusurur": true
+        "yoklugu_dusurur": false
       },
       {
         "id": "hiperestezi",
@@ -1522,7 +1522,7 @@
       "sigir"
     ],
     "baglam": {
-      "suru": "destekler"
+      "suru": "zorunlu"
     },
     "ihbari": true,
     "zoonoz": true,
@@ -1560,7 +1560,7 @@
       },
       {
         "id": "sarilik",
-        "agirlik": "tipik",
+        "agirlik": "olasi",
         "yoklugu_dusurur": false
       },
       {
@@ -1773,7 +1773,7 @@
       "boga"
     ],
     "yayginlik": "nadir",
-    "tedaviKipi": "yasak",
+    "tedaviKipi": "yok",
     "belirtiler": [
       {
         "id": "lenf_yumrusu_buyumesi",
@@ -2078,7 +2078,7 @@
       {
         "id": "kahverengi_kan",
         "agirlik": "kardinal",
-        "yoklugu_dusurur": true
+        "yoklugu_dusurur": false
       },
       {
         "id": "solunum_guclugu",
@@ -2302,7 +2302,9 @@
     "uyarilar": [
       "Deri yoluyla bulaşmış hayvanı yıkarken eldiven ve koruyucu giysi kullanın; ilaç size de geçer.",
       "Atropin etkiye göre (salya ve göz bebeği izlenerek) tekrarlanabilir; doz ürün KÜB'ünden.",
-      "İyileşen hayvanda et ve süt arınma süresi bilinmez; kalıntı riski için karar hekimindir."
+      "İyileşen hayvanda et ve süt arınma süresi bilinmez; kalıntı riski için karar hekimindir.",
+      "Bulguları atropinden önceki duruma göre girin; atropinden sonra göz bebeği genişler (midriyazis bu kayıtta dışlayıcıdır).",
+      "Panzehir olarak bilinen pralidoksimin (oksim) gıda hayvanında kalıntı limiti doğrulanmadı; uygulanan hayvanın eti ve sütü tüketime verilemez. Karar hekimindir."
     ],
     "protokol": {
       "ilaclar": [
@@ -2312,18 +2314,6 @@
           "sira": 1,
           "yol": "IV / IM / SC",
           "not": "Muskarinik belirtileri (salya, bronş salgısı, ishal) gideren temel panzehir.",
-          "kaynak": {
-            "tur": "KUB",
-            "urun": null,
-            "bolum": null
-          }
-        },
-        {
-          "etkenId": "pralidoksim",
-          "sinif": "diger",
-          "sira": 2,
-          "yol": "IV (yavaş) / IM",
-          "not": "Atropinle birlikte, zehirlenmeden sonra erken (enzim 'yaşlanmadan'); kas titremesi ve güçsüzlükte. Türkiye'de sığır için ruhsatlı ürünü yok ve kalıntı limiti statüsü doğrulanmadı — hekim kararı.",
           "kaynak": {
             "tur": "KUB",
             "urun": null,
@@ -2361,7 +2351,7 @@
     ],
     "notlar": [
       "Sayfa numaraları eklenecek.",
-      "Pralidoksim sira 2 olarak eklendi; ruhsatlı sığır ürünü yok ve MRL statüsü doğrulanmadı (statüsü yoksa yasaklar.json'a taşınmalı)."
+      "Pralidoksim koordinatör kararıyla protokolden çıkarıldı (sığırda ruhsatlı ürün yok, MRL statüsü doğrulanmadı); yalnız uyarı metni var. Hekim kararı beklenir."
     ],
     "onay": {
       "durum": "taslak"
@@ -2397,7 +2387,7 @@
       {
         "id": "sinirsel_belirti",
         "agirlik": "kardinal",
-        "yoklugu_dusurur": true
+        "yoklugu_dusurur": false
       },
       {
         "id": "bas_bastirma",
@@ -2463,6 +2453,16 @@
         "id": "ani_olum",
         "agirlik": "olasi",
         "yoklugu_dusurur": false
+      },
+      {
+        "id": "dairesel_yurume",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kabizlik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
       }
     ],
     "ayiriciTani": [
@@ -2480,22 +2480,11 @@
     ],
     "uyarilar": [
       "Kurşun et, süt ve sakatatta uzun süre kalır; iyileşen hayvanın eti ve sütü uzun süre tüketime verilmemelidir (karar hekimin).",
-      "Ölen hayvanın sakatatı (karaciğer, böbrek) gıda zincirine girmemelidir."
+      "Ölen hayvanın sakatatı (karaciğer, böbrek) gıda zincirine girmemelidir.",
+      "Şelasyon için bilinen kalsiyum disodyum EDTA'nın gıda hayvanında kalıntı limiti doğrulanmadı; uygulanan hayvanın eti ve sütü tüketime verilemez. Karar hekimindir."
     ],
     "protokol": {
       "ilaclar": [
-        {
-          "etkenId": "kalsiyum_disodyum_edta",
-          "sinif": "diger",
-          "sira": 1,
-          "yol": "IV (yavaş) / SC",
-          "not": "Şelasyonun temel ilacı; tiaminle birlikte, aralıklı kürler hâlinde. Kalsiyumsuz disodyum EDTA ile karıştırılmaz. Türkiye'de sığır için ruhsatlı ürünü yok ve kalıntı limiti statüsü doğrulanmadı — hekim kararı.",
-          "kaynak": {
-            "tur": "KUB",
-            "urun": null,
-            "bolum": null
-          }
-        },
         {
           "etkenId": "tiamin",
           "sinif": "metabolik",
@@ -2538,7 +2527,7 @@
     ],
     "notlar": [
       "Sayfa numaraları eklenecek.",
-      "Kalsiyum disodyum EDTA sira 1 olarak eklendi; ruhsatlı sığır ürünü yok ve MRL statüsü doğrulanmadı (statüsü yoksa yasaklar.json'a taşınmalı)."
+      "Kalsiyum disodyum EDTA koordinatör kararıyla protokolden çıkarıldı (sığırda ruhsatlı ürün yok, MRL statüsü doğrulanmadı); yalnız uyarı metni var. Hekim kararı beklenir."
     ],
     "onay": {
       "durum": "taslak"

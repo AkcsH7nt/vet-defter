@@ -40,10 +40,10 @@
     "protokol": {
       "ilaclar": [
         { "etkenId": "amoksisilin_klavulanat", "sinif": "antimikrobiyal", "sira": 1, "yol": "İntramammer",
-          "not": "Laktasyon dönemi meme içi ürünü; streptokok ve beta-laktamaz üreten stafilokoklar dahil Gram pozitif ağırlıklı olgularda.",
+          "not": "Laktasyon dönemi meme içi ürünü; streptokok ve beta-laktamaz üreten stafilokoklar dahil Gram pozitif ağırlıklı olgularda. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "sefaleksin", "sinif": "antimikrobiyal", "sira": 1, "yol": "İntramammer",
-          "not": "Laktasyon dönemi meme içi ürünü (çoğu kanamisinle kombine); Gram pozitif etkenlerde.",
+          "not": "Laktasyon dönemi meme içi ürünü (çoğu kanamisinle kombine); Gram pozitif etkenlerde. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "penetamat", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM",
           "not": "Sistemik seçenek; süte geçişi iyi. Streptokok ve penisiline duyarlı stafilokok mastitislerinde.",
@@ -326,7 +326,7 @@
     "grup": "meme_ureme",
     "tur": ["sigir"],
     "yasGruplari": ["duve", "inek"],
-    "baglam": { "dogumSonrasi": "zorunlu" },
+    "baglam": { "dogumSonrasi": "destekler" },
     "yayginlik": "sik",
     "ihbari": false,
     "zoonoz": false,
@@ -420,18 +420,20 @@
     ],
     "uyarilar": [
       "Vajinal muayenede eldiven kullanılır; akıntı zoonotik etken taşıyabilir.",
-      "Ateş ya da genel bulgu varsa puerperal metritis olarak değerlendirilir."
+      "Ateş ya da genel bulgu varsa puerperal metritis olarak değerlendirilir.",
+      "PGF2α gebe hayvanda abort yapar: uygulamadan önce gebelik rektal muayene / ultrasonla dışlanır.",
+      "PGF2α deriden emilir: gebe ya da astımlı kişiler uygulamaz; eldiven kullanılır, deriye bulaşırsa hemen yıkanır."
     ],
     "protokol": {
       "ilaclar": [
         { "etkenId": "kloprostenol", "sinif": "diger", "sira": 1, "yol": "IM",
-          "not": "Sarı cisim varsa luteoliz ile kızgınlık ve uterus temizlenmesi; piyometrada ilk seçenek.",
+          "not": "Sarı cisim varsa luteoliz ile kızgınlık ve uterus temizlenmesi; piyometrada ilk seçenek. Gebelik dışlanmadan uygulanmaz.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "dinoprost", "sinif": "diger", "sira": 1, "yol": "IM",
-          "not": "Kloprostenole alternatif PGF2α.",
+          "not": "Kloprostenole alternatif PGF2α. Gebelik dışlanmadan uygulanmaz.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "sefapirin", "sinif": "antimikrobiyal", "sira": 1, "yol": "Uterus içi",
-          "not": "Klinik endometritiste uterus içi (sefapirin benzatin) ürün; sarı cisim olup olmamasından bağımsız kullanılabilir. AMEG C. Süt ve et arınma süresi ürün KÜB'ünden.",
+          "not": "Klinik endometritiste uterus içi (sefapirin benzatin) ürün; sarı cisim olup olmamasından bağımsız kullanılabilir. AMEG C: D sınıfı uterus içi seçenek (oksitetrasiklin) uygun değilse. Süt ve et arınma süresi ürün KÜB'ünden.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 2, "yol": "İntrauterin",
           "not": "Sarı cisim yoksa ya da PGF2α'ya yanıt yoksa; endometriumu tahriş edebilir, sütte kalıntı ve arınma süresine dikkat.",

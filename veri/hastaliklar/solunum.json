@@ -14,7 +14,7 @@
     "isi": { "min": 40.0, "max": 42.0 },
     "belirtiler": [
       { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
-      { "id": "hizli_solunum", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "hizli_solunum", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "anormal_akciger_sesi", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "oksuruk", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "burun_akintisi", "agirlik": "tipik", "yoklugu_dusurur": false },
@@ -45,17 +45,18 @@
       "Florokinolon ve 3.–4. kuşak sefalosporin (AMEG B) ilk seçenek değildir; antibiyogramla ve yanıtsız vakada",
       "Tilmikosin insana kazara enjeksiyonda ölümcül olabilir; otomatik enjektör ve dikkatli kullanım",
       "48–72 saatte ateş düşmüyorsa tanı ve ilaç yeniden değerlendirilir",
-      "Antibiyotik verilen hayvanın et ve sütü KÜB'deki arınma süresi dolmadan tüketime gönderilmez"
+      "Antibiyotik verilen hayvanın et ve sütü KÜB'deki arınma süresi dolmadan tüketime gönderilmez",
+      "Sağmal inekte yalnız süt arınma süresi tanımlı ürün seçilir (ör. oksitetrasiklin, penisilin; ürün KÜB'üne göre)"
     ],
     "protokol": {
       "ilaclar": [
         { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Pasteurellaceae, Histophilus ve Mycoplasma'ya etkili; uzun etkili formu sahada yaygın ilk seçenek",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "BRD bakterileri ve Mycoplasma'ya etkili; BRD endikasyonlu",
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "BRD bakterileri ve Mycoplasma'ya etkili; BRD endikasyonlu. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "tulatromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; Mannheimia, Pasteurella, Histophilus, M. bovis",
+        { "etkenId": "tulatromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; Mannheimia, Pasteurella, Histophilus, M. bovis. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "tilmikosin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "BRD endikasyonlu makrolid; insana kazara enjeksiyon tehlikeli, yalnız hekim uygular",
+        { "etkenId": "tilmikosin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "BRD endikasyonlu makrolid; insana kazara enjeksiyon tehlikeli, yalnız hekim uygular. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "enrofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil; birinci seçeneğe yanıtsız vakada",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
@@ -144,11 +145,11 @@
       "ilaclar": [
         { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Pasteurellaceae ve Mycoplasma'ya etkili ilk seçenek",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "Solunum bakterileri ve Mycoplasma'ya etkili",
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "Solunum bakterileri ve Mycoplasma'ya etkili. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "tulatromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; Mycoplasma dahil",
+        { "etkenId": "tulatromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; Mycoplasma dahil. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "gamitromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; BRD endikasyonlu",
+        { "etkenId": "gamitromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; BRD endikasyonlu. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "enrofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
@@ -319,7 +320,7 @@
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM", "not": "Yalnız ikincil bakteriyel pnömoni gerekçesiyle; virüse etkisiz",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "Yalnız ikincil bakteriyel pnömoni gerekçesiyle; virüse etkisiz",
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "Yalnız ikincil bakteriyel pnömoni gerekçesiyle; virüse etkisiz. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
       ],
       "destekleyici": [
@@ -391,7 +392,7 @@
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Geniş spektrumlu ilk seçenek",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
-        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "Geniş spektrum, anaeroplara da etkili",
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "Geniş spektrum, anaeroplara da etkili. Sütü insan tüketimine sunulan ineklerde kullanılmaz / KÜB'e bakın. AMEG C: D sınıfı seçenek (oksitetrasiklin / penisilin) uygun değilse.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },

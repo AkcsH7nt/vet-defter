@@ -25,7 +25,9 @@
       { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "timpani", "agirlik": "olasi", "yoklugu_dusurur": false },
-      { "id": "uterus_prolapsusu", "agirlik": "olasi", "yoklugu_dusurur": false }
+      { "id": "uterus_prolapsusu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "hiperestezi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "dogum_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false }
     ],
     "dislayicilar": [],
     "ayiriciTani": ["perakut_koliform_mastitis", "hipomagnezemi", "puerperal_metritis", "yag_karaciger", "ketozis"],
@@ -302,9 +304,9 @@
     "tedaviKipi": "normal",
     "isi": null,
     "belirtiler": [
-      { "id": "felc", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "felc", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "hareket_istememe", "agirlik": "tipik", "yoklugu_dusurur": false },
-      { "id": "yatma_kalkamama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "kas_titremesi", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "emmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "ani_olum", "agirlik": "tipik", "yoklugu_dusurur": false },
@@ -312,7 +314,8 @@
       { "id": "hizli_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "solunum_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
-      { "id": "sirt_kamburlasmasi", "agirlik": "olasi", "yoklugu_dusurur": false }
+      { "id": "sirt_kamburlasmasi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ataksi", "agirlik": "tipik", "yoklugu_dusurur": false }
     ],
     "dislayicilar": [],
     "ayiriciTani": ["buzagi_pnomonisi", "aspirasyon_pnomonisi", "neonatal_buzagi_ishali"],

@@ -13,7 +13,7 @@
     "tedaviKipi": "normal",
     "isi": null,
     "belirtiler": [
-      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "sulu_diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "dehidrasyon", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "sari_beyaz_diare", "agirlik": "tipik", "yoklugu_dusurur": false },
@@ -104,7 +104,7 @@
     "tedaviKipi": "normal",
     "isi": null,
     "belirtiler": [
-      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "kanli_diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "tenezmus", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "mukuslu_diski", "agirlik": "tipik", "yoklugu_dusurur": false },
@@ -129,7 +129,7 @@
     ],
     "uyarilar": [
       "Klinik vaka görüldüğünde aynı gruptakiler de risk altındadır; grup tedavisi hekimle değerlendirilir",
-      "Antibiyotik koksidiyozda etkili değildir"
+      "Sülfonamidler dışındaki antibiyotikler koksidiyoza etkisizdir; ilk seçenek toltrazuril / diklazurildir"
     ],
     "protokol": {
       "ilaclar": [
@@ -176,7 +176,7 @@
     "isi": { "min": 40.0, "max": 42.0 },
     "belirtiler": [
       { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
-      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "kanli_diare", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "kotu_kokulu_diski", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "mukuslu_diski", "agirlik": "tipik", "yoklugu_dusurur": false },
@@ -300,7 +300,7 @@
     ],
     "protokol": {
       "ilaclar": [
-        { "etkenId": "sodyum_bikarbonat", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan (rumene) / IV", "not": "Rumen ve sistemik asidozu düzeltmek için",
+        { "etkenId": "sodyum_bikarbonat", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan (rumene) / IV", "not": "Rumen ve sistemik asidozu düzeltmek için. Ağızdan yalnız hafif olguda (rumende gaz ve şişkinlik yapabilir); ağır olguda rumen boşaltma ve IV",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Dehidrasyon ve dolaşım desteği",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
@@ -500,7 +500,7 @@
     "tedaviKipi": "normal",
     "isi": { "min": 39.0, "max": 40.5 },
     "belirtiler": [
-      { "id": "on_karin_agri_testi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "on_karin_agri_testi", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "sirt_kamburlasmasi", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "rumen_atonisi", "agirlik": "kardinal", "yoklugu_dusurur": false },
       { "id": "istahsizlik", "agirlik": "kardinal", "yoklugu_dusurur": false },
@@ -593,7 +593,11 @@
       { "id": "zayif_buzagi_dogumu", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "dol_tutmama", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "buyume_geriligi", "agirlik": "olasi", "yoklugu_dusurur": false },
-      { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false }
+      { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sulu_diare", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "burun_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "goz_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kotu_agiz_kokusu", "agirlik": "olasi", "yoklugu_dusurur": false }
     ],
     "dislayicilar": [],
     "ayiriciTani": ["sap", "ibr", "salmonelloz", "buzagi_koksidiyozu", "neonatal_buzagi_ishali", "mavi_dil", "vezikuler_stomatit", "bruselloz"],
