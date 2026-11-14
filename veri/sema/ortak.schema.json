@@ -25,7 +25,7 @@
     },
     "baglamDegeri": {
       "enum": ["zorunlu", "destekler"],
-      "description": "zorunlu: girdide bu bağlam işaretli değilse hastalık sonuç listesine girmez. destekler: bilgi amaçlı, bağlamla uyumlu."
+      "description": "zorunlu: girdide bu bağlam işaretli değilse hastalık sonuç listesine girmez. destekler: yalnız bilgi amaçlı, puanı DEĞİŞTİRMEZ (lib/puan.js bakmaz). Not: \"Ani ölüm\" bağlamı ayrıca ani_olum bulgusu sayılır (lib/puan.js bulgular)."
     }
   }
 }

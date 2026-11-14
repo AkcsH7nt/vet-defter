@@ -186,6 +186,9 @@ export function dogrula(veri) {
       metinDizisi(yer, 'mekanizma.etkilesimler', m.etkilesimler);
     }
     if ('kaynaklar' in e && !Array.isArray(e.kaynaklar)) hata(yer, 'kaynaklar dizi olmalı');
+    // Yasak madde etken listesinde de durmaz: ürünleri "Ruhsatlı ürünler" altında görünmesin (final-review M12).
+    const yasakEtken = yasakListesi.get(id) ?? (metinMi(e.ad) ? yasakAdlari.get(sade(e.ad)) : undefined);
+    if (yasakEtken) hata(yer, `gıda hayvanında yasak madde etken listesinde: ${yasakEtken.ad}`);
     onayDenetle(yer, e);
   }
 
@@ -402,6 +405,19 @@ export function dogrula(veri) {
     if (urunKimlikleri.has(u.urunId)) hata(`urun[${u.ad}]`, `urunId tekrar ediyor: ${u.urunId}`);
     urunKimlikleri.set(u.urunId, u);
   }
+
+  // --- Ekranda görünen metinlerde "olasılık" / "ihtimal" geçmez (Global Constraints; final-review M1) ---
+  const YASAK_SOZ = /olasılı|olasili|ihtimal/;
+  function metinTara(yer, deger, atla = []) {
+    if (typeof deger === 'string') {
+      if (YASAK_SOZ.test(deger.toLocaleLowerCase('tr'))) hata(yer, `ekranda görünen metinde "olasılık / ihtimal" geçiyor: ${JSON.stringify(deger.slice(0, 80))}`);
+    } else if (Array.isArray(deger)) deger.forEach((d, i) => metinTara(`${yer}[${i}]`, d, atla));
+    else if (nesneMi(deger)) for (const [a, d] of Object.entries(deger)) if (!atla.includes(a)) metinTara(`${yer}.${a}`, d, atla);
+  }
+  for (const [id, h] of hastaliklar) metinTara(`hastalik[${id}]`, h, ['notlar', 'kaynaklar', 'onay']);
+  for (const [id, e] of etkenler) metinTara(`etken[${id}]`, { ad: e?.ad, mekanizma: e?.mekanizma }, ['kaynak']);
+  for (const [id, b] of bayraklar) metinTara(`bayrak[${id}]`, { baslik: b?.baslik, uyarilar: b?.uyarilar });
+  for (const [id, b] of belirtiler) metinTara(`belirti[${id}]`, b?.ad);
 
   // --- Protokol → ürün bağları (doz bu üründen okunur; final-review I3) ---
   const urunler = (Array.isArray(veri.urunler) ? veri.urunler : []).filter(nesneMi);

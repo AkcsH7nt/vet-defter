@@ -479,6 +479,23 @@ test('gercek (bos olabilen) veri ile Tani acilir ve sonuc cokmez', async () => {
   assert.deepEqual(s.hatalar, []);
 });
 
+test('gercek veri: hicbir hastalik ve etken sayfasinda olasilik ya da doz yok', async () => {
+  // final-review M1: "olasılık" veri üzerinden de ekrana gelmesin (tr küçük harf); taslakta mg/kg yok.
+  const s = await sayfaAc({ ornek: false });
+  const oku = (y) => JSON.parse(readFileSync(join(KOK, 'veri', y), 'utf8'));
+  const hastaliklar = oku('hastaliklar/index.json').flatMap((d) => oku(`hastaliklar/${d}`));
+  const sayfalar = [...hastaliklar.map((h) => [`#/hastalik/${h.id}`, h.ad]), ...oku('etkenler.json').map((e) => [`#/etken/${e.id}`, e.ad])];
+  await s.git('#/tani');
+  for (const [hash, ad] of sayfalar) {
+    await s.evaluate((h) => { location.hash = h; }, hash);
+    await s.waitForFunction((a) => document.querySelector('main h1')?.textContent.startsWith(a), ad);
+    const t = (await metin(s)).toLocaleLowerCase('tr');
+    assert.doesNotMatch(t, /olasılı|ihtimal/, hash);
+    assert.doesNotMatch(t, /mg\/kg|ml\/kg/, hash);
+  }
+  assert.deepEqual(s.hatalar, []);
+});
+
 test('bos hastalik listesi bos oldugunu soyler', async () => {
   const bos = (yol, j) => (yol.startsWith('hastaliklar/') && yol !== 'hastaliklar/index.json' ? [] : undefined);
   const s = await sayfaAc({ degistir: bos });

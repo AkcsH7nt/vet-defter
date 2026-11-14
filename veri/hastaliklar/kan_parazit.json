@@ -117,7 +117,7 @@
     ],
     "protokol": {
       "ilaclar": [
-        { "etkenId": "imidokarb", "sinif": "antiparaziter", "sira": 1, "yol": "SC / IM", "not": "Babesia'ya etkili; bir süre koruyucu etki de sağlar.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "imidokarb", "sinif": "antiparaziter", "sira": 1, "yol": "SC / IM", "not": "Babesia'ya etkili; bir süre koruyucu etki de sağlar. Arınma süresi çok uzun: ürünün KÜB'üne bakın.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "diminazen", "sinif": "antiparaziter", "sira": 1, "yol": "IM", "not": "İmidokarba alternatif babesisit; ruhsat ve arınma süresi KÜB'den kontrol edilmeli.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 2, "yol": "SC / IV", "not": "Yüksek ateşte destek; dehidre hayvanda böbrek açısından dikkat.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
       ],

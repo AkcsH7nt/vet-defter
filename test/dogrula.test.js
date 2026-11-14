@@ -65,6 +65,17 @@ test('yasakEtkenProtokoldeHataVeAdIcerir', async () => {
   hataIcerir(hatalar, /ornek_ishal.*Kloramfenikol/);
 });
 
+test('yasakMaddeEtkenListesindeDeHata', async () => {
+  // final-review M12: protokolde geçmese de etken listesinde (ve ürün sayfasında) durmaz.
+  const veri = await ornek();
+  veri.etkenler.push({
+    id: 'kloramfenikol', ad: 'Kloramfenikol', sinif: 'antimikrobiyal', atcvet: null, ameg: 'A',
+    mekanizma: { hedef: 'h', etki: 'e', tur: 't', spektrum: null, etkilesimler: [], kaynak: null },
+    onay: { durum: 'taslak' },
+  });
+  hataIcerir(dogrula(veri), /etken\[kloramfenikol\].*yasak madde etken listesinde/);
+});
+
 test('yasakEtkenEtkenlerdeYoksaDaYakalanir', async () => {
   const veri = await ornek();
   hastalik(veri, 'ornek_solunum').protokol.ilaclar[0].etkenId = 'kloramfenikol';
@@ -230,6 +241,19 @@ test('ihbarListesiIleTutarlilik', async () => {
   hastalik(veri2, 'ornek_solunum').ihbari = true;
   hastalik(veri2, 'ornek_solunum').protokol.ihbarAdimlari = ['Bildir'];
   hataIcerir(dogrula(veri2), /ornek_solunum.*ihbar listesinde yok/);
+});
+
+test('ekrandaGorunenMetindeOlasilikGecmez', async () => {
+  const veri = await ornek();
+  hastalik(veri, 'ornek_ihbar').sahadaDogrula.push('Koyunlarda vaka varsa Olasılık artar.');
+  veri.bayraklar[0].uyarilar.push('İhtimal yüksek.');
+  const hatalar = dogrula(veri);
+  hataIcerir(hatalar, /hastalik\[ornek_ihbar\]\.sahadaDogrula.*olasılık/);
+  hataIcerir(hatalar, /bayrak\[ornek_ihbar_bayragi\]\.uyarilar.*olasılık/);
+  // Ekrana gelmeyen notlar taranmaz.
+  const veri2 = await ornek();
+  hastalik(veri2, 'ornek_ishal').notlar = 'olasılık hesabı iç not';
+  assert.deepEqual(dogrula(veri2), []);
 });
 
 test('turkiyedeGorulmezIstegeBagliBoolean', async () => {
