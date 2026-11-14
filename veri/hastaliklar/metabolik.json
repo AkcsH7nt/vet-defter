@@ -1,1 +1,348 @@
-[]
+[
+  {
+    "id": "sut_hummasi",
+    "ad": "Süt humması (doğum felci, klinik hipokalsemi)",
+    "grup": "metabolik",
+    "tur": ["sigir"],
+    "yasGruplari": ["inek"],
+    "baglam": { "dogumSonrasi": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 35.5, "max": 38.5 },
+    "belirtiler": [
+      { "id": "yatma_kalkamama", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "s_durusu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hipotermi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "soguk_ekstremite", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kas_titremesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "burun_aynasi_kurulugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "midriyazis", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "timpani", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "uterus_prolapsusu", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["perakut_koliform_mastitis", "hipomagnezemi", "puerperal_metritis", "yag_karaciger", "ketozis"],
+    "sahadaDogrula": [
+      "Çoğu olgu doğumdan önceki gün ile doğumdan sonraki 72 saat arasında; yaşlı (3. ve sonraki laktasyon) ve yüksek verimli inekte.",
+      "Evre: 1) ayakta, titreme, sendeleme, aşırı duyarlılık; 2) göğüs üstü yatış, başı böğre dönük, soğuk kulak, kuru burun, büyük göz bebeği; 3) yan yatış, bilinç bulanıklığı, şişkinlik.",
+      "Kalp dinlenir: zayıf, hızlı nabız, kalp seslerinde boğukluk.",
+      "Mümkünse kalsiyum vermeden önce kan örneği alınır (Ca, P, Mg).",
+      "Ateş varsa eşlik eden toksik mastitis / metritis aranır; dört çeyrek sağılarak bakılır.",
+      "Damar içi kalsiyuma hızlı yanıt (geğirme, dışkılama, titreme, kalkma) tanıyı destekler."
+    ],
+    "uyarilar": [
+      "Kalsiyum damar içi yavaş verilir, kalp sürekli dinlenir; aritmi ya da belirgin yavaşlama olursa infüzyon durdurulur.",
+      "Yutamayan ya da yatan, bilinci bulanık hayvana ağızdan ilaç / sıvı verilmez (aspirasyon pnömonisi riski).",
+      "Yatan inek göğüs üstü (sternal) tutulur, birkaç saatte bir yan değiştirilir; uzun yatışta kas-sinir hasarı gelişir.",
+      "Nüks sıktır; tedaviden sonraki 24–48 saat izlenmelidir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş); ek olarak SC",
+          "not": "Yatan inekte ilk seçenek; kalp dinlenerek yavaş verilir.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oral_kalsiyum", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan",
+          "not": "Ayakta ve yutabilen inekte (1. evre) ya da damar içi tedaviden sonra nüksü önlemek için.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "magnezyum", "sinif": "metabolik", "sira": 2, "yol": "SC / IV (yavaş, kombine çözelti)",
+          "not": "Eşlik eden hipomagnezemi şüphesinde (çoğu kalsiyum çözeltisinde magnezyum da vardır).",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Kaygan olmayan, yumuşak zemin; göğüs üstü yatış desteği.",
+        "Tedaviye yanıt vermeyen ve kalkamayan inekte fosfor ve magnezyum eksikliği, kas-sinir hasarı ve kırık düşünülür."
+      ],
+      "bakim": [
+        "Kuru dönem son 3 haftada düşük katyon-anyon farkı (anyonik rasyon) ya da düşük kalsiyumlu rasyon.",
+        "Kuru dönemde aşırı kondisyondan kaçınılır.",
+        "Riskli (yaşlı, önceki olgusu olan) ineklere doğumda ve hemen sonrasında ağızdan kalsiyum."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Süt humması (hipokalsemi)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Parturient paresis (milk fever) (sayfa eklenecek).",
+      "Merck Veterinary Manual — Parturient Paresis in Cows."
+    ],
+    "notlar": "Doğum bağlamı 'destekler' seçildi, 'zorunlu' değil: olguların bir kısmı doğumdan hemen önce / doğum sırasında görülür ve hekim bu durumda 'son 30 gün doğum' kutusunu işaretlemeyebilir. Ateş dışlayıcı yapılmadı (eşlik eden mastitis / metritis olabilir).",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ketozis",
+    "ad": "Ketozis (asetonemi)",
+    "grup": "metabolik",
+    "tur": ["sigir"],
+    "yasGruplari": ["inek"],
+    "baglam": { "dogumSonrasi": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.0, "max": 39.3 },
+    "belirtiler": [
+      { "id": "kesif_yem_reddi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "keton_pozitif", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "aseton_kokusu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sinirsel_belirti", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "anormal_yalama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "pika", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "bogurme", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["abomazum_deplasmani_sol", "yag_karaciger", "travmatik_retikuloperitonit", "puerperal_metritis", "kuduz"],
+    "sahadaDogrula": [
+      "Çoğu olgu doğumdan sonraki 2–6. haftada; yüksek verimli inekte.",
+      "Kanda BHB (el tipi ölçer) ya da idrar / sütte keton çubuğu ile doğrulanır.",
+      "Ketozis çoğu kez ikincildir: sol ping (abomazum deplasmanı), metritis, mastitis, ön karın ağrı testi (TRP) mutlaka yapılır.",
+      "Kondisyon kaybı ve kuru dönem kondisyonu sorulur.",
+      "Sinirsel belirti varsa (yalama, saldırganlık, sendeleme) kuduz dışlanır."
+    ],
+    "uyarilar": [
+      "Altta yatan hastalık tedavi edilmezse ketozis düzelmez ya da nükseder.",
+      "Sinirsel ketozda ağız muayenesi eldivenle yapılır; kuduz şüphesi dışlanmadan ağza çıplak elle girilmez.",
+      "Kortikosteroid gebe ineklerde abort yapabilir ve bağışıklığı baskılar; enfeksiyon varsa kullanılmaz."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "propilen_glikol", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan",
+          "not": "Glukoz öncülü; ilk seçenek, birkaç gün sürdürülür.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "dekstroz", "sinif": "metabolik", "sira": 1, "yol": "IV",
+          "not": "Ağır ya da sinirsel olguda hızlı glukoz; etkisi kısa sürer, propilen glikolle sürdürülür.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "deksametazon", "sinif": "diger", "sira": 2, "yol": "IM",
+          "not": "Glukoneogenezi artırır; gebe olmayan, enfeksiyonsuz inekte; abort ve bağışıklık baskılama riski.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Kaliteli kaba yem ve lezzetli yemle iştah desteklenir.",
+        "İştahsız inekte ağızdan sıvı-elektrolit ya da rumen sıvısı aktarımı (sonda ile) değerlendirilir."
+      ],
+      "bakim": [
+        "Kuru dönemde kondisyon 3–3,5 (5'lik skala); aşırı yağlanma önlenir.",
+        "Geçiş döneminde yem tüketimini artıracak yönetim (yemlik alanı, ani rasyon değişikliğinden kaçınma).",
+        "Doğum sonrası ilk haftalarda sürüde BHB taraması."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Ketozis (asetonemi)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Ketosis (sayfa eklenecek).",
+      "Merck Veterinary Manual — Ketosis in Cattle."
+    ],
+    "notlar": "Doğum bağlamı 'destekler': olgular doğumdan sonra 30 günü aşabilir. Sol abomazum deplasmanı ile sık birliktedir; ikisi birbirinin ayırıcı tanısında. Sahada yaygın bütafosfan + B12 etken listesinde yok.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "hipomagnezemi",
+    "ad": "Hipomagnezemi (çayır tetanisi)",
+    "grup": "metabolik",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "duve", "inek"],
+    "baglam": { "suru": "destekler", "aniOlum": "destekler" },
+    "yayginlik": "orta",
+    "mevsim": [3, 4, 5, 10, 11],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.5, "max": 40.5 },
+    "belirtiler": [
+      { "id": "kas_titremesi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "kasilma_nobeti", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "hiperestezi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ataksi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "bogurme", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "saldirganlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "opistotonus", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "cene_sakirdatma", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "salya", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["sut_hummasi", "kuduz", "kursun_zehirlenmesi", "organofosfat_zehirlenmesi", "ketozis"],
+    "sahadaDogrula": [
+      "Taze, hızlı büyüyen yeşil mera ya da tahıl merası; potasyum / azotla gübrelenmiş çayır; soğuk-yağışlı hava sorulur.",
+      "Çoğu emziren ya da sağmal yaşlı inek; buzağıda uzun süre yalnız sütle beslenmeye bağlı 'süt tetanisi'.",
+      "Sürüde ölü bulunan ya da benzer belirti gösteren başka hayvan var mı?",
+      "Kanda magnezyum (tedaviden önce); ölü hayvanda göz içi sıvısında (humor vitreus) magnezyum ölçülebilir.",
+      "Damar içi kalsiyum-magnezyum çözeltisine yanıt tanıyı destekler."
+    ],
+    "uyarilar": [
+      "Hayvan gürültü, dokunma ve zorlamayla nöbete girebilir; sakin ortamda, en az uyaranla tedavi edilir.",
+      "Magnezyum damar içi hızlı verilirse kalp ve solunum durabilir; yalnız yavaş ve kombine çözeltiyle, deri altı yol daha güvenlidir.",
+      "Salya + sinirsel belirtide kuduz dışlanmadan ağza çıplak elle girilmez; eldiven kullanılır."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş)",
+          "not": "Kalsiyum-magnezyum kombine çözeltisi olarak; nöbetteki hayvanda kalp dinlenerek.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "magnezyum", "sinif": "metabolik", "sira": 1, "yol": "SC; IV yalnız yavaş ve kombine çözeltiyle",
+          "not": "Magnezyum sülfat deri altı; damar içi tedaviden sonra kan düzeyini sürdürmek için.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ayağa kalktıktan sonra yeşil meradan alınır, kuru ot / saman verilir.",
+        "Sürünün geri kalanına hemen magnezyum takviyesi başlanır."
+      ],
+      "bakim": [
+        "Riskli dönemde yeme kalsine magnezit ya da magnezyum katkılı mineral, suya magnezyum ya da magnezyum bolusu.",
+        "Taze meraya geçiş yavaş; meraya çıkmadan önce kuru ot verilir.",
+        "Merada aşırı potasyum ve azot gübrelemesinden kaçınılır."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Hipomagnezemi (çayır tetanisi)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Hypomagnesemic tetanies (sayfa eklenecek).",
+      "Merck Veterinary Manual — Grass Tetany in Ruminants."
+    ],
+    "notlar": "Mevsim (ilkbahar ve sonbahar mera dönemleri) ülke geneli yaklaşık değerdir. Buzağı yaş grubu, yalnız sütle beslenen buzağıdaki hipomagnezemik tetani için eklendi. Nöbetteki hayvanda sedasyon gerekebilir; sedatif etken listesinde yok.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "yag_karaciger",
+    "ad": "Yağlı karaciğer (hepatik lipidoz, şişman inek sendromu)",
+    "grup": "metabolik",
+    "tur": ["sigir"],
+    "yasGruplari": ["inek"],
+    "baglam": { "dogumSonrasi": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 37.5, "max": 39.3 },
+    "belirtiler": [
+      { "id": "istahsizlik", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "zayiflama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "keton_pozitif", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kesif_yem_reddi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sinirsel_belirti", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sarilik", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["ketozis", "abomazum_deplasmani_sol", "puerperal_metritis", "sut_hummasi"],
+    "sahadaDogrula": [
+      "Kuru dönemde ya da doğumda aşırı kondisyon (yağlı inek) ve doğumdan sonraki ilk 1–2 haftada hızlı kondisyon kaybı.",
+      "Çoğu kez birden çok geçiş dönemi hastalığıyla birlikte (retensiyo, metritis, ketozis, abomazum deplasmanı).",
+      "Kanda BHB, mümkünse NEFA ve karaciğer enzimleri (AST, GGT); kesin tanı karaciğer biyopsisiyle.",
+      "Ketozis tedavisine yanıtsızlık uyarıcıdır."
+    ],
+    "uyarilar": [
+      "Ağır olguda prognoz kötüdür; yem yemeyen inek hızla kötüleşir.",
+      "Ağızdan zorla besleme / sondada aspirasyon riskine dikkat."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "propilen_glikol", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan",
+          "not": "Glukoz öncülü; yağ mobilizasyonunu azaltmaya yardımcı.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "dekstroz", "sinif": "metabolik", "sira": 1, "yol": "IV (tercihen sürekli damla)",
+          "not": "Enerji açığını hızla kapatmak için; tek seferlik yüksek konsantrasyonun etkisi kısadır.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağızdan sıvı-elektrolit ve rumen sıvısı aktarımı (sonda ile) iştahı desteklemek için.",
+        "Eşlik eden hastalıklar (metritis, mastitis, abomazum deplasmanı) ayrıca tedavi edilir."
+      ],
+      "bakim": [
+        "Kuru dönemde kondisyon kontrolü; doğumda kondisyon 3–3,5.",
+        "Geçiş döneminde ani rasyon değişikliklerinden kaçınma, yem tüketimini koruma."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Yağlı karaciğer sendromu",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Fatty liver in cattle (sayfa eklenecek).",
+      "Merck Veterinary Manual — Fatty Liver Disease of Cattle."
+    ],
+    "notlar": "Sahada klinik tanı çoğu kez dolaylıdır (kondisyon öyküsü + çoklu geçiş dönemi hastalığı + tedaviye yanıtsız ketozis).",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "buzagi_beyaz_kas_hastaligi",
+    "ad": "Beyaz kas hastalığı (selenyum / E vitamini eksikliği, nutrisyonel miyodejenerasyon)",
+    "grup": "metabolik",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "felc", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "hareket_istememe", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kas_titremesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "emmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "yutma_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "hizli_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "solunum_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sirt_kamburlasmasi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["buzagi_pnomonisi", "aspirasyon_pnomonisi", "neonatal_buzagi_ishali"],
+    "sahadaDogrula": [
+      "İskelet kası formu: sertçe yürüme, titreme, ayakta duramama, sırt ve but kaslarında sertlik-şişlik (palpasyon).",
+      "Kalp formu: ani ölüm, solunum güçlüğü, hızlı ve düzensiz kalp; çoğu kez zorlama ya da hareketten sonra.",
+      "Dil ve yutak kasları tutulursa emememe ve yutma güçlüğü.",
+      "Sürüde benzer olgular, bölgede selenyum eksikliği öyküsü, annelere kuru dönemde selenyum / E vitamini verilip verilmediği sorulur.",
+      "Kanda CK ve AST yüksekliği; kan selenyumu ya da GSH-Px; ölen hayvanda kaslarda beyaz-soluk çizgilenme (nekropsi)."
+    ],
+    "uyarilar": [
+      "Kalp formundaki buzağı zorlanmaz, taşınmaz ve heyecanlandırılmaz; ani ölüm riski.",
+      "Selenyumun güvenlik aralığı dardır; aşırı dozda zehirlenme ve ölüm görülür — yalnız ürün KÜB'üne göre.",
+      "Yutma güçlüğü olan buzağı zorla biberonla beslenmez (aspirasyon pnömonisi)."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [
+        "Selenyum + E vitamini enjeksiyonu (ürün ve doz KÜB'e göre) — etken listeye eklendiğinde ilaç satırı olarak girilecek.",
+        "Yutamayan buzağıda sonda ile süt / sıvı.",
+        "Sessiz, sınırlı alanda dinlendirme."
+      ],
+      "bakim": [
+        "Selenyumu düşük bölgelerde gebe ineklere kuru dönemde selenyum / E vitamini (enjeksiyon, mineral karışımı ya da bolus).",
+        "Yeni doğan buzağılara riskli işletmelerde koruyucu uygulama.",
+        "Mineral karmasının selenyum içeriği kontrol edilir."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Beyaz kas hastalığı",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Nutritional myopathy / selenium and vitamin E deficiency (sayfa eklenecek).",
+      "Merck Veterinary Manual — Nutritional Myopathies in Ruminants and Pigs."
+    ],
+    "notlar": "Asıl tedavi (selenyum + E vitamini) etken listesinde yok; eksik kimlik olarak raporlandı. Ateş beklenmez; ateş varsa aspirasyon pnömonisi gibi ikincil sorun aranır.",
+    "onay": { "durum": "taslak" }
+  }
+]

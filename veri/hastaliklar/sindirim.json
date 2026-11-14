@@ -1,1 +1,639 @@
-[]
+[
+  {
+    "id": "neonatal_buzagi_ishali",
+    "ad": "Neonatal buzağı ishali (E. coli, rota / korona virüs, kriptosporidiyoz)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "mevsim": [1, 2, 3, 4, 5],
+    "ihbari": false,
+    "zoonoz": true,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "sulu_diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "sari_beyaz_diare", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "emmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "soguk_ekstremite", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hipotermi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "mukuslu_diski", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kotu_kokulu_diski", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["buzagi_koksidiyozu", "salmonelloz", "bvd_md"],
+    "sahadaDogrula": [
+      "Yaş (gün): E. coli (ETEC) çoğunlukla ilk 4–5 gün; rota / korona yaklaşık 5–15 gün; kriptosporidiyoz yaklaşık 5–21 gün",
+      "Dehidrasyon: göz çukurluğu, deri kıvrımı düzelme süresi, ağız içi kuruluğu",
+      "Emme refleksi ve ayakta durabilme: emmeyen, ayağa kalkamayan buzağıda ağır metabolik asidoz beklenir",
+      "Varsa dışkıda hızlı test (rota, korona, kriptosporidyum, E. coli F5/K99)",
+      "Kolostrum geçmişi (ilk 2 saatte, yeterli miktarda); göbek ve eklemler kontrol edilir",
+      "Isı: ateş ya da hipotermi, halsizlik ve emmeme sistemik hastalık (septisemi) işaretidir"
+    ],
+    "uyarilar": [
+      "Kriptosporidiyoz zoonozdur: eldiven, el yıkama; çocukları hasta buzağıdan uzak tut",
+      "Sistemik belirti (ateş / hipotermi, halsizlik, emmeme) yoksa antibiyotik rutin değildir",
+      "Süt kesilmez; elektrolit sütten ayrı öğünde verilir",
+      "Kolistin ve florokinolon (AMEG B) ilk seçenek değildir"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "oral_elektrolit", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan / emzikle ya da sonda ile", "not": "Hafif-orta dehidrasyon, emme refleksi var",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Ağır dehidrasyon, emmeyen ya da yatık buzağı",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sodyum_bikarbonat", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Metabolik asidoz: emme refleksi zayıf, ayakta duramayan buzağı",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "dekstroz", "sinif": "metabolik", "sira": 2, "yol": "IV", "not": "Hipoglisemi şüphesi (uzun süre emmeme, nöbet)",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "SC", "not": "Akut ishalde ağızdan sıvı tedavisine ek; ağrıyı azaltır, iştahı destekler",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "amoksisilin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Yalnız sistemik belirti / septisemi şüphesinde",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sulfonamid_trimetoprim", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Yalnız sistemik belirti / septisemi şüphesinde",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "AMEG B: septisemide, antibiyogramla; ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "halofuginon", "sinif": "antiparaziter", "sira": 2, "yol": "Ağızdan, tok karna", "not": "Yalnız kriptosporidiyozda; ishal 24 saatten uzun sürmüşse ve zayıf buzağıda KÜB kısıtlamasına bak",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Süt / mama içirmeye devam; elektrolit ara öğünlerde",
+        "Soğukta ısıtma (buzağı ceketi, kuru altlık)",
+        "Ağır vakada damar içi sıvı ve bikarbonat (hekim)"
+      ],
+      "bakim": [
+        "Doğumdan sonra ilk 2 saatte yeterli kolostrum",
+        "Temiz, kuru doğumhane; tekli buzağı kulübesi",
+        "Hasta buzağıyı ayır; emzik, kova ve ekipmanı temizle",
+        "Gebe ineğe E. coli / rota / korona aşısı hekimle planlanır"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Buzağı ishali",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — neonatal buzağı ishali",
+      "Constable PD. Antimicrobial use in the treatment of calf diarrhea. Journal of Veterinary Internal Medicine, 2004;18(1):8–17"
+    ],
+    "notlar": [
+      "Etkenler sahada ayırt edilemediği için tek kayıt; yaş aralıkları yaklaşık",
+      "Mevsim: doğum mevsimi (kış sonu–ilkbahar); ülke geneli varsayım",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "buzagi_koksidiyozu",
+    "ad": "Buzağı koksidiyozu (Eimeria)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "kanli_diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "tenezmus", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "mukuslu_diski", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "buyume_geriligi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "anemi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "rektum_prolapsusu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sinirsel_belirti", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["salmonelloz", "neonatal_buzagi_ishali", "bvd_md"],
+    "sahadaDogrula": [
+      "Yaş genelde 3 haftanın üstünde (çoğunlukla 1–6 ay)",
+      "Dışkıda ookist sayımı (flotasyon / McMaster); klinik başlangıçta sayı düşük olabilir, grubun birkaçından örnek al",
+      "Yakın dönemde stres: sütten kesme, nakil, kalabalık, yem değişimi",
+      "Islak, kirli altlık; yemlik ve suluğa dışkı bulaşması",
+      "Gruptaki diğer buzağılarda dışkı kıvamı ve gelişme"
+    ],
+    "uyarilar": [
+      "Klinik vaka görüldüğünde aynı gruptakiler de risk altındadır; grup tedavisi hekimle değerlendirilir",
+      "Antibiyotik koksidiyozda etkili değildir"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "toltrazuril", "sinif": "antiparaziter", "sira": 1, "yol": "Ağızdan", "not": "Eimeria'nın tüm hücre içi evrelerine etkili",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "diklazuril", "sinif": "antiparaziter", "sira": 1, "yol": "Ağızdan", "not": "Koksidiyoz tedavi ve kontrolü",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oral_elektrolit", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan", "not": "Dehidrasyonda",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 2, "yol": "IV", "not": "Ağır dehidrasyonda",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Sıvı desteği; iştah açıcı yem ve temiz su",
+        "Kanlı ishal ve anemide ağır vaka hekimce değerlendirilir"
+      ],
+      "bakim": [
+        "Kuru, temiz altlık; kalabalığı azalt",
+        "Yemlik ve suluk dışkı bulaşmayacak yükseklikte",
+        "Riskli işletmede stres dönemi (sütten kesme, nakil) öncesi koruyucu uygulama hekimle planlanır"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Koksidiyoz",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — coccidiosis",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Coccidiosis of Cattle"
+    ],
+    "notlar": ["Kaynak sayfa numaraları eklenecek"],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "salmonelloz",
+    "ad": "Salmonelloz (S. Typhimurium, S. Dublin)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler", "dogumSonrasi": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": true,
+    "tedaviKipi": "normal",
+    "isi": { "min": 40.0, "max": 42.0 },
+    "belirtiler": [
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "kanli_diare", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kotu_kokulu_diski", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "mukuslu_diski", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "abort", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "hizli_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "eklem_sisligi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tenezmus", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["bvd_md", "buzagi_koksidiyozu", "neonatal_buzagi_ishali", "rumen_asidozu"],
+    "sahadaDogrula": [
+      "Dışkıda fibrin, mukoza parçası, kan ve çürük koku",
+      "Dışkı (ve ateşli hayvanda kan) kültürü ile antibiyogram — tedaviden önce örnek al",
+      "Sürüde birden çok hayvan, doğum sonrası inekler ya da 2–6 haftalık buzağılar etkileniyor mu",
+      "Yeni hayvan alımı, yem / su kaynağında kemirgen ve kuş bulaşması sorulur",
+      "Ölen hayvanda nekropsi: ince bağırsakta fibrinonekrotik enterit",
+      "Sürüde abort (S. Dublin) ve buzağıda solunum belirtileri / eklem şişliği"
+    ],
+    "uyarilar": [
+      "ZOONOZ: eldiven, çizme dezenfeksiyonu, el yıkama; hasta hayvanın sütü çiğ tüketilmez",
+      "Bakıcıda ishal / ateş olursa hekime başvurmalı",
+      "Çok ilaca dirençli suşlar sık: antibiyogram şart",
+      "Florokinolon ve 3. kuşak sefalosporin (AMEG B) ilk seçenek değil",
+      "S. Dublin atlatan inek taşıyıcı kalabilir; sürüden ayırma hekimle değerlendirilir",
+      "Ölü hayvan ve atıklar güvenli imha edilir"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Dehidrasyon ve şokta",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "hipertonik_tuzlu_su", "sinif": "metabolik", "sira": 2, "yol": "IV", "not": "Yetişkinde endotoksik şokta; ardından bol su ya da ağızdan sıvı şart",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oral_elektrolit", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan / sonda ile", "not": "Hafif-orta dehidrasyonda",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": "Endotoksemi ve ateş kontrolü; dehidrasyon giderilmeden böbrek riski",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sulfonamid_trimetoprim", "sinif": "antimikrobiyal", "sira": 1, "yol": "IV / IM", "not": "Septisemi / ateşli buzağıda; antibiyograma göre düzelt",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "ampisilin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Septisemi şüphesinde; direnç sık, antibiyograma göre düzelt",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "enrofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Yoğun sıvı tedavisi temel tedavidir",
+        "Temiz su ve iştah açıcı yem; buzağıda süt sürdürülür"
+      ],
+      "bakim": [
+        "Hasta hayvanı ayır; ayrı ekipman ve bakıcı",
+        "Doğumhane, buzağı bölmesi ve ekipman temizlik ve dezenfeksiyonu",
+        "Kemirgen ve kuş kontrolü; yem ve su kaynağını koru",
+        "Yeni hayvanı karantinada tut"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Salmonelloz",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — salmonellosis",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Salmonellosis in Animals"
+    ],
+    "notlar": [
+      "Yetişkinde antimikrobiyal kullanımı tartışmalı (taşıyıcılık, direnç); hekim kararı",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "rumen_asidozu",
+    "ad": "Rumen asidozu (akut laktik asidoz, tahıl yüklenmesi)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 37.5, "max": 39.5 },
+    "belirtiler": [
+      { "id": "rumen_atonisi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "dehidrasyon", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "rumen_ph_dusuk", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "diare", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "diskida_tane", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "gevis_getirmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kotu_kokulu_diski", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "karin_genislemesi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "korluk", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kas_titremesi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "laminit", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["timpani", "abomazum_deplasmani_sol", "travmatik_retikuloperitonit", "sut_hummasi", "salmonelloz"],
+    "sahadaDogrula": [
+      "Anamnez: son 24–48 saatte bol kesif yem, arpa, buğday, ekmek erişimi ya da ani rasyon değişimi",
+      "Rumen sıvısı (sonda ya da rumenosentez) pH ölçümü: belirgin düşüklük; sıvı süt gibi gri, ekşi kokulu, protozoa azalmış",
+      "Sol karında çalkantı sesi (rumen sıvıyla dolu)",
+      "Dışkıda sindirilmemiş tane, ekşi koku",
+      "Dehidrasyon derecesi, kalp atımı ve ayakta durabilme prognozu belirler",
+      "Aynı yemi yiyen diğer hayvanlar kontrol edilir"
+    ],
+    "uyarilar": [
+      "Yatık, ağır dehidre ve kalp atımı çok yüksek hayvanda prognoz kötü; rumen boşaltma / rumenotomi gerekebilir",
+      "Aynı yemi yiyen ama belirti göstermeyenlerde kesif yemi kes, kuru ot ver, 24–48 saat izle",
+      "Körlük ve sinir belirtisi gelişirse polioensefalomalazi düşün"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "sodyum_bikarbonat", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan (rumene) / IV", "not": "Rumen ve sistemik asidozu düzeltmek için",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Dehidrasyon ve dolaşım desteği",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 2, "yol": "IV / SC", "not": "Eşlik eden hipokalsemi şüphesinde",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "tiamin", "sinif": "metabolik", "sira": 2, "yol": "IM / IV", "not": "Körlük ya da sinir belirtisi gelişirse",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Rumen sıvısının sonda ile boşaltılması ve yıkanması; ağır vakada rumenotomi (hekim)",
+        "Mümkünse sağlıklı hayvandan rumen sıvısı aktarımı",
+        "Kesif yem kesilir; kaliteli kuru ot ve su verilir"
+      ],
+      "bakim": [
+        "Kesif yeme 2–3 haftada kademeli geçiş",
+        "Yem deposu kapalı; hayvanın kaçıp yeme erişmesini önle",
+        "Rasyonda yeterli kaba yem ve partikül boyu; TMR iyi karıştırılır"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Rumen asidozu",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ruminal lactic acidosis (grain overload)",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Grain Overload in Ruminants"
+    ],
+    "notlar": [
+      "Rumen içine magnezyum oksit / hidroksit gibi antasitler etken listesinde yok (eksik kimlik olarak raporlandı)",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "timpani",
+    "ad": "Timpani (rumen şişmesi: köpüklü ya da serbest gazlı)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": { "aniOlum": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "timpani", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "karin_genislemesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "solunum_guclugu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "agizdan_solunum", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "gevis_getirmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kolik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "salya", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "yutma_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "boyun_uzatma", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["abomazum_deplasmani_sol", "travmatik_retikuloperitonit", "rumen_asidozu", "sarbon"],
+    "sahadaDogrula": [
+      "Sol açlık çukuru (paralumbal fossa) gergin ve davul gibi",
+      "Mide sondası: gaz kolayca çıkıyorsa serbest gaz; gaz çıkmıyor, köpük geliyorsa köpüklü timpani",
+      "Sonda ilerlemiyorsa yemek borusu tıkanması (patates, elma, şalgam vb.)",
+      "Anamnez: taze, ıslak yonca / üçgül otlatma ya da yüksek kesif yem (köpüklü); yutma güçlüğü (serbest gaz)",
+      "Tekrarlayan hafif timpani: vagal indigesyon, travmatik retikuloperitonit düşün"
+    ],
+    "uyarilar": [
+      "ACİL: ağır solunum güçlüğünde sol açlık çukurundan trokar / kanül ile boşalt; köpüklüde trokar yetersiz kalabilir, acil rumenotomi gerekebilir",
+      "Ölü bulunan şişkin hayvanda doğal deliklerden kan varsa şarbon düşün: nekropsi yapma, ihbar et",
+      "Sonda takarken ağız açacağı kullan; yağı ağızdan zorla içirme (aspirasyon riski)"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "dimetikon", "sinif": "diger", "sira": 1, "yol": "Sonda ile / ağızdan", "not": "Köpüklü timpanide köpük kırıcı",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "parafin_yagi", "sinif": "diger", "sira": 1, "yol": "Sonda ile", "not": "Köpüklü timpanide köpük kırıcı; sonda ile ver",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Mide sondası ile gazı boşalt",
+        "Hayvanı ön ayakları yüksekte duracak şekilde tut, yürüt",
+        "Gerekirse trokar / kanül ya da rumenotomi (hekim)"
+      ],
+      "bakim": [
+        "Meraya aç hayvanı salma; önce kuru ot ver",
+        "Islak, çiğli yoncada otlatma; yonca oranını kademeli artır",
+        "Kesif yeme kademeli geçiş, yeterli kaba yem"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Timpani",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ruminal tympany (bloat)",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Bloat in Ruminants"
+    ],
+    "notlar": [
+      "Poloksalen, dioktil sodyum sülfosüksinat ve bitkisel yağ etken listesinde yok (eksik kimlik olarak raporlandı)",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "abomazum_deplasmani_sol",
+    "ad": "Abomazumun sola deplasmanı (LDA)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["inek"],
+    "baglam": { "dogumSonrasi": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.0, "max": 39.5 },
+    "belirtiler": [
+      { "id": "sol_ping", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "istahsizlik", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "kesif_yem_reddi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "keton_pozitif", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "gevis_getirmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "aseton_kokusu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "karin_genislemesi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["ketozis", "travmatik_retikuloperitonit", "puerperal_metritis", "yag_karaciger", "timpani"],
+    "sahadaDogrula": [
+      "Sol tarafta son kaburgalar (yaklaşık 9–13.) arasında fiske + dinleme ile metalik ping; rumen gaz pingi daha arkada, açlık çukurundadır",
+      "Sol karın duvarına balotman ile çalkantı sesi",
+      "Buzağılama tarihi (çoğu doğumdan sonraki ilk ay)",
+      "İdrar / süt / kan keton testi; eşlik eden metritis, ketozis, hipokalsemi aranır",
+      "Dışkı az ve macun kıvamında"
+    ],
+    "uyarilar": [
+      "Kalıcı çözüm cerrahidir (omentopeksi / abomazopeksi); yalnız yuvarlamada nüks sık",
+      "Eşlik eden hastalıklar (metritis, ketozis, hipokalsemi) tedavi edilmeden iyileşme zor",
+      "Antibiyotik yalnız ameliyat koruması / eşlik eden enfeksiyon gerekçesiyle; süt arınma süresine dikkat"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "dekstroz", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Eşlik eden ketozis / negatif enerji dengesi",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "propilen_glikol", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan", "not": "Eşlik eden ketozis",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 1, "yol": "IV / SC", "not": "Hipokalsemi abomazum hareketini azaltır; düzeltilir",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oral_kalsiyum", "sinif": "metabolik", "sira": 2, "yol": "Ağızdan", "not": "Subklinik hipokalsemi desteği",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 2, "yol": "IV", "not": "Dehidrasyonda",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM", "not": "Yalnız laparotomi sonrası cerrahi koruma gerekçesiyle, hekim kararı",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 2, "yol": "SC / IV", "not": "Ameliyat sonrası ağrı",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Cerrahi düzeltme (omentopeksi / abomazopeksi) ya da hekim kararıyla yuvarlama + fiksasyon",
+        "Bol kaliteli kaba yem ve su; ağızdan sıvı",
+        "Mümkünse sağlıklı hayvandan rumen sıvısı aktarımı"
+      ],
+      "bakim": [
+        "Kuru dönem ve geçiş dönemi beslemesi; aşırı yağlanmayı önle",
+        "Doğum sonrası kesif yeme kademeli geçiş, yeterli kaba yem partikülü",
+        "Doğum sonrası ilk haftalarda iştah, süt ve keton takibi"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Abomazum deplasmanı (sol)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — left-side displacement of the abomasum",
+      "Peek SF, Divers TJ (ed.). Rebhun's Diseases of Dairy Cattle, 3. baskı. Elsevier, 2018 — abomasal displacement"
+    ],
+    "notlar": ["Kaynak sayfa numaraları eklenecek"],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "travmatik_retikuloperitonit",
+    "ad": "Travmatik retikuloperitonit (yabancı cisim)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek", "boga"],
+    "baglam": {},
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.0, "max": 40.5 },
+    "belirtiler": [
+      { "id": "on_karin_agri_testi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "sirt_kamburlasmasi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "agri_inleme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hareket_istememe", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "gevis_getirmeme", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "timpani", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "dis_gicirdatma", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kalp_sesi_bogukluk", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "juguler_dolgunluk", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "gerdan_odemi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["abomazum_deplasmani_sol", "ketozis", "timpani", "rumen_asidozu", "sigir_solunum_kompleksi"],
+    "sahadaDogrula": [
+      "Ksifoid kıkırdak arkasından sırık / yumruk ile ağrı testi: inleme (akut dönemde belirgin, kronikte negatif olabilir)",
+      "Yokuş aşağı yürütmede isteksizlik, dirsekler dışa açık duruş",
+      "Varsa metal dedektör ve retikulum ultrasonu (fibrin, apse)",
+      "Kalp dinlenir: boğuk ses, sürtünme ya da çalkantı sesi, juguler dolgunluk ve gerdan ödemi → travmatik perikardit",
+      "Yemde tel, çivi; silaj / balya teli kullanımı sorulur"
+    ],
+    "uyarilar": [
+      "Perikardit belirtileri (boğuk kalp sesi + juguler dolgunluk + gerdan ödemi) varsa prognoz çok kötü; ekonomik değerlendirme",
+      "Antibiyotik verilmiş hayvan arınma süresi dolmadan kesime gönderilmez",
+      "Konservatif tedaviye 3 günde yanıt yoksa rumenotomi değerlendirilir"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Lokal peritonit kontrolü",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Lokal peritonit kontrolü, alternatif",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 2, "yol": "SC / IV", "not": "Ağrı kontrolü; ağrı testini maskeleyebilir, muayeneden sonra",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağızdan rumen mıknatısı uygulanır",
+        "Hayvanı ön ayakları yüksekte duracak şekilde (önde yükseltilmiş zemin) birkaç gün kısıtlı hareketle tut",
+        "Yanıt yoksa rumenotomi ile yabancı cisim çıkarılır (hekim)"
+      ],
+      "bakim": [
+        "Yem hazırlamada mıknatıslı ayıklayıcı; silaj ve balya teli toplanır",
+        "Riskli işletmede düvelere koruyucu mıknatıs hekimle değerlendirilir"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Travmatik retikuloperitonit",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — traumatic reticuloperitonitis",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Traumatic Reticuloperitonitis"
+    ],
+    "notlar": [
+      "Rumen mıknatısı ilaç değildir; etken listesine eklenmedi, destekleyici adımda",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "bvd_md",
+    "ad": "Sığır viral diyaresi / Mukozal hastalık (BVD-MD)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "semptomatik",
+    "isi": { "min": 40.0, "max": 42.0 },
+    "belirtiler": [
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "agiz_erozyonu", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "salya", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "burun_mukozasi_lezyonu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "abort", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kanli_diare", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "topallik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kornea_bulanikligi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kanama_egilimi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "zayif_buzagi_dogumu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "dol_tutmama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "buyume_geriligi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["sap", "ibr", "salmonelloz", "buzagi_koksidiyozu", "neonatal_buzagi_ishali", "mavi_dil", "vezikuler_stomatit", "bruselloz"],
+    "sahadaDogrula": [
+      "Ağız, dil, damak, burun aynası ve tırnak arasında erozyon / ülser (vezikül değil); vezikül görülürse önce şap",
+      "6–24 aylık, gelişmesi geri kalmış hayvanda şiddetli ishal + ağız erozyonu → mukozal hastalık (kalıcı enfekte, PI) şüphesi",
+      "Kulak çentiği (antijen ELISA) ya da kan PCR; pozitifte 3–4 hafta sonra tekrar test (geçici enfeksiyon / PI ayrımı)",
+      "Sürü geçmişi: abort, zayıf ya da sakat buzağı, döl tutmama, ishal ve solunum hastalıklarında artış",
+      "Kanama eğilimi (peteşi, burun kanaması) trombositopeniyi düşündürür"
+    ],
+    "uyarilar": [
+      "Ağız lezyonu + salya + topallıkta önce şap dışlanır: ihbar",
+      "Mukozal hastalık ölümcüldür; tedavi yoktur, ekonomik değerlendirme yapılır",
+      "PI hayvan ömür boyu virüs saçar; sürüden çıkarılması hekimle planlanır",
+      "Viral hastalık: antimikrobiyal endike değil; ikincil enfeksiyon ayrıca değerlendirilir",
+      "Canlı aşıların gebe hayvanda kullanımı KÜB'e göre"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "oral_elektrolit", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan / sonda ile", "not": "Dehidrasyonda",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": "Ağır dehidrasyonda",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Sıvı desteği, yumuşak ve iştah açıcı yem",
+        "Akut BVD'de destek tedavi; mukozal hastalıkta yaşatma çabası çoğunlukla sonuçsuz"
+      ],
+      "bakim": [
+        "Sürüde PI taraması (kulak çentiği / kan) ve PI hayvanların çıkarılması",
+        "Damızlıkta gebelik öncesi aşılama hekimle planlanır",
+        "Yeni hayvan ve gebe düvenin buzağısı test edilir; karantina",
+        "Biyogüvenlik: ziyaretçi, ekipman, ortak otlak"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "BVD (sığır viral diyaresi)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — bovine viral diarrhea and mucosal disease",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Bovine Viral Diarrhea and Mucosal Disease Complex"
+    ],
+    "notlar": [
+      "veri/ihbar.json notunda BVD'nin ihbar listesinde olup olmadığı belirsiz; şimdilik ihbari: false — doğrulanmalı",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  }
+]

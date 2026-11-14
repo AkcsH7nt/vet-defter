@@ -1,1 +1,267 @@
-[]
+[
+  {
+    "id": "dermatofitoz",
+    "ad": "Dermatofitoz (trikofitoz, ringworm)",
+    "grup": "deri_ayak",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "mevsim": [11, 12, 1, 2, 3],
+    "ihbari": false,
+    "zoonoz": true,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "halka_kil_dokulmesi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "deri_kabuklanma", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kil_dokulmesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kasinti", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["uyuz"],
+    "sahadaDogrula": [
+      "Göz çevresi, baş, boyun ve gövdede yuvarlak, gri-beyaz kabuklu, kılsız alanlar; çoğu genç hayvanda.",
+      "Kaşıntı genellikle hafiftir; belirgin kaşıntı uyuzu düşündürür.",
+      "Lezyon kenarından kıl ve kabuk alınarak mikroskobi / mantar kültürü.",
+      "Kış ahır döneminde, kalabalık ve az ışıklı barınakta sürüde yayılım sorulur."
+    ],
+    "uyarilar": [
+      "Zoonozdur: hayvana ve kabuklara eldivenle dokunulur, sonra eller yıkanır; çocuklar uzak tutulur.",
+      "İnsanda deri lezyonu çıkarsa hekime başvurulmalıdır.",
+      "Lezyonlar çoğu kez 1–3 ayda kendiliğinden geriler; tedavi yayılmayı ve süreyi azaltmak içindir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "enilkonazol", "sinif": "diger", "sira": 1, "yol": "Lokal (tüm vücut yıkama / püskürtme)",
+          "not": "Topikal antifungal; temas eden tüm hayvanlara, aralıklı tekrarlanarak.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "povidon_iyot", "sinif": "diger", "sira": 2, "yol": "Lokal",
+          "not": "Kabuklar yumuşatılıp kaldırıldıktan sonra lezyona lokal antiseptik.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Kabuklar fırçayla, eldivenle kaldırılır; kabuklar yakılır ya da imha edilir."
+      ],
+      "bakim": [
+        "Barınak, bölme, yemlik ve kaşıma yüzeyleri temizlenip dezenfekte edilir (sporlar uzun süre canlı kalır).",
+        "Havalandırma, gün ışığı ve kalabalığın azaltılması.",
+        "Sorunlu işletmelerde dermatofitoz aşısı değerlendirilir.",
+        "Beslenmede A vitamini ve iz element yeterliliği."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Dermatofitoz (trikofitoz)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Ringworm (dermatophytosis) (sayfa eklenecek).",
+      "Merck Veterinary Manual — Dermatophytosis in Animals."
+    ],
+    "notlar": "Etken çoğunlukla Trichophyton verrucosum. Enilkonazolün sığırda Türkiye ruhsat durumu ve sütte kullanım koşulu KÜB'den doğrulanmalı.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "interdigital_flegmon",
+    "ad": "Tırnak arası flegmonu (interdigital nekrobasilloz, ayak çürüklüğü)",
+    "grup": "deri_ayak",
+    "tur": ["sigir"],
+    "yasGruplari": ["dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.0, "max": 40.5 },
+    "belirtiler": [
+      { "id": "topallik", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "ayak_sisligi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "tirnak_arasi_nekroz", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "hareket_istememe", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["ayakta_vezikul"],
+    "ayiriciTani": ["dijital_dermatit", "sap"],
+    "sahadaDogrula": [
+      "Ayak kaldırılıp yıkanır: tırnak arası derisinde çatlak, nekrotik doku ve karakteristik kötü koku.",
+      "Şişlik iki tırnağı birden saran, simetrik, taç bandına kadar; tırnakların açılması.",
+      "Tek tırnağı ilgilendiren taban ülseri, beyaz çizgi apsesi ve tırnağa batan yabancı cisim dışlanır.",
+      "Eklem, tendon kılıfı ya da derin dokuya yayılım (tedaviye 3–4 günde yanıt yoksa) araştırılır.",
+      "Ağızda ya da ayakta vezikül varsa şap şüphesiyle ihbar."
+    ],
+    "uyarilar": [
+      "Erken sistemik tedavi önemlidir; geç kalınırsa derin dijital sepsis gelişir.",
+      "Ayakta vezikül, salya ve sürüde yayılım şap şüphesidir — hareket durdurulur, ihbar edilir.",
+      "Tedavi gören hayvanın sütü ve eti arınma süresi bitene kadar kullanılmaz."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM",
+          "not": "Fusobacterium necrophorum ve anaeroblara etkili; ilk seçenek.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV",
+          "not": "Sistemik alternatif.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sulfonamid_trimetoprim", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV",
+          "not": "Sistemik alternatif.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IM",
+          "not": "AMEG B: ilk seçenek değil; birinci seçeneklere yanıtsız olguda gerekçeyle.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "IV / SC",
+          "not": "Ağrı ve yangıya karşı; topallığın hızlı azalmasına yardımcı.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "povidon_iyot", "sinif": "diger", "sira": 1, "yol": "Lokal",
+          "not": "Lezyon temizlenip nekrotik doku uzaklaştırıldıktan sonra lokal antiseptik.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ayak temizlenir, gevşek nekrotik doku uzaklaştırılır; gerekirse kuru sargı.",
+        "Hayvan kuru, temiz bölmeye alınır."
+      ],
+      "bakim": [
+        "Çamurlu geçitler, ıslak ve taşlı zeminler düzeltilir; ayak yaralanmaları önlenir.",
+        "Sürüde olgu sıksa düzenli ayak banyosu.",
+        "Düzenli tırnak bakımı."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Tırnak arası flegmonu (foot rot)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Interdigital necrobacillosis (foot rot) (sayfa eklenecek).",
+      "Merck Veterinary Manual — Footrot in Cattle."
+    ],
+    "notlar": "Ayakta vezikül dışlayıcı yapıldı: vezikül şap / veziküler stomatit lehine; kırmızı bayrak bu durumda zaten ihbarı öne çıkarır.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "dijital_dermatit",
+    "ad": "Dijital dermatit (Mortellaro hastalığı, çilek yarası)",
+    "grup": "deri_ayak",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "dijital_dermatit_lezyonu", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "topallik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hareket_istememe", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["ayakta_vezikul"],
+    "ayiriciTani": ["interdigital_flegmon"],
+    "sahadaDogrula": [
+      "Ayak kaldırılıp yıkanır: çoğunlukla arka ayakta topuk arkası (tırnak arası yarığın arka ucu) deride kırmızı, kabarık, çilek görünümlü, dokunmaya çok ağrılı yara.",
+      "Lezyon evresi (aktif yara / iyileşen / kronik, kabuklu-siğilli) not edilir.",
+      "Tırnak arası şişlik ve kötü kokulu çatlak yoksa tırnak arası flegmonundan ayrılır.",
+      "Sürüde birden çok hayvanda, özellikle ıslak, gübreli zeminde."
+    ],
+    "uyarilar": [
+      "Sistemik antibiyotik gerekmez; tedavi lokaldir.",
+      "Ayak banyosu çözeltisi (bakır sülfat) çevreye ve toprağa zararlıdır; atığı kontrollü uzaklaştırılır."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "Lokal (sprey ya da sargı)",
+          "not": "Yara temizlenip kurulandıktan sonra lokal; sistemik kullanım gerekmez.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "bakir_sulfat", "sinif": "diger", "sira": 1, "yol": "Ayak banyosu",
+          "not": "Sürü düzeyinde kontrol ve yeni olguları önleme.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Lezyon yıkanır, kurulanır; gerekirse birkaç gün sargıda tutulur."
+      ],
+      "bakim": [
+        "Düzenli ayak banyosu ve banyonun kirlendikçe yenilenmesi.",
+        "Gübre kanallarının sık temizlenmesi, kuru zemin.",
+        "Yeni gelen hayvanlarda ayak muayenesi ve karantina.",
+        "Düzenli tırnak bakımı ve topallık skorlaması."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Dijital dermatit (Mortellaro)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Bovine digital dermatitis (sayfa eklenecek).",
+      "Merck Veterinary Manual — Digital Dermatitis in Cattle."
+    ],
+    "notlar": "Etkenle ilişkili başlıca bakteriler Treponema türleri. Lokal oksitetrasiklin ürünlerinde sütte arınma koşulu KÜB'den doğrulanmalı.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "uyuz",
+    "ad": "Uyuz (sarkoptik, psoroptik, koryoptik)",
+    "grup": "deri_ayak",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "orta",
+    "mevsim": [11, 12, 1, 2, 3, 4],
+    "ihbari": false,
+    "zoonoz": true,
+    "tedaviKipi": "normal",
+    "isi": null,
+    "belirtiler": [
+      { "id": "kasinti", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "deri_kabuklanma", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kil_dokulmesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "mat_tuy", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["dermatofitoz"],
+    "sahadaDogrula": [
+      "Yerleşim: Sarcoptes baş, boyun, kuyruk sokumu (yaygınlaşabilir); Psoroptes sırt, omuz, kuyruk sokumu; Chorioptes kuyruk sokumu, ayaklar, meme aynası.",
+      "Lezyon kenarından, hafif kanayana kadar derin deri kazıntısı alınıp mikroskopla akar aranır.",
+      "Bitlenme (pedikülozis) ve dermatofitozdan ayırt edilir.",
+      "Sürüde kaç hayvanın kaşındığı, kışın ahır dönemi ve yeni hayvan girişi sorulur."
+    ],
+    "uyarilar": [
+      "Sarkoptik uyuz insanda geçici kaşıntılı lezyon yapabilir; eldiven kullanılır.",
+      "Sağmal inekte yalnız sütte kullanım izni olan ürün seçilir; süt arınma süresi KÜB'e göre.",
+      "Tek hayvan tedavisi yetersizdir; temaslı tüm hayvanlar aynı anda tedavi edilir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "ivermektin", "sinif": "antiparaziter", "sira": 1, "yol": "SC",
+          "not": "Sarcoptes ve Psoroptes'e etkili; Chorioptes'e enjeksiyonla etkisi zayıf olabilir.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "doramektin", "sinif": "antiparaziter", "sira": 1, "yol": "SC / IM",
+          "not": "Sarcoptes ve Psoroptes'e etkili, uzun etkili makrosiklik lakton.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "eprinomektin", "sinif": "antiparaziter", "sira": 1, "yol": "Sırta dökme (pour-on)",
+          "not": "Sağmal ineklerde ürünün süt koşuluna göre tercih edilebilir.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "amitraz", "sinif": "antiparaziter", "sira": 2, "yol": "Lokal (banyo / püskürtme)",
+          "not": "Özellikle koryoptik uyuzda lokal; tüm sürüye, aralıklı tekrar.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağır kabuklu lezyonlar yumuşatılıp temizlenir; ikincil deri enfeksiyonu izlenir."
+      ],
+      "bakim": [
+        "Tüm sürü aynı anda tedavi edilir; ürüne göre aralıklı tekrar.",
+        "Barınak, kaşıma yüzeyleri ve ekipman temizlenir.",
+        "Yeni gelen hayvanlar karantinada muayene ve tedavi edilir.",
+        "Kış döneminde kalabalığın azaltılması ve iyi beslenme."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Uyuz",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Mange (sayfa eklenecek).",
+      "Merck Veterinary Manual — Mange in Cattle."
+    ],
+    "notlar": "Zoonoz işareti sarkoptik uyuz içindir; psoroptik ve koryoptik uyuz insana geçmez.",
+    "onay": { "durum": "taslak" }
+  }
+]

@@ -1,1 +1,421 @@
-[]
+[
+  {
+    "id": "sigir_solunum_kompleksi",
+    "ad": "Sığır solunum yolu hastalığı kompleksi (BRD, nakil humması)",
+    "grup": "solunum",
+    "tur": ["sigir"],
+    "yasGruplari": ["dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "mevsim": [10, 11, 12, 1, 2, 3],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 40.0, "max": 42.0 },
+    "belirtiler": [
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "hizli_solunum", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "anormal_akciger_sesi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "oksuruk", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "burun_akintisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "solunum_guclugu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "irinli_burun_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "goz_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "agizdan_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "agri_inleme", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kulak_dusuklugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "eklem_sisligi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["ibr", "aspirasyon_pnomonisi", "buzagi_difterisi", "travmatik_retikuloperitonit", "tropikal_teileriyoz", "tuberkuloz", "sigir_pleuropnomonisi"],
+    "sahadaDogrula": [
+      "Grubun tamamında rektal ısı ölçülür; ateşli ama belirtisiz hayvanlar erken vakadır",
+      "Akciğer her iki yanda, özellikle kranioventral bölgede dinlenir (krepitasyon, hırıltı, sessiz alan); varsa toraks ultrasonu",
+      "Son 2–3 haftada nakil, pazardan alım, karışık gruplama, sütten kesme ya da ani hava değişimi sorulur",
+      "Sürü salgınında tedaviden önce burun svabı / derin trakea yıkantısı ile kültür ve antibiyogram alınır",
+      "Ölen hayvanda nekropsi: fibrinli plöropnömoni, kranioventral konsolidasyon",
+      "Aşı geçmişi (BRSV, PI3, BVD, IBR, Mannheimia) sorulur",
+      "Kulak düşüklüğü, eklem şişliği ya da beta-laktama yanıtsızlıkta Mycoplasma bovis düşünülür"
+    ],
+    "uyarilar": [
+      "Mycoplasma'nın hücre duvarı yoktur: penisilin ve sefalosporinler etkisizdir",
+      "Florokinolon ve 3.–4. kuşak sefalosporin (AMEG B) ilk seçenek değildir; antibiyogramla ve yanıtsız vakada",
+      "Tilmikosin insana kazara enjeksiyonda ölümcül olabilir; otomatik enjektör ve dikkatli kullanım",
+      "48–72 saatte ateş düşmüyorsa tanı ve ilaç yeniden değerlendirilir",
+      "Antibiyotik verilen hayvanın et ve sütü KÜB'deki arınma süresi dolmadan tüketime gönderilmez"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Pasteurellaceae, Histophilus ve Mycoplasma'ya etkili; uzun etkili formu sahada yaygın ilk seçenek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "BRD bakterileri ve Mycoplasma'ya etkili; BRD endikasyonlu",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "tulatromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; Mannheimia, Pasteurella, Histophilus, M. bovis",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "tilmikosin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "BRD endikasyonlu makrolid; insana kazara enjeksiyon tehlikeli, yalnız hekim uygular",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "enrofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil; birinci seçeneğe yanıtsız vakada",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "marbofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "AMEG B (3. kuşak sefalosporin): antibiyogramla, ilk seçenek değil; Mycoplasma'ya etkisiz",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": "Ateş ve akciğer yangısını azaltır; antimikrobiyalle birlikte",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "SC / IV", "not": "Akut solunum yolu enfeksiyonunda antimikrobiyale ek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "ketoprofen", "sinif": "nsaii", "sira": 1, "yol": "IM / IV", "not": "Ateş düşürücü ve yangı giderici ek tedavi",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Temiz su ve iştah açıcı kaba yem önünde olsun",
+        "Dehidrasyonda ağızdan ya da damar içi sıvı",
+        "Ağır solunum güçlüğünde hayvanı zorlamadan, sakin ortamda tedavi et"
+      ],
+      "bakim": [
+        "Hasta hayvanları ayır; ahırı cereyansız havalandır, amonyak kokusunu gider",
+        "Kalabalığı azalt; yeni gelenleri 2–3 hafta ayrı tut, farklı kaynaklı hayvanı karıştırma",
+        "Nakil öncesi ve gelişte aşılama programı (BRSV, PI3, BVD, IBR, Mannheimia) hekimle planlanır",
+        "Grupta günlük ateş takibi, erken vaka yakalama"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Pnömoni (sığır solunum yolu hastalığı kompleksi)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — sığır solunum hastalıkları bölümü",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Bovine Respiratory Disease Complex"
+    ],
+    "notlar": [
+      "Mevsim: soğuk aylar ve nakil sonrası; ülke geneli varsayım, hekim doğrulamalı",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "buzagi_pnomonisi",
+    "ad": "Buzağı pnömonisi (enzootik pnömoni)",
+    "grup": "solunum",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "mevsim": [11, 12, 1, 2, 3],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.8, "max": 41.5 },
+    "belirtiler": [
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "oksuruk", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "hizli_solunum", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "burun_akintisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "solunum_guclugu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "anormal_akciger_sesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "emmeme", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "goz_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kulak_dusuklugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "eklem_sisligi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kronik_oksuruk", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "buyume_geriligi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["sigir_solunum_kompleksi", "buzagi_difterisi", "aspirasyon_pnomonisi", "ibr", "bvd_md"],
+    "sahadaDogrula": [
+      "Ahır havası: amonyak kokusu, nem, cereyan, kalabalık",
+      "Kolostrum geçmişi (ilk 2 saatte yeterli miktar); mümkünse serum total protein ile pasif bağışıklık",
+      "Aynı bölmedeki buzağılarda ısı ölçümü ve öksürük sayımı (buzağı solunum skoru)",
+      "Akciğer kranioventral bölgede dinlenir; varsa toraks ultrasonu",
+      "Kulak düşüklüğü, baş eğikliği, eklem şişliği → Mycoplasma bovis",
+      "Ölen buzağıda nekropsi ve akciğer örneği"
+    ],
+    "uyarilar": [
+      "Mycoplasma'ya penisilin ve sefalosporinler etkisizdir",
+      "Florokinolonlar (AMEG B) ilk seçenek değildir; antibiyogramla",
+      "Kronik vakalar (apse, bronşiektazi) tedaviye zayıf yanıt verir; ekonomik değerlendirme gerekir",
+      "Süt buzağısında arınma süresi kesime gönderim için de geçerlidir"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Pasteurellaceae ve Mycoplasma'ya etkili ilk seçenek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "Solunum bakterileri ve Mycoplasma'ya etkili",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "tulatromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; Mycoplasma dahil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "gamitromisin", "sinif": "antimikrobiyal", "sira": 1, "yol": "SC", "not": "Tek uygulamalık makrolid; BRD endikasyonlu",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "enrofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "marbofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / IV", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "SC / IV", "not": "Ateş ve akciğer yangısını azaltır; antimikrobiyale ek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": "Ateş düşürücü ek tedavi",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "ketoprofen", "sinif": "nsaii", "sira": 1, "yol": "IM / IV", "not": "Ateş düşürücü ek tedavi",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Süt / mama içimi sürdürülür; içmiyorsa ağızdan elektrolit ya da sonda",
+        "Soğukta buzağı ceketi, kuru ve kalın altlık",
+        "Dehidrasyonda sıvı desteği"
+      ],
+      "bakim": [
+        "Havalandırmayı düzelt: taze hava, cereyan yok, nem ve amonyak düşük",
+        "Kuru, temiz altlık; kalabalığı azalt; yaş grupları ayrı",
+        "Her buzağıya ilk 2 saatte yeterli kolostrum",
+        "Riskli işletmede aşı programı (BRSV, PI3, Mannheimia) hekimle planlanır"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Buzağı pnömonisi",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — sığır solunum hastalıkları bölümü",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Bovine Respiratory Disease Complex"
+    ],
+    "notlar": [
+      "Mevsim: ahırda kapalı tutulan kış ayları; ülke geneli varsayım",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "buzagi_difterisi",
+    "ad": "Buzağı difterisi (nekrotik larenjit / stomatit)",
+    "grup": "solunum",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana"],
+    "baglam": {},
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.5, "max": 41.0 },
+    "belirtiler": [
+      { "id": "stridor", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "solunum_guclugu", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "kotu_agiz_kokusu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "agizdan_solunum", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "boyun_uzatma", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "oksuruk", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "yutma_guclugu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "salya", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "agiz_erozyonu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "deri_alti_sislik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "burun_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["buzagi_pnomonisi", "sigir_solunum_kompleksi", "ibr", "aspirasyon_pnomonisi", "kuduz"],
+    "sahadaDogrula": [
+      "Yüksek sesli, inspirasyonda belirgin hırıltı (stridor): üst solunum yolu tıkanması",
+      "Eldivenle ve ağız açacağıyla yanak, dil, damak ve larenks girişinde nekrotik, kötü kokulu plaklar aranır",
+      "Yanak şişliği ağız (stomatit) formunu düşündürür",
+      "Kova / emzik paylaşımı, sert ve dikenli kaba yem, diş çıkarma dönemi sorulur",
+      "Akciğer dinlenir: aspirasyonla gelişen pnömoni eşlik edebilir"
+    ],
+    "uyarilar": [
+      "Salya ve yutma güçlüğünde kuduz dışlanmadan ağza çıplak elle girme",
+      "Ağır tıkanmada hayvanı zorlama, stres ani boğulmaya yol açabilir; acil trakeotomi gerekebilir",
+      "Tedavi uzun sürer; erken kesilen tedavide nüks ve larenks kıkırdağı hasarı sık"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Fusobacterium necrophorum'a etkili ilk seçenek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Fusobacterium'a etkili alternatif",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sulfonamid_trimetoprim", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Alternatif ilk seçenek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": "Larenks ödemini ve ağrıyı azaltır",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "SC / IV", "not": "Larenks yangısını azaltır",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "deksametazon", "sinif": "diger", "sira": 2, "yol": "IV / IM", "not": "Yalnız ağır larenks ödeminde kısa süreli; gebe hayvanda abort riski, NSAİİ ile birlikte verilmez",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağır solunum tıkanmasında trakeotomi (hekim)",
+        "Yumuşak yem, süt; yutamıyorsa sonda ile besleme ve sıvı",
+        "Sakin, serin ortam; hayvanı koşturma"
+      ],
+      "bakim": [
+        "Hasta buzağıyı ayır; emzik, kova ve suluğu ortak kullanma, temizle",
+        "Sert, dikenli kaba yemi ayıkla",
+        "Ahır hijyeni ve kuru altlık"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Buzağı difterisi (nekrotik larenjit)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — üst solunum yolu hastalıkları"
+    ],
+    "notlar": [
+      "Kaynak sayfa numaraları eklenecek",
+      "Deksametazon satırı hekim tarafından gözden geçirilmeli (kullanımı tartışmalı)"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ibr",
+    "ad": "İnfeksiyöz bovin rinotrakeitis (IBR, BoHV-1)",
+    "grup": "solunum",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "semptomatik",
+    "isi": { "min": 40.0, "max": 42.0 },
+    "belirtiler": [
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "burun_mukozasi_lezyonu", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "burun_akintisi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "konjunktivit", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "goz_akintisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "oksuruk", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hizli_solunum", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "salya", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kotu_agiz_kokusu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "solunum_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "anormal_akciger_sesi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "abort", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "vulva_lezyonu", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["sigir_solunum_kompleksi", "buzagi_pnomonisi", "buzagi_difterisi", "bvd_md", "sap", "bruselloz"],
+    "sahadaDogrula": [
+      "Burun mukozası ışıkla incelenir: kızarıklık ('kırmızı burun'), beyaz-sarı püstül ve nekrotik plaklar",
+      "Göz: konjonktiva kızarıklığı ve akıntı; kornea ödemi kenardan başlar",
+      "Burun / göz svabından PCR; 2–3 hafta arayla eşleştirilmiş serum",
+      "Son haftalarda sürüye yeni hayvan katılımı ve aşı geçmişi (marker aşı) sorulur",
+      "Sürüde abort varsa abort materyali laboratuvara (brusella da araştırılır)"
+    ],
+    "uyarilar": [
+      "Viral hastalık: antibiyotik yalnız ikincil bakteriyel pnömoni gerekçesiyle",
+      "Gebe inekte abort riski; canlı aşıların gebelikte kullanımı KÜB'e göre",
+      "Atlatan hayvan ömür boyu latent taşıyıcıdır; stresle yeniden virüs saçar",
+      "Abort materyaline eldivenle dokun; brusella dışlanmadan çıplak elle temas yok"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": "Ateş ve yangı kontrolü",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "SC / IV", "not": "Ateş ve yangı kontrolü",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM", "not": "Yalnız ikincil bakteriyel pnömoni gerekçesiyle; virüse etkisiz",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "Yalnız ikincil bakteriyel pnömoni gerekçesiyle; virüse etkisiz",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Temiz su, iştah açıcı yem, gölge / havalandırma",
+        "Dehidrasyonda sıvı desteği"
+      ],
+      "bakim": [
+        "Hasta hayvanları ayır; yeni hayvanı karantinada tut ve test ettir",
+        "Salgında sürü aşılaması (marker aşı) hekimle planlanır",
+        "Damızlık boğa ve sperma kaynağı IBR yönünden kontrol edilir"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "IBR (enfeksiyöz bovin rinotrakeitis)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — infectious bovine rhinotracheitis",
+      "Merck Veterinary Manual (MSD Veterinary Manual), çevrimiçi — Infectious Bovine Rhinotracheitis"
+    ],
+    "notlar": [
+      "veri/ihbar.json notunda IBR'nin ihbar listesinde olup olmadığı belirsiz; şimdilik ihbari: false — doğrulanmalı",
+      "Kaynak sayfa numaraları eklenecek"
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "aspirasyon_pnomonisi",
+    "ad": "Aspirasyon pnömonisi",
+    "grup": "solunum",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": {},
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.5, "max": 41.5 },
+    "belirtiler": [
+      { "id": "solunum_guclugu", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "hizli_solunum", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "anormal_akciger_sesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kotu_agiz_kokusu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "oksuruk", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "burun_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "agizdan_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "siyanoz", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "agri_inleme", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ani_olum", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["sigir_solunum_kompleksi", "buzagi_pnomonisi", "buzagi_difterisi"],
+    "sahadaDogrula": [
+      "Anamnez: son günlerde ağızdan zorla ilaç / yağ içirme, sonda ile besleme, uzun süre yatık kalma (süt humması), yutma güçlüğü",
+      "Nefeste çürük kokusu kangrenli pnömoniyi düşündürür",
+      "Akciğer kranioventral, sıklıkla sağ kraniyal lob dinlenir; varsa ultrason",
+      "Burun akıntısında süt ya da yem parçası aranır"
+    ],
+    "uyarilar": [
+      "Kangrenli pnömoni gelişmişse prognoz kötüdür",
+      "Yutma güçlüğü ve salyada kuduz dışlanmadan ağza çıplak elle girme",
+      "3. kuşak sefalosporin (AMEG B) ilk seçenek değil"
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Anaerop ve ağız florasına etkili",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV", "not": "Geniş spektrumlu ilk seçenek",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "florfenikol", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / SC", "not": "Geniş spektrum, anaeroplara da etkili",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / SC", "not": "AMEG B: antibiyogramla, ilk seçenek değil",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": "Yangı ve ateş kontrolü",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "SC / IV", "not": "Yangı ve ateş kontrolü",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Sakin, serin ve havadar ortam",
+        "Dehidrasyonda damar içi sıvı; ağızdan zorla sıvı verme"
+      ],
+      "bakim": [
+        "Ağızdan ilaç içirmede başı yüksek tutma, yavaş ver; mümkünse sonda ile ver",
+        "Buzağıya sonda takarken sondanın yemek borusunda olduğunu doğrula",
+        "Yatık ineği göğüs üstü (sternal) pozisyonda tut, yan yatmasını önle"
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Aspirasyon pnömonisi",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — aspiration pneumonia"
+    ],
+    "notlar": ["Kaynak sayfa numaraları eklenecek"],
+    "onay": { "durum": "taslak" }
+  }
+]

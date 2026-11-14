@@ -1,1 +1,456 @@
-[]
+[
+  {
+    "id": "klinik_mastitis_akut",
+    "ad": "Akut klinik mastitis",
+    "grup": "meme_ureme",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek"],
+    "baglam": {},
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.5, "max": 40.5 },
+    "belirtiler": [
+      { "id": "sutte_pihti", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "meme_sisligi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "sulu_renkli_sut", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "meme_sicaklik_agri", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "meme_sertligi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "cmt_pozitif", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sutte_kan", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["perakut_koliform_mastitis", "kronik_mastitis"],
+    "sahadaDogrula": [
+      "Dört çeyreğin ilk sütü ayrı ayrı kaba sağılıp bakılır (pıhtı, sulanma, renk, kan).",
+      "CMT ile hangi çeyreklerin tutulduğu belirlenir.",
+      "Derece belirlenir: yalnız süt değişikliği (1) / memede şişlik-ağrı (2) / ateş, iştahsızlık, dehidrasyon gibi genel bulgu (3). Genel bulgu varsa perakut koliform mastitis düşünülür.",
+      "Antibiyotikten önce etkilenen çeyrekten aseptik süt örneği alınır (kültür / antibiyogram).",
+      "Sürüde klinik olgu sıksa sağım hijyeni, sağım makinesi ve yatak koşulları gözden geçirilir."
+    ],
+    "uyarilar": [
+      "Tedavi gören çeyreğin ve ineğin sütü arınma süresi bitene kadar tanka katılmaz, satılmaz.",
+      "Hasta inek en son sağılır; sağımcı eldiven kullanır, eller ve sağım başlıkları arada dezenfekte edilir.",
+      "Hafif (1. derece) Gram negatif olgularda antibiyotik çoğu kez gerekmez; mümkünse hızlı kültürle karar verilir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "amoksisilin_klavulanat", "sinif": "antimikrobiyal", "sira": 1, "yol": "İntramammer",
+          "not": "Laktasyon dönemi meme içi ürünü; streptokok ve beta-laktamaz üreten stafilokoklar dahil Gram pozitif ağırlıklı olgularda.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sefaleksin", "sinif": "antimikrobiyal", "sira": 1, "yol": "İntramammer",
+          "not": "Laktasyon dönemi meme içi ürünü (çoğu kanamisinle kombine); Gram pozitif etkenlerde.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "penetamat", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM",
+          "not": "Sistemik seçenek; süte geçişi iyi. Streptokok ve penisiline duyarlı stafilokok mastitislerinde.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sefkinom", "sinif": "antimikrobiyal", "sira": 2, "yol": "İntramammer",
+          "not": "AMEG B: ilk seçenek değil; yalnız kültür / antibiyogram sonucu gerektiriyorsa.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 1, "yol": "IV / SC",
+          "not": "Memedeki yangı ve ağrıyı azaltır; iyileşmeyi ve verim dönüşünü destekler.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "ketoprofen", "sinif": "nsaii", "sira": 1, "yol": "IM / IV",
+          "not": "Meloksikama alternatif ağrı-yangı giderici.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Etkilenen çeyrek gün içinde sık sık elle boşaltılır.",
+        "Temiz su ve yem önünde bulundurulur."
+      ],
+      "bakim": [
+        "Sağım öncesi meme başı temizliği ve kurulama; sağım sonrası meme başı daldırma.",
+        "Kuru, temiz yatak; sağım sonrası inek bir süre ayakta tutulur (yemle).",
+        "Olgu, tedavi ve kültür sonucu kayda geçirilir; aynı inekte tekrarlıyorsa kronik mastitis olarak değerlendirilir."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Klinik mastitis (akut)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Mastitis bölümü (sayfa eklenecek).",
+      "Merck Veterinary Manual — Mastitis in Cattle."
+    ],
+    "notlar": "Antibiyotik seçimi mümkünse çiftlik/bölge kültür sonuçlarına göre yapılmalı. Meme içi ürünlerin çoğu kombinedir; ürün seçimi KÜB'e göre.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "perakut_koliform_mastitis",
+    "ad": "Perakut (toksik) koliform mastitis",
+    "grup": "meme_ureme",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek"],
+    "baglam": { "dogumSonrasi": "destekler" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 37.0, "max": 41.5 },
+    "belirtiler": [
+      { "id": "sulu_renkli_sut", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "meme_sisligi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "diare", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "yatma_kalkamama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "hipotermi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "soguk_ekstremite", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "meme_morarma", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["klinik_mastitis_akut", "sut_hummasi", "puerperal_metritis", "abomazum_deplasmani_sol"],
+    "sahadaDogrula": [
+      "Dört çeyrek kaba sağılır: sarımsı, sulu, serum gibi süt (az pıhtılı) tipiktir.",
+      "Dehidrasyon derecesi (göz çukurluğu, deri kıvrımı), nabız ve rumen hareketleri değerlendirilir.",
+      "Başlangıçta ateş, ilerleyince normal ya da düşük ısı görülebilir; düşük ısı kötü prognoz işaretidir.",
+      "Yatan inekte eşlik eden hipokalsemi düşünülür.",
+      "Tedaviden önce aseptik süt örneği alınır (kültür / antibiyogram)."
+    ],
+    "uyarilar": [
+      "Saatler içinde endotoksik şok ve ölüm gelişebilir; acil olgu.",
+      "Kalsiyum damar içi yavaş verilir, kalp dinlenir.",
+      "Memede soğukluk ve morarma kangren işaretidir; prognoz kötüdür.",
+      "Tedavi gören ineğin sütü arınma süresi bitene kadar tanka katılmaz."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "izotonik_sivi", "sinif": "metabolik", "sira": 1, "yol": "IV",
+          "not": "Endotoksik şok ve dehidrasyonda yoğun sıvı tedavisi.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "hipertonik_tuzlu_su", "sinif": "metabolik", "sira": 1, "yol": "IV",
+          "not": "Hızlı dolaşım hacmi desteği; hemen ardından bol su içirilmeli ya da ağızdan sıvı verilmeli.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV",
+          "not": "Endotoksemi, ateş ve ağrıya karşı.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş) / SC",
+          "not": "Eşlik eden hipokalsemide.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sulfonamid_trimetoprim", "sinif": "antimikrobiyal", "sira": 1, "yol": "IV / IM",
+          "not": "Genel bulgulu olguda bakteriyemi riskine karşı Gram negatif etkili sistemik seçenek.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IM",
+          "not": "AMEG B: ilk seçenek değil; ağır sistemik olguda kültür / antibiyogram gerekçesiyle.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "marbofloksasin", "sinif": "antimikrobiyal", "sira": 2, "yol": "IV / IM",
+          "not": "AMEG B (florokinolon): ilk seçenek değil; yalnız antibiyogram ve ağır olgu gerekçesiyle.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitosin", "sinif": "diger", "sira": 1, "yol": "IM / IV",
+          "not": "Etkilenen çeyreğin sık boşaltılmasını kolaylaştırmak için.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Etkilenen çeyrek 2–3 saatte bir tamamen boşaltılır.",
+        "Ağızdan bol su ya da sıvı-elektrolit (sonda ile) verilir.",
+        "Yatan inek göğüs üstü (sternal) tutulur, yumuşak zeminde."
+      ],
+      "bakim": [
+        "Yatak hijyeni ve kuruluğu (özellikle doğum bölmesi ve erken laktasyon).",
+        "Sağım öncesi meme başı temizliği ve kurulama.",
+        "Sürüde tekrarlıyorsa koliform mastitis aşısı ve kuru dönem yönetimi değerlendirilir."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Akut (toksik) koliform mastitis",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Mastitis bölümü, koliform mastitis (sayfa eklenecek).",
+      "Merck Veterinary Manual — Mastitis in Cattle."
+    ],
+    "notlar": "Sistemik antimikrobiyalin ilk seçeneği (trimetoprim-sülfonamid) için kanıt düzeyi hekimce gözden geçirilmeli. Ağır olgularda sıvı ve antiendotoksik tedavi önceliklidir.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "kronik_mastitis",
+    "ad": "Kronik / subklinik mastitis",
+    "grup": "meme_ureme",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.0, "max": 39.3 },
+    "belirtiler": [
+      { "id": "cmt_pozitif", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "meme_sertligi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sutte_pihti", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sulu_renkli_sut", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "meme_sisligi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["ates", "meme_morarma"],
+    "ayiriciTani": ["klinik_mastitis_akut"],
+    "sahadaDogrula": [
+      "Tüm çeyreklerde CMT; mümkünse somatik hücre sayısı (aylık kayıtlar) incelenir.",
+      "Meme palpasyonunda sertlik, nodül, fibrozis aranır.",
+      "Aynı ineğin önceki klinik mastitis olguları sayılır.",
+      "Kompozit ya da çeyrek süt örneğiyle kültür yapılır (Staphylococcus aureus, Streptococcus agalactiae).",
+      "Sürü düzeyinde tank sütü somatik hücre sayısı ve sağım rutini değerlendirilir."
+    ],
+    "uyarilar": [
+      "Staphylococcus aureus olgularında laktasyon içi tedavi başarısı düşüktür; kuru dönem tedavisi, çeyreği kurutma ya da ayıklama değerlendirilir.",
+      "Enfekte inekler en son sağılmalı ya da ayrı başlıkla sağılmalıdır.",
+      "Tedavi gören ineğin sütü arınma süresi bitene kadar tanka katılmaz."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "kloksasilin", "sinif": "antimikrobiyal", "sira": 1, "yol": "İntramammer (kuru dönem)",
+          "not": "Kuru dönem tedavisi; stafilokoklarda. Seçici kuru dönem tedavisi tercih edilir.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 1, "yol": "İntramammer (kuru dönem)",
+          "not": "Kuru dönem ürünleri (çoğu kombine); streptokoklarda.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "penetamat", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM",
+          "not": "Laktasyonda, kültürle doğrulanmış duyarlı streptokok olgularında.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Kuru dönemde iç meme başı tıkacı (teat sealant) kullanımı değerlendirilir."
+      ],
+      "bakim": [
+        "Sağım hijyeni, sağım sonrası meme başı daldırma.",
+        "Sağım makinesinin (vakum, pulsasyon, başlık lastikleri) düzenli kontrolü.",
+        "Enfekte inekleri en son sağma ya da ayrı grup.",
+        "Kronik, tedaviye yanıtsız ineklerin ayıklanması.",
+        "Somatik hücre sayısının düzenli izlenmesi."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Kronik mastitis",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Mastitis bölümü (sayfa eklenecek).",
+      "Merck Veterinary Manual — Mastitis in Cattle."
+    ],
+    "notlar": "Subklinik mastitis belirti vermez; tanı CMT / somatik hücre sayısıyla konur. Kayıt sürü düzeyinde kontrol programı içindir.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "puerperal_metritis",
+    "ad": "Puerperal (akut) metritis",
+    "grup": "meme_ureme",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek"],
+    "baglam": { "dogumSonrasi": "zorunlu" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.5, "max": 41.0 },
+    "belirtiler": [
+      { "id": "uterus_akintisi_kotu_koku", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "retensiyo_sekundinarum", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "dogum_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "dehidrasyon", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "rumen_atonisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tenezmus", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["retensiyo_sekundinarum", "endometritis", "perakut_koliform_mastitis", "ketozis", "abomazum_deplasmani_sol", "sut_hummasi"],
+    "sahadaDogrula": [
+      "Doğumdan sonraki ilk 21 gün içinde (çoğu ilk 10 gün) görülür.",
+      "Eldivenle vajinal muayene: kırmızı-kahve, sulu, kötü kokulu akıntı.",
+      "Rektal muayenede uterus büyük, gevşek (atonik); duvar kalınlığı ve içerik değerlendirilir.",
+      "Doğum sonrası ilk 10 gün günlük ısı takibi yapılır.",
+      "Ateşin başka nedenleri (mastitis, pnömoni) ve eşlik eden ketozis / sol abomazum deplasmanı aranır."
+    ],
+    "uyarilar": [
+      "Doğum sonu akıntı ve zarlara eldivensiz dokunulmaz (Brucella, Coxiella gibi zoonotik etkenler olabilir).",
+      "Uterus içi bol sıvıyla yıkama ve tahriş edici antiseptik uygulanmaz; toksemi ve endometrium hasarı riski.",
+      "Sütte ve ette arınma süresi KÜB'e göre izlenir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM",
+          "not": "Sistemik; Trueperella pyogenes ve Fusobacterium gibi anaeroblara etkili.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "ampisilin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM",
+          "not": "Sistemik geniş spektrumlu beta-laktam seçeneği.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM / IV",
+          "not": "Sistemik seçenek; uterus içi uygulaması tahriş edici olabilir.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "seftiofur", "sinif": "antimikrobiyal", "sira": 2, "yol": "SC / IM",
+          "not": "AMEG B: ilk seçenek değil; birinci seçeneğe yanıtsız ya da antibiyogram gerektiriyorsa.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 1, "yol": "IV",
+          "not": "Ateş, endotoksemi ve ağrıya karşı.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "propilen_glikol", "sinif": "metabolik", "sira": 2, "yol": "Ağızdan",
+          "not": "İştahsız inekte negatif enerji dengesine ve ketozise karşı.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oral_kalsiyum", "sinif": "metabolik", "sira": 2, "yol": "Ağızdan",
+          "not": "Eşlik eden subklinik hipokalsemi şüphesinde.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "İştahsız ve dehidre inekte ağızdan sıvı-elektrolit (sonda ile) ya da damar içi sıvı.",
+        "Yem tüketimi, ısı ve süt verimi günlük izlenir."
+      ],
+      "bakim": [
+        "Temiz, ayrı doğum bölmesi; güç doğumda hijyenik müdahale.",
+        "Kuru dönemde kondisyon kontrolü (aşırı yağlanmayı önleme) ve hipokalsemi önlemleri.",
+        "Doğum sonrası ilk 10 gün ısı takibi rutin hale getirilir."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Puerperal metritis",
+    "kaynaklar": [
+      "Sheldon IM, Lewis GS, LeBlanc S, Gilbert RO. Defining postpartum uterine disease in cattle. Theriogenology 2006;65:1516–1530.",
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 (sayfa eklenecek).",
+      "Merck Veterinary Manual — Metritis in Large Animals."
+    ],
+    "notlar": "Tanım (Sheldon 2006): doğumdan sonra 21 gün içinde büyümüş uterus, kırmızı-kahve sulu kötü kokulu akıntı ve genel bulgular (ateş > 39,5 °C). Ateşsiz ama kötü kokulu akıntılı olgu 'klinik metritis' olarak ayrılır. Türkiye'de yaygın uterus içi antibiyotik uygulamasının etkinlik kanıtı sınırlıdır; protokole alınmadı.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "retensiyo_sekundinarum",
+    "ad": "Son atamama (retensiyo sekundinarum)",
+    "grup": "meme_ureme",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek"],
+    "baglam": { "dogumSonrasi": "zorunlu" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.0, "max": 39.5 },
+    "belirtiler": [
+      { "id": "retensiyo_sekundinarum", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "uterus_akintisi_kotu_koku", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "dogum_guclugu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "abort", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "zayif_buzagi_dogumu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["puerperal_metritis", "sut_hummasi", "bruselloz"],
+    "sahadaDogrula": [
+      "Doğumdan 24 saat sonra zarların atılmamış olması (vulvadan sarkan zar ya da vajinal muayenede bulunan zar).",
+      "Güç doğum, ikiz, erken doğum ya da abort öyküsü sorulur.",
+      "Doğum sonrası günlük ısı takibi: ateş metritise dönüştüğünü gösterir.",
+      "Abort / erken doğum sonrası ise Brusella için numune ve ihbar değerlendirilir."
+    ],
+    "uyarilar": [
+      "Zarlar elle zorla çıkarılmaz: endometrium hasarı, kanama ve metritis riski, sonraki gebeliğe olumsuz etki.",
+      "Zarlara ve akıntıya eldivensiz dokunulmaz (Brucella, Coxiella gibi zoonotik etkenler).",
+      "Ateşsiz olguda rutin sistemik antibiyotik önerilmez; ateş ya da genel bulgu gelişirse metritis gibi tedavi edilir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "penisilin_g_prokain", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM",
+          "not": "Yalnız ateş ya da genel bulgu (metritis) gelişirse.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 2, "yol": "IM / IV",
+          "not": "Yalnız ateş ya da genel bulgu (metritis) gelişirse; sistemik seçenek.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitosin", "sinif": "diger", "sira": 2, "yol": "IM / IV",
+          "not": "Doğumdan sonraki ilk saatlerde uterus kasılmasını destekler; 24 saatten sonra etkisi zayıftır.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oral_kalsiyum", "sinif": "metabolik", "sira": 2, "yol": "Ağızdan",
+          "not": "Çok doğum yapmış, hipokalsemi riski taşıyan inekte.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Sarkan zar, hijyen için vulva hizasından kesilerek kısaltılabilir.",
+        "Doğumdan sonraki 10 gün ısı, iştah ve akıntı izlenir."
+      ],
+      "bakim": [
+        "Kuru dönem rasyonunda selenyum / E vitamini yeterliliği ve hipokalsemi önlemleri.",
+        "Doğumda kondisyonun aşırı olmaması; temiz doğum bölmesi.",
+        "Sürüde oran yüksekse abort etkenleri (Brusella vb.) ve beslenme araştırılır."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Retensiyo sekundinarum (son atamama)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 (sayfa eklenecek).",
+      "Merck Veterinary Manual — Retained Fetal Membranes in Large Animals."
+    ],
+    "notlar": "Antimikrobiyaller sira 2'de: yalnız komplikasyon (metritis) gelişirse. Uterus içi tablet / köpük uygulaması sahada yaygın ama etkinlik kanıtı sınırlı ve tartışmalı; protokole alınmadı, hekim değerlendirmesine bırakıldı.",
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "endometritis",
+    "ad": "Klinik endometritis (irinli vajinal akıntı)",
+    "grup": "meme_ureme",
+    "tur": ["sigir"],
+    "yasGruplari": ["duve", "inek"],
+    "baglam": { "dogumSonrasi": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 38.0, "max": 39.3 },
+    "belirtiler": [
+      { "id": "irinli_vajinal_akinti", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "dol_tutmama", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kizginlik_gostermeme", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "retensiyo_sekundinarum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "dogum_guclugu", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["ates"],
+    "ayiriciTani": ["puerperal_metritis", "retensiyo_sekundinarum"],
+    "sahadaDogrula": [
+      "Doğumdan 21 gün ya da daha sonra; genel durum normal, ateş yok.",
+      "Eldivenli elle ya da vajinal kapla akıntı değerlendirilir (irinli ya da > %50 irin içeren mukus).",
+      "Rektal muayene / ultrasonla uterus içeriği, serviks çapı ve sarı cisim (CL) varlığı belirlenir.",
+      "Sarı cisim varken uterusta irin birikimi piyometrayı düşündürür.",
+      "Sürüde sıksa geçiş dönemi hastalıkları (retensiyo, metritis, ketozis) kayıtları incelenir."
+    ],
+    "uyarilar": [
+      "Vajinal muayenede eldiven kullanılır; akıntı zoonotik etken taşıyabilir.",
+      "Ateş ya da genel bulgu varsa puerperal metritis olarak değerlendirilir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "kloprostenol", "sinif": "diger", "sira": 1, "yol": "IM",
+          "not": "Sarı cisim varsa luteoliz ile kızgınlık ve uterus temizlenmesi; piyometrada ilk seçenek.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "dinoprost", "sinif": "diger", "sira": 1, "yol": "IM",
+          "not": "Kloprostenole alternatif PGF2α.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 2, "yol": "İntrauterin",
+          "not": "Sarı cisim yoksa ya da PGF2α'ya yanıt yoksa; endometriumu tahriş edebilir, sütte kalıntı ve arınma süresine dikkat.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Tedaviden 2 hafta sonra kontrol muayenesi."
+      ],
+      "bakim": [
+        "Doğum sonrası 21–35. günler arasında rutin vajinal muayene programı.",
+        "Geçiş dönemi beslemesi ve doğum hijyeni.",
+        "Tohumlama, akıntı kaybolup uterus normale dönünce yapılır."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Endometritis",
+    "kaynaklar": [
+      "Sheldon IM, Lewis GS, LeBlanc S, Gilbert RO. Defining postpartum uterine disease in cattle. Theriogenology 2006;65:1516–1530.",
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 (sayfa eklenecek)."
+    ],
+    "notlar": "Uluslararası yaygın ilk seçenek olan uterus içi sefapirin etken listesinde yok (eksik kimlik olarak raporlandı); eklenirse sira 1 intrauterin satır olarak konmalı. Doğum sonrası 30 günü aşan olgular olduğu için doğum bağlamı 'destekler'.",
+    "onay": { "durum": "taslak" }
+  }
+]

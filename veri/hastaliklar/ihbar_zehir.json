@@ -1,1 +1,2503 @@
-[]
+[
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "sap",
+    "ad": "Şap (FMD)",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "orta",
+    "tedaviKipi": "semptomatik",
+    "belirtiler": [
+      {
+        "id": "vezikul_agiz",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "salya",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ayakta_vezikul",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "topallik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "agiz_erozyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "meme_basi_lezyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "cene_sakirdatma",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_mukozasi_lezyonu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ani_olum",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "abort",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "zayiflama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "vezikuler_stomatit",
+      "bvd_md",
+      "mavi_dil",
+      "epizootik_hemorajik_hastalik",
+      "sigir_vebasi",
+      "interdigital_flegmon"
+    ],
+    "sahadaDogrula": [
+      "Ağız, dil, diş eti, burun aynası, meme başları, tırnak arası ve taç bandına bakın; sağlam ya da yeni patlamış vezikül arayın.",
+      "Sürüde kaç hayvanda salya ve topallık var, ne zaman başladı; son 2 haftada hayvan alımı, pazar, ortak mera ya da tüccar ziyareti sorun.",
+      "Genç buzağılarda lezyon olmadan ani ölüm kalp kası tutulumuna bağlı olabilir.",
+      "Kesin tanı resmî laboratuvarda (vezikül epiteli / sıvısı) konur; serotip aşı seçimini belirler."
+    ],
+    "uyarilar": [
+      "Çok hızlı yayılır: kıyafet, çizme, araç ve hayvan ürünüyle taşınır. Hasta işletmeden çıktıktan sonra aynı gün başka işletmeye girmeyin.",
+      "Resmî karar gelene kadar hayvan, süt ve ürün hareketi yapılmaz; sütün kullanımı resmî talimata bağlıdır.",
+      "Ağız muayenesinde eldiven kullanın; elleri ve aletleri her hayvandan sonra dezenfekte edin."
+    ],
+    "protokol": {
+      "ilaclar": [
+        {
+          "etkenId": "meloksikam",
+          "sinif": "nsaii",
+          "sira": 1,
+          "yol": "SC / IV",
+          "not": "Ateş ve ağrıyı azaltarak yem ve su almayı kolaylaştırır.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "fluniksin_meglumin",
+          "sinif": "nsaii",
+          "sira": 2,
+          "yol": "IV",
+          "not": "Meloksikama alternatif ateş ve ağrı desteği.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "povidon_iyot",
+          "sinif": "diger",
+          "sira": 1,
+          "yol": "Topikal (ağız / ayak / meme başı lezyonu)",
+          "not": "Lezyon temizliği ve ikincil enfeksiyonu önleme.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "oksitetrasiklin",
+          "sinif": "antimikrobiyal",
+          "sira": 2,
+          "yol": "IM / IV",
+          "not": "Virüse etkisi yoktur; yalnız ayak, meme ya da solunumda ikincil bakteriyel enfeksiyon gelişirse.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        }
+      ],
+      "destekleyici": [
+        "Yumuşak, ıslatılmış yem ve bol temiz su verin; yutamayan hayvanda ağızdan sıvı desteği.",
+        "Ayak lezyonlarını temiz ve kuru tutun; kuru, yumuşak altlık sağlayın.",
+        "Meme başı lezyonlu ineklerde sütü düzenli ve nazikçe sağın (mastitis riski)."
+      ],
+      "bakim": [
+        "Hasta ve temaslı hayvanları ayrı bölmede tutun.",
+        "Ahır ve aletlerde şap virüsüne etkili dezenfektan kullanın (ör. %2 sodyum hidroksit, %4 sodyum karbonat ya da %0,2 sitrik asit; resmî talimata göre).",
+        "Sürünün aşı durumunu kontrol edin; aşılama resmî programa göre yapılır."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Resmî karara kadar hayvan pazarı, ortak mera ve sulak kullanımı durdurulur; köy karantinası resmî kararla uygulanır."
+      ]
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Şap",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Sığırda insana bulaşma önemsiz kabul edildiği için zoonoz: false yazıldı.",
+      "Salgında tedavi ve süt kullanımı resmî veteriner hekimin kararına bağlıdır; protokol yalnız destekleyicidir."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "aniOlum": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": {
+      "min": 40.5,
+      "max": 42
+    },
+    "dislayicilar": [],
+    "id": "sarbon",
+    "ad": "Şarbon (Anthrax)",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "ani_olum",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "dogal_deliklerden_kan",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "oluda_katilik_yok",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "solunum_guclugu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "halsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kanli_diare",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hematuri",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ventral_odem",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kas_titremesi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "abort",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "nitrat_zehirlenmesi",
+      "kursun_zehirlenmesi",
+      "hipomagnezemi",
+      "timpani",
+      "babesiyoz",
+      "anaplazmoz"
+    ],
+    "sahadaDogrula": [
+      "Ölüde: ölü katılığı yok mu, karkas hızla şişmiş mi, burun / ağız / anüs / vulvadan koyu, pıhtılaşmayan kan geliyor mu?",
+      "Yakın zamanda toprak kazısı, sel, kuraklık sonrası otlatma ya da bölgede eski şarbon ölümleri olup olmadığını sorun.",
+      "Sürüde başka ani ölüm ya da yüksek ateşli hayvan var mı bakın.",
+      "Tanı için karkas açılmaz; kan örneği (ör. kulak venasından) resmî veteriner hekimin talimatıyla alınır."
+    ],
+    "uyarilar": [
+      "NEKROPSİ YAPMAYIN, karkası açmayın: hava ile temas eden etken dayanıklı spor oluşturur, toprak yıllarca bulaşık kalır.",
+      "Zoonoz: deri, et ve kanla korunmasız temas etmeyin; eldiven, maske ve tek kullanımlık önlük kullanın.",
+      "Hasta ya da ölen hayvanın eti, sütü, derisi kullanılmaz; acil kesime gönderilmez.",
+      "Temas eden kişilerde deride kabarcık / yara ya da ateş olursa sağlık kuruluşuna başvurmaları gerekir."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Karkası yerinden oynatmadan, hayvan ve köpeklerin ulaşamayacağı biçimde örtün.",
+        "Karkasın imhası (yakma ya da sönmemiş kireçle derin gömme) resmî talimata göre yapılır.",
+        "Karkasın bulunduğu yer, altlık ve kan bulaşığı alan resmî talimata uygun dezenfekte edilir.",
+        "Sürüdeki temaslı hayvanların ateşi izlenir; aşılama ve koruyucu uygulamalar resmî karara göredir."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Karkasa dokunulmaz, açılmaz, taşınmaz; resmî veteriner hekim gelene kadar alan kapatılır.",
+        "Halk sağlığı birimine bilgi verilmesi için resmî veteriner hekimi uyarın (zoonoz)."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Şarbon",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "tedaviKipi \"yasak\" olarak işaretlendi: mevzuatın hasta / temaslı hayvanlarda antibiyotik ve aşı uygulamasına izin verip vermediği, hangi koşulda resmî hekimce yapıldığı doğrulanmadı. Doğrulanana kadar protokolde ilaç yoktur."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {},
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "kuduz",
+    "ad": "Kuduz",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yok",
+    "belirtiler": [
+      {
+        "id": "salya",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sinirsel_belirti",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "bogurme",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "yutma_guclugu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "tenezmus",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "saldirganlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "felc",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ataksi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hiperestezi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "cene_dusuklugu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kasilma_nobeti",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "anormal_yalama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "kursun_zehirlenmesi",
+      "hipomagnezemi",
+      "ketozis",
+      "organofosfat_zehirlenmesi",
+      "bse",
+      "sut_hummasi"
+    ],
+    "sahadaDogrula": [
+      "Sığır kuduzunda tipik tablo: sürekli / boğuk böğürme, yutamama ve salya, ıkınma (tenezmus), arka bacaklarda ilerleyen felç.",
+      "Son haftalarda köpek, kedi, tilki ya da kurt teması / ısırığı olup olmadığını sorun; ısırık yeri her zaman bulunmaz.",
+      "Seyir hızlıdır; belirtiler başladıktan sonra hayvan genellikle birkaç gün içinde ölür.",
+      "Kesin tanı ölüm sonrası beyin dokusunda resmî laboratuvarda konur."
+    ],
+    "uyarilar": [
+      "AĞZI ÇIPLAK ELLE MUAYENE ETMEYİN: \"boğazına bir şey kaçmış\" sanılan salyalı, yutamayan hayvanda önce kuduzu düşünün.",
+      "Eldiven ve gözlük kullanın; salya ile yara ya da mukoza teması olan herkes aynı gün sağlık kuruluşuna başvurmalıdır (kuduz profilaksisi).",
+      "Hayvan kesilmez, eti ve sütü kullanılmaz; ölünce baş resmî talimatla laboratuvara gönderilir.",
+      "Kuduzda tedavi yoktur."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Hayvanı insan ve diğer hayvanlardan uzak, güvenli bir yerde bağlı ve gözlem altında tutun.",
+        "Bakımı tek kişi, eldivenle yapsın; yem ve su kapları başka hayvanla paylaşılmasın.",
+        "Sürüdeki temaslı hayvanlar ve köpekler için aşılama ve gözlem resmî karara göredir."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Hayvanla ya da salyasıyla temas eden kişilerin listesini çıkarın ve halk sağlığı birimine yönlendirin.",
+        "Isıran hayvan biliniyorsa (köpek vb.) kaçırılmadan gözlem altına alınması için bildirin."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Kuduz",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "bruselloz",
+    "ad": "Bruselloz (Sığır brusellozu, Brucella abortus)",
+    "yasGruplari": [
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "orta",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "abort",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "retensiyo_sekundinarum",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "zayif_buzagi_dogumu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "orsit",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "dol_tutmama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "eklem_sisligi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "irinli_vajinal_akinti",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "bvd_md",
+      "ibr",
+      "salmonelloz",
+      "retensiyo_sekundinarum",
+      "endometritis"
+    ],
+    "sahadaDogrula": [
+      "Atık çoğunlukla gebeliğin son üçte birinde (yaklaşık 6–9. ay) olur; sürüde birden fazla atık var mı sorun.",
+      "Son atamama ve yavru zarlarında kalınlaşma / nekroz olup olmadığına bakın.",
+      "Boğalarda testis şişliği ve döl veriminde düşüş; ineklerde diz ve diğer eklemlerde şişlik (higroma) aranır.",
+      "Aşı geçmişini sorun; tanı kan (serum) ve atık materyalinden resmî laboratuvarda konur."
+    ],
+    "uyarilar": [
+      "Atık yavru, yavru zarları ve akıntılara eldivensiz dokunmayın; ağız ve gözü koruyun (insanda Malta humması).",
+      "Atık yapan hayvanın çiğ sütü ve ürünleri tüketilmez; süt kaynatılmadan buzağıya da içirilmez.",
+      "Brusellozda tedavi yasaktır; antibiyotik uygulanmaz.",
+      "Aşı suşları da insanda hastalık yapabilir; aşı uygulamasında kendinize enjekte etmemeye dikkat edin."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Atık yapan hayvanı hemen ayırın; atık yavru ve zarları sızdırmaz torbaya alıp resmî talimat gelene kadar saklayın ya da talimata göre imha edin.",
+        "Doğum ve atık yerinin altlığını kaldırıp yakın / gömün; zemini dezenfekte edin.",
+        "Buzağı ve düve aşılaması resmî programa göredir."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Atık materyali (yavru, zar) laboratuvara gönderilmek üzere resmî talimata göre soğuk zincirde saklanır."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Brusellozis",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Diz ve eklem higroması için ayrı belirti kimliği yok; eklem_sisligi ile karşılandı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "tuberkuloz",
+    "ad": "Tüberküloz (Sığır tüberkülozu, Mycobacterium bovis)",
+    "yasGruplari": [
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "zayiflama",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kronik_oksuruk",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "lenf_yumrusu_buyumesi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hizli_solunum",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "solunum_guclugu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "anormal_akciger_sesi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "meme_sertligi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "sigir_solunum_kompleksi",
+      "sigir_pleuropnomonisi",
+      "enzootik_sigir_lokozu",
+      "kronik_mastitis",
+      "travmatik_retikuloperitonit",
+      "aspirasyon_pnomonisi"
+    ],
+    "sahadaDogrula": [
+      "Çoğu enfekte hayvan belirti göstermez; klinik olgu geç dönemdir. Tanı tüberkülin testi ve kesimhane bulgularıyla konur.",
+      "Haftalar-aylar süren zayıflama, sabah ya da hareketle artan kuru öksürük, iştahın görece korunması tipiktir.",
+      "Baş, boyun ve meme üstü lenf yumrularını yoklayın; memede ağrısız sertlik tüberküloz mastitisi olabilir.",
+      "Sürüde tüberkülin testi geçmişini ve yeni hayvan alımını sorun."
+    ],
+    "uyarilar": [
+      "Zoonoz: çiğ süt ve süt ürünleriyle insana bulaşır; şüpheli hayvanın sütü tüketilmez.",
+      "Solunum yoluyla da bulaşır; kapalı ahırda uzun süreli temasta maske kullanın.",
+      "Tüberkülozda tedavi yasaktır; antibiyotik uygulanmaz."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Şüpheli hayvanı ayırın; yem ve su kaplarını paylaştırmayın.",
+        "Sürü testi, pozitif hayvanların ayrılması ve kesimi resmî programa göredir."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Tüberkülin testi ve sürü taraması resmî veteriner hekim tarafından planlanır."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Sığır tüberkülozu",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "noduler_ekzantem",
+    "ad": "Sığırların nodüler ekzantemi (Lumpy skin disease, LSD)",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "orta",
+    "mevsim": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "tedaviKipi": "semptomatik",
+    "belirtiler": [
+      {
+        "id": "deri_nodulu",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "ates",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "lenf_yumrusu_buyumesi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "goz_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ekstremite_odemi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ventral_odem",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "topallik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "abort",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "orsit",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "zayiflama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "dermatofitoz",
+      "tropikal_teileriyoz",
+      "mavi_dil",
+      "uyuz"
+    ],
+    "sahadaDogrula": [
+      "Baş, boyun, sırt, meme ve perinede 1–5 cm, sert, yuvarlak, deriyi tam kat tutan nodüller; birkaç gün içinde ortası nekroze olup kabuklanır.",
+      "Ateş nodüllerden önce başlar; prescapular ve prefemoral lenf yumruları büyür.",
+      "Sürünün aşı durumunu ve son aşı tarihini sorun; sinek ve sivrisinek yoğunluğuna bakın.",
+      "Tanı nodül biyopsisi / kabuk ve kandan resmî laboratuvarda konur."
+    ],
+    "uyarilar": [
+      "Sinek, sivrisinek ve kene ile taşınır; hayvan hareketi resmî karara kadar durdurulur.",
+      "Boğalarda uzun süre kısırlık, ineklerde süt kaybı ve abort görülebilir; sürü düzeyinde ekonomik kayıp büyüktür.",
+      "Ortak iğne kullanmayın; her hayvana ayrı iğne."
+    ],
+    "protokol": {
+      "ilaclar": [
+        {
+          "etkenId": "meloksikam",
+          "sinif": "nsaii",
+          "sira": 1,
+          "yol": "SC / IV",
+          "not": "Ateş, ödem ve ağrıyı azaltır; yem tüketimini destekler.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "fluniksin_meglumin",
+          "sinif": "nsaii",
+          "sira": 2,
+          "yol": "IV",
+          "not": "Meloksikama alternatif ateş ve ağrı desteği.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "oksitetrasiklin",
+          "sinif": "antimikrobiyal",
+          "sira": 2,
+          "yol": "IM / IV",
+          "not": "Virüse etkisi yoktur; yalnız açılmış nodüllerde, ayakta ya da solunumda ikincil bakteriyel enfeksiyon gelişirse.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "deltametrin",
+          "sinif": "antiparaziter",
+          "sira": 2,
+          "yol": "Sırttan dökme / spreyleme",
+          "not": "Tedavi değildir; sürüde sinek-sivrisinek yükünü azaltarak yayılmayı sınırlamak için.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        }
+      ],
+      "destekleyici": [
+        "Açılmış nodülleri temizleyin; sineklenmeyi (kurtlanmayı) önleyin.",
+        "Yem ve su tüketimi azalan hayvanda sıvı ve enerji desteği."
+      ],
+      "bakim": [
+        "Hasta hayvanları ayırın; gölge ve sineksiz bir bölme sağlayın.",
+        "Ahırda sinek, sivrisinek ve kene mücadelesi yapın; gübre ve durgun suyu kaldırın.",
+        "Aşılama resmî programa göre yapılır."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Sürüdeki tüm hayvanların ateş ve nodül yönünden taranması resmî veteriner hekimle planlanır."
+      ]
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Nodüler ekzantem (LSD)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Yalancı LSD (BHV-2) ayırıcı tanıdadır; veri setinde kaydı yok."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "sigir_vebasi",
+    "ad": "Sığır vebası (Rinderpest)",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "ates",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "agiz_erozyonu",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "diare",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "goz_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_mukozasi_lezyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kotu_agiz_kokusu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kanli_diare",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "dehidrasyon",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hizli_solunum",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ani_olum",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "bvd_md",
+      "sap",
+      "mavi_dil",
+      "epizootik_hemorajik_hastalik",
+      "salmonelloz"
+    ],
+    "sahadaDogrula": [
+      "Dünyada 2011'de eradike ilan edildi; bu tablo sahada çok daha olası olarak BVD-MD'yi düşündürür.",
+      "Yüksek ateş, ağızda yaygın erozyon, göz-burun akıntısı ve ardından ağır ishalle sürüde yüksek ölüm varsa ihbar edin."
+    ],
+    "uyarilar": [
+      "Sürüde yüksek ölümlü, ateşli, ishalli ve ağız erozyonlu tablo her zaman ihbar edilir; tedavi uygulanmaz."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Hasta ve temaslı hayvanları ayırın; ahır ve aletleri dezenfekte edin."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Sığır vebası",
+    "kaynaklar": [
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Kısa kayıt: eradike hastalık, ihbar listesiyle tutarlılık için eklendi.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "sigir_pleuropnomonisi",
+    "ad": "Bulaşıcı sığır plöropnömonisi (CBPP)",
+    "yasGruplari": [
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "oksuruk",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "solunum_guclugu",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "boyun_uzatma",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "agri_inleme",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "anormal_akciger_sesi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hareket_istememe",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kronik_oksuruk",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "zayiflama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_akintisi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "eklem_sisligi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "sigir_solunum_kompleksi",
+      "tuberkuloz",
+      "aspirasyon_pnomonisi",
+      "travmatik_retikuloperitonit"
+    ],
+    "sahadaDogrula": [
+      "Türkiye'de bildirilmeyen egzotik hastalık; sahada sığır solunum kompleksi çok daha olasıdır.",
+      "Dirsekler dışa açık, baş-boyun uzatılmış duruş, göğüste ağrı (perküsyonda inleme), tek taraflı plöropnömoni bulguları.",
+      "Antibiyotiğe yanıt vermeyen, sürüde yavaş yayılan solunum hastalığında ve yurt dışından hayvan girişinde düşünün."
+    ],
+    "uyarilar": [
+      "Şüphede antibiyotik uygulanmaz (taşıyıcılığı gizler); ihbar edin."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Hasta ve temaslı hayvanları ayırın; hava yoluyla yakın temasla bulaşır."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Bulaşıcı sığır plöropnömonisi (CBPP)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Kısa kayıt: egzotik hastalık, ihbar listesiyle tutarlılık için eklendi.",
+      "Sayfa numaraları eklenecek.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "mavi_dil",
+    "ad": "Mavidil (Bluetongue)",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "mevsim": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "tedaviKipi": "semptomatik",
+    "belirtiler": [
+      {
+        "id": "agiz_erozyonu",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_mukozasi_lezyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "topallik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ayak_sisligi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "meme_basi_lezyonu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "konjunktivit",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "gerdan_odemi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "deri_kabuklanma",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "abort",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "zayif_buzagi_dogumu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "sap",
+      "epizootik_hemorajik_hastalik",
+      "bvd_md",
+      "vezikuler_stomatit",
+      "noduler_ekzantem"
+    ],
+    "sahadaDogrula": [
+      "Sığırda çoğu enfeksiyon belirtisizdir; klinik olguda ağız ve burunda kızarıklık, erozyon, kabuklanma, taç bandında kızarıklık ve topallık aranır.",
+      "Gerçek vezikül beklenmez; vezikül varsa önce şapı düşünün.",
+      "Yaz sonu-sonbaharda, sivrisinek (Culicoides) yoğun dönemde ve aynı bölgede koyunlarda vaka varsa olasılık artar.",
+      "Gebelikte enfeksiyon abort ya da beyin bozukluklu (kör, sendeleyen) buzağı doğumuna yol açabilir."
+    ],
+    "uyarilar": [
+      "Vektörle (Culicoides) bulaşır; hayvan hareketi resmî karara kadar durdurulur.",
+      "Ağız lezyonları şapla karışır; ayrım laboratuvarla yapılır."
+    ],
+    "protokol": {
+      "ilaclar": [
+        {
+          "etkenId": "meloksikam",
+          "sinif": "nsaii",
+          "sira": 1,
+          "yol": "SC / IV",
+          "not": "Ateş, ağrı ve ödemi azaltır; yem almayı kolaylaştırır.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "oksitetrasiklin",
+          "sinif": "antimikrobiyal",
+          "sira": 2,
+          "yol": "IM / IV",
+          "not": "Virüse etkisi yoktur; yalnız ağız / ayak lezyonunda ya da aspirasyon pnömonisinde ikincil bakteriyel enfeksiyon gelişirse.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "deltametrin",
+          "sinif": "antiparaziter",
+          "sira": 2,
+          "yol": "Sırttan dökme / spreyleme",
+          "not": "Tedavi değildir; vektör (Culicoides) yükünü azaltmak için.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        }
+      ],
+      "destekleyici": [
+        "Yumuşak yem ve bol su verin; yutma güçlüğünde ağızdan sıvı desteği.",
+        "Hayvanı güneşten koruyun."
+      ],
+      "bakim": [
+        "Hasta hayvanları gölgede ve sineklikli bölmede tutun; akşam-sabah vektör aktifken içeride barındırın.",
+        "Durgun su ve gübre birikintilerini kaldırın."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin."
+      ]
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Mavi dil",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {},
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "bse",
+    "ad": "Sığır süngerimsi beyin hastalığı (BSE)",
+    "yasGruplari": [
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "sinirsel_belirti",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "hiperestezi",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ataksi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "saldirganlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kas_titremesi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "zayiflama",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "yatma_kalkamama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "dis_gicirdatma",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "bas_bastirma",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "kuduz",
+      "hipomagnezemi",
+      "ketozis",
+      "kursun_zehirlenmesi"
+    ],
+    "sahadaDogrula": [
+      "Genellikle 4–5 yaş üstü sığırda, haftalar-aylar içinde ilerleyen tablo: ürkeklik, sese-dokunmaya aşırı tepki, arka bacaklarda sendeleme, zayıflama.",
+      "Ateş beklenmez; seyir yavaştır (kuduzdan farkı).",
+      "Tanı ölüm / kesim sonrası beyin sapı örneğinde resmî laboratuvarda konur."
+    ],
+    "uyarilar": [
+      "Şüpheli hayvan kesime gönderilmez; beyin ve omurilik dokusuyla korunmasız temas etmeyin.",
+      "Tedavi uygulanmaz; ihbar edin."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Hayvanı ayırın ve yaralanmayacağı bir yerde tutun."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Hayvanın yem geçmişi (et-kemik unu içeren yem) ve doğum yeri kayıtları resmî veteriner hekime verilir."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Sığır süngerimsi beyin hastalığı (BSE)",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Kısa kayıt: ihbar listesiyle tutarlılık için eklendi.",
+      "Sayfa numaraları eklenecek.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "rift_vadisi_atesi",
+    "ad": "Rift Vadisi humması",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "abort",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ani_olum",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sarilik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "halsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kanli_diare",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_akintisi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kanama_egilimi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "bruselloz",
+      "bvd_md",
+      "mavi_dil",
+      "babesiyoz"
+    ],
+    "sahadaDogrula": [
+      "Türkiye'de bildirilmeyen egzotik hastalık; yağışlı dönemde sivrisinekle yayılır.",
+      "Sürüde \"atık fırtınası\" (çok sayıda atık) ve yeni doğan buzağılarda yüksek ölüm, aynı bölgede insanda ateşli hastalık bildirimi varsa düşünün."
+    ],
+    "uyarilar": [
+      "Zoonoz: atık materyali, kan ve dokularla korunmasız temas etmeyin; nekropsi yapmayın.",
+      "Tedavi uygulanmaz; ihbar edin."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Hasta hayvanları ayırın; sivrisinek mücadelesi yapın."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin.",
+        "Temas eden kişiler halk sağlığı birimine yönlendirilir."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Rift Vadisi humması",
+    "kaynaklar": [
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Kısa kayıt: egzotik hastalık, ihbar listesiyle tutarlılık için eklendi.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": true,
+    "isi": {
+      "min": 39.5,
+      "max": 41
+    },
+    "dislayicilar": [],
+    "id": "vezikuler_stomatit",
+    "ad": "Veziküler stomatit",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "vezikul_agiz",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "agiz_erozyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "meme_basi_lezyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ayakta_vezikul",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "topallik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_mukozasi_lezyonu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "sap",
+      "bvd_md",
+      "mavi_dil"
+    ],
+    "sahadaDogrula": [
+      "Amerika kıtasına özgü egzotik hastalık; klinik olarak şaptan ayırt edilemez.",
+      "Vezikül görülen her olgu şap şüphesi gibi ihbar edilir; ayrım yalnız laboratuvarla yapılır."
+    ],
+    "uyarilar": [
+      "Zoonoz: insanda grip benzeri tablo yapabilir; lezyonlara eldivensiz dokunmayın.",
+      "Resmî karara kadar tedaviye başlanmaz; şap şüphesindeki tüm önlemler uygulanır."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Şap şüphesindeki ayırma ve dezenfeksiyon önlemlerini uygulayın."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Veziküler stomatit",
+    "kaynaklar": [
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Kısa kayıt: egzotik hastalık, ihbar listesiyle tutarlılık için eklendi.",
+      "tedaviKipi \"yasak\": şapla ayırt edilemediği için resmî karar öncesi tedavi yapılmaması varsayıldı; mevzuattan doğrulanmalı.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {},
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "enzootik_sigir_lokozu",
+    "ad": "Enzootik sığır löykozu (BLV)",
+    "yasGruplari": [
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "yasak",
+    "belirtiler": [
+      {
+        "id": "lenf_yumrusu_buyumesi",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "zayiflama",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "felc",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "tasikardi",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "juguler_dolgunluk",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ventral_odem",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "melena",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ates",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "tuberkuloz",
+      "tropikal_teileriyoz",
+      "travmatik_retikuloperitonit"
+    ],
+    "sahadaDogrula": [
+      "Enfekte hayvanların çoğu belirtisizdir; tümör (lenfosarkom) genellikle 3 yaş üstünde görülür.",
+      "Yüzeysel lenf yumrularında ağrısız, iki taraflı büyüme; rektal muayenede iç lenf yumrularında büyüme aranır.",
+      "Kalp tutulumunda boyun toplardamarı dolgunluğu ve gerdan ödemi; omurilik tutulumunda arka bacak felci olabilir.",
+      "Tanı kanda antikor (ELISA / AGID) ile resmî laboratuvarda konur."
+    ],
+    "uyarilar": [
+      "Kanla bulaşır: ortak iğne, rektal eldiven, küpeleme ve boynuz kesme aletini hayvanlar arasında değiştirin / dezenfekte edin.",
+      "Tedavi uygulanmaz."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [],
+      "bakim": [
+        "Şüpheli hayvanı ayırın; her hayvana ayrı iğne ve eldiven kullanın."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin."
+      ]
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Enzootik sığır löykozu",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": true,
+    "zoonoz": false,
+    "isi": {
+      "min": 40,
+      "max": 41.5
+    },
+    "dislayicilar": [],
+    "id": "epizootik_hemorajik_hastalik",
+    "ad": "Epizootik hemorajik hastalık (EHD)",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "mevsim": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "tedaviKipi": "semptomatik",
+    "belirtiler": [
+      {
+        "id": "ates",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "yutma_guclugu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "agiz_erozyonu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "topallik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "istahsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sut_verimi_dususu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "konjunktivit",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "burun_mukozasi_lezyonu",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "dehidrasyon",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "abort",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "mavi_dil",
+      "sap",
+      "bvd_md",
+      "ibr"
+    ],
+    "sahadaDogrula": [
+      "Mavidile çok benzer; Culicoides ile yaz sonu-sonbaharda görülür.",
+      "Yutma güçlüğü belirgin olabilir; burun deliğinden yem / su gelmesi aspirasyon riskini gösterir.",
+      "Ayrım laboratuvarla yapılır."
+    ],
+    "uyarilar": [
+      "Vektörle bulaşır; hayvan hareketi resmî karara kadar durdurulur.",
+      "Yutamayan hayvana zorla ağızdan ilaç / sıvı vermeyin (aspirasyon)."
+    ],
+    "protokol": {
+      "ilaclar": [
+        {
+          "etkenId": "meloksikam",
+          "sinif": "nsaii",
+          "sira": 1,
+          "yol": "SC / IV",
+          "not": "Ateş ve ağrıyı azaltır.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "oksitetrasiklin",
+          "sinif": "antimikrobiyal",
+          "sira": 2,
+          "yol": "IM / IV",
+          "not": "Virüse etkisi yoktur; yalnız aspirasyon pnömonisi ya da lezyonda ikincil bakteriyel enfeksiyon gelişirse.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "izotonik_sivi",
+          "sinif": "metabolik",
+          "sira": 2,
+          "yol": "IV",
+          "not": "Yutamayan, dehidre hayvanda sıvı desteği.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        }
+      ],
+      "destekleyici": [
+        "Yumuşak yem ve suyu kolay ulaşılır tutun."
+      ],
+      "bakim": [
+        "Hasta hayvanları gölgede ve vektörden korunaklı bölmede tutun.",
+        "Durgun su ve gübre birikintilerini kaldırın."
+      ],
+      "ihbarAdimlari": [
+        "Hayvanı ayırın; işletmeden hayvan, süt, et, deri, gübre, yem ve araç çıkışını durdurun.",
+        "İl / ilçe Tarım ve Orman Müdürlüğüne (resmî veteriner hekim) hemen bildirin; ihbar 5996 sayılı Kanun ve ihbarı mecburi hastalıklar yönetmeliği gereği zorunludur.",
+        "Numune alma, paketleme ve gönderme resmî veteriner hekimin talimatına göre yapılır.",
+        "İşletmeden ayrılmadan önce çizme, kıyafet, alet ve aracı temizleyip dezenfekte edin; aynı gün başka işletmeye gitmeyin."
+      ]
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Epizootik hemorajik hastalık (EHD)",
+    "kaynaklar": [
+      "WOAH (OIE). Manual of Diagnostic Tests and Vaccines for Terrestrial Animals (Terrestrial Manual), ilgili bölüm.",
+      "İhbarı Mecburi Hayvan Hastalıkları ve Bildirimine İlişkin Yönetmelik (RG 22.01.2011, sayı 27823), Ek-1 — 5996 sayılı Kanun dayanağıyla; güncel konsolide metin doğrulanmalı."
+    ],
+    "notlar": [
+      "Kaynak sayfası eklenecek.",
+      "Hastalığın güncel ihbar listesindeki resmî adı ve kapsamı mevzuattan doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler",
+      "aniOlum": "destekler"
+    },
+    "ihbari": false,
+    "zoonoz": false,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "nitrat_zehirlenmesi",
+    "ad": "Nitrat / nitrit zehirlenmesi",
+    "yasGruplari": [
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "normal",
+    "belirtiler": [
+      {
+        "id": "kahverengi_kan",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "solunum_guclugu",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hizli_solunum",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "tasikardi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "siyanoz",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ataksi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kas_titremesi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "halsizlik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ani_olum",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "yatma_kalkamama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kasilma_nobeti",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "diare",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "abort",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "sarbon",
+      "hipomagnezemi",
+      "organofosfat_zehirlenmesi",
+      "kursun_zehirlenmesi",
+      "sigir_solunum_kompleksi"
+    ],
+    "sahadaDogrula": [
+      "Kan çikolata-kahve renkli ve havayla kırmızılaşmıyor mu; mukozalar kahverengimsi-mor mu?",
+      "Aynı yemi yiyen birden çok hayvanda belirti / ani ölüm; yem değişikliği sorun (kuraklık sonrası ot, pancar yaprağı, sorgum, aşırı gübrelenmiş ot, gübre çuvalına erişim, kuyu suyu).",
+      "Belirtiler yemden sonraki saatler içinde başlar; ateş beklenmez.",
+      "Şüpheli yem ve su numunesini saklayın."
+    ],
+    "uyarilar": [
+      "Panzehir olarak bilinen metilen mavisinin gıda hayvanında kalıntı limiti yoktur; uygulanan hayvanın eti ve sütü tüketime verilemez. Karar hekimindir.",
+      "Hayvanı heyecanlandırmayın, koşturmayın; oksijen taşıma kapasitesi düşük hayvan stresle ölebilir.",
+      "Atlatan gebe hayvanlarda günler sonra abort görülebilir; sahibi uyarın."
+    ],
+    "protokol": {
+      "ilaclar": [],
+      "destekleyici": [
+        "Şüpheli yemi ve suyu hemen kesin; aynı yemi yiyen tüm hayvanları gözden geçirin.",
+        "Hayvanı serin, havadar ve sakin bir yerde tutun."
+      ],
+      "bakim": [
+        "Yemi yeniden vermeden önce nitrat analizi yaptırın; riskli yemi seyrelterek ve kademeli verin.",
+        "Gübre ve kimyasal çuvallarını hayvanların ulaşamayacağı yerde saklayın."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Nitrat zehirlenmesi",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "Merck Veterinary Manual — Nitrate and Nitrite Poisoning"
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Metilen mavisi K1 kararı gereği protokole yazılmadı (gıda hayvanında MRL statüsü yok); yalnız uyarı metni var. Hekim kararı beklenir."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {
+      "suru": "destekler"
+    },
+    "ihbari": false,
+    "zoonoz": false,
+    "isi": null,
+    "dislayicilar": [
+      "midriyazis"
+    ],
+    "id": "organofosfat_zehirlenmesi",
+    "ad": "Organofosfat / karbamat zehirlenmesi",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "normal",
+    "belirtiler": [
+      {
+        "id": "salya",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kas_titremesi",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "miyozis",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "diare",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kolik",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "goz_akintisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "solunum_guclugu",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ataksi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sik_idrar",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "timpani",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kasilma_nobeti",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "felc",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "yatma_kalkamama",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ani_olum",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "kuduz",
+      "hipomagnezemi",
+      "nitrat_zehirlenmesi",
+      "kursun_zehirlenmesi"
+    ],
+    "sahadaDogrula": [
+      "Son günlerde dış parazit ilacı (banyo, döküm, sprey), tarım ilacı bulaşık yem / ot ya da ilaç kabı teması var mı sorun.",
+      "Bol salya, göz yaşı, ishal, sık idrar ve göz bebeklerinde daralma (muskarinik) ile kas seğirmesi (nikotinik) birlikteyse güçlü şüphe.",
+      "Göz bebeği genişse organofosfat olasılığı düşüktür.",
+      "Şüpheli ürünün kutusunu / etiketini ve yem numunesini saklayın."
+    ],
+    "uyarilar": [
+      "Deri yoluyla bulaşmış hayvanı yıkarken eldiven ve koruyucu giysi kullanın; ilaç size de geçer.",
+      "Atropin etkiye göre (salya ve göz bebeği izlenerek) tekrarlanabilir; doz ürün KÜB'ünden.",
+      "İyileşen hayvanda et ve süt arınma süresi bilinmez; kalıntı riski için karar hekimindir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        {
+          "etkenId": "atropin",
+          "sinif": "diger",
+          "sira": 1,
+          "yol": "IV / IM / SC",
+          "not": "Muskarinik belirtileri (salya, bronş salgısı, ishal) gideren temel panzehir.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "aktif_komur",
+          "sinif": "diger",
+          "sira": 1,
+          "yol": "Ağızdan (sonda)",
+          "not": "Ağızdan alınan zehirde emilimi azaltmak için.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        }
+      ],
+      "destekleyici": [
+        "Deri yoluyla bulaştıysa hayvanı bol su ve sabunla yıkayın.",
+        "Solunumu izleyin; ağız ve burundaki salgıları temizleyin."
+      ],
+      "bakim": [
+        "Zehir kaynağını bulup kaldırın; aynı ilaçla uygulanmış diğer hayvanları izleyin.",
+        "Parazit ilaçlarını etiket dozunda ve aynı anda birden çok organofosfat kullanmadan uygulayın."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Organofosfat zehirlenmesi",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "Merck Veterinary Manual — Organophosphate Toxicosis"
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Oksim (pralidoksim) etkenler listesinde yok; eklenmesi önerildi (rapor)."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "grup": "ihbar_zehir",
+    "tur": [
+      "sigir"
+    ],
+    "baglam": {},
+    "ihbari": false,
+    "zoonoz": false,
+    "isi": null,
+    "dislayicilar": [],
+    "id": "kursun_zehirlenmesi",
+    "ad": "Kurşun zehirlenmesi",
+    "yasGruplari": [
+      "buzagi",
+      "dana",
+      "duve",
+      "inek",
+      "boga"
+    ],
+    "yayginlik": "nadir",
+    "tedaviKipi": "normal",
+    "belirtiler": [
+      {
+        "id": "korluk",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "sinirsel_belirti",
+        "agirlik": "kardinal",
+        "yoklugu_dusurur": true
+      },
+      {
+        "id": "bas_bastirma",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kas_titremesi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "cene_sakirdatma",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "salya",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kasilma_nobeti",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "hiperestezi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "rumen_atonisi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ataksi",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "bogurme",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "dis_gicirdatma",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "saldirganlik",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "diare",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "ani_olum",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      }
+    ],
+    "ayiriciTani": [
+      "kuduz",
+      "hipomagnezemi",
+      "organofosfat_zehirlenmesi",
+      "ketozis",
+      "bse"
+    ],
+    "sahadaDogrula": [
+      "En sık buzağı ve genç sığırda; mera ya da ahırda eski akü, boya, motor yağı, kurşunlu boru-tel gibi kaynak var mı arayın.",
+      "Körlük (tehdit refleksi yok, pupil refleksi korunmuş), baş bastırma, çene şakırdatma ve kulak-göz kapağı seğirmesi tipiktir.",
+      "Ateş beklenmez; aynı alandaki başka hayvanlarda da benzer tablo olabilir.",
+      "Tanı kanda kurşun düzeyiyle konur."
+    ],
+    "uyarilar": [
+      "Kurşun et, süt ve sakatatta uzun süre kalır; iyileşen hayvanın eti ve sütü uzun süre tüketime verilmemelidir (karar hekimin).",
+      "Ölen hayvanın sakatatı (karaciğer, böbrek) gıda zincirine girmemelidir."
+    ],
+    "protokol": {
+      "ilaclar": [
+        {
+          "etkenId": "tiamin",
+          "sinif": "metabolik",
+          "sira": 1,
+          "yol": "IV / IM",
+          "not": "Kurşunun sinir sistemi belirtilerini azaltmada şelasyon tedavisiyle birlikte önerilir.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
+          "etkenId": "magnezyum",
+          "sinif": "metabolik",
+          "sira": 2,
+          "yol": "Ağızdan (magnezyum sülfat)",
+          "not": "Bağırsaktaki kurşunu çöktürüp atılımı hızlandırmak için (müshil etkisi).",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        }
+      ],
+      "destekleyici": [
+        "Kasılma nöbetinde hayvanı yaralanmayacağı, karanlık ve sessiz bir yerde tutun.",
+        "Yutma güçlüğünde zorla ağızdan sıvı vermeyin."
+      ],
+      "bakim": [
+        "Kaynağı bulun ve kaldırın; aynı alandaki tüm hayvanları gözden geçirin."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Kurşun zehirlenmesi",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "Merck Veterinary Manual — Lead Poisoning"
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Kalsiyum disodyum EDTA (şelasyon) etkenler listesinde yok; eklenmesi önerildi (rapor). Türkiye'de sığır için ruhsatlı ürünü olup olmadığı doğrulanmalı."
+    ],
+    "onay": {
+      "durum": "taslak"
+    }
+  }
+]

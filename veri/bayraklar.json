@@ -1,1 +1,168 @@
-[]
+[
+  {
+    "id": "sap_1",
+    "hastalikId": "sap",
+    "kosul": { "hepsi": ["salya", "topallik"], "herhangi": ["vezikul_agiz", "agiz_erozyonu", "ayakta_vezikul", "meme_basi_lezyonu"] },
+    "baslik": "ŞAP ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": [
+      "Hayvanı ayırın; hayvan, süt ve araç çıkışını durdurun.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin.",
+      "Çizme, kıyafet ve aleti dezenfekte etmeden işletmeden ayrılmayın; aynı gün başka işletmeye girmeyin.",
+      "Veziküler stomatit, mavidil ve BVD-MD ayrımı yalnız laboratuvarla yapılır."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "sap_2",
+    "hastalikId": "sap",
+    "kosul": { "herhangi": ["vezikul_agiz", "ayakta_vezikul"] },
+    "baslik": "VEZİKÜLER HASTALIK (ŞAP) ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": [
+      "Ağızda ya da ayakta vezikül her zaman ihbar şüphesidir.",
+      "Hayvanı ayırın; hayvan, süt ve araç çıkışını durdurun.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin.",
+      "Çizme, kıyafet ve aleti dezenfekte etmeden işletmeden ayrılmayın."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "sarbon_1",
+    "hastalikId": "sarbon",
+    "kosul": { "hepsi": ["ani_olum"], "herhangi": ["dogal_deliklerden_kan", "oluda_katilik_yok"] },
+    "baslik": "ŞARBON ŞÜPHESİ — NEKROPSİ YAPMAYIN, İHBAR EDİN",
+    "uyarilar": [
+      "Nekropsi yapmayın, karkası açmayın ve taşımayın.",
+      "Zoonoz: kan ve dokuya korunmasız temas etmeyin (eldiven, maske).",
+      "Eti, sütü, derisi kullanılmaz; acil kesime gönderilmez.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "sarbon_2",
+    "hastalikId": "sarbon",
+    "kosul": { "herhangi": ["dogal_deliklerden_kan", "oluda_katilik_yok"], "baglam": { "aniOlum": true } },
+    "baslik": "ŞARBON ŞÜPHESİ — NEKROPSİ YAPMAYIN, İHBAR EDİN",
+    "uyarilar": [
+      "Nekropsi yapmayın, karkası açmayın ve taşımayın.",
+      "Zoonoz: kan ve dokuya korunmasız temas etmeyin (eldiven, maske).",
+      "Eti, sütü, derisi kullanılmaz; acil kesime gönderilmez.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "sarbon_3",
+    "hastalikId": "sarbon",
+    "kosul": { "hepsi": ["dogal_deliklerden_kan"] },
+    "baslik": "ŞARBON ŞÜPHESİ — NEKROPSİ YAPMAYIN, İHBAR EDİN",
+    "uyarilar": [
+      "Doğal deliklerden koyu, pıhtılaşmayan kan şarbon şüphesidir.",
+      "Nekropsi yapmayın, karkası açmayın ve taşımayın.",
+      "Zoonoz: kan ve dokuya korunmasız temas etmeyin (eldiven, maske).",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "kuduz_1",
+    "hastalikId": "kuduz",
+    "kosul": {
+      "hepsi": ["salya"],
+      "herhangi": ["sinirsel_belirti", "saldirganlik", "bogurme", "ataksi", "felc", "cene_dusuklugu", "hiperestezi", "kasilma_nobeti", "yutma_guclugu", "anormal_yalama", "bas_bastirma", "dairesel_yurume"]
+    },
+    "baslik": "KUDUZ ŞÜPHESİ — AĞZI ÇIPLAK ELLE MUAYENE ETMEYİN",
+    "uyarilar": [
+      "Ağzı çıplak elle muayene etmeyin; \"boğazına bir şey kaçmış\" sanılan salyalı hayvanda önce kuduzu düşünün.",
+      "Eldiven ve gözlük kullanın; salyayla yara ya da mukoza teması olan kişiler aynı gün sağlık kuruluşuna.",
+      "Hayvanı ayırıp gözlem altında tutun; kesmeyin, eti ve sütü kullanılmaz.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "kuduz_2",
+    "hastalikId": "kuduz",
+    "kosul": { "hepsi": ["bogurme"], "herhangi": ["saldirganlik", "felc", "yutma_guclugu", "tenezmus", "cene_dusuklugu", "salya"] },
+    "baslik": "KUDUZ ŞÜPHESİ — AĞZI ÇIPLAK ELLE MUAYENE ETMEYİN",
+    "uyarilar": [
+      "Sığır kuduzunda böğürme, yutamama, ıkınma ve arka felç tipiktir.",
+      "Ağzı çıplak elle muayene etmeyin; eldiven ve gözlük kullanın.",
+      "Salyayla yara ya da mukoza teması olan kişiler aynı gün sağlık kuruluşuna.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "bruselloz_1",
+    "hastalikId": "bruselloz",
+    "kosul": { "herhangi": ["abort", "zayif_buzagi_dogumu"] },
+    "baslik": "BRUSELLA ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": [
+      "Atık yavru, zar ve akıntılara eldivensiz dokunmayın (insanda Malta humması).",
+      "Hayvanı ayırın; atık materyalini resmî talimata göre saklayın.",
+      "Çiğ süt ve ürünleri tüketilmez.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) bildirin; tedavi yasaktır."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "bruselloz_boga",
+    "hastalikId": "bruselloz",
+    "kosul": { "hepsi": ["orsit"] },
+    "baslik": "BOĞADA ORŞİT — BRUSELLA ŞÜPHESİ",
+    "uyarilar": [
+      "Boğayı aşımdan çekin; sperma ve akıntılarla korunmasız temas etmeyin.",
+      "Brusella testi için il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin; tedavi yasaktır."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "lsd_1",
+    "hastalikId": "noduler_ekzantem",
+    "kosul": { "hepsi": ["deri_nodulu", "ates"] },
+    "baslik": "NODÜLER EKZANTEM (LSD) ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": [
+      "Hayvan hareketini durdurun; hasta hayvanı ayırın.",
+      "Ortak iğne kullanmayın; sinek ve sivrisinek mücadelesi yapın.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "lsd_2",
+    "hastalikId": "noduler_ekzantem",
+    "kosul": { "hepsi": ["deri_nodulu", "lenf_yumrusu_buyumesi"] },
+    "baslik": "NODÜLER EKZANTEM (LSD) ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": [
+      "Isı girilmediyse ölçün; ateş LSD şüphesini güçlendirir.",
+      "Hayvan hareketini durdurun; hasta hayvanı ayırın.",
+      "İl / ilçe müdürlüğüne (resmî veteriner hekim) hemen bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "tuberkuloz_1",
+    "hastalikId": "tuberkuloz",
+    "kosul": { "hepsi": ["kronik_oksuruk", "zayiflama", "lenf_yumrusu_buyumesi"] },
+    "baslik": "TÜBERKÜLOZ ŞÜPHESİ — TEST VE İHBAR",
+    "uyarilar": [
+      "Zoonoz: hayvanın çiğ sütü tüketilmez.",
+      "Hayvanı ayırın; antibiyotik uygulamayın (tedavi yasak).",
+      "Tüberkülin testi için il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "mavi_dil_1",
+    "hastalikId": "mavi_dil",
+    "kosul": { "hepsi": ["agiz_erozyonu", "ates"], "herhangi": ["topallik", "ayak_sisligi", "burun_mukozasi_lezyonu", "yutma_guclugu"] },
+    "baslik": "MAVİDİL / EHD ŞÜPHESİ — ŞAPTAN AYIRIN, İHBAR EDİN",
+    "uyarilar": [
+      "Ateş, ağız erozyonu ve topallık mavidil ya da EHD düşündürür; vezikül varsa şapı düşünün.",
+      "BVD-MD de benzer tablo yapar; ayrım laboratuvarla yapılır.",
+      "Hayvan hareketini durdurun ve il / ilçe müdürlüğüne (resmî veteriner hekim) bildirin."
+    ],
+    "onay": { "durum": "taslak" }
+  }
+]

@@ -1,1 +1,215 @@
-[]
+[
+  {
+    "id": "tropikal_teileriyoz",
+    "ad": "Tropikal teileriyoz (Theileria annulata)",
+    "grup": "kan_parazit",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana", "duve", "inek", "boga"],
+    "baglam": {},
+    "yayginlik": "sik",
+    "mevsim": [5, 6, 7, 8, 9],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 40.0, "max": 42.0 },
+    "belirtiler": [
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "lenf_yumrusu_buyumesi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "anemi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kene_varligi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "goz_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "hizli_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sarilik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kanama_egilimi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "diare", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["babesiyoz", "anaplazmoz", "sigir_solunum_kompleksi", "enzootik_sigir_lokozu", "noduler_ekzantem"],
+    "sahadaDogrula": [
+      "Prescapular ve prefemoral lenf yumrularını iki taraflı yoklayın; büyüme teileriyozun en yol gösterici bulgusudur.",
+      "Kulak ucu kanından ince yayma (Giemsa): eritrositlerde piroplazma; lenf yumrusu ince iğne aspirasyonunda şizont (Koch cisimciği).",
+      "Mukozalara bakın: önce kızarıklık / peteşi, ilerleyen olguda solgunluk ve sarılık.",
+      "Hayvanda ve ahırda Hyalomma kenesi arayın; son haftalarda meraya çıkış ya da kene teması sorun.",
+      "Hemoglobinüri genellikle beklenmez; kırmızı idrar varsa babesiyozu düşünün."
+    ],
+    "uyarilar": [
+      "Keneleri çıplak elle toplamayın ya da ezmeyin; eldiven kullanın (Kırım-Kongo kanamalı ateşi riski).",
+      "İleri olguda hayvanı zorlayarak taşımayın, uzun süre bağlamayın; anemik ve solunumu sıkıntılı hayvan stresle ölebilir.",
+      "Buparvakuonun et ve süt arınma süreleri uzundur; ürünün KÜB'ündeki süreyi hayvan sahibine yazılı bildirin."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "buparvakuon", "sinif": "antiparaziter", "sira": 1, "yol": "IM", "not": "Theileria'ya etkili temel ilaç; erken (şizont evresinde) başlanırsa etkinlik yüksektir.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "fluniksin_meglumin", "sinif": "nsaii", "sira": 2, "yol": "IV", "not": "Yüksek ateş ve iştahsızlıkta destek; antiparaziter ilacın yerine geçmez.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 2, "yol": "SC / IV", "not": "Fluniksine alternatif ateş ve yangı desteği.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağır anemide (mukozalar beyaz, solunum hızlı) kan transfüzyonunu değerlendirin.",
+        "Su ve yem tüketimi azsa ağızdan ya da damar içi sıvı desteği verin.",
+        "Tedavi sonrası 2–3 gün ateş ve mukoza rengini izleyin; düzelme yoksa kan yaymasını tekrarlayın."
+      ],
+      "bakim": [
+        "Hayvanı serin, gölge ve sakin bir bölmede tutun; taze su sürekli olsun.",
+        "Sürüde ve ahırda kene mücadelesi yapın (hayvan üzeri akarisit, ahır çatlak ve duvarları).",
+        "Bölgede aşı uygulanıyorsa duyarlı (özellikle kültür ırkı) hayvanları kene mevsiminden önce aşılatın."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Tropikal theileriosis",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "Merck Veterinary Manual — Theileriases"
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "K1 (Fable O-2): teileriyoz ikincil kaynaktaki ihbarı mecburi hastalıklar listesinde yer almıyor; güncel ekle doğrulanmalı.",
+      "Oksitetrasiklinin teileriyozda yeri tartışmalı olduğundan protokole alınmadı."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "babesiyoz",
+    "ad": "Babesiyoz (Babesia bigemina, B. bovis)",
+    "grup": "kan_parazit",
+    "tur": ["sigir"],
+    "yasGruplari": ["dana", "duve", "inek", "boga"],
+    "baglam": {},
+    "yayginlik": "orta",
+    "mevsim": [5, 6, 7, 8, 9, 10],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 40.0, "max": 42.0 },
+    "belirtiler": [
+      { "id": "hemoglobinuri", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "anemi", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "sarilik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kene_varligi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hizli_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "sinirsel_belirti", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "abort", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": ["anaplazmoz", "tropikal_teileriyoz"],
+    "sahadaDogrula": [
+      "İdrar rengine bakın: kırmızı-kahve idrar (hemoglobinüri) babesiyozun en yol gösterici bulgusudur.",
+      "Kulak ucu ya da kuyruk kılcal kanından ince yayma (Giemsa): eritrosit içinde çift armut biçimli piroplazma.",
+      "Mukozalarda solgunluk ve sarılık; nabız ve solunum hızı artmış mı bakın.",
+      "Hayvanda Rhipicephalus (Boophilus) kenesi arayın.",
+      "Sinirsel belirti (sendeleme, saldırganlık, kasılma) varsa B. bovis (serebral form) olabilir; prognoz ağırdır."
+    ],
+    "uyarilar": [
+      "Keneleri çıplak elle toplamayın ya da ezmeyin; eldiven kullanın (Kırım-Kongo kanamalı ateşi riski).",
+      "Anemik hayvanı zorlamayın, uzun yol yürütmeyin; stresle ani ölüm olabilir.",
+      "İmidokarbın et ve süt arınma süreleri çok uzundur; ürünün KÜB'ündeki süreyi hayvan sahibine yazılı bildirin."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "imidokarb", "sinif": "antiparaziter", "sira": 1, "yol": "SC / IM", "not": "Babesia'ya etkili; bir süre koruyucu etki de sağlar.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "diminazen", "sinif": "antiparaziter", "sira": 1, "yol": "IM", "not": "İmidokarba alternatif babesisit; ruhsat ve arınma süresi KÜB'den kontrol edilmeli.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "meloksikam", "sinif": "nsaii", "sira": 2, "yol": "SC / IV", "not": "Yüksek ateşte destek; dehidre hayvanda böbrek açısından dikkat.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağır anemide kan transfüzyonunu değerlendirin.",
+        "Hemoglobinüride böbreği korumak için sıvı desteği (ağızdan ya da damar içi) verin.",
+        "Kabızlık varsa ağızdan bol su ve yumuşatıcı destek düşünün."
+      ],
+      "bakim": [
+        "Hayvanı gölge ve sakin bir yerde dinlendirin; su sürekli olsun.",
+        "Sürüde kene mücadelesi yapın; aynı merada otlayan hayvanları ateş ve idrar rengi yönünden izleyin.",
+        "İyileşen hayvan bir süre taşıyıcı kalabilir; yeni gelen hayvanlarla temasını izleyin."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Babesiosis",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "Merck Veterinary Manual — Babesiosis"
+    ],
+    "notlar": [
+      "Sayfa numaraları eklenecek.",
+      "Dokuz aylıktan küçük buzağılarda doğal yaş direnci nedeniyle klinik tablo seyrektir; yaş grubu buzağı bu yüzden eklenmedi.",
+      "Leptospiroz, doğum sonrası hemoglobinüri (fosfor eksikliği) ve bakır zehirlenmesi de ayırıcı tanıdadır; veri setinde kayıtları olmadığı için ayiriciTani'ye bağlanmadı."
+    ],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "anaplazmoz",
+    "ad": "Anaplazmoz (Anaplasma marginale)",
+    "grup": "kan_parazit",
+    "tur": ["sigir"],
+    "yasGruplari": ["dana", "duve", "inek", "boga"],
+    "baglam": {},
+    "yayginlik": "orta",
+    "mevsim": [5, 6, 7, 8, 9, 10],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.5, "max": 41.5 },
+    "belirtiler": [
+      { "id": "anemi", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "sarilik", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "sut_verimi_dususu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "tasikardi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "hizli_solunum", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "zayiflama", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "saldirganlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "abort", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "kene_varligi", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["hemoglobinuri"],
+    "ayiriciTani": ["babesiyoz", "tropikal_teileriyoz"],
+    "sahadaDogrula": [
+      "Mukozalar solgun ve sarı, ama idrar normal renkte mi? Hemoglobinüri olmaması anaplazmozu babesiyozdan ayırır.",
+      "Kan yayması (Giemsa): eritrosit kenarında küçük nokta biçimli cisimcikler.",
+      "Yaşlı hayvanlarda tablo ağırdır; genç danalarda hafif seyreder.",
+      "Son haftalarda toplu aşılama, küpeleme, boynuz kesimi gibi ortak iğne / alet kullanımı olup olmadığını sorun."
+    ],
+    "uyarilar": [
+      "Muayene ve tedavi sırasında hayvanı zorlamayın; ağır anemide heyecan ve kovalama ani ölüme yol açabilir.",
+      "Sürüde iğne ve aletleri hayvanlar arasında değiştirmeden kullanmayın; hastalık kanla mekanik olarak da bulaşır.",
+      "Keneleri çıplak elle toplamayın (Kırım-Kongo kanamalı ateşi riski)."
+    ],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 1, "yol": "IV / IM", "not": "Anaplasma'ya etkili temel tedavi (riketsiyal etken).", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "imidokarb", "sinif": "antiparaziter", "sira": 2, "yol": "SC / IM", "not": "Tetrasikline yanıt yetersizse ya da taşıyıcılık azaltılmak isteniyorsa; arınma süresi çok uzun.", "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [
+        "Ağır anemide kan transfüzyonunu değerlendirin.",
+        "İştahsız hayvanda sıvı ve enerji desteği verin."
+      ],
+      "bakim": [
+        "Hayvanı yemlik ve suya yakın, sakin bir bölmede tutun; zorla yürütmeyin.",
+        "Sürüde kene ve sinek mücadelesi yapın; her hayvana ayrı iğne kullanın.",
+        "Aynı sürüdeki yaşlı hayvanları mukoza rengi yönünden izleyin."
+      ],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Anaplasmosis",
+    "kaynaklar": [
+      "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats. 11. baskı. Elsevier; 2017.",
+      "Merck Veterinary Manual — Bovine Anaplasmosis"
+    ],
+    "notlar": ["Sayfa numaraları eklenecek."],
+    "onay": { "durum": "taslak" }
+  }
+]
