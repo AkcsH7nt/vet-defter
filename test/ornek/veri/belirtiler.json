@@ -12,5 +12,8 @@
   { "id": "vezikul_agiz", "ad": "Ağızda kabarcık / yara", "sistem": "sindirim", "esAnlamlilar": ["vezikül", "aft"], "tur": ["sigir"], "genelSiklik": 0.02 },
   { "id": "topallik", "ad": "Topallık", "sistem": "ayak", "esAnlamlilar": ["aksama"], "tur": ["sigir"], "genelSiklik": 0.1 },
   { "id": "kas_titremesi", "ad": "Kas titremesi", "sistem": "sinir", "esAnlamlilar": ["tremor"], "tur": ["sigir"], "genelSiklik": 0.05 },
-  { "id": "abort", "ad": "Yavru atma", "sistem": "ureme", "esAnlamlilar": ["abort", "düşük"], "tur": ["sigir"], "genelSiklik": 0.03 }
+  { "id": "abort", "ad": "Yavru atma", "sistem": "ureme", "esAnlamlilar": ["abort", "düşük"], "tur": ["sigir"], "genelSiklik": 0.03 },
+  { "id": "dogal_deliklerden_kan", "ad": "Doğal deliklerden kan gelmesi", "sistem": "kan", "esAnlamlilar": ["burundan / anüsten kan", "pıhtılaşmayan kan"], "tur": ["sigir"], "genelSiklik": 0.01 },
+  { "id": "saldirganlik", "ad": "Saldırganlık / davranış değişikliği", "sistem": "sinir", "esAnlamlilar": ["huysuzluk", "sinirsel belirti"], "tur": ["sigir"], "genelSiklik": 0.02 },
+  { "id": "deri_nodulu", "ad": "Deride nodül", "sistem": "deri", "esAnlamlilar": ["deride yumru", "nodül"], "tur": ["sigir"], "genelSiklik": 0.02 }
 ]

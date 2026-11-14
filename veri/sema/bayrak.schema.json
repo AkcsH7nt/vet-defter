@@ -14,7 +14,11 @@
       "kosul": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["hepsi"],
+        "description": "hepsi: listedekilerin hepsi; herhangi: en az biri; ikisi de verilirse ikisi de tutmalı. En az biri dolu olmalı. baglam'da true işaretli her anahtar girdide de true olmalı.",
+        "anyOf": [
+          { "required": ["hepsi"], "properties": { "hepsi": { "minItems": 1 } } },
+          { "required": ["herhangi"], "properties": { "herhangi": { "minItems": 1 } } }
+        ],
         "properties": {
           "hepsi": { "type": "array", "items": { "$ref": "ortak.schema.json#/$defs/kimlik" } },
           "herhangi": { "type": "array", "items": { "$ref": "ortak.schema.json#/$defs/kimlik" } },

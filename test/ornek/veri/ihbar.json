@@ -3,6 +3,10 @@
   "kaynakTarihi": null,
   "not": "Yalnız testler için.",
   "ogeler": [
-    { "id": "ornek_ihbar", "ad": "Örnek ihbarlı hastalık", "emin": true, "dogrulandi": false }
+    { "id": "ornek_ihbar", "ad": "Örnek ihbarlı hastalık", "emin": true, "dogrulandi": false },
+    { "id": "ornek_sarbon", "ad": "Örnek şarbon", "emin": true, "dogrulandi": false },
+    { "id": "ornek_kuduz", "ad": "Örnek kuduz", "emin": true, "dogrulandi": false },
+    { "id": "ornek_bruselloz", "ad": "Örnek brusella", "emin": true, "dogrulandi": false },
+    { "id": "ornek_lsd", "ad": "Örnek nodüler ekzantem", "emin": true, "dogrulandi": false }
   ]
 }

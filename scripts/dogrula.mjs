@@ -38,7 +38,7 @@ const ALANLAR = {
   isi: [['min', 'max'], []],
   onay: [['durum'], ['kim', 'tarih', 'icerikOzeti']],
   bayrak: [['id', 'hastalikId', 'kosul', 'baslik', 'uyarilar', 'onay'], []],
-  kosul: [['hepsi'], ['herhangi', 'baglam']],
+  kosul: [[], ['hepsi', 'herhangi', 'baglam']], // hepsi / herhangi'den en az biri dolu (aşağıda denetlenir)
   urun: [['ad', 'firma', 'form', 'etkenler', 'hedefTurler', 'kubUrl', 'cekilmeTarihi', 'kub', 'kubDogrulandi'], []],
   kub: [['tur', 'yol', 'doz', 'et_gun', 'sut'], []],
   doz: [['miktar', 'birim', 'aralik', 'sure'], []],

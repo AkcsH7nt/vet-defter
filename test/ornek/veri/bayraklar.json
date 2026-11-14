@@ -3,8 +3,40 @@
     "id": "ornek_ihbar_bayragi",
     "hastalikId": "ornek_ihbar",
     "kosul": { "hepsi": ["vezikul_agiz", "salya", "topallik"] },
-    "baslik": "ÖRNEK İHBAR ŞÜPHESİ — İHBAR EDİN",
-    "uyarilar": ["Örnek uyarı: hayvanı ayırın"],
+    "baslik": "ÖRNEK ŞAP ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": ["Örnek uyarı: hayvanı ayırın", "Örnek uyarı: hayvan hareketini durdurun"],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ornek_sarbon_bayragi",
+    "hastalikId": "ornek_sarbon",
+    "kosul": { "hepsi": ["dogal_deliklerden_kan"], "baglam": { "aniOlum": true } },
+    "baslik": "ÖRNEK ŞARBON ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": ["Örnek uyarı: nekropsi yapmayın, karkası açmayın", "Örnek uyarı: zoonoz — korunmasız temas etmeyin"],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ornek_kuduz_bayragi",
+    "hastalikId": "ornek_kuduz",
+    "kosul": { "hepsi": ["salya"], "herhangi": ["saldirganlik", "kas_titremesi"] },
+    "baslik": "ÖRNEK KUDUZ ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": ["Örnek uyarı: ağzı çıplak elle muayene etmeyin", "Örnek uyarı: zoonoz — temas edenler sağlık kuruluşuna"],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ornek_bruselloz_bayragi",
+    "hastalikId": "ornek_bruselloz",
+    "kosul": { "hepsi": ["abort"] },
+    "baslik": "ÖRNEK BRUSELLA ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": ["Örnek uyarı: atık yavru ve zarlara eldivensiz dokunmayın"],
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ornek_lsd_bayragi",
+    "hastalikId": "ornek_lsd",
+    "kosul": { "hepsi": ["deri_nodulu", "ates"] },
+    "baslik": "ÖRNEK NODÜLER EKZANTEM (LSD) ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": ["Örnek uyarı: hayvan hareketini durdurun"],
     "onay": { "durum": "taslak" }
   }
 ]

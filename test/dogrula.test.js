@@ -40,7 +40,8 @@ test('veriYukleTumDosyalariGoreliYoldanOkurVeGruplariBirlestirir', async () => {
   assert.deepEqual(Object.keys(veri).sort(),
     ['bayraklar', 'belirtiler', 'etkenler', 'hastaliklar', 'ihbar', 'meta', 'urunler', 'yasaklar']);
   // index.json sırasıyla birleşir
-  assert.deepEqual(veri.hastaliklar.map((h) => h.id), ['ornek_solunum', 'ornek_ishal', 'ornek_metabolik', 'ornek_ihbar']);
+  assert.deepEqual(veri.hastaliklar.map((h) => h.id), ['ornek_solunum', 'ornek_ishal', 'ornek_metabolik', 'ornek_ihbar',
+    'ornek_sarbon', 'ornek_kuduz', 'ornek_bruselloz', 'ornek_lsd']);
 });
 
 test('veriYukleIndexDiziDegilseHata', async () => {
@@ -188,7 +189,11 @@ test('bilinmeyenAlanHata', async () => {
 test('belirtiHemBeklenenHemDislayiciOlamaz', async () => {
   const veri = await ornek();
   hastalik(veri, 'ornek_solunum').dislayicilar.push('oksuruk');
-  hataIcerir(dogrula(veri), /ornek_solunum.*oksuruk/);
+  hataIcerir(dogrula(veri), /hastalik\[ornek_solunum\]: oksuruk hem beklenen belirti hem dışlayıcı/);
+  // Isıdan türetilen bulgu da (ates) iki listede birden olamaz.
+  const veri2 = await ornek();
+  hastalik(veri2, 'ornek_ihbar').dislayicilar.push('ates');
+  hataIcerir(dogrula(veri2), /hastalik\[ornek_ihbar\]: ates hem beklenen belirti hem dışlayıcı/);
 });
 
 test('amegAEtkenProtokoldeHata', async () => {
@@ -239,9 +244,48 @@ test('urunAlanlariDenetlenir', async () => {
 });
 
 test('bayrakKosuluBossaHata', async () => {
+  for (const kosul of [{ hepsi: [] }, { herhangi: [] }, { hepsi: [], herhangi: [] }, {}, { baglam: { aniOlum: true } }]) {
+    const veri = await ornek();
+    veri.bayraklar[0].kosul = kosul;
+    hataIcerir(dogrula(veri), /ornek_ihbar_bayragi.*kosul en az bir belirti/);
+  }
+});
+
+test('bayrakKosuluYalnizHerhangiYaDaIkisiBirlikteGecerli', async () => {
+  for (const kosul of [
+    { herhangi: ['salya', 'vezikul_agiz'] },
+    { herhangi: ['salya'], baglam: { suru: true } },
+    { hepsi: ['salya'], herhangi: ['vezikul_agiz', 'topallik'] },
+    { hepsi: [], herhangi: ['salya'] },
+    { hepsi: ['salya'], herhangi: [] },
+  ]) {
+    const veri = await ornek();
+    veri.bayraklar[0].kosul = kosul;
+    assert.deepEqual(dogrula(veri), [], JSON.stringify(kosul));
+  }
+});
+
+test('bayrakKosuluBicimHatalari', async () => {
   const veri = await ornek();
-  veri.bayraklar[0].kosul = { hepsi: [] };
-  hataIcerir(dogrula(veri), /ornek_ihbar_bayragi.*kosul/);
+  veri.bayraklar[0].kosul = { hepsi: ['salya'], herhangi: 'vezikul_agiz' };
+  veri.bayraklar[1].kosul = { hepsi: ['dogal_deliklerden_kan'], baglam: { aniOlum: 'evet' } };
+  veri.bayraklar[2].kosul = { hepsi: ['salya'], baglam: { kis: true } };
+  veri.bayraklar[3].kosul = { hepsi: ['abort'], hicbiri: ['salya'] };
+  const hatalar = dogrula(veri);
+  hataIcerir(hatalar, /ornek_ihbar_bayragi.*kosul\.herhangi dizi olmalı/);
+  hataIcerir(hatalar, /ornek_sarbon_bayragi.*kosul\.baglam\.aniOlum/);
+  hataIcerir(hatalar, /ornek_kuduz_bayragi.*kosul\.baglam\.kis/);
+  hataIcerir(hatalar, /ornek_bruselloz_bayragi.*bilinmeyen alan: hicbiri/);
+});
+
+test('bayrakSemasiHepsiYaDaHerhangiIster', () => {
+  const sema = JSON.parse(readFileSync(join(KOK, 'veri', 'sema', 'bayrak.schema.json'), 'utf8'));
+  const kosul = sema.items.properties.kosul;
+  assert.ok(!(kosul.required ?? []).includes('hepsi'), 'hepsi tek başına zorunlu olmamalı');
+  assert.deepEqual(Object.keys(kosul.properties).sort(), ['baglam', 'hepsi', 'herhangi']);
+  // anyOf: hepsi dolu ya da herhangi dolu.
+  const secenekler = kosul.anyOf.map((s) => [s.required, s.properties[s.required[0]].minItems]);
+  assert.deepEqual(secenekler, [[['hepsi'], 1], [['herhangi'], 1]]);
 });
 
 test('metaVeListeSekilleriDenetlenir', async () => {
