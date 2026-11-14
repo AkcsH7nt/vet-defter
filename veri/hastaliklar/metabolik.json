@@ -48,6 +48,9 @@
         { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş); ek olarak SC",
           "not": "Yatan inekte ilk seçenek; kalp dinlenerek yavaş verilir.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "kalsiyum_glukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş); ek olarak SC",
+          "not": "Kalsiyum boroglukonata alternatif; Türkiye'deki damar içi kalsiyum ürünlerinin çoğu kalsiyum glukonat içeren kombine çözeltidir. Kalp dinlenerek yavaş verilir.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "oral_kalsiyum", "sinif": "metabolik", "sira": 1, "yol": "Ağızdan",
           "not": "Ayakta ve yutabilen inekte (1. evre) ya da damar içi tedaviden sonra nüksü önlemek için.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
@@ -195,6 +198,9 @@
         { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş)",
           "not": "Kalsiyum-magnezyum kombine çözeltisi olarak; nöbetteki hayvanda kalp dinlenerek.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "kalsiyum_glukonat", "sinif": "metabolik", "sira": 1, "yol": "IV (yavaş)",
+          "not": "Kalsiyum boroglukonata alternatif: magnezyum içeren kalsiyum glukonat kombine çözeltisi olarak; kalp dinlenerek.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "magnezyum", "sinif": "metabolik", "sira": 1, "yol": "SC; IV yalnız yavaş ve kombine çözeltiyle",
           "not": "Magnezyum sülfat deri altı; damar içi tedaviden sonra kan düzeyini sürdürmek için.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
@@ -323,9 +329,12 @@
       "Yutma güçlüğü olan buzağı zorla biberonla beslenmez (aspirasyon pnömonisi)."
     ],
     "protokol": {
-      "ilaclar": [],
+      "ilaclar": [
+        { "etkenId": "selenyum_e_vitamini", "sinif": "metabolik", "sira": 1, "yol": "IM / SC",
+          "not": "Asıl tedavi; aynı sürüdeki risk altındaki buzağılara da düşünülür. Güvenlik aralığı dar: ürün ve tekrar aralığı KÜB'e göre.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
       "destekleyici": [
-        "Selenyum + E vitamini enjeksiyonu (ürün ve doz KÜB'e göre) — etken listeye eklendiğinde ilaç satırı olarak girilecek.",
         "Yutamayan buzağıda sonda ile süt / sıvı.",
         "Sessiz, sınırlı alanda dinlendirme."
       ],
@@ -342,7 +351,7 @@
       "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — Nutritional myopathy / selenium and vitamin E deficiency (sayfa eklenecek).",
       "Merck Veterinary Manual — Nutritional Myopathies in Ruminants and Pigs."
     ],
-    "notlar": "Asıl tedavi (selenyum + E vitamini) etken listesinde yok; eksik kimlik olarak raporlandı. Ateş beklenmez; ateş varsa aspirasyon pnömonisi gibi ikincil sorun aranır.",
+    "notlar": "Asıl tedavi selenyum + E vitamini (selenyum_e_vitamini) ilaç satırı olarak eklendi. Ateş beklenmez; ateş varsa aspirasyon pnömonisi gibi ikincil sorun aranır.",
     "onay": { "durum": "taslak" }
   }
 ]

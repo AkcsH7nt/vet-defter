@@ -211,6 +211,7 @@
       { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "agiz_erozyonu", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "deri_alti_sislik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "yanak_sisligi", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "burun_akintisi", "agirlik": "olasi", "yoklugu_dusurur": false }
     ],
     "dislayicilar": [],

@@ -56,6 +56,35 @@
     }
   },
   {
+    "id": "penisilin_g_kristalize",
+    "ad": "Penisilin G potasyum / sodyum (kristalize benzilpenisilin)",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01CE01",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "Penisilin G ile aynı (bkz. Penisilin G prokain): Gram pozitifler, Fusobacterium necrophorum ve bazı anaeroblar; duyarlı Pasteurella / Mannheimia / Histophilus suşları. Enterik Gram negatiflere ve Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı (T>MİK). Suda çözünen tuzdur: hızlı emilir, hızlı atılır; düzey kısa sürer. Türkiye'deki sığır ürünlerinde başlangıç düzeyini sağlamak için prokain penisilinle (ve streptomisinle) birlikte bulunur.",
+      "direnc": "Beta-laktamaz (penisilinaz) üreten stafilokoklar; PBP değişimi.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aminoglikozitlerle (ör. streptomisin) sinerjiktir; ancak aynı enjektörde karıştırılınca aminoglikozit inaktive olur — yalnız hazır kombine ürün kullanılmalı.",
+        "Potasyum tuzunun yüksek dozda hızlı damar içi verilmesi kalp ritmini bozabilir; uygulama yolu yalnız KÜB'e göre.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
+    ],
+    "notlar": "Kristalize (suda çözünen) benzilpenisilin; prokain ve benzatin tuzlarından ayrı etkendir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
     "id": "penetamat",
     "ad": "Penetamat hidroiyodür",
     "sinif": "antimikrobiyal",
@@ -220,6 +249,33 @@
     "notlar": "ATCvet kodu sığırdaki meme içi kullanıma göre seçildi (Fable K1 önerisi); WHOCC ATCvet dizininden doğrulanmalı."
   },
   {
+    "id": "sefapirin",
+    "ad": "Sefapirin",
+    "sinif": "antimikrobiyal",
+    "atcvet": null,
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Bakteri hücre duvarı: penisilin bağlayan proteinler (PBP, transpeptidaz enzimleri)",
+      "etki": "Hücre duvarındaki peptidoglikan zincirlerinin çapraz bağlanmasını engeller; çoğalan bakteride duvar zayıflar, bakteri şişip parçalanır. Durgun (çoğalmayan) bakteriye etkisi azdır.",
+      "tur": "bakterisit",
+      "spektrum": "1. kuşak sefalosporin: Gram pozitifler (streptokoklar, penisilinaz üreten stafilokoklar dahil), Trueperella pyogenes, Fusobacterium necrophorum ve bazı anaeroblar; bazı E. coli. Hücre duvarı olmayan Mycoplasma'ya etkisiz.",
+      "kinetik": "Zamana bağımlı: kan ve doku düzeyinin MİK üzerinde kaldığı süre (T>MİK) belirleyicidir; uygulama aralığına uyulmalı. Uterus içi benzatin tuzu yerelde uzun süre kalır.",
+      "direnc": "Sefalosporinazlar (AmpC, ESBL) ve PBP değişimi.",
+      "etkilesimler": [
+        "Bakteriyostatik ilaçlarla (tetrasiklin, florfenikol, makrolid) birlikte bakterisit etkisi azalabilir; çoğalmayı durduran ilaç duvar sentezine bağlı öldürmeyi zayıflatır.",
+        "Aşırı duyarlılık: hayvanda nadiren anafilaksi görülebilir. Penisilin ve sefalosporinler arasında çapraz alerji vardır; alerjisi olan kişi ürünle temas etmemelidir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
+    ],
+    "notlar": "Türkiye'de sığır için uterus içi (sefapirin benzatin) ve meme içi (sefapirin sodyum, prednizolonla) ürünleri var (2026-11-14 ürün listesi). ATCvet kodu kullanım yoluna göre değişir; doğrulanmadı (null). Süt ve et arınma süresi yalnız ürün KÜB'ünden.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
     "id": "sefkinom",
     "ad": "Sefkinom",
     "sinif": "antimikrobiyal",
@@ -354,6 +410,33 @@
       "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
     ],
     "notlar": "Ruminant olmayan (sütle beslenen) buzağıda ağızdan kullanılır; işlevsel rumeni olan hayvanda ağızdan emilimi güvenilmez. Sütü insan tüketimine sunulan hayvanda kullanım kısıtı — yalnız KÜB.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "tetrasiklin",
+    "ad": "Tetrasiklin",
+    "sinif": "antimikrobiyal",
+    "atcvet": "QJ01AA07",
+    "ameg": "D",
+    "mekanizma": {
+      "hedef": "Bakteri ribozomunun 30S alt birimi",
+      "etki": "Aminoasil-tRNA'nın ribozoma bağlanmasını engeller; protein sentezi durur, bakteri çoğalamaz ve bağışıklık sistemi tarafından temizlenir.",
+      "tur": "bakteriyostatik",
+      "spektrum": "Oksitetrasiklinle benzer geniş spektrum: Gram pozitif ve negatiflerin çoğu, Mycoplasma, Chlamydia, Rickettsia. Pseudomonas ve Proteus'a çoğunlukla etkisiz.",
+      "kinetik": "Zamana bağımlı / AUC:MİK oranına bağlı.",
+      "direnc": "Oksitetrasiklinle çapraz direnç (tet genleri: dışa atım pompaları, ribozom koruyucu proteinler).",
+      "etkilesimler": [
+        "Kalsiyum, magnezyum, demir ve alüminyumla şelat yapar: ağızdan verilende süt, mineral ve antasitler emilimi düşürür.",
+        "Beta-laktamların bakterisit etkisini azaltabilir."
+      ],
+      "kaynak": "Giguère S, Prescott JF, Dowling PM (ed.). Antimicrobial Therapy in Veterinary Medicine, 5. baskı. Wiley-Blackwell, 2013 — ilgili antimikrobiyal sınıfı bölümü (sayfa eklenecek). Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "kaynaklar": [
+      "EMA, Categorisation of antibiotics in the European Union (AMEG), EMA/CVMP/CHMP/682198/2017, 12 Aralık 2019."
+    ],
+    "notlar": "Oksitetrasiklinden ayrı etkendir. Türkiye'de sığır/buzağı ürünü az (buzağıda ağızdan toz, meme içi kombinasyon).",
     "onay": {
       "durum": "taslak"
     }
@@ -1027,6 +1110,29 @@
     }
   },
   {
+    "id": "oksfendazol",
+    "ad": "Oksfendazol",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AC06",
+    "mekanizma": {
+      "hedef": "Parazit hücrelerindeki β-tubulin",
+      "etki": "Mikrotübül yapımını engeller; parazitin bağırsak hücrelerinde glukoz alımı ve hücre bölünmesi durur, enerji tükenir ve parazit yavaşça ölür.",
+      "tur": "antelmintik (benzimidazol)",
+      "spektrum": "Mide-bağırsak ve akciğer nematodları (durgun Ostertagia larvaları dahil) ve Moniezia. Olağan kullanımda Fasciola'ya etkisiz.",
+      "kinetik": "Etkisi parazitle temas süresine bağlıdır; fenbendazolün etkin metabolitidir (vücutta ikisi birbirine dönüşür).",
+      "direnc": "β-tubulin gen mutasyonları; benzimidazollerle çapraz direnç.",
+      "etkilesimler": [
+        "Gebelikte kullanım KÜB'e göre.",
+        "Ağızdan verilir; özofagus oluğu kapanıp ilaç rumeni atlarsa etkinlik düşebilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "notlar": "Türkiye'deki sığır ürünlerinin hepsi oksiklozanidle kombine tablet (2026-11-14 ürün listesi).",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
     "id": "triklabendazol",
     "ad": "Triklabendazol",
     "sinif": "antiparaziter",
@@ -1061,6 +1167,29 @@
       ],
       "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "levamizol",
+    "ad": "Levamizol",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AE01",
+    "mekanizma": {
+      "hedef": "Nematod kaslarındaki nikotinik asetilkolin reseptörleri",
+      "etki": "Reseptörü sürekli uyarır; parazitin kası kasılı kalır (spastik felç), parazit tutunamaz ve dışkıyla atılır.",
+      "tur": "antelmintik (imidazotiyazol)",
+      "spektrum": "Mide-bağırsak nematodlarının ergin ve larvaları ile akciğer kılkurdu (Dictyocaulus viviparus). Durgun (inhibe) Ostertagia larvalarına etkisi zayıf; trematod (Fasciola) ve sestodlara etkisiz.",
+      "kinetik": "Hızlı emilir ve hızlı atılır; etki kısa sürelidir, kalıcı koruma sağlamaz.",
+      "direnc": "Nikotinik reseptör alt birim değişiklikleri; benzimidazol ve makrosiklik laktonlardan farklı direnç sınıfı.",
+      "etkilesimler": [
+        "Güvenlik aralığı dardır: aşırı dozda kolinerjik belirtiler (salya, kas titremesi, ishal, solunum güçlüğü) görülür; doz yalnız KÜB'e göre ve hayvan tartılarak.",
+        "Organofosfat ve diğer kolinesteraz baskılayıcılarla (kene / sinek ilaçları dahil) birlikte ya da yakın zamanda verilmez; zehirlilik artar."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "notlar": "Türkiye'de sığır ürünleri çoğunlukla ağızdan; triklabendazol ya da oksiklozanidle kombine ürünler de var.",
     "onay": {
       "durum": "taslak"
     }
@@ -1344,6 +1473,31 @@
     }
   },
   {
+    "id": "kalsiyum_glukonat",
+    "ad": "Kalsiyum glukonat",
+    "sinif": "metabolik",
+    "atcvet": "QA12AA03",
+    "mekanizma": {
+      "hedef": "Kandaki iyonize kalsiyum (Ca²⁺) düzeyi",
+      "etki": "Eksik kalsiyumu yerine koyar; sinir-kas kavşağında asetilkolin salınımı, iskelet kası, düz kas (rumen, uterus) ve kalp kası kasılması düzelir.",
+      "tur": "mineral yerine koyma (kalsiyum tuzu)",
+      "spektrum": null,
+      "kinetik": "Damar içinde etki hemen başlar ve kısa sürer; deri altında emilim yavaştır ve dolaşım bozukluğunda güvenilmez.",
+      "etkilesimler": [
+        "Hızlı damar içi verilirse kalp ritim bozukluğu ve ani ölüm: yavaş verilir, uygulama sırasında kalp dinlenir, ritim bozulursa durdurulur.",
+        "Fosfat ve bikarbonat içeren çözeltilerle karışınca çöker; aynı şişe ya da setten verilmez.",
+        "Oksitetrasiklinle şelat yapar; birlikte karıştırılmaz.",
+        "Kalp glikozitlerinin (digoksin) toksisitesini artırır.",
+        "Glukoz/dekstroz içeren karışımlar deri altına verilirse doku hasarı ve apse yapabilir; deri altı uygulama birkaç noktaya bölünür, yolu KÜB'e göre."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "notlar": "Kalsiyum boroglukonattan ayrı bir tuzdur. Türkiye'deki sığır ürünleri çoğunlukla kombinedir (kalsiyum glukoheptonat / sakkarat, magnezyum klorür, butafosfan ya da hipofosfit; bazılarında borik asit); toplam kalsiyum miktarı ve yol ürün KÜB'ünden okunmalı.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
     "id": "oral_kalsiyum",
     "ad": "Ağızdan kalsiyum (kalsiyum klorür / propiyonat / formiat jel, bolus)",
     "sinif": "metabolik",
@@ -1381,6 +1535,28 @@
       ],
       "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
     },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "magnezyum_oksit",
+    "ad": "Magnezyum oksit / hidroksit (ağızdan)",
+    "sinif": "metabolik",
+    "atcvet": "QA02AA02",
+    "mekanizma": {
+      "hedef": "Rumen sıvısındaki asit (laktik asit) ve rumen pH'sı",
+      "etki": "Rumen içinde asidi nötralize eder (alkalileştirici, antasit); rumen pH'sını yükseltir ve laktik asit üreten bakterilerin baskınlığını azaltmaya yardım eder. Ayrıca ağızdan magnezyum kaynağıdır.",
+      "tur": "antasit / rumen alkalileştirici (magnezyum tuzu)",
+      "spektrum": null,
+      "kinetik": "Etkisi rumen içinde yereldir; bağırsaktan emilimi sınırlıdır.",
+      "etkilesimler": [
+        "Fazlası ya da tekrarlanan uygulama metabolik alkaloz ve rumen alkalozu yapabilir; ağır asidozda tek başına yetmez (sıvı tedavisi ve rumen boşaltma gerekebilir).",
+        "Ağızdan verilen tetrasiklinler ve diğer şelat yapan ilaçların emilimini azaltır."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "notlar": "2026-11-14 ruhsatlı ürün listesinde magnezyum oksit / hidroksit içeren sığır ürünü bulunmadı; sahada yem katkısı / rumen tamponu olarak bulunur. Ruhsatlı ürün olmadığından doz gösterilmez.",
     "onay": {
       "durum": "taslak"
     }
@@ -1533,6 +1709,50 @@
     }
   },
   {
+    "id": "selenyum_e_vitamini",
+    "ad": "Selenyum + E vitamini (sodyum selenit + tokoferol)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Hücre zarlarındaki lipit peroksidasyonu: glutatyon peroksidaz (selenyum) ve zar içi antioksidan (E vitamini)",
+      "etki": "Selenyum, peroksitleri parçalayan glutatyon peroksidaz enziminin yapı taşıdır; E vitamini hücre zarında serbest radikalleri yakalar. Birlikte iskelet ve kalp kası hücrelerini oksidatif hasardan korur; eksiklikte gelişen kas dejenerasyonunun (beyaz kas hastalığı) ilerlemesini durdurur.",
+      "tur": "mineral ve vitamin yerine koyma (antioksidan)",
+      "spektrum": null,
+      "kinetik": "Enjeksiyondan sonra kan selenyum düzeyi günler içinde yükselir; hasar görmüş kasın düzelmesi haftalar sürer, kalp formunda yanıt sınırlıdır.",
+      "etkilesimler": [
+        "Güvenlik aralığı dardır: aşırı dozda akut selenyum zehirlenmesi (solunum güçlüğü, yatma, ani ölüm) görülür; doz yalnız KÜB'e göre ve ağırlık tahmini dikkatle yapılarak.",
+        "Mineral karması, bolus ya da yemle selenyum alan hayvanda toplam alım hesaba katılır; tekrar uygulama aralığı KÜB'e göre.",
+        "Enjeksiyon yerinde ağrı ve şişlik olabilir; bazı ürünlerde nadiren anafilaktik reaksiyon bildirilir."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "notlar": "Türkiye'deki ürünler çoğunlukla sodyum selenit + E vitamini (bazılarında B1 vitamini) enjeksiyonudur. ATCvet kodu kombinasyona göre değişir; doğrulanmadı (null).",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "butafosfan",
+    "ad": "Butafosfan (çoğunlukla B12 vitamini ile)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Enerji metabolizması (etki yeri tam bilinmiyor); siyanokobalamin için metilmalonil-KoA mutaz",
+      "etki": "Organik fosfor bileşiğidir; enerji ve karbonhidrat metabolizmasını desteklediği ileri sürülür, kesin mekanizması bilinmez. Birlikte verilen B12 vitamini (siyanokobalamin), ruminantta propiyonattan glukoz yapımındaki metilmalonil-KoA mutaz enziminin kofaktörüdür.",
+      "tur": "metabolik destek (organik fosfor bileşiği ± B12 vitamini)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Hipofosfatemide fosfat yerine koyma ilacı olarak güvenilmez; kandaki fosfat düzeyini anlamlı yükselttiği gösterilmemiştir.",
+        "Ketoziste tek başına tedavi değildir; glukoz kaynağı (propilen glikol, dekstroz) yerine geçmez. Kanıt düzeyi orta-sınırlıdır."
+      ],
+      "kaynak": "kaynak eklenecek"
+    },
+    "notlar": "Türkiye'de sığırda çok yaygın (B12'li enjeksiyonlar ve kalsiyum-magnezyum karışımları). Protokole bağlanmadı; kullanım hekim kararıdır.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
     "id": "oksitosin",
     "ad": "Oksitosin",
     "sinif": "diger",
@@ -1637,6 +1857,53 @@
       ],
       "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
     },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "pralidoksim",
+    "ad": "Pralidoksim (oksim)",
+    "sinif": "diger",
+    "atcvet": "QV03AB04",
+    "mekanizma": {
+      "hedef": "Organofosfatla fosforillenmiş asetilkolinesteraz",
+      "etki": "Enzime bağlı organofosfatı koparır ve asetilkolinesterazı yeniden etkinleştirir; atropinin etkisiz kaldığı nikotinik belirtileri (kas titremesi, kas güçsüzlüğü, solunum kası felci) azaltır.",
+      "tur": "kolinesteraz yeniden etkinleştirici (oksim); organofosfat zehirlenmesinde panzehir",
+      "spektrum": null,
+      "kinetik": "Enzim-organofosfat bağı zamanla kalıcı hâle gelir (\"yaşlanma\"); bu yüzden zehirlenmeden sonra erken verildiğinde etkilidir. Beyne geçişi sınırlıdır.",
+      "etkilesimler": [
+        "Atropinin yerine geçmez, onunla birlikte verilir.",
+        "Karbamat zehirlenmesinde yararı sınırlıdır ya da yoktur.",
+        "Hızlı damar içi uygulamada taşikardi, kas güçsüzlüğü ve solunum baskılanması bildirilmiştir; yavaş verilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "notlar": "2026-11-14 ruhsatlı ürün listesinde (Sığır / Buzağı) bu etkeni içeren ürün yok. AB 37/2010 Tablo 1'deki kalıntı limiti (MRL) statüsü doğrulanmadı: statüsü yoksa metilen mavisi gibi gıda hayvanında kullanılamaz ve yasaklar.json'a taşınmalıdır. Hekim kararı gerekir.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "kalsiyum_disodyum_edta",
+    "ad": "Kalsiyum disodyum EDTA (kalsiyum disodyum edetat)",
+    "sinif": "diger",
+    "atcvet": "QV03AB03",
+    "mekanizma": {
+      "hedef": "Kan ve dokulardaki (özellikle kemikteki) kurşun",
+      "etki": "Kurşunu, kalsiyumla yer değiştirerek suda çözünen sağlam bir kompleks (şelat) içine alır; kompleks idrarla atılır. Vücuttaki kurşun yükünü azaltır.",
+      "tur": "şelatör (şelasyon ajanı); kurşun zehirlenmesinde panzehir",
+      "spektrum": null,
+      "kinetik": "Hücre dışı sıvıda kalır, hücre içine ve beyne az geçer; böbrekten hızla atılır. Kemikten kurşun salıverdiği için tedavi aralıklı kürler hâlinde yapılır.",
+      "etkilesimler": [
+        "Kalsiyumsuz disodyum EDTA ile karıştırılmamalı: kalsiyumsuz form kanda kalsiyumu bağlar, tetani ve ölüm yapabilir.",
+        "Böbrek hasarı (nefrotoksisite) yapabilir; dehidrasyonlu hayvanda risk artar, sıvı dengesi sağlanır.",
+        "Kurşunu dokulardan seferber ettiğinden başlangıçta sinirsel belirtiler geçici kötüleşebilir; tiaminle birlikte önerilir.",
+        "Sindirim kanalındaki kurşunu uzaklaştırmaz; kaynak kaldırılır, gerekirse rumenotomi ve ağızdan magnezyum sülfat."
+      ],
+      "kaynak": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs and Goats, 11. baskı. Elsevier, 2017 — ilgili bölüm (sayfa eklenecek)."
+    },
+    "notlar": "2026-11-14 ruhsatlı ürün listesinde (Sığır / Buzağı) bu etkeni içeren ürün yok. AB 37/2010 Tablo 1'deki kalıntı limiti (MRL) statüsü doğrulanmadı: statüsü yoksa metilen mavisi gibi gıda hayvanında kullanılamaz ve yasaklar.json'a taşınmalıdır. Hekim kararı gerekir.",
     "onay": {
       "durum": "taslak"
     }

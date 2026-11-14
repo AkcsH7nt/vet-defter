@@ -430,6 +430,9 @@
         { "etkenId": "dinoprost", "sinif": "diger", "sira": 1, "yol": "IM",
           "not": "Kloprostenole alternatif PGF2α.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "sefapirin", "sinif": "antimikrobiyal", "sira": 1, "yol": "Uterus içi",
+          "not": "Klinik endometritiste uterus içi (sefapirin benzatin) ürün; sarı cisim olup olmamasından bağımsız kullanılabilir. AMEG C. Süt ve et arınma süresi ürün KÜB'ünden.",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "oksitetrasiklin", "sinif": "antimikrobiyal", "sira": 2, "yol": "İntrauterin",
           "not": "Sarı cisim yoksa ya da PGF2α'ya yanıt yoksa; endometriumu tahriş edebilir, sütte kalıntı ve arınma süresine dikkat.",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }

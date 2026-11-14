@@ -275,6 +275,7 @@
       { "id": "halsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "kotu_kokulu_diski", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "karin_genislemesi", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "balotman_calkanti", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "ataksi", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "yatma_kalkamama", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "korluk", "agirlik": "olasi", "yoklugu_dusurur": false },
@@ -306,6 +307,8 @@
         { "etkenId": "kalsiyum_boroglukonat", "sinif": "metabolik", "sira": 2, "yol": "IV / SC", "not": "Eşlik eden hipokalsemi şüphesinde",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
         { "etkenId": "tiamin", "sinif": "metabolik", "sira": 2, "yol": "IM / IV", "not": "Körlük ya da sinir belirtisi gelişirse",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } },
+        { "etkenId": "magnezyum_oksit", "sinif": "metabolik", "sira": 2, "yol": "Ağızdan (sonda ile rumene)", "not": "Hafif-orta olguda rumen içi alkalileştirici; ağır olguda sıvı tedavisi ve rumen boşaltma önceliklidir. Ruhsatlı ilaç ürünü bulunmadı",
           "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
       ],
       "destekleyici": [
@@ -428,7 +431,9 @@
       { "id": "aseton_kokusu", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "karin_genislemesi", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "dehidrasyon", "agirlik": "olasi", "yoklugu_dusurur": false },
-      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false }
+      { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "diski_azligi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "balotman_calkanti", "agirlik": "olasi", "yoklugu_dusurur": false }
     ],
     "dislayicilar": [],
     "ayiriciTani": ["ketozis", "travmatik_retikuloperitonit", "puerperal_metritis", "yag_karaciger", "timpani"],
@@ -506,6 +511,7 @@
       { "id": "ates", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "timpani", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "kabizlik", "agirlik": "olasi", "yoklugu_dusurur": false },
+      { "id": "diski_azligi", "agirlik": "tipik", "yoklugu_dusurur": false },
       { "id": "dis_gicirdatma", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "tasikardi", "agirlik": "olasi", "yoklugu_dusurur": false },
       { "id": "kalp_sesi_bogukluk", "agirlik": "olasi", "yoklugu_dusurur": false },

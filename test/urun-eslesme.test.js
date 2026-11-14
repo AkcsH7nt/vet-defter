@@ -23,7 +23,9 @@ test('sulfonamidTrimetoprimBirlikteEslesir', () => {
   assert.deepEqual(coz(['sülfadiazin', 'trimetoprim']).ids, ['sulfonamid_trimetoprim']);
 });
 test('tetrasiklinOksitetrasikline Eslesmez'.replace(' ', ''), () => {
-  assert.deepEqual(coz(['tetrasiklin HCl']).ids, []);
+  // tetrasiklin ayrı etkendir: kendi kimliğine eşlenir, oksitetrasikline asla.
+  assert.deepEqual(coz(['tetrasiklin HCl']).ids, ['tetrasiklin']);
+  assert.deepEqual(coz(['oksitetrasiklin dihidrat']).ids, ['oksitetrasiklin']);
 });
 test('kalsiyumKlorurYalnizOralde', () => {
   assert.deepEqual(coz(['kalsiyum klorür'], 'perfüzyon').ids, []);

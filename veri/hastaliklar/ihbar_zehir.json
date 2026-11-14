@@ -539,6 +539,11 @@
         "yoklugu_dusurur": false
       },
       {
+        "id": "higroma",
+        "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
         "id": "sut_verimi_dususu",
         "agirlik": "olasi",
         "yoklugu_dusurur": false
@@ -670,6 +675,11 @@
       {
         "id": "ates",
         "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kronik_seyir",
+        "agirlik": "tipik",
         "yoklugu_dusurur": false
       }
     ],
@@ -1454,6 +1464,11 @@
         "id": "bas_bastirma",
         "agirlik": "olasi",
         "yoklugu_dusurur": false
+      },
+      {
+        "id": "kronik_seyir",
+        "agirlik": "tipik",
+        "yoklugu_dusurur": false
       }
     ],
     "ayiriciTani": [
@@ -1808,6 +1823,11 @@
       {
         "id": "ates",
         "agirlik": "olasi",
+        "yoklugu_dusurur": false
+      },
+      {
+        "id": "kronik_seyir",
+        "agirlik": "tipik",
         "yoklugu_dusurur": false
       }
     ],
@@ -2299,6 +2319,18 @@
           }
         },
         {
+          "etkenId": "pralidoksim",
+          "sinif": "diger",
+          "sira": 2,
+          "yol": "IV (yavaş) / IM",
+          "not": "Atropinle birlikte, zehirlenmeden sonra erken (enzim 'yaşlanmadan'); kas titremesi ve güçsüzlükte. Türkiye'de sığır için ruhsatlı ürünü yok ve kalıntı limiti statüsü doğrulanmadı — hekim kararı.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
           "etkenId": "aktif_komur",
           "sinif": "diger",
           "sira": 1,
@@ -2329,7 +2361,7 @@
     ],
     "notlar": [
       "Sayfa numaraları eklenecek.",
-      "Oksim (pralidoksim) etkenler listesinde yok; eklenmesi önerildi (rapor)."
+      "Pralidoksim sira 2 olarak eklendi; ruhsatlı sığır ürünü yok ve MRL statüsü doğrulanmadı (statüsü yoksa yasaklar.json'a taşınmalı)."
     ],
     "onay": {
       "durum": "taslak"
@@ -2453,6 +2485,18 @@
     "protokol": {
       "ilaclar": [
         {
+          "etkenId": "kalsiyum_disodyum_edta",
+          "sinif": "diger",
+          "sira": 1,
+          "yol": "IV (yavaş) / SC",
+          "not": "Şelasyonun temel ilacı; tiaminle birlikte, aralıklı kürler hâlinde. Kalsiyumsuz disodyum EDTA ile karıştırılmaz. Türkiye'de sığır için ruhsatlı ürünü yok ve kalıntı limiti statüsü doğrulanmadı — hekim kararı.",
+          "kaynak": {
+            "tur": "KUB",
+            "urun": null,
+            "bolum": null
+          }
+        },
+        {
           "etkenId": "tiamin",
           "sinif": "metabolik",
           "sira": 1,
@@ -2494,7 +2538,7 @@
     ],
     "notlar": [
       "Sayfa numaraları eklenecek.",
-      "Kalsiyum disodyum EDTA (şelasyon) etkenler listesinde yok; eklenmesi önerildi (rapor). Türkiye'de sığır için ruhsatlı ürünü olup olmadığı doğrulanmalı."
+      "Kalsiyum disodyum EDTA sira 1 olarak eklendi; ruhsatlı sığır ürünü yok ve MRL statüsü doğrulanmadı (statüsü yoksa yasaklar.json'a taşınmalı)."
     ],
     "onay": {
       "durum": "taslak"
