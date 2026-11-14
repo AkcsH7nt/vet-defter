@@ -340,6 +340,31 @@ test('mevsimOrnekVerideSiraDegistirir', async () => {
   assert.deepEqual(idler(puanla(g, veri, MEVSIM_ICI)).slice(0, 2), ['ornek_ishal', 'ornek_solunum']);
 });
 
+test('nadirIlgisizBelirtiSkoruArtirmaz', async () => {
+  const veri = await ornek();
+  // vezikul_agiz genelSiklik 0,02 < 0,03; ornek_ishal listesinde de dışlayıcılarında da yok.
+  const g = girdi({ belirtiler: ['diare', 'dehidrasyon'] });
+  const once = bul(puanla(g, veri, MEVSIM_DISI), 'ornek_ishal');
+  const sonra = bul(puanla({ ...g, belirtiler: [...g.belirtiler, 'vezikul_agiz'] }, veri, MEVSIM_DISI), 'ornek_ishal');
+  assert.ok(sonra.skor <= once.skor, `${once.skor} → ${sonra.skor}`);
+});
+
+test('listedeOlmayanBelirtiHicbirHastaligiYukseltmez', async () => {
+  const veri = await ornek();
+  const secilebilir = veri.belirtiler.filter((b) => b.secilebilir !== false).map((b) => b.id);
+  for (const g of rastgeleGirdiler(veri, 100, 5)) {
+    const once = puanla(g, veri, MEVSIM_DISI);
+    for (const s of once) {
+      const h = veri.hastaliklar.find((x) => x.id === s.id);
+      for (const id of secilebilir) {
+        if (h.belirtiler.some((b) => b.id === id) || g.belirtiler.includes(id)) continue;
+        const t = bul(puanla({ ...g, belirtiler: [...g.belirtiler, id] }, veri, MEVSIM_DISI), s.id);
+        assert.ok(t.skor <= s.skor + 1e-12, `${s.id} + ${id}: ${s.skor} → ${t.skor}`);
+      }
+    }
+  }
+});
+
 test('esitSkordaAdaGoreKararli', async () => {
   const veri = await ornek();
   const sablon = kopya(veri.hastaliklar.find((h) => h.id === 'ornek_ishal'));
