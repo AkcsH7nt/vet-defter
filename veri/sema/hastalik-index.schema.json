@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hastalik-index.schema.json",
+  "title": "veri/hastaliklar/index.json",
+  "description": "Hastalık grup dosyalarının adları; lib/veri.js veriYukle bu sırayla okuyup birleştirir.",
+  "type": "array",
+  "items": { "type": "string", "pattern": "^[a-z0-9_]+[.]json$" }
+}

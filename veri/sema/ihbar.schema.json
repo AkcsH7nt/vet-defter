@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ihbar.schema.json",
+  "title": "veri/ihbar.json",
+  "description": "İhbarı mecburi hastalıklar. Öge kimlikleri hastalık kimlikleriyle aynıdır: listede olan bir hastalık ihbari: true olmalı, ihbari: true olan hastalık listede bulunmalı. dogrulandi: hekim yürürlükteki metinle karşılaştırdı mı; emin: derleyenin güveni.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kaynak", "kaynakTarihi", "ogeler"],
+  "properties": {
+    "kaynak": { "$ref": "ortak.schema.json#/$defs/metin" },
+    "kaynakTarihi": { "type": ["string", "null"], "description": "Resmî Gazete tarihi; doğrulanmadıysa null." },
+    "not": { "$ref": "ortak.schema.json#/$defs/metin" },
+    "ogeler": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "ad", "emin", "dogrulandi"],
+        "properties": {
+          "id": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+          "ad": { "$ref": "ortak.schema.json#/$defs/metin" },
+          "emin": { "type": "boolean" },
+          "dogrulandi": { "type": "boolean" },
+          "not": { "$ref": "ortak.schema.json#/$defs/metin" }
+        }
+      }
+    }
+  }
+}

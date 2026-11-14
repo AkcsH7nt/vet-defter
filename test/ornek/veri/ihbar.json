@@ -1,0 +1,8 @@
+{
+  "kaynak": "Test verisi (gerçek mevzuat değildir)",
+  "kaynakTarihi": null,
+  "not": "Yalnız testler için.",
+  "ogeler": [
+    { "id": "ornek_ihbar", "ad": "Örnek ihbarlı hastalık", "emin": true, "dogrulandi": false }
+  ]
+}

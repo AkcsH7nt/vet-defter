@@ -1,6 +1,7 @@
 // İskelet testi: 390x844'te açılır, 4 gezinme düğmesi görünür, bilinmeyen kimlik "Bulunamadı" gösterir, konsol temiz.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 import { sunucuBaslat } from '../../scripts/sunucu.mjs';
 
@@ -43,9 +44,12 @@ test('varsayilanRotaTani', async () => {
 
 test('gezinmeRotaDegistirir', async () => {
   await sayfa.click('nav a[href="#/ilaclar"]');
+  // hashchange sonrası çizim eşzamansız: başlığın değişmesini bekle.
+  await sayfa.waitForSelector('main h1:text-is("İlaçlar")');
   assert.equal(await sayfa.textContent('main h1'), 'İlaçlar');
   assert.equal(await sayfa.locator('nav a[aria-current="page"]').textContent(), 'İlaçlar');
   await sayfa.click('nav a[href="#/hakkinda"]');
+  await sayfa.waitForSelector('main h1:text-is("Hakkında")');
   assert.match(await sayfa.textContent('main'), /Hekim kararının yerine geçmez/);
 });
 
@@ -60,11 +64,24 @@ test('olasilikKelimesiGecmez', async () => {
   assert.doesNotMatch((await sayfa.textContent('body')).toLowerCase(), /olasılık/);
 });
 
+test('veriTarayicidaYuklenir', async () => {
+  const sonuc = await sayfa.evaluate(async () => {
+    const { veriYukle } = await import('./lib/veri.js');
+    const v = await veriYukle();
+    return { anahtarlar: Object.keys(v).sort(), semaSurumu: v.meta.semaSurumu, hastaliklarDizi: Array.isArray(v.hastaliklar) };
+  });
+  assert.deepEqual(sonuc.anahtarlar, ['bayraklar', 'belirtiler', 'etkenler', 'hastaliklar', 'ihbar', 'meta', 'urunler', 'yasaklar']);
+  assert.equal(sonuc.semaSurumu, 1);
+  assert.ok(sonuc.hastaliklarDizi);
+});
+
 test('serviceWorkerKaydolurVeKonsolTemiz', async () => {
   const surum = await sayfa.evaluate(async () => {
     await navigator.serviceWorker.ready;
     return (await caches.keys())[0];
   });
-  assert.equal(surum, 'vet-defter-v1');
+  // Beklenen sürüm sw.js'den okunur: SURUM her yayında artar, test elle güncellenmez.
+  const beklenen = readFileSync(new URL('../../sw.js', import.meta.url), 'utf8').match(/const SURUM = '([^']+)'/)[1];
+  assert.equal(surum, beklenen);
   assert.deepEqual(hatalar, []);
 });

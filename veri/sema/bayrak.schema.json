@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bayrak.schema.json",
+  "title": "veri/bayraklar.json",
+  "description": "Puandan bağımsız kırmızı bayrak kuralları. hastalikId ve koşuldaki belirti kimlikleri var olmalı; hepsi/herhangi'den en az biri dolu.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "hastalikId", "kosul", "baslik", "uyarilar", "onay"],
+    "properties": {
+      "id": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+      "hastalikId": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+      "kosul": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hepsi"],
+        "properties": {
+          "hepsi": { "type": "array", "items": { "$ref": "ortak.schema.json#/$defs/kimlik" } },
+          "herhangi": { "type": "array", "items": { "$ref": "ortak.schema.json#/$defs/kimlik" } },
+          "baglam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": { "aniOlum": { "const": true }, "suru": { "const": true }, "dogumSonrasi": { "const": true } }
+          }
+        }
+      },
+      "baslik": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "uyarilar": { "$ref": "ortak.schema.json#/$defs/metinler" },
+      "onay": { "$ref": "ortak.schema.json#/$defs/onay" }
+    }
+  }
+}

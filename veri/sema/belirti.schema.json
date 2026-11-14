@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "belirti.schema.json",
+  "title": "veri/belirtiler.json",
+  "description": "Belirti sözlüğü. 'ates' ve 'hipotermi' sözlükte bulunur ama secilebilir: false (ısıdan türetilir).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "ad", "sistem", "esAnlamlilar", "tur", "genelSiklik"],
+    "properties": {
+      "id": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+      "ad": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "sistem": { "enum": ["genel", "solunum", "sindirim", "meme", "ureme", "metabolik", "deri", "ayak", "sinir", "kan", "goz"] },
+      "esAnlamlilar": { "$ref": "ortak.schema.json#/$defs/metinler" },
+      "tur": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "ortak.schema.json#/$defs/tur" } },
+      "genelSiklik": { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1, "description": "Belirtinin sahadaki hasta sığırlarda genel görülme sıklığı (uyum puanında payda)." },
+      "secilebilir": { "type": "boolean", "description": "false ise arama/seçimde çıkmaz. ates ve hipotermi için false zorunlu." }
+    }
+  }
+}

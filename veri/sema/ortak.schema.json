@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ortak.schema.json",
+  "title": "Ortak tanımlar",
+  "$defs": {
+    "kimlik": { "type": "string", "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$", "description": "Küçük harf ASCII snake_case." },
+    "metin": { "type": "string", "minLength": 1 },
+    "metinler": { "type": "array", "items": { "$ref": "#/$defs/metin" } },
+    "tarih": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}" },
+    "tur": { "enum": ["sigir"], "description": "İlk sürümde yalnız sığır." },
+    "sinif": { "enum": ["antimikrobiyal", "antiparaziter", "nsaii", "metabolik", "diger"] },
+    "onay": {
+      "type": "object",
+      "description": "Hekim onayı. durum 'onayli' ise kim, tarih ve icerikOzeti zorunludur ve icerikOzeti lib/onay.js icerikOzeti(kayit) ile tutmalıdır (onay alanı hariç, anahtarları sıralı JSON'un FNV-1a 32-bit onaltılığı). İçerik değişince özet tutmaz → kayıt taslak sayılır.",
+      "additionalProperties": false,
+      "required": ["durum"],
+      "properties": {
+        "durum": { "enum": ["taslak", "onayli"] },
+        "kim": { "$ref": "#/$defs/metin" },
+        "tarih": { "$ref": "#/$defs/tarih" },
+        "icerikOzeti": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+      },
+      "if": { "properties": { "durum": { "const": "onayli" } } },
+      "then": { "required": ["durum", "kim", "tarih", "icerikOzeti"] }
+    },
+    "baglamDegeri": {
+      "enum": ["zorunlu", "destekler"],
+      "description": "zorunlu: girdide bu bağlam işaretli değilse hastalık sonuç listesine girmez. destekler: bilgi amaçlı, bağlamla uyumlu."
+    }
+  }
+}

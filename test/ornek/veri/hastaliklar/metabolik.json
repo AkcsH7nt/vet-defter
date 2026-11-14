@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ornek_metabolik",
+    "ad": "Örnek doğum sonrası metabolik hastalık (test)",
+    "grup": "metabolik",
+    "tur": ["sigir"],
+    "yasGruplari": ["inek"],
+    "baglam": { "dogumSonrasi": "zorunlu" },
+    "yayginlik": "orta",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 36.0, "max": 38.5 },
+    "belirtiler": [
+      { "id": "yatma", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "hipotermi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "kas_titremesi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["ates"],
+    "ayiriciTani": [],
+    "sahadaDogrula": [],
+    "uyarilar": [],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "ornek_mineral", "sinif": "metabolik", "sira": 1, "yol": "IV", "not": null,
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": [],
+      "bakim": [],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Örnek metabolik",
+    "onay": { "durum": "taslak" }
+  }
+]

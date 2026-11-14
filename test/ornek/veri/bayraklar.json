@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ornek_ihbar_bayragi",
+    "hastalikId": "ornek_ihbar",
+    "kosul": { "hepsi": ["vezikul_agiz", "salya", "topallik"] },
+    "baslik": "ÖRNEK İHBAR ŞÜPHESİ — İHBAR EDİN",
+    "uyarilar": ["Örnek uyarı: hayvanı ayırın"],
+    "onay": { "durum": "taslak" }
+  }
+]

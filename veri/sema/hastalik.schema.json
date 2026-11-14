@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hastalik.schema.json",
+  "title": "veri/hastaliklar/<grup>.json",
+  "description": "Bir grup dosyasındaki hastalıklar (spec §8). scripts/dogrula.mjs ek kuralları: belirti/etken/hastalık kimlikleri var olmalı; ihbari ise protokol.ihbarAdimlari boş olamaz ve id veri/ihbar.json'da bulunmalı (listede olan hastalık ihbari: true olmalı); tedaviKipi yasak|yok iken ilaclar boş; her ilaç satırında kaynak { tur: KUB }; yasaklar.json'daki madde (kimlik ya da ad) protokolde geçemez; AMEG A etken protokolde geçemez; antibiyotikEndikeDegil iken antimikrobiyal geçemez; ilaç satırının sinif'i etkenin sinif'i ile aynı; bir belirti hem beklenen hem dışlayıcı olamaz; onayli kayıtta özet tutmalı.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "ad", "grup", "tur", "yasGruplari", "baglam", "yayginlik", "ihbari", "zoonoz", "tedaviKipi", "isi",
+      "belirtiler", "dislayicilar", "ayiriciTani", "sahadaDogrula", "uyarilar", "protokol", "antibiyotikEndikeDegil", "agrivetAd", "onay"],
+    "properties": {
+      "id": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+      "ad": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "grup": { "enum": ["solunum", "sindirim", "meme_ureme", "metabolik", "deri_ayak", "kan_parazit", "ihbar_zehir"] },
+      "tur": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "ortak.schema.json#/$defs/tur" } },
+      "yasGruplari": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["buzagi", "dana", "duve", "inek", "boga"] } },
+      "baglam": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dogumSonrasi": { "$ref": "ortak.schema.json#/$defs/baglamDegeri" },
+          "suru": { "$ref": "ortak.schema.json#/$defs/baglamDegeri" },
+          "aniOlum": { "$ref": "ortak.schema.json#/$defs/baglamDegeri" }
+        }
+      },
+      "yayginlik": { "enum": ["sik", "orta", "nadir"] },
+      "mevsim": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "integer", "minimum": 1, "maximum": 12 }, "description": "Hastalığın sık görüldüğü aylar (1–12)." },
+      "ihbari": { "type": "boolean" },
+      "zoonoz": { "type": "boolean" },
+      "tedaviKipi": { "enum": ["yasak", "yok", "semptomatik", "normal"] },
+      "isi": {
+        "oneOf": [
+          { "type": "null" },
+          {
+            "type": "object", "additionalProperties": false, "required": ["min", "max"],
+            "properties": { "min": { "type": "number", "minimum": 30, "maximum": 45 }, "max": { "type": "number", "minimum": 30, "maximum": 45 } },
+            "description": "Beklenen vücut ısısı aralığı (°C), min ≤ max."
+          }
+        ]
+      },
+      "belirtiler": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "agirlik", "yoklugu_dusurur"],
+          "properties": {
+            "id": { "$ref": "ortak.schema.json#/$defs/kimlik", "description": "belirtiler.json kimliği." },
+            "agirlik": { "enum": ["kardinal", "tipik", "olasi"] },
+            "yoklugu_dusurur": { "type": "boolean" }
+          }
+        }
+      },
+      "dislayicilar": { "type": "array", "items": { "$ref": "ortak.schema.json#/$defs/kimlik" }, "description": "Varlığı bu hastalığı büyük ölçüde dışlayan belirti kimlikleri." },
+      "ayiriciTani": { "type": "array", "items": { "$ref": "ortak.schema.json#/$defs/kimlik" }, "description": "Hastalık kimlikleri (kendisi hariç); veri setinde var olmalı." },
+      "sahadaDogrula": { "$ref": "ortak.schema.json#/$defs/metinler" },
+      "uyarilar": { "$ref": "ortak.schema.json#/$defs/metinler" },
+      "protokol": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ilaclar", "destekleyici", "bakim", "ihbarAdimlari"],
+        "properties": {
+          "ilaclar": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["etkenId", "sinif", "sira", "yol", "kaynak"],
+              "properties": {
+                "etkenId": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+                "sinif": { "$ref": "ortak.schema.json#/$defs/sinif" },
+                "sira": { "enum": [1, 2], "description": "1. ya da 2. seçenek." },
+                "yol": { "$ref": "ortak.schema.json#/$defs/metin" },
+                "not": { "type": ["string", "null"] },
+                "kaynak": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["tur", "urun", "bolum"],
+                  "description": "Doz yalnız ürün KÜB'ünden gelir. Ürün belirlenmemişse urun ve bolum null (doz gösterilmez).",
+                  "properties": {
+                    "tur": { "const": "KUB" },
+                    "urun": { "type": ["string", "null"] },
+                    "bolum": { "type": ["string", "null"] }
+                  }
+                }
+              }
+            }
+          },
+          "destekleyici": { "$ref": "ortak.schema.json#/$defs/metinler" },
+          "bakim": { "$ref": "ortak.schema.json#/$defs/metinler" },
+          "ihbarAdimlari": { "$ref": "ortak.schema.json#/$defs/metinler" }
+        }
+      },
+      "antibiyotikEndikeDegil": { "type": "boolean" },
+      "agrivetAd": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "kaynaklar": { "type": "array", "description": "Bilinmiyorsa [] — uydurma kaynak yasak." },
+      "notlar": { "type": ["string", "array"] },
+      "onay": { "$ref": "ortak.schema.json#/$defs/onay" }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "yasaklar.schema.json",
+  "title": "veri/yasaklar.json",
+  "description": "Gıda hayvanında yasak maddeler. Öge kimliği bir etken kimliğiyle ya da adı bir etken adıyla (Türkçe harfler sadeleştirilerek) eşleşirse o etken hiçbir protokolde geçemez.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kaynak", "kaynakTarihi", "ogeler"],
+  "properties": {
+    "kaynak": { "$ref": "ortak.schema.json#/$defs/metin" },
+    "kaynakTarihi": { "type": ["string", "null"] },
+    "not": { "$ref": "ortak.schema.json#/$defs/metin" },
+    "ogeler": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "ad", "aciklama", "dogrulandi"],
+        "properties": {
+          "id": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+          "ad": { "$ref": "ortak.schema.json#/$defs/metin" },
+          "aciklama": { "$ref": "ortak.schema.json#/$defs/metin" },
+          "dogrulandi": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

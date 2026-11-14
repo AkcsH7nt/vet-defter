@@ -18,6 +18,7 @@ npm run sunucu        # http://localhost:5180
 ```
 npm test              # birim testleri (test/*.test.js)
 npm run test:tarayici # uçtan uca testler (Playwright, sistem Chrome)
+npm run dogrula       # veri/ doğrulaması (spec §8 kuralları); başka kök: node scripts/dogrula.mjs test/ornek
 ```
 
 ## Notlar

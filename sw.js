@@ -1,9 +1,15 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince SURUM artırılmalı.
-const SURUM = 'vet-defter-v1';
+const SURUM = 'vet-defter-v2';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js', 'ui/ortak.js',
   'manifest.webmanifest', 'ikon.svg', 'ikon-192.png', 'ikon-512.png', 'apple-touch-icon.png',
+  'lib/veri.js', 'lib/onay.js',
+  'veri/meta.json', 'veri/belirtiler.json', 'veri/etkenler.json', 'veri/bayraklar.json',
+  'veri/ihbar.json', 'veri/yasaklar.json', 'veri/urunler.json',
+  'veri/hastaliklar/index.json', 'veri/hastaliklar/solunum.json', 'veri/hastaliklar/sindirim.json',
+  'veri/hastaliklar/meme_ureme.json', 'veri/hastaliklar/metabolik.json', 'veri/hastaliklar/deri_ayak.json',
+  'veri/hastaliklar/kan_parazit.json', 'veri/hastaliklar/ihbar_zehir.json',
 ];
 
 self.addEventListener('install', (o) => {

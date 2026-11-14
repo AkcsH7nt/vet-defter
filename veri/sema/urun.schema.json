@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urun.schema.json",
+  "title": "veri/urunler.json",
+  "description": "Ruhsatlı ürünler (Bakanlık sorgusundan). et_gun: 0 gün ile bilinmiyor (null) ayrıdır. sut: { saat } | kullanilmaz | belirtilmemis. kubDogrulandi null iken doz gösterilmez.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["ad", "firma", "form", "etkenler", "hedefTurler", "kubUrl", "cekilmeTarihi", "kub", "kubDogrulandi"],
+    "properties": {
+      "ad": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "firma": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "form": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "etkenler": { "type": "array", "minItems": 1, "items": { "$ref": "ortak.schema.json#/$defs/kimlik" }, "description": "etkenler.json kimlikleri." },
+      "hedefTurler": { "type": "array", "minItems": 1, "items": { "$ref": "ortak.schema.json#/$defs/kimlik" }, "description": "Tür kimlikleri: sigir, koyun, keci…" },
+      "kubUrl": { "type": ["string", "null"], "pattern": "^https?://" },
+      "cekilmeTarihi": { "$ref": "ortak.schema.json#/$defs/tarih" },
+      "kub": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tur", "yol", "doz", "et_gun", "sut"],
+          "properties": {
+            "tur": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+            "yol": { "$ref": "ortak.schema.json#/$defs/metin" },
+            "doz": {
+              "oneOf": [
+                { "type": "null" },
+                {
+                  "type": "object", "additionalProperties": false, "required": ["miktar", "birim", "aralik", "sure"],
+                  "properties": {
+                    "miktar": { "type": "number", "exclusiveMinimum": 0 },
+                    "birim": { "$ref": "ortak.schema.json#/$defs/metin", "description": "ör. mg/kg" },
+                    "aralik": { "type": ["string", "null"] },
+                    "sure": { "type": ["string", "null"] }
+                  }
+                }
+              ]
+            },
+            "et_gun": { "type": ["integer", "null"], "minimum": 0 },
+            "sut": {
+              "oneOf": [
+                { "type": "object", "additionalProperties": false, "required": ["saat"], "properties": { "saat": { "type": "number", "minimum": 0 } } },
+                { "enum": ["kullanilmaz", "belirtilmemis"] }
+              ]
+            }
+          }
+        }
+      },
+      "kubDogrulandi": {
+        "oneOf": [
+          { "type": "null" },
+          {
+            "type": "object", "additionalProperties": false, "required": ["kim", "tarih"],
+            "properties": { "kim": { "$ref": "ortak.schema.json#/$defs/metin" }, "tarih": { "$ref": "ortak.schema.json#/$defs/tarih" } }
+          }
+        ]
+      }
+    }
+  }
+}

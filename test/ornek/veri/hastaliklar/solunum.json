@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ornek_solunum",
+    "ad": "Örnek solunum hastalığı (test)",
+    "grup": "solunum",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi", "dana"],
+    "baglam": { "suru": "destekler" },
+    "yayginlik": "sik",
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "normal",
+    "isi": { "min": 39.5, "max": 41.5 },
+    "belirtiler": [
+      { "id": "ates", "agirlik": "kardinal", "yoklugu_dusurur": false },
+      { "id": "oksuruk", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "burun_akintisi", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "solunum_guclugu", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": ["vezikul_agiz"],
+    "ayiriciTani": ["ornek_ihbar"],
+    "sahadaDogrula": ["Örnek: akciğer sesleri dinlenir"],
+    "uyarilar": [],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "ornek_antibiyotik", "sinif": "antimikrobiyal", "sira": 1, "yol": "IM", "not": "Örnek satır",
+          "kaynak": { "tur": "KUB", "urun": "Örnek Ürün %10 (test)", "bolum": "4.9" } },
+        { "etkenId": "ornek_nsaii", "sinif": "nsaii", "sira": 1, "yol": "IV", "not": null,
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": ["Örnek: sıvı desteği"],
+      "bakim": ["Örnek: havalandırma"],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": false,
+    "agrivetAd": "Örnek pnömoni",
+    "onay": { "durum": "onayli", "kim": "test", "tarih": "2026-11-14", "icerikOzeti": "54451b75" }
+  }
+]

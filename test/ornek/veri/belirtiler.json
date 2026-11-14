@@ -1,0 +1,16 @@
+[
+  { "id": "ates", "ad": "Ateş", "sistem": "genel", "esAnlamlilar": ["yüksek ısı", "hipertermi"], "tur": ["sigir"], "genelSiklik": 0.3, "secilebilir": false },
+  { "id": "hipotermi", "ad": "Düşük vücut ısısı", "sistem": "genel", "esAnlamlilar": ["hipotermi"], "tur": ["sigir"], "genelSiklik": 0.05, "secilebilir": false },
+  { "id": "istahsizlik", "ad": "İştahsızlık", "sistem": "genel", "esAnlamlilar": ["yem yememe", "anoreksi"], "tur": ["sigir"], "genelSiklik": 0.4 },
+  { "id": "dehidrasyon", "ad": "Su kaybı", "sistem": "genel", "esAnlamlilar": ["dehidrasyon", "göz çukurlaşması"], "tur": ["sigir"], "genelSiklik": 0.15 },
+  { "id": "yatma", "ad": "Kalkamama / yatma", "sistem": "genel", "esAnlamlilar": ["yatalak", "kalkamıyor"], "tur": ["sigir"], "genelSiklik": 0.05 },
+  { "id": "oksuruk", "ad": "Öksürük", "sistem": "solunum", "esAnlamlilar": ["öksürme"], "tur": ["sigir"], "genelSiklik": 0.15 },
+  { "id": "burun_akintisi", "ad": "Burun akıntısı", "sistem": "solunum", "esAnlamlilar": ["nazal akıntı"], "tur": ["sigir"], "genelSiklik": 0.15 },
+  { "id": "solunum_guclugu", "ad": "Solunum güçlüğü", "sistem": "solunum", "esAnlamlilar": ["dispne", "hızlı soluma"], "tur": ["sigir"], "genelSiklik": 0.1 },
+  { "id": "diare", "ad": "İshal", "sistem": "sindirim", "esAnlamlilar": ["ishal", "sulu dışkı"], "tur": ["sigir"], "genelSiklik": 0.2 },
+  { "id": "salya", "ad": "Salya akıtma", "sistem": "sindirim", "esAnlamlilar": ["ağızdan köpük", "hipersalivasyon"], "tur": ["sigir"], "genelSiklik": 0.05 },
+  { "id": "vezikul_agiz", "ad": "Ağızda kabarcık / yara", "sistem": "sindirim", "esAnlamlilar": ["vezikül", "aft"], "tur": ["sigir"], "genelSiklik": 0.02 },
+  { "id": "topallik", "ad": "Topallık", "sistem": "ayak", "esAnlamlilar": ["aksama"], "tur": ["sigir"], "genelSiklik": 0.1 },
+  { "id": "kas_titremesi", "ad": "Kas titremesi", "sistem": "sinir", "esAnlamlilar": ["tremor"], "tur": ["sigir"], "genelSiklik": 0.05 },
+  { "id": "abort", "ad": "Yavru atma", "sistem": "ureme", "esAnlamlilar": ["abort", "düşük"], "tur": ["sigir"], "genelSiklik": 0.03 }
+]

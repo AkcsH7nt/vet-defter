@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "etken.schema.json",
+  "title": "veri/etkenler.json",
+  "description": "Etken maddeler ve etki mekanizmaları. ameg yalnız antimikrobiyalde (zorunlu); A: gıda hayvanında kullanılmaz (protokolde geçerse hata), B: antibiyogramsız ilk seçenek olmaz.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "ad", "sinif", "atcvet", "mekanizma", "onay"],
+    "properties": {
+      "id": { "$ref": "ortak.schema.json#/$defs/kimlik" },
+      "ad": { "$ref": "ortak.schema.json#/$defs/metin" },
+      "sinif": { "$ref": "ortak.schema.json#/$defs/sinif" },
+      "atcvet": { "type": ["string", "null"], "description": "ATCvet kodu, ör. QJ01AA06; bilinmiyorsa null." },
+      "ameg": { "enum": ["A", "B", "C", "D", null], "description": "EMA AMEG kategorisi; antimikrobiyalde zorunlu, diğerlerinde yok ya da null." },
+      "mekanizma": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hedef", "etki", "tur", "spektrum", "etkilesimler", "kaynak"],
+        "properties": {
+          "hedef": { "$ref": "ortak.schema.json#/$defs/metin" },
+          "etki": { "$ref": "ortak.schema.json#/$defs/metin" },
+          "tur": { "$ref": "ortak.schema.json#/$defs/metin", "description": "bakterisit | bakteriyostatik | ilaç sınıfına uygun karşılığı (ör. COX inhibitörü)." },
+          "spektrum": { "type": ["string", "null"] },
+          "kinetik": { "$ref": "ortak.schema.json#/$defs/metin", "description": "İsteğe bağlı: zamana / konsantrasyona bağımlı." },
+          "direnc": { "$ref": "ortak.schema.json#/$defs/metin" },
+          "etkilesimler": { "$ref": "ortak.schema.json#/$defs/metinler" },
+          "kaynak": { "description": "Kaynak (metin ya da nesne); bilinmiyorsa null — uydurma kaynak yasak." }
+        }
+      },
+      "kaynaklar": { "type": "array" },
+      "notlar": { "type": ["string", "array"] },
+      "onay": { "$ref": "ortak.schema.json#/$defs/onay" }
+    },
+    "if": { "properties": { "sinif": { "const": "antimikrobiyal" } } },
+    "then": { "required": ["ameg"], "properties": { "ameg": { "enum": ["A", "B", "C", "D"] } } }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ornek_ishal",
+    "ad": "Örnek buzağı ishali (test)",
+    "grup": "sindirim",
+    "tur": ["sigir"],
+    "yasGruplari": ["buzagi"],
+    "baglam": {},
+    "yayginlik": "sik",
+    "mevsim": [3, 4, 5],
+    "ihbari": false,
+    "zoonoz": false,
+    "tedaviKipi": "semptomatik",
+    "isi": null,
+    "belirtiler": [
+      { "id": "diare", "agirlik": "kardinal", "yoklugu_dusurur": true },
+      { "id": "dehidrasyon", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "istahsizlik", "agirlik": "tipik", "yoklugu_dusurur": false },
+      { "id": "ates", "agirlik": "olasi", "yoklugu_dusurur": false }
+    ],
+    "dislayicilar": [],
+    "ayiriciTani": [],
+    "sahadaDogrula": [],
+    "uyarilar": [],
+    "protokol": {
+      "ilaclar": [
+        { "etkenId": "ornek_nsaii", "sinif": "nsaii", "sira": 2, "yol": "IV", "not": "Örnek satır",
+          "kaynak": { "tur": "KUB", "urun": null, "bolum": null } }
+      ],
+      "destekleyici": ["Örnek: ağızdan sıvı"],
+      "bakim": [],
+      "ihbarAdimlari": []
+    },
+    "antibiyotikEndikeDegil": true,
+    "agrivetAd": "Örnek ishal",
+    "onay": { "durum": "taslak" }
+  }
+]

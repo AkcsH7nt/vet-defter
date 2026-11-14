@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "meta.schema.json",
+  "title": "veri/meta.json",
+  "description": "Sürüm bilgisi. Sözleşme belgesidir; uygulayan: scripts/dogrula.mjs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["semaSurumu", "icerikSurumu", "urunListesiTarihi"],
+  "properties": {
+    "semaSurumu": { "type": "integer", "minimum": 1, "description": "Veri şekli değişince artar." },
+    "icerikSurumu": { "type": "string", "minLength": 1, "description": "İçerik sürümü, ör. 0.1.0." },
+    "urunListesiTarihi": { "type": ["string", "null"], "format": "date", "description": "Ruhsatlı ürün listesinin çekildiği tarih; liste yoksa null." }
+  }
+}

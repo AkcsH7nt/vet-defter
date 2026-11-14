@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ornek_antibiyotik",
+    "ad": "Örnek antibiyotik (test)",
+    "sinif": "antimikrobiyal",
+    "atcvet": null,
+    "ameg": "C",
+    "mekanizma": {
+      "hedef": "Örnek: bakteri ribozomu",
+      "etki": "Örnek: protein sentezini durdurur",
+      "tur": "bakteriyostatik",
+      "spektrum": "Örnek: geniş",
+      "kinetik": "zamana",
+      "direnc": "Örnek: yaygın",
+      "etkilesimler": ["Örnek etkileşim notu"],
+      "kaynak": null
+    },
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ornek_nsaii",
+    "ad": "Örnek NSAİİ (test)",
+    "sinif": "nsaii",
+    "atcvet": null,
+    "ameg": null,
+    "mekanizma": {
+      "hedef": "Örnek: COX enzimleri",
+      "etki": "Örnek: prostaglandin yapımını azaltır",
+      "tur": "COX inhibitörü",
+      "spektrum": null,
+      "etkilesimler": [],
+      "kaynak": null
+    },
+    "onay": { "durum": "taslak" }
+  },
+  {
+    "id": "ornek_mineral",
+    "ad": "Örnek mineral çözeltisi (test)",
+    "sinif": "metabolik",
+    "atcvet": null,
+    "mekanizma": {
+      "hedef": "Örnek: kan kalsiyum düzeyi",
+      "etki": "Örnek: eksik minerali yerine koyar",
+      "tur": "yerine koyma",
+      "spektrum": null,
+      "etkilesimler": [],
+      "kaynak": null
+    },
+    "onay": { "durum": "taslak" }
+  }
+]

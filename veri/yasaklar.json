@@ -1,0 +1,26 @@
+{
+  "kaynak": "Hayvansal gıdalarda farmakolojik olarak aktif maddelerin sınıflandırılması ve maksimum kalıntı limitleri hakkındaki yönetmelik (AB 37/2010 Ek, Tablo 2 'yasaklı maddeler' karşılığı) ile çiftlik hayvanlarında hormonal veya tireostatik etkili maddeler ve beta-agonistlerin kullanımının yasaklanmasına dair yönetmelik (AB 96/22/EC karşılığı). Yönetmelik adları yaklaşık yazılmıştır; tam ad, Resmî Gazete tarih ve sayısı doğrulanmalı.",
+  "kaynakTarihi": null,
+  "not": "Model bilgisinden derlenmiştir; yürürlükteki Resmî Gazete metniyle karşılaştırılmadı, hekim doğrulaması zorunludur. Doğrulayıcı (scripts/dogrula.mjs) bu listedeki kimlik ya da adla eşleşen bir etkenin herhangi bir protokolde geçmesini hata sayar. Beta-agonistler (ör. klenbuterol) büyütme amacıyla yasaktır, ancak bazı tedavi amaçlı kullanımlar (ör. doğumda uterus gevşetme) için istisna olabileceğinden otomatik yasak listesine alınmadı; 17β-östradiol ve esterleri gibi hormonların durumu da ayrıca doğrulanmalı.",
+  "ogeler": [
+    { "id": "kloramfenikol", "ad": "Kloramfenikol", "aciklama": "Gıda değeri olan hayvanlarda kullanımı yasak; güvenli kalıntı limiti belirlenemez. Florfenikol ve tiamfenikol ayrı maddelerdir, bu yasağın kapsamında değildir.", "dogrulandi": false },
+    { "id": "nitrofuranlar", "ad": "Nitrofuranlar", "aciklama": "Furazolidon dahil tüm nitrofuranlar (nitrofurazon, nitrofurantoin, furaltadon vb.); uygulama yolu fark etmeksizin gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "furazolidon", "ad": "Furazolidon", "aciklama": "Nitrofuran grubu; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "nitrofurazon", "ad": "Nitrofurazon", "aciklama": "Nitrofuran grubu (yara spreyi/merhemlerinde geçebilir); gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "nitrofurantoin", "ad": "Nitrofurantoin", "aciklama": "Nitrofuran grubu; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "furaltadon", "ad": "Furaltadon", "aciklama": "Nitrofuran grubu; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "nitroimidazoller", "ad": "Nitroimidazoller", "aciklama": "Metronidazol, dimetridazol ve ronidazol yasaklı maddeler arasında adıyla listelidir. Diğer nitroimidazollerin (ör. ipronidazol) gıda hayvanında kalıntı limiti yoktur; durumları doğrulanmalı.", "dogrulandi": false },
+    { "id": "metronidazol", "ad": "Metronidazol", "aciklama": "Nitroimidazol; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "dimetridazol", "ad": "Dimetridazol", "aciklama": "Nitroimidazol; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "ronidazol", "ad": "Ronidazol", "aciklama": "Nitroimidazol; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "klorpromazin", "ad": "Klorpromazin", "aciklama": "Fenotiyazin sakinleştirici; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "kolsisin", "ad": "Kolşisin", "aciklama": "Gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "dapson", "ad": "Dapson", "aciklama": "Gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "kloroform", "ad": "Kloroform", "aciklama": "Gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "aristolochia", "ad": "Aristolochia türleri ve preparatları", "aciklama": "Aristolochia spp. ve bunları içeren bitkisel preparatlar; gıda hayvanında yasak.", "dogrulandi": false },
+    { "id": "stilbenler", "ad": "Stilbenler", "aciklama": "Stilbenler, türevleri, tuzları ve esterleri (ör. dietilstilbestrol, heksestrol, dienestrol); çiftlik hayvanında amaç fark etmeksizin yasak.", "dogrulandi": false },
+    { "id": "dietilstilbestrol", "ad": "Dietilstilbestrol", "aciklama": "Stilben grubu; çiftlik hayvanında yasak.", "dogrulandi": false },
+    { "id": "tireostatikler", "ad": "Tireostatik maddeler", "aciklama": "Tiyourasil, metiltiyourasil, propiltiyourasil, metimazol (tiamazol) gibi tiroit baskılayıcılar; çiftlik hayvanında yasak.", "dogrulandi": false },
+    { "id": "fenilbutazon", "ad": "Fenilbutazon", "aciklama": "Yasaklı maddeler tablosunda değil, ancak gıda hayvanları için kalıntı limiti (MRL) belirlenmemiştir; bu yüzden süt ve et sığırında kullanılamaz. Türkiye'de sığır için ruhsatlı ürün bulunup bulunmadığı doğrulanmalı.", "dogrulandi": false }
+  ]
+}
