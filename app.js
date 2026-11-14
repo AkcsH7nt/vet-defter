@@ -1,39 +1,48 @@
 // Hash yönlendirici. Ekran modülleri: export function render(kok, veri, durum).
 // Task 7: aşağıdaki EKRANLAR içindeki `modul` alanlarına './ui/tani.js' gibi yollar yazılır.
-import { el, bulunamadi, sorumlulukNotu } from './ui/ortak.js';
+import { el, bulunamadi, girdiNormalize } from './ui/ortak.js';
+import { veriYukle } from './lib/veri.js';
+import { isiOku } from './lib/puan.js';
 
 const kok = document.getElementById('kok');
 
 // kimlik: true → rota bir kimlik ister (#/hastalik/<id>). Veri gelene kadar kimlikler bilinmez → Bulunamadı.
 const EKRANLAR = {
-  tani: { baslik: 'Tanı', modul: null, gezinme: 'tani' },
-  sonuc: { baslik: 'Sonuçlar', modul: null, gezinme: 'tani' },
-  hastalik: { baslik: 'Hastalık', modul: null, gezinme: 'hastaliklar', kimlik: true },
-  etken: { baslik: 'Etken madde', modul: null, gezinme: 'ilaclar', kimlik: true },
-  hastaliklar: { baslik: 'Hastalıklar', modul: null, gezinme: 'hastaliklar' },
-  ilaclar: { baslik: 'İlaçlar', modul: null, gezinme: 'ilaclar' },
-  hakkinda: { baslik: 'Hakkında', modul: null, gezinme: 'hakkinda' },
+  tani: { baslik: 'Tanı', modul: './ui/tani.js', gezinme: 'tani' },
+  sonuc: { baslik: 'Sonuçlar', modul: './ui/sonuc.js', gezinme: 'tani' },
+  hastalik: { baslik: 'Hastalık', modul: './ui/hastalik.js', gezinme: 'hastaliklar', kimlik: true },
+  etken: { baslik: 'Etken madde', modul: './ui/etken.js', gezinme: 'ilaclar', kimlik: true },
+  hastaliklar: { baslik: 'Hastalıklar', modul: './ui/listeler.js', gezinme: 'hastaliklar' },
+  ilaclar: { baslik: 'İlaçlar', modul: './ui/listeler.js', gezinme: 'ilaclar' },
+  hakkinda: { baslik: 'Hakkında', modul: './ui/hakkinda.js', gezinme: 'hakkinda' },
 };
 
 // Ekranlar arası paylaşılan durum (girdi: Task 4 Girdi). sessionStorage'da tutulur.
 const ANAHTAR = 'vet-defter-durum';
 function durumYukle() {
-  try {
-    const d = JSON.parse(sessionStorage.getItem(ANAHTAR));
-    if (d && typeof d === 'object') return d;
-  } catch { /* depolama kapalı ya da bozuk: boş durumla devam */ }
-  return { girdi: {} };
+  let ham = null;
+  try { ham = JSON.parse(sessionStorage.getItem(ANAHTAR))?.girdi; } catch { /* depolama kapalı ya da bozuk */ }
+  return girdiNormalize(ham, isiOku);
 }
-const durum = durumYukle();
+const durum = { girdi: durumYukle(), kaydet: durumKaydet };
 export function durumKaydet() {
-  try { sessionStorage.setItem(ANAHTAR, JSON.stringify(durum)); } catch { /* yoksay */ }
+  try { sessionStorage.setItem(ANAHTAR, JSON.stringify({ girdi: durum.girdi })); } catch { /* yoksay */ }
 }
 
-// Task 2-3 gelince veri/*.json burada yüklenecek.
-const veri = null;
+// Veri bir kez yüklenir; başarısızlıkta "Yeniden dene" ile tekrar denenir.
+let veriSozu = null;
+function veriIste() {
+  veriSozu ??= veriYukle().catch((e) => { veriSozu = null; throw e; });
+  return veriSozu;
+}
 
 function rotaAyir() {
-  const parcalar = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
+  let parcalar;
+  try {
+    parcalar = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
+  } catch {
+    return null; // bozuk %-kodlama
+  }
   const ad = parcalar[0] ?? 'tani';
   return { ad, id: parcalar[1], fazla: parcalar.length > (EKRANLAR[ad]?.kimlik ? 2 : 1) };
 }
@@ -45,35 +54,50 @@ function gezinmeIsaretle(ad) {
   }
 }
 
+let sonCizim = 0;
 async function ciz() {
   if (!location.hash) { location.replace('#/tani'); return; }
-  const { ad, id, fazla } = rotaAyir();
-  const ekran = Object.hasOwn(EKRANLAR, ad) ? EKRANLAR[ad] : null;
-  if (!ekran || fazla || (ekran.kimlik && !id)) { gezinmeIsaretle(null); bulunamadi(kok); return; }
+  const benim = ++sonCizim;
+  const rota = rotaAyir();
+  const ekran = rota && Object.hasOwn(EKRANLAR, rota.ad) ? EKRANLAR[rota.ad] : null;
+  if (!ekran || rota.fazla || (ekran.kimlik && !rota.id)) { gezinmeIsaretle(null); bulunamadi(kok); return; }
   gezinmeIsaretle(ekran.gezinme);
   document.title = `${ekran.baslik} · Vet Defter`;
-  if (ekran.modul) {
-    try {
-      const m = await import(ekran.modul);
-      m.render(kok, veri, durum);
-    } catch (e) {
-      bulunamadi(kok, 'Bu ekran yüklenemedi.');
-      console.warn(e);
-    }
+  if (!ekran.modul) { yerTutucu(ekran); return; }
+  let veri;
+  try {
+    if (!veriSozu) kok.replaceChildren(el('p', { class: 'yukleniyor', role: 'status' }, 'Yükleniyor…'));
+    veri = await veriIste();
+  } catch (e) {
+    if (benim !== sonCizim) return;
+    console.warn(e);
+    kok.replaceChildren(
+      el('h1', {}, 'Veri yüklenemedi'),
+      el('p', { class: 'bulunamadi', role: 'alert' }, 'Veri dosyaları açılamadı. Bağlantıyı kontrol edip yeniden deneyin.'),
+      el('button', { type: 'button', class: 'dugme', onclick: ciz }, 'Yeniden dene'),
+    );
     return;
   }
-  if (ekran.kimlik) { bulunamadi(kok, 'Bu kayıt bulunamadı.'); return; }
-  yerTutucu(ekran);
+  if (benim !== sonCizim) return;
+  try {
+    const m = await import(ekran.modul);
+    if (benim !== sonCizim) return;
+    m.render(kok, veri, durum, rota);
+  } catch (e) {
+    if (benim !== sonCizim) return;
+    bulunamadi(kok, 'Bu ekran yüklenemedi.');
+    console.warn(e);
+  }
 }
 
 function yerTutucu(ekran) {
   kok.replaceChildren(
     el('h1', {}, ekran.baslik),
     el('p', { class: 'yer-tutucu' }, 'Bu ekran yakında eklenecek.'),
-    ekran.gezinme === 'hakkinda' ? sorumlulukNotu() : null,
   );
 }
 
+document.body.append(el('p', { class: 'sabit-not' }, 'Hekim kararının yerine geçmez'));
 addEventListener('hashchange', ciz);
 ciz();
 

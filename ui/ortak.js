@@ -29,3 +29,47 @@ export function bulunamadi(kok, mesaj = 'Aradığınız sayfa bulunamadı.') {
 export function sorumlulukNotu() {
   return el('p', { class: 'sorumluluk' }, 'Hekim kararının yerine geçmez');
 }
+
+export const YASLAR = [
+  ['buzagi', 'Buzağı'], ['dana', 'Dana (besi)'], ['duve', 'Düve'], ['inek', 'İnek'], ['boga', 'Boğa'],
+];
+export const SISTEMLER = {
+  genel: 'Genel', solunum: 'Solunum', sindirim: 'Sindirim', meme: 'Meme', ureme: 'Üreme',
+  metabolik: 'Metabolik', deri: 'Deri', ayak: 'Ayak', sinir: 'Sinir', kan: 'Kan', goz: 'Göz',
+};
+
+/** Boş / bozuk depolanmış girdiyi tam Girdi şekline getirir. */
+export function girdiNormalize(g, isiOku) {
+  const o = g && typeof g === 'object' ? g : {};
+  const b = o.baglam && typeof o.baglam === 'object' ? o.baglam : {};
+  return {
+    tur: 'sigir',
+    yas: YASLAR.some(([k]) => k === o.yas) ? o.yas : 'inek',
+    baglam: { dogumSonrasi: b.dogumSonrasi === true, suru: b.suru === true, aniOlum: b.aniOlum === true },
+    isi: isiOku(o.isi),
+    belirtiler: Array.isArray(o.belirtiler) ? [...new Set(o.belirtiler.filter((x) => typeof x === 'string'))] : [],
+  };
+}
+
+/** Yalnız bilinen ve elle seçilebilir belirti kimlikleriyle girdi kopyası (puan motoruna gider). */
+export function bilinenGirdi(girdi, veri) {
+  const bilinen = new Set((veri?.belirtiler ?? []).filter((b) => b.secilebilir !== false).map((b) => b.id));
+  return { ...girdi, belirtiler: girdi.belirtiler.filter((id) => bilinen.has(id)) };
+}
+
+/** 2026-11-01 → 01.11.2026 */
+export function tarihYaz(t) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(t ?? '');
+  return m ? `${m[3]}.${m[2]}.${m[1]}` : (t ?? 'bilinmiyor');
+}
+
+export function taslakEtiketi() {
+  return el('span', { class: 'etiket' }, 'taslak');
+}
+
+export const belirtiAdi = (veri, id) => veri.belirtiler.find((b) => b.id === id)?.ad ?? id;
+
+/** replaceChildren, ama null / false çocukları atlar ("null" metni yazılmasın). */
+export function doldur(kap, ...cocuklar) {
+  kap.replaceChildren(...cocuklar.flat().filter((c) => c != null && c !== false));
+}
