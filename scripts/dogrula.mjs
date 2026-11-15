@@ -6,6 +6,7 @@ import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { veriYukle } from '../lib/veri.js';
 import { icerikOzeti, kubOzeti } from '../lib/onay.js';
+import { YOL_KODLARI } from '../lib/oran.js';
 
 // --- Sözlükler (spec §8 + plan eklemeleri) ---
 const TURLER = ['sigir'];
@@ -21,6 +22,8 @@ const SINIF = ['antimikrobiyal', 'antiparaziter', 'nsaii', 'metabolik', 'diger']
 const AMEG = ['A', 'B', 'C', 'D'];
 const ONAY_DURUM = ['taslak', 'onayli'];
 const GUVEN = ['yuksek', 'dusuk'];
+const ORAN_KAPSAM = ['sigir', 'buzagi'];
+const ORAN_ML_KG_UST = 50; // yuksek oranda mlPerKg üst sınırı (bunun üstü okuma hatasıdır)
 const SECILEMEZ = ['ates', 'hipotermi']; // ısıdan türetilir, elle seçilmez
 const ISI_ARALIGI = [30, 45];
 
@@ -45,7 +48,9 @@ const ALANLAR = {
   doz: [['miktar', 'birim', 'aralik', 'sure'], []],
   kubDogrulandi: [['kim', 'tarih', 'icerikOzeti'], []],
   kubDosyasi: [['urunler'], ['cekilmeTarihi']], // veri/kub.json (dosya yoksa lib/veri.js { urunler: {} } verir)
-  kubKaydi: [['doz', 'arinma', 'sigir', 'metinYok'], ['tablo', 'eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz', 'belgeNeden', 'kubAdi']],
+  kubKaydi: [['doz', 'arinma', 'sigir', 'metinYok'],
+    ['tablo', 'eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz', 'belgeNeden', 'kubAdi', 'oran', 'yollar']],
+  kubOran: [['mlPerKg', 'ifade', 'cumle', 'kaynak', 'kapsam', 'guven', 'yerBasinaMaxMl'], []],
   kubSigir: [['et_gun', 'sut', 'guven'], []],
   meta: [['semaSurumu', 'icerikSurumu', 'urunListesiTarihi'], []],
   liste: [['kaynak', 'kaynakTarihi', 'ogeler'], ['not']],
@@ -444,6 +449,40 @@ export function dogrula(veri) {
       } else if ('belgeNeden' in k) hata(yer, 'belgeNeden yalnız belgeUyumsuz ile yazılır');
       if (k.eskiBicim === true && s.guven !== 'dusuk') hata(yer, 'eskiBicim iken sigir.guven dusuk olmalı');
       if (k.tablo === true && k.doz === null) hata(yer, 'tablo iken doz metni olmalı');
+      // Tedavi önerisi: 4.9'dan sığır ml/kg oranı (lib/oran.js). Ekran yalnız yuksek iken ml hesaplar.
+      if ('oran' in k && alanlar(`${yer}.oran`, k.oran, 'kubOran')) {
+        const o = k.oran;
+        enumDenetle(yer, 'oran.guven', o.guven, GUVEN);
+        if (o.mlPerKg !== null && typeof o.mlPerKg !== 'number') hata(yer, 'oran.mlPerKg sayı ya da null olmalı');
+        for (const a of ['ifade', 'cumle']) if (o[a] !== null && !metinMi(o[a])) hata(yer, `oran.${a} metin ya da null olmalı`);
+        if (o.kaynak !== null && o.kaynak !== 'ml_kg') hata(yer, "oran.kaynak 'ml_kg' ya da null olmalı");
+        if (o.kapsam !== null && !ORAN_KAPSAM.includes(o.kapsam)) hata(yer, `oran.kapsam ${ORAN_KAPSAM.join(' | ')} ya da null olmalı`);
+        if (o.yerBasinaMaxMl !== null && !(typeof o.yerBasinaMaxMl === 'number' && o.yerBasinaMaxMl > 0)) {
+          hata(yer, 'oran.yerBasinaMaxMl pozitif sayı ya da null olmalı');
+        }
+        if (o.guven === 'yuksek') {
+          if (!(typeof o.mlPerKg === 'number' && o.mlPerKg > 0 && o.mlPerKg <= ORAN_ML_KG_UST)) {
+            hata(yer, `oran.guven yuksek iken mlPerKg 0 < x ≤ ${ORAN_ML_KG_UST} olmalı (${o.mlPerKg})`);
+          }
+          if (!metinMi(o.ifade) || !metinMi(o.cumle)) hata(yer, 'oran.guven yuksek iken ifade ve cumle dolu olmalı');
+          else {
+            // KÜB metni kelimesi kelimesine: cümle 4.9 metninde, ifade cümlede aynen geçer.
+            if (!(k.doz ?? '').includes(o.cumle)) hata(yer, 'oran.cumle 4.9 (doz) metninde aynen geçmiyor');
+            if (!o.cumle.includes(o.ifade)) hata(yer, 'oran.ifade cumle içinde aynen geçmiyor');
+          }
+          if (o.kaynak !== 'ml_kg' || !ORAN_KAPSAM.includes(o.kapsam)) hata(yer, "oran.guven yuksek iken kaynak 'ml_kg' ve kapsam dolu olmalı");
+          for (const a of ['tablo', 'eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz']) {
+            if (k[a] === true) hata(yer, `${a} iken oran.guven dusuk olmalı`);
+          }
+        } else if (o.mlPerKg !== null) hata(yer, 'oran.guven dusuk iken mlPerKg null olmalı (sayı gösterilmez)');
+      }
+      if ('yollar' in k) {
+        if (!Array.isArray(k.yollar)) hata(yer, 'yollar dizi olmalı');
+        else {
+          for (const y of k.yollar) if (!YOL_KODLARI.includes(y)) hata(yer, `yollar bilinmeyen kod: ${y} (${YOL_KODLARI.join(', ')})`);
+          if (new Set(k.yollar).size !== k.yollar.length) hata(yer, 'yollar tekrarsız olmalı');
+        }
+      }
     }
   }
 

@@ -25,6 +25,27 @@
           "belgeUyumsuz": { "const": true, "description": "Bakanlık bağlantısındaki belge bu ürünün KÜB'ü değil (bileşimde ürünün etkeni yok ya da belge KÜB / prospektüs değil). metinYok true, alıntı ve etiket yok; ekranda \"KÜB bu ürünle eşleşmiyor\" + bağlantı. Yalnız true iken yazılır." },
           "belgeNeden": { "$ref": "ortak.schema.json#/$defs/metin", "description": "belgeUyumsuz nedeni (yalnız belgeUyumsuz ile)." },
           "kubAdi": { "$ref": "ortak.schema.json#/$defs/metin", "description": "Etken uyuyor ama KÜB bölüm 1'deki ticari ad ürün adından farklı: KÜB'deki ad. Ekranda \"KÜB başka ticari adla yayımlanmış: …\"." },
+          "oran": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mlPerKg", "ifade", "cumle", "kaynak", "kapsam", "guven", "yerBasinaMaxMl"],
+            "description": "4.9'dan otomatik okunan sığır ml/kg oranı (lib/oran.js dozOrani). Yalnız metinYok değilken yazılır. Ekran ml'yi (mlPerKg × kilo) yalnız guven 'yuksek' iken hesaplar; dusuk iken sayı yok, KÜB metni. tablo, eskiBicim, sigirHedefDegil ve belgeUyumsuz kayıtta her zaman dusuk.",
+            "properties": {
+              "mlPerKg": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 50, "description": "Kilogram başına ml (X ml / Y kg → X/Y). dusuk iken null." },
+              "ifade": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB'deki oran metni aynen (\"1 ml/10 kg canlı ağırlık\"); cumle içinde geçer." },
+              "cumle": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "Oranın geçtiği cümle aynen (nokta / satır sonuna kadar); doz metninde geçer." },
+              "kaynak": { "enum": ["ml_kg", null], "description": "Bu sürümde yalnız ml_kg (KÜB'de doğrudan ml/kg oranı)." },
+              "kapsam": { "enum": ["sigir", "buzagi", null], "description": "buzagi: oran yalnız buzağı / dana cümlesinde geçiyor (inekte hesap yok)." },
+              "guven": { "enum": ["yuksek", "dusuk"], "description": "yuksek yalnız sığıra ait tek ayırt edici oran varken: birden çok farklı oran, aralık, tablo, eski biçim, üst sınır / kilo sınıfı, bölünmüş günlük doz, endikasyona göre farklı mg/kg dozu ya da ters yazılı farklı oran → dusuk." },
+              "yerBasinaMaxMl": { "type": ["number", "null"], "exclusiveMinimum": 0, "description": "Bir enjeksiyon yerine en çok uygulanacak ml (sığır cümlesinden; okunamazsa ya da çelişirse null)." }
+            }
+          },
+          "yollar": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "enum": ["IM", "IV", "SC", "ORAL", "IMM", "IU", "TOPIKAL"] },
+            "description": "4.9'da geçen uygulama yolları (lib/oran.js yolKodlari; olumsuz yan cümledeki yol sayılmaz). Yalnız metinYok değilken yazılır; boş dizi = yol okunamadı."
+          },
           "sigir": {
             "type": "object",
             "additionalProperties": false,
