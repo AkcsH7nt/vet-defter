@@ -80,10 +80,10 @@ test('secili cipin x dugmesi belirtiyi kaldirir; isi virgullu okunur', async () 
   await s.click('.cip-secili[data-secili="oksuruk"]');
   assert.equal(await s.locator('.cip-secili').count(), 0);
   await s.fill('#isi', '40,6');
-  assert.match(await s.locator('.ipucu').first().innerText(), /ateş/);
+  assert.match(await s.locator('#isi-ipucu').innerText(), /ateş/);
   assert.equal(await s.getAttribute('#isi', 'inputmode'), 'decimal');
   await s.fill('#isi', '406');
-  assert.match(await s.locator('.ipucu').first().innerText(), /30–45/);
+  assert.match(await s.locator('#isi-ipucu').innerText(), /30–45/);
 });
 
 test('sap belirtileri ustte kirmizi bayrak gosterir', async () => {
@@ -95,7 +95,7 @@ test('sap belirtileri ustte kirmizi bayrak gosterir', async () => {
   await s.click('#goster');
   await s.waitForSelector('main h1:text-is("Sonuçlar")');
   // Başlık ve tek satırlık sıralama açıklamasından hemen sonra bayrak bölümü gelir; sonuç listesinden önce.
-  const sira = await s.evaluate(() => [...document.querySelectorAll('main > *')].map((e) => e.className || e.tagName));
+  const sira = await s.evaluate(() => [...document.querySelectorAll('main > *:not(#girdi-ozeti)')].map((e) => e.className || e.tagName));
   assert.deepEqual(sira.slice(0, 3), ['H1', 'aciklama soluk', 'bayraklar']);
   assert.match(await s.locator('.bayraklar').innerText(), /ŞAP ŞÜPHESİ — İHBAR EDİN/);
   assert.ok(await s.locator('.bayrak').count() >= 1);
@@ -205,7 +205,7 @@ test('ates aranirsa isidan hesaplandigi soylenir; gecersiz isi metni geri donunc
   await s.click('text=◂ Girdiyi düzenle');
   await s.waitForSelector('main h1:text-is("Tanı")');
   assert.equal(await s.inputValue('#isi'), '406');
-  assert.match(await s.locator('.ipucu').first().innerText(), /30–45/);
+  assert.match(await s.locator('#isi-ipucu').innerText(), /30–45/);
 });
 
 test('gercek veri: Rift bulgulari surusuz de ihbar bandi gosterir', async () => {
@@ -715,4 +715,38 @@ test('bos hastalik listesi bos oldugunu soyler', async () => {
   const s = await sayfaAc({ degistir: bos });
   await s.git('#/hastaliklar');
   assert.match(await metin(s), /Henüz hastalık kaydı yok/);
+});
+
+test('kilo girilir, sonuc ozetinde gorunur, yenilenince korunur, Yeni vaka temizler', async () => {
+  const s = await sayfaAc();
+  await s.git('#/tani');
+  assert.equal(await s.getAttribute('#kilo', 'inputmode'), 'decimal');
+  await s.fill('#kilo', '450');
+  await s.fill('#yas-ay', '36');
+  await belirtiSec(s, 'öksürük', 'oksuruk');
+  await s.reload();
+  await s.waitForSelector('main h1');
+  assert.equal(await s.inputValue('#kilo'), '450');
+  assert.equal(await s.inputValue('#yas-ay'), '36');
+  await s.click('#goster');
+  await s.waitForSelector('main h1:text-is("Sonuçlar")');
+  assert.match(await metin(s), /İnek · 450 kg/);
+  await s.click('#yeni-vaka');
+  await s.waitForSelector('main h1:text-is("Tanı")');
+  assert.equal(await s.inputValue('#kilo'), '');
+  assert.equal(await s.inputValue('#yas-ay'), '');
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('kilo uyarilari: olagan disi ve yas grubuyla uyumsuz', async () => {
+  const s = await sayfaAc();
+  await s.git('#/tani');
+  await s.fill('#kilo', '10');
+  assert.match(await s.locator('#kilo-ipucu').innerText(), /Kilo olağan dışı, kontrol edin/);
+  await s.fill('#kilo', '300');
+  await s.click('[data-yas="buzagi"]');
+  assert.match(await s.locator('#kilo-ipucu').innerText(), /yaş grubuyla uyumsuz/);
+  await s.fill('#kilo', '450');
+  await s.click('[data-yas="inek"]');
+  assert.equal(await s.locator('#kilo-ipucu').innerText(), '');
 });

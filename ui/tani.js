@@ -1,6 +1,7 @@
 // Ekran 1: Tanı girişi. Durum (girdi) değiştikçe sessionStorage'a yazılır.
 import { el, doldur, YASLAR, SISTEMLER, bilinenGirdi } from './ortak.js';
 import { isiOku, isiBulgusu, bulgular } from '../lib/puan.js';
+import { kiloOku, yasAyOku, kiloUyarisi } from '../lib/hayvan.js';
 import { belirtiAra, normalize } from '../lib/arama.js';
 
 const BAGLAMLAR = [
@@ -23,7 +24,7 @@ export function render(kok, veri, durum) {
   const yasCiz = () => {
     doldur(yasKutusu, ...YASLAR.map(([k, ad]) => el('button', {
       type: 'button', class: 'secenek', 'data-yas': k, 'aria-pressed': String(girdi.yas === k),
-      onclick: () => { girdi.yas = k; kaydet(); yasCiz(); isiIpucuCiz(); },
+      onclick: () => { girdi.yas = k; kaydet(); yasCiz(); isiIpucuCiz(); kiloIpucuCiz(); },
     }, ad)));
   };
 
@@ -35,7 +36,7 @@ export function render(kok, veri, durum) {
     el('span', {}, ad))));
 
   // Geçersiz ısı metni (ör. "406") silinmesin: Sonuçlar'dan dönünce aynı metin ve uyarı görünsün.
-  const isiIpucu = el('p', { class: 'ipucu', 'aria-live': 'polite' });
+  const isiIpucu = el('p', { class: 'ipucu', id: 'isi-ipucu', 'aria-live': 'polite' });
   const isiGirdisi = el('input', {
     id: 'isi', type: 'text', inputmode: 'decimal', autocomplete: 'off', placeholder: 'örn. 40,6', class: 'alan',
     value: durum.isiMetni ?? (girdi.isi == null ? '' : String(girdi.isi).replace('.', ',')),
@@ -48,6 +49,28 @@ export function render(kok, veri, durum) {
     const b = isiBulgusu(girdi.isi, girdi.yas);
     isiIpucu.textContent = b === 'ates' ? '→ ateş (yaşa göre)' : b === 'hipotermi' ? '→ düşük vücut ısısı' : '→ normal aralık';
   }
+
+  // Kilo ve yaş (ay): geçersiz metin silinmez; girdi.kilo / girdi.yasAy her zaman sayı ya da null.
+  const sayiMetni = (v) => (v == null ? '' : String(v).replace('.', ','));
+  const kiloIpucu = el('p', { class: 'ipucu', id: 'kilo-ipucu', 'aria-live': 'polite' });
+  const kiloGirdisi = el('input', {
+    id: 'kilo', type: 'text', inputmode: 'decimal', autocomplete: 'off', placeholder: 'örn. 450', class: 'alan',
+    value: durum.kiloMetni ?? sayiMetni(girdi.kilo),
+    oninput: (e) => { durum.kiloMetni = e.target.value; girdi.kilo = kiloOku(e.target.value); kaydet(); kiloIpucuCiz(); },
+  });
+  const yasAyGirdisi = el('input', {
+    id: 'yas-ay', type: 'text', inputmode: 'decimal', autocomplete: 'off', placeholder: 'örn. 18', class: 'alan',
+    value: durum.yasAyMetni ?? sayiMetni(girdi.yasAy),
+    oninput: (e) => { durum.yasAyMetni = e.target.value; girdi.yasAy = yasAyOku(e.target.value); kaydet(); },
+  });
+  function kiloIpucuCiz() {
+    const u = kiloUyarisi(girdi.kilo, girdi.yas);
+    if (u) kiloIpucu.textContent = u.metin;
+    else kiloIpucu.textContent = kiloGirdisi.value.trim() && girdi.kilo == null ? 'Kilo sayı olmalı (örn. 450).' : '';
+  }
+  const kiloSatiri = el('div', { class: 'alan-satiri', style: 'display:flex;gap:12px;align-items:flex-end' },
+    el('div', { style: 'flex:1' }, el('label', { for: 'kilo' }, 'Kilo (kg)'), kiloGirdisi),
+    el('div', { style: 'flex:1' }, el('label', { for: 'yas-ay' }, 'Yaş (ay, isteğe bağlı)'), yasAyGirdisi));
 
   const aramaKutusu = el('input', {
     id: 'ara', type: 'search', class: 'alan', autocomplete: 'off', placeholder: 'Belirti ara (örn. öksürük)',
@@ -110,12 +133,12 @@ export function render(kok, veri, durum) {
     goster.textContent = n ? `Sonuçları göster (${n} bulgu)` : 'Sonuçları göster';
   }
 
-  yasCiz(); isiIpucuCiz(); bolumCiz(); gosterCiz();
+  yasCiz(); isiIpucuCiz(); kiloIpucuCiz(); bolumCiz(); gosterCiz();
 
   doldur(kok,
     el('h1', {}, 'Tanı'),
     el('p', { class: 'soluk' }, 'Tür: Sığır'),
-    el('h2', {}, 'Yaş'), yasKutusu,
+    el('h2', {}, 'Yaş'), yasKutusu, kiloSatiri, kiloIpucu,
     el('h2', {}, 'Bağlam'), baglamKutusu,
     el('h2', {}, el('label', { for: 'isi' }, 'Vücut ısısı (°C)')), isiGirdisi, isiIpucu,
     el('h2', {}, el('label', { for: 'ara' }, 'Belirtiler')), aramaKutusu, cipler, sonuclar, secili,

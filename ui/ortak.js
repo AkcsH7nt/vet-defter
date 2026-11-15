@@ -1,4 +1,5 @@
 // Ekranların ortak yardımcıları.
+import { kiloOku, yasAyOku } from '../lib/hayvan.js';
 
 /** el('div', {class: 'x', onclick: fn}, 'metin', baskaOge) → HTMLElement */
 export function el(tag, attrs = {}, ...cocuklar) {
@@ -47,6 +48,8 @@ export function girdiNormalize(g, isiOku) {
     yas: YASLAR.some(([k]) => k === o.yas) ? o.yas : 'inek',
     baglam: { dogumSonrasi: b.dogumSonrasi === true, suru: b.suru === true, aniOlum: b.aniOlum === true },
     isi: isiOku(o.isi),
+    kilo: kiloOku(o.kilo),
+    yasAy: yasAyOku(o.yasAy),
     belirtiler: Array.isArray(o.belirtiler) ? [...new Set(o.belirtiler.filter((x) => typeof x === 'string'))] : [],
   };
 }

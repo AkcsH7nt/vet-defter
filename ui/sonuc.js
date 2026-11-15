@@ -1,7 +1,7 @@
 // Ekran 2: Sonuçlar. Kırmızı bayraklar en üstte, ardından ilk 5 uyum sonucu.
 // Türkiye'de görülmeyen hastalıklar (turkiyedeGorulmez) ilk 5'e alınmaz, ayrı kapalı bölümde durur;
 // kendi kırmızı bayrağı tutarsa normal sıralamaya girer.
-import { el, doldur, bilinenGirdi, belirtiAdi, girdiNormalize, SIRALAMA_ACIKLAMASI } from './ortak.js';
+import { el, doldur, bilinenGirdi, belirtiAdi, girdiNormalize, SIRALAMA_ACIKLAMASI, YASLAR } from './ortak.js';
 import { puanla, yetersizMi, isiOku } from '../lib/puan.js';
 import { bayraklar } from '../lib/bayrak.js';
 
@@ -99,12 +99,18 @@ export function render(kok, veri, durum) {
   const yeniVaka = () => {
     durum.girdi = girdiNormalize(null, isiOku);
     delete durum.isiMetni;
+    delete durum.kiloMetni;
+    delete durum.yasAyMetni;
     durum.kaydet?.();
     location.hash = '#/tani';
   };
 
+  const yasAdi = YASLAR.find(([k]) => k === girdi.yas)?.[1] ?? '';
+  const ozet = [yasAdi, girdi.kilo != null ? `${String(girdi.kilo).replace('.', ',')} kg` : null].filter(Boolean).join(' · ');
+
   doldur(kok,
     el('h1', {}, 'Sonuçlar'),
+    ozet ? el('p', { class: 'soluk', id: 'girdi-ozeti' }, ozet) : null,
     s.yetersiz ? null : el('p', { class: 'aciklama soluk' }, SIRALAMA_ACIKLAMASI),
     bayrakBolumu.length ? el('section', { class: 'bayraklar', 'aria-label': 'Kırmızı bayraklar' }, bayrakBolumu) : null,
     govde,
