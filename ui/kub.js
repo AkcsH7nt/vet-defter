@@ -15,11 +15,15 @@ export const AMEG = {
   D: 'İhtiyatlı kullanım; gereksiz kullanılmaz',
 };
 
-/** Ürünün bu etken dışındaki etkenleri: "Birlikte: …" satırı ve AMEG A/B / antibiyotik uyarıları. */
+/**
+ * Ürünün bu etken dışındaki etkenleri: "Birlikte: …" satırı ve AMEG A/B / antibiyotik uyarıları. Etken kaydı olmayan
+ * KÜB etkin maddeleri (urun.digerEtkenler) de adıyla listelenir.
+ */
 export function kombineBilgisi(u, e, veri) {
   const digerleri = (u.etkenler ?? []).filter((id) => id !== e.id).map((id) => veri.etkenler.find((x) => x.id === id) ?? { id, ad: id });
-  if (!digerleri.length) return null;
-  const adlar = digerleri.map((o) => `${o.ad}${o.ameg ? ` (AMEG ${o.ameg})` : ''}`).join(', ');
+  const kayitsiz = (u.digerEtkenler ?? []).filter((ad) => typeof ad === 'string' && ad.trim());
+  if (!digerleri.length && !kayitsiz.length) return null;
+  const adlar = [...digerleri.map((o) => `${o.ad}${o.ameg ? ` (AMEG ${o.ameg})` : ''}`), ...kayitsiz].join(', ');
   const uyarilar = [];
   for (const sinif of ['A', 'B']) {
     const olan = digerleri.filter((o) => o.ameg === sinif);
@@ -51,45 +55,69 @@ export const TABLO_NOTU = "Bu bölümde tablo var — düzen bozulmuş olabilir,
 export const ESKI_BICIM_NOTU = 'Eski biçim KÜB — aslına bakın';
 export const BELGE_UYUMSUZ_NOTU = "Bakanlık sitesindeki KÜB bu ürünle eşleşmiyor — KÜB'e bakın";
 
+const kubMetni = (metin) => el('div', { class: 'kub-metin' }, metin ?? "Bu bölüm KÜB'den okunamadı — KÜB'e bakın.");
+
 function kubKutusu(baslik, metin) {
-  return el('details', { class: 'kub-kutu' },
-    el('summary', {}, baslik),
-    el('div', { class: 'kub-metin' }, metin ?? "Bu bölüm KÜB'den okunamadı — KÜB'e bakın."));
+  return el('details', { class: 'kub-kutu' }, el('summary', {}, baslik), kubMetni(metin));
 }
+
+function tabloKutusu(baslik, metin) {
+  return el('details', { class: 'kub-kutu' }, el('summary', {}, baslik), tabloIcerigi(metin));
+}
+
+/** Öneri kartında tek açılır "KÜB ▸": Doz ve Arınma alt başlıklı, alıntı notu içinde (kart kısa kalsın). */
+function birlesikKubKutusu(kayit, alinti) {
+  return el('details', { class: 'kub-kutu' },
+    el('summary', {}, 'KÜB ▸'),
+    el('h4', { class: 'kub-alt' }, 'Doz'),
+    kayit.tablo && kayit.doz ? tabloIcerigi(kayit.doz) : kubMetni(kayit.doz),
+    el('h4', { class: 'kub-alt' }, 'Arınma'),
+    kubMetni(kayit.arinma),
+    alinti);
+}
+
+export const ARINMA_OKUNAMADI = "Arınma: otomatik okunamadı — KÜB: Arınma'yı açın";
 
 /**
  * Tablolu doz: eş aralıklı, kendi içinde yana kayan blok (sayfa kaymaz). Sütun aralığı olan satırlar boşluklarıyla
  * aynen (white-space: pre), düz metin satırları sarılarak gösterilir.
  */
-function tabloKutusu(baslik, metin) {
-  return el('details', { class: 'kub-kutu' },
-    el('summary', {}, baslik),
+function tabloIcerigi(metin) {
+  return [
     el('p', { class: 'kub-tablo-not' }, `⚠ ${TABLO_NOTU}`, el('br'), el('small', {}, 'Tablo kendi içinde yana kaydırılır ▸')),
     el('div', { class: 'kub-tablo', role: 'region', 'aria-label': 'KÜB doz tablosu (yana kaydırılabilir)', tabindex: '0' },
-      metin.split('\n').map((satir) => el('div', { class: /\S {3,}\S/.test(satir) ? 'tablo-satir' : 'duz-satir' }, satir))));
+      metin.split('\n').map((satir) => el('div', { class: /\S {3,}\S/.test(satir) ? 'tablo-satir' : 'duz-satir' }, satir))),
+  ];
 }
 
 /**
  * Ürün kartı (li.urun). ek: ürün adının altına eklenecek öğe (ör. kombine bilgisi).
  * Kayıt yoksa ya da metinYok ise "KÜB'e bakın" + bağlantı (belge ürünle eşleşmiyorsa bunu söyler); aksi hâlde etiket
  * + açılır KÜB: Doz / KÜB: Arınma (tablolu doz eş aralıklı blokta), eski biçim ve başka ticari ad notları.
+ * kompakt (öneri kartı): firma adı yok (ürün adı + form), iki kutu yerine tek "KÜB ▸" (Doz / Arınma alt başlıklı, alıntı
+ * notu içinde), arınma güveni düşükse etiket yerine "Arınma: otomatik okunamadı" notu.
  */
-export function urunKarti(u, kayit, { ek = null } = {}) {
+export function urunKarti(u, kayit, { ek = null, kompakt = false } = {}) {
   const baglanti = u.kubUrl
-    ? [el('a', { href: u.kubUrl, target: '_blank', rel: 'noopener' }, 'KÜB ▸'), el('span', { class: 'soluk' }, ' (internet gerekir)')]
+    ? [el('a', { href: u.kubUrl, target: '_blank', rel: 'noopener' }, kompakt ? 'KÜB belgesi ▸' : 'KÜB ▸'), el('span', { class: 'soluk' }, ' (internet gerekir)')]
     : null;
   const k = (u.kub ?? []).find((x) => x.tur === 'sigir');
-  const ayrinti = `${u.firma ?? ''}${u.form ? ` — ${u.form}` : ''}${k?.yol ? `, ${k.yol}` : ''}`;
-  const etiket = kayit && !kayit.metinYok && !kayit.belgeUyumsuz ? arinmaEtiketi(kayit.sigir) : [];
+  const ayrinti = kompakt ? (u.form ?? '') : `${u.firma ?? ''}${u.form ? ` — ${u.form}` : ''}${k?.yol ? `, ${k.yol}` : ''}`;
+  const metinli = !!kayit && !kayit.metinYok && !kayit.belgeUyumsuz;
+  const etiket = metinli ? arinmaEtiketi(kayit.sigir) : [];
+  const alinti = metinli
+    ? el('p', { class: 'doz kub-alinti' }, el('small', { class: 'soluk' },
+      `KÜB'den alıntı (${kayit.eskiBicim ? 'kullanım şekli ve dozu, kalıntı uyarıları' : '4.9, 4.11'}) · metin aynen alındı `), baglanti)
+    : null;
   const yok = el('span', { class: 'soluk' }, '(KÜB bağlantısı yok — Bakanlık ürün sorgusundan bakın.)');
   return el('li', { class: 'urun' },
     el('strong', {}, u.ad),
     yalnizBuzagiMi(u) ? el('span', { class: 'urun-etiket' }, ' (yalnız buzağı)') : null,
-    el('span', { class: 'soluk' }, ` — ${ayrinti}`),
+    ayrinti ? el('span', { class: 'soluk' }, ` — ${ayrinti}`) : null,
     ek,
     etiket.length
       ? el('p', { class: 'arinma-etiket' }, el('strong', {}, etiket.join(' · ')), el('br'), el('small', { class: 'soluk' }, OTOMATIK_NOT))
-      : null,
+      : kompakt && metinli ? el('p', { class: 'arinma-yok' }, ARINMA_OKUNAMADI) : null,
     kayit?.belgeUyumsuz
       ? el('p', { class: 'doz kub-uyumsuz' }, `⚠ ${BELGE_UYUMSUZ_NOTU} `, baglanti ?? yok)
       : !kayit || kayit.metinYok
@@ -97,9 +125,10 @@ export function urunKarti(u, kayit, { ek = null } = {}) {
         : [
           kayit.kubAdi ? el('p', { class: 'kub-not' }, `KÜB başka ticari adla yayımlanmış: ${kayit.kubAdi}`) : null,
           kayit.eskiBicim ? el('p', { class: 'kub-not' }, ESKI_BICIM_NOTU) : null,
-          kayit.tablo && kayit.doz ? tabloKutusu('KÜB: Doz', kayit.doz) : kubKutusu('KÜB: Doz', kayit.doz),
-          kubKutusu('KÜB: Arınma', kayit.arinma),
-          el('p', { class: 'doz kub-alinti' }, el('small', { class: 'soluk' },
-            `KÜB'den alıntı (${kayit.eskiBicim ? 'kullanım şekli ve dozu, kalıntı uyarıları' : '4.9, 4.11'}) · metin aynen alındı `), baglanti),
+          ...(kompakt ? [birlesikKubKutusu(kayit, alinti)] : [
+            kayit.tablo && kayit.doz ? tabloKutusu('KÜB: Doz', kayit.doz) : kubKutusu('KÜB: Doz', kayit.doz),
+            kubKutusu('KÜB: Arınma', kayit.arinma),
+            alinti,
+          ]),
         ]);
 }

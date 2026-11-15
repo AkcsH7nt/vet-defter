@@ -192,8 +192,23 @@ li.urun { min-width: 0; }
 .ml-buyuk { font-size: 26px; font-weight: 800; color: var(--vurgu); }
 .ml-ifade { font-size: 14px; }
 .ml-ham { font-size: 12px; }
+.ml-uygulama { font-size: 14px; font-weight: 700; }
 .ml-yer { margin: 0 0 4px; font-weight: 700; }
+.ml-buyuk-hacim { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
 .kub-cumle { margin: 4px 0; font-size: 14px; }
-.oneri-neden, .oneri-uyari { margin: 6px 0; padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); font-size: 14px; }
+.oneri-tekrar { margin: 2px 0 4px; font-size: 13px; }
+.urun-yol { margin: 4px 0; font-size: 14px; font-weight: 700; }
+/* ml çıkmayan satırın nedeni nötr; sarı yalnız kilo / yaş uyarısında, kırmızı süt yasağı ve olumsuz KÜB kısıtında. */
+.oneri-neden { margin: 6px 0; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--cizgi); background: var(--zemin); color: var(--yazi); font-size: 14px; }
+.oneri-uyari, .oneri-neden.oneri-uyari { margin: 6px 0; padding: 6px 10px; border-radius: 8px; border: 0; background: var(--uyari-zemin); color: var(--uyari-yazi); font-size: 14px; }
+.oneri-kirmizi, .kisit.olumsuz { margin: 4px 0; padding: 4px 10px; border-radius: 8px; background: var(--tehlike-zemin); color: var(--tehlike-yazi); font-size: 14px; font-weight: 700; }
+.oneri-ihbar { margin: 0 0 8px; padding: 8px 12px; border-radius: 8px; background: var(--tehlike-zemin); color: var(--tehlike-yazi); }
+.kisit { margin: 4px 0; font-size: 13px; }
+.arinma-yok { margin: 4px 0; font-size: 13px; color: var(--soluk); }
+.ya-da { margin: 0; padding: 2px 0 !important; text-align: center; font-size: 13px; font-weight: 700; color: var(--soluk); letter-spacing: 0.05em; }
+.ya-da::before { content: none !important; }
+.grup-baslik .etiket { font-size: 11px; }
+.kub-alt { margin: 8px 12px 4px; font-size: 14px; }
+.kub-kutu .kub-alinti { margin: 0 12px 10px; }
 .oneri-yok { margin: 8px 0; }
 .oneri-not { margin: 12px 0 0; padding-top: 8px; border-top: 1px solid var(--cizgi); font-size: 13px; color: var(--soluk); }

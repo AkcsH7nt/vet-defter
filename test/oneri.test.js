@@ -133,7 +133,7 @@ test('urunSecSiralama', async () => {
     { urun: u('a', 'Alfa', ['ornek_mineral', 'ornek_nsaii']), kayit: { oran: DUSUK } },
     { urun: u('b', 'Beta'), kayit: { oran: DUSUK } },
   ]), 'b');
-  // KÜB metni olmayan (metinYok ya da kayıt yok) sona
+  // KÜB metni olmayan (metinYok ya da kayıt yok) seçilmez
   assert.equal(await sec([
     { urun: u('a', 'Alfa'), kayit: { metinYok: true, oran: undefined, sigir: { guven: 'yuksek' } } },
     { urun: u('c', 'Celal'), kayit: null },
@@ -152,8 +152,9 @@ test('urunSecYalnizMlKgKaynakliYuksekGuvenliOranHesaplanabilir', async () => {
     const veri = await veriHazirla([{ urun: { urunId: 't', ad: 'Tek', etkenler: ['ornek_mineral'] }, kayit: { oran: o } }]);
     assert.equal(urunSec(ilac, veri, 'inek').hesaplanabilir, false, JSON.stringify(o));
   }
+  // KÜB kaydı olmayan tek ürün seçilmez (B2: KÜB metni yoksa ürünü hekim seçer)
   const veri = await veriHazirla([{ urun: { urunId: 't', ad: 'Tek', etkenler: ['ornek_mineral'] }, kayit: null }]);
-  assert.equal(urunSec(ilac, veri, 'inek').hesaplanabilir, false);
+  assert.equal(urunSec(ilac, veri, 'inek'), null);
 });
 
 const ETKENLER = [
@@ -215,8 +216,10 @@ test('tedaviOnerisiYapisiGruplarVeHesap', async () => {
 test('tedaviOnerisiOnayliHastalikTaslakDegil', async () => {
   const veri = await veriHazirla();
   const h = veri.hastaliklar.find((x) => x.id === 'ornek_solunum');
-  const o = tedaviOnerisi(h, veri, { yas: 'inek', kilo: 450 });
+  // ornek_solunum yaş grupları buzağı / dana
+  const o = tedaviOnerisi(h, veri, { yas: 'dana', kilo: 450 });
   assert.equal(o.taslak, false);
+  assert.equal(o.yasUymuyor, false);
   // ornek-u1'de oran yok → oran_yok
   assert.equal(o.gruplar[0].sinif, 'antimikrobiyal');
   assert.equal(o.gruplar[0].satirlar[0].secim.urun.urunId, 'ornek-u1');
@@ -434,4 +437,253 @@ test('urunSecBuzagidaKullanilmazBuyukHarfle', async () => {
   const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'SC' };
   assert.equal(urunSec(ilac, veri, 'buzagi'), null);
   assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-sef');
+});
+
+// --- K8 düzeltme dalgası B ---
+const satirlarOf = (o) => o.gruplar.flatMap((g) => g.satirlar);
+const tekSatirli = (ilac, ek = {}) => hastalik({ protokol: { ilaclar: [ilac], destekleyici: [], bakim: [], ihbarAdimlari: [] }, ...ek });
+
+test('B1 tedaviOnerisiYasGrubunaUymayanHayvandaMlYokUrunVar', async () => {
+  const veri = await veriHazirla(URUNLER, { etkenler: ETKENLER });
+  const h = hastalik({ yasGruplari: ['buzagi', 'dana'] });
+  const o = tedaviOnerisi(h, veri, { yas: 'inek', kilo: 450 });
+  assert.equal(o.yasUymuyor, true);
+  assert.deepEqual(o.yasGruplari, ['buzagi', 'dana']);
+  const [ab, ns, urunsuz] = satirlarOf(o);
+  assert.equal(ab.secim.urun.urunId, 't-ab'); // ürün seçimi yine gösterilir
+  assert.equal(ab.hesap, null);
+  assert.equal(ab.neden, 'yas_uymuyor');
+  assert.equal(ns.neden, 'yas_uymuyor');
+  assert.equal(ns.hesap, null);
+  assert.equal(urunsuz.neden, 'urun_yok');
+  // uyan yaş: ml hesaplanır
+  const b = tedaviOnerisi(h, veri, { yas: 'dana', kilo: 450 });
+  assert.equal(b.yasUymuyor, false);
+  assert.equal(satirlarOf(b)[0].hesap.ml, 45);
+  // yaş grubu tanımsız ya da yaş yok: denetim yok
+  assert.equal(tedaviOnerisi(hastalik(), veri, { yas: 'inek', kilo: 450 }).yasUymuyor, false);
+  assert.equal(tedaviOnerisi(h, veri, { yas: null, kilo: 450 }).yasUymuyor, false);
+});
+
+test('B2 metabolikSatirdaYalnizHesaplanabilirUrunYoksaHekimSecer', async () => {
+  const ilac = { etkenId: 'ornek_mineral', sinif: 'metabolik', sira: 1, yol: 'IV', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-a', ad: 'Alfa Tonik', etkenler: ['ornek_mineral'] }, kayit: { oran: DUSUK, yollar: ['IV'] } },
+    { urun: { urunId: 't-b', ad: 'Beta İnfüzyon', etkenler: ['ornek_mineral'] }, kayit: { oran: DUSUK, yollar: ['IV'] } },
+  ]);
+  const [s] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(s.secim, null);
+  assert.equal(s.neden, 'hekim_secer');
+  assert.equal(s.urunSayisi, 2);
+  // metabolik dışı satırda hesaplanamayan ürün yine seçilir
+  const [d] = satirlarOf(tedaviOnerisi(tekSatirli({ ...ilac, sinif: 'diger' }), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(d.secim.urun.urunId, 't-a');
+  assert.equal(d.neden, 'oran_yok');
+  // hesaplanabilir ürün varsa (ad sırasında sonda olsa da) o seçilir
+  veri.kub.urunler['t-b'].oran = oran(0.5);
+  const [m] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(m.secim.urun.urunId, 't-b');
+  assert.equal(m.hesap.ml, 225);
+  assert.equal(m.urunSayisi, 2);
+  // hesaplanabilir tek ürün protokol dışı etken içeriyorsa (Novacoc: metamizol, kafein) metabolik satırda seçilmez
+  veri.urunler.find((u) => u.urunId === 't-b').etkenler = ['ornek_mineral', 'test_metamizol'];
+  const [n] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(n.secim, null);
+  assert.equal(n.neden, 'hekim_secer');
+  veri.urunler.find((u) => u.urunId === 't-b').etkenler = ['ornek_mineral'];
+  veri.urunler.find((u) => u.urunId === 't-b').digerEtkenler = ['Kafein'];
+  assert.equal(satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }))[0].neden, 'hekim_secer');
+});
+
+test('B2 kubMetniOlanUrunVarkenMetinYokUrunSecilmezHepsiMetinYoksaHekimSecer', async () => {
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'IV', not: null };
+  const veri = await veriHazirla([
+    // metinYok ama her anahtarda önde (ad, tek etken)
+    { urun: { urunId: 't-my', ad: 'Aaa Metinsiz', etkenler: ['ornek_nsaii'] }, kayit: { metinYok: true, doz: null, oran: undefined, yollar: ['IV'] } },
+    { urun: { urunId: 't-k', ad: 'Zzz KÜB', etkenler: ['ornek_nsaii', 'ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: ['IV'] } },
+  ]);
+  assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-k');
+  assert.equal(urunSec(ilac, veri, 'inek').digerSayisi, 1);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 't-k');
+  assert.equal(urunSec(ilac, veri, 'inek'), null);
+  const [s] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(s.secim, null);
+  assert.equal(s.neden, 'hekim_secer');
+  assert.equal(s.urunSayisi, 1);
+});
+
+test('B3 sagmalIndeKullanilmazUrunInekVeDuvedeSonraSecilirseIsaretli', async () => {
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-sy', ad: 'Aaa Sütte Yok', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: oran(0.1), yollar: ['IM'], sigir: { et_gun: 28, sut: 'kullanilmaz', guven: 'dusuk' } } },
+    { urun: { urunId: 't-sv', ad: 'Bbb Süt Var', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: ['IM'], sigir: { et_gun: 28, sut: { saat: 72 }, guven: 'yuksek' } } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  // sağmal anahtarı hesaplanabilirden önce: inek ve düvede süt arınmalı ürün
+  for (const yas of ['inek', 'duve']) assert.equal(urunSec(ilac, veri, yas).urun.urunId, 't-sv', yas);
+  // dana / boğa / buzağıda anahtar yok
+  for (const yas of ['dana', 'boga', 'buzagi']) {
+    const s = urunSec(ilac, veri, yas);
+    assert.equal(s.urun.urunId, 't-sy', yas);
+    assert.equal(s.sutYasak, false, yas);
+  }
+  // tek seçenekse seçilir ve işaretlenir (güven düşük olsa da)
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 't-sv');
+  const s = urunSec(ilac, veri, 'inek');
+  assert.equal(s.urun.urunId, 't-sy');
+  assert.equal(s.sutYasak, true);
+  // 4.11'de "süt veren ineklerde tavsiye edilmez" (sut kullanilmaz değil) de sayılır
+  veri.kub.urunler['t-sy'].sigir = { et_gun: 28, sut: null, guven: 'dusuk' };
+  veri.kub.urunler['t-sy'].arinma = 'Et için 28 gün. Süt veren ineklerde kullanılması tavsiye edilmez.';
+  assert.equal(urunSec(ilac, veri, 'inek').sutYasak, true);
+  // sigirArinmasi'nın okuyamadığı yasak cümlesi (Selectan): "süt elde edilen sığırlarda kullanılmaz"
+  veri.kub.urunler['t-sy'].arinma = 'Sığırlar 30 gün geçmeden kesime gönderilmemelidir. İnsan tüketimi için süt elde edilen sığırlarda (kuru dönem dahil) kullanılmaz.';
+  assert.equal(urunSec(ilac, veri, 'inek').sutYasak, true);
+  veri.kub.urunler['t-sy'].arinma = 'Et için 28 gün. Süt için 3 gün.';
+  assert.equal(urunSec(ilac, veri, 'inek').sutYasak, false);
+});
+
+test('B3 kuruDonemSatirindaSagmalIsaretiYok', async () => {
+  const veri = await veriHazirla(MEME);
+  veri.kub.urunler['t-dc'].sigir = { sut: 'kullanilmaz', guven: 'yuksek' };
+  const kuru = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'İntramammer (kuru dönem)' };
+  const s = urunSec(kuru, veri, 'inek');
+  assert.equal(s.urun.urunId, 't-dc');
+  assert.equal(s.sutYasak, false);
+});
+
+test('B3 yolAnahtariSagmalAnahtarindanOnce', async () => {
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-yb', ad: 'Aaa Yolsuz', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: [], sigir: { sut: { saat: 72 }, guven: 'yuksek' } } },
+    { urun: { urunId: 't-sy', ad: 'Bbb Sütte Yok', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: ['IM'], sigir: { sut: 'kullanilmaz', guven: 'yuksek' } } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-sy');
+});
+
+test('B3 arinmaOkunamadiIsareti', async () => {
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-d', ad: 'Düşük Arınma', etkenler: ['ornek_mineral'] }, kayit: { oran: DUSUK, yollar: ['IV'], sigir: { guven: 'dusuk' } } },
+  ]);
+  const ilac = { etkenId: 'ornek_mineral', sinif: 'diger', sira: 1, yol: 'IV' };
+  assert.equal(urunSec(ilac, veri, 'inek').arinmaOkunamadi, true);
+  veri.kub.urunler['t-d'].sigir = { et_gun: 0, sut: { saat: 0 }, guven: 'yuksek' };
+  assert.equal(urunSec(ilac, veri, 'inek').arinmaOkunamadi, false);
+});
+
+test('B4 urunYollariVeProtokolYoluGenisMi', async () => {
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-la', ad: 'LA Ürün', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: oran(0.1), yollar: ['IM'] } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IV / IM' };
+  const s = urunSec(ilac, veri, 'inek');
+  assert.deepEqual(s.urunYollari, ['IM']);
+  assert.equal(s.yolGenis, true);
+  assert.equal(urunSec({ ...ilac, yol: 'IM' }, veri, 'inek').yolGenis, false);
+  // satırın yolu çözülemiyorsa geniş sayılmaz; ürünün yolu yoksa da
+  assert.equal(urunSec({ ...ilac, yol: 'Gerektiğinde' }, veri, 'inek').yolGenis, false);
+  veri.kub.urunler['t-la'].yollar = [];
+  assert.equal(urunSec(ilac, veri, 'inek').yolGenis, false);
+  assert.deepEqual(urunSec(ilac, veri, 'inek').urunYollari, []);
+});
+
+test('B6 yerBolmeYoluVeBuyukHacim', async () => {
+  // satır yolu çözülemiyor: ürünün yolu elenmeye yol açmaz, büyük hacim ürünün yoluna bakar
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'Gerektiğinde', not: null };
+  const hazir = async (o, yollar) => {
+    const veri = await veriHazirla([{ urun: { urunId: 't', ad: 'Tek', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: o, yollar } }]);
+    veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+    return satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }))[0].hesap;
+  };
+  const yb = await hazir(oran(0.03, { yerBasinaMaxMl: 5, yerBasinaYol: 'IM' }), ['IM', 'IV']);
+  assert.deepEqual({ ml: yb.ml, yerSayisi: yb.yerSayisi, yerBasinaMaxMl: yb.yerBasinaMaxMl, yerBasinaYol: yb.yerBasinaYol, buyukHacim: yb.buyukHacim },
+    { ml: 13.5, yerSayisi: 3, yerBasinaMaxMl: 5, yerBasinaYol: 'IM', buyukHacim: false });
+  // IM / SC, ml > 20 ve KÜB sınırı yok → büyük hacim
+  assert.equal((await hazir(oran(0.1), ['IM'])).buyukHacim, true);
+  assert.equal((await hazir(oran(0.1), ['SC', 'IV'])).buyukHacim, true);
+  assert.equal((await hazir(oran(0.1), ['IV'])).buyukHacim, false);
+  assert.equal((await hazir(oran(0.1), ['ORAL'])).buyukHacim, false);
+  assert.equal((await hazir(oran(0.04), ['IM'])).buyukHacim, false); // 18 ml
+  assert.equal((await hazir(oran(0.1, { yerBasinaMaxMl: 20 }), ['IM'])).buyukHacim, false); // KÜB sınırı var
+});
+
+test('B8 kediKopekHedefliUrunSigirYalnizUrundenSonraSagmalAnahtarindanSonra', async () => {
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'SC', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-kk', ad: 'Aaa %0,5', etkenler: ['ornek_nsaii'], hedefTurler: ['sigir', 'kedi', 'Köpek'] }, kayit: { oran: oran(0.1), yollar: ['SC'] } },
+    { urun: { urunId: 't-s', ad: 'Bbb 20 mg', etkenler: ['ornek_nsaii'], hedefTurler: ['sigir', 'domuz'] }, kayit: { oran: DUSUK, yollar: ['SC'] } },
+  ]);
+  assert.equal(urunSec(ilac, veri, 'dana').urun.urunId, 't-s');
+  assert.equal(urunSec(ilac, veri, 'dana').kediKopek, false);
+  // sağmal anahtarı önce gelir
+  veri.kub.urunler['t-s'].sigir = { sut: 'kullanilmaz', guven: 'yuksek' };
+  const s = urunSec(ilac, veri, 'inek');
+  assert.equal(s.urun.urunId, 't-kk');
+  assert.equal(s.kediKopek, true);
+});
+
+test('B9 sabitDozluUrundeNedenSabitDoz', async () => {
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'İntramammer', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-tup', ad: 'Tüp LC', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: { ...DUSUK, sabitDoz: true }, yollar: ['IMM'] } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  const [s] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(s.neden, 'sabit_doz');
+  assert.equal(s.hesap, null);
+  // kilo yoksa da sabit doz (kiloya bağlı değil)
+  assert.equal(satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: null }))[0].neden, 'sabit_doz');
+});
+
+test('B10 kisitlarSecimdeBuzagidaOlumsuzBuzagiKisitiEler', async () => {
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'SC' };
+  const kisitlar = [{ tur: 'olumsuz', metin: 'Ürün buzağılarda kullanılmamalıdır.' }];
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-k', ad: 'Kısıtlı', etkenler: ['ornek_nsaii'] }, kayit: { oran: oran(0.02, { kisitlar }), yollar: ['SC'] } },
+  ]);
+  assert.equal(urunSec(ilac, veri, 'buzagi'), null);
+  const s = urunSec(ilac, veri, 'inek');
+  assert.deepEqual(s.kisitlar, kisitlar);
+  // koşullu kısıt buzağıyı elemez; buzağı geçmeyen olumsuz kısıt ve yaş kısıtı da
+  for (const k of [{ tur: 'kosullu', metin: 'Rumen faaliyeti başlamamış buzağılarda kullanılmaz.' }, { tur: 'olumsuz', metin: 'Gebelikte kullanılmaz.' }, { tur: 'yas', metin: 'Yalnız buzağılarda kullanılır.' }]) {
+    veri.kub.urunler['t-k'].oran = oran(0.02, { kisitlar: [k] });
+    assert.equal(urunSec(ilac, veri, 'buzagi').urun.urunId, 't-k', k.metin);
+  }
+  // oran yoksa (kayıtta kısıt yok) boş liste
+  veri.kub.urunler['t-k'].oran = undefined;
+  assert.deepEqual(urunSec(ilac, veri, 'inek').kisitlar, []);
+});
+
+test('B11 ihbarliSemptomatikteIhbarOnce', async () => {
+  const veri = await veriHazirla(URUNLER, { etkenler: ETKENLER });
+  assert.equal(tedaviOnerisi(hastalik({ ihbari: true, tedaviKipi: 'semptomatik' }), veri, { yas: 'inek', kilo: 450 }).ihbarOnce, true);
+  assert.equal(tedaviOnerisi(hastalik({ ihbari: true }), veri, { yas: 'inek', kilo: 450 }).ihbarOnce, false);
+  assert.equal(tedaviOnerisi(hastalik({ tedaviKipi: 'semptomatik' }), veri, { yas: 'inek', kilo: 450 }).ihbarOnce, false);
+});
+
+test('B13 digerEtkenliUrunProtokolDisiSayilir', async () => {
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM' };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-pred', ad: 'Aaa Prednizolonlu', etkenler: ['ornek_antibiyotik'], digerEtkenler: ['prednizolon'] }, kayit: { oran: oran(0.1), yollar: ['IM'] } },
+    { urun: { urunId: 't-tek', ad: 'Zzz Tek', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: ['IM'] } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-tek');
+  assert.equal(urunSec(ilac, veri, 'inek', { protokolEtkenleri: new Set(['ornek_antibiyotik']) }).urun.urunId, 't-tek');
+});
+
+test('B14 buzagiKapsamliOranliUrunYetiskindeIsaretli', async () => {
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'SC' };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-gb', ad: 'Genç Sığır', etkenler: ['ornek_nsaii'] }, kayit: { oran: oran(0.025, { kapsam: 'buzagi' }), yollar: ['SC'] } },
+  ]);
+  const s = urunSec(ilac, veri, 'inek');
+  assert.equal(s.hesaplanabilir, false);
+  assert.equal(s.dozBuzagiIcin, true);
+  assert.equal(urunSec(ilac, veri, 'buzagi').dozBuzagiIcin, false);
+  // düşük güvenli buzağı kapsamı (oran yok) işaretlenmez
+  veri.kub.urunler['t-gb'].oran = { ...DUSUK, kapsam: 'buzagi' };
+  assert.equal(urunSec(ilac, veri, 'inek').dozBuzagiIcin, false);
 });
