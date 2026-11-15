@@ -685,6 +685,27 @@ test('oneri duzeltme 1: kapali alternatif ozetinde ml (data-kub), sut ve olumsuz
   assert.deepEqual(s.hatalar, []);
 });
 
+test('oneri son tur: kilo kosullu KUB kisiti ml vermez, kisit aynen kirmizi (data-kub)', async () => {
+  // Baycox benzeri: 0,1 ml/kg oran + "80 kg’dan daha ağır buzağılarda kullanılmaz"
+  const kisit = { tur: 'kosullu', metin: '80 kg’dan daha ağır buzağılarda kullanılmaz.' };
+  const s = await sayfaAc({ degistir: u1Degis((k) => ({ ...k, yollar: ['IM'], oran: { ...ORAN, kisitlar: [kisit] } })) });
+  await kiloGir(s, 100, 'buzagi');
+  await kartaGec(s);
+  const kart = s.locator('.oneri-kart');
+  assert.equal(await kart.locator('.ml-buyuk').count(), 0);
+  const engel = kart.locator('.kisit-engel');
+  assert.equal(await engel.count(), 1);
+  assert.equal((await engel.innerText()).trim(), kisit.metin);
+  assert.equal(await engel.getAttribute('data-kub'), '');
+  assert.match(await engel.getAttribute('class'), /oneri-kirmizi/);
+  // kısıtın dışında kalan kilo: ml var, kısıt koşullu olarak listelenir
+  await s.fill('#kart-kilo', '60');
+  assert.equal((await kart.locator('.ml-buyuk').innerText()).trim(), '→ 6 ml');
+  assert.equal(await kart.locator('.kisit-engel').count(), 0);
+  assert.match(await kart.innerText(), /Koşullu kısıt: 80 kg’dan daha ağır buzağılarda kullanılmaz\./);
+  assert.deepEqual(s.hatalar, []);
+});
+
 test('390 px: acik KUB kutulari yatay tasma yapmaz', async () => {
   const uzun = 'A'.repeat(300);
   const s = await sayfaAc({ degistir: kubDegis((u) => ({ 'ornek-u1': { ...u['ornek-u1'], doz: `${uzun}\n${u['ornek-u1'].doz}` } })) });

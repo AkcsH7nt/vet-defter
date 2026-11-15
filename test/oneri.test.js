@@ -718,3 +718,54 @@ test('F1 amegAyaDaBEslikciEtkenliUrunKarttaSecilmezYoksaHekimSecer', async () =>
   veri.etkenler.find((e) => e.id === 'test_kolistin').ameg = 'C';
   assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-multi');
 });
+
+// --- K8 son düzeltme turu (Fable yeniden denetimi) ---
+test('F4 kiloKosulluKisitMlVermez', async () => {
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'antiparaziter', sira: 1, yol: 'Ağızdan', not: null };
+  const hazir = async (metin) => {
+    const veri = await veriHazirla([
+      { urun: { urunId: 't-bay', ad: 'Baycox Örnek', etkenler: ['ornek_nsaii'] }, kayit: { oran: oran(0.3, { kisitlar: [{ tur: 'kosullu', metin }] }), yollar: ['ORAL'] } },
+    ]);
+    return (girdi) => satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, girdi))[0];
+  };
+  const ust = await hazir('80 kg’dan daha ağır buzağılarda kullanılmaz.');
+  const agir = ust({ yas: 'buzagi', kilo: 100 });
+  assert.equal(agir.hesap, null);
+  assert.equal(agir.neden, 'kisit');
+  assert.deepEqual(agir.kisitEngel, { tur: 'kosullu', metin: '80 kg’dan daha ağır buzağılarda kullanılmaz.' });
+  assert.equal(ust({ yas: 'buzagi', kilo: 80 }).hesap.ml, 24); // sınırda: daha ağır değil
+  assert.equal(ust({ yas: 'buzagi', kilo: 45 }).hesap.ml, 13.5);
+  assert.equal(ust({ yas: 'buzagi', kilo: null }).neden, 'kilo_yok'); // kilo yok: kısıt denetimi yok
+  assert.equal(ust({ yas: 'buzagi', kilo: 45 }).kisitEngel, null);
+  // "fazla" ve "kg'ın üzerinde"
+  assert.equal((await hazir("120 kg'dan fazla hayvanlarda kullanılmamalıdır."))({ yas: 'buzagi', kilo: 150 }).neden, 'kisit');
+  // alt sınır: "kg'ın altında" / "kg'dan az" / "kg'dan hafif"
+  const alt = await hazir("Vücut ağırlığı 200 kg'ın altında olan hayvanlara uygulanmamalıdır.");
+  assert.equal(alt({ yas: 'dana', kilo: 150 }).neden, 'kisit');
+  assert.equal(alt({ yas: 'dana', kilo: 250 }).hesap.ml, 75);
+  assert.equal((await hazir("Vücut ağırlığı 200 kg'dan az olan hayvanlara uygulanmamalıdır."))({ yas: 'dana', kilo: 150 }).neden, 'kisit');
+  assert.equal((await hazir('1,25 kg’ın altında olan hayvanlara uygulanmamalıdır.'))({ yas: 'buzagi', kilo: 45 }).hesap.ml, 13.5);
+  // kilo içermeyen koşullu kısıt (rumen) ml'yi kesmez
+  assert.equal((await hazir('Geviş getiren sığırlarda kullanılmaz.'))({ yas: 'dana', kilo: 250 }).hesap.ml, 75);
+});
+
+test('F5 enIyiAdayProtokolDisiEtkenliyseHekimSecer', async () => {
+  // Vetamplius Mucosol benzeri: ampisilin + bromheksin (protokolde yok); meme içi tüpler de kloksasilinli
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-brom', ad: 'Aaa Bromheksinli', etkenler: ['ornek_antibiyotik', 'test_bromheksin'] }, kayit: { oran: oran(0.1), yollar: ['IM', 'IV'] } },
+    { urun: { urunId: 't-tup', ad: 'Bbb LC', etkenler: ['ornek_antibiyotik', 'test_kloksasilin'], form: 'süspansiyon' }, kayit: { oran: DUSUK, yollar: [] } },
+    { urun: { urunId: 't-diger', ad: 'Ccc Kafeinli', etkenler: ['ornek_antibiyotik'], digerEtkenler: ['Kafein'] }, kayit: { oran: DUSUK, yollar: ['IM'] } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  const protokolEtkenleri = new Set(['ornek_antibiyotik', 'ornek_nsaii']);
+  assert.equal(urunSec(ilac, veri, 'inek', { protokolEtkenleri }), null);
+  const [s] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(s.secim, null);
+  assert.equal(s.neden, 'hekim_secer');
+  assert.equal(s.urunSayisi, 3);
+  // protokol dışı etkeni olmayan aday varsa o seçilir
+  veri.urunler.push({ firma: 'Test', form: 'çözelti', hedefTurler: ['sigir'], kub: [], urunId: 't-tek', ad: 'Zzz Tek', etkenler: ['ornek_antibiyotik'] });
+  veri.kub.urunler['t-tek'] = { doz: 'Örnek.', arinma: null, metinYok: false, yollar: ['IM'], sigir: { guven: 'yuksek' }, oran: DUSUK };
+  assert.equal(urunSec(ilac, veri, 'inek', { protokolEtkenleri }).urun.urunId, 't-tek');
+});

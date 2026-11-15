@@ -559,3 +559,12 @@ test('küçük: tablo hücresinden kalan "Keçi" satırı tür başlığı sayı
   assert.deepEqual(sigirYollari(ornek('kalsimin')), ['IM', 'IV', 'SC']); // "Damar içi, adale içi ve deri altı yolla uygulanır."
   assert.deepEqual(sigirYollari('Sığır\n1 ml/10 kg.\nAt\nVen içi yolla 1 ml/45 kg uygulanır.'), []); // gerçek başlık hâlâ başlık
 });
+
+test('F3 kisitlar: "Geviş getiren sığırlarda kullanılmaz" (linkomisin + spektinomisin 4.3) koşullu kısıt', () => {
+  const k = (metin) => dozOrani('1 ml/10 kg.', { kisitMetinleri: [metin] }).kisitlar;
+  assert.deepEqual(k('Geviş getiren sığırlarda kullanılmaz.'), [{ tur: 'kosullu', metin: 'Geviş getiren sığırlarda kullanılmaz.' }]);
+  assert.deepEqual(k('Atlarda, tavşanlarda ve geviş getiren sığırlarda kullanılmamalıdır.'),
+    [{ tur: 'kosullu', metin: 'Atlarda, tavşanlarda ve geviş getiren sığırlarda kullanılmamalıdır.' }]);
+  // olumsuz değilse kısıt değil
+  assert.deepEqual(k('Geviş getiren sığırlarda kullanılır.'), []);
+});

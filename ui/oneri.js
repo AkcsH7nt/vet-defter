@@ -63,8 +63,8 @@ function hesapBlogu(hesap, secim) {
 }
 
 /** Seçilen ürünün KÜB kısıtları aynen (data-kub); koşullu olana önek, olumsuz olan kırmızı. */
-function kisitlar(secim) {
-  return (secim.kisitlar ?? []).map((k) => el('p', { class: `kisit ${k.tur === 'olumsuz' ? 'olumsuz' : ''}`.trim(), 'data-kub': '' },
+function kisitlar(secim, engel = null) {
+  return (secim.kisitlar ?? []).filter((k) => k !== engel).map((k) => el('p', { class: `kisit ${k.tur === 'olumsuz' ? 'olumsuz' : ''}`.trim(), 'data-kub': '' },
     k.tur === 'kosullu' ? `Koşullu kısıt: ${k.metin}` : k.metin));
 }
 
@@ -72,6 +72,7 @@ function kisitlar(secim) {
 const KISA_NEDEN = {
   urun_yok: 'ürün yok', hekim_secer: 'ürünü hekim seçer', ayni_urun: 'aynı ürün — ayrıca verilmez', yas_uymuyor: 'yaş uymuyor',
   sabit_doz: 'doz kiloya bağlı değil', oran_yok: "KÜB'de oran yok", kilo_yok: 'kilo girin', kilo_gecersiz: 'kilo olağan dışı',
+  kisit: 'KÜB kısıtı',
 };
 // Buzağı kapsamlı oranın yetişkinde "oran yok" nedeni yerine yalnız B14 notu gösterilir.
 const yalnizBuzagiDozu = (satir) => !!satir.secim?.dozBuzagiIcin && satir.neden === 'oran_yok';
@@ -85,7 +86,8 @@ function alternatifOzeti(satir) {
     secim ? ` · ${secim.urun.ad}` : null,
     hesap ? el('span', { class: 'ozet-ml', 'data-kub': '' }, ` → ${virgul(hesap.ml)} ml`) : kisa ? ` · ${kisa}` : null,
     secim?.sutYasak ? el('span', { class: 'oneri-kirmizi' }, SAGMAL_YASAK) : null,
-    (secim?.kisitlar ?? []).filter((k) => k.tur === 'olumsuz').map((k) => el('span', { class: 'kisit olumsuz', 'data-kub': '' }, k.metin)));
+    satir.kisitEngel ? el('span', { class: 'kisit olumsuz kisit-engel', 'data-kub': '' }, satir.kisitEngel.metin) : null,
+    (secim?.kisitlar ?? []).filter((k) => k.tur === 'olumsuz' && k !== satir.kisitEngel).map((k) => el('span', { class: 'kisit olumsuz', 'data-kub': '' }, k.metin)));
 }
 
 /** Satır (li.oneri-satir). alternatif: "BİRİ" grubunda ilk satırdan sonraki satır, kapalı details içinde. */
@@ -116,6 +118,8 @@ function satirIcerigi(satir, veri, oneri) {
     oran_yok: () => notr("KÜB'de kiloya göre tek oran yok — KÜB metnine bakın"),
     kilo_yok: () => sari('Kilo girin, ml hesaplansın'),
     kilo_gecersiz: () => sari(oneri.kiloUyari?.metin ?? 'Kilo olağan dışı, kontrol edin'),
+    // kilo, KÜB'ün koşullu kısıtına giriyor (ör. "80 kg’dan daha ağır buzağılarda kullanılmaz"): kısıt aynen, kırmızı
+    kisit: () => el('p', { class: 'oneri-kirmizi kisit-engel', 'data-kub': '' }, satir.kisitEngel.metin),
   }[yalnizBuzagiDozu(satir) ? null : satir.neden]?.() ?? null;
 
   if (!secim || satir.neden === 'ayni_urun') return [baslik, neden];
@@ -126,7 +130,7 @@ function satirIcerigi(satir, veri, oneri) {
     yollar.length ? el('p', { class: 'urun-yol' }, `Bu ürün: ${yollar.map((k) => YOL_AD[k] ?? k).join(' / ')}`) : null,
     secim.yolBilinmiyor ? notr("Uygulama yolu KÜB'den okunamadı — ürünü kontrol edin") : null,
     secim.dozBuzagiIcin ? notr(BUZAGI_DOZU) : null,
-    kisitlar(secim),
+    kisitlar(secim, satir.kisitEngel),
     kombineBilgisi(secim.urun, etken, veri));
   return [
     baslik,

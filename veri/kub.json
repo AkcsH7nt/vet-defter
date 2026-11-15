@@ -128,7 +128,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -1413,7 +1418,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -1932,7 +1942,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -2511,7 +2526,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -3233,7 +3253,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -4704,7 +4729,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -8215,7 +8245,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -9285,7 +9320,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -9917,7 +9957,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -11777,7 +11822,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -12552,7 +12602,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -12900,7 +12955,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -16516,7 +16576,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -19681,7 +19746,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -20225,7 +20295,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -20788,7 +20863,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -22560,7 +22640,12 @@
         "guven": "dusuk",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Rumen florasına etkisi nedeniyle geviş getiren hayvanlarda kullanılmamalıdır."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -22884,7 +22969,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Geviş getiren sığırlarda kullanılmaz."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
