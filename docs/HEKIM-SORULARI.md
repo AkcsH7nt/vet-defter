@@ -42,3 +42,11 @@ Cevaplandıkça bu dosyada işaretleyin.
 - ATCvet kodları WHOCC dizininden doğrulanmalı.
 - Hekim onay akışı (kayıt onaylanınca dozun KÜB'den açılması) ve KÜB'den doz/arınma çıkarımı sonraki sürümde.
 - Yalnız buzağı için ruhsatlı ürünler yetişkin hastalıkta "(yalnız buzağı)" etiketiyle görünüyor; onay başlayınca yaşa göre süzülmeli.
+
+## Tedavi önerisi kartı (16.11.2026, v29)
+26. Meloksikam KÜB'lerinde "Sığır" başlığı altında "Ameliyattan önce 0,4 mg/kg tek kas içi" satırı var; aynı PDF'lerin §5'i bu dozu domuz için veriyor (4.1'de domuz yok). Uygulama bunu domuzdan kayma sayıp sığırda yalnız 0,5 mg/kg (SC/IV) oranını kullanıyor. Uygun mu?
+27. Bavet Meloxicam x8: "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız" kısıtı şu an tüm buzağı hastalıklarında ml'yi durduruyor (yaş girilmezse "Yaşı (ay) girin"). Yalnız ishalde mi uygulansın?
+28. Linkomisin+spektinomisin: "Geviş getiren sığırlarda kullanılmaz" yalnız uyarı olarak gösteriliyor (oranlar zaten yalnız buzağı kapsamlı). Yeterli mi?
+29. Metritis/salmonellozda ampisilin satırı "Ürün hekim seçer" diyor (KÜB'ü olan tek etkenli ampisilin ürünü yok; kombineler kolistin/deksametazon/bromheksin içeriyor). Uygun mu?
+30. Kalsiyum/magnezyum/dekstroz satırları bilinçli olarak "Ürün hekim seçer" (derişim/hacim ürüne göre değişir). Tercih ettiğiniz ürünler varsa protokole yazılabilir.
+- Teknik: Bromvet, Mucolit, Rabenzole için KÜB PDF'i indirilmedi (onayınızla `npm run kub-indir`); Raftiben'in KÜB bağlantısı yok.
