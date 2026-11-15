@@ -39,9 +39,12 @@ test('K8A_digerEtkenAdlari: Bakanlık listesinde eşlenmeyen madde KÜB §2 etki
     ['Benetamin penisilin', 'Framisetin sülfat']);
   assert.deepEqual(digerEtkenAdlari(ornek('fosbayvit-1-3'), ['Vitamin B12 (siyanokobalamin)'], ETKENLER), ['Siyanokobalamin (Vitamin B12)']);
   assert.deepEqual(digerEtkenAdlari(ornek('cloxalene-1-4'), ['dikloksasilin sodyum'], ETKENLER), ['Dikloksasilin baz']);
-  // KÜB bileşiminde bulunmayan ad yazılmaz; KÜB yoksa []
-  assert.deepEqual(digerEtkenAdlari(ornek('amoklizon-1-4'), ['tiyabendazol'], ETKENLER), []);
-  assert.deepEqual(digerEtkenAdlari(null, ['prednizolon'], ETKENLER), []);
+  // KÜB yoksa / okunamıyorsa ya da bileşimde bulunamazsa Bakanlık adı (inceleme turu 1, I1); bilinen etkenin yazımı değilse
+  assert.deepEqual(digerEtkenAdlari(ornek('amoklizon-1-4'), ['tiyabendazol'], ETKENLER), ['tiyabendazol']);
+  assert.deepEqual(digerEtkenAdlari(null, ['tiyabendazol'], ETKENLER), ['tiyabendazol']);
+  assert.deepEqual(digerEtkenAdlari('okunamayan kısa metin', ['Vitamin B12 (siyanokobalamin)'], ETKENLER), ['Vitamin B12 (siyanokobalamin)']);
+  assert.deepEqual(digerEtkenAdlari(null, ['deksametazon 21 izonikotinat'], ETKENLER), []);
+  assert.deepEqual(digerEtkenAdlari(null, [], ETKENLER), []);
 });
 
 test('K8A_digerEtkenAdlari: bilinen etkenin adı olan parça atlanır, aynı sözcüğün sonraki geçişi alınır', async () => {

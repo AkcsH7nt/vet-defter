@@ -155,7 +155,8 @@ function bilinenEtkenVar(parca, anahtarlar) {
  * (3) en ayırt edici (en uzun) sözcüğün geçtiği satırlar. Bulunan satırın miktar / nokta dizisi / sütun boşluğuyla
  * ayrılmış parçası ad olarak alınır ("Prednizolon………10 mg" → "Prednizolon"). Parça "…'e eşdeğer" ifadesiyse sonraki
  * geçiş denenir; parça etkenler.json'daki bir etkenin adıysa ("Benzilpenisilin prokain", "Kalsiyum glukonat") madde
- * o etken sayılır ve yazılmaz. KÜB metni yoksa ya da madde bileşimde bulunamazsa yazılmaz.
+ * o etken sayılır ve yazılmaz. KÜB metni yoksa, bileşimi okunamıyorsa ya da madde bileşimde bulunamazsa Bakanlık
+ * listesindeki ad yazılır (bilinen bir etkenin başka yazımı değilse) — dış madde sessizce kaybolmaz.
  * @param {string|null} metin  KÜB metni
  * @param {string[]} eslesmeyen  Bakanlık "Etkin Maddeler" hücresinden etkenler.json'a eşlenmeyen adlar
  * @param {object[]} etkenler  veri/etkenler.json
@@ -163,11 +164,13 @@ function bilinenEtkenVar(parca, anahtarlar) {
  * @returns {string[]}
  */
 export function digerEtkenAdlari(metin, eslesmeyen, etkenler, anahtarlar = bilinenAnahtarlar(etkenler)) {
-  if (typeof metin !== 'string' || !eslesmeyen?.length) return [];
-  const b = belgeBilgisi(metin);
-  if (b.tur !== 'kub' && b.tur !== 'prospektus') return [];
-  const kisim = etkinKisim(b.bilesim);
-  if (!kisim) return [];
+  if (!eslesmeyen?.length) return [];
+  // Bakanlık adı (yedek): bilinen bir etkenin başka yazımı ("deksametazon 21 izonikotinat") değilse
+  const bakanlikAdi = (ad) => (bilinenEtkenVar(ad, anahtarlar) ? null : ad);
+  const b = typeof metin === 'string' ? belgeBilgisi(metin) : null;
+  const kisim = b && (b.tur === 'kub' || b.tur === 'prospektus') ? etkinKisim(b.bilesim) : null;
+  // KÜB yok ya da bileşimi okunamıyor: Bakanlık listesindeki adlar (inceleme turu 1, I1)
+  if (!kisim) return [...new Set(eslesmeyen.map(bakanlikAdi).filter(Boolean))];
   const sozler = tokenle(kisim);
   const duzMetin = metin.replace(/\s+/g, ' '); // aynen denetimi (yalnız boşluk sadeleşir)
   const satirOf = (i) => {
@@ -212,9 +215,10 @@ export function digerEtkenAdlari(metin, eslesmeyen, etkenler, anahtarlar = bilin
     if (enAyirt) sozler.forEach((s, i) => { if (tokenEsit(s.k, enAyirt)) ekle(i); });
     let secilen = null;
     let yedek = null;
+    let bilinen = false;
     for (const [sira, i] of adaylar.entries()) {
       const parca = parcaOf(i);
-      if (parca.length >= 2 && bilinenEtkenVar(parca, anahtarlar)) continue; // bilinen etkenin adı: dış madde değil
+      if (parca.length >= 2 && bilinenEtkenVar(parca, anahtarlar)) { bilinen = true; continue; } // bilinen etkenin adı
       if (parca.length < 2 || parca.length > 60 || ESDEGER.test(parca) || !duzMetin.includes(parca)) {
         if (sira < tamAdaySayisi) yedek ??= kisim.slice(sozler[i].bas, sozler[i].son);
         continue;
@@ -222,7 +226,9 @@ export function digerEtkenAdlari(metin, eslesmeyen, etkenler, anahtarlar = bilin
       secilen = parca;
       break;
     }
-    const adKub = secilen ?? yedek;
+    // KÜB bileşiminde bulunamadıysa (başka yazım: "Vitamin B3" ~ "Nikotinamid") Bakanlık adı; bulunduğu yer bilinen bir
+    // etkenin adıysa (madde o etkendir) yazılmaz.
+    const adKub = secilen ?? yedek ?? (bilinen ? null : bakanlikAdi(ad));
     if (adKub && !sonuc.includes(adKub)) sonuc.push(adKub);
   }
   return sonuc;
