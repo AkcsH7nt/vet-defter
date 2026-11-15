@@ -46,7 +46,7 @@ test('veriYukleTumDosyalariGoreliYoldanOkurVeGruplariBirlestirir', async () => {
 
 test('kubDosyasiYoksaBosKume', async () => {
   // veri/kub.json yoksa ya da okunamazsa (ör. eski önbellek, çevrimdışı) uygulama çökmez: boş küme.
-  assert.deepEqual((await ornek()).kub, { cekilmeTarihi: '2026-11-15', urunler: {} });
+  assert.deepEqual(Object.keys((await ornek()).kub.urunler), ['ornek-u1']);
   const temel = dizindenOku(ORNEK);
   const eksik = await veriYukle((yol) => {
     if (yol === 'veri/kub.json') throw new Error(`${yol} okunamadı: ENOENT`);
@@ -55,6 +55,10 @@ test('kubDosyasiYoksaBosKume', async () => {
   assert.deepEqual(eksik.kub, { urunler: {} });
   const dizi = await veriYukle((yol) => (yol === 'veri/kub.json' ? [] : temel(yol)));
   assert.deepEqual(dizi.kub, { urunler: {} });
+  // `urunler` anahtarı yok ya da nesne değil: ekran kayıt aramaya çalışıp çökmesin.
+  for (const bozuk of [{}, { cekilmeTarihi: '2026-11-15' }, { urunler: null }, { urunler: [] }, { urunler: 'x' }]) {
+    assert.deepEqual((await veriYukle((yol) => (yol === 'veri/kub.json' ? bozuk : temel(yol)))).kub, { urunler: {} });
+  }
 });
 
 test('veriYukleIndexDiziDegilseHata', async () => {
@@ -331,17 +335,24 @@ test('urunIdTekrarEdemez', async () => {
   hataIcerir(dogrula(veri), /urunId tekrar ediyor: 7/);
 });
 
-test('onayliHastalikKaynakUrunuVeYolaUyanKubSatiriIster', async () => {
+test('onayliHastalikKaynakUrunuIstemez_KubTuruVeEtkenYeter', async () => {
+  // spec §15: ürün onayı yok; onaylı hastalıkta ilaç satırında kaynak.urun şart değil.
   const veri = await ornek();
+  const onayla = (v) => { const h = hastalik(v, 'ornek_solunum'); h.onay = { ...h.onay, icerikOzeti: icerikOzeti(h) }; };
   ilac0(veri).kaynak.urun = null;
-  hataIcerir(dogrula(veri), /ornek_solunum.*kaynak ürünü yok/);
+  onayla(veri);
+  assert.deepEqual(dogrula(veri), []);
+  // kaynak.tur KUB olmalı; etken var olmalı
   const veri2 = await ornek();
-  veri2.urunler[0].kub[0].yol = 'IV';
-  hataIcerir(dogrula(veri2), /ornek_solunum.*KÜB'ünde \(sigir, IM\) satırı yok/);
-  // Taslak hastalıkta ürünsüz satır serbest (doz zaten gösterilmez).
+  ilac0(veri2).kaynak.tur = 'kitap';
+  hataIcerir(dogrula(veri2), /ornek_solunum.*kaynak/);
   const veri3 = await ornek();
-  assert.equal(hastalik(veri3, 'ornek_ishal').onay.durum, 'taslak');
-  assert.deepEqual(dogrula(veri3), []);
+  ilac0(veri3).etkenId = 'olmayan_etken';
+  hataIcerir(dogrula(veri3), /olmayan_etken/);
+  // Kaynak ürün belirtilmişse yine var olmalı ve etkeni içermeli (bayat bağ yakalanır).
+  const veri4 = await ornek();
+  ilac0(veri4).kaynak.urun = 'Olmayan Ürün';
+  hataIcerir(dogrula(veri4), /kaynak ürünü listede yok/);
 });
 
 test('urunAlanlariDenetlenir', async () => {

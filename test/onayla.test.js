@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { veriYukle } from '../lib/veri.js';
 import { onayliMi } from '../lib/onay.js';
-import { dizindenOku } from '../scripts/dogrula.mjs';
+import { dizindenOku, dogrula } from '../scripts/dogrula.mjs';
 import { onayla, onayKaldir, onayDurumu, dosyadaOnayla } from '../scripts/onayla.mjs';
 
 const KOK = fileURLToPath(new URL('..', import.meta.url));
@@ -105,4 +105,17 @@ test('bilinmeyenIdDosyayaDokunmaz', async () => {
   try {
     await assert.rejects(() => dosyadaOnayla(dizin, 'yok_boyle', OLAY), /bilinmeyen hastalık/);
   } finally { rmSync(dizin, { recursive: true, force: true }); }
+});
+
+test('gercekVeridePnomoniVeSapKaynakUrunsuzOnaylanabilir', async () => {
+  // spec §15: onay ürün şartı aramaz; geçici kopyada onay yazılır, dogrula temiz kalır.
+  const dizin = kopya();
+  try {
+    for (const id of ['sap', 'buzagi_pnomonisi']) await dosyadaOnayla(dizin, id, OLAY);
+    const veri = await yukle(dizin);
+    assert.deepEqual(dogrula(veri), []);
+    assert.equal(veri.hastaliklar.filter((h) => onayliMi(h)).length, 2);
+  } finally {
+    rmSync(dizin, { recursive: true, force: true });
+  }
 });

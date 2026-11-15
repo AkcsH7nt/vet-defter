@@ -450,33 +450,24 @@ export function dogrula(veri) {
   for (const [id, b] of bayraklar) metinTara(`bayrak[${id}]`, { baslik: b?.baslik, uyarilar: b?.uyarilar });
   for (const [id, b] of belirtiler) metinTara(`belirti[${id}]`, b?.ad);
 
-  // --- Protokol → ürün bağları (doz bu üründen okunur; final-review I3) ---
+  // --- Protokol → ürün bağları: kaynak ürün belirtilmişse var olmalı (onay ürün şartı aramaz; spec §15) ---
   const urunler = (Array.isArray(veri.urunler) ? veri.urunler : []).filter(nesneMi);
   const sigirUrunuMu = (u) => Array.isArray(u.hedefTurler) && u.hedefTurler.some((t) => t === 'sigir' || t === 'buzagi');
   for (const [id, h] of hastaliklar) {
     const ilaclar = Array.isArray(h?.protokol?.ilaclar) ? h.protokol.ilaclar : [];
-    const onayli = h?.onay?.durum === 'onayli';
     const yer = `hastalik[${id}]`;
     ilaclar.forEach((ilac, i) => {
       const k = nesneMi(ilac?.kaynak) ? ilac.kaynak : null;
       if (!k) return;
       const urunId = metinMi(k.urunId) ? k.urunId : null;
       const ad = metinMi(k.urun) ? k.urun : null;
-      if (!urunId && !ad) {
-        // Ruhsatlı sığır ürünü olan bir etkende onaylı protokol, dozun hangi KÜB'den geldiğini belirtmeli.
-        const urunuVar = urunler.some((u) => sigirUrunuMu(u) && (u.etkenler ?? []).includes(ilac.etkenId));
-        if (onayli && urunuVar) hata(yer, `onaylı hastalıkta ilaç satırı ${i} (${ilac.etkenId}) kaynak ürünü yok (kaynak.urunId ya da kaynak.urun)`);
-        return;
-      }
+      if (!urunId && !ad) return; // ürün belirtilmemiş: onaylı hastalıkta da serbest (spec §15)
       const adaylar = urunler.filter((u) => (urunId ? u.urunId === urunId : u.ad === ad));
       if (adaylar.length === 0) { hata(yer, `ilaç satırı ${i} kaynak ürünü listede yok: ${urunId ?? ad}`); return; }
       if (adaylar.length > 1) { hata(yer, `ilaç satırı ${i} kaynak ürün adı birden çok ürüne uyuyor: ${ad} — kaynak.urunId kullanın`); return; }
       const u = adaylar[0];
       if (!(u.etkenler ?? []).includes(ilac.etkenId)) hata(yer, `ilaç satırı ${i} kaynak ürünü ${u.ad} etken ${ilac.etkenId} içermiyor`);
       if (!sigirUrunuMu(u)) hata(yer, `ilaç satırı ${i} kaynak ürünü ${u.ad} sığır / buzağı için ruhsatlı değil`);
-      if (onayli && !(u.kub ?? []).some((x) => sade(x?.tur ?? '') === 'sigir' && sade(x?.yol ?? '') === sade(ilac.yol ?? ''))) {
-        hata(yer, `onaylı hastalıkta ilaç satırı ${i}: ${u.ad} KÜB'ünde (sigir, ${ilac.yol}) satırı yok`);
-      }
     });
   }
 
