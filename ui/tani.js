@@ -1,5 +1,5 @@
 // Ekran 1: Tanı girişi. Durum (girdi) değiştikçe sessionStorage'a yazılır.
-import { el, doldur, YASLAR, SISTEMLER, bilinenGirdi } from './ortak.js';
+import { el, doldur, YASLAR, SISTEMLER, bilinenGirdi, sayiMetni } from './ortak.js';
 import { isiOku, isiBulgusu, bulgular } from '../lib/puan.js';
 import { kiloOku, yasAyOku, kiloUyarisi } from '../lib/hayvan.js';
 import { belirtiAra, normalize } from '../lib/arama.js';
@@ -51,7 +51,6 @@ export function render(kok, veri, durum) {
   }
 
   // Kilo ve yaş (ay): geçersiz metin silinmez; girdi.kilo / girdi.yasAy her zaman sayı ya da null.
-  const sayiMetni = (v) => (v == null ? '' : String(v).replace('.', ','));
   const kiloIpucu = el('p', { class: 'ipucu', id: 'kilo-ipucu', 'aria-live': 'polite' });
   const kiloGirdisi = el('input', {
     id: 'kilo', type: 'text', inputmode: 'decimal', autocomplete: 'off', placeholder: 'örn. 450', class: 'alan',

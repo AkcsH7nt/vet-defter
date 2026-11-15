@@ -451,6 +451,9 @@ test('oneri: kilo yok → Kilo girin, oran var ml yok; kart ici kilo tani ekrani
   const kart = s.locator('.oneri-kart');
   assert.match(await kart.innerText(), /Kilo girin, ml hesaplansın/);
   assert.equal(await kart.locator('.ml-buyuk').count(), 0);
+  // kilo yoksa KÜB oranı gösterilir (data-kub), ml yok
+  assert.equal((await kart.locator('.ml-ifade-yalniz').innerText()).trim(), 'KÜB oranı: 1 ml/10 kg canlı ağırlık');
+  assert.equal(await kart.locator('.ml-ifade-yalniz').getAttribute('data-kub'), '');
   await s.fill('#kart-kilo', '300');
   assert.equal((await kart.locator('.ml-buyuk').first().innerText()).trim(), '→ 30 ml');
   assert.match(await kart.innerText(), /Hayvan: Dana \(besi\) · 300 kg/);
@@ -612,7 +615,7 @@ test('oneri B3 B4 B10 B14: sagmal kirmizi, arinma okunamadi, urun yolu, protokol
   await kiloGir(s2, 450);
   await kartaGec(s2);
   assert.equal(await s2.locator('.oneri-kart .ml-buyuk').count(), 0);
-  assert.match(await s2.locator('.oneri-kart').innerText(), /Bu doz yalnız buzağı\/genç sığır için/);
+  assert.match(await s2.locator('.oneri-kart').innerText(), /KÜB oranı buzağı\/genç sığır için — dana \(besi\) için hesaplanmadı/);
   // yalnız B14 notu: "oran yok" nedeni ayrıca yazılmaz
   assert.doesNotMatch(await s2.locator('.oneri-kart').innerText(), /KÜB'de kiloya göre tek oran yok/);
   assert.deepEqual(s.hatalar, []);
@@ -651,7 +654,7 @@ test('oneri B2 B9 B11: hekim secer baglantisi, sabit doz notr, ilac tanimsiz, ih
 });
 
 test('oneri duzeltme 1: kapali alternatif ozetinde ml (data-kub), sut ve olumsuz kisit kirmizi; kapanis notu yalniz ml varken', async () => {
-  const kisitlar = [{ tur: 'olumsuz', metin: 'Gebelikte 0,5 mg/kg üstünde kullanılmaz.' }];
+  const kisitlar = [{ tur: 'olumsuz', metin: 'Gebelikte 0,5 mg/kg üstünde kullanılmaz.' }, { tur: 'kosullu', metin: 'Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır.' }];
   const degis = birlikte(
     hastalikDegis('solunum', 'ornek_solunum', (h) => ({
       ...h, yasGruplari: ['inek'], protokol: { ...h.protokol, ilaclar: h.protokol.ilaclar.map((i) => ({ ...i, sinif: 'antimikrobiyal', yol: 'IM' })) },
@@ -673,6 +676,8 @@ test('oneri duzeltme 1: kapali alternatif ozetinde ml (data-kub), sut ve olumsuz
   assert.equal((await ozet.locator('.oneri-kirmizi').innerText()).trim(), 'Sağmal inekte kullanılmaz');
   assert.equal((await ozet.locator('.kisit.olumsuz').innerText()).trim(), 'Gebelikte 0,5 mg/kg üstünde kullanılmaz.');
   assert.equal(await ozet.locator('.kisit.olumsuz').getAttribute('data-kub'), '');
+  // kapalı satırda koşullu kısıt kısaca uyarılır
+  assert.equal((await ozet.locator('.ozet-kosullu').innerText()).trim(), '⚠ koşullu KÜB kısıtı');
   assert.ok((await ozet.boundingBox()).height >= 44);
   assert.doesNotMatch(await kartDisiMetin(s), /mg\/kg|ml\/kg/);
   assert.match(await kart.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı/);
@@ -703,6 +708,32 @@ test('oneri son tur: kilo kosullu KUB kisiti ml vermez, kisit aynen kirmizi (dat
   assert.equal((await kart.locator('.ml-buyuk').innerText()).trim(), '→ 6 ml');
   assert.equal(await kart.locator('.kisit-engel').count(), 0);
   assert.match(await kart.innerText(), /Koşullu kısıt: 80 kg’dan daha ağır buzağılarda kullanılmaz\./);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('oneri son inceleme: yas kosullu KUB kisiti; buzagida yas girilmemisse Yasi (ay) girin', async () => {
+  const bavet = 'Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız.';
+  const s = await sayfaAc({ degistir: u1Degis((k) => ({ ...k, yollar: ['IM'], oran: { ...ORAN, kisitlar: [{ tur: 'kosullu', metin: bavet }] } })) });
+  await kiloGir(s, 45, 'buzagi');
+  await kartaGec(s);
+  const kart = s.locator('.oneri-kart');
+  assert.equal(await kart.locator('.ml-buyuk').count(), 0);
+  assert.equal((await kart.locator('.oneri-uyari', { hasText: 'Yaşı (ay) girin' }).innerText()).trim(), `Yaşı (ay) girin — KÜB kısıtı: ${bavet}`);
+  assert.equal(await kart.locator('.oneri-uyari .kisit-engel').getAttribute('data-kub'), '');
+  // yaş (ay) 0,1: kısıta giriyor → kırmızı kısıt, ml yok
+  await s.evaluate(() => { location.hash = '#/tani'; });
+  await s.waitForSelector('#yas-ay');
+  await s.fill('#yas-ay', '0,1');
+  await kartaGec(s);
+  assert.equal(await kart.locator('.ml-buyuk').count(), 0);
+  assert.equal((await kart.locator('.oneri-kirmizi.kisit-engel').innerText()).trim(), bavet);
+  // yaş 1 ay: ml var
+  await s.evaluate(() => { location.hash = '#/tani'; });
+  await s.waitForSelector('#yas-ay');
+  await s.fill('#yas-ay', '1');
+  await kartaGec(s);
+  assert.equal((await kart.locator('.ml-buyuk').innerText()).trim(), '→ 4,5 ml');
+  assert.doesNotMatch(await kartDisiMetin(s), /mg\/kg|ml\/kg/);
   assert.deepEqual(s.hatalar, []);
 });
 

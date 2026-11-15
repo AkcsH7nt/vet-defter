@@ -6,7 +6,12 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { dizindenOku } from '../scripts/dogrula.mjs';
 import { veriYukle } from '../lib/veri.js';
-import { gosterilebilirMi, kuruDonemUrunuMu, mlHesapla, urunSec, tedaviOnerisi } from '../lib/oneri.js';
+import {
+  adaySec, gosterilebilirMi, kiloKisiti, kuruDonemUrunuMu, mlHesapla, tedaviOnerisi, urunAdaylari, yasKisiti,
+} from '../lib/oneri.js';
+
+// Motorun kendi yolu: uygun adaylar (urunAdaylari) + seçim (adaySec).
+const urunSec = (ilac, veri, yas, secenek) => adaySec(urunAdaylari(ilac, veri, yas), secenek);
 
 const ORNEK = fileURLToPath(new URL('./ornek/', import.meta.url));
 
@@ -768,4 +773,93 @@ test('F5 enIyiAdayProtokolDisiEtkenliyseHekimSecer', async () => {
   veri.urunler.push({ firma: 'Test', form: 'çözelti', hedefTurler: ['sigir'], kub: [], urunId: 't-tek', ad: 'Zzz Tek', etkenler: ['ornek_antibiyotik'] });
   veri.kub.urunler['t-tek'] = { doz: 'Örnek.', arinma: null, metinYok: false, yollar: ['IM'], sigir: { guven: 'yuksek' }, oran: DUSUK };
   assert.equal(urunSec(ilac, veri, 'inek', { protokolEtkenleri }).urun.urunId, 't-tek');
+});
+
+// --- Son bütün dal incelemesi düzeltmeleri ---
+const BAVET = 'Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız.';
+
+test('S1 yasKisiti esikleriAyCinsinden', () => {
+  const k = (metin) => [{ tur: 'kosullu', metin }];
+  assert.equal(yasKisiti(k(BAVET), 0.1).metin, BAVET); // 3 gün < 1 hafta
+  assert.equal(yasKisiti(k(BAVET), 0.5), null); // ~15 gün
+  assert.equal(yasKisiti(k(BAVET), null), null);
+  assert.ok(yasKisiti(k('6 haftalıktan küçük hayvanlarda kullanılmamalıdır.'), 1)); // 6 hafta ≈ 1,38 ay
+  assert.equal(yasKisiti(k('6 haftalıktan küçük hayvanlarda kullanılmamalıdır.'), 1.5), null);
+  assert.ok(yasKisiti(k('7 günlükten küçük buzağılarda kullanmayınız.'), 0.2));
+  assert.equal(yasKisiti(k('7 günlükten küçük buzağılarda kullanmayınız.'), 0.3), null);
+  assert.ok(yasKisiti(k('7 günlük yaştan daha küçük buzağılarda kullanılmamalıdır.'), 0.1));
+  assert.ok(yasKisiti(k('İshal tedavisi için bir haftalıktan küçük buzağılarda kullanılmamalıdır.'), 0.1));
+  assert.ok(yasKisiti(k('3 aylıktan küçük buzağılarda kullanılmaz.'), 2));
+  assert.equal(yasKisiti(k('3 aylıktan küçük buzağılarda kullanılmaz.'), 3), null);
+  // yaş sınırı olmayan koşullu kısıt ve koşullu olmayan kısıt yaşla kesilmez
+  assert.equal(yasKisiti(k('Geviş getiren sığırlarda kullanılmaz.'), 0.1), null);
+  assert.equal(yasKisiti([{ tur: 'yas', metin: '6 aylık ve daha büyük sığırlarda kullanılır.' }], 1), null);
+});
+
+test('S1 yasKosulluKisitMlVermezBuzagidaYasYoksaYasGir', async () => {
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'SC', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-bm', ad: 'Bavet Meloxicam x8 Örnek', etkenler: ['ornek_nsaii'] }, kayit: { oran: oran(0.0125, { kisitlar: [{ tur: 'kosullu', metin: BAVET }] }), yollar: ['SC', 'IV'] } },
+  ]);
+  const sat = (girdi) => satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, girdi))[0];
+  const genc = sat({ yas: 'buzagi', kilo: 45, yasAy: 0.1 });
+  assert.equal(genc.hesap, null);
+  assert.equal(genc.neden, 'kisit');
+  assert.equal(genc.kisitEngel.metin, BAVET);
+  const yassiz = sat({ yas: 'buzagi', kilo: 45, yasAy: null });
+  assert.equal(yassiz.hesap, null);
+  assert.equal(yassiz.neden, 'yas_gir');
+  assert.equal(yassiz.kisitEngel.metin, BAVET);
+  assert.equal(sat({ yas: 'buzagi', kilo: 45, yasAy: 1 }).hesap.ml, 0.6);
+  // buzağı değilse yaş girilmemesi ml'yi kesmez
+  assert.equal(sat({ yas: 'dana', kilo: 200, yasAy: null }).hesap.ml, 2.5);
+});
+
+test('S2 ciftDozTersYon: sonraki satirin urunu onceki satirin etkenini iceriyorsa ml yok', async () => {
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-ab', ad: 'AB Tek', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: oran(0.1), yollar: ['IM'] } },
+    { urun: { urunId: 't-abns', ad: 'AB+NSAİİ', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'] }, kayit: { oran: oran(0.02), yollar: ['IM'] } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  const h = hastalik({
+    protokol: {
+      ilaclar: [
+        { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null },
+        { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'IM', not: null },
+      ],
+      destekleyici: [], bakim: [], ihbarAdimlari: [],
+    },
+  });
+  const [ab, ns] = satirlarOf(tedaviOnerisi(h, veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(ab.secim.urun.urunId, 't-ab');
+  assert.equal(ab.hesap.ml, 45);
+  assert.equal(ns.secim.urun.urunId, 't-abns');
+  assert.equal(ns.hesap, null);
+  assert.equal(ns.neden, 'ayni_urun');
+  assert.equal(ns.ayniUrunIle, 'ornek_antibiyotik');
+  assert.equal(ns.ayniYon, 'bu_icerir');
+});
+
+test('S3 kiloKisiti: ve uzeri / ve alti, olumsuz yuklem aranmaz', () => {
+  const k = (metin) => [{ tur: 'kosullu', metin }];
+  assert.ok(kiloKisiti(k('80 kg ve üzeri buzağılarda kullanılmaz.'), 80));
+  assert.equal(kiloKisiti(k('80 kg ve üzeri buzağılarda kullanılmaz.'), 79), null);
+  assert.ok(kiloKisiti(k('80 kg ve üzerindeki buzağılarda kullanılmaz.'), 100));
+  assert.ok(kiloKisiti(k('20 kg ve altı buzağılarda kullanılmaz.'), 20));
+  assert.equal(kiloKisiti(k('20 kg ve altı buzağılarda kullanılmaz.'), 21), null);
+  // tür 'kosullu' zaten olumsuzdur: yüklem biçimi farklı olsa da sınır uygulanır
+  assert.ok(kiloKisiti(k('80 kg’dan daha ağır buzağılara verilmesi uygun değildir.'), 100));
+  assert.equal(kiloKisiti([{ tur: 'yas', metin: '80 kg’dan daha ağır buzağılarda kullanılır.' }], 100), null);
+});
+
+test('S7 gosterilebilirMiUyarisiHastalikVeEtkenBasinaBirKez', async () => {
+  const veri = await veriHazirla([], { etkenler: ETKENLER });
+  const uyari = console.warn;
+  const yazilan = [];
+  console.warn = (m) => yazilan.push(m);
+  try {
+    for (let i = 0; i < 3; i += 1) gosterilebilirMi({ etkenId: 'test_ameg_a' }, veri, 's7_hastalik');
+    gosterilebilirMi({ etkenId: 'test_ameg_a' }, veri, 's7_baska');
+  } finally { console.warn = uyari; }
+  assert.equal(yazilan.length, 2);
 });

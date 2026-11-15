@@ -2,7 +2,7 @@
 // doz/oran/ml öğesi `data-kub` taşır; KÜB metni yalnız textContent ile yazılır (el() zaten böyle yapar).
 // Renk: sarı uyarı (.oneri-uyari) yalnız kilo / yaş uyarılarında, kırmızı (.oneri-kirmizi) süt ve olumsuz KÜB kısıtında;
 // ml çıkmayan satırların nedeni (.oneri-neden) nötr.
-import { el, YASLAR, taslakEtiketi } from './ortak.js';
+import { el, YASLAR, taslakEtiketi, sayiMetni } from './ortak.js';
 import { tedaviOnerisi } from '../lib/oneri.js';
 import { kiloOku } from '../lib/hayvan.js';
 import { onayliMi } from '../lib/onay.js';
@@ -26,7 +26,6 @@ export const KAPANIS_NOTU = "Doz ürünün KÜB'ünden otomatik hesaplandı — 
 export const IHBAR_ONCE = 'İhbarı mecburi — önce bildirin';
 export const SATIR_YOK = 'Birinci seçenek ilaç tanımlı değil — aşağıdaki protokole bakın';
 export const SAGMAL_YASAK = 'Sağmal inekte kullanılmaz';
-export const BUZAGI_DOZU = 'Bu doz yalnız buzağı/genç sığır için';
 export const BUYUK_HACIM = 'Büyük hacim — KÜB sınır vermiyor; bölmeyi değerlendirin';
 export const TEKRAR_SURE = 'Tekrar ve süre: KÜB: Doz';
 
@@ -39,6 +38,9 @@ const kucukAd = (k) => String(yasAdi(k) ?? '').toLocaleLowerCase('tr');
 export function yasUyarisi(yasGruplari, yas) {
   return `Bu hastalık ${yasGruplari.map(kucukAd).join('/')} hastalığı — seçili hayvan: ${kucukAd(yas)}. Hayvanı düzeltin.`;
 }
+
+/** Buzağı kapsamlı oran, hayvan buzağı değil: "KÜB oranı buzağı/genç sığır için — dana (besi) için hesaplanmadı". */
+export const buzagiDozuMetni = (yas) => `KÜB oranı buzağı/genç sığır için — ${kucukAd(yas)} için hesaplanmadı`;
 
 function yerMetni(hesap) {
   const sinir = `(yer başına en çok ${virgul(hesap.yerBasinaMaxMl)} ml)`;
@@ -72,29 +74,32 @@ function kisitlar(secim, engel = null) {
 const KISA_NEDEN = {
   urun_yok: 'ürün yok', hekim_secer: 'ürünü hekim seçer', ayni_urun: 'aynı ürün — ayrıca verilmez', yas_uymuyor: 'yaş uymuyor',
   sabit_doz: 'doz kiloya bağlı değil', oran_yok: "KÜB'de oran yok", kilo_yok: 'kilo girin', kilo_gecersiz: 'kilo olağan dışı',
-  kisit: 'KÜB kısıtı',
+  kisit: 'KÜB kısıtı', yas_gir: 'yaşı (ay) girin',
 };
 // Buzağı kapsamlı oranın yetişkinde "oran yok" nedeni yerine yalnız B14 notu gösterilir.
 const yalnizBuzagiDozu = (satir) => !!satir.secim?.dozBuzagiIcin && satir.neden === 'oran_yok';
 
 /** "ya da: <etken> · <ürün> → 18 ml" (ml data-kub) ya da kısa neden; süt yasağı ve olumsuz KÜB kısıtı kırmızı. */
-function alternatifOzeti(satir) {
+function alternatifOzeti(satir, oneri) {
   const { etken, secim, hesap } = satir;
-  const kisa = yalnizBuzagiDozu(satir) ? BUZAGI_DOZU.toLocaleLowerCase('tr') : KISA_NEDEN[satir.neden];
+  const kisa = yalnizBuzagiDozu(satir) ? buzagiDozuMetni(oneri.yas) : KISA_NEDEN[satir.neden];
+  const kosullu = (secim?.kisitlar ?? []).some((k) => k.tur === 'kosullu' && k !== satir.kisitEngel);
   return el('summary', {},
     'ya da: ', el('strong', {}, etken.ad),
     secim ? ` · ${secim.urun.ad}` : null,
     hesap ? el('span', { class: 'ozet-ml', 'data-kub': '' }, ` → ${virgul(hesap.ml)} ml`) : kisa ? ` · ${kisa}` : null,
     secim?.sutYasak ? el('span', { class: 'oneri-kirmizi' }, SAGMAL_YASAK) : null,
     satir.kisitEngel ? el('span', { class: 'kisit olumsuz kisit-engel', 'data-kub': '' }, satir.kisitEngel.metin) : null,
-    (secim?.kisitlar ?? []).filter((k) => k.tur === 'olumsuz' && k !== satir.kisitEngel).map((k) => el('span', { class: 'kisit olumsuz', 'data-kub': '' }, k.metin)));
+    (secim?.kisitlar ?? []).filter((k) => k.tur === 'olumsuz' && k !== satir.kisitEngel).map((k) => el('span', { class: 'kisit olumsuz', 'data-kub': '' }, k.metin)),
+    // kapalı satırda ml görünse de koşullu kısıt gözden kaçmasın (metni satır açılınca)
+    kosullu ? el('span', { class: 'ozet-kosullu' }, '⚠ koşullu KÜB kısıtı') : null);
 }
 
 /** Satır (li.oneri-satir). alternatif: "BİRİ" grubunda ilk satırdan sonraki satır, kapalı details içinde. */
 function satirCiz(satir, veri, oneri, alternatif = false) {
   const icerik = satirIcerigi(satir, veri, oneri);
   return el('li', { class: 'oneri-satir' },
-    alternatif ? el('details', { class: 'alternatif' }, alternatifOzeti(satir), icerik) : icerik);
+    alternatif ? el('details', { class: 'alternatif' }, alternatifOzeti(satir, oneri), icerik) : icerik);
 }
 
 function satirIcerigi(satir, veri, oneri) {
@@ -112,14 +117,24 @@ function satirIcerigi(satir, veri, oneri) {
     urun_yok: () => notr('Listede ruhsatlı sığır ürünü yok'),
     hekim_secer: () => el('p', { class: 'oneri-neden' }, 'Ürün hekim seçer (derişim/hacim ürüne göre değişir) — ',
       el('a', { href }, `ruhsatlı ürünler (${satir.urunSayisi}) ▸`)),
-    ayni_urun: () => notr(`Aynı ürün: ${veri.etkenler.find((x) => x.id === satir.ayniUrunIle)?.ad ?? satir.ayniUrunIle} satırındaki ürün bu etkeni de içerir — ayrıca verilmez`),
+    ayni_urun: () => {
+      const ad = veri.etkenler.find((x) => x.id === satir.ayniUrunIle)?.ad ?? satir.ayniUrunIle;
+      return notr(satir.ayniYon === 'bu_icerir'
+        ? `Çift doz: ${secim.urun.ad} ${ad} de içerir — ${ad} satırındaki ürünle birlikte verilmez`
+        : `Aynı ürün: ${ad} satırındaki ürün bu etkeni de içerir — ayrıca verilmez`);
+    },
     yas_uymuyor: () => sari('Yaş grubu bu hastalığa uymuyor — ml hesaplanmadı'),
     sabit_doz: () => notr('Doz kiloya bağlı değil (hayvan / meme lobu başına) — KÜB: Doz'),
     oran_yok: () => notr("KÜB'de kiloya göre tek oran yok — KÜB metnine bakın"),
-    kilo_yok: () => sari('Kilo girin, ml hesaplansın'),
+    // kilo yoksa KÜB oranı gösterilir, ml yok
+    kilo_yok: () => el('div', {}, sari('Kilo girin, ml hesaplansın'),
+      secim?.kayit?.oran?.ifade ? el('p', { class: 'ml-ifade-yalniz', 'data-kub': '' }, `KÜB oranı: ${secim.kayit.oran.ifade}`) : null),
     kilo_gecersiz: () => sari(oneri.kiloUyari?.metin ?? 'Kilo olağan dışı, kontrol edin'),
     // kilo, KÜB'ün koşullu kısıtına giriyor (ör. "80 kg’dan daha ağır buzağılarda kullanılmaz"): kısıt aynen, kırmızı
     kisit: () => el('p', { class: 'oneri-kirmizi kisit-engel', 'data-kub': '' }, satir.kisitEngel.metin),
+    // buzağıda KÜB yaş alt sınırı var, yaş (ay) girilmedi
+    yas_gir: () => el('p', { class: 'oneri-neden oneri-uyari' }, 'Yaşı (ay) girin — KÜB kısıtı: ',
+      el('span', { class: 'kisit-engel', 'data-kub': '' }, satir.kisitEngel.metin)),
   }[yalnizBuzagiDozu(satir) ? null : satir.neden]?.() ?? null;
 
   if (!secim || satir.neden === 'ayni_urun') return [baslik, neden];
@@ -129,7 +144,7 @@ function satirIcerigi(satir, veri, oneri) {
     satir.hesap ? hesapBlogu(satir.hesap, secim) : [neden, secim.sutYasak ? el('p', { class: 'oneri-kirmizi' }, SAGMAL_YASAK) : null],
     yollar.length ? el('p', { class: 'urun-yol' }, `Bu ürün: ${yollar.map((k) => YOL_AD[k] ?? k).join(' / ')}`) : null,
     secim.yolBilinmiyor ? notr("Uygulama yolu KÜB'den okunamadı — ürünü kontrol edin") : null,
-    secim.dozBuzagiIcin ? notr(BUZAGI_DOZU) : null,
+    secim.dozBuzagiIcin ? notr(buzagiDozuMetni(oneri.yas)) : null,
     kisitlar(secim, satir.kisitEngel),
     kombineBilgisi(secim.urun, etken, veri));
   return [
@@ -180,7 +195,6 @@ export function oneriKarti(h, veri, durum) {
     icerik.replaceChildren(...parcalar);
   }
 
-  const sayiMetni = (v) => (v == null ? '' : String(v).replace('.', ','));
   const kiloGirdisi = el('input', {
     id: 'kart-kilo', type: 'text', inputmode: 'decimal', autocomplete: 'off', placeholder: 'örn. 450', class: 'alan',
     value: durum.kiloMetni ?? sayiMetni(girdi.kilo),

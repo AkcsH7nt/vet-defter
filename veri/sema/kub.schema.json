@@ -37,7 +37,22 @@
               "kaynak": { "enum": ["ml_kg", null], "description": "Bu sürümde yalnız ml_kg (KÜB'de doğrudan ml/kg oranı)." },
               "kapsam": { "enum": ["sigir", "buzagi", null], "description": "buzagi: oran yalnız buzağı / dana cümlesinde geçiyor (inekte hesap yok)." },
               "guven": { "enum": ["yuksek", "dusuk"], "description": "yuksek yalnız sığıra ait tek ayırt edici oran varken: birden çok farklı oran, aralık, tablo, eski biçim, üst sınır / kilo sınıfı, bölünmüş günlük doz, endikasyona göre farklı mg/kg dozu ya da ters yazılı farklı oran → dusuk." },
-              "yerBasinaMaxMl": { "type": ["number", "null"], "exclusiveMinimum": 0, "description": "Bir enjeksiyon yerine en çok uygulanacak ml (sığır cümlesinden; okunamazsa ya da çelişirse null)." }
+              "yerBasinaMaxMl": { "type": ["number", "null"], "exclusiveMinimum": 0, "description": "Bir enjeksiyon yerine en çok uygulanacak ml (sığır cümlesinden; okunamazsa ya da çelişirse null)." },
+              "yerBasinaYol": { "enum": ["IM", "SC", null], "description": "Yer başına sınır yalnız bu yolda geçerli (\"kas içi uygulamalarda bir bölgeye 5 ml'den fazla …\"); ekranda \"Kas içi verilirse N ayrı yere bölün\". Sınır her yolda geçerliyse ya da yoksa null." },
+              "kisitlar": {
+                "type": "array",
+                "description": "KÜB 4.1 / 4.2 / 4.3 / 4.9'dan sığıra ait yaş / kilo / rumen kısıtı cümleleri aynen (yalnız büyük harfli başlık öneki atılır). Ekran seçilen ürünün altında data-kub ile aynen gösterir.",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["tur", "metin"],
+                  "properties": {
+                    "tur": { "enum": ["olumsuz", "yas", "kosullu"], "description": "olumsuz: koşulsuz yasak (\"Ürün buzağılarda kullanılmamalıdır\"; buzağıda ürünü eler). yas: yaş kapsamı / yalnız buzağı bildirimi. kosullu: koşula bağlı yasak (yaş, kilo, rumen / geviş getirme; kilo ya da yaş alt sınırı hayvanı dışlıyorsa ml hesaplanmaz)." },
+                    "metin": { "$ref": "ortak.schema.json#/$defs/metin" }
+                  }
+                }
+              },
+              "sabitDoz": { "type": "boolean", "description": "KÜB dozu kiloya bağlı değil (hayvan / baş / meme lobu başına, tüp, şırınga); oran yoksa ekran \"Doz kiloya bağlı değil\" der." }
             }
           },
           "yollar": {

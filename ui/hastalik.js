@@ -25,7 +25,7 @@ export function render(kok, veri, durum, rota) {
   if (tedaviYok && (p.ilaclar ?? []).length) console.warn(`Tedavi kipi '${h.tedaviKipi}' iken ilaç satırları gösterilmedi: ${h.id}`);
 
   const ilacSatirlari = tedaviYok ? [] : [...(p.ilaclar ?? [])]
-    .filter((i) => gosterilebilirMi(i, veri))
+    .filter((i) => gosterilebilirMi(i, veri, h.id))
     .sort((a, b) => a.sira - b.sira).map((i) => {
       const e = veri.etkenler.find((x) => x.id === i.etkenId);
       const href = `#/etken/${encodeURIComponent(i.etkenId)}`;

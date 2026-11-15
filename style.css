@@ -210,6 +210,8 @@ li.urun { min-width: 0; }
 .alternatif > summary .ozet-ml { font-weight: 800; color: var(--vurgu); }
 .alternatif > summary .oneri-kirmizi, .alternatif > summary .kisit.olumsuz { display: block; width: fit-content; max-width: 100%; }
 .alternatif[open] > summary { color: var(--soluk); }
+.alternatif > summary .ozet-kosullu { display: block; font-size: 13px; font-weight: 700; color: var(--uyari-yazi); }
+.ml-ifade-yalniz { margin: 4px 0; font-size: 14px; }
 .grup-baslik .etiket { font-size: 11px; }
 .kub-alt { margin: 8px 12px 4px; font-size: 14px; }
 .kub-kutu .kub-alinti { margin: 0 12px 10px; }

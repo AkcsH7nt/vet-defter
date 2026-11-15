@@ -31,6 +31,9 @@ export function sorumlulukNotu() {
   return el('p', { class: 'sorumluluk' }, 'Hekim kararının yerine geçmez');
 }
 
+/** Sayı → giriş kutusu metni (ondalık virgülle; null → boş). */
+export const sayiMetni = (v) => (v == null ? '' : String(v).replace('.', ','));
+
 export const YASLAR = [
   ['buzagi', 'Buzağı'], ['dana', 'Dana (besi)'], ['duve', 'Düve'], ['inek', 'İnek'], ['boga', 'Boğa'],
 ];
