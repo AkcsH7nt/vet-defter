@@ -8,6 +8,7 @@
     "dogrula": "node scripts/dogrula.mjs",
     "sunucu": "node scripts/sunucu.mjs",
     "urun-cek": "node scripts/urun-cek.mjs",
+    "kub-indir": "node scripts/kub-indir.mjs",
     "surum": "node scripts/surum.mjs"
   },
   "devDependencies": {
