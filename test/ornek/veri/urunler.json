@@ -7,6 +7,7 @@
     "etkenler": [
       "ornek_antibiyotik"
     ],
+    "digerEtkenler": [],
     "hedefTurler": [
       "sigir",
       "koyun"

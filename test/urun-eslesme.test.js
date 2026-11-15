@@ -97,3 +97,9 @@ test('K8A8_kubBilesimEki: Kalsimin KÜB bileşimindeki borik asit (Bakanlık lis
   const hucre = 'kalsiyum d sakkarat, kalsiyum glukoheptonat, kalsiyum glukonat, kalsiyum hipofosfit, magnezyum klorür';
   assert.deepEqual(coz([...maddeleriAyir(hucre), ...ek], 'perfüzyon').ids, ['kalsiyum_boroglukonat', 'magnezyum']);
 });
+test('K8A_digerEtkenlerYenilemedeKorunur', async () => {
+  const { oncekiDigerEtkenleriKoru } = await import('../scripts/urun-cek.mjs');
+  const yeni = [{ urunId: '5', ad: 'A', digerEtkenler: [] }, { urunId: '9', ad: 'B', digerEtkenler: [] }];
+  const onceki = [{ urunId: '5', ad: 'A', digerEtkenler: ['Prednizolon'] }];
+  assert.deepEqual(oncekiDigerEtkenleriKoru(yeni, onceki).map((u) => u.digerEtkenler), [['Prednizolon'], []]);
+});

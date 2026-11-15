@@ -31,3 +31,24 @@ test('K8A8_prospektusBilesimi: Kalsimin borik asit + kalsiyum glukonat; endikasy
   assert.deepEqual(eksik('kalsimin-prospektus', ['kalsiyum_boroglukonat', 'magnezyum']), []);
   assert.equal(etkinKisim('Etkin madde: X 10 mg\nYardımcı maddeler: propilen glikol'), 'Etkin madde: X 10 mg\n');
 });
+
+test('K8A_digerEtkenAdlari: Bakanlık listesinde eşlenmeyen madde KÜB §2 etkin kısmında aynen aranır', async () => {
+  const { digerEtkenAdlari } = await import('../scripts/etken-tara.mjs');
+  assert.deepEqual(digerEtkenAdlari(ornek('amoklizon-1-4'), ['prednizolon'], ETKENLER), ['Prednizolon']);
+  assert.deepEqual(digerEtkenAdlari(ornek('ubrostar-bilesim'), ['benetamin penisilin', 'framisetin sülfat'], ETKENLER),
+    ['Benetamin penisilin', 'Framisetin sülfat']);
+  assert.deepEqual(digerEtkenAdlari(ornek('fosbayvit-1-3'), ['Vitamin B12 (siyanokobalamin)'], ETKENLER), ['Siyanokobalamin (Vitamin B12)']);
+  assert.deepEqual(digerEtkenAdlari(ornek('cloxalene-1-4'), ['dikloksasilin sodyum'], ETKENLER), ['Dikloksasilin baz']);
+  // KÜB bileşiminde bulunmayan ad yazılmaz; KÜB yoksa []
+  assert.deepEqual(digerEtkenAdlari(ornek('amoklizon-1-4'), ['tiyabendazol'], ETKENLER), []);
+  assert.deepEqual(digerEtkenAdlari(null, ['prednizolon'], ETKENLER), []);
+});
+
+test('K8A_digerEtkenAdlari: bilinen etkenin adı olan parça atlanır, aynı sözcüğün sonraki geçişi alınır', async () => {
+  const { digerEtkenAdlari } = await import('../scripts/etken-tara.mjs');
+  // "Benzilpenisilin prokain" penisilin_g_prokain'dir; "Prokain hidroklorür" ayrı (lokal anestezik) madde
+  assert.deepEqual(digerEtkenAdlari(ornek('contropen-1-3'), ['prokain HCl'], ETKENLER), ['Prokain hidroklorür']);
+  // "Kalsiyum glukonat" etkendir; glukoheptonat / hipofosfit / D-sakkarat değildir (katyon adı tek başına ayırt etmez)
+  assert.deepEqual(digerEtkenAdlari(ornek('kalsimin-prospektus'), ['kalsiyum d sakkarat', 'kalsiyum glukoheptonat', 'kalsiyum hipofosfit'], ETKENLER),
+    ['Kalsiyum D-sakkarat', 'Kalsiyum glukoheptonat', 'Kalsiyum hipofosfit']);
+});

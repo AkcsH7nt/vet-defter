@@ -44,7 +44,7 @@ const ALANLAR = {
   onay: [['durum'], ['kim', 'tarih', 'icerikOzeti']],
   bayrak: [['id', 'hastalikId', 'kosul', 'baslik', 'uyarilar', 'onay'], []],
   kosul: [[], ['hepsi', 'herhangi', 'baglam']], // hepsi / herhangi'den en az biri dolu (aşağıda denetlenir)
-  urun: [['ad', 'firma', 'form', 'etkenler', 'hedefTurler', 'kubUrl', 'cekilmeTarihi', 'kub', 'kubDogrulandi'], ['urunId']],
+  urun: [['ad', 'firma', 'form', 'etkenler', 'digerEtkenler', 'hedefTurler', 'kubUrl', 'cekilmeTarihi', 'kub', 'kubDogrulandi'], ['urunId']],
   kub: [['tur', 'yol', 'doz', 'et_gun', 'sut'], []],
   doz: [['miktar', 'birim', 'aralik', 'sure'], []],
   kubDogrulandi: [['kim', 'tarih', 'icerikOzeti'], []],
@@ -376,6 +376,9 @@ export function dogrula(veri) {
     for (const a of ['ad', 'firma', 'form']) if (!metinMi(u[a])) hata(yer, `${a} metin olmalı`);
     if (!Array.isArray(u.etkenler) || u.etkenler.length === 0) hata(yer, 'etkenler boş olmayan dizi olmalı');
     else for (const e of u.etkenler) if (!etkenler.has(e)) hata(yer, `bilinmeyen etken: ${e}`);
+    // etken kaydı olmayan etkin maddeler (KÜB §2 yazımı; scripts/etken-tara.mjs --yaz): dolu metin dizisi, tekrarsız
+    if (!metinDizisiMi(u.digerEtkenler)) hata(yer, 'digerEtkenler dolu metin dizisi olmalı ([] olabilir)');
+    else if (new Set(u.digerEtkenler).size !== u.digerEtkenler.length) hata(yer, 'digerEtkenler tekrarsız olmalı');
     if (!Array.isArray(u.hedefTurler) || u.hedefTurler.length === 0 || !u.hedefTurler.every(kimlikMi)) {
       hata(yer, 'hedefTurler boş olmayan tür kimliği dizisi olmalı (ör. sigir)');
     }

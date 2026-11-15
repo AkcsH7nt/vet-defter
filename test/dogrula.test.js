@@ -634,3 +634,16 @@ test('cliEksikDosyadaBirCikar', () => {
     rmSync(gecici, { recursive: true, force: true });
   }
 });
+
+test('urunDigerEtkenlerDenetlenir', async () => {
+  // K8-A (kontrolcü kararı): etken kaydı olmayan etkin maddeler (KÜB §2, aynen) digerEtkenler'de; her üründe zorunlu.
+  const veri = await ornek();
+  veri.urunler[0].digerEtkenler = ['Prednizolon'];
+  assert.deepEqual(dogrula(veri), []);
+  for (const [deger, desen] of [[undefined, /Örnek Ürün.*eksik alan: digerEtkenler/], ['Prednizolon', /Örnek Ürün.*digerEtkenler/],
+    [[''], /Örnek Ürün.*digerEtkenler/], [['A', 'A'], /Örnek Ürün.*digerEtkenler tekrarsız/]]) {
+    const v = structuredClone(veri);
+    if (deger === undefined) delete v.urunler[0].digerEtkenler; else v.urunler[0].digerEtkenler = deger;
+    hataIcerir(dogrula(v), desen);
+  }
+});

@@ -236,6 +236,15 @@ export function oncekiKubuKoru(yeni, onceki) {
   });
 }
 
+/**
+ * digerEtkenler (etken kaydı olmayan etkin maddelerin KÜB §2 yazımı; scripts/etken-tara.mjs --yaz üretir) liste
+ * yenilenirken aynı urunId'ye taşınır; yeni ürünlerde [] kalır, tarama yeniden çalıştırılınca güncellenir.
+ */
+export function oncekiDigerEtkenleriKoru(yeni, onceki) {
+  const harita = new Map((onceki ?? []).filter((u) => u.urunId && Array.isArray(u.digerEtkenler)).map((u) => [u.urunId, u.digerEtkenler]));
+  return yeni.map((u) => (u.urunId && harita.has(u.urunId) ? { ...u, digerEtkenler: harita.get(u.urunId) } : u));
+}
+
 function turKimligi(ad) { return normalize(ad).replace(/ /g, '_'); }
 function liste(s) { return s.split(/\s*[,;]\s*/).map((x) => x.trim()).filter(Boolean); }
 
@@ -309,7 +318,7 @@ function uret(dosyalar, etkenler, tarih) {
     if (u.etkenler.length === 0) { atilan += 1; continue; }
     const { s } = u;
     cikti.push({
-      urunId: u.urunId, ad: s.ad, firma: s.firma, form: s.form, etkenler: u.etkenler, hedefTurler: u.hedefTurler,
+      urunId: u.urunId, ad: s.ad, firma: s.firma, form: s.form, etkenler: u.etkenler, digerEtkenler: [], hedefTurler: u.hedefTurler,
       kubUrl: s.kubUrl, cekilmeTarihi: tarih, kub: [], kubDogrulandi: null,
     });
   }
@@ -353,7 +362,8 @@ async function main() {
     throw new Error(`Koruma: ${r.cikti.length} ürün üretildi, önceki ${onceki}; urunler.json ve meta.json DEĞİŞTİRİLMEDİ.`);
   }
   // Hekimin KÜB doğrulama çalışması yenilemede silinmez (final-review I3).
-  writeFileSync(urunYol, JSON.stringify(oncekiKubuKoru(r.cikti, Array.isArray(oncekiListe) ? oncekiListe : []), null, 2) + '\n');
+  writeFileSync(urunYol, JSON.stringify(oncekiKubuKoru(oncekiDigerEtkenleriKoru(r.cikti, Array.isArray(oncekiListe) ? oncekiListe : []),
+    Array.isArray(oncekiListe) ? oncekiListe : []), null, 2) + '\n');
   const metaYol = join(KOK, 'veri/meta.json');
   const meta = JSON.parse(readFileSync(metaYol, 'utf8'));
   meta.urunListesiTarihi = tarih;
