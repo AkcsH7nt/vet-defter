@@ -18,7 +18,12 @@
         "properties": {
           "doz": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.9 metni; satırlar \\n ile ayrılır (tablo satırları ayrı kalır)." },
           "arinma": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.11 metni." },
-          "metinYok": { "type": "boolean", "description": "PDF'ten metin çıkmadı (taranmış) ya da 4.9 ve 4.11 başlıklarının ikisi de bulunamadı (eski prospektüs biçimi). Ekranda \"KÜB'e bakın\" + bağlantı." },
+          "metinYok": { "type": "boolean", "description": "doz ve arinma ikisi de yok: PDF'ten metin çıkmadı (taranmış), metin okunamaz (harf düşmüş), belge bu ürüne ait değil (belgeUyumsuz) ya da ne 4.9 / 4.11 ne eski prospektüs başlıkları bulundu. Ekranda \"KÜB'e bakın\" + bağlantı." },
+          "eskiBicim": { "const": true, "description": "Numarasız eski prospektüs biçimi (\"KULLANIM ŞEKLİ VE DOZU\", \"GIDA DEĞERİ OLAN HAYVANLARDA KALINTI UYARILARI\"). sigir.guven her zaman dusuk; ekranda \"Eski biçim KÜB — aslına bakın\". Yalnız true iken yazılır." },
+          "sigirHedefDegil": { "const": true, "description": "KÜB 4.1 hedef türlerinde sığır (inek, buzağı, dana, düve, ruminant…) yok: ürün sığır ürün listelerinde (etken, hastalık) gösterilmez. Yalnız true iken yazılır." },
+          "belgeUyumsuz": { "const": true, "description": "Bakanlık bağlantısındaki belge bu ürünün KÜB'ü değil (bileşimde ürünün etkeni yok ya da belge KÜB / prospektüs değil). metinYok true, alıntı ve etiket yok; ekranda \"KÜB bu ürünle eşleşmiyor\" + bağlantı. Yalnız true iken yazılır." },
+          "belgeNeden": { "$ref": "ortak.schema.json#/$defs/metin", "description": "belgeUyumsuz nedeni (yalnız belgeUyumsuz ile)." },
+          "kubAdi": { "$ref": "ortak.schema.json#/$defs/metin", "description": "Etken uyuyor ama KÜB bölüm 1'deki ticari ad ürün adından farklı: KÜB'deki ad. Ekranda \"KÜB başka ticari adla yayımlanmış: …\"." },
           "sigir": {
             "type": "object",
             "additionalProperties": false,
@@ -32,7 +37,7 @@
                   { "enum": ["kullanilmaz", "belirtilmemis"], "description": "kullanilmaz: sütü insan tüketimine sunulan / laktasyondaki inekte kullanılmaz. belirtilmemis: 4.11 sütten hiç söz etmiyor." }
                 ]
               },
-              "guven": { "enum": ["yuksek", "dusuk"], "description": "yuksek yalnız et_gun ve sut ikisi de okunmuş ve tür / yol / koşul belirsizliği yokken. dusuk iken sayı gösterilmez, metin gösterilir." }
+              "guven": { "enum": ["yuksek", "dusuk"], "description": "yuksek yalnız et_gun ve sut ikisi de okunmuş ve tür / yol / koşul belirsizliği ya da sağmal hayvanda \"tavsiye edilmez\" (4.11 / 4.7) uyarısı yokken; eski biçimde hiçbir zaman. dusuk iken sayı gösterilmez, metin gösterilir." }
             }
           }
         }

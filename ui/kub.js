@@ -9,6 +9,14 @@ export function sigirMi(urun) {
   return (urun.hedefTurler ?? []).some((t) => normalize(t) === 'sigir' || normalize(t) === 'buzagi');
 }
 
+/**
+ * Ürün sığır ürün listelerinde (etken, hastalık) gösterilir mi? Bakanlık listesinde sığır / buzağı hedefli ve
+ * KÜB 4.1'de hedef tür sığırı kapsıyor (kub.json sigirHedefDegil değil).
+ */
+export function sigirListesindeMi(urun, veri) {
+  return sigirMi(urun) && veri?.kub?.urunler?.[urun.urunId]?.sigirHedefDegil !== true;
+}
+
 /** Yalnız buzağı için ruhsatlı (hedef türde sığır yok, buzağı var). */
 export function yalnizBuzagiMi(urun) {
   const t = (urun.hedefTurler ?? []).map(normalize);
@@ -55,6 +63,9 @@ export function arinmaEtiketi(sigir) {
   return parcalar;
 }
 
+export const ESKI_BICIM_NOTU = 'Eski biçim KÜB — aslına bakın';
+export const BELGE_UYUMSUZ_NOTU = "Bakanlık sitesindeki KÜB bu ürünle eşleşmiyor — KÜB'e bakın";
+
 function kubKutusu(baslik, metin) {
   return el('details', { class: 'kub-kutu' },
     el('summary', {}, baslik),
@@ -63,7 +74,8 @@ function kubKutusu(baslik, metin) {
 
 /**
  * Ürün kartı (li.urun). ek: ürün adının altına eklenecek öğe (ör. kombine bilgisi).
- * Kayıt yoksa ya da metinYok ise "KÜB'e bakın" + bağlantı; aksi hâlde etiket + açılır KÜB: Doz / KÜB: Arınma.
+ * Kayıt yoksa ya da metinYok ise "KÜB'e bakın" + bağlantı (belge ürünle eşleşmiyorsa bunu söyler); aksi hâlde etiket
+ * + açılır KÜB: Doz / KÜB: Arınma, eski biçim ve başka ticari ad notları.
  */
 export function urunKarti(u, kayit, { ek = null } = {}) {
   const baglanti = u.kubUrl
@@ -71,7 +83,8 @@ export function urunKarti(u, kayit, { ek = null } = {}) {
     : null;
   const k = (u.kub ?? []).find((x) => x.tur === 'sigir');
   const ayrinti = `${u.firma ?? ''}${u.form ? ` — ${u.form}` : ''}${k?.yol ? `, ${k.yol}` : ''}`;
-  const etiket = kayit && !kayit.metinYok ? arinmaEtiketi(kayit.sigir) : [];
+  const etiket = kayit && !kayit.metinYok && !kayit.belgeUyumsuz ? arinmaEtiketi(kayit.sigir) : [];
+  const yok = el('span', { class: 'soluk' }, '(KÜB bağlantısı yok — Bakanlık ürün sorgusundan bakın.)');
   return el('li', { class: 'urun' },
     el('strong', {}, u.ad),
     yalnizBuzagiMi(u) ? el('span', { class: 'urun-etiket' }, ' (yalnız buzağı)') : null,
@@ -80,11 +93,16 @@ export function urunKarti(u, kayit, { ek = null } = {}) {
     etiket.length
       ? el('p', { class: 'arinma-etiket' }, el('strong', {}, etiket.join(' · ')), el('br'), el('small', { class: 'soluk' }, OTOMATIK_NOT))
       : null,
-    !kayit || kayit.metinYok
-      ? el('p', { class: 'doz' }, "KÜB'e bakın ", baglanti ?? el('span', { class: 'soluk' }, '(KÜB bağlantısı yok — Bakanlık ürün sorgusundan bakın.)'))
-      : [
-        kubKutusu('KÜB: Doz', kayit.doz),
-        kubKutusu('KÜB: Arınma', kayit.arinma),
-        el('p', { class: 'doz kub-alinti' }, el('small', { class: 'soluk' }, "KÜB'den alıntı (4.9, 4.11) · metin aynen alındı "), baglanti),
-      ]);
+    kayit?.belgeUyumsuz
+      ? el('p', { class: 'doz kub-uyumsuz' }, `⚠ ${BELGE_UYUMSUZ_NOTU} `, baglanti ?? yok)
+      : !kayit || kayit.metinYok
+        ? el('p', { class: 'doz' }, "KÜB'e bakın ", baglanti ?? yok)
+        : [
+          kayit.kubAdi ? el('p', { class: 'kub-not' }, `KÜB başka ticari adla yayımlanmış: ${kayit.kubAdi}`) : null,
+          kayit.eskiBicim ? el('p', { class: 'kub-not' }, ESKI_BICIM_NOTU) : null,
+          kubKutusu('KÜB: Doz', kayit.doz),
+          kubKutusu('KÜB: Arınma', kayit.arinma),
+          el('p', { class: 'doz kub-alinti' }, el('small', { class: 'soluk' },
+            `KÜB'den alıntı (${kayit.eskiBicim ? 'kullanım şekli ve dozu, kalıntı uyarıları' : '4.9, 4.11'}) · metin aynen alındı `), baglanti),
+        ]);
 }

@@ -1,0 +1,47 @@
+1. VETERİNER TIBBİ ÜRÜNÜN İSMİ
+ATROMAX Enjeksiyonluk Çözelti
+
+2. KALİTATİF VE KANTİTATİF BİLEŞİM
+Her ml:
+Aktif madde:
+Atropin sülfat             2,000 mg
+Yardımcı maddeler:
+Benzil alkol (koruyucu olarak) 15,700 mg
+Yardımcı maddelerin tam listesi için bölüm 6.1.’e bakınız
+
+3. FARMASÖTİK ŞEKİL
+Enjeksiyonluk çözelti
+Renksiz veya hafif sarı renkli, berrak, partikülsüz, steril çözelti
+
+4. KLİNİK ÖZELLİKLER
+
+4.1 Hedef tür
+At, kedi, köpek
+
+4.9 Dozaj ve kullanım yolu
+Hekimin seçimine bağlı olmakla birlikte genel olarak 25-500 µg/kg canlı ağırlık dozunda
+uygulanır. Alt dozlar daha çok parasempatolitik etki ve preanestezik amaçla, üst dozlar ise
+antikolinesteraz etkili zehirlenmelerde kullanılır. Atrio-ventikuler blok veya sinüs bradikardi
+durumlarında düzelme sağlanana kadar 6-8 saatte bir uygulama yapılabilir.
+Antikolinesteraz etkili zehirlenmelerde aşağıdaki şekilde kullanılır;
+Ciddi vakalar: Gerekli dozun bir kısmı (çeyreği) kas içi veya yavaş damar içi yolla kalan
+kısmı deri altı yolla uygulanır.
+Daha az ciddi vakalar: Tüm doz deri altı yolla uygulanır.
+Zehirlenmenin şiddetine göre tekrarlayan dozlar gerekebilir. Uygulama aralığı genel olarak 3-
+4 saat olmakla birlikte ciddi veya orta şiddetli belirtilerin tekrarlama aralığına bağlıdır.
+Atropin uygulamadan dakikalar sonra etkisini gösterir ve bu azami etki uygulamadan sonra 5-
+10 dakikaya kadar gecikebilir.
+
+4.10 Doz aşımı, varsa semptomlar, acil prosedürler, antidotlar
+Doz aşımında belirtiler atropinizasyonun merkezi ve periferal etkisinin kombinasyonundan
+oluşur. Erken belirtiler uyarılma ile karakterizedir. Ağız kuruluğu, disfaji, midriasis, taşikardi,
+konstipasyon,   hiperpne,   kas  tremorları,  ataksi  görülebilir. Yüksek       dozlarda   uyarılmayı
+depresyon, kardiyovasküler kollaps, solunum durması, felç ve koma izler. Fizostigmin gibi
+antikolinesteraz  ilaçlar damar  içi yolla   0.1-0.6 mg/kg   dozda  antidot     olarak kullanılabilir.
+Uyarılma hali uygun sedatifler ile hafifletilebilir. Periferal etkiler pilokaspin gibi fizyolojik
+antidotlar ile azaltılabilir. Aşırı  doz  veya  atropinle   zehirlenmenin      sonraki aşamalarında
+medullar uyarıcılar veya yapay solunum gerekebilir.
+
+4.11 Kalıntı arınma süreleri (sıfır gün olanlar da dâhil)
+Uygulanamaz.
+5. FARMAKOLOJİK ÖZELLİKLER

@@ -1,0 +1,69 @@
+                           ÜRÜN ÖZELLİKLERİ ÖZETİ
+
+1.     VETERİNER TIBBI ÜRÜNÜN İSMİ
+SANTADOKS %10
+
+2.     KALİTATİF VE KANTİTATİF BİLEŞİM
+Her 1 ml’deki içeriği:
+Aktif Maddeler:
+Doksisiklin hiklat (Doksisikline eşdeğer)    100 mg
+Bromhekzin HCl                               10 mg
+Yardımcı Maddeler:
+Yardımcı maddelerin tam listesi için bölüm 6.1’e bakınız.
+
+3.     FARMASÖTİK ŞEKLİ
+Oral Çözelti
+
+4.     KLİNİK ÖZELLİKLER
+4.1. Hedef tür
+Buzağı (ruminasyona başlamamış buzağı) ve etçi tavuk.
+ 4.9.    Dozaj ve Kullanım Yolu
+ Veteriner Hekim tarafından başka bir şekilde tavsiye edilmediği takdirde;
+ Buzağılarda (Ruminasyona başlamamış buzağılarda);
+ Farmakolojik Doz: 10 mg Doksisiklin (hilkat tuzu olarak) + 1 mg Bromheksin/kg CA/gün
+ Pratik Doz: 1 ml Santadoks %10 Oral Çözelti/10 kg CA/gün, 4-5 gün olacak şekilde süte/süt
+ ikame yemine karıştırılarak oral yolla uygulanır.
+ Önerilen doza, tedavi edilecek buzağıların sayısına ve ağırlığına bağlı olarak; günlük ilaç
+ miktarının tam olarak hesaplanması için aşağıdaki formül kullanılmalıdır:
+
+…ml ürün/kg                tedavi edilen hayvanların
+  CA/gün         X        ortalama canlı ağırlığı (kg)               Her lt süt (süt ikame
+                                                                 =
+                                                                     yemi) için…ml ürün
+      Her hayvan için günlük ortalama süt
+          (süt ikame yemi) tüketimi (lt)
+ Etçi tavuklarda;
+ Farmakolojik Doz:10 mg Doksisiklin (hiklat tuzu olarak) + 1 mg Bromheksin/kg CA/gün
+ Pratik Doz: 10 ml Santadoks %10 Oral Çözelti/100 kg CA/gün, 4-5 gün olacak şekilde içme
+ suyuna karıştırılarak oral yolla uygulanır.
+ Önerilen  doza,  tedavi  edilecek  kanatlıların sayısına ve ağırlığına    bağlı olarak; günlük  ilaç
+ miktarının tam olarak hesaplanması için aşağıdaki formül kullanılmalıdır:
+
+…ml ürün/kg                 tedavi edilen kanatlıların
+  CA/gün         X         ortalama canlı ağırlığı (kg)             Her lt içme suyu için
+                                                                =          …ml ürün
+       Her kanatlı için günlük su tüketimi (lt)
+
+ Doğru    bir  dozajlama     için    hayvanların   canlı  ağırlığı    mümkün      olduğunca    doğru
+ hesaplanmalıdır.   İlaçlı   suyun     hayvanlar     tarafından    alımı    klinik    duruma     göre
+ değişebilmektedir.   Bu     nedenle     doğru     dozun   sağlanabilmesi        için  ilaçlı  suyun
+ konsantrasyonunun    ayarlanması     gerekebilir. Uygun   kalibre  ağırlık  ölçüm    ekipmanlarının
+ kullanımı tavsiye  edilir.  İlaçlı suya katılacak  günlük miktar   24  saat  içerisinde  tüketilecek
+ şekilde ayarlanmalıdır. İlaçlı su her 24 saatte bir taze olarak hazırlanmalıdır. Ürünün önce bir
+ miktar su ile iyice karıştırılması (her litre içme suyu için yaklaşık 100 ml ilaçla konsantre ön
+ karışım oluşturması) ardından gerekli ise bu karışımın gerekli oranda su ile sulandırılması
+ tavsiye edilir. Tedavi   edilmesi   düşünülen   tüm   hayvanların  ilaçlı su kaynaklarına    rahatça
+ erişebildiğinden emin olunmalıdır. Ürünün sub-terapötik dozda alımının önüne geçmek için
+ tedaviden sonra   sulama    ekipmanları   yeterince temizlenmelidir.  Tedavi    süresince    ilaçlı su
+ hayvanların  tek  su kaynağı     olmalıdır. İlaçlı  su  metal  kap   içinde  hazırlanmamalı    veya
+ depolanmamalı, paslanmış ekipman kullanılmamalıdır. Çözünürlük pH’ya bağlı olup, yüksek
+ alkali özellikli içme sularında çökelme meydana gelebilir.
+ 4.10.   Doz aşımı, varsa semptomlar, acil prosedürler, antidotlar
+ Doz aşımında herhangi bir belirti veya antidot yoktur.
+ 4.11.   Kalıntı arınma süreleri (sıfır gün olanlar da dahil)
+ Tedavi süresince ve son ilaç uygulamasından sonra buzağılar 16 gün, tavuklar 7 gün
+ geçmeden kesime gönderilmemelidir. Yumurtası insan tüketimine sunulan tavuklarda
+ kullanılmamalıdır.   Yumurtlayan        tavuklarda,   yumurtlama     döneminin       başlangıcına    4
+ hafta kaladan itibaren kullanılmamalıdır.
+
+ 5.      FARMAKOLOJİK ÖZELLİKLER

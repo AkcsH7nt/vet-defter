@@ -1,0 +1,40 @@
+                                                          EK-5
+                                      STABİLİTE ÖZET RAPORU
+
+Ürün Adı                      TYLARON 200 ENJEKSİYONLUK ÇÖZELTİ
+
+Çalışma Tanımı                InUseStabilite Çalışması (Hızlandınimış Şartlar)
+
+Saklama Koşulları             25°C ± 2°C / 60 ± 5 % RH                               Metot / Spesifikasyon No          MET-KK-BU-0004.00
+
+Seri No                       0462201                                                Protokol No.                      STB-FLK-22042-PR-R0
+
+Üretim Tarihi                 11.08.2022                                             Son Kullanma Tarihi              07.2025
+
+                   Analiz Tamamlanma Tarihi                                              18.08.2022        15.09.2022       18.02.2023        18.05.2023
+       Test                   Spesifikasyon Limitleri                                            28.G0n Inllse                      6.Av InUse
+                                                                                             O.Av           IS.Gün             l.Gün           IS.Gün
+   Görünüş        Sarı renkli berrak çözelti.                                               Uygun          Uygun            Uygun            Uygun
+                  Tilosin Baz: Miktar tayini analizinde; numune
+                  çözeltisi ile elde edilen kromatogramdakİ teme
+ Etkin Madde      pik standart çözeltisi ile elde edilen
+  .ınınma Tesli(HPLC)kromatogramdakİ temel pik İle aynı alıkonma                            Uygun         Uygun             Uygun            Uygun
+                   süresi ve yükseklikte
+                    olmalıdır
+ Etkin Madde      Tilosin Baz: 200,00 mg/mL ± %5 (190,00 -Miktan                            200,50        200,48            200,35           200,37
+   UIPLC)         210,00 mg/mL)                                                             mg/mL         mg/mL            mg/mL             mg/mL
+                 tmpürite A: % 2,0'den fazla olmamalıdır                                    %1,1          % 1,2            % 1,4            % 1,4
+                  Impûrite A ile Tilosin C arası
+                 İmpOritelerin Toplamı: % 2,0'den fazla                                     %1,5          %1,4             %1,4              %1,2
+                    olmamalıdır
+                  Impûrite N: % 1,0'den fazla olmamalıdır                                    %0,05        %0,05            %0,04             %0,04
+İlgili            İmpürite O: % 1,0'den fazla olmamalıdır                                    %0,06        %0,05            %0,03             %0,03
+Maddeler          Impûrite E: %0,5'den fazla olmamalıdır                                     %0,03        %0,03            %0,02             %0,01
+Analizi           Impûrite R: % 0,5'den fazla olmamalıdır                                    %0,04        %0,03            %0,02             %0,02
+                  Impûrite S: % 0,5'den fazla olmamalıdır                                   % 0,02        % 0,03          % 0,04            % 0,04
+                 En Bûyûk Bilinmeyen İmpürite: % 0,5'den
+                    fazla olmamalıdır                                                       % 0,03       % 0,03           % 0,04            % 0,04
+                 Toplam Bilinmeyen İmpürite: % 5,0'den
+                   daha fazla olmamalıdır                                                   % 0,05       % 0,05           % 0,06            % 0,06
+ Koruyucu         18 mg/mL Benzil Alkol (16,2 mg/mL-19,8
+   Miktarı        mg/mL)                                                                     17,1          17,3             18,3              18,6

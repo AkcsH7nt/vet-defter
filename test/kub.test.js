@@ -5,7 +5,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { bolumAyir, sigirArinmasi } from '../lib/kub.js';
+import {
+  bolumAyir, sigirArinmasi, belgeBilgisi, kubUrunleUyumlu, sesAnahtari, yaklasikIcerir, sigirHedefMi, eskiBicimAyir,
+  sutTavsiyeEdilmez, bolum47,
+} from '../lib/kub.js';
 
 const DIZIN = fileURLToPath(new URL('./ornek/kub/', import.meta.url));
 const ornek = (ad) => readFileSync(join(DIZIN, `${ad}.txt`), 'utf8');
@@ -293,4 +296,130 @@ test('etVeSutAyriSureVeIleBagli', () => {
     + 'süresi (0) gündür.'), { et_gun: 21, sut: { saat: 0 }, guven: 'yuksek' });
   assert.deepEqual(sigirArinmasi('İnekler için ette yasal arınma süresi “1” gündür. Süt için yasal arınma süresi “0” gündür.'),
     { et_gun: 1, sut: { saat: 0 }, guven: 'yuksek' });
+});
+
+// --- K7 danışman denetimi düzeltmeleri (.superpowers/sdd/2026-11-15-kub-onay/k7-fable.md) ---
+// Fikstürler gerçek PDF'lerden: zolamox-zoloxy, tylaron-stabilite, albadoks-santadoks, atromax (bölüm 1 → 4.1 + 4.9 → 5),
+// ubrostar-prospektus (tam), weldox (ilk 80 satır), procastrep 4.9 → 5.
+
+const ETKENLER = JSON.parse(readFileSync(fileURLToPath(new URL('../veri/etkenler.json', import.meta.url)), 'utf8'));
+const kimlik = async (ad, etkenler) => {
+  const { urunKimligi } = await import('../scripts/kub-ayikla.mjs');
+  return urunKimligi({ ad, etkenler }, ETKENLER);
+};
+
+test('K1_yanlisBelge_ZolamoxLA_oksitetrasiklinKUBu', async () => {
+  // Bakanlık bağlantısı amoksisilin ürünü için "ZOLOXY LA" (oksitetrasiklin) KÜB'ünü veriyor.
+  const metin = ornek('zolamox-zoloxy');
+  const u = kubUrunleUyumlu(metin, await kimlik('Zolamox LA', ['amoksisilin']));
+  assert.equal(u.uyumlu, false);
+  assert.deepEqual(u.eksik, ['amoksisilin']);
+  assert.match(u.neden, /amoksisilin/);
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  const k = kubKaydi(metin, await kimlik('Zolamox LA', ['amoksisilin']));
+  assert.equal(k.belgeUyumsuz, true);
+  assert.equal(k.metinYok, true);
+  assert.equal(k.doz, null);
+  assert.equal(k.arinma, null);
+  assert.equal(k.sigir.guven, 'dusuk'); // "Et 28 gün · Süt 10 gün" etiketi artık yok
+  assert.match(k.belgeNeden, /amoksisilin/);
+  // aynı belge kendi ürünü için uyumlu
+  const dogru = kubUrunleUyumlu(metin, await kimlik('Zoloxy LA', ['oksitetrasiklin']));
+  assert.deepEqual(dogru, { uyumlu: true, kubAdi: null, eksik: [], neden: null });
+});
+
+test('K1_belgeKubDegil_stabiliteRaporu', async () => {
+  const metin = ornek('tylaron-stabilite'); // "STABİLİTE ÖZET RAPORU": tilosin geçse de KÜB değil
+  assert.equal(belgeBilgisi(metin).tur, 'diger');
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  const k = kubKaydi(metin, await kimlik('Tylaron 200', ['tilozin']));
+  assert.equal(k.belgeUyumsuz, true);
+  assert.equal(k.metinYok, true);
+  assert.match(k.belgeNeden, /KÜB ya da prospektüs değil/);
+});
+
+test('O5_baskaTicariAdlaKUB_kubAdi', async () => {
+  const metin = ornek('albadoks-santadoks');
+  const u = kubUrunleUyumlu(metin, await kimlik('Albadoks %10', ['doksisiklin']));
+  assert.equal(u.uyumlu, true);
+  assert.equal(u.kubAdi, 'SANTADOKS %10');
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  const k = kubKaydi(metin, await kimlik('Albadoks %10', ['doksisiklin']));
+  assert.equal(k.kubAdi, 'SANTADOKS %10');
+  assert.equal(k.belgeUyumsuz, undefined);
+  assert.ok(k.doz && k.arinma);
+});
+
+test('K1_yazimFarklariEslesir', () => {
+  // Latin / İngilizce yazımlar ve KÜB yazım hataları etken uyuşmazlığı sayılmaz
+  assert.equal(sesAnahtari('Tylosin'), sesAnahtari('tilozin'));
+  assert.ok(sesAnahtari('Cefquinome sülfat').includes(sesAnahtari('sefkinom')));
+  assert.ok(sesAnahtari('Dexamethasone').includes(sesAnahtari('deksametazon')));
+  assert.ok(sesAnahtari('Oxytetracycline').includes(sesAnahtari('oksitetrasiklin')));
+  assert.ok(yaklasikIcerir(sesAnahtari('Levamizol HCl 300 mg Oksiklazonid 600 mg'), sesAnahtari('oksiklozanid')));
+  assert.ok(yaklasikIcerir(sesAnahtari('Tilmiskosin (fosfat halinde) 300 mg'), sesAnahtari('tilmikosin')));
+  assert.ok(!yaklasikIcerir(sesAnahtari('Oksitetrasiklin 200 mg (215 mg oksitetrasiklin dihidrat olarak)'), sesAnahtari('amoksisilin')));
+});
+
+test('O1_sagmalHayvandaTavsiyeEdilmez_etiketYok', () => {
+  // Procastrep: sayı doğru (et 60 gün, süt 15 gün) ama KÜB süt veren hayvana uygulanmasını tavsiye etmiyor
+  const s = oku('procastrep');
+  assert.equal(s.guven, 'dusuk');
+  assert.equal(s.et_gun, 60);
+  assert.deepEqual(s.sut, { saat: 360 });
+  assert.equal(sutTavsiyeEdilmez(arinmaOf('procastrep')), true);
+  // başka türe ait öğüt ve "tavsiye edilmediği takdirde" kalıbı etkilemez
+  assert.equal(sutTavsiyeEdilmez('Sütü insan tüketimine sunulan koyunlarda kullanılması tavsiye edilmez.'), false);
+  assert.equal(sutTavsiyeEdilmez('Veteriner hekim tarafından başka şekilde tavsiye edilmediği takdirde süt 4 gün kullanılmaz.'), false);
+  assert.deepEqual(sigirArinmasi('Sığırlar 28 gün geçmeden kesime gönderilmemelidir. Süt veren ineklerde kullanılması önerilmez. Süt: 4 gün.').guven, 'dusuk');
+});
+
+test('O1_4_7deLaktasyondaTavsiyeEdilmez_etiketYok', async () => {
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  const kub = (yedi) => `4.7 Gebelik, laktasyon veya yumurtlama döneminde kullanım\n${yedi}\n4.8 Etkileşim\nYok.\n`
+    + '4.9 Dozaj ve kullanım yolu\nKas içi 10 mg/kg.\n4.10 Doz aşımı\nYok.\n'
+    + '4.11 Kalıntı arınma süreleri\nEt ve sakatat: 28 gün\nSüt: 4 gün\n5. FARMAKOLOJİK ÖZELLİKLER\n';
+  assert.equal(bolum47(kub('Laktasyondaki ineklerde kullanılması tavsiye edilmez.')), 'Laktasyondaki ineklerde kullanılması tavsiye edilmez.');
+  assert.equal(kubKaydi(kub('Laktasyondaki ineklerde kullanılması tavsiye edilmez.')).sigir.guven, 'dusuk');
+  assert.equal(kubKaydi(kub('Gebe ve laktasyondaki ineklerde güvenle kullanılabilir.')).sigir.guven, 'yuksek');
+});
+
+test('O6_hedefTurdeSigirYok', async () => {
+  assert.equal(sigirHedefMi(ornek('atromax')), false); // At, kedi, köpek
+  assert.equal(sigirHedefMi(ornek('zolamox-zoloxy')), true); // Sığır, koyun, keçi
+  assert.equal(sigirHedefMi(ornek('ekomisin')), null); // 4.1 yok: bilinmiyor
+  assert.equal(sigirHedefMi('4.1 Hedef tür\nKoyun, keçi\n4.2 Kullanım alanı\n'), false);
+  assert.equal(sigirHedefMi('4.1 Hedef tür\nBüyükbaş hayvanlar\n4.2 Kullanım alanı\n'), true);
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  assert.equal(kubKaydi(ornek('atromax'), await kimlik('Atromax', ['atropin'])).sigirHedefDegil, true);
+  assert.equal(kubKaydi(ornek('ekomisin')).sigirHedefDegil, undefined);
+});
+
+test('eskiBicimProspektus_Ubrostar', async () => {
+  const e = eskiBicimAyir(ornek('ubrostar-prospektus'));
+  assert.ok(e.doz.startsWith('Meme içine uygulanır.'), e.doz);
+  assert.match(e.arinma, /Et için: 8 gün/);
+  assert.doesNotMatch(e.arinma, /KONTRENDİKASYON/);
+  assert.equal(belgeBilgisi(ornek('ubrostar-prospektus')).tur, 'prospektus');
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  const k = kubKaydi(ornek('ubrostar-prospektus'), await kimlik('Ubrostar', ['penetamat']));
+  assert.equal(k.eskiBicim, true);
+  assert.equal(k.metinYok, false);
+  assert.equal(k.sigir.guven, 'dusuk');
+  // okunabilir olsa da eski biçimde etiket yok
+  const temiz = 'Prospektüs\nKULLANIM ŞEKLİ VE DOZU: Kas içi 10 ml.\nGIDA DEĞERİ OLAN HAYVANLARDA KALINTI UYARILARI\n'
+    + 'Et ve süt için 0 gündür.\nKONTRENDİKASYONLAR\nYok.\n';
+  const t = kubKaydi(temiz);
+  assert.deepEqual([t.eskiBicim, t.doz, t.arinma, t.sigir.guven], [true, 'Kas içi 10 ml.', 'Et ve süt için 0 gündür.', 'dusuk']);
+});
+
+test('harfiDusmusMetinOkunamaz_Weldox', async () => {
+  const { kubKaydi, harfDusmus } = await import('../scripts/kub-ayikla.mjs');
+  assert.equal(harfDusmus(ornek('weldox')), true);
+  assert.equal(harfDusmus(ornek('zolamox-zoloxy')), false);
+  const rapor = { atilan: [] };
+  const k = kubKaydi(ornek('weldox'), await kimlik('Weldox %50', ['doksisiklin']), rapor);
+  assert.equal(k.metinYok, true);
+  assert.equal(k.belgeUyumsuz, undefined);
+  assert.match(rapor.neden, /harfi düşmüş/);
 });

@@ -384,6 +384,56 @@ test('390 px: acik KUB kutulari yatay tasma yapmaz', async () => {
   }
 });
 
+// --- K7 düzeltmeleri: yanlış belge, hedef türü sığır olmayan ürün, ad farkı, eski biçim ---
+const UYUMSUZ = { doz: null, arinma: null, sigir: { et_gun: null, sut: null, guven: 'dusuk' }, metinYok: true,
+  belgeUyumsuz: true, belgeNeden: 'KÜB bileşiminde ürünün etkeni yok: ornek_antibiyotik' };
+const kubUrlli = (yol, j) => (yol === 'urunler.json' ? j.map((u) => ({ ...u, kubUrl: 'https://example.invalid/kub.pdf' })) : undefined);
+const birlikte = (...fn) => (yol, j) => fn.reduce((acc, f) => f(yol, acc) ?? acc, j);
+
+test('belgeUyumsuz: alinti ve etiket yok, eslesmiyor notu ve KUB baglantisi var', async () => {
+  const s = await sayfaAc({ degistir: birlikte(kubUrlli, kubDegis({ 'ornek-u1': UYUMSUZ })) });
+  for (const r of ['#/etken/ornek_antibiyotik', '#/hastalik/ornek_solunum']) {
+    await s.git(r);
+    const kart = s.locator('li.urun', { hasText: 'Örnek Ürün %10' }).first();
+    assert.match(await kart.innerText(), /Bakanlık sitesindeki KÜB bu ürünle eşleşmiyor — KÜB'e bakın/);
+    assert.equal(await kart.locator('a[href="https://example.invalid/kub.pdf"]').count(), 1);
+    assert.equal(await kart.locator('details.kub-kutu').count(), 0);
+    assert.equal(await kart.locator('.arinma-etiket').count(), 0);
+    assert.doesNotMatch(await kart.innerText(), /Et \d+ gün|KÜB'den alıntı/);
+  }
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('sigirHedefDegil: urun etken ve hastalik sigir listelerinde gizli', async () => {
+  const ek = (yol, j) => (yol === 'urunler.json'
+    ? [...j, { ...j[0], urunId: 'ornek-u2', ad: 'Koyun Ürünü (test)' }] : undefined);
+  const hedef = kubDegis((u) => ({ 'ornek-u2': { ...u['ornek-u1'], sigirHedefDegil: true } }));
+  const s = await sayfaAc({ degistir: birlikte(ek, hedef) });
+  await s.git('#/etken/ornek_antibiyotik');
+  assert.match(await metin(s), /Örnek Ürün %10/);
+  assert.doesNotMatch(await metin(s), /Koyun Ürünü \(test\)/);
+  await s.git('#/hastalik/ornek_solunum');
+  const satir = s.locator('li.ilac').first();
+  assert.doesNotMatch(await satir.innerText(), /Koyun Ürünü \(test\)/);
+  assert.match(await satir.innerText(), /Ruhsatlı ürünler \(1\)/);
+  // bayrak yokken ikisi de listede
+  const s2 = await sayfaAc({ degistir: ek });
+  await s2.git('#/etken/ornek_antibiyotik');
+  assert.match(await metin(s2), /Koyun Ürünü \(test\)/);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('kubAdi ve eskiBicim notlari; eski bicimde etiket yok', async () => {
+  const s = await sayfaAc({ degistir: kubDegis((u) => ({ 'ornek-u1': { ...u['ornek-u1'], kubAdi: 'SANTADOKS %10' } })) });
+  await s.git('#/etken/ornek_antibiyotik');
+  assert.match(await metin(s), /KÜB başka ticari adla yayımlanmış: SANTADOKS %10/);
+  const s2 = await sayfaAc({ degistir: kubDegis((u) => ({ 'ornek-u1': ornekKayit(u, { guven: 'dusuk' }, { eskiBicim: true }) })) });
+  await s2.git('#/etken/ornek_antibiyotik');
+  assert.match(await metin(s2), /Eski biçim KÜB — aslına bakın/);
+  assert.equal(await s2.locator('.arinma-etiket').count(), 0);
+  assert.equal(await s2.locator('details.kub-kutu').count(), 2);
+});
+
 test('ihbar, zoonoz, antibiyotik ve ayirici tani gosterilir', async () => {
   const s = await sayfaAc();
   await s.git('#/hastalik/ornek_sarbon');

@@ -45,7 +45,7 @@ const ALANLAR = {
   doz: [['miktar', 'birim', 'aralik', 'sure'], []],
   kubDogrulandi: [['kim', 'tarih', 'icerikOzeti'], []],
   kubDosyasi: [['urunler'], ['cekilmeTarihi']], // veri/kub.json (dosya yoksa lib/veri.js { urunler: {} } verir)
-  kubKaydi: [['doz', 'arinma', 'sigir', 'metinYok'], []],
+  kubKaydi: [['doz', 'arinma', 'sigir', 'metinYok'], ['eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz', 'belgeNeden', 'kubAdi']],
   kubSigir: [['et_gun', 'sut', 'guven'], []],
   meta: [['semaSurumu', 'icerikSurumu', 'urunListesiTarihi'], []],
   liste: [['kaynak', 'kaynakTarihi', 'ogeler'], ['not']],
@@ -434,6 +434,15 @@ export function dogrula(veri) {
       // Ekran sayıyı yalnız yuksek güvende gösterir: yuksek ise ikisi de okunmuş olmalı.
       if (s.guven === 'yuksek' && (s.et_gun === null || sut === null)) hata(yer, 'sigir.guven yuksek iken et_gun ve sut dolu olmalı');
       if (s.guven === 'yuksek' && k.arinma === null) hata(yer, 'arinma metni yokken sigir.guven yuksek olamaz');
+      // K7 alanları: bayraklar yalnız true iken yazılır; yanlış belgede alıntı ve etiket olamaz; eski biçimde etiket olamaz.
+      for (const a of ['eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz']) if (a in k && k[a] !== true) hata(yer, `${a} yalnız true olarak yazılır`);
+      for (const a of ['belgeNeden', 'kubAdi']) if (a in k && !metinMi(k[a])) hata(yer, `${a} dolu metin olmalı`);
+      if (k.belgeUyumsuz === true) {
+        if (!k.metinYok) hata(yer, 'belgeUyumsuz iken metinYok true olmalı (alıntı gösterilmez)');
+        if (s.guven !== 'dusuk') hata(yer, 'belgeUyumsuz iken sigir.guven dusuk olmalı');
+        if (!metinMi(k.belgeNeden)) hata(yer, 'belgeUyumsuz iken belgeNeden yazılmalı');
+      } else if ('belgeNeden' in k) hata(yer, 'belgeNeden yalnız belgeUyumsuz ile yazılır');
+      if (k.eskiBicim === true && s.guven !== 'dusuk') hata(yer, 'eskiBicim iken sigir.guven dusuk olmalı');
     }
   }
 

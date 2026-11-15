@@ -3,7 +3,7 @@
 // hastalık bağlamı olmadığından burada doz sayısı yazılmaz.
 import { el, doldur, bulunamadi, taslakEtiketi, tarihYaz, geriDugmesi } from './ortak.js';
 import { onayliMi } from '../lib/onay.js';
-import { urunKarti, kombineBilgisi, sigirMi, AMEG } from './kub.js';
+import { urunKarti, kombineBilgisi, sigirListesindeMi, AMEG } from './kub.js';
 
 // Süt / sağmal inek kısıtı içeren notlar en üstte.
 const sutNotuMu = (x) => /süt|sağmal|laktasyon/i.test(x);
@@ -13,7 +13,8 @@ export function render(kok, veri, durum, rota) {
   if (!e) { bulunamadi(kok, 'Bu etken madde kaydı bulunamadı.'); return; }
   const m = e.mekanizma ?? {};
   const tarih = tarihYaz(veri.meta?.urunListesiTarihi);
-  const urunler = veri.urunler.filter((u) => (u.etkenler ?? []).includes(e.id) && sigirMi(u));
+  // KÜB 4.1'de hedef türü sığır olmayan ürün (kub.json sigirHedefDegil) listede yok.
+  const urunler = veri.urunler.filter((u) => (u.etkenler ?? []).includes(e.id) && sigirListesindeMi(u, veri));
   const tekli = urunler.filter((u) => (u.etkenler ?? []).length === 1);
   const kombine = urunler.filter((u) => (u.etkenler ?? []).length > 1);
 

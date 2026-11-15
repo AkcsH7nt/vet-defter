@@ -28,7 +28,7 @@ const TUZ_KELIMELERI = new Set([
 ]);
 
 // Açık takma ad tablosu (normalize edilmiş anahtar → etken kimliği). Tahmin yok: yalnız açık durumlar.
-const TAKMA_ID = {
+export const TAKMA_ID = {
   penisilin_g_prokain: ['prokain benzilpenisilin', 'penisilin g prokain', 'benzilpenisilin prokain', 'procaine benzylpenicillin',
     'prokain penisilin g', 'benzil penisilin prokain'],
   penisilin_g_benzatin: ['benzatin benzilpenisilin', 'penisilin g benzatin', 'benzilpenisilin benzatin', 'benzatin penisilin g',

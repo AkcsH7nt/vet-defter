@@ -1,7 +1,7 @@
 // Ekran 3: Hastalık protokolü. Hastalık hekimce onaylıysa ilaç satırının altında ruhsatlı sığır ürünleri ve KÜB alıntıları gösterilir (spec §15).
 import { el, doldur, bulunamadi, taslakEtiketi, geriDugmesi } from './ortak.js';
 import { onayliMi } from '../lib/onay.js';
-import { urunKarti, kombineBilgisi, sigirMi, yalnizBuzagiMi } from './kub.js';
+import { urunKarti, kombineBilgisi, sigirMi, sigirListesindeMi, yalnizBuzagiMi } from './kub.js';
 
 export { sigirMi, yalnizBuzagiMi };
 import { normalize } from '../lib/arama.js';
@@ -27,7 +27,7 @@ const URUN_SINIRI = 5;
 /** Onaylı hastalıkta satırın etkenini içeren sığır ürünleri (en çok URUN_SINIRI; KÜB metni olanlar önce). */
 function urunBolumu(ilac, veri, href) {
   const etken = veri.etkenler.find((x) => x.id === ilac.etkenId) ?? { id: ilac.etkenId, ad: ilac.etkenId };
-  const hepsi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(ilac.etkenId) && sigirMi(u));
+  const hepsi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(ilac.etkenId) && sigirListesindeMi(u, veri));
   const metinli = (u) => { const k = veri.kub?.urunler?.[u.urunId]; return k && !k.metinYok ? 0 : 1; };
   const sirali = [...hepsi].sort((a, b) => metinli(a) - metinli(b) || (a.etkenler.length - b.etkenler.length));
   return [
@@ -55,7 +55,7 @@ export function render(kok, veri, durum, rota) {
     .sort((a, b) => a.sira - b.sira).map((i) => {
       const e = veri.etkenler.find((x) => x.id === i.etkenId);
       const href = `#/etken/${encodeURIComponent(i.etkenId)}`;
-      const urunSayisi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(i.etkenId) && sigirMi(u)).length;
+      const urunSayisi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(i.etkenId) && sigirListesindeMi(u, veri)).length;
       return el('li', { class: 'ilac' },
         el('span', { class: 'sira' }, `${i.sira}. seçenek`),
         ' ',

@@ -401,6 +401,31 @@ test('kubKayitlariDenetlenir', async () => {
   bozuk((k) => { k.urunler = []; }, /kub.*urunler nesne/);
 });
 
+test('kubK7AlanlariDenetlenir', async () => {
+  // eskiBicim / sigirHedefDegil / belgeUyumsuz (+ belgeNeden) / kubAdi (K7 düzeltmeleri)
+  const veri = await ornek();
+  veri.urunler[0].urunId = '101';
+  const bos = { doz: null, arinma: null, sigir: { et_gun: null, sut: null, guven: 'dusuk' }, metinYok: true };
+  veri.kub = { urunler: { 101: { ...kubKaydi(), sigirHedefDegil: true, kubAdi: 'BAŞKA AD' } } };
+  assert.deepEqual(dogrula(veri), []);
+  veri.kub.urunler[101] = { ...bos, belgeUyumsuz: true, belgeNeden: 'KÜB bileşiminde ürünün etkeni yok: amoksisilin' };
+  assert.deepEqual(dogrula(veri), []);
+  veri.kub.urunler[101] = { ...kubKaydi(), eskiBicim: true, sigir: { et_gun: 28, sut: { saat: 96 }, guven: 'dusuk' } };
+  assert.deepEqual(dogrula(veri), []);
+
+  const bozuk = (kayit, desen) => {
+    const v = structuredClone(veri);
+    v.kub.urunler[101] = kayit;
+    hataIcerir(dogrula(v), desen);
+  };
+  bozuk({ ...kubKaydi(), belgeUyumsuz: true, belgeNeden: 'x' }, /kub\[101\].*belgeUyumsuz iken metinYok/);
+  bozuk({ ...bos, belgeUyumsuz: true }, /kub\[101\].*belgeNeden yazılmalı/);
+  bozuk({ ...kubKaydi(), belgeNeden: 'x' }, /kub\[101\].*belgeNeden yalnız belgeUyumsuz/);
+  bozuk({ ...kubKaydi(), eskiBicim: true }, /kub\[101\].*eskiBicim iken sigir.guven dusuk/);
+  bozuk({ ...kubKaydi(), eskiBicim: false }, /kub\[101\].*eskiBicim yalnız true/);
+  bozuk({ ...kubKaydi(), kubAdi: '' }, /kub\[101\].*kubAdi dolu metin/);
+});
+
 test('bayrakKosuluBossaHata', async () => {
   for (const kosul of [{ hepsi: [] }, { herhangi: [] }, { hepsi: [], herhangi: [] }, {}, { baglam: { aniOlum: true } }]) {
     const veri = await ornek();
