@@ -1,7 +1,7 @@
 // Veri doğrulayıcı (spec §8). Kullanım: node scripts/dogrula.mjs [kök dizin]   (varsayılan: depo kökü)
 // Kök dizinde veri/ klasörü aranır; ör. `node scripts/dogrula.mjs test/ornek`.
 // dogrula(veri) saf işlevdir: hata metinlerinin listesini döndürür (boş liste = temiz).
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { veriYukle } from '../lib/veri.js';
@@ -20,6 +20,7 @@ const BAGLAM_DEGER = ['zorunlu', 'destekler'];
 const SINIF = ['antimikrobiyal', 'antiparaziter', 'nsaii', 'metabolik', 'diger'];
 const AMEG = ['A', 'B', 'C', 'D'];
 const ONAY_DURUM = ['taslak', 'onayli'];
+const GUVEN = ['yuksek', 'dusuk'];
 const SECILEMEZ = ['ates', 'hipotermi']; // ısıdan türetilir, elle seçilmez
 const ISI_ARALIGI = [30, 45];
 
@@ -43,6 +44,9 @@ const ALANLAR = {
   kub: [['tur', 'yol', 'doz', 'et_gun', 'sut'], []],
   doz: [['miktar', 'birim', 'aralik', 'sure'], []],
   kubDogrulandi: [['kim', 'tarih', 'icerikOzeti'], []],
+  kubDosyasi: [['urunler'], ['cekilmeTarihi']], // veri/kub.json (dosya yoksa lib/veri.js { urunler: {} } verir)
+  kubKaydi: [['doz', 'arinma', 'sigir', 'metinYok'], []],
+  kubSigir: [['et_gun', 'sut', 'guven'], []],
   meta: [['semaSurumu', 'icerikSurumu', 'urunListesiTarihi'], []],
   liste: [['kaynak', 'kaynakTarihi', 'ogeler'], ['not']],
   ihbarOgesi: [['id', 'ad', 'emin', 'dogrulandi'], ['not']],
@@ -406,6 +410,33 @@ export function dogrula(veri) {
     urunKimlikleri.set(u.urunId, u);
   }
 
+  // --- KÜB alıntıları (veri/kub.json; spec §15) ---
+  if ('kub' in veri && alanlar('kub', veri.kub, 'kubDosyasi')) {
+    const kub = veri.kub;
+    if ('cekilmeTarihi' in kub && !tarihMi(kub.cekilmeTarihi)) hata('kub', 'cekilmeTarihi tarih olmalı');
+    if (!nesneMi(kub.urunler)) hata('kub', 'urunler nesne olmalı ({ [urunId]: kayıt })');
+    else for (const [id, k] of Object.entries(kub.urunler)) {
+      const yer = `kub[${id}]`;
+      if (!urunKimlikleri.has(id)) hata(yer, "urunId urunler.json'da yok");
+      if (!alanlar(yer, k, 'kubKaydi')) continue;
+      for (const a of ['doz', 'arinma']) if (k[a] !== null && !metinMi(k[a])) hata(yer, `${a} metin ya da null olmalı`);
+      if (typeof k.metinYok !== 'boolean') hata(yer, 'metinYok true/false olmalı');
+      else if (k.metinYok && (k.doz !== null || k.arinma !== null)) hata(yer, 'metinYok iken doz ve arinma null olmalı');
+      else if (!k.metinYok && k.doz === null && k.arinma === null) hata(yer, 'doz ve arinma boşken metinYok true olmalı');
+      const s = k.sigir;
+      if (!alanlar(`${yer}.sigir`, s, 'kubSigir')) continue;
+      if (s.et_gun !== null && !(Number.isInteger(s.et_gun) && s.et_gun >= 0)) hata(yer, 'sigir.et_gun 0 ya da pozitif tam sayı, okunamadıysa null olmalı');
+      const sut = s.sut;
+      const sutGecerli = sut === null || sut === 'kullanilmaz' || sut === 'belirtilmemis'
+        || (nesneMi(sut) && Object.keys(sut).length === 1 && typeof sut.saat === 'number' && sut.saat >= 0);
+      if (!sutGecerli) hata(yer, "sigir.sut { saat } | 'kullanilmaz' | 'belirtilmemis' | null olmalı");
+      enumDenetle(yer, 'sigir.guven', s.guven, GUVEN);
+      // Ekran sayıyı yalnız yuksek güvende gösterir: yuksek ise ikisi de okunmuş olmalı.
+      if (s.guven === 'yuksek' && (s.et_gun === null || sut === null)) hata(yer, 'sigir.guven yuksek iken et_gun ve sut dolu olmalı');
+      if (s.guven === 'yuksek' && k.arinma === null) hata(yer, 'arinma metni yokken sigir.guven yuksek olamaz');
+    }
+  }
+
   // --- Ekranda görünen metinlerde "olasılık" / "ihtimal" geçmez (Global Constraints; final-review M1) ---
   const YASAK_SOZ = /olasılı|olasili|ihtimal/;
   function metinTara(yer, deger, atla = []) {
@@ -467,6 +498,8 @@ async function cli() {
   let veri;
   try {
     veri = await veriYukle(dizindenOku(kok));
+    // veriYukle eksik / okunamayan kub.json'u sessizce boş sayar; dosya varsa burada sıkı okunur (bozuk JSON → hata).
+    if (existsSync(join(kok, 'veri', 'kub.json'))) veri.kub = dizindenOku(kok)('veri/kub.json');
   } catch (e) {
     console.error(`Veri yüklenemedi: ${e.message}`);
     process.exit(1);

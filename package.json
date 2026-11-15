@@ -9,6 +9,7 @@
     "sunucu": "node scripts/sunucu.mjs",
     "urun-cek": "node scripts/urun-cek.mjs",
     "kub-indir": "node scripts/kub-indir.mjs",
+    "kub-ayikla": "node scripts/kub-ayikla.mjs",
     "surum": "node scripts/surum.mjs",
     "onayla": "node scripts/onayla.mjs",
     "onay-durumu": "node scripts/onayla.mjs --durum"

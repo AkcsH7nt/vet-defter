@@ -1,0 +1,20 @@
+4.9 Dozaj ve Kullanım Yolu:
+Veteriner hekim tarafından başka şekilde tavsiye edilmediği takdirde; farmakolojik dozu sığırlarda tek bir doz olarak deri altı
+(sc) veya damar içi (iv) yolla 0,5 mg/kg canlı ağırlık; kedilerde tek bir doz olarak deri altı yolla 0,3 mg/kg ve köpeklerde tek bir
+doz olarak deri altı yolla 0,2 mg/kg canlı ağırlık dozunda uygulanır.
+Pratik doz
+
+ HAYVAN TÜRÜ           FARMAKOLOJİK DOZ            CANLI AĞIRLIK              DOZU                UYGULAMA ŞEKLİ
+                              mg/kg                     (kg)                  (ml)
+ Sığır                 0,5                         100                        10.0                Deri altı (sc) , damar içi (iv)
+ Köpek                 0,2                         10                         0,4                 Deri altı (sc)
+ Kedi                  0,3                         2                          0,12                Deri altı (sc)
+
+4.10 Doz Aşımı, varsa Semptomlar, Acil Prosedürler, Antidotlar:
+Doz toleransı geniştir. Doz aşımı durumunda semptomatik tedavi uygulanır.
+4.11 Kalıntı Arınma Süreleri:
+GIDALARDA İLAÇ KALINTI UYARILAR
+İlaç kalıntı arınma süresi ( i.k.a.s): Tedavi süresince ve son ilaç uygulamasından sonra eti için yetiştirilen sığırlar 15 gün
+geçmeden kesime gönderilmemelidir. Tedavi süresince ve son ilaç uygulamasından sonra elde edilen inek sütü 120 saat
+(10 sağım) boyunca kullanılmamalıdır.
+5.FARMAKOLOJİK ÖZELLİKLER:

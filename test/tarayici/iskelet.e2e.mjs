@@ -69,7 +69,7 @@ test('veriTarayicidaYuklenir', async () => {
     const v = await veriYukle();
     return { anahtarlar: Object.keys(v).sort(), semaSurumu: v.meta.semaSurumu, hastaliklarDizi: Array.isArray(v.hastaliklar) };
   });
-  assert.deepEqual(sonuc.anahtarlar, ['bayraklar', 'belirtiler', 'etkenler', 'hastaliklar', 'ihbar', 'meta', 'urunler', 'yasaklar']);
+  assert.deepEqual(sonuc.anahtarlar, ['bayraklar', 'belirtiler', 'etkenler', 'hastaliklar', 'ihbar', 'kub', 'meta', 'urunler', 'yasaklar']);
   assert.equal(sonuc.semaSurumu, 1);
   assert.ok(sonuc.hastaliklarDizi);
 });

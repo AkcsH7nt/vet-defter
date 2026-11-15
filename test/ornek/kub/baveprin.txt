@@ -1,0 +1,41 @@
+4.9 Dozaj ve Kullanım Yolu:
+Haricen kullanılır. Dökme şeklinde uygulanır. Farmakolojik dozu 0,5 mg/kg vücut ağırlığıdır.
+Topikal olarak uygulanacak pratik doz 10 kg vücut ağırlığı için 1 ml’ye eşdeğerdir. Dökme
+çözelti, sırt çizgisi boyunca omuzlardan kuyruk başına kadar uzanan dar bir şerit halinde
+uygulanmalıdır. Uygun miktarda ürün uygulanması için vücut ağırlığı mümkün olduğunca
+doğru hesaplanmalı ve dozlama cihazı kontrol edilmelidir. Eğer hayvanlar bireysel olarak değil
+de toplu olarak tedavi edilecekse, yüksek veya düşük dozda tedaviden kaçınmak için vücut
+ağırlıklarına göre   gruplandırılıp    buna  uygun doz    ayarlanmalıdır.   Gruptaki hayvanlar    eşit
+zamanlarda tedavi edilmelidir.
+
+  Sığır                           Doz
+  150 kg canlı ağırlık            15 ml
+  150 – 300 kg canlı ağırlık      15 - 30 ml
+  300   kg    canlı   ağırlığın   30 - 40 ml
+  üzeri
+
+Eprinomektinin      etkinliği, 14-28  gün süreyle  devam    eder.  İlk uygulamayı   takiben, parazit
+sayısında azalma görülür ancak tam bir eradikasyon sağlayabilmek için birkaç hafta geçmesi
+gerekir. Gerekli durumlarda parazit mücadelesinde enfestasyonun çeşidine ve yoğunluğuna
+göre belirtilen sürelerin sonunda, aynı dozda uygulama tekrar edilir.
+Sıkma-Ölçme-Dökme Sistemi
+Şişe dik tutulur ve vücut ağırlığına göre tatbik edilecek gerekli dozu vermek için sıkılarak,
+dozun    ölçekli bölmeye  dolması  sağlanır.  Gerekli  doz, kalibrasyon  çizgilerinin işaretçileri
+arasında ise basınç serbest bırakılır ve doz otomatik olarak olması gereken seviyeye ulaşır.
+Dozu uygulamak için şişeyi yatırmak gerekir.
+
+4.10 Doz Aşımı, varsa semptomlar, acil prosedürler, antidotlar:
+Doz aşımı bilgileri yeterli olmamakla birlikte önerilen dozun üzerine çıkılmamalıdır. Bilinen
+bir antidotu yoktur. Sekiz haftalık buzağılarda terapötik dozun 5 katına kadar (2,5 mg/kg vücut
+ağırlığı Eprinomektin)    7  gün   arayla  üç  kez uygulanmasından     sonra     toksisite belirtisi
+görülmemiştir. Tolerans çalışmasında terapötik dozun 10 katı (5 mg/kg vücut ağırlığı) ile bir
+kez  tedavi edilen  buzağıda  geçici  midriyazis  görülmüştür.   Tedaviyle   ilişkilendirilebilecek
+başka bir istenmeyen etki yoktur.
+
+4.11 Kalıntı Arınma Süreleri (sıfır gün olanlar da dahil):
+İlaç kalıntı arınma süresi (i.k.a.s):
+Et :  Tedavi süresince ve son ilaç uygulamasından sonra et için yetiştirilen sığırlar 10 gün
+geçmeden kesime gönderilmemelidir.
+Süt: ‘0’ gün.
+
+5. FARMAKOLOJİK ÖZELLİKLER:

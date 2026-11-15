@@ -38,10 +38,23 @@ test('veriYukleTumDosyalariGoreliYoldanOkurVeGruplariBirlestirir', async () => {
     assert.ok(istenen.includes(yol), `okunmadı: ${yol}`);
   }
   assert.deepEqual(Object.keys(veri).sort(),
-    ['bayraklar', 'belirtiler', 'etkenler', 'hastaliklar', 'ihbar', 'meta', 'urunler', 'yasaklar']);
+    ['bayraklar', 'belirtiler', 'etkenler', 'hastaliklar', 'ihbar', 'kub', 'meta', 'urunler', 'yasaklar']);
   // index.json sırasıyla birleşir
   assert.deepEqual(veri.hastaliklar.map((h) => h.id), ['ornek_solunum', 'ornek_ishal', 'ornek_metabolik', 'ornek_ihbar',
     'ornek_sarbon', 'ornek_kuduz', 'ornek_bruselloz', 'ornek_lsd']);
+});
+
+test('kubDosyasiYoksaBosKume', async () => {
+  // veri/kub.json yoksa ya da okunamazsa (ör. eski önbellek, çevrimdışı) uygulama çökmez: boş küme.
+  assert.deepEqual((await ornek()).kub, { cekilmeTarihi: '2026-11-15', urunler: {} });
+  const temel = dizindenOku(ORNEK);
+  const eksik = await veriYukle((yol) => {
+    if (yol === 'veri/kub.json') throw new Error(`${yol} okunamadı: ENOENT`);
+    return temel(yol);
+  });
+  assert.deepEqual(eksik.kub, { urunler: {} });
+  const dizi = await veriYukle((yol) => (yol === 'veri/kub.json' ? [] : temel(yol)));
+  assert.deepEqual(dizi.kub, { urunler: {} });
 });
 
 test('veriYukleIndexDiziDegilseHata', async () => {
@@ -342,6 +355,41 @@ test('urunAlanlariDenetlenir', async () => {
   hataIcerir(hatalar, /Örnek Ürün.*kubDogrulandi/);
 });
 
+const kubKaydi = () => ({
+  doz: 'Kas içi uygulanır.', arinma: 'Et: 28 gün. Süt: 4 gün.',
+  sigir: { et_gun: 28, sut: { saat: 96 }, guven: 'yuksek' }, metinYok: false,
+});
+
+test('kubKayitlariDenetlenir', async () => {
+  const veri = await ornek();
+  veri.urunler[0].urunId = '101';
+  veri.kub = { cekilmeTarihi: '2026-11-15', urunler: { 101: kubKaydi() } };
+  assert.deepEqual(dogrula(veri), []);
+  // et 0 ile null ayrı; kullanılmaz / belirtilmemiş geçerli; metinYok kaydı boş
+  veri.kub.urunler[101].sigir = { et_gun: 0, sut: 'kullanilmaz', guven: 'yuksek' };
+  assert.deepEqual(dogrula(veri), []);
+  veri.kub.urunler[101] = { doz: null, arinma: null, sigir: { et_gun: null, sut: null, guven: 'dusuk' }, metinYok: true };
+  assert.deepEqual(dogrula(veri), []);
+
+  const bozuk = (degistir, desen) => {
+    const v = structuredClone(veri);
+    v.kub.urunler[101] = kubKaydi();
+    degistir(v.kub);
+    hataIcerir(dogrula(v), desen);
+  };
+  bozuk((k) => { k.urunler[999] = kubKaydi(); }, /kub\[999\].*urunler.json'da yok/);
+  bozuk((k) => { k.urunler[101].sigir.et_gun = null; }, /kub\[101\].*yuksek/);
+  bozuk((k) => { k.urunler[101].sigir.sut = null; }, /kub\[101\].*yuksek/);
+  bozuk((k) => { k.urunler[101].sigir.sut = { gun: 4 }; }, /kub\[101\].*sut/);
+  bozuk((k) => { k.urunler[101].sigir.et_gun = 1.5; }, /kub\[101\].*et_gun/);
+  bozuk((k) => { k.urunler[101].sigir.guven = 'orta'; }, /kub\[101\].*guven/);
+  bozuk((k) => { k.urunler[101].doz = ''; }, /kub\[101\].*doz/);
+  bozuk((k) => { k.urunler[101].metinYok = true; }, /kub\[101\].*metinYok/);
+  bozuk((k) => { k.urunler[101].fazla = 1; }, /kub\[101\].*bilinmeyen alan: fazla/);
+  bozuk((k) => { k.cekilmeTarihi = 'dün'; }, /kub.*cekilmeTarihi/);
+  bozuk((k) => { k.urunler = []; }, /kub.*urunler nesne/);
+});
+
 test('bayrakKosuluBossaHata', async () => {
   for (const kosul of [{ hepsi: [] }, { herhangi: [] }, { hepsi: [], herhangi: [] }, {}, { baglam: { aniOlum: true } }]) {
     const veri = await ornek();
@@ -448,6 +496,19 @@ test('cliHataliVeriIcinBirCikar', () => {
     const s = spawnSync(process.execPath, ['scripts/dogrula.mjs', gecici], { cwd: KOK, encoding: 'utf8' });
     assert.equal(s.status, 1);
     assert.match(s.stdout + s.stderr, /ihbarAdimlari/);
+  } finally {
+    rmSync(gecici, { recursive: true, force: true });
+  }
+});
+
+test('cliBozukKubJsonIcinBirCikar', () => {
+  const gecici = mkdtempSync(join(tmpdir(), 'vet-defter-'));
+  try {
+    cpSync(ORNEK, gecici, { recursive: true });
+    writeFileSync(join(gecici, 'veri', 'kub.json'), '{ bozuk');
+    const s = spawnSync(process.execPath, ['scripts/dogrula.mjs', gecici], { cwd: KOK, encoding: 'utf8' });
+    assert.equal(s.status, 1);
+    assert.match(s.stdout + s.stderr, /kub\.json/);
   } finally {
     rmSync(gecici, { recursive: true, force: true });
   }

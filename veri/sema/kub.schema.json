@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kub.schema.json",
+  "title": "veri/kub.json",
+  "description": "KÜB alıntıları (scripts/kub-ayikla.mjs üretir; elle düzenlenmez). doz / arinma: KÜB 4.9 ve 4.11 bölümlerinin metni kelimesi kelimesine (yalnız satır birleştirme, fazla boşluk temizliği). sigir: 4.11'den otomatik okunan sığır arınması (lib/kub.js sigirArinmasi); ekran sayıyı yalnız guven 'yuksek' iken gösterir. Dosya yoksa lib/veri.js { urunler: {} } verir.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["urunler"],
+  "properties": {
+    "cekilmeTarihi": { "$ref": "ortak.schema.json#/$defs/tarih", "description": "Metnin PDF'lerden çıkarıldığı gün." },
+    "urunler": {
+      "type": "object",
+      "description": "Anahtar: veri/urunler.json urunId.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["doz", "arinma", "sigir", "metinYok"],
+        "properties": {
+          "doz": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.9 metni; satırlar \\n ile ayrılır (tablo satırları ayrı kalır)." },
+          "arinma": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.11 metni." },
+          "metinYok": { "type": "boolean", "description": "PDF'ten metin çıkmadı (taranmış) ya da 4.9 ve 4.11 başlıklarının ikisi de bulunamadı (eski prospektüs biçimi). Ekranda \"KÜB'e bakın\" + bağlantı." },
+          "sigir": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["et_gun", "sut", "guven"],
+            "properties": {
+              "et_gun": { "type": ["integer", "null"], "minimum": 0, "description": "0 gün ile okunamadı (null) ayrıdır." },
+              "sut": {
+                "oneOf": [
+                  { "type": "null", "description": "Okunamadı." },
+                  { "type": "object", "additionalProperties": false, "required": ["saat"], "properties": { "saat": { "type": "number", "minimum": 0 } } },
+                  { "enum": ["kullanilmaz", "belirtilmemis"], "description": "kullanilmaz: sütü insan tüketimine sunulan / laktasyondaki inekte kullanılmaz. belirtilmemis: 4.11 sütten hiç söz etmiyor." }
+                ]
+              },
+              "guven": { "enum": ["yuksek", "dusuk"], "description": "yuksek yalnız et_gun ve sut ikisi de okunmuş ve tür / yol / koşul belirsizliği yokken. dusuk iken sayı gösterilmez, metin gösterilir." }
+            }
+          }
+        }
+      }
+    }
+  }
+}

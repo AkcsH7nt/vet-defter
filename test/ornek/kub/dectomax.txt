@@ -1,0 +1,35 @@
+4.9 Dozaj ve kullanım yolu
+Doğru  dozun     enjekte   edilmesi   için vücut ağırlığı mümkün   olduğunca   doğru bir  şekilde
+belirlenmelidir. Eğer tedavi edilecek hayvan bir tane değil toplu halde ise vücut ağırlıklarına
+göre gruplanıp ona göre doz ayarlaması yapılarak az veya çok doz vermenin önüne geçilmelidir.
+Doğru dozu uygulamak için, iyi bir şekilde kalibre edilmiş enjektör kullanılmalıdır. Veteriner
+hekim tarafından yeterli parazit kontrolünü sağlamak için uygun doz programı ve sürü yönetimi
+tavsiye edilmelidir.
+
+Sığırlarda mide-bağırsak kıl kurtları, akciğer kıl kurtları, göz nematodları ve uyuz akarları için
+deri altı (boyun bölgesi)   ve koyunlarda mide-bağırsak kıl kurtları ve nazal miyazis etkenleri
+için kas içi 200 mcg/kg’a eşdeğer 1 ml (10 mg doramektin)/50 kg vücut ağırlığı tek seferlik
+uygulanır.
+
+Psoroptes ovis (koyun uyuzu) enfestasyonlarından kaynaklanan klinik belirtilerin tedavisi ve
+koyunlardaki    canlı uyuz  etkenlerinin    yok  edilmesi için; farmakolojik doz  olarak  300 µg
+Doramektin /kg vücut ağırlığı, pratik doz olarak 1 ml (10 mg doramektin)/33 kg vücut ağırlığı
+olacak şekilde tek seferlik kas içi uygulanır. Ek olarak tekrar enfestasyonun önüne geçebilmek
+için uygun biyolojik koruma önlemleri alınmalıdır. Enfekte koyunla temas etmiş bulunan tüm
+koyunların tedavi edilmiş olması önemlidir. Tedavi sonrasında, tedavi edilmiş enfekte ve tedavi
+edilmemiş enfekte olmayan sürüler arasında en az 14 gün boyunca temas olmamasına özen
+gösterilmelidir.
+Sığırlarda 5, koyunlarda 1,5 ml’den fazla miktarlar farklı bölgelere uygulanmalıdır.
+
+4.10 Doz aşımı, varsa semptomlar, acil prosedürler, antidotlar (gerekli ise)
+Sığırlarda (sadece deri altı yolla) ve koyunlarda (sadece kas içi yolla) etikette yazan maksimum
+önerilen dozun sırasıyla 25 ve 10 katı verilen dozlarda, hiçbir ters klinik belirti görülmemiştir.
+
+4.11 Kalıntı arınma süreleri (sıfır gün olanlar da dâhil)
+İlaç Kalıntı Arınma Süresi (İ.K.A.S.): Tedavi süresince ve son ilaç uygulamasından sonra
+eti için yetiştirilen sığırlar ve koyunlar 70 gün geçmeden kesime gönderilmemelidir. İnsan
+tüketimi için süt elde edilen sağmal ineklerde ve koyunlarda kullanılmaz. Sütü insan
+tüketimine   sunulacak     koyunlarda   doğumdan      önceki  70  gün,  ineklerde   ise    60    gün
+içerisinde kullanılmaz.
+
+5. FARMAKOLOJİK ÖZELLİKLER
