@@ -439,7 +439,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -545,7 +550,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -733,7 +743,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Etken maddeye hassasiyeti olan hayvanlarda ve 7 günlükten daha küçük buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Etken maddeye hassasiyeti olan hayvanlarda ve 7 günlükten daha küçük buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -1342,7 +1355,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -1475,7 +1493,10 @@
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
         "kisitlar": [
-          "6 haftalıktan küçük hayvanlarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "6 haftalıktan küçük hayvanlarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -1663,7 +1684,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -1880,9 +1906,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -2238,7 +2262,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -2453,7 +2482,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır"
+          {
+            "tur": "kosullu",
+            "metin": "Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır"
+          }
         ],
         "sabitDoz": false
       },
@@ -2690,7 +2722,10 @@
         "yerBasinaMaxMl": 30,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Ruminasyona başlamamış buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Ruminasyona başlamamış buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -3970,7 +4005,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz."
+          {
+            "tur": "kosullu",
+            "metin": "80 kg’dan daha ağır buzağılarda kullanılmaz."
+          }
         ],
         "sabitDoz": false
       },
@@ -4427,7 +4465,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -4530,9 +4573,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Escherichia coli suşları tarafından meydana getirilen septisemi tedavisi - 2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -4637,9 +4678,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -5181,9 +5220,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -5507,7 +5544,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -5877,7 +5919,10 @@
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
         "kisitlar": [
-          "6 haftalıktan küçük hayvanlarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "6 haftalıktan küçük hayvanlarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -5904,7 +5949,10 @@
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
         "kisitlar": [
-          "6 haftalıktan küçük hayvanlarda kullanmayınız."
+          {
+            "tur": "kosullu",
+            "metin": "6 haftalıktan küçük hayvanlarda kullanmayınız."
+          }
         ],
         "sabitDoz": false
       },
@@ -6233,7 +6281,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz."
+          {
+            "tur": "kosullu",
+            "metin": "80 kg’dan daha ağır buzağılarda kullanılmaz."
+          }
         ],
         "sabitDoz": false
       },
@@ -6349,11 +6400,16 @@
         "ifade": "10.0 ml/100 kg vücut ağırlığı",
         "cumle": "-0.5 mg meloksikam/kg vücut ağırlığı dozunda (yani 10.0 ml/100 kg vücut ağırlığı) antibiyotik tedavisi veya uygun şekilde oral rehidrasyon tedavisi ile kombinasyon halinde tek deri altı veya ven içi enjeksiyon şeklinde kullanılır.",
         "kaynak": "ml_kg",
-        "kapsam": "sigir",
+        "kapsam": "buzagi",
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -6462,7 +6518,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -7037,11 +7098,16 @@
         "ifade": "10.0 ml/100 kg vücut ağırlığı",
         "cumle": "-0.5 mg meloksikam/kg vücut ağırlığı dozunda (yani 10.0 ml/100 kg vücut ağırlığı) antibiyotik tedavisi veya uygun şekilde oral rehidrasyon tedavisi ile kombinasyon halinde tek deri altı veya ven içi enjeksiyon şeklinde kullanılır.",
         "kaynak": "ml_kg",
-        "kapsam": "sigir",
+        "kapsam": "buzagi",
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -7571,7 +7637,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -7708,7 +7779,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Etkin maddeye hassasiyeti olan hayvanlara ve 7 günlükten küçük buzağılara uygulanmaz."
+          {
+            "tur": "kosullu",
+            "metin": "Etkin maddeye hassasiyeti olan hayvanlara ve 7 günlükten küçük buzağılara uygulanmaz."
+          }
         ],
         "sabitDoz": false
       },
@@ -7765,7 +7839,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "7 günlükten küçük buzağılarda kullanmayınız."
+          {
+            "tur": "kosullu",
+            "metin": "7 günlükten küçük buzağılarda kullanmayınız."
+          }
         ],
         "sabitDoz": false
       },
@@ -7963,7 +8040,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -7991,7 +8071,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -8701,9 +8786,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -8993,9 +9076,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -9914,9 +9995,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Escherichia coli suşları tarafından meydana getirilen septisemi tedavisi - 2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -10245,9 +10324,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -10438,7 +10515,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz."
+          {
+            "tur": "kosullu",
+            "metin": "80 kg’dan daha ağır buzağılarda kullanılmaz."
+          }
         ],
         "sabitDoz": false
       },
@@ -10601,9 +10681,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -11012,7 +11090,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Bu ürün, sadece buzağılarda ve koyunlardaki serebrokortikal nekrozda ven içi kullanımı için uygundur."
+          {
+            "tur": "yas",
+            "metin": "Bu ürün, sadece buzağılarda ve koyunlardaki serebrokortikal nekrozda ven içi kullanımı için uygundur."
+          }
         ],
         "sabitDoz": false
       },
@@ -11451,8 +11532,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "1 haftalıktan büyük buzağılar ve laktasyonda olmayan sığırlarda, ishal vakalarında klinik semptomları azaltmak için, oral rehidrasyon terapisi ile kombine şekilde kullanılır.",
-          "İshal tedavisinde, 1 haftalıktan küçük buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "İshal tedavisinde, 1 haftalıktan küçük buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -11479,9 +11562,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -11804,7 +11885,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Ruminasyonu başlamış buzağılarda kullanılmaz."
+          {
+            "tur": "kosullu",
+            "metin": "Ruminasyonu başlamış buzağılarda kullanılmaz."
+          }
         ],
         "sabitDoz": false
       },
@@ -11911,7 +11995,10 @@
         "yerBasinaMaxMl": 13,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Ürün buzağılarda kullanılmamalıdır."
+          {
+            "tur": "olumsuz",
+            "metin": "Ürün buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -12430,11 +12517,16 @@
         "ifade": "10.0 ml/100 kg vücut ağırlığı",
         "cumle": "-0.5 mg meloksikam/kg vücut ağırlığı dozunda (yani 10.0 ml/100 kg vücut ağırlığı) antibiyotik tedavisi veya uygun şekilde oral rehidrasyon tedavisi ile kombinasyon halinde tek deri altı veya ven içi enjeksiyon şeklinde kullanılır.",
         "kaynak": "ml_kg",
-        "kapsam": "sigir",
+        "kapsam": "buzagi",
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -12697,9 +12789,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Escherichia coli suşları tarafından meydana getirilen septisemi tedavisi - 2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -13284,9 +13374,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -13544,11 +13632,16 @@
         "ifade": "10.0 ml/100 kg vücut ağırlığı",
         "cumle": "-0.5 mg meloksikam/kg vücut ağırlığı dozunda (yani 10.0 ml/100 kg vücut ağırlığı) antibiyotik tedavisi veya uygun şekilde oral rehidrasyon tedavisi ile kombinasyon halinde tek deri altı veya ven içi enjeksiyon şeklinde kullanılır.",
         "kaynak": "ml_kg",
-        "kapsam": "sigir",
+        "kapsam": "buzagi",
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -13904,7 +13997,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Vücut ağırlığı 1,25 kg'ın altında olan hayvanlara uygulanmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Vücut ağırlığı 1,25 kg'ın altında olan hayvanlara uygulanmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -14464,9 +14560,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -14739,7 +14833,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "7 günlükten küçük buzağılarda kullanmayınız."
+          {
+            "tur": "kosullu",
+            "metin": "7 günlükten küçük buzağılarda kullanmayınız."
+          }
         ],
         "sabitDoz": false
       },
@@ -15441,9 +15538,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -15495,9 +15590,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Escherichia coli suşları tarafından meydana getirilen septisemi tedavisi -2yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -16035,9 +16128,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Escherichia coli suşları tarafından meydana getirilen septisemi tedavisi - 2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -16336,7 +16427,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -16476,7 +16572,11 @@
         "kisitlar": [],
         "sabitDoz": false
       },
-      "yollar": []
+      "yollar": [
+        "IM",
+        "IV",
+        "SC"
+      ]
     },
     "bbdba4e7-bb2f-4361-8994-b23f315e8e4f": {
       "doz": "Kas içi ve yalnızca sığırlarda aynı zamanda yavaş ven içi yolla uygulanır.\nSığır: 5-10 mg/kg vücut ağırlığı/gün dozunda 3 gün boyunca uygulanır (her 100 kg vücut ağırlığı için günde 2,5-5 ml). Bir enjeksiyon bölgesine en fazla 15 ml uygulanmalıdır.\nKoyun-keçi: 10 mg/kg vücut ağırlığı/gün dozunda 3 gün boyunca uygulanır (her 50 kg vücut ağırlığı için günde 2,5 ml).\nKedi-köpek: 7-11 mg/kg vücut ağırlığı/gün dozunda 3-5 gün boyunca uygulanır (10 kg vücut ağırlığı için günde 0,35-0,55 ml). Düşük miktarlar için doğru dozajlama yapabilecek uygun enjektör kullanılmalıdır.\nTıpa, 15 defadan fazla delinmemelidir. Tıpanın aşırı delinmesini engellemek için uygun çoklu dozlama aracı kullanılmalıdır. Doğru dozajlama için hayvanların ağırlığı mümkün olduğunca tam ölçülmelidir.",
@@ -17206,9 +17306,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -17446,11 +17544,16 @@
         "ifade": "10.0 ml/100 kg vücut ağırlığı",
         "cumle": "-0.5 mg meloksikam/kg vücut ağırlığı dozunda (yani 10.0 ml/100 kg vücut ağırlığı) antibiyotik tedavisi veya uygun şekilde oral rehidrasyon tedavisi ile kombinasyon halinde tek deri altı veya ven içi enjeksiyon şeklinde kullanılır.",
         "kaynak": "ml_kg",
-        "kapsam": "sigir",
+        "kapsam": "buzagi",
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -17782,7 +17885,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz."
+          {
+            "tur": "kosullu",
+            "metin": "80 kg’dan daha ağır buzağılarda kullanılmaz."
+          }
         ],
         "sabitDoz": false
       },
@@ -18098,11 +18204,16 @@
         "ifade": "10,0 ml/100 kg vücut ağırlığı",
         "cumle": "0,5 mg meloksikam/kg vücut ağırlığı dozunda (yani 10,0 ml/100 kg vücut ağırlığı) antibiyotik tedavisi veya uygun şekilde oral rehidrasyon tedavisi ile kombinasyon halinde tek deri altı veya ven içi enjeksiyon şeklinde kullanılır.",
         "kaynak": "ml_kg",
-        "kapsam": "sigir",
+        "kapsam": "buzagi",
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -18478,7 +18589,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Vücut ağırlığı 1,25 kg’ın altında olan hayvanlara uygulanmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Vücut ağırlığı 1,25 kg’ın altında olan hayvanlara uygulanmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -18961,7 +19075,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "7 günlük yaştan daha küçük buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "7 günlük yaştan daha küçük buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -18990,7 +19107,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Rumen fonksiyonları başlayan buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Rumen fonksiyonları başlayan buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -19126,7 +19246,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -19771,7 +19896,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Rumen fonksiyonları başlayan buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Rumen fonksiyonları başlayan buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -19799,7 +19927,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -19827,9 +19960,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Sığırda (6 aylık ve üzeri) akut enfeksiyöz solunum yolu hastalığı ve akut mastitisin klinik belirtilerini azaltmak için antimikrobiyal tedaviye ek olarak kullanılır."
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -20523,7 +20654,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Vücut ağırlığı 1,25 kg'dan az olan hayvanlara uygulanmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Vücut ağırlığı 1,25 kg'dan az olan hayvanlara uygulanmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -20549,9 +20683,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -20898,7 +21030,10 @@
         "yerBasinaMaxMl": 30,
         "yerBasinaYol": null,
         "kisitlar": [
-          "Ruminasyona başlamamış buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "Ruminasyona başlamamış buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -20954,9 +21089,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "Escherichia coli suşları tarafından meydana getirilen septisemi tedavisi - 2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi, Koyun"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -20982,9 +21115,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -21177,7 +21308,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -21777,9 +21913,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artiritis tedavisi,"
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [
@@ -22136,7 +22270,10 @@
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
         "kisitlar": [
-          "İshal tedavisi için bir haftalıktan küçük buzağılarda kullanılmamalıdır."
+          {
+            "tur": "kosullu",
+            "metin": "İshal tedavisi için bir haftalıktan küçük buzağılarda kullanılmamalıdır."
+          }
         ],
         "sabitDoz": false
       },
@@ -22660,7 +22797,12 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": null,
         "yerBasinaYol": null,
-        "kisitlar": [],
+        "kisitlar": [
+          {
+            "tur": "kosullu",
+            "metin": "Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız."
+          }
+        ],
         "sabitDoz": false
       },
       "yollar": [
@@ -22686,9 +22828,7 @@
         "guven": "yuksek",
         "yerBasinaMaxMl": 10,
         "yerBasinaYol": null,
-        "kisitlar": [
-          "2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen Mycoplasma ilişkili akut artritis tedavisi."
-        ],
+        "kisitlar": [],
         "sabitDoz": false
       },
       "yollar": [

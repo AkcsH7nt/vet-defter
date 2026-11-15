@@ -2409,8 +2409,10 @@
       "tiamin"
     ],
     "digerEtkenler": [
+      "dekspantenol",
       "Vitamin B12",
       "Vitamin B2",
+      "Vitamin B3",
       "Vitamin B6"
     ],
     "hedefTurler": [
@@ -14827,7 +14829,9 @@
     "etkenler": [
       "rafoksanid"
     ],
-    "digerEtkenler": [],
+    "digerEtkenler": [
+      "tiyabendazol"
+    ],
     "hedefTurler": [
       "sigir"
     ],
@@ -19508,7 +19512,9 @@
     "etkenler": [
       "butafosfan"
     ],
-    "digerEtkenler": [],
+    "digerEtkenler": [
+      "Vitamin B12 (siyanokobalamin)"
+    ],
     "hedefTurler": [
       "at",
       "kedi",
