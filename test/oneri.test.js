@@ -272,3 +272,70 @@ test('gosterilebilirMiYasakVeAmegAEleniyor', async () => {
     assert.equal(gosterilebilirMi({ etkenId: 'ornek_nsaii' }, veri), true);
   } finally { console.warn = uyari; }
 });
+
+test('urunSecProtokolDisiEtkenliKombineUrunSonra', async () => {
+  const ilac = { etkenId: 'ornek_mineral', sinif: 'metabolik', sira: 1, yol: 'IV' };
+  const veri = await veriHazirla([
+    // hesaplanabilir ama protokolde olmayan bir etken (ör. Novacoc'taki metamizol) içeriyor
+    { urun: { urunId: 't-kombi', ad: 'Alfa Kombi', etkenler: ['ornek_mineral', 'test_metamizol'] }, kayit: { oran: oran(0.5), yollar: ['IV'] } },
+    // tek etkenli, hesaplanamaz
+    { urun: { urunId: 't-tek', ad: 'Zeta Tek', etkenler: ['ornek_mineral'] }, kayit: { oran: DUSUK, yollar: ['IV'] } },
+  ]);
+  // protokol etken kümesi verilmezse ilk anahtar yok: hesaplanabilir kombine önce
+  assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-kombi');
+  const s = urunSec(ilac, veri, 'inek', { protokolEtkenleri: new Set(['ornek_mineral', 'ornek_nsaii']) });
+  assert.equal(s.urun.urunId, 't-tek');
+  assert.equal(s.hesaplanabilir, false);
+  assert.equal(s.digerSayisi, 1);
+  // kombinenin tüm etkenleri protokoldeyse (herhangi bir sırada) cezalandırılmaz
+  assert.equal(urunSec(ilac, veri, 'inek', { protokolEtkenleri: new Set(['ornek_mineral', 'test_metamizol']) }).urun.urunId, 't-kombi');
+});
+
+test('tedaviOnerisiAyniUrunIkinciSatirdaMlGostermez', async () => {
+  // hipomagnezemi benzeri: Ca ve Mg satırları aynı kombine ürüne çıkıyor
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-camg', ad: 'CaMg Kombi', etkenler: ['ornek_mineral', 'test_mg'] }, kayit: { oran: oran(0.5), yollar: ['IV'] } },
+  ], { etkenler: [{ id: 'test_mg', ad: 'Magnezyum test', sinif: 'metabolik', ameg: null }] });
+  const h = hastalik({
+    protokol: {
+      ilaclar: [
+        { etkenId: 'ornek_mineral', sinif: 'metabolik', sira: 1, yol: 'IV (yavaş)', not: null },
+        { etkenId: 'test_mg', sinif: 'metabolik', sira: 1, yol: 'SC; IV yalnız yavaş ve kombine çözeltiyle', not: null },
+      ],
+      destekleyici: [], bakim: [], ihbarAdimlari: [],
+    },
+  });
+  const [ca, mg] = tedaviOnerisi(h, veri, { yas: 'inek', kilo: 450 }).gruplar[0].satirlar;
+  assert.equal(ca.hesap.ml, 225);
+  assert.equal(ca.neden, null);
+  assert.equal(ca.ayniUrunIle, null);
+  assert.equal(mg.secim.urun.urunId, 't-camg');
+  assert.equal(mg.hesap, null);
+  assert.equal(mg.neden, 'ayni_urun');
+  assert.equal(mg.ayniUrunIle, 'ornek_mineral');
+});
+
+test('tedaviOnerisiAyniUrunEkranSirasinaGore', async () => {
+  // protokolde NSAİİ önce, antimikrobiyal sonra; ekranda antimikrobiyal grup önce → ml antimikrobiyal satırda
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-abns', ad: 'AB+NSAİİ', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'] }, kayit: { oran: oran(0.1), yollar: ['IM'] } },
+  ]);
+  const h = hastalik({
+    protokol: {
+      ilaclar: [
+        { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'IM', not: null },
+        { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null },
+      ],
+      destekleyici: [], bakim: [], ihbarAdimlari: [],
+    },
+  });
+  const o = tedaviOnerisi(h, veri, { yas: 'inek', kilo: 450 });
+  assert.deepEqual(o.gruplar.map((g) => g.sinif), ['antimikrobiyal', 'nsaii']);
+  const ab = o.gruplar[0].satirlar[0];
+  const ns = o.gruplar[1].satirlar[0];
+  assert.equal(ab.secim.urun.urunId, 't-abns');
+  assert.equal(ab.hesap.ml, 45);
+  assert.equal(ns.secim.urun.urunId, 't-abns');
+  assert.equal(ns.neden, 'ayni_urun');
+  assert.equal(ns.ayniUrunIle, 'ornek_antibiyotik');
+});
