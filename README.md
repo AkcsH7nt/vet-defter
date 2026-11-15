@@ -50,6 +50,20 @@ npm run dogrula       # veri/ doğrulaması (spec §8 kuralları); başka kök: 
 npm run test:tarayici # uçtan uca testler (Playwright, sistem Chrome): ekranlar, çevrimdışı, /vet-defter/ alt yolu
 ```
 
+## Hekim onayı
+
+Hastalık kayıtları taslak başlar; hekim sohbette onayladığı hastalığı koordinatör şu komutla işler:
+
+```
+npm run onay-durumu                              # gruba göre onaylı / taslak / düştü tablosu
+npm run onayla -- <id> [--kim "Dr. Ad"]          # onayı yazar (varsayılan kim: Sorumlu hekim)
+npm run onayla -- <id> --kaldir                  # onayı kaldırır (taslağa döner)
+```
+
+- Onay kaydın içerik özetiyle birlikte yazılır; kayıt sonradan değişirse onay kendiliğinden düşer ("düştü") ve doz gösterilmez, yeniden onay gerekir.
+- Araç yalnız ilgili kaydın `onay` bölümünü günceller, dosya biçimini korur ve sonuç `npm run dogrula` kurallarını bozuyorsa hiçbir şey yazmaz (ör. kaynak ürünü eksik ilaç satırı).
+- Akış: hekim sohbette hastalığı onaylar → koordinatör komutu çalıştırır → `onay-durumu` ile kontrol edilir → commit.
+
 ## Ürün listesini yenileme
 
 ```

@@ -9,7 +9,9 @@
     "sunucu": "node scripts/sunucu.mjs",
     "urun-cek": "node scripts/urun-cek.mjs",
     "kub-indir": "node scripts/kub-indir.mjs",
-    "surum": "node scripts/surum.mjs"
+    "surum": "node scripts/surum.mjs",
+    "onayla": "node scripts/onayla.mjs",
+    "onay-durumu": "node scripts/onayla.mjs --durum"
   },
   "devDependencies": {
     "playwright": "^1.65.1"
