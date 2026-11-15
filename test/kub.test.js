@@ -34,13 +34,13 @@ test('ekomisinDozVeArinmaBolumleri', () => {
 });
 
 test('baslikYoksaBolumlerNull', () => {
-  assert.deepEqual(bolumAyir(''), { doz: null, arinma: null });
-  assert.deepEqual(bolumAyir('Prospektüs\nKULLANIM ŞEKLİ VE DOZU\nGünde 1 kez.\nİlaç kalıntı arınma süresi: 28 gün'), { doz: null, arinma: null });
+  assert.deepEqual(bolumAyir(''), { doz: null, arinma: null, tablo: false });
+  assert.deepEqual(bolumAyir('Prospektüs\nKULLANIM ŞEKLİ VE DOZU\nGünde 1 kez.\nİlaç kalıntı arınma süresi: 28 gün'), { doz: null, arinma: null, tablo: false });
 });
 
 test('baslikVarIcerikBossaNull', () => {
   assert.deepEqual(bolumAyir('4.9 Dozaj ve kullanım yolu\n\n4.10 Doz aşımı\nYok.\n4.11 Kalıntı arınma süreleri\n   \n5. FARMAKOLOJİK ÖZELLİKLER\n'),
-    { doz: null, arinma: null });
+    { doz: null, arinma: null, tablo: false });
 });
 
 test('girintiliBaslikVeNoktaliBaslikTanınır', () => {
@@ -52,12 +52,14 @@ test('girintiliBaslikVeNoktaliBaslikTanınır', () => {
 });
 
 test('dozdakiTabloSatirlariAyriKalir', () => {
-  // 4.9 içinde "FARMAKOLOJİK DOZ" tablo başlığı bölümü bitirmez; satırlar birbirine yapışmaz.
-  const { doz, arinma } = bolumAyir(ornek('bavet-meloksikam'));
+  // 4.9 içinde "FARMAKOLOJİK DOZ" tablo başlığı bölümü bitirmez; satırlar birbirine yapışmaz; sütun aralıkları korunur (K7 O2).
+  const { doz, arinma, tablo } = bolumAyir(ornek('bavet-meloksikam'));
+  assert.equal(tablo, true);
   assert.ok(doz.includes('FARMAKOLOJİK DOZ'), doz);
-  assert.ok(/\nSığır 0,5 100 10\.0 Deri altı/.test(doz), doz);
-  assert.ok(/\nKöpek 0,2 10 0,4/.test(doz), doz);
-  assert.ok(arinma.startsWith('GIDALARDA İLAÇ KALINTI UYARILAR'), arinma);
+  assert.ok(/\n Sığır {17}0,5 {25}100 {24}10\.0 {16}Deri altı/.test(doz), doz);
+  assert.ok(/\n Köpek {17}0,2 {25}10 /.test(doz), doz);
+  // eski biçim alt başlığı ("GIDALARDA İLAÇ KALINTI UYARILAR") metin değil, atılır (K7 küçük bulgu)
+  assert.ok(arinma.startsWith('İlaç kalıntı arınma süresi ( i.k.a.s): Tedavi süresince'), arinma);
 });
 
 test('satirSonuTiresiBirlesir', () => {
@@ -300,7 +302,7 @@ test('etVeSutAyriSureVeIleBagli', () => {
 
 // --- K7 danışman denetimi düzeltmeleri (.superpowers/sdd/2026-11-15-kub-onay/k7-fable.md) ---
 // Fikstürler gerçek PDF'lerden: zolamox-zoloxy, tylaron-stabilite, albadoks-santadoks, atromax (bölüm 1 → 4.1 + 4.9 → 5),
-// ubrostar-prospektus (tam), weldox (ilk 80 satır), procastrep 4.9 → 5.
+// ubrostar-prospektus (tam), weldox (ilk 80 satır), diğerleri 4.9 → 5. Sayfa sonu (\f) işaretleri korunmuştur.
 
 const ETKENLER = JSON.parse(readFileSync(fileURLToPath(new URL('../veri/etkenler.json', import.meta.url)), 'utf8'));
 const kimlik = async (ad, etkenler) => {
@@ -384,6 +386,51 @@ test('O1_4_7deLaktasyondaTavsiyeEdilmez_etiketYok', async () => {
   assert.equal(kubKaydi(kub('Gebe ve laktasyondaki ineklerde güvenle kullanılabilir.')).sigir.guven, 'yuksek');
 });
 
+test('O2_dozTablosuSutunlariKorunur_Mirazol', () => {
+  const { doz, tablo } = bolumAyir(ornek('mirazol'));
+  assert.equal(tablo, true);
+  const satir = (kg) => doz.split('\n').find((s) => s.trim().startsWith(kg));
+  // 200 kg: yalnız 2. sütun (erişkin karaciğer kelebeği) 1 tablet; 300 kg: yalnız 1. sütun 1 tablet
+  assert.ok(satir('200 kg').indexOf('1 tablet') > satir('300 kg').indexOf('1 tablet') + 20, doz);
+  assert.match(satir('800 kg'), /3 tablet {10,}4 Tablet/);
+  // düz metin paragrafı yine birleşir
+  assert.ok(doz.includes('Yuvarlak kurt, akciğer kurdu, şeritler ile karaciğer kelebeği ve yuvarlak kurt yumurtaları için 7,5 mg albendazol/kg'));
+  // tablosuz bölümde tablo yok
+  assert.equal(bolumAyir(ornek('ekomisin')).tablo, false);
+});
+
+test('O3_baslikSatirindakiMetinKorunur', () => {
+  const nilzan = bolumAyir(ornek('nilzan'));
+  assert.ok(nilzan.arinma.startsWith('Tedavi süresince ve son ilaç uygulamasından sonra eti için yetiştirilen sığırlar ve koyunlar 28 gün'), nilzan.arinma);
+  assert.ok(nilzan.doz.startsWith('Veteriner hekim tarafından başka bir şekilde tavsiye edilmediği takdirde;'), nilzan.doz);
+  assert.deepEqual(sigirArinmasi(nilzan.arinma), { et_gun: 28, sut: 'kullanilmaz', guven: 'yuksek' });
+  assert.ok(bolumAyir(ornek('huvegen')).doz.startsWith('Doğru dozaj sağlamak için vücut ağırlığının olabildiğince doğru bir şekilde'));
+  // yalnız başlık: içerik eklenmez
+  assert.ok(bolumAyir(ornek('albetab')).doz.startsWith('Veteriner hekim tarafından'));
+  assert.equal(bolumAyir('4.9 Dozaj\nX.\n4.10 A\n4.11 İlaç kalıntı arınma süresi (i.k.a.s.):\nEt: 28 gün\n5. FARMAKOLOJİK\n').arinma, 'Et: 28 gün');
+});
+
+test('O4_imzaKasesiVeSayfaNumarasiAtilir', () => {
+  const atilan = [];
+  const a = bolumAyir(ornek('albecure1500'), { atilan });
+  assert.deepEqual(atilan, ['Mustafa YIKILMAZ', 'Bakan a.', 'Daire Başkanı V.']);
+  assert.doesNotMatch(a.doz, /Bakan a\.|YIKILMAZ|Daire Başkanı/);
+  assert.match(a.doz, /10 mg albendazol\/kg vücut ağırlığı/);
+  const atilan2 = [];
+  const d = bolumAyir(ornek('dinolytic-hc'), { atilan: atilan2 });
+  assert.deepEqual(atilan2, ['2']);
+  assert.doesNotMatch(d.doz, /\n2\n|(^|\n)2 Sabit/);
+  assert.match(d.doz, /\nSabit zamanlı tohumlamanın bir parçası olarak uygulama:/);
+  // birimli satır sayfa sınırında da atılmaz; sayfa ortasındaki çıplak sayı da atılmaz
+  const m = '4.9 Doz\nGünde bir kez:\n10 mg/kg\n\fDevam.\n3\nSon.\n4.10 A\nYok\n4.11 Arınma\nEt: 2 gün\n4 / 9\n\f5. FARMAKOLOJİK\n';
+  const atilan3 = [];
+  const r = bolumAyir(m, { atilan: atilan3 });
+  assert.match(r.doz, /10 mg\/kg/);
+  assert.match(r.doz, /Devam\. 3\nSon\./); // sayfa ortasındaki "3" atılmadı (paragraf birleştirmesi onu öncekine ekler)
+  assert.equal(r.arinma, 'Et: 2 gün');
+  assert.deepEqual(atilan3, ['4 / 9']);
+});
+
 test('O6_hedefTurdeSigirYok', async () => {
   assert.equal(sigirHedefMi(ornek('atromax')), false); // At, kedi, köpek
   assert.equal(sigirHedefMi(ornek('zolamox-zoloxy')), true); // Sığır, koyun, keçi
@@ -411,6 +458,15 @@ test('eskiBicimProspektus_Ubrostar', async () => {
     + 'Et ve süt için 0 gündür.\nKONTRENDİKASYONLAR\nYok.\n';
   const t = kubKaydi(temiz);
   assert.deepEqual([t.eskiBicim, t.doz, t.arinma, t.sigir.guven], [true, 'Kas içi 10 ml.', 'Et ve süt için 0 gündür.', 'dusuk']);
+});
+
+test('kucukBulgular_ProntocillRafokinGonderme', () => {
+  // "5..FARMAKOLOJİK" bölüm sonu; "4. 11" başlığı; "4.11 bölümlerine bakınız" başlık değildir
+  const p = bolumAyir(ornek('prontocill')).arinma;
+  assert.doesNotMatch(p, /FARMAKOLOJ|ATC/);
+  assert.ok(p.endsWith('kullanılmamalıdır.'), p);
+  assert.ok(bolumAyir(ornek('rafokin')).arinma.startsWith('Tedavi süresince ve son ilaç uygulamasından sonra 60 gün'));
+  assert.equal(bolumAyir('4.9 Doz\nGünde 1.\n4.10 Aşım\n4.11 bölümlerine bakınız.\n4.11 Kalıntı arınma süreleri\nEt: 28 gün\n5. FARMAKOLOJİK\n').arinma, 'Et: 28 gün');
 });
 
 test('harfiDusmusMetinOkunamaz_Weldox', async () => {

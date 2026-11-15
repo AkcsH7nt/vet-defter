@@ -165,6 +165,11 @@ main { overflow-wrap: anywhere; }
 .kub-kutu summary { min-height: 44px; display: flex; align-items: center; padding: 0 12px; font-weight: 700; cursor: pointer; }
 .kub-metin { padding: 0 12px 12px; white-space: pre-line; overflow-wrap: anywhere; font-size: 14px; }
 .arinma-etiket { margin: 6px 0 0; }
+/* Tablolu doz: eş aralıklı, yalnız blok içinde yana kayar (sayfa 390 px'te yana kaymaz). */
+.kub-tablo-not { margin: 0 12px 6px; padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); font-size: 13px; }
+.kub-tablo { margin: 0 12px 12px; max-width: 100%; overflow-x: auto; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.45; }
+.kub-tablo .tablo-satir { white-space: pre; width: max-content; }
+.kub-tablo .duz-satir { white-space: pre-wrap; overflow-wrap: anywhere; }
 .kub-not { margin: 6px 0 0; font-size: 13px; color: var(--soluk); }
 .kub-uyumsuz { padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); }
 li.urun { min-width: 0; }

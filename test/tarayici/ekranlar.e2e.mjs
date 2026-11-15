@@ -384,7 +384,7 @@ test('390 px: acik KUB kutulari yatay tasma yapmaz', async () => {
   }
 });
 
-// --- K7 düzeltmeleri: yanlış belge, hedef türü sığır olmayan ürün, ad farkı, eski biçim ---
+// --- K7 düzeltmeleri: yanlış belge, tablolu doz, hedef türü sığır olmayan ürün, ad farkı, eski biçim ---
 const UYUMSUZ = { doz: null, arinma: null, sigir: { et_gun: null, sut: null, guven: 'dusuk' }, metinYok: true,
   belgeUyumsuz: true, belgeNeden: 'KÜB bileşiminde ürünün etkeni yok: ornek_antibiyotik' };
 const kubUrlli = (yol, j) => (yol === 'urunler.json' ? j.map((u) => ({ ...u, kubUrl: 'https://example.invalid/kub.pdf' })) : undefined);
@@ -401,6 +401,35 @@ test('belgeUyumsuz: alinti ve etiket yok, eslesmiyor notu ve KUB baglantisi var'
     assert.equal(await kart.locator('.arinma-etiket').count(), 0);
     assert.doesNotMatch(await kart.innerText(), /Et \d+ gün|KÜB'den alıntı/);
   }
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('tablo: doz es aralikli blokta, not var, sayfa 390 px yana kaymaz', async () => {
+  const tablo = 'Pratik doz tablosu:\n       200 kg                                                            1 tablet\n'
+    + '       300 kg                  1 tablet\nDüz metin satırı uzun olabilir ve sarılarak gösterilir; '.padEnd(400, 'x');
+  const s = await sayfaAc({ degistir: kubDegis((u) => ({ 'ornek-u1': { ...u['ornek-u1'], doz: tablo, tablo: true } })) });
+  await s.git('#/etken/ornek_antibiyotik');
+  const kutu = s.locator('details.kub-kutu:has(summary:text-is("KÜB: Doz"))');
+  await kutu.locator('summary').click();
+  assert.match(await kutu.innerText(), /Bu bölümde tablo var — düzen bozulmuş olabilir, KÜB'ün aslına bakın/);
+  const blok = kutu.locator('.kub-tablo');
+  assert.match(await blok.evaluate((n) => getComputedStyle(n).fontFamily), /mono|Consolas|Menlo/i);
+  assert.equal(await blok.evaluate((n) => getComputedStyle(n).overflowX), 'auto');
+  // tablo satırı boşluklarıyla aynen (sütun konumu): 200 kg satırında "1 tablet" 300 kg satırındakinden sağda
+  const satirlar = await blok.locator('.tablo-satir').allTextContents();
+  assert.equal(satirlar.length, 2);
+  assert.ok(satirlar[0].indexOf('1 tablet') > satirlar[1].indexOf('1 tablet') + 20, JSON.stringify(satirlar));
+  assert.equal(await blok.locator('.tablo-satir').first().evaluate((n) => getComputedStyle(n).whiteSpace), 'pre');
+  const [sw, iw, bw, bs] = await s.evaluate(() => {
+    const b = document.querySelector('.kub-tablo');
+    return [document.documentElement.scrollWidth, innerWidth, b.clientWidth, b.scrollWidth];
+  });
+  assert.ok(sw <= iw, `scrollWidth ${sw} > ${iw}`);
+  assert.ok(bs > bw, 'tablo bloğu kendi içinde yana kayar');
+  // tablosuz kayıtta düz kutu
+  const s2 = await sayfaAc();
+  await s2.git('#/etken/ornek_antibiyotik');
+  assert.equal(await s2.locator('.kub-tablo').count(), 0);
   assert.deepEqual(s.hatalar, []);
 });
 

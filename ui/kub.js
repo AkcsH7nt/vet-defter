@@ -63,6 +63,7 @@ export function arinmaEtiketi(sigir) {
   return parcalar;
 }
 
+export const TABLO_NOTU = "Bu bölümde tablo var — düzen bozulmuş olabilir, KÜB'ün aslına bakın";
 export const ESKI_BICIM_NOTU = 'Eski biçim KÜB — aslına bakın';
 export const BELGE_UYUMSUZ_NOTU = "Bakanlık sitesindeki KÜB bu ürünle eşleşmiyor — KÜB'e bakın";
 
@@ -73,9 +74,21 @@ function kubKutusu(baslik, metin) {
 }
 
 /**
+ * Tablolu doz: eş aralıklı, kendi içinde yana kayan blok (sayfa kaymaz). Sütun aralığı olan satırlar boşluklarıyla
+ * aynen (white-space: pre), düz metin satırları sarılarak gösterilir.
+ */
+function tabloKutusu(baslik, metin) {
+  return el('details', { class: 'kub-kutu' },
+    el('summary', {}, baslik),
+    el('p', { class: 'kub-tablo-not' }, `⚠ ${TABLO_NOTU}`, el('br'), el('small', {}, 'Tablo kendi içinde yana kaydırılır ▸')),
+    el('div', { class: 'kub-tablo', role: 'region', 'aria-label': 'KÜB doz tablosu (yana kaydırılabilir)', tabindex: '0' },
+      metin.split('\n').map((satir) => el('div', { class: /\S {3,}\S/.test(satir) ? 'tablo-satir' : 'duz-satir' }, satir))));
+}
+
+/**
  * Ürün kartı (li.urun). ek: ürün adının altına eklenecek öğe (ör. kombine bilgisi).
  * Kayıt yoksa ya da metinYok ise "KÜB'e bakın" + bağlantı (belge ürünle eşleşmiyorsa bunu söyler); aksi hâlde etiket
- * + açılır KÜB: Doz / KÜB: Arınma, eski biçim ve başka ticari ad notları.
+ * + açılır KÜB: Doz / KÜB: Arınma (tablolu doz eş aralıklı blokta), eski biçim ve başka ticari ad notları.
  */
 export function urunKarti(u, kayit, { ek = null } = {}) {
   const baglanti = u.kubUrl
@@ -100,7 +113,7 @@ export function urunKarti(u, kayit, { ek = null } = {}) {
         : [
           kayit.kubAdi ? el('p', { class: 'kub-not' }, `KÜB başka ticari adla yayımlanmış: ${kayit.kubAdi}`) : null,
           kayit.eskiBicim ? el('p', { class: 'kub-not' }, ESKI_BICIM_NOTU) : null,
-          kubKutusu('KÜB: Doz', kayit.doz),
+          kayit.tablo && kayit.doz ? tabloKutusu('KÜB: Doz', kayit.doz) : kubKutusu('KÜB: Doz', kayit.doz),
           kubKutusu('KÜB: Arınma', kayit.arinma),
           el('p', { class: 'doz kub-alinti' }, el('small', { class: 'soluk' },
             `KÜB'den alıntı (${kayit.eskiBicim ? 'kullanım şekli ve dozu, kalıntı uyarıları' : '4.9, 4.11'}) · metin aynen alındı `), baglanti),

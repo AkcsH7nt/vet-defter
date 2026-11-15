@@ -16,9 +16,10 @@
         "additionalProperties": false,
         "required": ["doz", "arinma", "sigir", "metinYok"],
         "properties": {
-          "doz": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.9 metni; satırlar \\n ile ayrılır (tablo satırları ayrı kalır)." },
+          "doz": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.9 metni; satırlar \\n ile ayrılır (tablo satırları ayrı kalır). tablo true iken tablo satırları boşluklarıyla (sütun konumu) aynen saklanır." },
           "arinma": { "oneOf": [{ "type": "null" }, { "$ref": "ortak.schema.json#/$defs/metin" }], "description": "KÜB 4.11 metni." },
           "metinYok": { "type": "boolean", "description": "doz ve arinma ikisi de yok: PDF'ten metin çıkmadı (taranmış), metin okunamaz (harf düşmüş), belge bu ürüne ait değil (belgeUyumsuz) ya da ne 4.9 / 4.11 ne eski prospektüs başlıkları bulundu. Ekranda \"KÜB'e bakın\" + bağlantı." },
+          "tablo": { "const": true, "description": "4.9 tablo içeriyor (en az 2 satırda geniş sütun aralığı). Ekran dozu eş aralıklı, yana kayan blokta \"düzen bozulmuş olabilir\" notuyla gösterir. Yalnız true iken yazılır." },
           "eskiBicim": { "const": true, "description": "Numarasız eski prospektüs biçimi (\"KULLANIM ŞEKLİ VE DOZU\", \"GIDA DEĞERİ OLAN HAYVANLARDA KALINTI UYARILARI\"). sigir.guven her zaman dusuk; ekranda \"Eski biçim KÜB — aslına bakın\". Yalnız true iken yazılır." },
           "sigirHedefDegil": { "const": true, "description": "KÜB 4.1 hedef türlerinde sığır (inek, buzağı, dana, düve, ruminant…) yok: ürün sığır ürün listelerinde (etken, hastalık) gösterilmez. Yalnız true iken yazılır." },
           "belgeUyumsuz": { "const": true, "description": "Bakanlık bağlantısındaki belge bu ürünün KÜB'ü değil (bileşimde ürünün etkeni yok ya da belge KÜB / prospektüs değil). metinYok true, alıntı ve etiket yok; ekranda \"KÜB bu ürünle eşleşmiyor\" + bağlantı. Yalnız true iken yazılır." },
