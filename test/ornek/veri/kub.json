@@ -1,4 +1,17 @@
 {
   "cekilmeTarihi": "2026-11-15",
-  "urunler": {}
+  "urunler": {
+    "ornek-u1": {
+      "doz": "Kas içi yolla 10 mg/kg canlı ağırlık dozda uygulanır.\nİlk uygulamadan 24 saat sonra tekrarlanabilir.\n\nTedavi 3-5 gün sürdürülür.",
+      "arinma": "Et için: sığırlarda 28 gün.\nSüt için: sığırlarda 7 gün (14 sağım).",
+      "metinYok": false,
+      "sigir": {
+        "et_gun": 28,
+        "sut": {
+          "saat": 168
+        },
+        "guven": "yuksek"
+      }
+    }
+  }
 }

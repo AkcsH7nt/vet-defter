@@ -1,6 +1,7 @@
-// Ekran 3: Hastalık protokolü. Doz yalnız onaylı hastalık + KÜB'ü doğrulanmış (ve sonra değişmemiş) üründe gösterilir.
+// Ekran 3: Hastalık protokolü. Hastalık hekimce onaylıysa ilaç satırının altında ruhsatlı sığır ürünleri ve KÜB alıntıları gösterilir (spec §15).
 import { el, doldur, bulunamadi, taslakEtiketi, geriDugmesi } from './ortak.js';
-import { onayliMi, kubDogruMu } from '../lib/onay.js';
+import { onayliMi } from '../lib/onay.js';
+import { urunKarti } from './kub.js';
 import { normalize } from '../lib/arama.js';
 
 const KIP = {
@@ -18,36 +19,6 @@ export function yalnizBuzagiMi(urun) {
   return t.includes('buzagi') && !t.includes('sigir');
 }
 
-export function sutYaz(sut) {
-  if (sut && typeof sut === 'object' && sut.saat != null) return `${sut.saat} saat`;
-  if (sut === 'kullanilmaz') return 'sağmal inekte kullanılmaz';
-  return 'belirtilmemiş';
-}
-
-/**
- * Protokol satırının kaynak ürünü: kaynak.urunId (tercih) ya da tam ad; ürün satırın etkenini içermeli ve
- * sığır / buzağı için ruhsatlı olmalı. Ad birden çok ürüne uyuyorsa belirsizdir → null (doz gösterilmez).
- */
-export function kaynakUrunu(ilac, urunler) {
-  const k = ilac?.kaynak ?? {};
-  if (!k.urunId && !k.urun) return null;
-  const adaylar = (urunler ?? []).filter((u) => (k.urunId ? u.urunId === k.urunId : u.ad === k.urun)
-    && (u.etkenler ?? []).includes(ilac.etkenId) && sigirMi(u));
-  return adaylar.length === 1 ? adaylar[0] : null;
-}
-
-/**
- * Gösterilebilir doz: hastalık onaylı (özet tutuyor) + kaynak ürünü bulunuyor + ürünün KÜB'ü doğrulanmış ve
- * sonra değişmemiş + KÜB'te satırın yoluyla aynı sığır satırı ve dozu var. Yoksa null.
- */
-export function dozBilgisi(h, ilac, urunler) {
-  if (!onayliMi(h)) return null;
-  const urun = kaynakUrunu(ilac, urunler);
-  if (!urun || !kubDogruMu(urun)) return null;
-  const kub = (urun.kub ?? []).find((x) => normalize(x.tur) === 'sigir' && normalize(x.yol) === normalize(ilac.yol));
-  return kub?.doz ? { urun, kub } : null;
-}
-
 /** Arayüzdeki ikinci savunma hattı: yasak madde ve AMEG A protokolde hiç gösterilmez (dogrula ilk hattır). */
 function gosterilebilirMi(ilac, veri) {
   const yasaklar = veri.yasaklar?.ogeler ?? [];
@@ -60,21 +31,18 @@ function gosterilebilirMi(ilac, veri) {
   return true;
 }
 
-function dozOgesi(h, ilac, veri) {
-  const doz = dozBilgisi(h, ilac, veri.urunler);
-  const urun = doz?.urun ?? kaynakUrunu(ilac, veri.urunler);
-  const kubBaglantisi = urun?.kubUrl
-    ? [el('a', { href: urun.kubUrl, target: '_blank', rel: 'noopener' }, 'KÜB ▸'), el('span', { class: 'soluk' }, ' (internet gerekir)')] : null;
-  if (!doz) return el('p', { class: 'doz' }, 'Doz: KÜB\'e bakın ', kubBaglantisi);
-  const { kub: k } = doz;
-  const d = k.doz;
-  const parca = [`${d.miktar} ${d.birim}`, d.aralik, d.sure].filter(Boolean).join(' · ');
-  return el('p', { class: 'doz' },
-    el('strong', {}, `KÜB dozu: ${parca}`),
-    el('br'),
-    `Et ${k.et_gun == null ? 'belirtilmemiş' : `${k.et_gun} g`} · Süt: ${sutYaz(k.sut)} `,
-    kubBaglantisi,
-    ilac.kaynak?.bolum ? ` (bölüm ${ilac.kaynak.bolum})` : null);
+const URUN_SINIRI = 5;
+
+/** Onaylı hastalıkta satırın etkenini içeren sığır ürünleri (en çok URUN_SINIRI; KÜB metni olanlar önce). */
+function urunBolumu(ilac, veri, href) {
+  const hepsi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(ilac.etkenId) && sigirMi(u));
+  const metinli = (u) => { const k = veri.kub?.urunler?.[u.urunId]; return k && !k.metinYok ? 0 : 1; };
+  const sirali = [...hepsi].sort((a, b) => metinli(a) - metinli(b) || (a.etkenler.length - b.etkenler.length));
+  return [
+    el('ul', { class: 'madde urunler' }, sirali.slice(0, URUN_SINIRI).map((u) => urunKarti(u, veri.kub?.urunler?.[u.urunId]))),
+    el('p', { class: 'soluk' }, hepsi.length > URUN_SINIRI ? `${hepsi.length - URUN_SINIRI} ürün daha — tümü etken sayfasında` : 'Tümü etken sayfasında'),
+    el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${hepsi.length}) ▸`),
+  ];
 }
 
 const madde = (liste) => el('ul', { class: 'madde' }, liste.map((x) => el('li', {}, x)));
@@ -102,10 +70,12 @@ export function render(kok, veri, durum, rota) {
         el('a', { href, class: 'ilac-ad' }, e?.ad ?? i.etkenId),
         el('span', { class: 'soluk' }, ` · ${i.yol}`),
         i.not ? el('p', { class: 'soluk' }, i.not) : null,
-        dozOgesi(h, i, veri),
         urunSayisi
-          ? el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${urunSayisi}) ▸`)
-          : el('p', { class: 'soluk' }, 'Listede ruhsatlı sığır ürünü yok.'));
+          ? (onayli
+            ? urunBolumu(i, veri, href)
+            : [el('p', { class: 'doz' }, "Doz: KÜB'e bakın (ürünün KÜB'ü etken sayfasında)"),
+              el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${urunSayisi}) ▸`)])
+          : [el('p', { class: 'doz' }, "Doz: KÜB'e bakın"), el('p', { class: 'soluk' }, 'Listede ruhsatlı sığır ürünü yok.')]);
     });
 
   const ayirici = (h.ayiriciTani ?? []).map((id) => {

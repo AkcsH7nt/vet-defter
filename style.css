@@ -160,3 +160,9 @@ main { overflow-wrap: anywhere; }
 .urun-etiket { font-size: 13px; font-weight: 700; }
 .kombine { margin: 4px 0 0; padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); font-size: 14px; }
 .dugme.ikincil { min-height: 44px; margin: 6px 0 0; width: auto; display: inline-flex; font-size: 14px; }
+/* KÜB alıntıları (spec §15): açılır kutular, metin aynen ve paragraflı. */
+.kub-kutu { margin: 6px 0; border: 1px solid var(--cizgi); border-radius: 10px; background: var(--yuzey); }
+.kub-kutu summary { min-height: 44px; display: flex; align-items: center; padding: 0 12px; font-weight: 700; cursor: pointer; }
+.kub-metin { padding: 0 12px 12px; white-space: pre-line; overflow-wrap: anywhere; font-size: 14px; }
+.arinma-etiket { margin: 6px 0 0; }
+.kub-alinti { font-size: 13px; }

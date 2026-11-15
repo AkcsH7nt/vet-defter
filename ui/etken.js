@@ -1,10 +1,10 @@
 // Ekran 4: Etken madde — nasıl çalışır + sığırda (buzağı dahil) ruhsatlı ürünler.
-// Bu ekranda hastalık bağlamı yoktur: doz sayısı gösterilmez, yalnız KÜB'e yönlendirilir;
-// et / süt bekleme süreleri ürünün KÜB'ü doğrulanmış (ve sonra değişmemiş) ise yazılır.
+// KÜB 4.9 / 4.11 alıntıları resmî metin olarak ("KÜB'den alıntı") ürün onayı olmadan gösterilir (spec §15);
+// hastalık bağlamı olmadığından burada doz sayısı yazılmaz.
 import { el, doldur, bulunamadi, taslakEtiketi, tarihYaz, geriDugmesi } from './ortak.js';
-import { normalize } from '../lib/arama.js';
-import { onayliMi, kubDogruMu } from '../lib/onay.js';
-import { sigirMi, yalnizBuzagiMi, sutYaz } from './hastalik.js';
+import { onayliMi } from '../lib/onay.js';
+import { sigirMi } from './hastalik.js';
+import { urunKarti } from './kub.js';
 
 // EMA AMEG sınıfları: A kaçının, B kısıtlayın, C dikkat, D ihtiyat.
 const AMEG = {
@@ -43,19 +43,7 @@ export function render(kok, veri, durum, rota) {
   const satir = (ad, deger) => (deger ? el('li', {}, el('strong', {}, `${ad}: `), deger) : null);
   const dikkatler = [...(m.etkilesimler ?? [])].sort((a, b) => Number(sutNotuMu(b)) - Number(sutNotuMu(a)));
 
-  const urunKarti = (u) => {
-    const k = (u.kub ?? []).find((x) => normalize(x.tur) === 'sigir');
-    const dogru = kubDogruMu(u);
-    return el('li', { class: 'urun' },
-      el('strong', {}, u.ad),
-      yalnizBuzagiMi(u) ? el('span', { class: 'urun-etiket' }, ' (yalnız buzağı)') : null,
-      el('span', { class: 'soluk' }, ` — ${u.firma}${u.form ? ` — ${u.form}` : ''}${k?.yol ? `, ${k.yol}` : ''}`),
-      kombineBilgisi(u, e, veri),
-      u.kubUrl
-        ? el('p', { class: 'doz' }, 'KÜB\'e bakın ', el('a', { href: u.kubUrl, target: '_blank', rel: 'noopener' }, 'KÜB ▸'), el('span', { class: 'soluk' }, ' (internet gerekir)'))
-        : el('p', { class: 'doz soluk' }, 'KÜB bağlantısı yok — Bakanlık ürün sorgusundan bakın.'),
-      dogru && k ? el('p', { class: 'soluk' }, `Et ${k.et_gun == null ? 'belirtilmemiş' : `${k.et_gun} g`} · Süt: ${sutYaz(k.sut)}`) : null);
-  };
+  const kartlar = (u) => urunKarti(u, veri.kub?.urunler?.[u.urunId], { ek: kombineBilgisi(u, e, veri) });
 
   doldur(kok,
     el('h1', {}, e.ad, ' ', onayliMi(e) ? null : taslakEtiketi()),
@@ -68,9 +56,9 @@ export function render(kok, veri, durum, rota) {
     el('h2', {}, `Ruhsatlı ürünler (liste tarihi: ${tarih})`),
     urunler.length
       ? [
-        tekli.length ? el('ul', { class: 'madde urunler' }, tekli.map(urunKarti)) : null,
+        tekli.length ? el('ul', { class: 'madde urunler' }, tekli.map(kartlar)) : null,
         kombine.length ? el('h2', {}, `Kombine ürünler (başka etken de içerir: ${kombine.length})`) : null,
-        kombine.length ? el('ul', { class: 'madde urunler kombine-liste' }, kombine.map(urunKarti)) : null,
+        kombine.length ? el('ul', { class: 'madde urunler kombine-liste' }, kombine.map(kartlar)) : null,
       ]
       : el('p', { class: 'yetersiz' }, `Bu etken için listede ruhsatlı ürün bulunamadı (liste tarihi ${tarih}). Yem katkısı, dezenfektan ya da beşerî ürün olabilir; veteriner tıbbi ürün olarak ruhsatlı olmayabilir.`),
     geriDugmesi(),

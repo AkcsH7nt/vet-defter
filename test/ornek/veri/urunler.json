@@ -1,19 +1,32 @@
 [
   {
+    "urunId": "ornek-u1",
     "ad": "Örnek Ürün %10 (test)",
     "firma": "Örnek Firma",
     "form": "enjeksiyonluk çözelti",
-    "etkenler": ["ornek_antibiyotik"],
-    "hedefTurler": ["sigir", "koyun"],
+    "etkenler": [
+      "ornek_antibiyotik"
+    ],
+    "hedefTurler": [
+      "sigir",
+      "koyun"
+    ],
     "kubUrl": null,
     "cekilmeTarihi": "2026-11-01",
     "kub": [
       {
         "tur": "sigir",
         "yol": "IM",
-        "doz": { "miktar": 10, "birim": "mg/kg", "aralik": "24 saat", "sure": "3-5 gün" },
+        "doz": {
+          "miktar": 10,
+          "birim": "mg/kg",
+          "aralik": "24 saat",
+          "sure": "3-5 gün"
+        },
         "et_gun": 28,
-        "sut": { "saat": 168 }
+        "sut": {
+          "saat": 168
+        }
       },
       {
         "tur": "koyun",

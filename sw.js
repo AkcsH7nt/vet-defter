@@ -1,14 +1,14 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince `npm run surum` (içerik özetini yazar, SURUM artar); npm test eski özeti yakalar.
-// icerik: 103adfc4c9014dee
-const SURUM = 'vet-defter-v7';
+// icerik: 54c00ecd4bc24073
+const SURUM = 'vet-defter-v8';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js',
-  'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/listeler.js', 'ui/hakkinda.js',
+  'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/kub.js', 'ui/listeler.js', 'ui/hakkinda.js',
   'manifest.webmanifest', 'ikon.svg', 'ikon-192.png', 'ikon-512.png', 'apple-touch-icon.png',
-  'lib/veri.js', 'lib/onay.js', 'lib/arama.js', 'lib/puan.js', 'lib/bayrak.js',
+  'lib/veri.js', 'lib/onay.js', 'lib/arama.js', 'lib/puan.js', 'lib/bayrak.js', 'lib/kub.js',
   'veri/meta.json', 'veri/belirtiler.json', 'veri/etkenler.json', 'veri/bayraklar.json',
-  'veri/ihbar.json', 'veri/yasaklar.json', 'veri/urunler.json',
+  'veri/ihbar.json', 'veri/yasaklar.json', 'veri/urunler.json', 'veri/kub.json',
   'veri/hastaliklar/index.json', 'veri/hastaliklar/solunum.json', 'veri/hastaliklar/sindirim.json',
   'veri/hastaliklar/meme_ureme.json', 'veri/hastaliklar/metabolik.json', 'veri/hastaliklar/deri_ayak.json',
   'veri/hastaliklar/kan_parazit.json', 'veri/hastaliklar/ihbar_zehir.json',
