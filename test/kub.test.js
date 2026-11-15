@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   bolumAyir, sigirArinmasi, belgeBilgisi, kubUrunleUyumlu, sesAnahtari, yaklasikIcerir, sigirHedefMi, eskiBicimAyir,
-  sutTavsiyeEdilmez, bolum47, bolumMetni, farmasotikSekil,
+  sutTavsiyeEdilmez, sagmaldaKullanilmaz, bolum47, bolumMetni, farmasotikSekil,
 } from '../lib/kub.js';
 
 const DIZIN = fileURLToPath(new URL('./ornek/kub/', import.meta.url));
@@ -374,6 +374,30 @@ test('O1_sagmalHayvandaTavsiyeEdilmez_etiketYok', () => {
   assert.equal(sutTavsiyeEdilmez('Sütü insan tüketimine sunulan koyunlarda kullanılması tavsiye edilmez.'), false);
   assert.equal(sutTavsiyeEdilmez('Veteriner hekim tarafından başka şekilde tavsiye edilmediği takdirde süt 4 gün kullanılmaz.'), false);
   assert.deepEqual(sigirArinmasi('Sığırlar 28 gün geçmeden kesime gönderilmemelidir. Süt veren ineklerde kullanılması önerilmez. Süt: 4 gün.').guven, 'dusuk');
+});
+
+test('sagmaldaKullanilmaz_urununSutHayvanindaKullanimiYasak', () => {
+  // gerçek 4.11 cümleleri (Selectan, Florac, Tulatram, Ampicure DC, Hektamec-P.O., Rafokin)
+  for (const m of [
+    'Sığırlar 30 gün geçmeden kesime gönderilmemelidir. İnsan tüketimi için süt elde edilen sığırlarda (kuru dönem dahil) kullanılmaz.',
+    'İnsan tüketimi için süt elde edilen koyun ve sığırlarda (kuru periyod dahil) kullanılmaz.',
+    'Sütü insan tüketimi için kullanılan laktasyondaki ineklere ve doğumuna 2 aydan az kalan düve ve ineklere uygulanmamalıdır.',
+    'Bu ürün laktasyondaki hayvanlarda kullanılmaz.',
+    'Kuru dönem dahil, sütü insan tüketimine sunulan sağmal sığırlarda kullanılmamalıdır.',
+    'Gebeliğin son üç aylık dönemide dahil olmak üzere insan tüketimi için süt elde edilen sığırlara uygulanamaz.',
+    // Draxxin: önceki parantezde süre var; Bavetaxin: eş dizimde ek son sözcükte
+    'İlaç uygulanmasından sonra 22 gün geçmeden sığırlar kesime sevk edilmemelidir. (i.k.a.s. sığır eti için 22-koyun eti için 16 gündür) Sütü insan tüketimi için kullanılan laktasyondaki ineklere ve koyunlara uygulanmamalıdır.',
+    'Sütü insan tüketimine sunulan laktasyondaki inek ve koyunlara uygulanmamalıdır.',
+  ]) assert.equal(sagmaldaKullanilmaz(m), true, m);
+  for (const m of [
+    // süt arınması (sütün kendisi kullanılmaz), başka tür, sayılı süre
+    'Son uygulamayı izleyen 4 gün (8 sağım) içinde elde edilen sütler insan gıdası olarak kullanılmamalıdır.',
+    'Tedavi süresince ve son ilaç uygulamasından sonra 72 saat boyunca elde edilen inek ve keçi sütü insan gıdası olarak kullanılmamalıdır.',
+    'İnsan tüketimi için yumurta elde edilen tavuk ve hindilerde ve süt elde edilen koyun ve keçilerde kullanılmaz.',
+    'Süt elde edilen ineklerde tedavi süresince ve son uygulamadan sonra 72 saat geçmeden elde edilen sütler insan tüketimine sunulmamalıdır.',
+    'Sütten kesilmiş buzağılarda kullanılmaz.',
+    null,
+  ]) assert.equal(sagmaldaKullanilmaz(m), false, String(m));
 });
 
 test('O1_4_7deLaktasyondaTavsiyeEdilmez_etiketYok', async () => {
