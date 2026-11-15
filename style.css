@@ -174,3 +174,26 @@ main { overflow-wrap: anywhere; }
 .kub-uyumsuz { padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); }
 li.urun { min-width: 0; }
 .kub-alinti { font-size: 13px; }
+/* Önerilen tedavi kartı (hastalık sayfası): taslak şeridi, büyük ml, KÜB cümlesi. */
+.oneri-kart { margin: 0 0 16px; padding: 12px 14px; border: 2px solid var(--vurgu); border-radius: 12px; background: var(--yuzey); min-width: 0; }
+.oneri-kart h2 { margin: 0 0 8px; font-size: 18px; }
+.oneri-kart h3 { margin: 14px 0 6px; font-size: 15px; color: var(--soluk); }
+.bant.taslak-oneri { background: #ffd9a8; color: #5a2d00; border: 2px solid #c25e00; font-weight: 700; }
+.oneri-hayvan { margin: 0 0 6px; font-weight: 700; }
+.oneri-kilo { margin: 0 0 8px; }
+.oneri-kilo label { display: block; font-size: 14px; color: var(--soluk); }
+.oneri-satir { padding: 8px 0; border-top: 1px solid var(--cizgi); min-width: 0; }
+.oneri-satir:first-child { border-top: 0; }
+.oneri-satir::before { content: none !important; }
+.oneri-liste > li { padding-left: 0 !important; }
+.oneri-etken { margin: 0 0 4px; }
+.oneri-ek { margin-top: 4px; }
+.ml-satir { margin: 6px 0 2px; }
+.ml-buyuk { font-size: 26px; font-weight: 800; color: var(--vurgu); }
+.ml-ifade { font-size: 14px; }
+.ml-ham { font-size: 12px; }
+.ml-yer { margin: 0 0 4px; font-weight: 700; }
+.kub-cumle { margin: 4px 0; font-size: 14px; }
+.oneri-neden, .oneri-uyari { margin: 6px 0; padding: 6px 10px; border-radius: 8px; background: var(--uyari-zemin); color: var(--uyari-yazi); font-size: 14px; }
+.oneri-yok { margin: 8px 0; }
+.oneri-not { margin: 12px 0 0; padding-top: 8px; border-top: 1px solid var(--cizgi); font-size: 13px; color: var(--soluk); }

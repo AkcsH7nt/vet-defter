@@ -1,29 +1,15 @@
-// Ekran 3: Hastalık protokolü. Hastalık hekimce onaylıysa ilaç satırının altında ruhsatlı sığır ürünleri ve KÜB alıntıları gösterilir (spec §15).
+// Ekran 3: Hastalık protokolü. Üstte kiloya göre önerilen tedavi kartı (ui/oneri.js); ilaç satırları etken sayfasına bağlanır.
 import { el, doldur, bulunamadi, taslakEtiketi, geriDugmesi } from './ortak.js';
 import { onayliMi } from '../lib/onay.js';
 import { gosterilebilirMi } from '../lib/oneri.js';
-import { urunKarti, kombineBilgisi, sigirMi, sigirListesindeMi, yalnizBuzagiMi } from './kub.js';
+import { sigirMi, sigirListesindeMi, yalnizBuzagiMi } from './kub.js';
+import { oneriKarti } from './oneri.js';
 
 export { sigirMi, yalnizBuzagiMi };
 
 const KIP = {
   yasak: 'Tedavi yasak', yok: 'Tedavi yok', semptomatik: 'Yalnız semptomatik tedavi', normal: 'Normal tedavi',
 };
-
-const URUN_SINIRI = 5;
-
-/** Onaylı hastalıkta satırın etkenini içeren sığır ürünleri (en çok URUN_SINIRI; KÜB metni olanlar önce). */
-function urunBolumu(ilac, veri, href) {
-  const etken = veri.etkenler.find((x) => x.id === ilac.etkenId) ?? { id: ilac.etkenId, ad: ilac.etkenId };
-  const hepsi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(ilac.etkenId) && sigirListesindeMi(u, veri));
-  const metinli = (u) => { const k = veri.kub?.urunler?.[u.urunId]; return k && !k.metinYok ? 0 : 1; };
-  const sirali = [...hepsi].sort((a, b) => metinli(a) - metinli(b) || (a.etkenler.length - b.etkenler.length));
-  return [
-    el('ul', { class: 'madde urunler' }, sirali.slice(0, URUN_SINIRI).map((u) => urunKarti(u, veri.kub?.urunler?.[u.urunId], { ek: kombineBilgisi(u, etken, veri) }))),
-    el('p', { class: 'soluk' }, hepsi.length > URUN_SINIRI ? `${hepsi.length - URUN_SINIRI} ürün daha — tümü etken sayfasında` : 'Tümü etken sayfasında'),
-    el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${hepsi.length}) ▸`),
-  ];
-}
 
 const madde = (liste) => el('ul', { class: 'madde' }, liste.map((x) => el('li', {}, x)));
 function bolum(baslik, icerik) {
@@ -51,10 +37,8 @@ export function render(kok, veri, durum, rota) {
         el('span', { class: 'soluk' }, ` · ${i.yol}`),
         i.not ? el('p', { class: 'soluk' }, i.not) : null,
         urunSayisi
-          ? (onayli
-            ? urunBolumu(i, veri, href)
-            : [el('p', { class: 'doz' }, "Doz: KÜB'e bakın (ürünün KÜB'ü etken sayfasında)"),
-              el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${urunSayisi}) ▸`)])
+          ? [el('p', { class: 'doz' }, "Doz: önerilen tedavi kartında ya da ürünün KÜB'ünde"),
+            el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${urunSayisi}) ▸`)]
           : [el('p', { class: 'doz' }, "Doz: KÜB'e bakın"), el('p', { class: 'soluk' }, 'Listede ruhsatlı sığır ürünü yok.')]);
     });
 
@@ -70,6 +54,7 @@ export function render(kok, veri, durum, rota) {
     h.zoonoz ? el('div', { class: 'bant zoonoz' }, el('strong', {}, '⚠ Zoonoz — insana bulaşır; korunmadan temas etmeyin')) : null,
     h.turkiyedeGorulmez ? el('p', { class: 'kip' }, el('strong', {}, 'Türkiye\'de görülmez'), ' (eradike ya da bildirilmemiş); şüphede ihbar edin.') : null,
     (h.uyarilar ?? []).length ? el('div', { class: 'bant uyari-liste', role: 'note' }, el('strong', {}, 'Uyarılar'), madde(h.uyarilar)) : null,
+    oneriKarti(h, veri, durum),
     el('p', { class: 'kip' }, el('strong', {}, 'Tedavi kipi: '), KIP[h.tedaviKipi] ?? h.tedaviKipi),
     h.antibiyotikEndikeDegil ? el('p', { class: 'kip' }, el('strong', {}, 'Antibiyotik endike değil')) : null,
     ilacSatirlari.length ? bolum('İlaçlar (1./2. seçenek)', el('ul', { class: 'madde ilaclar' }, ilacSatirlari)) : null,
@@ -77,7 +62,7 @@ export function render(kok, veri, durum, rota) {
     (p.bakim ?? []).length ? bolum('Bakım / yönetim', madde(p.bakim)) : null,
     (h.sahadaDogrula ?? []).length ? bolum('Sahada doğrula', madde(h.sahadaDogrula)) : null,
     ayirici.length ? bolum('Ayırıcı tanı', el('ul', { class: 'madde ayirici' }, ayirici)) : null,
-    onayli ? null : el('p', { class: 'soluk' }, 'Bu kayıt henüz hekim onayından geçmedi; doz için ürünün KÜB\'üne bakın.'),
+    onayli ? null : el('p', { class: 'soluk' }, 'Bu kayıt henüz hekim onayından geçmedi; öneri taslaktır.'),
     geriDugmesi(),
   );
 }

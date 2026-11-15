@@ -229,16 +229,16 @@ test('belirti secmeden yetersiz girdi', async () => {
   assert.match(await metin(s), /Yetersiz girdi — belirti ekleyin/);
 });
 
-test('taslak hastalikta urun ve KUB alintisi yok, taslak etiketi var', async () => {
+test('taslak hastalikta taslak etiketi ve oneri karti serit var, onayli hastalikta serit yok', async () => {
   const s = await sayfaAc();
   await s.git('#/hastalik/ornek_ishal');
-  const t = await metin(s);
-  assert.doesNotMatch(t, /mg\/kg/);
+  assert.doesNotMatch(await metin(s), /mg\/kg/);
   assert.ok(await s.locator('h1 .etiket').isVisible());
-  assert.equal(await s.locator('details.kub-kutu').count(), 0);
-  // onaylı hastalık: etiket yok
+  assert.match(await s.locator('.oneri-kart .bant.taslak-oneri').innerText(), /Taslak öneri — hekim onayından geçmedi/);
+  // onaylı hastalık: etiket ve şerit yok
   await s.git('#/hastalik/ornek_solunum');
   assert.equal(await s.locator('h1 .etiket').count(), 0);
+  assert.equal(await s.locator('.taslak-oneri').count(), 0);
 });
 
 // --- KÜB alıntıları ve arınma etiketleri (spec §15) ---
@@ -318,59 +318,147 @@ test('etken: metinYok urunde KUBe bakin, kutu yok; kayitsiz urunde de', async ()
   assert.equal(await s2.locator('details.kub-kutu').count(), 0);
 });
 
-test('hastalik: onayli hastalikta ilac satirinin altinda urun ve KUB Doz var', async () => {
+// Oran (ml/kg) taşıyan örnek KÜB kaydı: 0,1 ml/kg → 450 kg'da 45 ml.
+const ORAN = { mlPerKg: 0.1, kaynak: 'ml_kg', guven: 'yuksek', kapsam: 'sigir', ifade: '1 ml/10 kg canlı ağırlık',
+  cumle: 'Her 10 kg canlı ağırlık için 1 ml, kas içi yolla uygulanır.' };
+const oranli = kubDegis((u) => ({ 'ornek-u1': { ...u['ornek-u1'], yollar: ['IM'], oran: ORAN } }));
+const kiloGir = async (s, k) => { await s.git('#/tani'); await s.fill('#kilo', String(k)); };
+const kartaGec = async (s, id = 'ornek_solunum') => {
+  await s.evaluate((h) => { location.hash = h; }, `#/hastalik/${id}`);
+  await s.waitForSelector('.oneri-kart');
+};
+const kartDisiMetin = (s) => s.evaluate(() => { const m = document.querySelector('main').cloneNode(true); m.querySelectorAll('[data-kub], details.kub-kutu').forEach((n) => n.remove()); return m.innerText; });
+
+test('hastalik: onayli hastalikta kartta urun, KUB Doz ve arinma var; ilac satirinda yonlendirme', async () => {
   const s = await sayfaAc();
   await s.git('#/hastalik/ornek_solunum');
+  const kart = s.locator('.oneri-kart');
+  assert.ok(await kart.locator('details.kub-kutu:has(summary:text-is("KÜB: Doz"))').isVisible());
+  assert.match(await kart.innerText(), /Antimikrobiyal — 1\. seçenekler/);
+  assert.match(await kart.innerText(), /Örnek Ürün %10 \(test\)/);
+  assert.match(await kart.innerText(), /Et 28 gün/);
+  assert.match(await kart.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı — uygulamadan önce ürün etiketi\/KÜB ile karşılaştırın\./);
+  await kart.locator('summary:text-is("KÜB: Doz")').click();
+  assert.match(await kart.locator('.kub-metin').first().innerText(), /10 mg\/kg/);
+  // ilaç satırı: doz kartta ya da KÜB'de, ürün kartı yok
   const satir = s.locator('li.ilac').first();
-  assert.ok(await satir.locator('details.kub-kutu:has(summary:text-is("KÜB: Doz"))').isVisible());
-  assert.match(await satir.innerText(), /Örnek Ürün %10 \(test\)/);
-  assert.match(await satir.innerText(), /Et 28 gün/);
-  assert.match(await satir.innerText(), /tümü etken sayfasında/i);
-  await satir.locator('summary:text-is("KÜB: Doz")').click();
-  assert.match(await satir.locator('.kub-metin').first().innerText(), /10 mg\/kg/);
-  // ürünü olmayan etken satırında ürün kartı yok
-  assert.equal(await s.locator('li.ilac').nth(1).locator('details').count(), 0);
+  assert.match(await satir.innerText(), /Doz: önerilen tedavi kartında ya da ürünün KÜB'ünde/);
+  assert.match(await satir.innerText(), /Ruhsatlı ürünler \(1\) ▸/);
+  assert.equal(await satir.locator('details').count(), 0);
+  assert.doesNotMatch(await kartDisiMetin(s), /mg\/kg|ml\/kg/);
   assert.deepEqual(s.hatalar, []);
 });
 
-test('hastalik: taslakta urun ve KUB Doz yok; icerik degisince onay duser ve alinti kaybolur', async () => {
+test('hastalik: taslakta kart, serit ve urun var; icerik degisince serit geri gelir', async () => {
   const s = await sayfaAc({ degistir: taslakYap });
   await s.git('#/hastalik/ornek_solunum');
-  assert.equal(await s.locator('details.kub-kutu').count(), 0);
-  assert.doesNotMatch(await metin(s), /mg\/kg|Et 28 gün/);
-  assert.match(await metin(s), /KÜB'e bakın/);
+  const kart = s.locator('.oneri-kart');
+  assert.match(await kart.locator('.bant.taslak-oneri').innerText(), /Taslak öneri — hekim onayından geçmedi/);
+  assert.match(await kart.innerText(), /Örnek Ürün %10 \(test\)/);
+  assert.equal(await kart.locator('details.kub-kutu').count(), 2);
+  assert.match(await metin(s), /Bu kayıt henüz hekim onayından geçmedi; öneri taslaktır\./);
+  assert.doesNotMatch(await kartDisiMetin(s), /mg\/kg|ml\/kg/);
+  // onaylı hastalık bozulunca (içerik değişti) onay düşer, şerit geri gelir
   const bozuk = (yol, j) => (yol === 'hastaliklar/solunum.json' ? j.map((h) => ({ ...h, ad: `${h.ad} değişti` })) : undefined);
   const s2 = await sayfaAc({ degistir: bozuk });
   await s2.git('#/hastalik/ornek_solunum');
-  assert.equal(await s2.locator('details.kub-kutu').count(), 0);
+  assert.match(await s2.locator('.oneri-kart .bant.taslak-oneri').innerText(), /Taslak öneri/);
   assert.match(await metin(s2), /taslak/);
 });
 
-test('hastalik: onayli hastalikta kombine urunde Birlikte notu ve AMEG uyarisi', async () => {
+test('hastalik: kombine urunde Birlikte notu ve AMEG uyarisi kartta; ikinci satir ayni urun', async () => {
   const degis = (yol, j) => {
     if (yol === 'etkenler.json') return j.map((e) => (e.id === 'ornek_nsaii' ? { ...e, ameg: 'B' } : e));
     if (yol === 'urunler.json') {
-      return [...j, { ...j[0], urunId: 'ornek-komb', ad: 'Kombine Ürün (test)', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'], hedefTurler: ['sigir'] }];
+      return [{ ...j[0], urunId: 'ornek-komb', ad: 'Kombine Ürün (test)', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'], hedefTurler: ['sigir'] }];
     }
     return undefined;
   };
   const s = await sayfaAc({ degistir: degis });
   await s.git('#/hastalik/ornek_solunum');
-  const kart = s.locator('li.ilac').first().locator('li.urun', { hasText: 'Kombine Ürün (test)' });
-  const t = await kart.innerText();
+  const urun = s.locator('.oneri-kart li.urun', { hasText: 'Kombine Ürün (test)' });
+  assert.equal(await urun.count(), 1);
+  const t = await urun.innerText();
   assert.match(t, /Birlikte: Örnek NSAİİ \(test\) \(AMEG B\)/);
   assert.match(t, /AMEG B .*Antibiyogramsız ilk seçenek olmaz/);
-  // tekli ürün kartında Birlikte yok
-  assert.doesNotMatch(await s.locator('li.ilac').first().locator('li.urun', { hasText: 'Örnek Ürün %10' }).innerText(), /Birlikte/);
+  // NSAİİ satırı aynı ürünle verilir: ml yok, ürün kartı ikinci kez yok
+  assert.match(await s.locator('.oneri-kart').innerText(), /Aynı ürün: Örnek antibiyotik \(test\) satırındaki ürün bu etkeni de içerir — ayrıca verilmez/);
 });
 
-test('hastalik: en fazla 5 urun, kalani etken sayfasina yonlendirilir', async () => {
+test('hastalik: kartta satir basina tek urun, digerleri etken sayfasina yonlendirilir', async () => {
   const cok = (yol, j) => (yol === 'urunler.json'
     ? [...j, ...Array.from({ length: 6 }, (_, i) => ({ ...j[0], urunId: `ek-${i}`, ad: `Ek Ürün ${i}` }))] : undefined);
   const s = await sayfaAc({ degistir: cok });
   await s.git('#/hastalik/ornek_solunum');
-  assert.equal(await s.locator('li.ilac').first().locator('li.urun').count(), 5);
-  assert.match(await s.locator('li.ilac').first().innerText(), /tümü etken sayfasında/i);
+  assert.equal(await s.locator('.oneri-kart li.urun').count(), 1);
+  assert.match(await s.locator('.oneri-kart').innerText(), /Diğer ürünler \(6\) ▸/);
+  assert.match(await s.locator('li.ilac').first().innerText(), /Ruhsatlı ürünler \(7\) ▸/);
+});
+
+test('oneri: kilo 450 ve oran 0,1 → 45 ml, oran ifadesi ve KUB cumlesi', async () => {
+  const s = await sayfaAc({ degistir: oranli });
+  await kiloGir(s, 450);
+  await kartaGec(s);
+  const kart = s.locator('.oneri-kart');
+  assert.match(await kart.innerText(), /Hayvan: İnek · 450 kg/);
+  assert.equal((await kart.locator('.ml-buyuk').first().innerText()).trim(), '→ 45 ml');
+  assert.match(await kart.innerText(), /\(1 ml\/10 kg canlı ağırlık\)/);
+  assert.match(await kart.locator('.kub-cumle').innerText(), /Her 10 kg canlı ağırlık için 1 ml, kas içi yolla uygulanır\./);
+  assert.equal(await kart.locator('.ml-buyuk').first().evaluate((n) => !!n.closest('[data-kub]')), true);
+  assert.equal(await kart.locator('.kub-cumle').getAttribute('data-kub'), '');
+  assert.doesNotMatch(await kartDisiMetin(s), /mg\/kg|ml\/kg/);
+  assert.deepEqual(s.hatalar, []);
+});
+
+test('oneri: kilo yok → Kilo girin, oran var ml yok; kart ici kilo tani ekranina yansir', async () => {
+  const s = await sayfaAc({ degistir: oranli });
+  await s.git('#/hastalik/ornek_solunum');
+  const kart = s.locator('.oneri-kart');
+  assert.match(await kart.innerText(), /Kilo girin, ml hesaplansın/);
+  assert.equal(await kart.locator('.ml-buyuk').count(), 0);
+  await s.fill('#kart-kilo', '300');
+  assert.equal((await kart.locator('.ml-buyuk').first().innerText()).trim(), '→ 30 ml');
+  assert.match(await kart.innerText(), /Hayvan: İnek · 300 kg/);
+  await s.evaluate(() => { location.hash = '#/tani'; });
+  await s.waitForSelector('main h1:text-is("Tanı")');
+  assert.equal(await s.inputValue('#kilo'), '300');
+  await s.reload();
+  await s.waitForSelector('main h1');
+  assert.equal(await s.inputValue('#kilo'), '300');
+});
+
+test('oneri: oran yok → KUB metnine bakin; yumusak kilo uyarisi ml hesaplar; gecersiz kilo ml vermez', async () => {
+  const s = await sayfaAc();
+  await kiloGir(s, 450);
+  await kartaGec(s);
+  assert.match(await s.locator('.oneri-kart').innerText(), /KÜB'de kiloya göre tek oran yok — KÜB metnine bakın/);
+  const s2 = await sayfaAc({ degistir: oranli });
+  await kiloGir(s2, 100);
+  await kartaGec(s2);
+  assert.match(await s2.locator('.oneri-kart .oneri-uyari').innerText(), /Kilo yaş grubuyla uyumsuz görünüyor, kontrol edin/);
+  assert.equal((await s2.locator('.oneri-kart .ml-buyuk').first().innerText()).trim(), '→ 10 ml');
+  await s2.fill('#kart-kilo', '5');
+  assert.match(await s2.locator('.oneri-kart').innerText(), /Kilo olağan dışı, kontrol edin/);
+  assert.equal(await s2.locator('.oneri-kart .ml-buyuk').count(), 0);
+});
+
+test('oneri: tedavi kipi yasak → Tedavi onerilmez; yalniz-buzagi urunu inekte kartta yok', async () => {
+  const s = await sayfaAc();
+  await s.git('#/hastalik/ornek_sarbon');
+  const kart = s.locator('.oneri-kart');
+  assert.match(await kart.innerText(), /Tedavi önerilmez — ihbar adımlarını izleyin/);
+  assert.equal(await kart.locator('li.urun').count(), 0);
+  const buzagi = (yol, j) => (yol === 'urunler.json' ? j.map((u) => ({ ...u, hedefTurler: ['buzagi'] })) : undefined);
+  const s2 = await sayfaAc({ degistir: buzagi });
+  await s2.git('#/hastalik/ornek_solunum');
+  assert.equal(await s2.locator('.oneri-kart li.urun').count(), 0);
+  assert.match(await s2.locator('.oneri-kart').innerText(), /Listede ruhsatlı sığır ürünü yok/);
+  // buzağı seçilince aynı ürün kartta
+  await s2.evaluate(() => { location.hash = '#/tani'; });
+  await s2.waitForSelector('main h1:text-is("Tanı")');
+  await s2.click('[data-yas="buzagi"]');
+  await kartaGec(s2);
+  assert.equal(await s2.locator('.oneri-kart li.urun').count(), 1);
 });
 
 test('390 px: acik KUB kutulari yatay tasma yapmaz', async () => {
@@ -390,17 +478,19 @@ const UYUMSUZ = { doz: null, arinma: null, sigir: { et_gun: null, sut: null, guv
 const kubUrlli = (yol, j) => (yol === 'urunler.json' ? j.map((u) => ({ ...u, kubUrl: 'https://example.invalid/kub.pdf' })) : undefined);
 const birlikte = (...fn) => (yol, j) => fn.reduce((acc, f) => f(yol, acc) ?? acc, j);
 
-test('belgeUyumsuz: alinti ve etiket yok, eslesmiyor notu ve KUB baglantisi var', async () => {
+test('belgeUyumsuz: etken sayfasinda alinti ve etiket yok, eslesmiyor notu ve KUB baglantisi var; kartta urun onerilmez', async () => {
   const s = await sayfaAc({ degistir: birlikte(kubUrlli, kubDegis({ 'ornek-u1': UYUMSUZ })) });
-  for (const r of ['#/etken/ornek_antibiyotik', '#/hastalik/ornek_solunum']) {
-    await s.git(r);
-    const kart = s.locator('li.urun', { hasText: 'Örnek Ürün %10' }).first();
-    assert.match(await kart.innerText(), /Bakanlık sitesindeki KÜB bu ürünle eşleşmiyor — KÜB'e bakın/);
-    assert.equal(await kart.locator('a[href="https://example.invalid/kub.pdf"]').count(), 1);
-    assert.equal(await kart.locator('details.kub-kutu').count(), 0);
-    assert.equal(await kart.locator('.arinma-etiket').count(), 0);
-    assert.doesNotMatch(await kart.innerText(), /Et \d+ gün|KÜB'den alıntı/);
-  }
+  await s.git('#/etken/ornek_antibiyotik');
+  const kart = s.locator('li.urun', { hasText: 'Örnek Ürün %10' }).first();
+  assert.match(await kart.innerText(), /Bakanlık sitesindeki KÜB bu ürünle eşleşmiyor — KÜB'e bakın/);
+  assert.equal(await kart.locator('a[href="https://example.invalid/kub.pdf"]').count(), 1);
+  assert.equal(await kart.locator('details.kub-kutu').count(), 0);
+  assert.equal(await kart.locator('.arinma-etiket').count(), 0);
+  assert.doesNotMatch(await kart.innerText(), /Et \d+ gün|KÜB'den alıntı/);
+  // yanlış belgeli ürün öneri kartına girmez
+  await s.git('#/hastalik/ornek_solunum');
+  assert.equal(await s.locator('.oneri-kart li.urun').count(), 0);
+  assert.equal(await s.locator('.oneri-kart .ml-buyuk').count(), 0);
   assert.deepEqual(s.hatalar, []);
 });
 
@@ -705,7 +795,13 @@ test('gercek veri: hicbir hastalik ve etken sayfasinda olasilik ya da doz yok', 
     await s.waitForFunction((a) => document.querySelector('main h1')?.textContent.startsWith(a), ad);
     const t = (await metin(s)).toLocaleLowerCase('tr');
     assert.doesNotMatch(t, /olasılı|ihtimal/, hash);
-    assert.doesNotMatch(t, /mg\/kg|ml\/kg/, hash);
+    // Doz/oran yalnız KÜB kaynaklı öğelerde (data-kub) ya da açılır KÜB kutularında; kalan metinde yok.
+    const disi = (await s.evaluate(() => {
+      const m = document.querySelector('main').cloneNode(true);
+      m.querySelectorAll('[data-kub], details.kub-kutu').forEach((n) => n.remove());
+      return m.innerText;
+    })).toLocaleLowerCase('tr');
+    assert.doesNotMatch(disi, /mg\/kg|ml\/kg/, hash);
   }
   assert.deepEqual(s.hatalar, []);
 });

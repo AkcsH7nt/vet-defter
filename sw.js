@@ -1,10 +1,10 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince `npm run surum` (içerik özetini yazar, SURUM artar); npm test eski özeti yakalar.
-// icerik: 846a7e710ef162d1
-const SURUM = 'vet-defter-v19';
+// icerik: 6fc2517313444a07
+const SURUM = 'vet-defter-v21';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js',
-  'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/etken.js', 'ui/kub.js', 'ui/listeler.js', 'ui/hakkinda.js',
+  'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/oneri.js', 'ui/etken.js', 'ui/kub.js', 'ui/listeler.js', 'ui/hakkinda.js',
   'manifest.webmanifest', 'ikon.svg', 'ikon-192.png', 'ikon-512.png', 'apple-touch-icon.png',
   'lib/veri.js', 'lib/onay.js', 'lib/arama.js', 'lib/puan.js', 'lib/bayrak.js', 'lib/kub.js', 'lib/oran.js', 'lib/hayvan.js', 'lib/oneri.js',
   'veri/meta.json', 'veri/belirtiler.json', 'veri/etkenler.json', 'veri/bayraklar.json',
