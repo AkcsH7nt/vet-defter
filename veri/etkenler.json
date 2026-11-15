@@ -1172,6 +1172,26 @@
     }
   },
   {
+    "id": "rafoksanid",
+    "ad": "Rafoksanid",
+    "sinif": "antiparaziter",
+    "atcvet": "QP52AG05",
+    "mekanizma": {
+      "hedef": "Trematod mitokondrisi",
+      "etki": "Oksidatif fosforilasyonu ayrıştırır (ATP yapımı durur); kelebek enerji tükenmesiyle ölür.",
+      "tur": "fasiolisit (salisilanilid)",
+      "spektrum": "Fasciola hepatica yetişkin ve genç evreleri (yaklaşık 6–8 haftalıktan büyük); Haemonchus gibi kan emen nematodlara da etkili.",
+      "kinetik": "Plazma proteinlerine çok yüksek oranda bağlanır; kanda uzun süre kalır (arınma süresi uzundur).",
+      "etkilesimler": [
+        "Başka bir salisilanilid (klosantel, oksiklozanid) ile birlikte ya da arka arkaya verilmez: toksik etki toplanır."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
     "id": "levamizol",
     "ad": "Levamizol",
     "sinif": "antiparaziter",
@@ -2028,6 +2048,25 @@
       "kaynak": "kaynak eklenecek"
     },
     "notlar": "Şemada antifungal sınıfı yok; \"diger\" olarak işaretlendi. AMEG yalnız antibakteriyelleri sınıflar.",
+    "onay": {
+      "durum": "taslak"
+    }
+  },
+  {
+    "id": "bromheksin",
+    "ad": "Bromheksin",
+    "sinif": "diger",
+    "atcvet": "QR05CB02",
+    "mekanizma": {
+      "hedef": "Solunum yolu salgı bezleri ve bronş mukusu",
+      "etki": "Mukus liflerini parçalayarak bronş salgısının kıvamını düşürür, salgının atılmasını kolaylaştırır; antibiyotiğin bronş salgısına geçişini artırabilir.",
+      "tur": "mukolitik (sekretolitik)",
+      "spektrum": null,
+      "etkilesimler": [
+        "Öksürük kesici (antitussif) ilaçlarla birlikte verilmez: incelen salgı solunum yolunda birikebilir."
+      ],
+      "kaynak": "Riviere JE, Papich MG (ed.). Veterinary Pharmacology and Therapeutics, 10. baskı. Wiley-Blackwell, 2018 — ilgili ilaç sınıfı bölümü (sayfa eklenecek)."
+    },
     "onay": {
       "durum": "taslak"
     }

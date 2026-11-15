@@ -108,6 +108,15 @@ const E_VITAMINI = new Set(['vitamin e', 'e vitamini', 'tokoferol', 'dl alfa tok
 const KALSIYUM_GLUKONAT = new Set(['kalsiyum glukonat', 'kalsiyum glukonat monohidrat']);
 const BORIK_ASIT = new Set(['borik asit', 'asit borik']);
 
+// Kombinasyon kimliği bileşenini kapsar: amoksisilin + klavulanik asit ürünü yalnız amoksisilin_klavulanat'tır
+// ("amoksisilin trihidrat" maddesi ayrıca amoksisilin olarak yazılmaz; K8-A8, Amoklizon LC vb.).
+export const KAPSAYAN = { amoksisilin_klavulanat: ['amoksisilin'] };
+/** Kapsanan bileşen kimliklerini atar (sıra korunur). */
+export function etkenleriSadele(ids) {
+  const atilacak = new Set(ids.flatMap((id) => KAPSAYAN[id] ?? []));
+  return ids.filter((id) => !atilacak.has(id));
+}
+
 /** Etken adı aday biçimleri: tam hâl, ardından baştan/sondan tuz kelimeleri atılmış hâller. */
 function adaylar(ham) {
   const tam = normalize(ham.replace(/\([^)]*\)/g, ' '));
@@ -151,11 +160,18 @@ export function urunEtkenleri(maddeler, yol, idx) {
     else for (const c of a) if (idx.has(c)) { id = idx.get(c); break; }
     if (id) { if (!ids.includes(id)) ids.push(id); } else eslesmeyen.push(m);
   }
-  return { ids, eslesmeyen };
+  return { ids: etkenleriSadele(ids), eslesmeyen };
 }
 
+// KÜB bölüm 2'de etkin madde olarak yazılı ama Bakanlık listesinin "Etkin Maddeler" hücresinde olmayan maddeler
+// (scripts/etken-tara.mjs taraması, K8-A8). urunId → hücreye eklenecek madde adları; eşleme kuralları aynen uygulanır.
+export const KUB_BILESIM_EK = {
+  // Kalsimin: KÜB "100 ml'de 45 g Kalsiyum glukonat … ve 9 g Borik asit" → kalsiyum boroglukonat çözeltisi
+  'bbb8070e-9b68-4f89-a2e9-6814586decf9': ['borik asit'],
+};
+
 /** "Etkin Maddeler" hücresini ayrı maddelere böler. */
-function maddeleriAyir(hucre) {
+export function maddeleriAyir(hucre) {
   return hucre.split(/\s*(?:[,;+]|\bve\b|\n)\s*/i).map((s) => s.trim()).filter(Boolean);
 }
 
@@ -275,13 +291,14 @@ function uret(dosyalar, etkenler, tarih) {
     toplamSatir += satirlar.length;
     for (const s of satirlar) {
       const anahtar = urunIdAl(s.kubUrl) ?? s.kubUrl ?? `${normalize(s.ad)}|${normalize(s.firma)}`;
-      const maddeler = maddeleriAyir(s.etkin);
+      const maddeler = [...maddeleriAyir(s.etkin), ...(KUB_BILESIM_EK[urunIdAl(s.kubUrl)] ?? [])];
       const { ids, eslesmeyen: es } = urunEtkenleri(maddeler, s.yol, idx);
       for (const m of es) eslesmeyen.set(m, (eslesmeyen.get(m) ?? 0) + 1);
       const onceki = urunler.get(anahtar);
       if (onceki) { // başka sorgudan gelen aynı ürün: hedef türleri birleştir
         for (const t of liste(s.hedef).map(turKimligi)) if (!onceki.hedefTurler.includes(t)) onceki.hedefTurler.push(t);
         for (const id of ids) if (!onceki.etkenler.includes(id)) onceki.etkenler.push(id);
+        onceki.etkenler = etkenleriSadele(onceki.etkenler);
         continue;
       }
       urunler.set(anahtar, { s, ids, hedefTurler: liste(s.hedef).map(turKimligi), etkenler: ids, urunId: urunIdAl(s.kubUrl) });

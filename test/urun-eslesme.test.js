@@ -77,3 +77,23 @@ test('urunListesiYenilenirkenKubDogrulamasiKorunur', () => {
   assert.deepEqual(sonuc[2].kub, kub);
   assert.deepEqual(sonuc[3].kub, []);
 });
+
+// K8-A8: amoksisilin + klavulanik asit ürünü yalnız amoksisilin_klavulanat'tır (amoksisilin ayrıca yazılmaz);
+// bromheksin ve rafoksanid etken listesinde (Vetamplius Mucosol, fenbendazol + rafoksanid ürünleri).
+test('K8A8_amoksisilinKlavulanatYinelenmez', () => {
+  assert.deepEqual(coz(['amoksisilin trihidrat', 'potasyum klavulanat']).ids, ['amoksisilin_klavulanat']);
+  assert.deepEqual(coz(['potasyum klavulanat', 'amoksisilin trihidrat']).ids, ['amoksisilin_klavulanat']);
+  assert.deepEqual(coz(['amoksisilin trihidrat']).ids, ['amoksisilin']);
+  assert.deepEqual(coz(['amoksisilin trihidrat', 'potasyum klavulanat', 'prednizolon']).ids.includes('amoksisilin'), false);
+});
+test('K8A8_bromheksinVeRafoksanidEslesir', () => {
+  assert.deepEqual(coz(['ampisilin sodyum', 'bromheksin hcl']).ids, ['ampisilin', 'bromheksin']);
+  assert.deepEqual(coz(['fenbendazol', 'rafoksanid'], 'oral').ids, ['fenbendazol', 'rafoksanid']);
+});
+test('K8A8_kubBilesimEki: Kalsimin KÜB bileşimindeki borik asit (Bakanlık listesinde yok) → kalsiyum_boroglukonat', async () => {
+  const { KUB_BILESIM_EK, maddeleriAyir } = await import('../scripts/urun-cek.mjs');
+  const ek = KUB_BILESIM_EK['bbb8070e-9b68-4f89-a2e9-6814586decf9'];
+  assert.deepEqual(ek, ['borik asit']);
+  const hucre = 'kalsiyum d sakkarat, kalsiyum glukoheptonat, kalsiyum glukonat, kalsiyum hipofosfit, magnezyum klorür';
+  assert.deepEqual(coz([...maddeleriAyir(hucre), ...ek], 'perfüzyon').ids, ['kalsiyum_boroglukonat', 'magnezyum']);
+});
