@@ -23,7 +23,8 @@ const AMEG = ['A', 'B', 'C', 'D'];
 const ONAY_DURUM = ['taslak', 'onayli'];
 const GUVEN = ['yuksek', 'dusuk'];
 const ORAN_KAPSAM = ['sigir', 'buzagi'];
-const YER_YOLU = ['IM', 'SC']; // oran.yerBasinaYol: yer başına sınırın bağlı olduğu yol
+const YER_YOLU = ['IM', 'SC'];
+const KISIT_TURU = ['olumsuz', 'yas', 'kosullu']; // oran.kisitlar[].tur: koşulsuz yasak, yaş kapsamı, koşullu kısıt // oran.yerBasinaYol: yer başına sınırın bağlı olduğu yol
 const ORAN_ML_KG_UST = 50; // yuksek oranda mlPerKg üst sınırı (bunun üstü okuma hatasıdır)
 const SECILEMEZ = ['ates', 'hipotermi']; // ısıdan türetilir, elle seçilmez
 const ISI_ARALIGI = [30, 45];
@@ -53,6 +54,7 @@ const ALANLAR = {
     ['tablo', 'eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz', 'belgeNeden', 'kubAdi', 'oran', 'yollar']],
   kubOran: [['mlPerKg', 'ifade', 'cumle', 'kaynak', 'kapsam', 'guven', 'yerBasinaMaxMl', 'yerBasinaYol', 'kisitlar', 'sabitDoz'], []],
   kubSigir: [['et_gun', 'sut', 'guven'], []],
+  kubKisit: [['tur', 'metin'], []], // oran.kisitlar öğesi
   meta: [['semaSurumu', 'icerikSurumu', 'urunListesiTarihi'], []],
   liste: [['kaynak', 'kaynakTarihi', 'ogeler'], ['not']],
   ihbarOgesi: [['id', 'ad', 'emin', 'dogrulandi'], ['not']],
@@ -467,8 +469,16 @@ export function dogrula(veri) {
         // K8-A: yer sınırının yolu, KÜB'deki yaş/kilo kısıtı cümleleri (aynen), kiloya bağlı olmayan doz.
         if (o.yerBasinaYol !== null && !YER_YOLU.includes(o.yerBasinaYol)) hata(yer, `oran.yerBasinaYol ${YER_YOLU.join(' | ')} ya da null olmalı`);
         if (o.yerBasinaYol !== null && o.yerBasinaMaxMl === null) hata(yer, 'oran.yerBasinaYol yalnız yerBasinaMaxMl ile yazılır');
-        if (!metinDizisiMi(o.kisitlar)) hata(yer, 'oran.kisitlar dolu metin dizisi olmalı');
-        else if (new Set(o.kisitlar).size !== o.kisitlar.length) hata(yer, 'oran.kisitlar tekrarsız olmalı');
+        if (!Array.isArray(o.kisitlar)) hata(yer, 'oran.kisitlar { tur, metin } dizisi olmalı');
+        else {
+          o.kisitlar.forEach((x, j) => {
+            if (!alanlar(`${yer}.oran.kisitlar[${j}]`, x, 'kubKisit')) return;
+            enumDenetle(yer, `oran.kisitlar[${j}].tur`, x.tur, KISIT_TURU);
+            if (!metinMi(x.metin)) hata(yer, `oran.kisitlar[${j}].metin dolu metin olmalı`);
+          });
+          const metinler = o.kisitlar.map((x) => x?.metin);
+          if (new Set(metinler).size !== metinler.length) hata(yer, 'oran.kisitlar tekrarsız olmalı');
+        }
         if (typeof o.sabitDoz !== 'boolean') hata(yer, 'oran.sabitDoz true ya da false olmalı');
         else if (o.sabitDoz && o.guven !== 'dusuk') hata(yer, 'oran.sabitDoz iken oran.guven dusuk olmalı (kilo oranı yok)');
         if (o.guven === 'yuksek') {

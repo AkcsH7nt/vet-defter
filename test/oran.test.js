@@ -434,16 +434,18 @@ test('A3 kapsam KÜB 4.1 hedef türünden: "Sığır (buzağı)" → buzagi; eri
   assert.equal(dozOrani(doz, { hedefTur: 'Sığır, koyun' }).kapsam, 'sigir');
 });
 
-test('A4 kisitlar: 4.1/4.2/4.3/4.9 yaş-kilo kısıtı cümleleri aynen; yoksa []', () => {
+test('A4 kisitlar: 4.1/4.3/4.9 yaş-kilo kısıtı cümleleri aynen ({ tur, metin }); yoksa []', () => {
   const seftio = dozOrani(ornek('seftio-tac'));
-  assert.deepEqual(seftio.kisitlar, ['Ürün buzağılarda kullanılmamalıdır.']);
+  assert.deepEqual(seftio.kisitlar, [{ tur: 'olumsuz', metin: 'Ürün buzağılarda kullanılmamalıdır.' }]);
   assert.equal(seftio.guven, 'yuksek'); // kısıt oranı bozmaz
   assert.deepEqual(dozOrani(ornek('vet-fulin')).kisitlar, []);
   const t = dozOrani('Buzağılar 1 ml/10 kg.', { kisitMetinleri: ['Etkin maddeye aşırı duyarlılıkta kullanmayınız.\n80 kg’dan daha ağır buzağılarda kullanılmaz.'] });
-  assert.deepEqual(t.kisitlar, ['80 kg’dan daha ağır buzağılarda kullanılmaz.']);
+  assert.deepEqual(t.kisitlar, [{ tur: 'kosullu', metin: '80 kg’dan daha ağır buzağılarda kullanılmaz.' }]);
+  // 4.1 / 4.3'te yaş kapsamı bildirimi 'yas'
   const p = dozOrani('1 ml/35 kg.', { kisitMetinleri: ['Sığırda (6 aylık ve üzeri) akut enfeksiyöz solunum yolu hastalığı ve akut mastitisin klinik belirtilerinin azaltılmasında kullanılır.'] });
   assert.equal(p.kisitlar.length, 1);
-  assert.ok(p.kisitlar[0].startsWith('Sığırda (6 aylık ve üzeri)'));
+  assert.equal(p.kisitlar[0].tur, 'yas');
+  assert.ok(p.kisitlar[0].metin.startsWith('Sığırda (6 aylık ve üzeri)'));
   // sığır dışı türün kısıtı ve 4.9'daki doz bölme cümlesi kısıt değildir
   assert.deepEqual(dozOrani('1 ml/25 kg.\nVücut ağırlığı 250 kg’ın üzerindeki sığırlarda tek bir enjeksiyon bölgesine 10 ml’den fazla uygulanmayacak şekilde doz bölünmelidir.',
     { kisitMetinleri: ['6 haftalıktan küçük kedi, köpeklerde ve 2 kg’dan az kedilerde kullanılmaz.'] }).kisitlar, []);
@@ -505,4 +507,55 @@ test('A7 meloksikam: sığırda tek tedavi oranı; "Ameliyattan önce" oranı ve
   // salt tür öbeği ("Sığır ve koyunlarda:", "Sığır, koyun ve keçide") bölünmez
   assert.equal(dozOrani('Sığır ve koyunlarda: 1 ml/10 kg canlı ağırlık.').mlPerKg, 0.1);
   assert.equal(dozOrani('Sığır, koyun ve keçide 1 ml/10 kg canlı ağırlık.').mlPerKg, 0.1);
+});
+
+// --- K8-A düzeltme turu 1 (inceleme bulguları C1, I2, I3, küçük) ---
+
+test('C1 hedefKapsami: "Sığır (buzağı ve genç sığır), köpek, kedi" (meloksikam 5 mg/ml 4.1) → buzagi', () => {
+  assert.equal(hedefKapsami('Sığır (buzağı ve genç sığır), köpek, kedi'), 'buzagi');
+  assert.equal(hedefKapsami('Sığır (genç sığır)'), 'buzagi');
+  assert.equal(hedefKapsami('Sığır (genç hayvanlar)'), 'buzagi');
+  assert.equal(hedefKapsami('Genç ve yetişkin sığırlar'), 'sigir');
+  assert.equal(hedefKapsami('Sığır (buzağı, düve ve inek)'), 'sigir');
+  const o = dozOrani(ornek('anaflex'), { hedefTur: 'Sığır (buzağı ve genç sığır), köpek, kedi' });
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.kapsam, 'buzagi');
+});
+
+test('I3 yerSiniri: tür taşıma istisnası yalnız öteki türün bölümü açıkça başka yola sınırlıysa', () => {
+  // Koyun bölümünde yol yazılmamış: "Kas içi … bir bölgeye 2 ml" koyunun olabilir → sayı yok
+  assert.equal(dozOrani('Sığır:\nKas içi yolla her 100 kg için 3 ml uygulanır.\nKoyun:\n1 ml/10 kg uygulanır.\n'
+    + 'Kas içi uygulamalarda bir bölgeye 2 ml’den fazla uygulanmamalıdır.').yerBasinaMaxMl, null);
+  // at bölümü yalnız ven içi, kas içi sığır cümlesinde: sığırın (ketoprofen)
+  assert.equal(dozOrani(ornek('tobrofin')).yerBasinaMaxMl, 5);
+  // sınırın yolu sığır cümlelerinde hiç geçmiyorsa sayılmaz
+  assert.equal(dozOrani('Sığır\nVen içi 3 ml/100 kg.\nAt\nVen içi 1 ml/45 kg.\nKas içi uygulamalarda bir bölgeye 5 ml’den fazla uygulanmamalıdır.').yerBasinaMaxMl, null);
+});
+
+test('I2 kisitlar: { tur: olumsuz | yas | kosullu, metin } — koşullu kısıt, sözle yazılmış yaş, 4.2 yalnız olumsuz/yalnız', () => {
+  const k = (metin, bolumler = []) => dozOrani('1 ml/10 kg.', { kisitMetinleri: bolumler.length ? bolumler : [metin] }).kisitlar;
+  assert.deepEqual(dozOrani(ornek('seftio-tac')).kisitlar, [{ tur: 'olumsuz', metin: 'Ürün buzağılarda kullanılmamalıdır.' }]);
+  assert.deepEqual(k('Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır.'),
+    [{ tur: 'kosullu', metin: 'Rumen faaliyeti başlamış buzağılarda kullanılmamalıdır.' }]);
+  assert.deepEqual(k('Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız.'),
+    [{ tur: 'kosullu', metin: 'Sığırlarda ishal tedavisi için bir haftadan küçük hayvanlarda kullanmayınız.' }]);
+  assert.deepEqual(k('80 kg’dan daha ağır buzağılarda kullanılmaz.'), [{ tur: 'kosullu', metin: '80 kg’dan daha ağır buzağılarda kullanılmaz.' }]);
+  // büyük harfli başlık öneki atılır ("ÇEVRE SAĞLIĞI AÇISINDAN;" + cümle)
+  assert.deepEqual(k('ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz.'),
+    [{ tur: 'kosullu', metin: '80 kg’dan daha ağır buzağılarda kullanılmaz.' }]);
+  assert.deepEqual(k('Bu ürün 6 aylık ve daha büyük sığırlarda kullanılır.'), [{ tur: 'yas', metin: 'Bu ürün 6 aylık ve daha büyük sığırlarda kullanılır.' }]);
+  // 4.2 (kullanım alanı) satırı yalnız olumsuz ya da "yalnız/sadece" ifadeliyse: endikasyon cümlesi kısıt değildir
+  const ab = (m) => dozOrani('1 ml/10 kg.', { kullanimAlani: m }).kisitlar;
+  assert.deepEqual(ab('- 2 yaşın altındaki sığırlarda enrofloksasine duyarlı Mycoplasma bovis suşları tarafından meydana getirilen akut artiritis tedavisi,'), []);
+  assert.deepEqual(ab('Sığırda (6 aylık ve üzeri) akut solunum yolu hastalığının tedavisinde kullanılır.'), []);
+  assert.deepEqual(ab('Bu ürün, sadece buzağılarda ve koyunlardaki serebrokortikal nekrozda ven içi kullanımı için uygundur.'),
+    [{ tur: 'yas', metin: 'Bu ürün, sadece buzağılarda ve koyunlardaki serebrokortikal nekrozda ven içi kullanımı için uygundur.' }]);
+  // parça (< 5 sözcük, "-" ya da ";" ile biten, tümü büyük harf) atılır
+  assert.deepEqual(k('2 yaşın altındaki sığırlarda -'), []);
+  assert.deepEqual(k('BUZAĞILARDA KULLANILMAZ'), []);
+});
+
+test('küçük: tablo hücresinden kalan "Keçi" satırı tür başlığı sayılmaz (Kalsimin yolları)', () => {
+  assert.deepEqual(sigirYollari(ornek('kalsimin')), ['IM', 'IV', 'SC']); // "Damar içi, adale içi ve deri altı yolla uygulanır."
+  assert.deepEqual(sigirYollari('Sığır\n1 ml/10 kg.\nAt\nVen içi yolla 1 ml/45 kg uygulanır.'), []); // gerçek başlık hâlâ başlık
 });

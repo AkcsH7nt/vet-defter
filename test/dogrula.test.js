@@ -434,7 +434,7 @@ test('kubOranVeYollarDenetlenir', async () => {
   const cumle = 'Kas içi 1 ml/10 kg canlı ağırlık dozunda uygulanır.';
   const oran = () => ({
     mlPerKg: 0.1, ifade: '1 ml/10 kg canlı ağırlık', cumle, kaynak: 'ml_kg', kapsam: 'sigir', guven: 'yuksek', yerBasinaMaxMl: 10,
-    yerBasinaYol: 'IM', kisitlar: ['Ürün buzağılarda kullanılmamalıdır.'], sabitDoz: false,
+    yerBasinaYol: 'IM', kisitlar: [{ tur: 'olumsuz', metin: 'Ürün buzağılarda kullanılmamalıdır.' }], sabitDoz: false,
   });
   const dusuk = {
     mlPerKg: null, ifade: null, cumle: null, kaynak: null, kapsam: null, guven: 'dusuk', yerBasinaMaxMl: null, yerBasinaYol: null, kisitlar: [], sabitDoz: true,
@@ -474,9 +474,12 @@ test('kubOranVeYollarDenetlenir', async () => {
   // K8-A alanları
   bozuk((k) => { k.oran.yerBasinaYol = 'IV'; }, /kub\[101\].*yerBasinaYol IM \| SC/);
   bozuk((k) => { k.oran.yerBasinaMaxMl = null; }, /kub\[101\].*yerBasinaYol yalnız yerBasinaMaxMl ile/);
-  bozuk((k) => { k.oran.kisitlar = null; }, /kub\[101\].*kisitlar dolu metin dizisi/);
-  bozuk((k) => { k.oran.kisitlar = ['']; }, /kub\[101\].*kisitlar dolu metin dizisi/);
-  bozuk((k) => { k.oran.kisitlar = ['a', 'a']; }, /kub\[101\].*kisitlar tekrarsız/);
+  bozuk((k) => { k.oran.kisitlar = null; }, /kub\[101\].*kisitlar \{ tur, metin \} dizisi/);
+  bozuk((k) => { k.oran.kisitlar = ['Ürün buzağılarda kullanılmamalıdır.']; }, /kub\[101\]\.oran\.kisitlar\[0\]/);
+  bozuk((k) => { k.oran.kisitlar = [{ tur: 'yasak', metin: 'x' }]; }, /kub\[101\].*kisitlar\[0\]\.tur/);
+  bozuk((k) => { k.oran.kisitlar = [{ tur: 'yas', metin: '' }]; }, /kub\[101\].*kisitlar\[0\]\.metin dolu/);
+  bozuk((k) => { k.oran.kisitlar = [{ tur: 'yas', metin: 'x', not: 1 }]; }, /kub\[101\]\.oran\.kisitlar\[0\].*bilinmeyen alan: not/);
+  bozuk((k) => { k.oran.kisitlar = [{ tur: 'yas', metin: 'a' }, { tur: 'olumsuz', metin: 'a' }]; }, /kub\[101\].*kisitlar tekrarsız/);
   bozuk((k) => { k.oran.sabitDoz = 'evet'; }, /kub\[101\].*sabitDoz true ya da false/);
   bozuk((k) => { k.oran.sabitDoz = true; }, /kub\[101\].*sabitDoz iken oran.guven dusuk/);
   bozuk((k) => { delete k.oran.kisitlar; }, /kub\[101\]\.oran.*eksik alan: kisitlar/);

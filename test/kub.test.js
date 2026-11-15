@@ -500,7 +500,7 @@ test('K8A_bolumMetni: 4.1 / 4.2 / 4.3 / 4.5 ve farmasötik şekil', () => {
   assert.equal(bolumMetni('5.2 Farmakokinetik\n4.5 μg/mL düzeyine ulaşır. 48 saat arayla yapılan ikinci uygulamadan sonra\n5.3 Çevresel', '4.5'), null);
 });
 
-test('K8A_kubKaydi: 4.5 yer sınırı, 4.1 kapsam, 4.2/4.3 kısıtlar, bölüm 3 ORAL; 4.5 metni kayda yazılmaz', async () => {
+test('K8A_kubKaydi: 4.5 yer sınırı, 4.1 kapsam, 4.3 kısıtlar, bölüm 3 ORAL; 4.5 metni kayda yazılmaz', async () => {
   const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
   const amoks = kubKaydi(ornek('clamoxyl-la-3-5'));
   assert.equal(amoks.oran.guven, 'yuksek');
@@ -519,11 +519,11 @@ test('K8A_kubKaydi: 4.5 yer sınırı, 4.1 kapsam, 4.2/4.3 kısıtlar, bölüm 3
 
   const toltrazor = kubKaydi(ornek('toltrazor-3-5'));
   assert.deepEqual(toltrazor.yollar, ['ORAL']);
-  // 4.3 aynen; iki satır birleşir ("ÇEVRE SAĞLIĞI AÇISINDAN;" + "80 kg’dan …")
-  assert.deepEqual(toltrazor.oran.kisitlar, ['ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz.']);
+  // 4.3 aynen; birleşen büyük harfli başlık öneki ("ÇEVRE SAĞLIĞI AÇISINDAN;") atılır
+  assert.deepEqual(toltrazor.oran.kisitlar, [{ tur: 'kosullu', metin: '80 kg’dan daha ağır buzağılarda kullanılmaz.' }]);
 
   const paincarp = kubKaydi(ornek('paincarp-3-5'));
-  assert.equal(paincarp.oran.kisitlar.length, 1);
-  assert.ok(paincarp.oran.kisitlar[0].startsWith('Sığırda (6 aylık ve üzeri)'), paincarp.oran.kisitlar[0]);
+  // 4.2 (kullanım alanı) cümlesi olumsuz / "yalnız" ifadesi olmadan kısıt sayılmaz (inceleme turu 1, I2)
+  assert.deepEqual(paincarp.oran.kisitlar, []);
   assert.equal(paincarp.oran.sabitDoz, false);
 });

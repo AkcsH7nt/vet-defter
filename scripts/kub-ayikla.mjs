@@ -73,7 +73,7 @@ export function harfDusmus(metin) {
  * Dönüş: { doz, arinma, sigir, metinYok } + yalnız doğruyken tablo, eskiBicim, sigirHedefDegil, belgeUyumsuz
  * (+ belgeNeden); ad farkında kubAdi; metin varken (metinYok değil) 4.9'dan oran (lib/oran.js dozOrani; hedef türde
  * sığır yoksa her zaman dusuk) ve sığır yolları (sigirYollari). Orana 4.5 (yer sınırı), 4.1 (hedef tür → kapsam) ve
- * 4.1/4.2/4.3 (yaş/kilo kısıtları) metinleri, yollara bölüm 3 (farmasötik şekil) verilir; bu metinler kayda yazılmaz.
+ * 4.1/4.3 ve 4.2 (yaş/kilo kısıtları) metinleri, yollara bölüm 3 (farmasötik şekil) verilir; bu metinler kayda yazılmaz.
  */
 export function kubKaydi(metin, urun = null, rapor = null) {
   const bos = () => ({ doz: null, arinma: null, sigir: sigirArinmasi(null), metinYok: true });
@@ -112,7 +112,8 @@ export function kubKaydi(metin, urun = null, rapor = null) {
       eskiBicim,
       ozelOnlem: bolumMetni(metin, '4.5'),
       hedefTur: bolumMetni(metin, '4.1'),
-      kisitMetinleri: ['4.1', '4.2', '4.3'].map((b) => bolumMetni(metin, b)),
+      kisitMetinleri: ['4.1', '4.3'].map((b) => bolumMetni(metin, b)),
+      kullanimAlani: bolumMetni(metin, '4.2'),
     });
     // 4.1 hedef türlerinde sığır yoksa metindeki oran sığırın değildir.
     kayit.oran = kayit.sigirHedefDegil
