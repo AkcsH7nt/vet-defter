@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { dizindenOku } from '../scripts/dogrula.mjs';
 import { veriYukle } from '../lib/veri.js';
-import { gosterilebilirMi, mlHesapla, urunSec, tedaviOnerisi } from '../lib/oneri.js';
+import { gosterilebilirMi, kuruDonemUrunuMu, mlHesapla, urunSec, tedaviOnerisi } from '../lib/oneri.js';
 
 const ORNEK = fileURLToPath(new URL('./ornek/', import.meta.url));
 
@@ -338,4 +338,100 @@ test('tedaviOnerisiAyniUrunEkranSirasinaGore', async () => {
   assert.equal(ns.secim.urun.urunId, 't-abns');
   assert.equal(ns.neden, 'ayni_urun');
   assert.equal(ns.ayniUrunIle, 'ornek_antibiyotik');
+});
+
+test('urunSecYoluBilinenUrunYoluBilinmeyendenOnce', async () => {
+  // dijital dermatit benzeri: "Lokal (sprey ya da sargı)" satırı; ad sırasında önde gelen yolu bilinmeyen ürün seçilmez
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'Lokal (sprey ya da sargı)' };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-oral', ad: 'Aaa Oral Toz', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: [] } },
+    { urun: { urunId: 't-sprey', ad: 'Zzz Sprey', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: ['TOPIKAL'] } },
+  ]);
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  const s = urunSec(ilac, veri, 'buzagi');
+  assert.equal(s.urun.urunId, 't-sprey');
+  assert.equal(s.yolBilinmiyor, false);
+  // yolu bilinen ve hesaplanabilir olmasa da, hesaplanabilir yolu bilinmeyenden önce
+  veri.kub.urunler['t-oral'].oran = oran(0.1);
+  assert.equal(urunSec(ilac, veri, 'buzagi').urun.urunId, 't-sprey');
+  // yalnız yolu bilinmeyen ürün kalırsa o seçilir ve yolBilinmiyor işaretlenir
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 't-sprey');
+  const y = urunSec(ilac, veri, 'buzagi');
+  assert.equal(y.urun.urunId, 't-oral');
+  assert.equal(y.yolBilinmiyor, true);
+  // satırın yolu çözülemiyorsa yolBilinmiyor false
+  assert.equal(urunSec({ ...ilac, yol: 'Gerektiğinde' }, veri, 'buzagi').yolBilinmiyor, false);
+});
+
+// Combilac 4 LC (laktasyon) ve Rilexine DC 375 (kuru dönem) örnekli meme içi ürünler
+const MEME = [
+  { urun: { urunId: 't-lc', ad: 'Combilac 4 LC Örnek', etkenler: ['ornek_antibiyotik'], form: 'intramammer süspansiyon' }, kayit: { oran: DUSUK, yollar: ['IMM'], doz: 'Her sağımdan sonra meme lobuna bir şırınga.' } },
+  { urun: { urunId: 't-dc', ad: 'Rilexine DC 375 Örnek', etkenler: ['ornek_antibiyotik'], form: 'intramammer süspansiyon' }, kayit: { oran: DUSUK, yollar: ['IMM'], doz: 'Son sağımdan sonra her meme lobuna bir şırınga.' } },
+];
+
+test('kuruDonemUrunuMu', () => {
+  assert.equal(kuruDonemUrunuMu({ ad: 'Rilexine DC 375 mg' }, null), true);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Masticol-DC' }, null), true);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Syvamast Dry' }, null), true);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Masticure Kuru Dönem' }, null), true);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Bovimast' }, { doz: 'İneklerde kuru döneme girmeden önceki son sağımda…' }), true);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Örnek' }, { doz: 'Kuruya çıkarılan ineklerde…' }), true);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Combilac 4 LC' }, { doz: 'Her sağımdan sonra.' }), false);
+  assert.equal(kuruDonemUrunuMu({ ad: 'Pendcillin' }, null), false); // "dc" sözcük içinde değil
+});
+
+test('urunSecMemeIciKuruDonemVeLaktasyonAyrimi', async () => {
+  const veri = await veriHazirla(MEME);
+  const kuru = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'İntramammer (kuru dönem)' };
+  const laktasyon = { ...kuru, yol: 'İntramammer' };
+  // kuru dönem satırı: yalnız kuru dönem ürünü (laktasyon ürünü ve kuru dönem olmayan ornek-u1 elenir)
+  const k = urunSec(kuru, veri, 'inek');
+  assert.equal(k.urun.urunId, 't-dc');
+  assert.equal(k.digerSayisi, 0);
+  // laktasyon satırı: kuru dönem ürünü elenir (ornek-u1'in yolu bilinmiyor, elenmez ama sonra gelir)
+  const l = urunSec(laktasyon, veri, 'inek');
+  assert.equal(l.urun.urunId, 't-lc');
+  assert.equal(l.digerSayisi, 1);
+  assert.equal(urunSec(laktasyon, { ...veri, urunler: veri.urunler.filter((u) => u.urunId === 't-dc') }, 'inek'), null);
+  // meme içi olmayan satırda ayrım yok: kuru dönem adlı ürün IM satırında seçilebilir
+  veri.kub.urunler['t-dc'].yollar = ['IM'];
+  assert.equal(urunSec({ ...kuru, yol: 'IM' }, veri, 'inek').urun.urunId, 't-dc');
+  // kuru dönem ürünü yoksa kuru dönem satırına laktasyon ürünü önerilmez
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 't-dc');
+  assert.equal(urunSec(kuru, veri, 'inek'), null);
+});
+
+test('tedaviOnerisiOncekiKombineUrunBuEtkeniVeriyorsaMlYok', async () => {
+  // Önceki satır AB+NSAİİ kombine ürünü seçti; NSAİİ satırı başka (tek etkenli, hesaplanabilir) ürün seçse de ml yok
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-abns', ad: 'AB+NSAİİ', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'] }, kayit: { oran: oran(0.1), yollar: ['IM'] } },
+    { urun: { urunId: 't-ns', ad: 'NSAİİ Tek', etkenler: ['ornek_nsaii'] }, kayit: { oran: oran(0.02), yollar: ['IV'] } },
+  ]);
+  const h = hastalik({
+    protokol: {
+      ilaclar: [
+        { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null },
+        { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'IV', not: null },
+      ],
+      destekleyici: [], bakim: [], ihbarAdimlari: [],
+    },
+  });
+  const o = tedaviOnerisi(h, veri, { yas: 'inek', kilo: 450 });
+  const ab = o.gruplar[0].satirlar[0];
+  const ns = o.gruplar[1].satirlar[0];
+  assert.equal(ab.secim.urun.urunId, 't-abns');
+  assert.equal(ab.hesap.ml, 45);
+  assert.equal(ns.secim.urun.urunId, 't-ns');
+  assert.equal(ns.hesap, null);
+  assert.equal(ns.neden, 'ayni_urun');
+  assert.equal(ns.ayniUrunIle, 'ornek_antibiyotik');
+});
+
+test('urunSecBuzagidaKullanilmazBuyukHarfle', async () => {
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-sef', ad: 'Seftio Örnek', etkenler: ['ornek_nsaii'] }, kayit: { oran: oran(0.02), doz: 'ÜRÜN BUZAĞILARDA KULLANILMAMALIDIR.' } },
+  ]);
+  const ilac = { etkenId: 'ornek_nsaii', sinif: 'nsaii', sira: 1, yol: 'SC' };
+  assert.equal(urunSec(ilac, veri, 'buzagi'), null);
+  assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-sef');
 });
