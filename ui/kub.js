@@ -4,10 +4,39 @@ import { normalize } from '../lib/arama.js';
 
 export const OTOMATIK_NOT = "KÜB'den otomatik okundu — metinle karşılaştırın";
 
-const yalnizBuzagi = (u) => {
-  const t = (u.hedefTurler ?? []).map(normalize);
+/** Ürün sığır için ruhsatlı mı? Hedef türde "sığır" ya da "buzağı" (büyük-küçük harf ve aksan fark etmez). */
+export function sigirMi(urun) {
+  return (urun.hedefTurler ?? []).some((t) => normalize(t) === 'sigir' || normalize(t) === 'buzagi');
+}
+
+/** Yalnız buzağı için ruhsatlı (hedef türde sığır yok, buzağı var). */
+export function yalnizBuzagiMi(urun) {
+  const t = (urun.hedefTurler ?? []).map(normalize);
   return t.includes('buzagi') && !t.includes('sigir');
+}
+
+// EMA AMEG sınıfları: A kaçının, B kısıtlayın, C dikkat, D ihtiyat.
+export const AMEG = {
+  A: 'Gıda hayvanında kullanılmaz',
+  B: 'Antibiyogramsız ilk seçenek olmaz',
+  C: 'D sınıfında uygun seçenek yoksa kullanılır',
+  D: 'İhtiyatlı kullanım; gereksiz kullanılmaz',
 };
+
+/** Ürünün bu etken dışındaki etkenleri: "Birlikte: …" satırı ve AMEG A/B / antibiyotik uyarıları. */
+export function kombineBilgisi(u, e, veri) {
+  const digerleri = (u.etkenler ?? []).filter((id) => id !== e.id).map((id) => veri.etkenler.find((x) => x.id === id) ?? { id, ad: id });
+  if (!digerleri.length) return null;
+  const adlar = digerleri.map((o) => `${o.ad}${o.ameg ? ` (AMEG ${o.ameg})` : ''}`).join(', ');
+  const uyarilar = [];
+  for (const sinif of ['A', 'B']) {
+    const olan = digerleri.filter((o) => o.ameg === sinif);
+    if (olan.length) uyarilar.push(`⚠ AMEG ${sinif} (${olan.map((o) => o.ad).join(', ')}): ${AMEG[sinif]}`);
+  }
+  if (e.sinif !== 'antimikrobiyal' && digerleri.some((o) => o.sinif === 'antimikrobiyal')) uyarilar.push('⚠ Antibiyotik içerir — sağmal inekte seçmeden önce bileşimi ve süt koşulunu KÜB\'den doğrulayın');
+  return el('p', { class: 'kombine' }, el('strong', {}, 'Birlikte: '), adlar, ...uyarilar.map((x) => [el('br'), x]));
+}
+
 const gunYaz = (n) => `${n} gün`;
 
 /**
@@ -45,7 +74,7 @@ export function urunKarti(u, kayit, { ek = null } = {}) {
   const etiket = kayit && !kayit.metinYok ? arinmaEtiketi(kayit.sigir) : [];
   return el('li', { class: 'urun' },
     el('strong', {}, u.ad),
-    yalnizBuzagi(u) ? el('span', { class: 'urun-etiket' }, ' (yalnız buzağı)') : null,
+    yalnizBuzagiMi(u) ? el('span', { class: 'urun-etiket' }, ' (yalnız buzağı)') : null,
     el('span', { class: 'soluk' }, ` — ${ayrinti}`),
     ek,
     etiket.length

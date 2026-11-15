@@ -346,6 +346,24 @@ test('hastalik: taslakta urun ve KUB Doz yok; icerik degisince onay duser ve ali
   assert.match(await metin(s2), /taslak/);
 });
 
+test('hastalik: onayli hastalikta kombine urunde Birlikte notu ve AMEG uyarisi', async () => {
+  const degis = (yol, j) => {
+    if (yol === 'etkenler.json') return j.map((e) => (e.id === 'ornek_nsaii' ? { ...e, ameg: 'B' } : e));
+    if (yol === 'urunler.json') {
+      return [...j, { ...j[0], urunId: 'ornek-komb', ad: 'Kombine Ürün (test)', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'], hedefTurler: ['sigir'] }];
+    }
+    return undefined;
+  };
+  const s = await sayfaAc({ degistir: degis });
+  await s.git('#/hastalik/ornek_solunum');
+  const kart = s.locator('li.ilac').first().locator('li.urun', { hasText: 'Kombine Ürün (test)' });
+  const t = await kart.innerText();
+  assert.match(t, /Birlikte: Örnek NSAİİ \(test\) \(AMEG B\)/);
+  assert.match(t, /AMEG B .*Antibiyogramsız ilk seçenek olmaz/);
+  // tekli ürün kartında Birlikte yok
+  assert.doesNotMatch(await s.locator('li.ilac').first().locator('li.urun', { hasText: 'Örnek Ürün %10' }).innerText(), /Birlikte/);
+});
+
 test('hastalik: en fazla 5 urun, kalani etken sayfasina yonlendirilir', async () => {
   const cok = (yol, j) => (yol === 'urunler.json'
     ? [...j, ...Array.from({ length: 6 }, (_, i) => ({ ...j[0], urunId: `ek-${i}`, ad: `Ek Ürün ${i}` }))] : undefined);

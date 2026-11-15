@@ -3,33 +3,10 @@
 // hastalık bağlamı olmadığından burada doz sayısı yazılmaz.
 import { el, doldur, bulunamadi, taslakEtiketi, tarihYaz, geriDugmesi } from './ortak.js';
 import { onayliMi } from '../lib/onay.js';
-import { sigirMi } from './hastalik.js';
-import { urunKarti } from './kub.js';
-
-// EMA AMEG sınıfları: A kaçının, B kısıtlayın, C dikkat, D ihtiyat.
-const AMEG = {
-  A: 'Gıda hayvanında kullanılmaz',
-  B: 'Antibiyogramsız ilk seçenek olmaz',
-  C: 'D sınıfında uygun seçenek yoksa kullanılır',
-  D: 'İhtiyatlı kullanım; gereksiz kullanılmaz',
-};
+import { urunKarti, kombineBilgisi, sigirMi, AMEG } from './kub.js';
 
 // Süt / sağmal inek kısıtı içeren notlar en üstte.
 const sutNotuMu = (x) => /süt|sağmal|laktasyon/i.test(x);
-
-/** Ürünün bu etken dışındaki etkenleri: "Birlikte: …" satırı ve AMEG A/B / antibiyotik uyarıları. */
-function kombineBilgisi(u, e, veri) {
-  const digerleri = (u.etkenler ?? []).filter((id) => id !== e.id).map((id) => veri.etkenler.find((x) => x.id === id) ?? { id, ad: id });
-  if (!digerleri.length) return null;
-  const adlar = digerleri.map((o) => `${o.ad}${o.ameg ? ` (AMEG ${o.ameg})` : ''}`).join(', ');
-  const uyarilar = [];
-  for (const sinif of ['A', 'B']) {
-    const olan = digerleri.filter((o) => o.ameg === sinif);
-    if (olan.length) uyarilar.push(`⚠ AMEG ${sinif} (${olan.map((o) => o.ad).join(', ')}): ${AMEG[sinif]}`);
-  }
-  if (e.sinif !== 'antimikrobiyal' && digerleri.some((o) => o.sinif === 'antimikrobiyal')) uyarilar.push('⚠ Antibiyotik içerir — sağmal inekte seçmeden önce bileşimi ve süt koşulunu KÜB\'den doğrulayın');
-  return el('p', { class: 'kombine' }, el('strong', {}, 'Birlikte: '), adlar, ...uyarilar.map((x) => [el('br'), x]));
-}
 
 export function render(kok, veri, durum, rota) {
   const e = veri.etkenler.find((x) => x.id === rota.id);

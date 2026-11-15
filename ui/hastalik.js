@@ -1,23 +1,14 @@
 // Ekran 3: Hastalık protokolü. Hastalık hekimce onaylıysa ilaç satırının altında ruhsatlı sığır ürünleri ve KÜB alıntıları gösterilir (spec §15).
 import { el, doldur, bulunamadi, taslakEtiketi, geriDugmesi } from './ortak.js';
 import { onayliMi } from '../lib/onay.js';
-import { urunKarti } from './kub.js';
+import { urunKarti, kombineBilgisi, sigirMi, yalnizBuzagiMi } from './kub.js';
+
+export { sigirMi, yalnizBuzagiMi };
 import { normalize } from '../lib/arama.js';
 
 const KIP = {
   yasak: 'Tedavi yasak', yok: 'Tedavi yok', semptomatik: 'Yalnız semptomatik tedavi', normal: 'Normal tedavi',
 };
-
-/** Ürün sığır için ruhsatlı mı? Hedef türde "sığır" ya da "buzağı" (büyük-küçük harf ve aksan fark etmez). */
-export function sigirMi(urun) {
-  return (urun.hedefTurler ?? []).some((t) => normalize(t) === 'sigir' || normalize(t) === 'buzagi');
-}
-
-/** Yalnız buzağı için ruhsatlı (hedef türde sığır yok, buzağı var). */
-export function yalnizBuzagiMi(urun) {
-  const t = (urun.hedefTurler ?? []).map(normalize);
-  return t.includes('buzagi') && !t.includes('sigir');
-}
 
 /** Arayüzdeki ikinci savunma hattı: yasak madde ve AMEG A protokolde hiç gösterilmez (dogrula ilk hattır). */
 function gosterilebilirMi(ilac, veri) {
@@ -35,11 +26,12 @@ const URUN_SINIRI = 5;
 
 /** Onaylı hastalıkta satırın etkenini içeren sığır ürünleri (en çok URUN_SINIRI; KÜB metni olanlar önce). */
 function urunBolumu(ilac, veri, href) {
+  const etken = veri.etkenler.find((x) => x.id === ilac.etkenId) ?? { id: ilac.etkenId, ad: ilac.etkenId };
   const hepsi = veri.urunler.filter((u) => (u.etkenler ?? []).includes(ilac.etkenId) && sigirMi(u));
   const metinli = (u) => { const k = veri.kub?.urunler?.[u.urunId]; return k && !k.metinYok ? 0 : 1; };
   const sirali = [...hepsi].sort((a, b) => metinli(a) - metinli(b) || (a.etkenler.length - b.etkenler.length));
   return [
-    el('ul', { class: 'madde urunler' }, sirali.slice(0, URUN_SINIRI).map((u) => urunKarti(u, veri.kub?.urunler?.[u.urunId]))),
+    el('ul', { class: 'madde urunler' }, sirali.slice(0, URUN_SINIRI).map((u) => urunKarti(u, veri.kub?.urunler?.[u.urunId], { ek: kombineBilgisi(u, etken, veri) }))),
     el('p', { class: 'soluk' }, hepsi.length > URUN_SINIRI ? `${hepsi.length - URUN_SINIRI} ürün daha — tümü etken sayfasında` : 'Tümü etken sayfasında'),
     el('a', { class: 'dugme ikincil', href }, `Ruhsatlı ürünler (${hepsi.length}) ▸`),
   ];

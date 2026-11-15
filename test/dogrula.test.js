@@ -525,6 +525,22 @@ test('cliBozukKubJsonIcinBirCikar', () => {
   }
 });
 
+test('cliBicimiBozukKubJsonIcinBirCikar', () => {
+  // ham kub.json şekli denetlenir: veriYukle normalizasyonu bozuk şekli gizlemez.
+  for (const bozuk of [{}, { urunler: [] }, { urunler: 'x' }]) {
+    const gecici = mkdtempSync(join(tmpdir(), 'vet-defter-'));
+    try {
+      cpSync(ORNEK, gecici, { recursive: true });
+      writeFileSync(join(gecici, 'veri', 'kub.json'), JSON.stringify(bozuk));
+      const s = spawnSync(process.execPath, ['scripts/dogrula.mjs', gecici], { cwd: KOK, encoding: 'utf8' });
+      assert.equal(s.status, 1, JSON.stringify(bozuk));
+      assert.match(s.stdout + s.stderr, /kub/);
+    } finally {
+      rmSync(gecici, { recursive: true, force: true });
+    }
+  }
+});
+
 test('cliEksikDosyadaBirCikar', () => {
   const gecici = mkdtempSync(join(tmpdir(), 'vet-defter-'));
   try {
