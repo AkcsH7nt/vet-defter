@@ -209,3 +209,20 @@ Yapay zekâ okuması bağımsız doğrulama sayılmaz; tek yetkili onay hekimind
 
 Sıra: P0 → (P1, P2, P4 paralel) → P3 → (P5, P6 paralel) → P7 → P8 → P9.
 İlk yayın, onaylı içerik oranından bağımsız yapılabilir (taslaklar dozsuz görünür).
+
+## 15. Ek (15.11.2026): KÜB'den doz ve arınma, hekim onayı — kullanıcı kararları
+
+- **KÜB alıntısı:** Ürünlerin KÜB PDF'leri bir kez indirilir (Bakanlık, ≥ 2,5 sn aralıkla); her PDF'ten
+  **4.9 Dozaj ve kullanım yolu** ve **4.11 Kalıntı arınma süreleri** bölümleri **kelimesi kelimesine** alınır
+  (`pdftotext`, yapay zekâ yeniden yazımı yok). Metin çıkarılamazsa "KÜB'e bakın" + bağlantı.
+- **Gösterim kuralı (değişti):** Etken sayfasında KÜB alıntısı ürün onayı olmadan görünür ve
+  "KÜB'den alıntı" diye etiketlenir (resmî belgenin metni). Hastalık sayfasında ilaç satırının altında ürünler ve
+  KÜB doz alıntıları **yalnız hastalık onaylıysa** görünür. Ürün ürün onay yok (`kubDogrulandi` artık doz
+  gösterimini kapılamaz; alan geriye uyumluluk için kalır).
+- **Arınma sayıları:** 4.11 metninden sığır için et (gün) ve süt (saat/gün, "kullanılmaz") otomatik okunur;
+  her biri `guven: yuksek|dusuk` taşır, yalnız `yuksek` sayı etiket olarak gösterilir, yanında
+  "KÜB'den otomatik okundu — metinle karşılaştırın". Okunamazsa sayı yok.
+- **Hekim onayı:** Hekim sohbetten "X onaylı" der; `npm run onayla -- <id>` onay kaydını (kim, tarih, içerik özeti)
+  yazar; içerik değişince onay kendiliğinden düşer (mevcut `onayliMi`). `npm run onay-durumu` liste verir.
+- Anti-hedef §4 "Doğrulanmamış (taslak) kayıtta doz gösterilmesi" bu ekle şöyle okunur: taslak **hastalıkta**
+  doz/ürün alıntısı gösterilmez; etken sayfasındaki KÜB alıntısı resmî metin olarak serbesttir.
