@@ -434,14 +434,17 @@ test('kubOranVeYollarDenetlenir', async () => {
   const cumle = 'Kas içi 1 ml/10 kg canlı ağırlık dozunda uygulanır.';
   const oran = () => ({
     mlPerKg: 0.1, ifade: '1 ml/10 kg canlı ağırlık', cumle, kaynak: 'ml_kg', kapsam: 'sigir', guven: 'yuksek', yerBasinaMaxMl: 10,
+    yerBasinaYol: 'IM', kisitlar: ['Ürün buzağılarda kullanılmamalıdır.'], sabitDoz: false,
   });
-  const dusuk = { mlPerKg: null, ifade: null, cumle: null, kaynak: null, kapsam: null, guven: 'dusuk', yerBasinaMaxMl: null };
+  const dusuk = {
+    mlPerKg: null, ifade: null, cumle: null, kaynak: null, kapsam: null, guven: 'dusuk', yerBasinaMaxMl: null, yerBasinaYol: null, kisitlar: [], sabitDoz: true,
+  };
   const kayit = () => ({ ...kubKaydi(), doz: `${cumle}\nÇalkalayınız.`, oran: oran(), yollar: ['IM'] });
   veri.kub = { urunler: { 101: kayit() } };
   assert.deepEqual(dogrula(veri), []);
   veri.kub.urunler[101] = { ...kayit(), oran: dusuk, yollar: [], tablo: true };
   assert.deepEqual(dogrula(veri), []);
-  veri.kub.urunler[101] = { ...kayit(), oran: { ...oran(), kapsam: 'buzagi', yerBasinaMaxMl: null }, yollar: ['IM', 'IV', 'SC', 'ORAL', 'IMM', 'IU', 'TOPIKAL'] };
+  veri.kub.urunler[101] = { ...kayit(), oran: { ...oran(), kapsam: 'buzagi', yerBasinaMaxMl: null, yerBasinaYol: null }, yollar: ['IM', 'IV', 'SC', 'ORAL', 'IMM', 'IU', 'TOPIKAL'] };
   assert.deepEqual(dogrula(veri), []);
 
   const bozuk = (degistir, desen) => {
@@ -468,6 +471,15 @@ test('kubOranVeYollarDenetlenir', async () => {
   bozuk((k) => { k.tablo = true; }, /kub\[101\].*tablo iken oran.guven dusuk/);
   bozuk((k) => { k.sigirHedefDegil = true; }, /kub\[101\].*sigirHedefDegil iken oran.guven dusuk/);
   bozuk((k) => { k.eskiBicim = true; k.sigir.guven = 'dusuk'; }, /kub\[101\].*eskiBicim iken oran.guven dusuk/);
+  // K8-A alanları
+  bozuk((k) => { k.oran.yerBasinaYol = 'IV'; }, /kub\[101\].*yerBasinaYol IM \| SC/);
+  bozuk((k) => { k.oran.yerBasinaMaxMl = null; }, /kub\[101\].*yerBasinaYol yalnız yerBasinaMaxMl ile/);
+  bozuk((k) => { k.oran.kisitlar = null; }, /kub\[101\].*kisitlar dolu metin dizisi/);
+  bozuk((k) => { k.oran.kisitlar = ['']; }, /kub\[101\].*kisitlar dolu metin dizisi/);
+  bozuk((k) => { k.oran.kisitlar = ['a', 'a']; }, /kub\[101\].*kisitlar tekrarsız/);
+  bozuk((k) => { k.oran.sabitDoz = 'evet'; }, /kub\[101\].*sabitDoz true ya da false/);
+  bozuk((k) => { k.oran.sabitDoz = true; }, /kub\[101\].*sabitDoz iken oran.guven dusuk/);
+  bozuk((k) => { delete k.oran.kisitlar; }, /kub\[101\]\.oran.*eksik alan: kisitlar/);
   bozuk((k) => { k.yollar = ['IM', 'KAS']; }, /kub\[101\].*yollar bilinmeyen kod: KAS/);
   bozuk((k) => { k.yollar = ['IM', 'IM']; }, /kub\[101\].*yollar tekrarsız/);
   bozuk((k) => { k.yollar = 'IM'; }, /kub\[101\].*yollar dizi/);

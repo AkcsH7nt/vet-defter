@@ -23,6 +23,7 @@ const AMEG = ['A', 'B', 'C', 'D'];
 const ONAY_DURUM = ['taslak', 'onayli'];
 const GUVEN = ['yuksek', 'dusuk'];
 const ORAN_KAPSAM = ['sigir', 'buzagi'];
+const YER_YOLU = ['IM', 'SC']; // oran.yerBasinaYol: yer başına sınırın bağlı olduğu yol
 const ORAN_ML_KG_UST = 50; // yuksek oranda mlPerKg üst sınırı (bunun üstü okuma hatasıdır)
 const SECILEMEZ = ['ates', 'hipotermi']; // ısıdan türetilir, elle seçilmez
 const ISI_ARALIGI = [30, 45];
@@ -50,7 +51,7 @@ const ALANLAR = {
   kubDosyasi: [['urunler'], ['cekilmeTarihi']], // veri/kub.json (dosya yoksa lib/veri.js { urunler: {} } verir)
   kubKaydi: [['doz', 'arinma', 'sigir', 'metinYok'],
     ['tablo', 'eskiBicim', 'sigirHedefDegil', 'belgeUyumsuz', 'belgeNeden', 'kubAdi', 'oran', 'yollar']],
-  kubOran: [['mlPerKg', 'ifade', 'cumle', 'kaynak', 'kapsam', 'guven', 'yerBasinaMaxMl'], []],
+  kubOran: [['mlPerKg', 'ifade', 'cumle', 'kaynak', 'kapsam', 'guven', 'yerBasinaMaxMl', 'yerBasinaYol', 'kisitlar', 'sabitDoz'], []],
   kubSigir: [['et_gun', 'sut', 'guven'], []],
   meta: [['semaSurumu', 'icerikSurumu', 'urunListesiTarihi'], []],
   liste: [['kaynak', 'kaynakTarihi', 'ogeler'], ['not']],
@@ -460,6 +461,13 @@ export function dogrula(veri) {
         if (o.yerBasinaMaxMl !== null && !(typeof o.yerBasinaMaxMl === 'number' && o.yerBasinaMaxMl > 0)) {
           hata(yer, 'oran.yerBasinaMaxMl pozitif sayı ya da null olmalı');
         }
+        // K8-A: yer sınırının yolu, KÜB'deki yaş/kilo kısıtı cümleleri (aynen), kiloya bağlı olmayan doz.
+        if (o.yerBasinaYol !== null && !YER_YOLU.includes(o.yerBasinaYol)) hata(yer, `oran.yerBasinaYol ${YER_YOLU.join(' | ')} ya da null olmalı`);
+        if (o.yerBasinaYol !== null && o.yerBasinaMaxMl === null) hata(yer, 'oran.yerBasinaYol yalnız yerBasinaMaxMl ile yazılır');
+        if (!metinDizisiMi(o.kisitlar)) hata(yer, 'oran.kisitlar dolu metin dizisi olmalı');
+        else if (new Set(o.kisitlar).size !== o.kisitlar.length) hata(yer, 'oran.kisitlar tekrarsız olmalı');
+        if (typeof o.sabitDoz !== 'boolean') hata(yer, 'oran.sabitDoz true ya da false olmalı');
+        else if (o.sabitDoz && o.guven !== 'dusuk') hata(yer, 'oran.sabitDoz iken oran.guven dusuk olmalı (kilo oranı yok)');
         if (o.guven === 'yuksek') {
           if (!(typeof o.mlPerKg === 'number' && o.mlPerKg > 0 && o.mlPerKg <= ORAN_ML_KG_UST)) {
             hata(yer, `oran.guven yuksek iken mlPerKg 0 < x ≤ ${ORAN_ML_KG_UST} olmalı (${o.mlPerKg})`);
