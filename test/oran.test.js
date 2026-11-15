@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { dozOrani, yolKodlari } from '../lib/oran.js';
+import { dozOrani, hedefKapsami, sigirYollari, yolKodlari } from '../lib/oran.js';
 
 const DIZIN = fileURLToPath(new URL('./ornek/kub/oran/', import.meta.url));
 const ornek = (ad) => readFileSync(join(DIZIN, `${ad}.txt`), 'utf8');
@@ -61,8 +61,10 @@ test('farkliIkiOranDusuk: gerçek KÜB (Tolfenak) — mastitis ve solunumda fark
   assert.equal(o.cumle, null);
 });
 
-test('farkliIkiOranDusuk: gerçek KÜB (meloksikam) — sığırda iki endikasyon, atta üçüncü oran', () => {
-  dusukBos(dozOrani(ornek('maxicam-x4')));
+test('farkliIkiOranDusuk: sığırda iki tedavi endikasyonu farklı oranla (ameliyat oranı değil)', () => {
+  // Meloksikam KÜB'ündeki "Ameliyattan önce" oranı K8-A7 ile ayrıldı (aşağıda); iki tedavi oranı hâlâ dusuk.
+  dusukBos(dozOrani('Sığır:\n0,5 mg/kg (yani 2,5 ml/100 kg vücut ağırlığı) solunum yolu enfeksiyonunda.\n'
+    + '0,4 mg/kg (yani 1 ml/50 kg vücut ağırlığı) ishalde.'));
 });
 
 test('koyunCumlesiSayilmaz', () => {
@@ -353,4 +355,154 @@ test('yolKodlari: olumsuz cümledeki yol sayılmaz (Shotapen: "Damar içi yolla 
   assert.deepEqual(yolKodlari('Deri altı uygulanır, damar içi uygulanmamalıdır.'), ['SC']);
   assert.deepEqual(yolKodlari(ornek('eprinomec')), ['TOPIKAL']);
   assert.deepEqual(yolKodlari(ornek('viramast')), ['IMM']);
+});
+
+// --- K8 düzeltme dalgası A (.superpowers/sdd/2026-11-15-tedavi-onerisi/k8-duzeltme-A.md) ---
+// Fikstürler: veri/kub.json'daki gerçek 4.9 metinleri (oran/*.txt).
+
+test('A1 yerSiniri: "20 ml’den büyük dozlar en az iki farklı bölgeye" (fluniksin, Vet-Fulin)', () => {
+  const o = dozOrani(ornek('vet-fulin'));
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.mlPerKg, 0.04);
+  assert.equal(o.yerBasinaMaxMl, 20);
+  assert.equal(o.yerBasinaYol, null);
+});
+
+test('A1 yerSiniri: at bölümünden sonra gelen "Kas içi uygulamalarda bir bölgeye 5 ml" sığırındır (at yalnız ven içi; Tobrofin, Ketosil)', () => {
+  for (const ad of ['tobrofin', 'ketosil']) {
+    const o = dozOrani(ornek(ad));
+    assert.equal(o.guven, 'yuksek', ad);
+    assert.equal(o.mlPerKg, 0.03, ad);
+    assert.equal(o.yerBasinaMaxMl, 5, ad);
+    assert.equal(o.yerBasinaYol, 'IM', ad);
+  }
+  // sınırın yolu at bölümünde de geçiyorsa (atta da kas içi) kime ait olduğu belirsiz: sayı yok
+  const belirsiz = dozOrani('Sığır\nKas içi 3 ml/100 kg.\nAt\nKas içi veya ven içi 1 ml/45 kg.\nKas içi uygulamalarda bir bölgeye 5 ml’den fazla uygulanmamalıdır.');
+  assert.equal(belirsiz.yerBasinaMaxMl, null);
+  // yolsuz sınır at bağlamında kalır (tür taşıma kuralı aynen)
+  assert.equal(dozOrani('Sığır\nKas içi 3 ml/100 kg.\nAt\nVen içi 1 ml/45 kg.\nBir bölgeye 5 ml’den fazla uygulanmamalıdır.').yerBasinaMaxMl, null);
+});
+
+test('A1 yerSiniri: yeni kalıplar ve yol bağı', () => {
+  assert.equal(dozOrani('Bir uygulama yerine 15 ml’den fazla uygulanmamalıdır.').yerBasinaMaxMl, 15);
+  assert.equal(dozOrani('Bir bölgeye sığırlarda en fazla 10 ml enjekte edilmelidir.').yerBasinaMaxMl, 10);
+  const im = dozOrani('Kas içi uygulamalarda bir bölgeye 5 ml’den fazla uygulanmamalıdır.');
+  assert.equal(im.yerBasinaMaxMl, 5);
+  assert.equal(im.yerBasinaYol, 'IM');
+  const sc = dozOrani('Deri altı uygulamada bir enjeksiyon yerine 10 ml’den fazla verilmemelidir.');
+  assert.equal(sc.yerBasinaYol, 'SC');
+  assert.equal(dozOrani('Bir enjeksiyon yerine 20 ml\'den fazla uygulanmamalıdır.').yerBasinaYol, null);
+  // koyun cümlesi sayılmaz
+  assert.equal(dozOrani('Koyunlarda 5 ml’den büyük dozlar iki farklı bölgeye uygulanmalıdır.').yerBasinaMaxMl, null);
+});
+
+test('A1 yerSiniri: KÜB 4.5 (özel uyarılar) cümlesi — amoksisilin LA (Clamoxyl LA)', () => {
+  const ozelOnlem = 'Bu ürünün ürün özellikleri özetinde verilen bilgilerden farklı kullanımı direncin gelişmesine neden olabilir.\n'
+    + 'Bir bölgeye sığırlarda en fazla 10, koyun ve keçilerde 5 ml enjekte edilmelidir.';
+  const o = dozOrani(ornek('clamoxyl-la'), { ozelOnlem });
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.mlPerKg, 0.1);
+  assert.equal(o.yerBasinaMaxMl, 10);
+  assert.equal(dozOrani(ornek('clamoxyl-la')).yerBasinaMaxMl, null); // 4.5 verilmezse sınır yok
+  // 4.9 ve 4.5 farklı sınır verirse sayı yok
+  assert.equal(dozOrani('Bir enjeksiyon yerine 20 ml’den fazla uygulanmamalıdır.', { ozelOnlem: 'Bir bölgeye en fazla 10 ml enjekte edilmelidir.' }).yerBasinaMaxMl, null);
+  // 4.5'te yalnız kedi-köpek sınırı sayılmaz
+  assert.equal(dozOrani('Kas içi 1 ml/10 kg.', { ozelOnlem: 'Kedi ve köpeklerde bir enjeksiyon yerine 2 ml’den fazla uygulanmamalıdır.' }).yerBasinaMaxMl, null);
+});
+
+test('A2 kiloBandiListesiDusuk: gerçek KÜB (Kriptostop) — "35 kg < buzağı ≤ 45 kg : … 8 ml" yanında oran', () => {
+  dusukBos(dozOrani(ornek('kriptostop')));
+  dusukBos(dozOrani('Her 10 kg vücut ağırlığı için 2 ml.\n35–45 kg: 8 ml\n45-60 kg: 12 ml'));
+  // ml'siz kilo aralığı (yalnız tanım) oranı bozmaz
+  assert.equal(dozOrani('100-200 kg ağırlığındaki buzağılarda 1 ml/10 kg canlı ağırlık dozunda uygulanır.').guven, 'yuksek');
+});
+
+test('A3 kapsam KÜB 4.1 hedef türünden: "Sığır (buzağı)" → buzagi; erişkin sığır yoksa sigir verilmez', () => {
+  assert.equal(hedefKapsami('Sığır (buzağı) ve koyun (kuzu).'), 'buzagi');
+  assert.equal(hedefKapsami('Buzağı, kuzu'), 'buzagi');
+  assert.equal(hedefKapsami('Sığır (sütten kesilmemiş buzağılar)'), 'buzagi');
+  assert.equal(hedefKapsami('Sığır, koyun, keçi, köpek, kedi'), 'sigir');
+  assert.equal(hedefKapsami('Sığır (inek, buzağı)'), 'sigir');
+  assert.equal(hedefKapsami('Köpek, kedi'), null);
+  assert.equal(hedefKapsami(null), null);
+  // Cocciril: 4.9 oranı tür belirtmiyor (kapsam sigir) ama 4.1 yalnız buzağı
+  const doz = '1 kg vücut ağırlığı için 1 mg diklazuril, yani 2.5 kg vücut ağırlığı için 1 ml dozundaki ürün tek bir oral uygulama ile verilmelidir.';
+  const o = dozOrani(doz, { hedefTur: 'Sığır (buzağı) ve koyun (kuzu).' });
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.kapsam, 'buzagi');
+  assert.equal(dozOrani(doz).kapsam, 'sigir');
+  assert.equal(dozOrani(doz, { hedefTur: 'Sığır, koyun' }).kapsam, 'sigir');
+});
+
+test('A4 kisitlar: 4.1/4.2/4.3/4.9 yaş-kilo kısıtı cümleleri aynen; yoksa []', () => {
+  const seftio = dozOrani(ornek('seftio-tac'));
+  assert.deepEqual(seftio.kisitlar, ['Ürün buzağılarda kullanılmamalıdır.']);
+  assert.equal(seftio.guven, 'yuksek'); // kısıt oranı bozmaz
+  assert.deepEqual(dozOrani(ornek('vet-fulin')).kisitlar, []);
+  const t = dozOrani('Buzağılar 1 ml/10 kg.', { kisitMetinleri: ['Etkin maddeye aşırı duyarlılıkta kullanmayınız.\n80 kg’dan daha ağır buzağılarda kullanılmaz.'] });
+  assert.deepEqual(t.kisitlar, ['80 kg’dan daha ağır buzağılarda kullanılmaz.']);
+  const p = dozOrani('1 ml/35 kg.', { kisitMetinleri: ['Sığırda (6 aylık ve üzeri) akut enfeksiyöz solunum yolu hastalığı ve akut mastitisin klinik belirtilerinin azaltılmasında kullanılır.'] });
+  assert.equal(p.kisitlar.length, 1);
+  assert.ok(p.kisitlar[0].startsWith('Sığırda (6 aylık ve üzeri)'));
+  // sığır dışı türün kısıtı ve 4.9'daki doz bölme cümlesi kısıt değildir
+  assert.deepEqual(dozOrani('1 ml/25 kg.\nVücut ağırlığı 250 kg’ın üzerindeki sığırlarda tek bir enjeksiyon bölgesine 10 ml’den fazla uygulanmayacak şekilde doz bölünmelidir.',
+    { kisitMetinleri: ['6 haftalıktan küçük kedi, köpeklerde ve 2 kg’dan az kedilerde kullanılmaz.'] }).kisitlar, []);
+  assert.deepEqual(dozOrani(ornek('kinoloks')).kisitlar, []); // "2 yaşın altındaki sığırlarda … 5 gün uygulanır": süre, kısıt değil
+  assert.deepEqual(dozOrani(null).kisitlar, []);
+});
+
+test('A5 sabitDoz: hayvan başına / meme lobu başına doz, kilo oranı yok', () => {
+  const d = dozOrani(ornek('dinolytic-hc'));
+  dusukBos(d);
+  assert.equal(d.sabitDoz, true);
+  assert.equal(dozOrani(ornek('viramast')).sabitDoz, true);
+  assert.equal(dozOrani('Etkilenen her meme lobuna bir enjektör uygulanır.').sabitDoz, true);
+  assert.equal(dozOrani('Laktasyondaki inekte her çeyreğe bir tüp.').sabitDoz, true);
+  // kilo oranı varsa (yüksek ya da düşük güven) sabit değil
+  assert.equal(dozOrani(ornek('vet-fulin')).sabitDoz, false);
+  assert.equal(dozOrani(ornek('tolfenak')).sabitDoz, false);
+  assert.equal(dozOrani('Hayvan başına 2 ml, 300 kg üzeri hayvanlarda 4 ml.').sabitDoz, false);
+  // yalnız koyun cümlesindeki "hayvan başına" sayılmaz
+  assert.equal(dozOrani('Koyun: hayvan başına 1 ml.').sabitDoz, false);
+  assert.equal(dozOrani(null).sabitDoz, false);
+});
+
+test('A6 sigirYollari: yalnız sığıra ait cümleler, olumsuzlar düşer (Fable çapraz-tür listesi)', () => {
+  assert.deepEqual(sigirYollari(ornek('gentavilin')), ['IM', 'IV']); // SC kedi-köpek; "Deri altı uygulanmaz"
+  assert.deepEqual(sigirYollari(ornek('clamoxyl-la')), ['IM']); // SC kedi-köpek
+  assert.deepEqual(sigirYollari(ornek('klavetsilin')), ['IM']); // SC köpek-kedi
+  assert.deepEqual(sigirYollari(ornek('micospectone')), ['IM']); // SC tavuk-hindi
+  assert.deepEqual(sigirYollari(ornek('tulabiotic')), ['SC']); // IM koyun
+  assert.deepEqual(sigirYollari(ornek('shotapen')), ['IM']); // SC köpek; damar içi olumsuz
+  assert.deepEqual(sigirYollari(ornek('heyzan')), ['SC']); // "sığırlarda boyun bölges ne ve koyunlarda omuzun önüne der altı" (PDF'te i düşmüş)
+  assert.deepEqual(sigirYollari(ornek('eprinomec')), ['TOPIKAL']);
+  assert.deepEqual(sigirYollari(ornek('viramast')), ['IMM']);
+  assert.deepEqual(sigirYollari('Sığır, koyun ve keçilerde derin kas içi yolla uygulanır.'), ['IM']);
+  assert.deepEqual(sigirYollari('Sığırlarda kas içi ve koyunlarda deri altı uygulanır.'), ['IM']);
+  assert.deepEqual(sigirYollari(null), []);
+  // 4.9'da yol yoksa farmasötik şekil: oral süspansiyon → ORAL (Baycox %5)
+  assert.deepEqual(sigirYollari('Buzağılar tek doz olarak 15 mg/kg doz (her 10 kg vücut ağırlığı için 3 ml ürün) uygulanarak tedavi edilmelidir.', { sekil: 'Oral Süspansiyon' }), ['ORAL']);
+  assert.deepEqual(sigirYollari('Her 10 kg için 3 ml.', { sekil: 'Enjeksiyonluk çözelti' }), []);
+  assert.deepEqual(sigirYollari('Kas içi uygulanır.', { sekil: 'Oral Süspansiyon' }), ['IM']); // 4.9'da yol varsa şekle bakılmaz
+});
+
+test('A7 meloksikam: sığırda tek tedavi oranı; "Ameliyattan önce" oranı ve at/köpek/kedi oranları sayılmaz', () => {
+  const x4 = dozOrani(ornek('maxicam-x4'));
+  assert.equal(x4.guven, 'yuksek');
+  yakin(x4.mlPerKg, 0.025);
+  assert.equal(x4.ifade, '2,5 ml/100 kg vücut ağırlığı');
+  assert.equal(x4.kapsam, 'sigir');
+  const anaflex = dozOrani(ornek('anaflex'));
+  assert.equal(anaflex.guven, 'yuksek');
+  yakin(anaflex.mlPerKg, 0.1);
+  // yalnız ameliyat oranı varsa sayı yok
+  dusukBos(dozOrani('Sığır:\nAmeliyattan önce 0,4 mg meloksikam/kg vücut ağırlığı (yani 1 ml/50 kg vücut ağırlığı) dozunda tek kas içi enjeksiyon.'));
+  // tek cümlede sığır ve at oranı (Lomecam): "… (1 ml/40 kg) ve atlarda; … (3 ml/100 kg)"
+  const lomecam = dozOrani(ornek('lomecam'));
+  assert.equal(lomecam.guven, 'yuksek');
+  yakin(lomecam.mlPerKg, 0.025);
+  assert.equal(lomecam.ifade, '1 ml/40 kg');
+  // salt tür öbeği ("Sığır ve koyunlarda:", "Sığır, koyun ve keçide") bölünmez
+  assert.equal(dozOrani('Sığır ve koyunlarda: 1 ml/10 kg canlı ağırlık.').mlPerKg, 0.1);
+  assert.equal(dozOrani('Sığır, koyun ve keçide 1 ml/10 kg canlı ağırlık.').mlPerKg, 0.1);
 });

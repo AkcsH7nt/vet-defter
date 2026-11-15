@@ -1,0 +1,78 @@
+3. FARMASÖTİK ŞEKİL
+Açık sarı - sarı renkli berrak, steril enjeksiyonluk çözelti
+
+4. KLİNİK ÖZELLİKLER
+
+4.1. Hedef tür
+Sığır
+
+4.2. Her bir hedef tür için kullanım alanı
+Sığırda (6 aylık ve üzeri) akut enfeksiyöz solunum yolu hastalığı ve akut mastitisin klinik
+belirtilerini azaltmak için antimikrobiyal tedaviye ek olarak kullanılır.
+
+4.3. Kontrendikasyonlar
+Kalp, karaciğer veya böbrek yetmezliği olan hayvanlarda kullanılmamalıdır. Mide-bağırsak
+ülserasyonu veya kanaması olan hayvanlarda kullanılmamalıdır. Kan diskrazi varlığı bilinen
+hayvanlarda kullanılmamalıdır. Etkin maddeye ya da yardımcı maddelerden herhangi birine
+karşı aşırı duyarlılık olduğu biliniyorsa kullanılmamalıdır.
+
+4.4. Her bir hedef tür için özel uyarılar
+Bulunmamaktadır.
+
+4.5. Kullanıma ilişkin özel uyarılar
+(i) Hayvanlarda kullanıma ilişkin özel uyarılar
+Böbrek  toksisite riskini arttırabildiğinden susuz,   hipovolemik   veya  hipotansif hayvanlarda
+kullanmaktan kaçının. Potansiyel olarak nefrotoksik ilaçların eş zamanlı uygulanmasından
+kaçınılmalıdır. Belirtilen doz veya tedavi süresi aşılmamalıdır. Diğer NSAİİ’ları aynı anda
+veya 24 saat içinde uygulamayın. NSAİİ tedavisine mide-bağırsak veya böbrek yetmezliği
+eşlik  edebileceğinden,   özellikle  akut    mastitis  tedavisi  durumunda    ek  sıvı  tedavisi
+düşünülmelidir.   6 haftalıktan küçük  hayvanlarda     veya   yaşlı hayvanlarda kullanımı  riskli
+olabilir. Bu tür bir kullanımda, dikkatli klinik izleme yapılmalı ve hayvanlarda azaltılmış bir
+dozajlama yapılmalıdır.
+
+(ii) Ürünü uygulayana ilişkin özel uyarılar
+Laboratuvar  çalışmalarında   karprofenin   diğer  NSAİİ’larda   olduğu    gibi ışığa    duyarlı hale
+getirme potansiyeli   gösterdiği belirlenmiştir.  Veteriner  tıbbi ürününün     cilt ile temasından
+kaçının. Temas halinde etkilenen bölgeleri hemen yıkayın.
+
+(iii) Diğer uyarılar
+Bulunmamaktadır.
+
+4.6. İstenmeyen etkiler (sıklık ve şiddet)
+Sığırda yapılan çalışmalar enjeksiyon bölgesinde geçici bir lokal reaksiyon oluşabileceğini
+göstermiştir. Ancak bu durum enjeksiyondan sonra 24 saat içinde kaybolmalıdır.
+Yan etki sıklığının bildirilmesinde aşağıdaki çevirim kullanılır;
+Çok yaygın (10 hayvanda 1'den fazla)
+Yaygın (100 hayvanda 1'den fazla fakat 10'dan az)
+Yaygın olmayan (1.000 hayvanda 1'den fazla fakat 10'dan az)
+Seyrek (10.000 hayvanda 1'den fazla fakat 10'dan az)
+Çok seyrek (10,000 hayvanda 1'den az)
+
+4.7. Gebelik, laktasyon ve yumurtlama döneminde kullanım
+Gebe  hayvanda    güvenlik  çalışmaları yapılmadığından,    veteriner hekim     tarafından   yapılan
+risk/fayda değerlendirmesinin ardından kullanılmalıdır.
+
+4.8. Diğer tıbbi ürünlerle etkileşimi ve diğer etkileşim şekilleri
+Diğer NSAİİ’larda olduğu gibi, karprofen, NSAİİ veya glukokortikoid sınıfından başka bir
+veteriner tıbbi ürün ile aynı anda uygulanmamalıdır. NSAİİ’lar plazma proteinlerine yüksek
+oranda  bağlanır  ve  diğer yüksek   oranda  bağlanan ilaçlarla    rekabet ettiğinden    eş  zamanlı
+uygulama toksik etkilere neden olabilir. Sığırlarda yapılan klinik çalışmalar sırasında dört tip
+antibiotik  (makrolidler,   tetrasiklinler,  sefalosporinler  ve    güçlendirilmiş       penisilinler)
+kullanılmıştır. Bu   antibiotiklerle herhangi  bir etkileşim  kaydedilmemiştir.       Karpofen    bir
+antikoagulan ile aynı anda uygulanıyorsa hayvanlar dikkatlice izlenmelidir.
+
+4.9. Dozaj ve kullanım yolu
+Uygun bir antibiyotik tedavisi ile birlikte 1,4 mg karprofen/kg vücut ağırlığı (1 ml/35 kg)
+dozunda tek deri altı veya ven içi enjeksiyon olarak uygulanır.
+
+4.10. Doz aşımı, varsa semptomlar, acil prosedürler, antidotlar (gerekli ise)
+Klinik çalışmalarda, önerilen dozun 5 katına kadar yapılan ven içi ve deri altı uygulamadan
+sonra herhangi   bir yan etki bildirilmemiştir.  Karprofen   doz   aşımı için   spesifik bir antidot
+yoktur, ancak   klinik doz  aşımına   karşı NSAİİ’lar ile uygulanan    genel    destekleyici  tedavi
+uygulanmalıdır.
+
+4.11. Kalıntı arınma süreleri (sıfır gün olanlar da dâhil)
+Tedavi süresince ve son ilaç uygulamasından sonra 21 gün geçmeden sığırlar kesime
+sevk edilmemelidir. Süt için ilaç kalıntı arınma süresi "0" gündür.
+
+5. FARMAKOLOJİK ÖZELLİKLER

@@ -1,0 +1,90 @@
+3. FARMASÖTİK ŞEKİL
+Oral Süspansiyon
+Beyaz ya da krem renkte hafif viskoz süspansiyon
+
+4. KLİNİK ÖZELLİKLER
+
+4.1 Hedef   türler
+Buzağı, kuzu
+
+4.2 Her bir hedef tür için kullanım alanı
+Buzağı:
+Daha  önce    Eimeria bovis     ve  Eimeria zuernii  tarafından   meydana getirilen coccidiosis
+vakalarında,  süt  sığırı olarak    kullanılacak buzağılarda coccidia   atılımını azaltmak ve
+coccidiosisin klinik belirtilerini azaltmak amacıyla kullanılır.
+Kuzu:
+Daha önce Eimeria crandallis ve Eimeria ovinoidalis tarafından meydana getirilen coccidiosis
+vakalarında, coccidia atılımını azaltmak ve coccidiosisin klinik belirtilerini azaltmak amacıyla
+kullanılır.
+
+4.3 Kontrendikasyonlar
+ÇEVRE SAĞLIĞI AÇISINDAN;
+80 kg’dan daha ağır buzağılarda kullanılmaz.
+Besi amaçlı hayvanlarda kullanılmaz. Detay için 4.5 ve 5.3 bölümlerine bakınız.
+
+4.4 Her bir hedef tür için özel uyarılar
+Aynı sınıf   antiparaziterlerin sık ve tekrarlayan kullanımı direnç  gelişimine neden  olabilir.
+Tedavinin aynı ağıl/ahırdaki tüm hayvanlara uygulanması tavsiye edilir.
+Hijyenik tedbirler coccidiosis riskini azaltır. Bu nedenle işletme ve hayvan barınaklarının kuru
+ve temiz olmasına dikkat edilmesi tavsiye edilir.
+Azami faydanın sağlanması için ürünün klinik belirtiler başlamadan uygulanması tavsiye edilir
+(örneğin prepatent dönemde).
+Diare gibi coccidiosis belirtileri göstermeye başlamış hayvanlarda ek destekleyici tedavi gerekli
+olabilir.
+
+4.5 Kullanıma ilişkin özel uyarılar
+(i)Hayvanlarda kullanıma ilişkin özel uyarılar
+Bulunmamaktadır.
+(ii)Ürünü uygulayana ilişkin özel uyarılar
+Ürünle temas halinde ilgili bölgeyi acilen bol su ile yıkayınız.
+
+(ii)Diğer uyarılar
+Toltrazurilin ana metabolite olan Toltrazuril sülfonun (ponazuril) persistan bir özelliği olduğu
+(yarılanma ömrü >1 yıl) ve toprakla taşınabildiği ve bitkiler için toksik olduğu gösterilmiştir.
+
+ÇEVRE SAĞLIĞI AÇISINDAN;
+Bitkiler üzerindeki yan etkileri önlemek ve yeraltı sularının kontaminasyonunu engellemek
+için, tedavi göre hayvanların dışkıları, tedavi görmeyen hayvanların dışkıları ile seyreltilmeden
+toprağa atılmamalıdır. Kontamine dışkılar en az 3 kat kontamine olmayan dışkı ile karıştırılarak
+toprağa atılabilir.
+Kapalı yetiştirme sistemi ile yetiştirilen kuzular 6 haftalık olmadan ya da vücut ağırlıkları tedavi
+sırasında 20 kg’ın üzerinde olmadığı sürece tedavi edilmemelidirler. Bu hayvanların gübreleri
+sadece aynı toprak parçasında, üç yılda bir kullanılmalıdır.
+
+4.6 İstenmeyen etkiler (sıklık ve şiddet)
+Bilinmemektedir.
+
+4.7 Gebelik ve laktasyon döneminde kullanım
+Rat ve tavşanlarda    yapılan çalışmalarda, teratojenik, fötotoksik veya  maternotoksik    etkiye
+ilişkin bulguya rastlanmamıştır.
+
+4.8 Diğer ilaçlarla etkileşimi ve diğer etkileşim şekilleri
+Bilinmemektedir.
+
+4.9 Dozaj ve kullanım yolu
+Kullanımdan önce şişeyi 2 dakika çalkalayınız. Azami faydanın sağlanması için ürünün klinik
+belirtiler başlamadan uygulanması tavsiye edilir (örneğin prepatent dönemde).
+Buzağı:
+Buzağılar tek doz olarak 15 mg/kg doz (her 10 kg vücut ağırlığı için 3 ml ürün) uygulanarak
+tedavi edilmelidir. Aynı ırk veya aynı/benzer yaş aralığındaki hayvanlar grup halinde tedavi
+edilecekse dozajlama grubun en ağır hayvanına göre yapılmalıdır.
+Kuzu:
+Kuzular tek doz olarak 20 mg/kg doz (her kg vücut ağırlığı için 0,4 ml ürün) uygulanarak tedavi
+edilmelidir.  Grup    halinde  tedavi  uygulanacaksa     hayvanlar   vücut   ağırlıklarına  göre
+gruplandırılmalıdır.
+
+4.10 Doz aşımı, varsa semptomlar, acil prosedürler, antidotlar (gerekli ise)
+Buzağılarda  tavsiye   dozunun  3 katı uygulamada   intoleransa   ilişkin belirti görülmemiştir.
+Kuzularda tavsiye dozunun 3 katı ve tek uygulamada, tavsiye dozunun 2 katı, 2 gün uygulamada
+yan etki görülmemiştir.
+
+4.11 Kalıntı arınma süreleri (sıfır gün olanlar dahil)
+İlaç uygulama süresince ve son uygulamayı takiben buzağılar 63 gün, kuzular 42 gün
+geçmeden     kesime   gönderilmemelidir.    İnsan tüketimi    için  süt   elde edilen  inek  ve
+koyunlarda uygulanmaz.
+
+5. FARMAKOLOJİK ÖZELLİKLER
+Farmakoterapotik grup: Antiprotozoal, toltrazuril
+ATC-Vet kodu: QP51AJ01
+
+5.1 Farmakodinamik özellikler

@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   bolumAyir, sigirArinmasi, belgeBilgisi, kubUrunleUyumlu, sesAnahtari, yaklasikIcerir, sigirHedefMi, eskiBicimAyir,
-  sutTavsiyeEdilmez, bolum47,
+  sutTavsiyeEdilmez, bolum47, bolumMetni, farmasotikSekil,
 } from '../lib/kub.js';
 
 const DIZIN = fileURLToPath(new URL('./ornek/kub/', import.meta.url));
@@ -478,4 +478,52 @@ test('harfiDusmusMetinOkunamaz_Weldox', async () => {
   assert.equal(k.metinYok, true);
   assert.equal(k.belgeUyumsuz, undefined);
   assert.match(rapor.neden, /harfi düşmüş/);
+});
+
+// --- K8 düzeltme dalgası A: 4.1 / 4.2 / 4.3 / 4.5 ve bölüm 3 (farmasötik şekil) okuma, kubKaydi'ye bağlanması ---
+// Fikstürler gerçek PDF'lerin bölüm 3 → 5 kesitleri (<ad>-3-5.txt).
+
+test('K8A_bolumMetni: 4.1 / 4.2 / 4.3 / 4.5 ve farmasötik şekil', () => {
+  const c = ornek('clamoxyl-la-3-5');
+  assert.equal(bolumMetni(c, '4.1'), 'Sığır, koyun, keçi, köpek, kedi');
+  assert.ok(bolumMetni(c, '4.3').startsWith('Bu ürün intravenöz veya intratekal kullanım için uygun değildir.'));
+  const b45 = bolumMetni(c, '4.5');
+  assert.ok(b45.includes('Bir bölgeye sığırlarda en fazla 10, koyun ve keçilerde 5 ml enjekte edilmelidir.'), b45);
+  assert.ok(!/4\.6|İstenmeyen etkiler/.test(b45), b45);
+  assert.ok(bolumMetni(ornek('paincarp-3-5'), '4.2').startsWith('Sığırda (6 aylık ve üzeri) akut enfeksiyöz'));
+  assert.equal(bolumMetni(ornek('cocciril-3-5'), '4.1'), 'Sığır (buzağı) ve koyun (kuzu).');
+  assert.equal(farmasotikSekil(ornek('baycox-3-5')), 'Oral Süspansiyon');
+  assert.ok(farmasotikSekil(ornek('paincarp-3-5')).includes('enjeksiyonluk çözelti'));
+  assert.equal(bolumMetni('başka bir metin', '4.5'), null);
+  assert.equal(farmasotikSekil(null), null);
+  // "4.5 μg/mL düzeyine ulaşır" (bölüm 5'te) 4.5 başlığı değildir
+  assert.equal(bolumMetni('5.2 Farmakokinetik\n4.5 μg/mL düzeyine ulaşır. 48 saat arayla yapılan ikinci uygulamadan sonra\n5.3 Çevresel', '4.5'), null);
+});
+
+test('K8A_kubKaydi: 4.5 yer sınırı, 4.1 kapsam, 4.2/4.3 kısıtlar, bölüm 3 ORAL; 4.5 metni kayda yazılmaz', async () => {
+  const { kubKaydi } = await import('../scripts/kub-ayikla.mjs');
+  const amoks = kubKaydi(ornek('clamoxyl-la-3-5'));
+  assert.equal(amoks.oran.guven, 'yuksek');
+  assert.equal(amoks.oran.yerBasinaMaxMl, 10); // KÜB 4.5
+  assert.equal(amoks.oran.yerBasinaYol, null);
+  assert.deepEqual(amoks.yollar, ['IM']); // SC kedi-köpek
+  assert.ok(!JSON.stringify(amoks).includes('Bir bölgeye sığırlarda'), '4.5 metni kayda yazılmaz');
+
+  const cocciril = kubKaydi(ornek('cocciril-3-5'));
+  assert.equal(cocciril.oran.guven, 'yuksek');
+  assert.equal(cocciril.oran.kapsam, 'buzagi'); // 4.1 "Sığır (buzağı) ve koyun (kuzu)."
+
+  const baycox = kubKaydi(ornek('baycox-3-5'));
+  assert.deepEqual(baycox.yollar, ['ORAL']); // 4.9'da yol yok; bölüm 3 "Oral Süspansiyon"
+  assert.equal(baycox.oran.kapsam, 'buzagi');
+
+  const toltrazor = kubKaydi(ornek('toltrazor-3-5'));
+  assert.deepEqual(toltrazor.yollar, ['ORAL']);
+  // 4.3 aynen; iki satır birleşir ("ÇEVRE SAĞLIĞI AÇISINDAN;" + "80 kg’dan …")
+  assert.deepEqual(toltrazor.oran.kisitlar, ['ÇEVRE SAĞLIĞI AÇISINDAN; 80 kg’dan daha ağır buzağılarda kullanılmaz.']);
+
+  const paincarp = kubKaydi(ornek('paincarp-3-5'));
+  assert.equal(paincarp.oran.kisitlar.length, 1);
+  assert.ok(paincarp.oran.kisitlar[0].startsWith('Sığırda (6 aylık ve üzeri)'), paincarp.oran.kisitlar[0]);
+  assert.equal(paincarp.oran.sabitDoz, false);
 });

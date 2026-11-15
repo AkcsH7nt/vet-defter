@@ -11,9 +11,10 @@ import { spawnSync } from 'node:child_process';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  bolumAyir, bolum47, eskiBicimAyir, kubUrunleUyumlu, sigirArinmasi, sigirHedefMi, sutTavsiyeEdilmez,
+  bolumAyir, bolum47, bolumMetni, eskiBicimAyir, farmasotikSekil, kubUrunleUyumlu, sigirArinmasi, sigirHedefMi,
+  sutTavsiyeEdilmez,
 } from '../lib/kub.js';
-import { dozOrani, yolKodlari } from '../lib/oran.js';
+import { dozOrani, sigirYollari } from '../lib/oran.js';
 import { TAKMA_ID } from './urun-cek.mjs';
 
 const KOK = fileURLToPath(new URL('..', import.meta.url));
@@ -50,7 +51,7 @@ export function pdftotextBul(adaylar = ADAYLAR) {
 }
 
 /** PDF'ten metin (UTF-8, stdout'a). Hata → null. */
-function metinCikar(arac, pdf) {
+export function metinCikar(arac, pdf) {
   const r = spawnSync(arac.yol, [...arac.kip, '-enc', 'UTF-8', '-q', pdf, '-'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
   if (r.error || (r.status !== 0 && !r.stdout)) return null;
   return r.stdout;
@@ -71,7 +72,8 @@ export function harfDusmus(metin) {
  * belgenin bu ürüne ait olduğu denetlenir. rapor: verilirse { atilan: string[] } doldurulur, okunamaz metinde neden yazılır.
  * Dönüş: { doz, arinma, sigir, metinYok } + yalnız doğruyken tablo, eskiBicim, sigirHedefDegil, belgeUyumsuz
  * (+ belgeNeden); ad farkında kubAdi; metin varken (metinYok değil) 4.9'dan oran (lib/oran.js dozOrani; hedef türde
- * sığır yoksa her zaman dusuk) ve yollar (yolKodlari).
+ * sığır yoksa her zaman dusuk) ve sığır yolları (sigirYollari). Orana 4.5 (yer sınırı), 4.1 (hedef tür → kapsam) ve
+ * 4.1/4.2/4.3 (yaş/kilo kısıtları) metinleri, yollara bölüm 3 (farmasötik şekil) verilir; bu metinler kayda yazılmaz.
  */
 export function kubKaydi(metin, urun = null, rapor = null) {
   const bos = () => ({ doz: null, arinma: null, sigir: sigirArinmasi(null), metinYok: true });
@@ -105,12 +107,18 @@ export function kubKaydi(metin, urun = null, rapor = null) {
   if (sigirHedefMi(metin) === false) kayit.sigirHedefDegil = true;
   if (kubAdi && !kayit.metinYok) kayit.kubAdi = kubAdi;
   if (!kayit.metinYok) {
-    const oran = dozOrani(doz, { tablo, eskiBicim });
+    const oran = dozOrani(doz, {
+      tablo,
+      eskiBicim,
+      ozelOnlem: bolumMetni(metin, '4.5'),
+      hedefTur: bolumMetni(metin, '4.1'),
+      kisitMetinleri: ['4.1', '4.2', '4.3'].map((b) => bolumMetni(metin, b)),
+    });
     // 4.1 hedef türlerinde sığır yoksa metindeki oran sığırın değildir.
     kayit.oran = kayit.sigirHedefDegil
-      ? { ...oran, mlPerKg: null, ifade: null, cumle: null, kaynak: null, kapsam: null, guven: 'dusuk' }
+      ? { ...oran, mlPerKg: null, ifade: null, cumle: null, kaynak: null, kapsam: null, guven: 'dusuk', sabitDoz: false }
       : oran;
-    kayit.yollar = yolKodlari(doz);
+    kayit.yollar = sigirYollari(doz, { sekil: farmasotikSekil(metin) });
   }
   return kayit;
 }
@@ -170,8 +178,8 @@ function main() {
     if (k.tablo) dokum.tablo.push(ozet);
     if (rapor.atilan.length) dokum.atilanGurultu.push({ ...ozet, satirlar: rapor.atilan });
     if (k.oran?.guven === 'yuksek') {
-      const { mlPerKg, kapsam, ifade, cumle, yerBasinaMaxMl } = k.oran;
-      dokum.oranYuksek.push({ ...ozet, mlPerKg, kapsam, ifade, yerBasinaMaxMl, cumle });
+      const { mlPerKg, kapsam, ifade, cumle, yerBasinaMaxMl, yerBasinaYol, kisitlar } = k.oran;
+      dokum.oranYuksek.push({ ...ozet, mlPerKg, kapsam, ifade, yerBasinaMaxMl, yerBasinaYol, kisitlar, yollar: k.yollar, cumle });
     }
   }
   const cekilmeTarihi = new Date().toISOString().slice(0, 10);
@@ -195,6 +203,8 @@ function main() {
   console.log(`  oran (sığır ml/kg): yuksek ${yuksekOran.length} (kapsam buzagi ${yuksekOran.filter((x) => x.oran.kapsam === 'buzagi').length})`
     + ` · dusuk ${oranli.length - yuksekOran.length} · yerBasinaMaxMl ${oranli.filter((x) => x.oran.yerBasinaMaxMl !== null).length}`
     + ` · yolsuz ${oranli.filter((x) => !x.yollar.length).length} → denetim listesi: ${RAPOR} (oranYuksek)`);
+  console.log(`  yerBasinaYol ${oranli.filter((x) => x.oran.yerBasinaYol).length} · sabitDoz ${oranli.filter((x) => x.oran.sabitDoz).length}`
+    + ` · kısıtlı (yaş/kilo) ${oranli.filter((x) => x.oran.kisitlar.length).length}`);
   for (const b of dokum.belgeUyumsuz) console.log(`  belgeUyumsuz: ${b.ad} (${b.urunId.slice(0, 8)}) — ${b.neden}`);
   for (const b of dokum.okunamaz) console.log(`  okunamaz: ${b.ad} (${b.urunId.slice(0, 8)}) — ${b.neden}`);
   const atilanSay = dokum.atilanGurultu.reduce((n, x) => n + x.satirlar.length, 0);
