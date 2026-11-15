@@ -40,12 +40,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -86,12 +86,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı ( her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -140,12 +140,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -237,12 +237,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg vücut ağırlığı için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg vücut ağırlığı (her 100 kg vücut ağırlığı için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -414,12 +414,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.06666666666666667,
+        "ifade": "her 15 kg canlı ağırlık için 1 ml",
+        "cumle": "20 mg/kg canlı ağırlık (her 15 kg canlı ağırlık için 1 ml ürün) dozunda, iki defa, uygulamalar arasında 48 saat olarak. (16 ölçü iğne kullanınız)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -460,12 +460,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "Sığır: 2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -533,12 +533,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg ) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -558,12 +558,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.013333333333333334,
+        "ifade": "her 150 kg vücut ağırlığı için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg vücut ağırlığı (her 150 kg vücut ağırlığı için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -607,12 +607,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -751,12 +751,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.2,
+        "ifade": "her 10 kg vücut ağırlığı için 2 ml",
+        "cumle": "Pratik dozu her 10 kg vücut ağırlığı için 2 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -775,12 +775,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "1 ml enjeksiyonluk süspansiyon/10 kg vücut ağırlığı",
+        "cumle": "RİLEXİNE %15, 15 mg sefaleksin/kg vücut ağırlığı/gün (1 ml enjeksiyonluk süspansiyon/10 kg vücut ağırlığı/gün dozda 3 – 5 gün süreyle kas içi yolla uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -919,12 +919,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -1124,12 +1124,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -1246,12 +1246,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -1271,12 +1271,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı ( her 10 kg vücut ağırlığı için 1 ml) dır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -1295,12 +1295,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.01,
+        "ifade": "10 kg vücut ağırlığı başına 0,1 ml",
+        "cumle": "Vücut ağırlığı kg başına 0,2 mg eprinomektin, yani 10 kg vücut ağırlığı başına 0,1 ml ürün uygulanmalıdır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -1388,12 +1388,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -1536,12 +1536,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -1585,12 +1585,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml) dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -1656,12 +1656,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -1701,12 +1701,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -1726,12 +1726,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -1825,12 +1825,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığıdır (her 10 kg vücut ağırlığı için 1 ml) Bu ürün sadece tek enjeksiyon olarak tavsiye edilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -1849,12 +1849,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -1875,12 +1875,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -1924,12 +1924,12 @@
       "metinYok": false,
       "kubAdi": "SANTAKET Enjeksiyonluk Çözelti",
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2024,12 +2024,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -2146,12 +2146,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2213,12 +2213,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2588,12 +2588,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.2,
+        "ifade": "her 50 kg vücut ağırlığı için 10 ml",
+        "cumle": "Doğrudan yada sıvı içine karıştırılarak 5 mg/kg vücut ağırlığı/gün dozunda (her 50 kg vücut ağırlığı için 10 ml) beş gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2610,12 +2610,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2633,12 +2633,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.06666666666666667,
+        "ifade": "15 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığırlarda APHEN Enjeksiyonluk Çözelti’nin önerilen farmakolojik dozu 20 mg/kg vücut ağırlığı olup, pratik dozu 48 saat aralıkla iki kez olmak üzere 15 kg vücut ağırlığı için 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2832,12 +2832,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -2854,12 +2854,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2879,12 +2879,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg vücut ağırlığıiçin 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg vücut ağırlığı (her 100 kg vücut ağırlığıiçin 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -2926,12 +2926,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -2976,12 +2976,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -3171,12 +3171,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -3193,12 +3193,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3293,12 +3293,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -3384,12 +3384,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3431,12 +3431,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3474,12 +3474,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3497,12 +3497,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.2,
+        "ifade": "her 50 kg vücut ağırlığı için 10 ml",
+        "cumle": "Doğrudan yada sıvı içine karıştırılarak 5 mg/kg vücut ağırlığı/gün dozunda (her 50 kg vücut ağırlığı için 10 ml) beş gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3519,12 +3519,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg ) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -3542,12 +3542,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.3,
+        "ifade": "her 10 kg vücut ağırlığı için 3 ml",
+        "cumle": "Buzağı: Buzağılar tek doz olarak 15 mg/kg doz (her 10 kg vücut ağırlığı için 3 ml ürün) uygulanarak tedavi edilmelidir.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3588,12 +3588,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3663,12 +3663,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı ( her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -3710,12 +3710,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -3735,12 +3735,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -3781,12 +3781,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg canlı ağırlık için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg canlı ağırlık için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -4090,12 +4090,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -4159,12 +4159,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -4235,12 +4235,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml Gentasol %10) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -4309,12 +4309,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı ( her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -4553,12 +4553,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -4575,12 +4575,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -4600,12 +4600,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -4648,12 +4648,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -4719,12 +4719,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -4769,12 +4769,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml) dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -4793,12 +4793,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg canlı ağırlık için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg canlı ağırlık için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -4865,12 +4865,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -4986,12 +4986,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 mL",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 mL), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -5034,12 +5034,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg canlı ağırlık için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg canlı ağırlık için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -5056,12 +5056,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -5080,12 +5080,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -5102,12 +5102,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 2 mg/kg fluniksin ve 30 mg/kg oksitetrasiklin (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -5174,12 +5174,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -5196,12 +5196,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml NORİXİN), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -5288,12 +5288,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -5444,12 +5444,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -5489,12 +5489,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -5560,12 +5560,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.3,
+        "ifade": "her 10 kg vücut ağırlığı için 3 ml",
+        "cumle": "Buzağılar tek doz olarak 15 mg/kg doz (her 10 kg vücut ağırlığı için 3 ml ürün) uygulanarak tedavi edilmelidir.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": []
@@ -5715,12 +5715,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -5816,12 +5816,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml) dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -5840,12 +5840,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlık için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlık/gün (pratik olarak her 100 kg vücut ağırlık için günde 3 ml PYREQUIN) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -5887,12 +5887,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -5994,12 +5994,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 µg ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6165,12 +6165,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg ) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -6190,12 +6190,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -6332,12 +6332,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Pratik doz: 10 kg vücut ağırlığı için 1 ml süspansiyon derin kas içi (intramuscular) olarak uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6429,12 +6429,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6451,12 +6451,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6498,12 +6498,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6593,12 +6593,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -6712,12 +6712,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6786,12 +6786,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6810,12 +6810,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6834,12 +6834,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -6958,12 +6958,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -7086,12 +7086,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7161,12 +7161,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg vücut ağırlığı için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg vücut ağırlığı (her 100 kg vücut ağırlığı için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7261,12 +7261,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7382,12 +7382,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.01,
+        "ifade": "Her 100 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 100 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7404,12 +7404,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7481,12 +7481,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7559,12 +7559,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -7608,12 +7608,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlık için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlık/gün (pratik olarak her 100 kg vücut ağırlık için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7683,12 +7683,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -7752,12 +7752,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7823,12 +7823,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -7891,12 +7891,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg canlı ağırlık için günde 3 ml",
+        "cumle": "Kas içi veya damar içi yolla 3 mg/kg canlı ağırlık/gün (pratik olarak her 100 kg canlı ağırlık için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7914,12 +7914,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -7964,12 +7964,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -7986,12 +7986,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -8242,12 +8242,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 100 kg canlı ağırlık için 4 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 4 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -8349,12 +8349,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.0625,
+        "ifade": "160 kg vücut ağırlığı için 10 ml",
+        "cumle": "Kas içi yol ile tek bir doz halinde 10 mg/kg vücut ağırlığı hesabıyla 160 kg vücut ağırlığı için 10 ml ürün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -8397,12 +8397,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -8516,12 +8516,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg vücut ağırlığı için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg vücut ağırlığı (her 100 kg vücut ağırlığı için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -8613,12 +8613,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -8647,12 +8647,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg ) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -8744,12 +8744,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)’dır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -8881,12 +8881,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -8961,12 +8961,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -9082,12 +9082,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -9176,12 +9176,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -9227,12 +9227,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -9322,12 +9322,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.3,
+        "ifade": "her 10 kg vücut ağırlığı için 3 ml",
+        "cumle": "Buzağılar tek doz olarak 15 mg/kg doz (her 10 kg vücut ağırlığı için 3 ml ürün) uygulanarak tedavi edilmelidir.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": []
@@ -9342,12 +9342,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -9442,12 +9442,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg canlı ağırlık için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg canlı ağırlık için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -9487,12 +9487,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -9636,12 +9636,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg canlı ağırlık için günde 3 ml",
+        "cumle": "Sığır: Kas içi veya damar içi yolla 3 mg/kg canlı ağırlık/gün (pratik olarak her 100 kg canlı ağırlık için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -9802,12 +9802,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -10023,12 +10023,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -10119,12 +10119,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -10313,12 +10313,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -10338,12 +10338,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -10454,12 +10454,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Pratik doz: 30 kg vücut ağırlığı için 1 ml Procactive 300 mg/ml Enjeksiyonluk Süspansiyon kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 12
       },
       "yollar": [
@@ -10549,12 +10549,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -10571,12 +10571,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -10618,12 +10618,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -10640,12 +10640,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -10709,12 +10709,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -11054,12 +11054,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -11103,12 +11103,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -11175,12 +11175,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -11292,12 +11292,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -11414,12 +11414,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Buzağı: Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -11439,12 +11439,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -11553,12 +11553,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -11624,12 +11624,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığıdır (her 10 kg vücut ağırlığı için 1 ml).",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -11697,12 +11697,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -11767,12 +11767,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -11814,12 +11814,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "25 kg vücut ağırlığı için 1 ml",
+        "cumle": "6 mg gamitromisin / kg vücut ağırlığı (25 kg vücut ağırlığı için 1 ml’ye eşdeğer) dozunda tek doz olarak, sığırlarda boyun bölgesine, koyunlarda omuzun ön kısmına deri altı yol ile uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -11932,12 +11932,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığıdır (her 10 kg vücut ağırlığı için 1 ml) Bu ürün sadece tek enjeksiyon olarak tavsiye edilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -12020,12 +12020,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -12166,12 +12166,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -12189,12 +12189,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 2 mg/kg fluniksin ve 30 mg/kg oksitetrasiklin (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -12245,12 +12245,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -12269,12 +12269,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -12339,12 +12339,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -12603,12 +12603,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.01,
+        "ifade": "Her 100 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 100 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -12627,12 +12627,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml) dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -12677,12 +12677,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -12701,12 +12701,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.0625,
+        "ifade": "160 kg vücut ağırlığına 10 ml",
+        "cumle": "Solunum sistemi enfeksiyonların tedavisinde farmakolojik doz 10 mg/kg vücut ağırlığıdır, pratik olarak 160 kg vücut ağırlığına 10 ml tek doz kas içi uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -12726,12 +12726,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün kas içi (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -12748,12 +12748,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -12844,12 +12844,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 2 mg/kg fluniksin ve 30 mg/kg oksitetrasiklin (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -12989,12 +12989,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -13013,12 +13013,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -13037,12 +13037,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml TİLMOKİN) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -13204,12 +13204,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -13409,12 +13409,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı ( her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -13574,12 +13574,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -13830,12 +13830,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg canlı ağırlık için günde 3 ml",
+        "cumle": "Kas içi veya damar içi yolla 3 mg/kg canlı ağırlık/gün (pratik olarak her 100 kg canlı ağırlık için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -13880,12 +13880,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -13951,12 +13951,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -13977,12 +13977,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml) dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -14337,12 +14337,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg canlı ağırlık için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg canlı ağırlık için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -14437,12 +14437,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -14484,12 +14484,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -14506,12 +14506,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı başına 1 ml",
+        "cumle": "Önerilen doz oranı 3-5 gün boyunca günlük 8.75 mg/kg vücut ağırlığıdır (kg vücut ağırlığı için amoksisilin 7 mg ve klavulanik asit 1.75 mg) ya da 20 kg vücut ağırlığı başına 1 ml’dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -14776,12 +14776,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -14800,12 +14800,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün kas içi (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -14846,12 +14846,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg canlı ağırlık için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg canlı ağırlık için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -14921,12 +14921,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "Sığır: 2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -14995,12 +14995,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -15021,12 +15021,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığıdır (her 10 kg vücut ağırlığı için 1 ml).",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -15045,12 +15045,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün).",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -15119,12 +15119,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.4,
+        "ifade": "2.5 kg vücut ağırlığı için 1 ml",
+        "cumle": "1 kg vücut ağırlığı için 1 mg diklazuril, yani 2.5 kg vücut ağırlığı için 1 ml dozundaki ürün tek bir oral uygulama ile verilmelidir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -15218,12 +15218,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -15269,12 +15269,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -15293,12 +15293,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -15315,12 +15315,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -15362,12 +15362,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, Koyun ve At: 8 mg/kg vücut ağırlığı benzilpenisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -15384,12 +15384,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -15484,12 +15484,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.11199999999999999,
+        "ifade": "50 kg canlı ağırlığa - 5.60 ml",
+        "cumle": "50 kg canlı ağırlığa - 5.60 ml 100 kg canlı ağırlığa -– 11.25 ml 200 kg canlı ağırlığa – 22.50 ml 400 kg canlı ağırlığa – 45.00 ml 500 kg canlı ağırlığa -– 56.25 ml",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -15852,12 +15852,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.3,
+        "ifade": "her 10 kg vücut ağırlığı için 3 ml",
+        "cumle": "Buzağılar tek doz olarak 15 mg/kg doz (her 10 kg vücut ağırlığı için 3 ml ürün) uygulanarak tedavi edilmelidir.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": []
@@ -15874,12 +15874,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -15969,12 +15969,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -16065,12 +16065,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -16087,12 +16087,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.025,
+        "ifade": "40 kg canlı ağırlığa 1 ml",
+        "cumle": "Pratik olarak, 40 kg canlı ağırlığa 1 ml tek doz uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 7.5
       },
       "yollar": [
@@ -16110,12 +16110,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -16159,12 +16159,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -16232,12 +16232,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -16349,12 +16349,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "10 kg canlı ağırlık için 1 ml",
+        "cumle": "Veteriner hekim tarafından başka bir şekilde önerilmediği takdirde farmakolojik doz 20 mg/ kg canlı ağırlık olup pratik dozu 10 kg canlı ağırlık için 1 ml TEXAL LA % 20 tek doz halinde, derin kas içi olarak uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -16373,12 +16373,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg canlı ağırlık için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg canlı ağırlık/gün (pratik olarak her 100 kg canlı ağırlık için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -16398,12 +16398,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -16496,12 +16496,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzilpenisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -16520,12 +16520,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 mL",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 mL ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -16569,12 +16569,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -16616,12 +16616,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -16663,12 +16663,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -16804,12 +16804,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -16877,12 +16877,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığıdır (her 10 kg vücut ağırlığı için 1 ml).",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -17023,12 +17023,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -17150,12 +17150,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.01,
+        "ifade": "Her 100 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 100 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -17219,12 +17219,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg vücut ağırlığı için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg vücut ağırlığı (her 100 kg vücut ağırlığı için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -17272,12 +17272,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "1 ml enjeksiyonluk süspansiyon/10 kg vücut ağırlığı",
+        "cumle": "Cephaset %15 Enjeksiyonluk Süspansiyon sığırlarda, 15 mg sefaleksin/kg vücut ağırlığı/gün (1 ml enjeksiyonluk süspansiyon/10 kg vücut ağırlığı/gün) dozda 3 – 5 gün süreyle kas içi yolla uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -17321,12 +17321,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -17368,12 +17368,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -17390,12 +17390,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin ve 2 mg klorsulon)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -17435,12 +17435,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -17771,12 +17771,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.05,
+        "ifade": "20 kg vücut ağırlığı için 1 ml",
+        "cumle": "20 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -17793,12 +17793,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -17913,12 +17913,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -18012,12 +18012,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -18126,12 +18126,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -18150,12 +18150,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -18342,12 +18342,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -18366,12 +18366,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -18480,12 +18480,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -18578,12 +18578,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -18774,12 +18774,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03,
+        "ifade": "her 100 kg vücut ağırlığı için günde 3 ml",
+        "cumle": "Kas içi veya ven içi yolla 3 mg/kg vücut ağırlığı/gün (pratik olarak her 100 kg vücut ağırlığı için günde 3 ml) dozunda 3 güne kadar uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -19022,12 +19022,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 7
       },
       "yollar": [
@@ -19203,12 +19203,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 13
       },
       "yollar": [
@@ -19344,12 +19344,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 50 kg vücut ağırlığı için 2 ml",
+        "cumle": "Sığır: 2 mg/kg vücut ağırlığı/gün (her 50 kg vücut ağırlığı için 2 ml), ven içi veya kas içi yolla 1-3 gün uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -19488,12 +19488,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "her 30 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -19522,12 +19522,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün).",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -19706,12 +19706,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 100 kg canlı ağırlık için 2 ml",
+        "cumle": "Günde iki kez, 2 mg gentamisin/kg canlı ağırlık (her 100 kg canlı ağırlık için 2 ml ürün) dozunda 3-7 gün boyunca yapılabilir.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -19779,12 +19779,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.04,
+        "ifade": "her 25 kg vücut ağırlığı için 1 ml",
+        "cumle": "Sığır, koyun ve at: 8 mg/kg vücut ağırlığı benzil penisilin prokain ve 10 mg/kg vücut ağırlığı dihidrostreptomisin sülfat dozunda, pratik olarak her 25 kg vücut ağırlığı için 1 ml uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 6
       },
       "yollar": [
@@ -19801,12 +19801,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "Her 50 kg vücut ağırlığı için 1 ml",
+        "cumle": "Dozaj: Her 50 kg vücut ağırlığı için 1 ml (her kg vücut ağırlığı için 200 mikrogram ivermektin)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -19825,12 +19825,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 15
       },
       "yollar": [
@@ -19869,12 +19869,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.03333333333333333,
+        "ifade": "30 kg canlı ağırlığa 1 ml",
+        "cumle": "Pratik doz olarak, 30 kg canlı ağırlığa 1 ml kullanılır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [
@@ -20176,12 +20176,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Tavsiye edilen doz 20 mg/kg vücut ağırlığı (her 10 kg vücut ağırlığı için 1 ml)dır.",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 20
       },
       "yollar": [
@@ -20275,12 +20275,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.1,
+        "ifade": "her 10 kg vücut ağırlığı için 1 ml",
+        "cumle": "Her kg vücut ağırlığı için 5 mg linkomisin ve 10 mg spektinomisin (her 10 kg vücut ağırlığı için 1 ml ürün) dozunda ilk gün iki doz, diğer günler tek doz olarak, kas içi yolla 3-5 gün boyunca uygulanır.",
+        "kaynak": "ml_kg",
+        "kapsam": "buzagi",
+        "guven": "yuksek",
         "yerBasinaMaxMl": null
       },
       "yollar": [
@@ -20300,12 +20300,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": null,
-        "ifade": null,
-        "cumle": null,
-        "kaynak": null,
-        "kapsam": null,
-        "guven": "dusuk",
+        "mlPerKg": 0.02,
+        "ifade": "her 50 kg vücut ağırlığı için günde 1 ml",
+        "cumle": "Solunum sistemi enfeksiyonları: Günde 1 mg/kg vücut ağırlığı dozunda 3-5 gün deri altı (her 50 kg vücut ağırlığı için günde 1 ml ürün)",
+        "kaynak": "ml_kg",
+        "kapsam": "sigir",
+        "guven": "yuksek",
         "yerBasinaMaxMl": 10
       },
       "yollar": [

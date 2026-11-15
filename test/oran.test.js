@@ -180,8 +180,82 @@ test('endikasyonaGoreFarkliDozDusuk: oranı olmayan cümlede başka mg/kg dozu',
 
 test('tersYaziliFarkliOranDusuk: "50 kg vücut ağırlığı için 2 ml" ileri orana uymuyorsa', () => {
   dusukBos(dozOrani('Kas içi 1 ml/10 kg canlı ağırlık. Buzağılarda 50 kg vücut ağırlığı için 2 ml uygulanır.'));
-  // yalnız ters yazım: bu planda oran sayılmaz
-  dusukBos(dozOrani('30 kg vücut ağırlığı için 1 ml deri altı uygulanır.'));
+});
+
+// --- Ters yazım: "her 30 kg için 1 ml" (aynı ml/kg oranı; aynı güvenlik kuralları) ---
+
+test('tersYazim: gerçek KÜB (Micotil) — "her 30 kg vücut ağırlığı için 1 ml ürün", koyun yer sınırı sayılmaz', () => {
+  const o = dozOrani(ornek('micotil'));
+  yakin(o.mlPerKg, 1 / 30);
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.kaynak, 'ml_kg');
+  assert.equal(o.kapsam, 'sigir');
+  assert.equal(o.ifade, 'her 30 kg vücut ağırlığı için 1 ml');
+  assert.equal(o.cumle, 'Her kg vücut ağırlığı için 10 mg tilmikosin (her 30 kg vücut ağırlığı için 1 ml ürün) kullanılır.');
+  assert.equal(o.yerBasinaMaxMl, 20);
+});
+
+test('tersYazim: gerçek KÜB (ivermektin) — "Sığır" / "Koyun" başlıkları, "Her 50 kg … 1 ml"', () => {
+  const o = dozOrani(ornek('mectinol'));
+  assert.equal(o.mlPerKg, 0.02);
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.ifade, 'Her 50 kg vücut ağırlığı için 1 ml');
+});
+
+test('tersYazim: gerçek KÜB (Cobactan LA) — "30 kg canlı ağırlığa 1 ml"', () => {
+  const o = dozOrani(ornek('cobactan'));
+  yakin(o.mlPerKg, 1 / 30);
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.ifade, '30 kg canlı ağırlığa 1 ml');
+  assert.equal(o.yerBasinaMaxMl, 10);
+});
+
+test('tersYazim: gerçek KÜB (Flunova) — atın oranı "At:" başlığı altında, sığırınki "Sığır:" altında', () => {
+  const o = dozOrani(ornek('flunova'));
+  assert.equal(o.mlPerKg, 0.04);
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.ifade, 'her 50 kg vücut ağırlığı için 2 ml');
+});
+
+test('tersYazim: kısa biçimler', () => {
+  assert.equal(dozOrani("Kas içi, 30 kg'a 1 ml uygulanır.").mlPerKg, 1 / 30);
+  assert.equal(dozOrani('Deri altı, her 10 kg canlı ağırlığa 1 ml uygulanır.').ifade, 'her 10 kg canlı ağırlığa 1 ml');
+  assert.equal(dozOrani('Kas içi, 100 kg vücut ağırlığı için günde 3 ml.').mlPerKg, 0.03);
+  assert.equal(dozOrani('Kas içi 20 kg vücut ağırlığı başına 1 ml’dir.').mlPerKg, 0.05);
+  // kilo sınıfı / örnek hayvan: dar biçim değil → kaynak olmaz
+  dusukBos(dozOrani('450 kg’lık bir inek için 15 ml uygulanır.'));
+  dusukBos(dozOrani('300 kg’dan ağır sığırlara 15 ml uygulanır.'));
+});
+
+test('tersYazimAralikDusuk: gerçek KÜB (Teknomycin 100) — "her 20 kg vücut ağırlığına günde 1-2 ml"', () => {
+  dusukBos(dozOrani(ornek('teknomycin')));
+  dusukBos(dozOrani('Kas içi, 100 kg vücut ağırlığı için 3-5 ml uygulanır.'));
+});
+
+test('ileriVeTersAyniOran: gerçek KÜB (Eprinomec) — tek yuksek, ifade ileri yazım', () => {
+  const o = dozOrani(ornek('eprinomec'));
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.mlPerKg, 0.1);
+  assert.equal(o.ifade, '1 ml / 10 kg vücut ağırlığı');
+  const s = dozOrani('Sığırlarda 1 ml/20 kg canlı ağırlık. 400 kg vücut ağırlığı için 20 ml uygulanır.');
+  assert.equal(s.guven, 'yuksek');
+  assert.equal(s.ifade, '1 ml/20 kg canlı ağırlık');
+  dusukBos(dozOrani('Sığırlarda 1 ml/20 kg canlı ağırlık. Her 10 kg vücut ağırlığı için 1 ml uygulanır.'));
+});
+
+test('tersYazim + bölünmüş günlük doz: gerçek KÜB (Tilmovet) — "…/gün dozunda günde iki defa"', () => {
+  dusukBos(dozOrani(ornek('tilmovet')));
+});
+
+test('yalnizErişkin: gerçek KÜB (Bromoscol) — "Erişkin Sığır: 100 kg vücut ağırlığına 5 ml"', () => {
+  dusukBos(dozOrani(ornek('bromoscol')));
+});
+
+test('urunBicimSozu: gerçek KÜB (Cephaset) — "1 ml enjeksiyonluk süspansiyon/10 kg"; kedi-köpek ters oranı sayılmaz', () => {
+  const o = dozOrani(ornek('cephaset'));
+  assert.equal(o.mlPerKg, 0.1);
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.ifade, '1 ml enjeksiyonluk süspansiyon/10 kg vücut ağırlığı');
 });
 
 test('bolunmusGunlukDozDusuk: gerçek KÜB (Medox) — "günlük doz ikiye bölünerek"', () => {
