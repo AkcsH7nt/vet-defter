@@ -1,27 +1,11 @@
 // KÜB alıntıları ve arınma etiketleri (spec §15). Metin resmî belgeden aynen alınır: yalnız textContent ile yazılır.
 import { el } from './ortak.js';
-import { normalize } from '../lib/arama.js';
+import { sigirMi, sigirListesindeMi, yalnizBuzagiMi } from '../lib/oneri.js';
+
+// Ürün türü yardımcıları lib/oneri.js'te (öneri motoru da kullanır); ekranlar buradan almaya devam eder.
+export { sigirMi, sigirListesindeMi, yalnizBuzagiMi };
 
 export const OTOMATIK_NOT = "KÜB'den otomatik okundu — metinle karşılaştırın";
-
-/** Ürün sığır için ruhsatlı mı? Hedef türde "sığır" ya da "buzağı" (büyük-küçük harf ve aksan fark etmez). */
-export function sigirMi(urun) {
-  return (urun.hedefTurler ?? []).some((t) => normalize(t) === 'sigir' || normalize(t) === 'buzagi');
-}
-
-/**
- * Ürün sığır ürün listelerinde (etken, hastalık) gösterilir mi? Bakanlık listesinde sığır / buzağı hedefli ve
- * KÜB 4.1'de hedef tür sığırı kapsıyor (kub.json sigirHedefDegil değil).
- */
-export function sigirListesindeMi(urun, veri) {
-  return sigirMi(urun) && veri?.kub?.urunler?.[urun.urunId]?.sigirHedefDegil !== true;
-}
-
-/** Yalnız buzağı için ruhsatlı (hedef türde sığır yok, buzağı var). */
-export function yalnizBuzagiMi(urun) {
-  const t = (urun.hedefTurler ?? []).map(normalize);
-  return t.includes('buzagi') && !t.includes('sigir');
-}
 
 // EMA AMEG sınıfları: A kaçının, B kısıtlayın, C dikkat, D ihtiyat.
 export const AMEG = {

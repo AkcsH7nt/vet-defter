@@ -1,26 +1,14 @@
 // Ekran 3: Hastalık protokolü. Hastalık hekimce onaylıysa ilaç satırının altında ruhsatlı sığır ürünleri ve KÜB alıntıları gösterilir (spec §15).
 import { el, doldur, bulunamadi, taslakEtiketi, geriDugmesi } from './ortak.js';
 import { onayliMi } from '../lib/onay.js';
+import { gosterilebilirMi } from '../lib/oneri.js';
 import { urunKarti, kombineBilgisi, sigirMi, sigirListesindeMi, yalnizBuzagiMi } from './kub.js';
 
 export { sigirMi, yalnizBuzagiMi };
-import { normalize } from '../lib/arama.js';
 
 const KIP = {
   yasak: 'Tedavi yasak', yok: 'Tedavi yok', semptomatik: 'Yalnız semptomatik tedavi', normal: 'Normal tedavi',
 };
-
-/** Arayüzdeki ikinci savunma hattı: yasak madde ve AMEG A protokolde hiç gösterilmez (dogrula ilk hattır). */
-function gosterilebilirMi(ilac, veri) {
-  const yasaklar = veri.yasaklar?.ogeler ?? [];
-  const e = veri.etkenler.find((x) => x.id === ilac.etkenId);
-  const yasak = yasaklar.some((y) => y.id === ilac.etkenId || (e && normalize(y.ad) === normalize(e.ad)));
-  if (yasak || e?.ameg === 'A') {
-    console.warn(`Protokol satırı gösterilmedi (${yasak ? 'yasak madde' : 'AMEG A'}): ${ilac.etkenId}`);
-    return false;
-  }
-  return true;
-}
 
 const URUN_SINIRI = 5;
 
