@@ -227,6 +227,30 @@ test('tersYazim: kısa biçimler', () => {
   dusukBos(dozOrani('300 kg’dan ağır sığırlara 15 ml uygulanır.'));
 });
 
+test('tersYazimKiloAraligiDusuk: "100-200 kg canlı ağırlığa 10 ml" (kilo bandı)', () => {
+  dusukBos(dozOrani('Sığırlarda 100-200 kg canlı ağırlığa 10 ml uygulanır.'));
+  dusukBos(dozOrani('Sığırlarda 150 – 200 kg vücut ağırlığı için 10 ml'));
+  dusukBos(dozOrani('10 ila 20 kg vücut ağırlığı için 1 ml'));
+  dusukBos(dozOrani('100-200 kg canlı ağırlığa 10 ml\n200-300 kg canlı ağırlığa 15 ml'));
+});
+
+test('tersYazimTabloDusuk: gerçek KÜB (Rafokin) — "aşağıda tablo olarak", kilo satırları', () => {
+  dusukBos(dozOrani(ornek('rafokin')));
+  // tablo sözcüğü olmadan da: bir satırda farklı kilolu birden çok ters oran, ya da ardışık kilo satırları
+  dusukBos(dozOrani('Sığır: 50 kg canlı ağırlığa 5 ml 100 kg canlı ağırlığa 10 ml'));
+  dusukBos(dozOrani('Sığır:\n50 kg canlı ağırlığa 5 ml\n100 kg canlı ağırlığa 10 ml'));
+  // aynı kilo tekrarı (endikasyon başına) tablo değildir
+  assert.equal(dozOrani('Solunum: her 50 kg vücut ağırlığı için günde 1 ml.\nMetritis: her 50 kg vücut ağırlığı için günde 1 ml.').guven, 'yuksek');
+});
+
+test('kapsamYalnizKaynaktan: buzağı oranı, eşit ama kaynak olmayan sığır örneğiyle genişlemez', () => {
+  const o = dozOrani('Buzağılarda 1 ml/20 kg canlı ağırlık. 400 kg vücut ağırlığındaki bir sığır için 20 ml.');
+  assert.equal(o.guven, 'yuksek');
+  assert.equal(o.mlPerKg, 0.05);
+  assert.equal(o.kapsam, 'buzagi');
+  assert.equal(o.cumle, 'Buzağılarda 1 ml/20 kg canlı ağırlık.');
+});
+
 test('tersYazimAralikDusuk: gerçek KÜB (Teknomycin 100) — "her 20 kg vücut ağırlığına günde 1-2 ml"', () => {
   dusukBos(dozOrani(ornek('teknomycin')));
   dusukBos(dozOrani('Kas içi, 100 kg vücut ağırlığı için 3-5 ml uygulanır.'));

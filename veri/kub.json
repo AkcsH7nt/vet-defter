@@ -15484,12 +15484,12 @@
       },
       "metinYok": false,
       "oran": {
-        "mlPerKg": 0.11199999999999999,
-        "ifade": "50 kg canlı ağırlığa - 5.60 ml",
-        "cumle": "50 kg canlı ağırlığa - 5.60 ml 100 kg canlı ağırlığa -– 11.25 ml 200 kg canlı ağırlığa – 22.50 ml 400 kg canlı ağırlığa – 45.00 ml 500 kg canlı ağırlığa -– 56.25 ml",
-        "kaynak": "ml_kg",
-        "kapsam": "sigir",
-        "guven": "yuksek",
+        "mlPerKg": null,
+        "ifade": null,
+        "cumle": null,
+        "kaynak": null,
+        "kapsam": null,
+        "guven": "dusuk",
         "yerBasinaMaxMl": null
       },
       "yollar": [
