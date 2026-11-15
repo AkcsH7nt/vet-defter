@@ -345,7 +345,8 @@ test('hastalik: onayli hastalikta kartta urun, KUB Doz ve arinma var; ilac satir
   assert.match(await kart.innerText(), /Örnek Ürün %10 \(test\)/);
   assert.doesNotMatch(await kart.innerText(), /Örnek Firma/);
   assert.match(await kart.innerText(), /Et 28 gün/);
-  assert.match(await kart.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı — uygulamadan önce ürün etiketi\/KÜB ile karşılaştırın\./);
+  // ml gösteren satır yok (kilo girilmedi) → kapanış doz notu yok (metni 'oneri: kilo 450' testinde denetlenir)
+  assert.doesNotMatch(await kart.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı/);
   await kart.locator('summary:text-is("KÜB ▸")').click();
   assert.deepEqual(await kart.locator('details.kub-kutu h4').allInnerTexts(), ['Doz', 'Arınma']);
   assert.match(await kart.locator('.kub-metin').first().innerText(), /10 mg\/kg/);
@@ -384,8 +385,9 @@ test('hastalik: taslakta kart, serit ve urun var; icerik degisince serit geri ge
 });
 
 test('hastalik: kombine urunde Birlikte notu ve AMEG uyarisi kartta; ikinci satir ayni urun', async () => {
+  // satırın etkeni de AMEG B: eşlikçi AMEG B kuralı (düzeltme 1) uygulanmaz, ürün seçilir ve uyarı gösterilir
   const degis = (yol, j) => {
-    if (yol === 'etkenler.json') return j.map((e) => (e.id === 'ornek_nsaii' ? { ...e, ameg: 'B' } : e));
+    if (yol === 'etkenler.json') return j.map((e) => (['ornek_nsaii', 'ornek_antibiyotik'].includes(e.id) ? { ...e, ameg: 'B' } : e));
     if (yol === 'urunler.json') {
       return [{ ...j[0], urunId: 'ornek-komb', ad: 'Kombine Ürün (test)', etkenler: ['ornek_antibiyotik', 'ornek_nsaii'], hedefTurler: ['sigir'] }];
     }
@@ -402,6 +404,14 @@ test('hastalik: kombine urunde Birlikte notu ve AMEG uyarisi kartta; ikinci sati
   assert.match(t, /AMEG B .*Antibiyogramsız ilk seçenek olmaz/);
   // NSAİİ satırı aynı ürünle verilir: ml yok, ürün kartı ikinci kez yok
   assert.match(await s.locator('.oneri-kart').innerText(), /Aynı ürün: Örnek antibiyotik \(test\) satırındaki ürün bu etkeni de içerir — ayrıca verilmez/);
+  // satırın etkeni AMEG C, eşlikçi AMEG B → antimikrobiyal satırında ürün önerilmez (hekim seçer)
+  const yalnizEslik = (yol, j) => (yol === 'etkenler.json'
+    ? j.map((e) => (e.id === 'ornek_nsaii' ? { ...e, ameg: 'B' } : e)) : degis(yol, j));
+  const s2 = await sayfaAc({ degistir: yalnizEslik });
+  await s2.git('#/hastalik/ornek_solunum');
+  const ilk = s2.locator('.oneri-kart ul.oneri-liste').first().locator(':scope > li.oneri-satir').first();
+  assert.match(await ilk.innerText(), /Ürün hekim seçer \(derişim\/hacim ürüne göre değişir\) — ruhsatlı ürünler \(1\) ▸/);
+  assert.equal(await ilk.locator('li.urun').count(), 0);
 });
 
 test('hastalik: kartta satir basina tek urun, digerleri etken sayfasina yonlendirilir', async () => {
@@ -507,7 +517,7 @@ test('oneri B1: hastaligin yas grubuna uymayan hayvanda kart basinda uyari, urun
   assert.deepEqual(s.hatalar, []);
 });
 
-test('oneri B5: BIRI basliginda satirlar arasinda ya da; metabolikte gerektiginde birlikte; digerde secenekler', async () => {
+test('oneri B5: BIRI basliginda sonraki satir kapali ya da; metabolikte gerektiginde birlikte; digerde secenekler', async () => {
   const ikiAb = hastalikDegis('solunum', 'ornek_solunum', (h) => ({
     ...h, protokol: { ...h.protokol, ilaclar: h.protokol.ilaclar.map((i) => ({ ...i, sinif: 'antimikrobiyal' })) },
   }));
@@ -517,13 +527,18 @@ test('oneri B5: BIRI basliginda satirlar arasinda ya da; metabolikte gerektigind
   assert.match(await kart.locator('h3.grup-baslik').first().innerText(), /^Antimikrobiyal — aşağıdakilerden BİRİ/);
   const liste = kart.locator('ul.oneri-liste').first();
   assert.equal(await liste.locator(':scope > li.oneri-satir').count(), 2);
-  assert.equal(await liste.locator(':scope > li.ya-da').count(), 1);
-  assert.equal((await liste.locator(':scope > li.ya-da').innerText()).trim(), 'ya da');
+  // ilk satır açık, ikincisi kapalı "ya da" (ürünsüz satırda kısa neden)
+  assert.equal(await liste.locator(':scope > li.oneri-satir').first().locator('details.alternatif').count(), 0);
+  const alt = liste.locator(':scope > li.oneri-satir').nth(1).locator('details.alternatif');
+  assert.equal(await alt.getAttribute('open'), null);
+  assert.equal((await alt.locator('summary').innerText()).trim(), 'ya da: Örnek NSAİİ (test) · ürün yok');
+  await alt.locator('summary').click();
+  assert.match(await alt.innerText(), /Listede ruhsatlı sığır ürünü yok/);
   // metabolik grupta ayırıcı yok
   const s2 = await sayfaAc();
   await s2.git('#/hastalik/ornek_metabolik');
   assert.match(await s2.locator('.oneri-kart h3.grup-baslik').first().innerText(), /^Metabolik \/ sıvı — gerektiğinde birlikte/);
-  assert.equal(await s2.locator('.oneri-kart li.ya-da').count(), 0);
+  assert.equal(await s2.locator('.oneri-kart details.alternatif').count(), 0);
   const diger = hastalikDegis('metabolik', 'ornek_metabolik', (h) => ({
     ...h, protokol: { ...h.protokol, ilaclar: h.protokol.ilaclar.map((i) => ({ ...i, sinif: 'diger' })) },
   }));
@@ -598,6 +613,8 @@ test('oneri B3 B4 B10 B14: sagmal kirmizi, arinma okunamadi, urun yolu, protokol
   await kartaGec(s2);
   assert.equal(await s2.locator('.oneri-kart .ml-buyuk').count(), 0);
   assert.match(await s2.locator('.oneri-kart').innerText(), /Bu doz yalnız buzağı\/genç sığır için/);
+  // yalnız B14 notu: "oran yok" nedeni ayrıca yazılmaz
+  assert.doesNotMatch(await s2.locator('.oneri-kart').innerText(), /KÜB'de kiloya göre tek oran yok/);
   assert.deepEqual(s.hatalar, []);
 });
 
@@ -628,8 +645,44 @@ test('oneri B2 B9 B11: hekim secer baglantisi, sabit doz notr, ilac tanimsiz, ih
   const k3 = s3.locator('.oneri-kart');
   assert.match(await k3.innerText(), /Birinci seçenek ilaç tanımlı değil — aşağıdaki protokole bakın/);
   assert.equal((await k3.locator('.oneri-ihbar').innerText()).trim(), 'İhbarı mecburi — önce bildirin');
-  assert.match(await k3.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı/);
+  // ml gösteren satır yok → kapanış doz notu yok
+  assert.doesNotMatch(await k3.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı/);
   assert.deepEqual(s3.hatalar, []);
+});
+
+test('oneri duzeltme 1: kapali alternatif ozetinde ml (data-kub), sut ve olumsuz kisit kirmizi; kapanis notu yalniz ml varken', async () => {
+  const kisitlar = [{ tur: 'olumsuz', metin: 'Gebelikte 0,5 mg/kg üstünde kullanılmaz.' }];
+  const degis = birlikte(
+    hastalikDegis('solunum', 'ornek_solunum', (h) => ({
+      ...h, yasGruplari: ['inek'], protokol: { ...h.protokol, ilaclar: h.protokol.ilaclar.map((i) => ({ ...i, sinif: 'antimikrobiyal', yol: 'IM' })) },
+    })),
+    (yol, j) => (yol === 'urunler.json' ? [...j, { ...j[0], urunId: 'ornek-ns', ad: 'NS Ürün (test)', etkenler: ['ornek_nsaii'] }] : undefined),
+    kubDegis((u) => ({
+      'ornek-u1': { ...u['ornek-u1'], yollar: ['IM'], oran: ORAN },
+      'ornek-ns': { ...u['ornek-u1'], yollar: ['IM'], sigir: { et_gun: 28, sut: 'kullanilmaz', guven: 'dusuk' }, oran: { ...ORAN, mlPerKg: 0.04, kisitlar } },
+    })),
+  );
+  const s = await sayfaAc({ degistir: degis });
+  await kiloGir(s, 450, 'inek');
+  await kartaGec(s);
+  const kart = s.locator('.oneri-kart');
+  const ozet = kart.locator('details.alternatif > summary');
+  assert.equal(await ozet.count(), 1);
+  assert.match(await ozet.innerText(), /^ya da: Örnek NSAİİ \(test\) · NS Ürün \(test\) → 18 ml/);
+  assert.equal(await ozet.locator('.ozet-ml').getAttribute('data-kub'), '');
+  assert.equal((await ozet.locator('.oneri-kirmizi').innerText()).trim(), 'Sağmal inekte kullanılmaz');
+  assert.equal((await ozet.locator('.kisit.olumsuz').innerText()).trim(), 'Gebelikte 0,5 mg/kg üstünde kullanılmaz.');
+  assert.equal(await ozet.locator('.kisit.olumsuz').getAttribute('data-kub'), '');
+  assert.ok((await ozet.boundingBox()).height >= 44);
+  assert.doesNotMatch(await kartDisiMetin(s), /mg\/kg|ml\/kg/);
+  assert.match(await kart.innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı/);
+  // ml gösteren satır yok (oran yok) → kapanış notu yok
+  const s2 = await sayfaAc();
+  await kiloGir(s2, 450);
+  await kartaGec(s2);
+  assert.match(await s2.locator('.oneri-kart').innerText(), /KÜB'de kiloya göre tek oran yok/);
+  assert.doesNotMatch(await s2.locator('.oneri-kart').innerText(), /Doz ürünün KÜB'ünden otomatik hesaplandı/);
+  assert.deepEqual(s.hatalar, []);
 });
 
 test('390 px: acik KUB kutulari yatay tasma yapmaz', async () => {

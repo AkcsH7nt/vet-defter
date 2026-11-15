@@ -68,7 +68,34 @@ function kisitlar(secim) {
     k.tur === 'kosullu' ? `Koşullu kısıt: ${k.metin}` : k.metin));
 }
 
-function satirCiz(satir, veri, oneri) {
+// Kapalı alternatifin özetinde ml yoksa kısa neden.
+const KISA_NEDEN = {
+  urun_yok: 'ürün yok', hekim_secer: 'ürünü hekim seçer', ayni_urun: 'aynı ürün — ayrıca verilmez', yas_uymuyor: 'yaş uymuyor',
+  sabit_doz: 'doz kiloya bağlı değil', oran_yok: "KÜB'de oran yok", kilo_yok: 'kilo girin', kilo_gecersiz: 'kilo olağan dışı',
+};
+// Buzağı kapsamlı oranın yetişkinde "oran yok" nedeni yerine yalnız B14 notu gösterilir.
+const yalnizBuzagiDozu = (satir) => !!satir.secim?.dozBuzagiIcin && satir.neden === 'oran_yok';
+
+/** "ya da: <etken> · <ürün> → 18 ml" (ml data-kub) ya da kısa neden; süt yasağı ve olumsuz KÜB kısıtı kırmızı. */
+function alternatifOzeti(satir) {
+  const { etken, secim, hesap } = satir;
+  const kisa = yalnizBuzagiDozu(satir) ? BUZAGI_DOZU.toLocaleLowerCase('tr') : KISA_NEDEN[satir.neden];
+  return el('summary', {},
+    'ya da: ', el('strong', {}, etken.ad),
+    secim ? ` · ${secim.urun.ad}` : null,
+    hesap ? el('span', { class: 'ozet-ml', 'data-kub': '' }, ` → ${virgul(hesap.ml)} ml`) : kisa ? ` · ${kisa}` : null,
+    secim?.sutYasak ? el('span', { class: 'oneri-kirmizi' }, SAGMAL_YASAK) : null,
+    (secim?.kisitlar ?? []).filter((k) => k.tur === 'olumsuz').map((k) => el('span', { class: 'kisit olumsuz', 'data-kub': '' }, k.metin)));
+}
+
+/** Satır (li.oneri-satir). alternatif: "BİRİ" grubunda ilk satırdan sonraki satır, kapalı details içinde. */
+function satirCiz(satir, veri, oneri, alternatif = false) {
+  const icerik = satirIcerigi(satir, veri, oneri);
+  return el('li', { class: 'oneri-satir' },
+    alternatif ? el('details', { class: 'alternatif' }, alternatifOzeti(satir), icerik) : icerik);
+}
+
+function satirIcerigi(satir, veri, oneri) {
   const { ilac, etken, secim } = satir;
   const href = `#/etken/${encodeURIComponent(etken.id)}`;
   const baslik = el('p', { class: 'oneri-etken' },
@@ -89,9 +116,9 @@ function satirCiz(satir, veri, oneri) {
     oran_yok: () => notr("KÜB'de kiloya göre tek oran yok — KÜB metnine bakın"),
     kilo_yok: () => sari('Kilo girin, ml hesaplansın'),
     kilo_gecersiz: () => sari(oneri.kiloUyari?.metin ?? 'Kilo olağan dışı, kontrol edin'),
-  }[satir.neden]?.() ?? null;
+  }[yalnizBuzagiDozu(satir) ? null : satir.neden]?.() ?? null;
 
-  if (!secim || satir.neden === 'ayni_urun') return el('li', { class: 'oneri-satir' }, baslik, neden);
+  if (!secim || satir.neden === 'ayni_urun') return [baslik, neden];
 
   const yollar = secim.urunYollari ?? [];
   const ek = el('div', { class: 'oneri-ek' },
@@ -101,23 +128,20 @@ function satirCiz(satir, veri, oneri) {
     secim.dozBuzagiIcin ? notr(BUZAGI_DOZU) : null,
     kisitlar(secim),
     kombineBilgisi(secim.urun, etken, veri));
-  return el('li', { class: 'oneri-satir' },
+  return [
     baslik,
     el('ul', { class: 'madde urunler' }, urunKarti(secim.urun, secim.kayit, { ek, kompakt: true })),
     secim.digerSayisi > 0
       ? el('a', { class: 'dugme ikincil', href }, `${secim.hesaplanabilir ? 'Dozu hesaplanabilen ürün seçildi · d' : 'D'}iğer ürünler (${secim.digerSayisi}) ▸`)
-      : null);
+      : null,
+  ];
 }
 
+// "BİRİ" grubunda ilk satır açık, sonrakiler kapalı "ya da: …" (kart kısa kalsın; birlikte verilmeyecekleri belli olsun).
 function grupCiz(g, veri, o) {
-  const satirlar = [];
-  g.satirlar.forEach((s, i) => {
-    if (i > 0 && BIRI.has(g.sinif)) satirlar.push(el('li', { class: 'ya-da' }, 'ya da'));
-    satirlar.push(satirCiz(s, veri, o));
-  });
   return [
     el('h3', { class: 'grup-baslik' }, `${SINIF_AD[g.sinif] ?? g.sinif} — ${grupEki(g.sinif)}`, o.taslak ? [' ', taslakEtiketi()] : null),
-    el('ul', { class: 'madde oneri-liste' }, satirlar),
+    el('ul', { class: 'madde oneri-liste' }, g.satirlar.map((s, i) => satirCiz(s, veri, o, i > 0 && BIRI.has(g.sinif)))),
   ];
 }
 
@@ -146,7 +170,8 @@ export function oneriKarti(h, veri, durum) {
       for (const g of o.gruplar) parcalar.push(...grupCiz(g, veri, o));
       if (o.destekleyici.length) parcalar.push(el('h3', {}, 'Destekleyici'), madde(o.destekleyici));
       if (o.bakim.length) parcalar.push(el('h3', {}, 'Bakım / yönetim'), madde(o.bakim));
-      parcalar.push(el('p', { class: 'oneri-not' }, KAPANIS_NOTU));
+      // kapanış doz notu yalnız en az bir satır ml gösteriyorsa
+      if (o.gruplar.some((g) => g.satirlar.some((s) => s.hesap))) parcalar.push(el('p', { class: 'oneri-not' }, KAPANIS_NOTU));
     }
     icerik.replaceChildren(...parcalar);
   }

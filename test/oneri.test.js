@@ -687,3 +687,34 @@ test('B14 buzagiKapsamliOranliUrunYetiskindeIsaretli', async () => {
   veri.kub.urunler['t-gb'].oran = { ...DUSUK, kapsam: 'buzagi' };
   assert.equal(urunSec(ilac, veri, 'inek').dozBuzagiIcin, false);
 });
+
+// --- K8 dalga B, düzeltme turu 1 ---
+test('F1 amegAyaDaBEslikciEtkenliUrunKarttaSecilmezYoksaHekimSecer', async () => {
+  // Multibio benzeri: ampisilin + kolistin (AMEG B) + deksametazon; satır etkeni AMEG C
+  const etkenler = [{ id: 'test_kolistin', ad: 'Kolistin test', sinif: 'antimikrobiyal', ameg: 'B' }];
+  const ilac = { etkenId: 'ornek_antibiyotik', sinif: 'antimikrobiyal', sira: 1, yol: 'IM', not: null };
+  const veri = await veriHazirla([
+    { urun: { urunId: 't-multi', ad: 'Aaa Multi', etkenler: ['ornek_antibiyotik', 'test_kolistin'], digerEtkenler: [] }, kayit: { oran: oran(0.1), yollar: ['IM'] } },
+    { urun: { urunId: 't-tek', ad: 'Zzz Tek', etkenler: ['ornek_antibiyotik'] }, kayit: { oran: DUSUK, yollar: ['IM'], sigir: { sut: 'kullanilmaz', guven: 'yuksek' } } },
+  ], { etkenler });
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 'ornek-u1');
+  // sağmal anahtarı tekli ürünü arkaya atsa da AMEG B eşlikçili ürün seçilmez
+  const protokolEtkenleri = new Set(['ornek_antibiyotik', 'test_kolistin']);
+  assert.equal(urunSec(ilac, veri, 'inek', { protokolEtkenleri }).urun.urunId, 't-tek');
+  // tek aday AMEG B eşlikçiliyse → hekim seçer
+  veri.urunler = veri.urunler.filter((u) => u.urunId !== 't-tek');
+  assert.equal(urunSec(ilac, veri, 'inek'), null);
+  const [s] = satirlarOf(tedaviOnerisi(tekSatirli(ilac), veri, { yas: 'inek', kilo: 450 }));
+  assert.equal(s.secim, null);
+  assert.equal(s.neden, 'hekim_secer');
+  assert.equal(s.urunSayisi, 1);
+  // AMEG A eşlikçi de
+  veri.etkenler.find((e) => e.id === 'test_kolistin').ameg = 'A';
+  assert.equal(urunSec(ilac, veri, 'inek'), null);
+  // satırın kendi etkeni AMEG B ise (kolistin satırı) eşlikçi kuralı uygulanmaz
+  veri.etkenler.find((e) => e.id === 'test_kolistin').ameg = 'B';
+  assert.equal(urunSec({ ...ilac, etkenId: 'test_kolistin' }, veri, 'inek').urun.urunId, 't-multi');
+  // eşlikçi AMEG C / D ya da AMEG'siz (NSAİİ) elemez
+  veri.etkenler.find((e) => e.id === 'test_kolistin').ameg = 'C';
+  assert.equal(urunSec(ilac, veri, 'inek').urun.urunId, 't-multi');
+});

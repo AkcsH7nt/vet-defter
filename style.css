@@ -205,8 +205,11 @@ li.urun { min-width: 0; }
 .oneri-ihbar { margin: 0 0 8px; padding: 8px 12px; border-radius: 8px; background: var(--tehlike-zemin); color: var(--tehlike-yazi); }
 .kisit { margin: 4px 0; font-size: 13px; }
 .arinma-yok { margin: 4px 0; font-size: 13px; color: var(--soluk); }
-.ya-da { margin: 0; padding: 2px 0 !important; text-align: center; font-size: 13px; font-weight: 700; color: var(--soluk); letter-spacing: 0.05em; }
-.ya-da::before { content: none !important; }
+/* "BİRİ" grubunda ilk satırdan sonraki alternatif: kapalı, özette ml / kısa neden ve kırmızı uyarılar. */
+.alternatif > summary { min-height: 44px; padding: 8px 0; cursor: pointer; font-size: 15px; }
+.alternatif > summary .ozet-ml { font-weight: 800; color: var(--vurgu); }
+.alternatif > summary .oneri-kirmizi, .alternatif > summary .kisit.olumsuz { display: block; width: fit-content; max-width: 100%; }
+.alternatif[open] > summary { color: var(--soluk); }
 .grup-baslik .etiket { font-size: 11px; }
 .kub-alt { margin: 8px 12px 4px; font-size: 14px; }
 .kub-kutu .kub-alinti { margin: 0 12px 10px; }

@@ -551,3 +551,16 @@ test('K8A_kubKaydi: 4.5 yer sınırı, 4.1 kapsam, 4.3 kısıtlar, bölüm 3 ORA
   assert.deepEqual(paincarp.oran.kisitlar, []);
   assert.equal(paincarp.oran.sabitDoz, false);
 });
+
+test('sagmaldaKullanilmaz_yaziyleSureVeTedaviSuresinceArinmadir', () => {
+  for (const m of [
+    'Son uygulamadan sonra iki gün boyunca elde edilen süt insan tüketiminde kullanılmaz.',
+    'Tedavi süresince ineklerde elde edilen sütler insan tüketiminde kullanılmamalıdır.',
+    'Son uygulamadan sonra on beş sağım boyunca ineklerden elde edilen süt kullanılmaz.',
+    'Yirmi dört saat boyunca ineklerde elde edilen sütler kullanılmamalıdır.',
+    'İki hafta boyunca sağmal ineklerde elde edilen süt kullanılmaz.',
+  ]) assert.equal(sagmaldaKullanilmaz(m), false, m);
+  // yazıyla sayı içermeyen yasak yine yakalanır; "deri altı" gibi sözcükler süre sayılmaz
+  assert.equal(sagmaldaKullanilmaz('Süt elde edilen sığırlarda deri altı uygulanmaz.'), true);
+  assert.equal(sagmaldaKullanilmaz('Bu ürün laktasyondaki hayvanlarda kullanılmaz.'), true);
+});
