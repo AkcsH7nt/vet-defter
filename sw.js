@@ -1,7 +1,7 @@
 // Çevrimdışı çalışma: uygulamanın tüm dosyaları ilk açılışta telefona kaydedilir.
 // Dosyalardan biri değişince `npm run surum` (içerik özetini yazar, SURUM artar); npm test eski özeti yakalar.
-// icerik: 6fc2517313444a07
-const SURUM = 'vet-defter-v21';
+// icerik: 9774d7da7791033b
+const SURUM = 'vet-defter-v22';
 const DOSYALAR = [
   './', 'index.html', 'style.css', 'app.js',
   'ui/ortak.js', 'ui/tani.js', 'ui/sonuc.js', 'ui/hastalik.js', 'ui/oneri.js', 'ui/etken.js', 'ui/kub.js', 'ui/listeler.js', 'ui/hakkinda.js',
